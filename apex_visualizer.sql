@@ -27,7 +27,7 @@ prompt APPLICATION 140 - Apex Visualizer
 -- Application Export:
 --   Application:     140
 --   Name:            Apex Visualizer
---   Date and Time:   09:05 Tuesday July 18, 2017
+--   Date and Time:   17:08 Tuesday July 18, 2017
 --   Exported By:     OLEMM
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -113,7 +113,7 @@ wwv_flow_api.create_flow(
 ,p_csv_encoding=>'Y'
 ,p_auto_time_zone=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20170718090457'
+,p_last_upd_yyyymmddhh24miss=>'20170718170829'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -14645,7 +14645,7 @@ wwv_flow_api.create_page(
 ,p_page_is_public_y_n=>'N'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20170718090457'
+,p_last_upd_yyyymmddhh24miss=>'20170718170829'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(161727469298543924)
@@ -14827,6 +14827,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select ',
 '  application_id || '' ''  || page_id as id,',
+'  page_id,',
 '  page_name || '' ('' || page_id || '')'' label,',
 '  application_name as colorgrp,',
 '  sum(t.js_code_length) as bbsize',
@@ -14844,6 +14845,7 @@ wwv_flow_api.create_page_plug(
 ,p_attribute_13=>'BBSIZE'
 ,p_attribute_14=>'ID'
 ,p_attribute_15=>'COLORGRP'
+,p_attribute_18=>'javascript:apex.item( "P0_PAGE_ID" ).setValue( "&PAGE_ID." );'
 ,p_attribute_19=>'SERIES:CUSTOM:VALUE'
 ,p_attribute_20=>'LABEL'
 ,p_attribute_22=>'300'
@@ -15018,7 +15020,7 @@ wwv_flow_api.create_page(
 ,p_page_is_public_y_n=>'N'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20170718090439'
+,p_last_upd_yyyymmddhh24miss=>'20170718170736'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(324427827990531451)
@@ -15119,6 +15121,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select ',
 '  application_id || '' ''  || page_id as id,',
+'  page_id,',
 '  page_name || '' ('' || page_id || '')'' label,',
 '  application_name as colorgrp,',
 '  sum(t.css_code_length) as bbsize',
@@ -15138,6 +15141,7 @@ wwv_flow_api.create_page_plug(
 ,p_attribute_13=>'BBSIZE'
 ,p_attribute_14=>'ID'
 ,p_attribute_15=>'COLORGRP'
+,p_attribute_18=>'javascript:apex.item( "P0_PAGE_ID" ).setValue( "&PAGE_ID." );'
 ,p_attribute_19=>'SERIES:CUSTOM:VALUE'
 ,p_attribute_20=>'LABEL'
 ,p_attribute_22=>'400'
@@ -15316,7 +15320,7 @@ wwv_flow_api.create_page(
 ,p_page_is_public_y_n=>'N'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20170718090344'
+,p_last_upd_yyyymmddhh24miss=>'20170718170609'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(487372010015139454)
@@ -15417,6 +15421,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select ',
 '  application_id || '' ''  || page_id as id,',
+'  page_id,',
 '  page_name || '' ('' || page_id || '')'' label,',
 '  application_name as colorgrp,',
 '  sum(t.code_length) as bbsize',
@@ -15436,6 +15441,7 @@ wwv_flow_api.create_page_plug(
 ,p_attribute_13=>'BBSIZE'
 ,p_attribute_14=>'ID'
 ,p_attribute_15=>'COLORGRP'
+,p_attribute_18=>'javascript:apex.item( "P0_PAGE_ID" ).setValue( "&PAGE_ID." );'
 ,p_attribute_19=>'SERIES:CUSTOM:VALUE'
 ,p_attribute_20=>'LABEL'
 ,p_attribute_22=>'400'
