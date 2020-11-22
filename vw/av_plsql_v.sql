@@ -171,5 +171,22 @@ join (
                                 ,'FUNCTION_RETURNING_SQL_QUERY'
                                 ,'PLSQL_PROCEDURE'
                                 ,'SQL_QUERY'
-                                ,'UPDATABLE_SQL_QUERY')) p on p.application_id = app.application_id
-                                                       and p.page_id = app.page_id;
+                                ,'UPDATABLE_SQL_QUERY')
+      union all
+      -- chart series
+      select pcs.application_id
+             ,pcs.page_id
+             ,pcs.series_name component_name
+             ,'chart_series_source' component_type
+             ,1 best_practice
+             ,'Rendering' process_point
+             ,pcs.data_source_type code_type
+             ,to_char(substr(pcs.data_source
+                            ,0
+                            ,4000)) plsql_code_vc2
+             ,pcs.data_source plsql_code_clob
+             ,length(pcs.data_source) code_length
+      from apex_application_page_chart_s pcs
+      --
+      ) p on p.application_id = app.application_id
+      and p.page_id = app.page_id;
