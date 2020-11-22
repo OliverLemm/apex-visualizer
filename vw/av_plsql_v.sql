@@ -3,6 +3,8 @@ select app.application_id
       ,app.application_name
       ,p.page_id
       ,app.page_name
+      ,nvl(app.page_group
+          ,'no page group') page_group
       ,app.page_function
       ,case
          when code_length > 2000 then
@@ -170,5 +172,4 @@ join (
                                 ,'PLSQL_PROCEDURE'
                                 ,'SQL_QUERY'
                                 ,'UPDATABLE_SQL_QUERY')) p on p.application_id = app.application_id
-                                                       and p.page_id = app.page_id
-;
+                                                       and p.page_id = app.page_id;
