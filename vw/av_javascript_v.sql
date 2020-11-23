@@ -1,50 +1,143 @@
-create or replace view av_javascript_v as
-select application_name, application_id, page_id, page_name, component_name, case when js_code_length > 1000 then 0 else best_practice end best_practice,
-js_code, js_code_length, js_code_type, component_type
-from (
--- Page HTML Header
-select application_name, p.application_id, p.page_id, p.page_name, p.page_name component_name, 0 best_practice,
-to_char(substr(p.page_html_header,0,4000)) js_code, length(p.page_html_header) js_code_length, 'page_html_header' js_code_type, 'page' component_type
-from apex_application_pages p where p.page_html_header is not null and instr(p.page_html_header, '<script') > 0
-union
--- Page HTML onload
-select application_name, p.application_id, p.page_id, p.page_name, p.page_name component_name, 0 best_practice,
-p.page_html_onload js_code, length(p.page_html_onload) js_code_length, 'page_html_onload' js_code_type , 'page' component_type
-from apex_application_pages p where p.page_html_onload is not null and instr(p.page_html_onload, '<script') > 0
-union
--- Page Javascript Code
-select application_name, p.application_id, p.page_id, p.page_name, p.page_name component_name, 1 best_practice,
-to_char(substr(p.javascript_code,0,4000)) js_code, length(p.javascript_code) js_code_length, 'javascript_code' js_code_type , 'page' component_type
-from apex_application_pages p where p.javascript_code is not null
-union
--- Page Javascript Code onload
-select application_name, p.application_id, p.page_id, p.page_name, p.page_name component_name, 1 best_practice,
-to_char(substr(p.javascript_code_onload,0,4000)) js_code, length(p.javascript_code_onload) js_code_length, 'javascript_code_onload' js_code_type , 'page' component_type
-from apex_application_pages p where p.javascript_code_onload is not null
-union
--- Region - Header Text
-select application_name, p.application_id, p.page_id, p.page_name, p.region_name component_name, 0 best_practice,
-to_char(substr(p.region_header_text,0,4000)) js_code, length(p.region_header_text) js_code_length, 'region_header_text' js_code_type , 'region' component_type
-from apex_application_page_regions p where p.region_header_text is not null and instr(lower(p.region_header_text),'<script') > 0
-union
--- Region - Footer Text
-select application_name, p.application_id, p.page_id, p.page_name, p.region_name component_name, 0 best_practice,
-to_char(substr(p.region_footer_text,0,4000)) js_code, length(p.region_footer_text) js_code_length, 'region_footer_text' js_code_type , 'region' component_type
-from apex_application_page_regions p where p.region_header_text is not null and instr(lower(p.region_footer_text),'<script') > 0
-union
--- Dynamic Actions - JavaScript Expression
-select application_name, p.application_id, p.page_id, p.page_name, p.dynamic_action_name component_name, 1 best_practice,
-p.when_element js_code, length(p.when_element) js_code_length, 'when_element' js_code_type, 'dynamic_action' component_type
-from apex_application_page_da p where p.when_selection_type_code = 'JAVASCRIPT_EXPRESSION'
-union
--- Dynamic Actions - JavaScript Code
-select application_name, p.application_id, p.page_id, p.page_name, p.dynamic_action_name component_name, 1 best_practice,
-p.attribute_01 js_code, length(p.attribute_01) js_code_length, 'native_javascript_code' js_code_type, 'dynamic_action' component_type
-from apex_application_page_da_acts p where p.action_code = 'NATIVE_JAVASCRIPT_CODE'
--- Buttons
-union
-select b.application_name, b.application_id, b.page_id, b.page_name, b.BUTTON_NAME component_name, 1 best_practice
-, b.redirect_url js_code, length(b.redirect_url) js_code_length, 'redirect_url' js_code_type, 'button' component_type
-from apex_application_page_buttons b where lower(b.redirect_url) like '%javascript:%'
-)
-;
+create or replace force view av_javascript_v as
+select app.application_id
+      ,app.application_name
+      ,app.page_id
+      ,app.page_name
+      ,j.component_name
+      ,j.component_type
+      ,j.js_code_type
+      ,case
+         when length(j.js_code_vc2) > 1000 then
+          0
+         else
+          j.best_practice
+       end best_practice
+      ,j.js_code_vc2 js_code -- only for backwards compatibility
+      ,j.js_code_vc2
+      ,j.js_code_clob
+      ,regexp_count(j.js_code_clob
+                   ,chr(10)) + 1 js_code_lines
+      ,length(j.js_code_clob) js_code_length
+from apex_application_pages app
+join ( -- Page HTML Header
+      select p.application_id
+             ,p.page_id
+             ,p.page_name component_name
+             ,'page' component_type
+             ,'page_html_header' js_code_type
+             ,0 best_practice
+             ,to_char(substr(p.page_html_header
+                            ,0
+                            ,3900)) js_code_vc2
+             ,p.page_html_header js_code_clob
+      from apex_application_pages p
+      where p.page_html_header is not null
+      and instr(p.page_html_header
+              ,'<script') > 0
+      union all
+      -- Page HTML onload
+      select p.application_id
+             ,p.page_id
+             ,p.page_name component_name
+             ,'page' component_type
+             ,'page_html_onload' js_code_type
+             ,0 best_practice
+             ,p.page_html_onload js_code_vc2
+             ,to_clob(p.page_html_onload) js_code_clob
+      from apex_application_pages p
+      where p.page_html_onload is not null
+      and instr(p.page_html_onload
+              ,'<script') > 0
+      union all
+      -- Page Javascript Code
+      select p.application_id
+             ,p.page_id
+             ,p.page_name component_name
+             ,'page' component_type
+             ,'javascript_code' js_code_type
+             ,1 best_practice
+             ,to_char(substr(p.javascript_code
+                            ,0
+                            ,3900)) js_code_vc2
+             ,p.javascript_code js_code_clob
+      from apex_application_pages p
+      where p.javascript_code is not null
+      union all
+      -- Page Javascript Code onload
+      select p.application_id
+             ,p.page_id
+             ,p.page_name component_name
+             ,'page' component_type
+             ,'javascript_code_onload' js_code_type
+             ,1 best_practice
+             ,to_char(substr(p.javascript_code_onload
+                            ,0
+                            ,3900)) js_code_vc2
+             ,p.javascript_code_onload js_code_clob
+      from apex_application_pages p
+      where p.javascript_code_onload is not null
+      union all
+      -- Region - Header Text
+      select pr.application_id
+             ,pr.page_id
+             ,pr.region_name component_name
+             ,'region' component_type
+             ,'region_header_text' js_code_type
+             ,0 best_practice
+             ,pr.region_header_text js_code_vc2
+             ,to_clob(pr.region_header_text) js_code_clob
+      from apex_application_page_regions pr
+      where pr.region_header_text is not null
+      and instr(lower(pr.region_header_text)
+              ,'<script') > 0
+      union all
+      -- Region - Footer Text
+      select pr.application_id
+             ,pr.page_id
+             ,pr.region_name component_name
+             ,'region' component_type
+             ,'region_footer_text' js_code_type
+             ,0 best_practice
+             ,pr.region_footer_text js_code_vc2
+             ,to_clob(pr.region_footer_text) js_code_clob
+      from apex_application_page_regions pr
+      where pr.region_footer_text is not null
+      and instr(lower(pr.region_footer_text)
+              ,'<script') > 0
+      union all
+      -- Dynamic Actions - JavaScript Expression
+      select pd.application_id
+             ,pd.page_id
+             ,pd.dynamic_action_name component_name
+             ,'dynamic_action' component_type
+             ,'when_element' js_code_type
+             ,1 best_practice
+             ,pd.when_element js_code_vc2
+             ,to_clob(pd.when_element) js_code_clob
+      from apex_application_page_da pd
+      where pd.when_selection_type_code = 'JAVASCRIPT_EXPRESSION'
+      union all
+      -- Dynamic Actions - JavaScript Code
+      select pda.application_id
+             ,pda.page_id
+             ,pda.dynamic_action_name component_name
+             ,'dynamic_action' component_type
+             ,'native_javascript_code' js_code_type
+             ,1 best_practice
+             ,pda.attribute_01 js_code_vc2
+             ,to_clob(pda.attribute_01) js_code_clob
+      from apex_application_page_da_acts pda
+      where pda.action_code = 'NATIVE_JAVASCRIPT_CODE'
+      -- Buttons
+      union all
+      select b.application_id
+             ,b.page_id
+             ,b.button_name component_name
+             ,'button' component_type
+             ,'redirect_url' js_code_type
+             ,1 best_practice
+             ,b.redirect_url js_code_vc
+             ,to_clob(b.redirect_url) js_code_clob
+      from apex_application_page_buttons b
+      where lower(b.redirect_url) like '%javascript:%') j on j.application_id = app.application_id
+                                                      and j.page_id = app.page_id;
