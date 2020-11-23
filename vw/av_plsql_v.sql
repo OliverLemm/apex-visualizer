@@ -1,4 +1,4 @@
-create or replace view av_plsql_v as
+create or replace force view av_plsql_v as
 select app.application_id
       ,app.application_name
       ,p.page_id
@@ -19,6 +19,7 @@ select app.application_id
       ,p.plsql_code_vc2 plsql_code -- online for backward compatibility
       ,p.plsql_code_vc2
       ,p.plsql_code_clob
+      ,regexp_count(p.plsql_code_clob,chr(10)) + 1 code_lines
       ,p.code_length
 from apex_application_pages app
 join (
@@ -189,4 +190,5 @@ join (
       from apex_application_page_chart_s pcs
       --
       ) p on p.application_id = app.application_id
-      and p.page_id = app.page_id;
+      and p.page_id = app.page_id
+;
