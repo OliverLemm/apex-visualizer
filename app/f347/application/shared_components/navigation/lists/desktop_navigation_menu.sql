@@ -1,0 +1,109 @@
+prompt --application/shared_components/navigation/lists/desktop_navigation_menu
+begin
+--   Manifest
+--     LIST: Desktop Navigation Menu
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2020.10.01'
+,p_release=>'20.2.0.00.20'
+,p_default_workspace_id=>125633378786110814
+,p_default_application_id=>347
+,p_default_id_offset=>125634094441118325
+,p_default_owner=>'APEX_VISUALIZER'
+);
+wwv_flow_api.create_list(
+ p_id=>wwv_flow_api.id(452440279475466179)
+,p_name=>'Desktop Navigation Menu'
+,p_list_status=>'PUBLIC'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(452504942296429648)
+,p_list_item_display_sequence=>5
+,p_list_item_link_text=>'APEX'
+,p_list_item_link_target=>'f?p=&APP_ID.:10:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-apex'
+,p_required_patch=>wwv_flow_api.id(291318289212148547)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(452538776854652078)
+,p_list_item_display_sequence=>10
+,p_list_item_link_text=>'Applications'
+,p_list_item_link_target=>'f?p=&APP_ID.:10:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-layout-nav-left-header-header'
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(452506165952441537)
+,p_list_item_display_sequence=>20
+,p_list_item_link_text=>'Pages'
+,p_list_item_link_target=>'f?p=&APP_ID.:20:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-files-o'
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(291328116588371950)
+,p_list_item_display_sequence=>30
+,p_list_item_link_text=>'Page'
+,p_list_item_link_target=>'f?p=&APP_ID.:30:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-file-o'
+,p_required_patch=>wwv_flow_api.id(291318289212148547)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(293408720997816411)
+,p_list_item_display_sequence=>40
+,p_list_item_link_text=>'Visibility'
+,p_list_item_link_target=>'f?p=&APP_ID.:40:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-eye'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'40'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(293451767366398525)
+,p_list_item_display_sequence=>50
+,p_list_item_link_text=>'Last Updated'
+,p_list_item_link_target=>'f?p=&APP_ID.:50:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-calendar-clock'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'50'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(294215766296992610)
+,p_list_item_display_sequence=>60
+,p_list_item_link_text=>'Templates'
+,p_list_item_link_target=>'f?p=&APP_ID.:60:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-layout-header-nav-left-cards'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'60'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(293335134729022457)
+,p_list_item_display_sequence=>100
+,p_list_item_link_text=>'JavaScript'
+,p_list_item_link_target=>'f?p=&APP_ID.:100:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-repeat'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'100'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(293335881011024666)
+,p_list_item_display_sequence=>200
+,p_list_item_link_text=>'CSS'
+,p_list_item_link_target=>'f?p=&APP_ID.:200:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-file-code-o'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'200'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(294498933510993254)
+,p_list_item_display_sequence=>300
+,p_list_item_link_text=>'PL/SQL'
+,p_list_item_link_target=>'f?p=&APP_ID.:300:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-file-sql'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'300'
+);
+wwv_flow_api.component_end;
+end;
+/
