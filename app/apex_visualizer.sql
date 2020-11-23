@@ -28,8 +28,7 @@ prompt APPLICATION 347 - Apex Visualizer
 -- Application Export:
 --   Application:     347
 --   Name:            Apex Visualizer
---   Date and Time:   00:48 Monday November 23, 2020
---   Exported By:     OLEMM
+--   Exported By:     APEX_VISUALIZER
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                     10
@@ -113,7 +112,7 @@ wwv_flow_api.create_flow(
 ,p_auto_time_zone=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20201123004816'
+,p_last_upd_yyyymmddhh24miss=>'20201123225545'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 ,p_print_server_type=>'INSTANCE'
@@ -363,11 +362,6 @@ wwv_flow_api.create_list_of_values(
 end;
 /
 prompt --application/pages/page_groups
-begin
-null;
-end;
-/
-prompt --application/comments
 begin
 null;
 end;
@@ -10840,11 +10834,6 @@ begin
 null;
 end;
 /
-prompt --application/shared_components/globalization/translations
-begin
-null;
-end;
-/
 prompt --application/shared_components/logic/build_options
 begin
 wwv_flow_api.create_build_option(
@@ -20588,7 +20577,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20201123004816'
+,p_last_upd_yyyymmddhh24miss=>'20201123225545'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(618926415072524699)
@@ -20708,14 +20697,15 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_point=>'BODY'
 ,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select distinct',
-'  page_id,',
-'  page_name || '' ('' || page_id || '')'' label,',
+'select page_id,',
+'  page_name_and_id,',
 '  page_group,',
 '  page_function,',
-'  count(*) over (partition by application_id, page_id) components_count,',
-'  sum(t.code_length) over (partition by application_id, page_id) code_length_sum',
-'from av_plsql_v t',
+'  components_count,',
+'  code_length_sum,',
+'  code_lines_sum,',
+'  tooltip',
+'from p0300_plsql_code_by_page_v t',
 'where (t.application_id = :P0_APP_ID or :P0_APP_ID is null)',
 'and t.page_id is not null',
 'and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = t.best_practice)'))
@@ -20753,9 +20743,10 @@ wwv_flow_api.create_jet_chart_series(
 ,p_location=>'REGION_SOURCE'
 ,p_series_name_column_name=>'PAGE_GROUP'
 ,p_items_x_column_name=>'COMPONENTS_COUNT'
-,p_items_y_column_name=>'CODE_LENGTH_SUM'
+,p_items_y_column_name=>'CODE_LINES_SUM'
 ,p_items_z_column_name=>'CODE_LENGTH_SUM'
-,p_items_label_column_name=>'LABEL'
+,p_items_label_column_name=>'PAGE_NAME_AND_ID'
+,p_items_short_desc_column_name=>'TOOLTIP'
 ,p_line_style=>'solid'
 ,p_marker_rendered=>'auto'
 ,p_marker_shape=>'auto'
@@ -20769,7 +20760,7 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_chart_id=>wwv_flow_api.id(126171150057891101)
 ,p_axis=>'x'
 ,p_is_rendered=>'on'
-,p_title=>'# of Components'
+,p_title=>'number of plsql components'
 ,p_format_scaling=>'auto'
 ,p_scaling=>'linear'
 ,p_baseline_scaling=>'zero'
@@ -20784,7 +20775,7 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_chart_id=>wwv_flow_api.id(126171150057891101)
 ,p_axis=>'y'
 ,p_is_rendered=>'on'
-,p_title=>'SUM of Code by Char'
+,p_title=>'code lines'
 ,p_format_type=>'decimal'
 ,p_decimal_places=>0
 ,p_format_scaling=>'none'
@@ -20838,7 +20829,7 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_value=>true
 ,p_legend_rendered=>'on'
-,p_legend_position=>'auto'
+,p_legend_position=>'bottom'
 ,p_pie_other_threshold=>0
 ,p_pie_selection_effect=>'highlight'
 );
