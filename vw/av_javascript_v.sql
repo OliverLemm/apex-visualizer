@@ -10,7 +10,7 @@ select app.application_id
       ,j.component_type
       ,j.js_code_type
       ,case
-         when length(j.js_code_vc2) > 1000 then
+         when length(j.js_code_clob) > 1000 then
           0
          else
           j.best_practice

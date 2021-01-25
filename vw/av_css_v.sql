@@ -1,12 +1,14 @@
 create or replace force view av_css_v as
-select app.application_name
-      ,app.application_id
+select app.application_id
+      ,app.application_name
       ,app.page_id
       ,app.page_name
       ,nvl(app.page_group
           ,'no page group') page_group
       ,app.page_function
       ,c.component_name
+      ,c.component_type
+      ,c.css_code_type
       ,case
          when length(c.css_code_clob) > 1000 then
           0
@@ -19,8 +21,6 @@ select app.application_name
       ,regexp_count(c.css_code_clob
                    ,chr(10)) + 1 css_code_lines
       ,length(c.css_code_clob) css_code_length
-      ,c.css_code_type
-      ,c.component_type
 from apex_application_pages app
 join ( -- Theme Roller Custom CSS
       select application_id
@@ -234,4 +234,5 @@ join ( -- Theme Roller Custom CSS
       from apex_application_page_da_acts d
       join apex_application_page_da_acts a on a.dynamic_action_id = d.dynamic_action_id
       where a.action_code = 'NATIVE_ADD_CLASS') c on c.application_id = app.application_id
-                                              and c.page_id = app.page_id;
+                                              and c.page_id = app.page_id
+;
