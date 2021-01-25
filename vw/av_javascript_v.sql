@@ -3,6 +3,9 @@ select app.application_id
       ,app.application_name
       ,app.page_id
       ,app.page_name
+      ,nvl(app.page_group
+          ,'no page group') page_group
+      ,app.page_function
       ,j.component_name
       ,j.component_type
       ,j.js_code_type
@@ -140,4 +143,5 @@ join ( -- Page HTML Header
              ,to_clob(b.redirect_url) js_code_clob
       from apex_application_page_buttons b
       where lower(b.redirect_url) like '%javascript:%') j on j.application_id = app.application_id
-                                                      and j.page_id = app.page_id;
+                                                      and j.page_id = app.page_id
+;

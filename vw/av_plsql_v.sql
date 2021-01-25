@@ -16,10 +16,11 @@ select app.application_id
       ,p.component_type
       ,p.process_point
       ,p.code_type
-      ,p.plsql_code_vc2 plsql_code -- online for backward compatibility
+      ,p.plsql_code_vc2 plsql_code -- only for backward compatibility
       ,p.plsql_code_vc2
       ,p.plsql_code_clob
-      ,regexp_count(p.plsql_code_clob,chr(10)) + 1 code_lines
+      ,regexp_count(p.plsql_code_clob
+                   ,chr(10)) + 1 code_lines
       ,p.code_length
 from apex_application_pages app
 join (
@@ -190,5 +191,4 @@ join (
       from apex_application_page_chart_s pcs
       --
       ) p on p.application_id = app.application_id
-      and p.page_id = app.page_id
-;
+      and p.page_id = app.page_id;
