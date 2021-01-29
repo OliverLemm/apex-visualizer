@@ -1,13 +1,13 @@
 # Apex-Visualizer
-## Version 1.2
+## Release 1.2
 Page views are renamed. Every view must start with av_
 
-## Version 1.1
+## Release 1.1
 The Application is migrated to APEX 20.2.  
 D3 Bubble Charts are removed because of incompatibility. The integrated Bubble Charts are used now.  
 The main views are reworked to use union all instead of union. All views now contain columns which support clob or varchar2 for the code.
 
-## Version 1.0  
+## Release 1.0  
 An APEX application based on version 5.1 which can visualize all applications in the same workspace.
 
 The approach is to make complex applications visible in an easy and fancy way by using oracleJet Charts.
