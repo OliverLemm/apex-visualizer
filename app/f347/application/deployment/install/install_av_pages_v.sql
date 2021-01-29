@@ -12,14 +12,15 @@ wwv_flow_api.component_begin (
 ,p_default_owner=>'APEX_VISUALIZER'
 );
 wwv_flow_api.create_install_script(
- p_id=>wwv_flow_api.id(294520266910290559)
+ p_id=>wwv_flow_api.id(143656809123171918)
 ,p_install_id=>wwv_flow_api.id(294519018125278192)
 ,p_name=>'av_pages_v'
 ,p_sequence=>50
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'create or replace view av_pages_v as',
-'select aap.application_id',
+'CREATE OR REPLACE FORCE VIEW "AV_PAGES_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_MODE", "PAGE_ALIAS", "PAGE_FUNCTION", "PAGE_GROUP", "PAGE_TEMPLATE", "CREATED_BY", "CREATED_ON", "LAST_UPDATED_BY", "LAST_UPDATED_ON", "REL'
+||'OAD_ON_SUBMIT", "WARN_ON_UNSAVED_CHANGES") AS ',
+'  select aap.application_id',
 '      ,aap.application_name',
 '      ,aap.page_id',
 '      ,aap.page_name',
@@ -35,7 +36,20 @@ wwv_flow_api.create_install_script(
 '      ,aap.reload_on_submit',
 '      ,aap.warn_on_unsaved_changes',
 'from apex_application_pages aap',
+';',
+'',
 ''))
+);
+wwv_flow_api.create_install_object(
+ p_id=>wwv_flow_api.id(143656961660171918)
+,p_script_id=>wwv_flow_api.id(143656809123171918)
+,p_object_owner=>'#OWNER#'
+,p_object_type=>'VIEW'
+,p_object_name=>'AV_PAGES_V'
+,p_last_updated_by=>'OLEMM'
+,p_last_updated_on=>to_date('20210125212825','YYYYMMDDHH24MISS')
+,p_created_by=>'OLEMM'
+,p_created_on=>to_date('20210125212825','YYYYMMDDHH24MISS')
 );
 wwv_flow_api.component_end;
 end;

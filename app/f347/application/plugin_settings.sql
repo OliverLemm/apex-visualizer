@@ -29,13 +29,6 @@ wwv_flow_api.create_plugin_setting(
 ,p_attribute_04=>'#VALUE#'
 );
 wwv_flow_api.create_plugin_setting(
- p_id=>wwv_flow_api.id(293435219327167268)
-,p_plugin_type=>'REGION TYPE'
-,p_plugin=>'PLUGIN_COM.ORACLE.APEX.D3.BUBBLE'
-,p_attribute_01=>'1.333'
-,p_attribute_02=>'3'
-);
-wwv_flow_api.create_plugin_setting(
  p_id=>wwv_flow_api.id(452439741163466178)
 ,p_plugin_type=>'REGION TYPE'
 ,p_plugin=>'NATIVE_IR'

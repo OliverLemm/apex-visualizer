@@ -12,37 +12,51 @@ wwv_flow_api.component_begin (
 ,p_default_owner=>'APEX_VISUALIZER'
 );
 wwv_flow_api.create_install_script(
- p_id=>wwv_flow_api.id(294519683661285858)
+ p_id=>wwv_flow_api.id(143655127688162146)
 ,p_install_id=>wwv_flow_api.id(294519018125278192)
 ,p_name=>'av_components_v'
 ,p_sequence=>20
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'create or replace view av_components_v as',
-'select application_name, application_id, page_id, page_name, page_id || '' '' || page_name page, ''regions'' component, regions amount',
+'CREATE OR REPLACE FORCE VIEW "AV_COMPONENTS_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_ID", "PAGE_NAME", "PAGE", "COMPONENT", "AMOUNT") AS ',
+'  select application_name, application_id, page_id, page_name, page_id || '' '' || page_name page, ''regions'' component, regions amount',
 'from apex_application_pages',
-'union',
+'union all',
 'select application_name, application_id, page_id, page_name, page_id || '' '' || page_name page, ''items'' component, items amount',
 'from apex_application_pages',
-'union',
+'union all',
 'select application_name, application_id, page_id, page_name, page_id || '' '' || page_name page, ''buttons'' component, buttons amount',
 'from apex_application_pages',
-'union',
+'union all',
 'select application_name, application_id, page_id, page_name, page_id || '' '' || page_name page, ''computations'' component, computations amount',
 'from apex_application_pages',
-'union',
+'union all',
 'select application_name, application_id, page_id, page_name, page_id || '' '' || page_name page, ''validations'' component, validations amount',
 'from apex_application_pages',
-'union',
+'union all',
 'select application_name, application_id, page_id, page_name, page_id || '' '' || page_name page, ''processes'' component, processes amount',
 'from apex_application_pages',
-'union',
+'union all',
 'select application_name, application_id, page_id, page_name, page_id || '' '' || page_name page, ''branches'' component, branches amount',
 'from apex_application_pages',
-'union',
+'union all',
 'select application_name, application_id, page_id, page_name, page_id || '' '' || page_name page, ''dynamic_actions'' component, count(1) amount',
-'from apex_application_page_da group by application_name, application_id, page_id,page_name;',
+'from apex_application_page_da',
+'group by application_name, application_id, page_id,page_name',
+';',
+'',
 ''))
+);
+wwv_flow_api.create_install_object(
+ p_id=>wwv_flow_api.id(143655274971162148)
+,p_script_id=>wwv_flow_api.id(143655127688162146)
+,p_object_owner=>'#OWNER#'
+,p_object_type=>'VIEW'
+,p_object_name=>'AV_COMPONENTS_V'
+,p_last_updated_by=>'OLEMM'
+,p_last_updated_on=>to_date('20210125212648','YYYYMMDDHH24MISS')
+,p_created_by=>'OLEMM'
+,p_created_on=>to_date('20210125212648','YYYYMMDDHH24MISS')
 );
 wwv_flow_api.component_end;
 end;

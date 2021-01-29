@@ -20,7 +20,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20201123225545'
+,p_last_upd_yyyymmddhh24miss=>'20210129123806'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(618926415072524699)
@@ -148,7 +148,7 @@ wwv_flow_api.create_page_plug(
 '  code_length_sum,',
 '  code_lines_sum,',
 '  tooltip',
-'from p0300_plsql_code_by_page_v t',
+'from av_p0300_plsql_code_by_page_v t',
 'where (t.application_id = :P0_APP_ID or :P0_APP_ID is null)',
 'and t.page_id is not null',
 'and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = t.best_practice)'))

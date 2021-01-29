@@ -20,7 +20,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20170718170829'
+,p_last_upd_yyyymmddhh24miss=>'20210129122242'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(293281874355929169)
@@ -261,49 +261,104 @@ wwv_flow_api.create_jet_chart_axis(
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(293416813132888465)
-,p_plug_name=>'Characters of JavaScript Code per Page (d3 Bubble)'
+,p_plug_name=>'Characters of JavaScript Code per Page'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_escape_on_http_output=>'Y'
 ,p_plug_template=>wwv_flow_api.id(452458863643466246)
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
-,p_plug_grid_column_span=>6
+,p_plug_grid_column_span=>9
 ,p_plug_display_point=>'BODY'
+,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
-'  application_id || '' ''  || page_id as id,',
-'  page_id,',
-'  page_name || '' ('' || page_id || '')'' label,',
-'  application_name as colorgrp,',
-'  sum(t.js_code_length) as bbsize',
-'from av_javascript_v t',
-'where t.application_id = :P0_APP_ID or :P0_APP_ID is null',
-'and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = t.best_practice)',
-'group by application_id, application_name , page_id, page_name',
-'order by sum(t.js_code_length) desc'))
-,p_plug_source_type=>'PLUGIN_COM.ORACLE.APEX.D3.BUBBLE'
+'select page_id',
+'      ,page_name_and_id',
+'      ,page_group',
+'      ,page_function',
+'      ,components_count',
+'      ,code_length_sum',
+'      ,code_lines_sum',
+'      ,tooltip',
+'from av_p0100_js_code_by_page_v t',
+'where (t.application_id = :p0_app_id or :p0_app_id is null)',
+'and t.page_id is not null',
+'and (:p0_best_practice = -1 or :p0_best_practice = t.best_practice)'))
+,p_plug_source_type=>'NATIVE_JET_CHART'
 ,p_ajax_items_to_submit=>'P0_APP_ID,P0_BEST_PRACTICE'
-,p_plug_query_num_rows=>1000
+,p_plug_query_num_rows=>15
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_attribute_02=>'MODERN'
-,p_attribute_12=>'LABEL'
-,p_attribute_13=>'BBSIZE'
-,p_attribute_14=>'ID'
-,p_attribute_15=>'COLORGRP'
-,p_attribute_18=>'javascript:apex.item( "P0_PAGE_ID" ).setValue( "&PAGE_ID." );'
-,p_attribute_19=>'SERIES:CUSTOM:VALUE'
-,p_attribute_20=>'LABEL'
-,p_attribute_22=>'300'
-,p_attribute_23=>'BOTTOM'
-,p_attribute_24=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'{',
-'  "trdur":                       500,',
-'  "bubble_padding":              1.5,',
-'  "opacity_normal":              "0.8",',
-'  "opacity_highlight":           "1.0",',
-'  "circle_highlight_radiusplus": 5 ',
-'}'))
-,p_attribute_25=>'D3ASCENDING'
+);
+wwv_flow_api.create_jet_chart(
+ p_id=>wwv_flow_api.id(141245744867649607)
+,p_region_id=>wwv_flow_api.id(293416813132888465)
+,p_chart_type=>'bubble'
+,p_height=>'400'
+,p_animation_on_display=>'auto'
+,p_animation_on_data_change=>'auto'
+,p_data_cursor=>'auto'
+,p_data_cursor_behavior=>'auto'
+,p_hover_behavior=>'dim'
+,p_sorting=>'label-asc'
+,p_fill_multi_series_gaps=>true
+,p_zoom_and_scroll=>'off'
+,p_tooltip_rendered=>'Y'
+,p_show_series_name=>true
+,p_show_group_name=>true
+,p_show_value=>true
+,p_legend_rendered=>'off'
+);
+wwv_flow_api.create_jet_chart_series(
+ p_id=>wwv_flow_api.id(141245870809649608)
+,p_chart_id=>wwv_flow_api.id(141245744867649607)
+,p_seq=>10
+,p_name=>'Series 1'
+,p_location=>'REGION_SOURCE'
+,p_series_name_column_name=>'PAGE_GROUP'
+,p_items_x_column_name=>'COMPONENTS_COUNT'
+,p_items_y_column_name=>'CODE_LINES_SUM'
+,p_items_z_column_name=>'CODE_LENGTH_SUM'
+,p_items_label_column_name=>'PAGE_NAME_AND_ID'
+,p_items_short_desc_column_name=>'TOOLTIP'
+,p_line_style=>'solid'
+,p_marker_rendered=>'auto'
+,p_marker_shape=>'auto'
+,p_items_label_rendered=>true
+,p_items_label_position=>'auto'
+,p_link_target=>'javascript:$s("P0_PAGE_ID",''&PAGE_ID.'');'
+,p_link_target_type=>'REDIRECT_URL'
+);
+wwv_flow_api.create_jet_chart_axis(
+ p_id=>wwv_flow_api.id(141245904832649609)
+,p_chart_id=>wwv_flow_api.id(141245744867649607)
+,p_axis=>'x'
+,p_is_rendered=>'on'
+,p_title=>'number of javascript components'
+,p_min=>0
+,p_format_scaling=>'auto'
+,p_scaling=>'linear'
+,p_baseline_scaling=>'zero'
+,p_major_tick_rendered=>'on'
+,p_minor_tick_rendered=>'off'
+,p_tick_label_rendered=>'on'
+,p_tick_label_rotation=>'auto'
+,p_tick_label_position=>'outside'
+);
+wwv_flow_api.create_jet_chart_axis(
+ p_id=>wwv_flow_api.id(141246004743649610)
+,p_chart_id=>wwv_flow_api.id(141245744867649607)
+,p_axis=>'y'
+,p_is_rendered=>'on'
+,p_title=>'code lines'
+,p_min=>0
+,p_format_type=>'decimal'
+,p_decimal_places=>0
+,p_format_scaling=>'none'
+,p_scaling=>'linear'
+,p_baseline_scaling=>'zero'
+,p_position=>'auto'
+,p_major_tick_rendered=>'on'
+,p_minor_tick_rendered=>'off'
+,p_tick_label_rendered=>'on'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(293417040775888467)
@@ -336,40 +391,21 @@ wwv_flow_api.create_jet_chart(
  p_id=>wwv_flow_api.id(293417138617888468)
 ,p_region_id=>wwv_flow_api.id(293417040775888467)
 ,p_chart_type=>'donut'
-,p_height=>'330'
+,p_height=>'400'
 ,p_animation_on_display=>'none'
 ,p_animation_on_data_change=>'none'
 ,p_data_cursor=>'auto'
 ,p_data_cursor_behavior=>'auto'
 ,p_hide_and_show_behavior=>'withRescale'
 ,p_hover_behavior=>'none'
-,p_stack=>'off'
-,p_stack_label=>'off'
-,p_connect_nulls=>'Y'
-,p_value_position=>'auto'
 ,p_value_format_scaling=>'auto'
-,p_sorting=>'label-asc'
-,p_fill_multi_series_gaps=>true
 ,p_tooltip_rendered=>'Y'
 ,p_show_series_name=>true
-,p_show_group_name=>true
 ,p_show_value=>true
-,p_show_label=>true
-,p_show_row=>true
-,p_show_start=>true
-,p_show_end=>true
-,p_show_progress=>true
-,p_show_baseline=>true
 ,p_legend_rendered=>'on'
 ,p_legend_position=>'auto'
-,p_overview_rendered=>'off'
 ,p_pie_other_threshold=>0
 ,p_pie_selection_effect=>'highlight'
-,p_horizontal_grid=>'auto'
-,p_vertical_grid=>'auto'
-,p_gauge_orientation=>'circular'
-,p_gauge_plot_area=>'on'
-,p_show_gauge_value=>true
 );
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(293417237204888469)
