@@ -1,4 +1,4 @@
-create or replace force view p0200_css_code_by_page_v as
+create or replace force view av_p0200_css_code_by_page_v as
 select application_id
       ,page_id
       ,page_name || ' (' || page_id || ')' page_name_and_id

@@ -28,7 +28,7 @@ prompt APPLICATION 347 - Apex Visualizer
 -- Application Export:
 --   Application:     347
 --   Name:            Apex Visualizer
---   Date and Time:   21:55 Monday January 25, 2021
+--   Date and Time:   12:41 Friday January 29, 2021
 --   Exported By:     OLEMM
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -112,7 +112,7 @@ wwv_flow_api.create_flow(
 ,p_auto_time_zone=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210125215437'
+,p_last_upd_yyyymmddhh24miss=>'20210129124059'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 ,p_print_server_type=>'INSTANCE'
@@ -15933,7 +15933,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210125215355'
+,p_last_upd_yyyymmddhh24miss=>'20210129122242'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(293281874355929169)
@@ -16192,7 +16192,7 @@ wwv_flow_api.create_page_plug(
 '      ,code_length_sum',
 '      ,code_lines_sum',
 '      ,tooltip',
-'from p0100_js_code_by_page_v t',
+'from av_p0100_js_code_by_page_v t',
 'where (t.application_id = :p0_app_id or :p0_app_id is null)',
 'and t.page_id is not null',
 'and (:p0_best_practice = -1 or :p0_best_practice = t.best_practice)'))
@@ -16430,7 +16430,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210125215243'
+,p_last_upd_yyyymmddhh24miss=>'20210129123651'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(455982233047916696)
@@ -16556,7 +16556,7 @@ wwv_flow_api.create_page_plug(
 '  code_length_sum,',
 '  code_lines_sum,',
 '  tooltip',
-'from p0200_css_code_by_page_v t',
+'from av_p0200_css_code_by_page_v t',
 'where (t.application_id = :P0_APP_ID or :P0_APP_ID is null)',
 'and t.page_id is not null',
 'and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = t.best_practice)'))
@@ -16796,7 +16796,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20201123225545'
+,p_last_upd_yyyymmddhh24miss=>'20210129123806'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(618926415072524699)
@@ -16924,7 +16924,7 @@ wwv_flow_api.create_page_plug(
 '  code_length_sum,',
 '  code_lines_sum,',
 '  tooltip',
-'from p0300_plsql_code_by_page_v t',
+'from av_p0300_plsql_code_by_page_v t',
 'where (t.application_id = :P0_APP_ID or :P0_APP_ID is null)',
 'and t.page_id is not null',
 'and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = t.best_practice)'))
@@ -18125,16 +18125,16 @@ wwv_flow_api.create_install_object(
 );
 end;
 /
-prompt --application/deployment/install/install_p0100_js_code_by_page_v
+prompt --application/deployment/install/install_av_p0100_js_code_by_page_v
 begin
 wwv_flow_api.create_install_script(
- p_id=>wwv_flow_api.id(143658894379184285)
+ p_id=>wwv_flow_api.id(145012607270562776)
 ,p_install_id=>wwv_flow_api.id(294519018125278192)
-,p_name=>'p0100_js_code_by_page_v'
-,p_sequence=>100
+,p_name=>'av_p0100_js_code_by_page_v'
+,p_sequence=>90
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "P0100_JS_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
+'CREATE OR REPLACE FORCE VIEW "AV_P0100_JS_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
 '  select application_id',
 '      ,page_id',
 '      ,page_name || '' ('' || page_id || '')'' page_name_and_id',
@@ -18168,28 +18168,28 @@ wwv_flow_api.create_install_script(
 ''))
 );
 wwv_flow_api.create_install_object(
- p_id=>wwv_flow_api.id(143658911450184285)
-,p_script_id=>wwv_flow_api.id(143658894379184285)
+ p_id=>wwv_flow_api.id(145012700325562778)
+,p_script_id=>wwv_flow_api.id(145012607270562776)
 ,p_object_owner=>'#OWNER#'
 ,p_object_type=>'VIEW'
-,p_object_name=>'P0100_JS_CODE_BY_PAGE_V'
+,p_object_name=>'AV_P0100_JS_CODE_BY_PAGE_V'
 ,p_last_updated_by=>'OLEMM'
-,p_last_updated_on=>to_date('20210125213029','YYYYMMDDHH24MISS')
+,p_last_updated_on=>to_date('20210129124013','YYYYMMDDHH24MISS')
 ,p_created_by=>'OLEMM'
-,p_created_on=>to_date('20210125213029','YYYYMMDDHH24MISS')
+,p_created_on=>to_date('20210129124013','YYYYMMDDHH24MISS')
 );
 end;
 /
-prompt --application/deployment/install/install_p0200_css_code_by_page_v
+prompt --application/deployment/install/install_av_p0200_css_code_by_page_v
 begin
 wwv_flow_api.create_install_script(
- p_id=>wwv_flow_api.id(143659300756186206)
+ p_id=>wwv_flow_api.id(145013191338565770)
 ,p_install_id=>wwv_flow_api.id(294519018125278192)
-,p_name=>'p0200_css_code_by_page_v'
-,p_sequence=>110
+,p_name=>'av_p0200_css_code_by_page_v'
+,p_sequence=>100
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "P0200_CSS_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
+'CREATE OR REPLACE FORCE VIEW "AV_P0200_CSS_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
 '  select application_id',
 '      ,page_id',
 '      ,page_name || '' ('' || page_id || '')'' page_name_and_id',
@@ -18223,28 +18223,28 @@ wwv_flow_api.create_install_script(
 ''))
 );
 wwv_flow_api.create_install_object(
- p_id=>wwv_flow_api.id(143659459808186206)
-,p_script_id=>wwv_flow_api.id(143659300756186206)
+ p_id=>wwv_flow_api.id(145013290061565770)
+,p_script_id=>wwv_flow_api.id(145013191338565770)
 ,p_object_owner=>'#OWNER#'
 ,p_object_type=>'VIEW'
-,p_object_name=>'P0200_CSS_CODE_BY_PAGE_V'
+,p_object_name=>'AV_P0200_CSS_CODE_BY_PAGE_V'
 ,p_last_updated_by=>'OLEMM'
-,p_last_updated_on=>to_date('20210125213048','YYYYMMDDHH24MISS')
+,p_last_updated_on=>to_date('20210129124043','YYYYMMDDHH24MISS')
 ,p_created_by=>'OLEMM'
-,p_created_on=>to_date('20210125213048','YYYYMMDDHH24MISS')
+,p_created_on=>to_date('20210129124043','YYYYMMDDHH24MISS')
 );
 end;
 /
-prompt --application/deployment/install/install_p0300_plsql_code_by_page_v
+prompt --application/deployment/install/install_av_p0300_plsql_code_by_page_v
 begin
 wwv_flow_api.create_install_script(
- p_id=>wwv_flow_api.id(143659820879187637)
+ p_id=>wwv_flow_api.id(145013681628567304)
 ,p_install_id=>wwv_flow_api.id(294519018125278192)
-,p_name=>'p0300_plsql_code_by_page_v'
-,p_sequence=>120
+,p_name=>'av_p0300_plsql_code_by_page_v'
+,p_sequence=>110
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "P0300_PLSQL_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
+'CREATE OR REPLACE FORCE VIEW "AV_P0300_PLSQL_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
 '  select application_id',
 '      ,page_id',
 '      ,page_name || '' ('' || page_id || '')'' page_name_and_id',
@@ -18278,15 +18278,15 @@ wwv_flow_api.create_install_script(
 ''))
 );
 wwv_flow_api.create_install_object(
- p_id=>wwv_flow_api.id(143659990471187637)
-,p_script_id=>wwv_flow_api.id(143659820879187637)
+ p_id=>wwv_flow_api.id(145013744119567306)
+,p_script_id=>wwv_flow_api.id(145013681628567304)
 ,p_object_owner=>'#OWNER#'
 ,p_object_type=>'VIEW'
-,p_object_name=>'P0300_PLSQL_CODE_BY_PAGE_V'
+,p_object_name=>'AV_P0300_PLSQL_CODE_BY_PAGE_V'
 ,p_last_updated_by=>'OLEMM'
-,p_last_updated_on=>to_date('20210125213102','YYYYMMDDHH24MISS')
+,p_last_updated_on=>to_date('20210129124059','YYYYMMDDHH24MISS')
 ,p_created_by=>'OLEMM'
-,p_created_on=>to_date('20210125213102','YYYYMMDDHH24MISS')
+,p_created_on=>to_date('20210129124059','YYYYMMDDHH24MISS')
 );
 end;
 /
