@@ -1,4 +1,7 @@
 # Apex-Visualizer
+## Release 1.3
+All views are using now union all if possible.
+
 ## Release 1.2
 Page views are renamed. Every view must start with av_
 
