@@ -1,4 +1,7 @@
 # Apex-Visualizer
+## Version 1.2
+Page views are renamed. Every view must start with av_
+
 ## Version 1.1
 The Application is migrated to APEX 20.2.  
 D3 Bubble Charts are removed because of incompatibility. The integrated Bubble Charts are used now.  
