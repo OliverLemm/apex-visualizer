@@ -1,8 +1,10 @@
-create or replace force view av_javascript_v as
+create or replace view av_javascript_v as
 select app.application_id
       ,app.application_name
       ,app.page_id
       ,app.page_name
+      ,apex_escape.html(av_general_pkg.f_get_page_designer_url(pi_app_id      => app.application_id
+                                                              ,pi_app_page_id => app.page_id)) page_designer_url
       ,nvl(app.page_group
           ,'no page group') page_group
       ,app.page_function
@@ -18,6 +20,7 @@ select app.application_id
       ,j.js_code_vc2 js_code -- only for backwards compatibility
       ,j.js_code_vc2
       ,j.js_code_clob
+      ,'<b>' || j.component_name || ' (' || j.component_type || ' - ' || js_code_type || ')</b><br>' || j.js_code_clob tooltip
       ,regexp_count(j.js_code_clob
                    ,chr(10)) + 1 js_code_lines
       ,length(j.js_code_clob) js_code_length
@@ -143,5 +146,4 @@ join ( -- Page HTML Header
              ,to_clob(b.redirect_url) js_code_clob
       from apex_application_page_buttons b
       where lower(b.redirect_url) like '%javascript:%') j on j.application_id = app.application_id
-                                                      and j.page_id = app.page_id
-;
+                                                      and j.page_id = app.page_id;
