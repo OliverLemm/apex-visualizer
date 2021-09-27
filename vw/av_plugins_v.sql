@@ -15,6 +15,7 @@ select p.application_id
       ,o.page_name
       ,o.object_name
       ,o.object_label
+      ,av_general_pkg.f_get_page_designer_url(pi_app_id => p.application_id, pi_app_page_id => o.page_id) page_designer_url
 from apex_appl_plugins p
 left join ( -- Item Plugins
            select pi.application_id
