@@ -1,4 +1,9 @@
 # Apex-Visualizer
+## Release 2.0
+The Application is migrated to APEX 21.1.
+Plugins, Links and QA are added as new Features.
+Page Designer Links are added to JavaScript, CSS and PL/SQL.
+
 ## Release 1.3
 All views are using now union all if possible.
 
