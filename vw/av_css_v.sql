@@ -1,8 +1,10 @@
-create or replace force view av_css_v as
+create or replace view av_css_v as
 select app.application_id
       ,app.application_name
       ,app.page_id
       ,app.page_name
+      ,av_general_pkg.f_get_page_designer_url(pi_app_id      => app.application_id
+                                             ,pi_app_page_id => app.page_id) page_designer_url
       ,nvl(app.page_group
           ,'no page group') page_group
       ,app.page_function
@@ -18,6 +20,7 @@ select app.application_id
       ,c.css_code_vc2 css_code -- only for backward compatibility
       ,c.css_code_vc2
       ,c.css_code_clob
+      ,'<b>' || c.component_name || ' (' || c.component_type || ' - ' || c.css_code_type || ')</b><br>' || c.css_code_vc2 tooltip
       ,regexp_count(c.css_code_clob
                    ,chr(10)) + 1 css_code_lines
       ,length(c.css_code_clob) css_code_length
@@ -234,5 +237,4 @@ join ( -- Theme Roller Custom CSS
       from apex_application_page_da_acts d
       join apex_application_page_da_acts a on a.dynamic_action_id = d.dynamic_action_id
       where a.action_code = 'NATIVE_ADD_CLASS') c on c.application_id = app.application_id
-                                              and c.page_id = app.page_id
-;
+                                              and c.page_id = app.page_id;

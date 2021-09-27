@@ -1,8 +1,10 @@
-create or replace force view av_plsql_v as
+create or replace view av_plsql_v as
 select app.application_id
       ,app.application_name
       ,p.page_id
       ,app.page_name
+      ,av_general_pkg.f_get_page_designer_url(pi_app_id      => app.application_id
+                                             ,pi_app_page_id => app.page_id) page_designer_url
       ,nvl(app.page_group
           ,'no page group') page_group
       ,app.page_function
@@ -19,6 +21,7 @@ select app.application_id
       ,p.plsql_code_vc2 plsql_code -- only for backward compatibility
       ,p.plsql_code_vc2
       ,p.plsql_code_clob
+      ,'<b>' || p.component_name || ' (' || p.component_type || ' - ' || p.code_type || ')</b><br>' || p.plsql_code_vc2 tooltip
       ,regexp_count(p.plsql_code_clob
                    ,chr(10)) + 1 code_lines
       ,p.code_length
@@ -191,4 +194,5 @@ join (
       from apex_application_page_chart_s pcs
       --
       ) p on p.application_id = app.application_id
-      and p.page_id = app.page_id;
+      and p.page_id = app.page_id
+;
