@@ -23,21 +23,21 @@ wwv_flow_api.import_begin (
 end;
 /
  
-prompt APPLICATION 347 - Apex Visualizer
+prompt APPLICATION 347 - APEX Visualizer
 --
 -- Application Export:
 --   Application:     347
---   Name:            Apex Visualizer
---   Date and Time:   21:20 Monday September 27, 2021
+--   Name:            APEX Visualizer
+--   Date and Time:   22:46 Monday September 27, 2021
 --   Exported By:     OLEMM
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                     14
---       Items:                   19
+--       Items:                   23
 --       Processes:                4
 --       Regions:                 40
 --       Buttons:                  4
---       Dynamic Actions:         27
+--       Dynamic Actions:         31
 --     Shared Components:
 --       Logic:
 --         Build Options:          1
@@ -80,7 +80,7 @@ begin
 wwv_flow_api.create_flow(
  p_id=>wwv_flow.g_flow_id
 ,p_owner=>nvl(wwv_flow_application_install.get_schema,'APEX_VISUALIZER')
-,p_name=>nvl(wwv_flow_application_install.get_application_name,'Apex Visualizer')
+,p_name=>nvl(wwv_flow_application_install.get_application_name,'APEX Visualizer')
 ,p_alias=>nvl(wwv_flow_application_install.get_application_alias,'AV')
 ,p_page_view_logging=>'YES'
 ,p_page_protection_enabled_y_n=>'Y'
@@ -101,7 +101,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'release 1.1'
+,p_flow_version=>'release 2.0'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -114,7 +114,7 @@ wwv_flow_api.create_flow(
 ,p_auto_time_zone=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210927211948'
+,p_last_upd_yyyymmddhh24miss=>'20210927224450'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 ,p_print_server_type=>'INSTANCE'
@@ -12081,9 +12081,7 @@ wwv_flow_api.create_user_interface(
 ,p_navigation_list_id=>wwv_flow_api.id(452440279475466179)
 ,p_navigation_list_position=>'SIDE'
 ,p_navigation_list_template_id=>wwv_flow_api.id(452478253231466285)
-,p_nav_list_template_options=>'#DEFAULT#'
-,p_include_legacy_javascript=>'18'
-,p_include_jquery_migrate=>true
+,p_nav_list_template_options=>'#DEFAULT#:js-defaultCollapsed:js-navCollapsed--hidden:t-TreeNav--classic'
 ,p_nav_bar_type=>'LIST'
 ,p_nav_bar_list_id=>wwv_flow_api.id(452492439461466348)
 ,p_nav_bar_list_template_id=>wwv_flow_api.id(452478069261466285)
@@ -20518,7 +20516,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210927211948'
+,p_last_upd_yyyymmddhh24miss=>'20210927224450'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(38837724345637017)
@@ -21053,7 +21051,7 @@ wwv_flow_api.create_ig_report_column(
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(39140850641438711)
-,p_plug_name=>'general information'
+,p_plug_name=>'general application settings'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_plug_template=>wwv_flow_api.id(452458863643466246)
 ,p_plug_display_sequence=>10
@@ -21073,6 +21071,8 @@ wwv_flow_api.create_page_item(
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>5
 ,p_cMaxlength=>4
+,p_colspan=>3
+,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -21098,8 +21098,11 @@ wwv_flow_api.create_page_item(
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>5
 ,p_begin_on_new_line=>'N'
+,p_colspan=>3
+,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
+,p_help_text=>'To ensure the safety in your application, activate the Session State protection in your application.'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'N'
 ,p_attribute_04=>'TEXT'
@@ -21110,12 +21113,100 @@ wwv_flow_api.create_page_item(
 ,p_name=>'P600_RUNTIME_API_USAGE'
 ,p_item_sequence=>40
 ,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
-,p_prompt=>'Runtime Api Usage'
+,p_prompt=>'Runtime API Usage'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>20
 ,p_begin_on_new_line=>'N'
+,p_colspan=>3
+,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
+,p_help_text=>'Runtime API Usage should be restricted as much as possible.'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(39142412801438727)
+,p_name=>'P600_INCLUDE_LEGACY_JAVASCRIPT'
+,p_item_sequence=>70
+,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
+,p_prompt=>'Include Legacy Javascript'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>5
+,p_begin_on_new_line=>'N'
+,p_colspan=>3
+,p_grid_label_column_span=>2
+,p_field_template=>wwv_flow_api.id(452481165926466293)
+,p_item_template_options=>'#DEFAULT#'
+,p_help_text=>'Supporting legacy JavaScript means always to load more JavaScript as necessary.'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(39142595127438728)
+,p_name=>'P600_INCLUDE_JQUERY_MIGRATE'
+,p_item_sequence=>80
+,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
+,p_prompt=>'Include jQuery Migrate'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>5
+,p_begin_on_new_line=>'N'
+,p_colspan=>3
+,p_grid_label_column_span=>2
+,p_field_template=>wwv_flow_api.id(452481165926466293)
+,p_item_template_options=>'#DEFAULT#'
+,p_help_text=>'Using jQuery Migrate means, to support old deprecated JavaScript Code.'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(39143035108438733)
+,p_name=>'P600_THEME_NAME'
+,p_item_sequence=>50
+,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
+,p_prompt=>'Theme Name'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_colspan=>3
+,p_grid_label_column_span=>2
+,p_field_template=>wwv_flow_api.id(452481165926466293)
+,p_item_template_options=>'#DEFAULT#'
+,p_help_text=>'If you don''t select Universal Theme for your application, not the full functionality is supported.'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(39143353398438736)
+,p_name=>'P600_UT_VERSION'
+,p_item_sequence=>60
+,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
+,p_prompt=>'UT Refreshed'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>5
+,p_begin_on_new_line=>'N'
+,p_colspan=>3
+,p_grid_label_column_span=>2
+,p_field_template=>wwv_flow_api.id(452481165926466293)
+,p_item_template_options=>'#DEFAULT#'
+,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'If using Universal Theme, this information shows the version compared to the APEX version<br>',
+'UT 21.1 = APEX 21.1<br>',
+'UT  1.6 = APEX 20.2<br>',
+'UT  1.5 = APEX 20.1<br>',
+'UT  1.4 = APEX 19.2<br>',
+'UT  1.3 = APEX 19.1<br>',
+'UT  1.2 = APEX 18.1 / 18.2<br>',
+'UT  1.1 = APEX 5.1<br>',
+'UT  1.0 = APEX 5.0',
+''))
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'N'
 ,p_attribute_04=>'TEXT'
@@ -21177,9 +21268,29 @@ wwv_flow_api.create_page_da_action(
 ',:P600_SESSION_STATE_PROTECTION',
 ',:P600_RUNTIME_API_USAGE',
 'from apex_applications a',
-'where a.application_id = :P0_APP_ID;'))
+'where a.application_id = :P0_APP_ID;',
+'',
+'select ',
+' ui.include_legacy_javascript ',
+',ui.include_jquery_migrate',
+'into',
+' :P600_INCLUDE_LEGACY_JAVASCRIPT',
+',:P600_INCLUDE_JQUERY_MIGRATE',
+'from apex_appl_user_interfaces ui ',
+'where ui.application_id = :P0_APP_ID',
+'and ui.ui_type_name = ''DESKTOP'';',
+'',
+'select ',
+' t.theme_name ',
+',replace(substr(t.file_prefix,instr(t.file_prefix,''theme_42'') + 9),''/'')',
+'into ',
+' :P600_THEME_NAME',
+',:P600_UT_VERSION',
+'from apex_application_themes t',
+'where t.application_id = :P0_APP_ID',
+'and t.ui_type_name = ''DESKTOP'';'))
 ,p_attribute_02=>'P0_APP_ID'
-,p_attribute_03=>'P600_COMPATIBILITY_MODE,P600_SESSION_STATE_PROTECTION,P600_RUNTIME_API_USAGE'
+,p_attribute_03=>'P600_COMPATIBILITY_MODE,P600_SESSION_STATE_PROTECTION,P600_RUNTIME_API_USAGE,P600_INCLUDE_LEGACY_JAVASCRIPT,P600_INCLUDE_JQUERY_MIGRATE,P600_THEME_NAME,P600_UT_VERSION'
 ,p_attribute_04=>'N'
 ,p_attribute_05=>'PLSQL'
 ,p_wait_for_result=>'Y'
@@ -21276,9 +21387,167 @@ wwv_flow_api.create_page_da_action(
 'if (val == ''None'') {    ',
 '    $trigger.addClass("u-success");',
 '    $trigger.removeClass("u-warning");',
+'    $trigger.removeClass("u-danger");',
+'} else if (val == ''This:Other:Workspace'') {',
+'    $trigger.removeClass("u-success");',
+'    $trigger.removeClass("u-warning");',
+'    $trigger.addClass("u-danger");',
+'} else {',
+'    $trigger.removeClass("u-success");',
+'    $trigger.addClass("u-warning");',
+'    $trigger.removeClass("u-danger");',
+'}'))
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(39142633619438729)
+,p_name=>'change P600_INCLUDE_LEGACY_JAVASCRIPT - setColorl'
+,p_event_sequence=>50
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P600_INCLUDE_LEGACY_JAVASCRIPT'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'change'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(39142704166438730)
+,p_event_id=>wwv_flow_api.id(39142633619438729)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P600_INCLUDE_LEGACY_JAVASCRIPT'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'var $trigger = $(this.triggeringElement);',
+'var val = $trigger.val();',
+'',
+'if (val == ''No'') {    ',
+'    $trigger.addClass("u-success");',
+'    $trigger.removeClass("u-warning");',
 '} else {    ',
 '    $trigger.removeClass("u-success");',
 '    $trigger.addClass("u-warning");',
+'}'))
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(39142800454438731)
+,p_name=>'change P600_INCLUDE_JQUERY_MIGRATE - setColorl'
+,p_event_sequence=>60
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P600_INCLUDE_JQUERY_MIGRATE'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'change'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(39142991575438732)
+,p_event_id=>wwv_flow_api.id(39142800454438731)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P600_INCLUDE_JQUERY_MIGRATE'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'var $trigger = $(this.triggeringElement);',
+'var val = $trigger.val();',
+'',
+'if (val == ''No'') {    ',
+'    $trigger.addClass("u-success");',
+'    $trigger.removeClass("u-danger");',
+'} else {    ',
+'    $trigger.removeClass("u-success");',
+'    $trigger.addClass("u-danger");',
+'}'))
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(39143191512438734)
+,p_name=>'change P600_THEME_NAME - setColor show/hide P600_UT_REFRESHED'
+,p_event_sequence=>80
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P600_THEME_NAME'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'change'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(39143222364438735)
+,p_event_id=>wwv_flow_api.id(39143191512438734)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P600_THEME_NAME'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'var $trigger = $(this.triggeringElement);',
+'var val = $trigger.val();',
+'',
+'if (val == ''Universal Theme'') {    ',
+'    $trigger.addClass("u-success");',
+'    $trigger.removeClass("u-danger");',
+'} else {    ',
+'    $trigger.removeClass("u-success");',
+'    $trigger.addClass("u-danger");',
+'}'))
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(39143544057438738)
+,p_event_id=>wwv_flow_api.id(39143191512438734)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_HIDE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P600_UT_VERSION'
+,p_client_condition_type=>'NOT_EQUALS'
+,p_client_condition_element=>'P600_THEME_NAME'
+,p_client_condition_expression=>'Universal Theme'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(39143453638438737)
+,p_event_id=>wwv_flow_api.id(39143191512438734)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_SHOW'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P600_UT_VERSION'
+,p_client_condition_type=>'EQUALS'
+,p_client_condition_element=>'P600_THEME_NAME'
+,p_client_condition_expression=>'Universal Theme'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(39143632218438739)
+,p_name=>'change P600_UT_VERSION - setColor'
+,p_event_sequence=>90
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P600_UT_VERSION'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'change'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(39143767829438740)
+,p_event_id=>wwv_flow_api.id(39143632218438739)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P600_UT_VERSION'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'var $trigger = $(this.triggeringElement);',
+'var val = $trigger.val();',
+'',
+'if (val == ''21.1'') {    ',
+'    $trigger.addClass("u-success");',
+'    $trigger.removeClass("u-warning");',
+'    $trigger.removeClass("u-danger");',
+'} else if ((val == ''1.0'') || (val == ''1.1'')) {    ',
+'    $trigger.removeClass("u-success");',
+'    $trigger.removeClass("u-warning");',
+'    $trigger.addClass("u-danger");',
+'} else {    ',
+'    $trigger.removeClass("u-success");',
+'    $trigger.addClass("u-warning");',
+'    $trigger.removeClass("u-danger");',
 '}'))
 );
 end;
