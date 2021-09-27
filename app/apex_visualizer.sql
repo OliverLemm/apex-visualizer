@@ -28,11 +28,11 @@ prompt APPLICATION 347 - Apex Visualizer
 -- Application Export:
 --   Application:     347
 --   Name:            Apex Visualizer
---   Date and Time:   09:26 Monday September 27, 2021
+--   Date and Time:   10:55 Monday September 27, 2021
 --   Exported By:     OLEMM
 --   Flashback:       0
 --   Export Type:     Application Export
---     Pages:                     11
+--     Pages:                     12
 --       Items:                   13
 --       Regions:                 33
 --       Buttons:                  3
@@ -113,7 +113,7 @@ wwv_flow_api.create_flow(
 ,p_auto_time_zone=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210927091722'
+,p_last_upd_yyyymmddhh24miss=>'20210927104244'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 ,p_print_server_type=>'INSTANCE'
@@ -223,6 +223,15 @@ wwv_flow_api.create_list_item(
 ,p_list_item_icon=>'fa-plug'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'400'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(38833314477463243)
+,p_list_item_display_sequence=>320
+,p_list_item_link_text=>'Links'
+,p_list_item_link_target=>'f?p=&APP_ID.:500:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-link'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'500'
 );
 end;
 /
@@ -18402,7 +18411,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210927091722'
+,p_last_upd_yyyymmddhh24miss=>'20210927093047'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(32937839366378139)
@@ -19117,13 +19126,13 @@ wwv_flow_api.create_region_column(
 ,p_source_expression=>'PAGE_ID'
 ,p_data_type=>'NUMBER'
 ,p_is_query_only=>false
-,p_item_type=>'NATIVE_NUMBER_FIELD'
+,p_item_type=>'NATIVE_LINK'
 ,p_heading=>'Page Id'
 ,p_heading_alignment=>'RIGHT'
 ,p_display_sequence=>10
 ,p_value_alignment=>'RIGHT'
-,p_attribute_03=>'right'
-,p_is_required=>false
+,p_link_target=>'&PAGE_DESIGNER_URL.'
+,p_link_text=>'&PAGE_ID.'
 ,p_enable_filter=>true
 ,p_filter_is_required=>false
 ,p_filter_lov_type=>'NONE'
@@ -19134,6 +19143,7 @@ wwv_flow_api.create_region_column(
 ,p_is_primary_key=>false
 ,p_duplicate_value=>true
 ,p_include_in_export=>true
+,p_escape_on_http_output=>true
 );
 wwv_flow_api.create_region_column(
  p_id=>wwv_flow_api.id(37658741650724632)
@@ -19224,6 +19234,40 @@ wwv_flow_api.create_region_column(
 ,p_is_primary_key=>false
 ,p_duplicate_value=>true
 ,p_include_in_export=>true
+);
+wwv_flow_api.create_region_column(
+ p_id=>wwv_flow_api.id(37659436299724639)
+,p_name=>'PLUGIN_ID'
+,p_source_type=>'DB_COLUMN'
+,p_source_expression=>'PLUGIN_ID'
+,p_data_type=>'NUMBER'
+,p_is_query_only=>false
+,p_item_type=>'NATIVE_HIDDEN'
+,p_display_sequence=>160
+,p_attribute_01=>'Y'
+,p_use_as_row_header=>false
+,p_enable_sort_group=>true
+,p_enable_control_break=>true
+,p_is_primary_key=>false
+,p_duplicate_value=>true
+,p_include_in_export=>false
+);
+wwv_flow_api.create_region_column(
+ p_id=>wwv_flow_api.id(37659504566724640)
+,p_name=>'PAGE_DESIGNER_URL'
+,p_source_type=>'DB_COLUMN'
+,p_source_expression=>'PAGE_DESIGNER_URL'
+,p_data_type=>'VARCHAR2'
+,p_is_query_only=>false
+,p_item_type=>'NATIVE_HIDDEN'
+,p_display_sequence=>170
+,p_attribute_01=>'Y'
+,p_filter_is_required=>false
+,p_use_as_row_header=>false
+,p_enable_sort_group=>false
+,p_is_primary_key=>false
+,p_duplicate_value=>true
+,p_include_in_export=>false
 );
 wwv_flow_api.create_interactive_grid(
  p_id=>wwv_flow_api.id(37657406999724619)
@@ -19384,6 +19428,22 @@ wwv_flow_api.create_ig_report_column(
 ,p_is_visible=>true
 ,p_is_frozen=>false
 );
+wwv_flow_api.create_ig_report_column(
+ p_id=>wwv_flow_api.id(38828820405034745)
+,p_view_id=>wwv_flow_api.id(38788349642878326)
+,p_display_seq=>16
+,p_column_id=>wwv_flow_api.id(37659436299724639)
+,p_is_visible=>true
+,p_is_frozen=>false
+);
+wwv_flow_api.create_ig_report_column(
+ p_id=>wwv_flow_api.id(38830283782034748)
+,p_view_id=>wwv_flow_api.id(38788349642878326)
+,p_display_seq=>17
+,p_column_id=>wwv_flow_api.id(37659504566724640)
+,p_is_visible=>true
+,p_is_frozen=>false
+);
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(37659143163724636)
 ,p_name=>'P400_PLUGIN_ID'
@@ -19447,6 +19507,21 @@ wwv_flow_api.create_page_da_action(
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_api.id(37656915688724614)
+);
+end;
+/
+prompt --application/pages/page_00500
+begin
+wwv_flow_api.create_page(
+ p_id=>500
+,p_user_interface_id=>wwv_flow_api.id(452492531566466351)
+,p_name=>'Links'
+,p_alias=>'LINKS'
+,p_step_title=>'Links'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_last_updated_by=>'OLEMM'
+,p_last_upd_yyyymmddhh24miss=>'20210927104202'
 );
 end;
 /
