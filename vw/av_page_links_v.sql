@@ -53,6 +53,7 @@ left join ( -- Branches
            from apex_application_bc_entries bce1
            join apex_application_page_regions region1 on region1.breadcrumb_id = bce1.breadcrumb_id
                                                   and region1.application_id = bce1.application_id
+                                                  and bce1.defined_for_page = region1.page_id
            union all
            -- Buttons
            select 'Button' link_type
@@ -73,5 +74,31 @@ left join ( -- Branches
                                     ,'&' || 'APP_PAGE_ID.'
                                     ,b1.page_id)) link_page_id
            from apex_application_page_buttons b1
-           where b1.button_action_code = 'REDIRECT_PAGE') l on l.application_id = page.application_id
-                                                        and l.page_id = page.page_id
+           where b1.button_action_code = 'REDIRECT_PAGE'
+                -- Only targets which are number
+           and regexp_like(replace(substr(b1.redirect_url
+                                        ,14
+                                        ,instr(substr(b1.redirect_url
+                                                     ,14)
+                                              ,':') - 1)
+                                 ,'&' || 'APP_PAGE_ID.'
+                                 ,b1.page_id)
+                         ,'^[[:digit:]]+$')
+           union all
+           select 'Navigation Menu' link_type
+                  ,ui1.application_id
+                  ,page1.page_id
+                  ,lie1.entry_text link_label
+                  ,lie1.entry_text link_name
+                  ,av_general_pkg.f_get_page_id_from_target_link(pi_target_link => lie1.entry_target) link_page_id
+           from apex_application_pages page1
+           join apex_appl_user_interfaces ui1 on ui1.application_id = page1.application_id
+           join apex_application_list_entries lie1 on lie1.application_id = ui1.application_id
+                                               and lie1.list_id = ui1.navigation_list_id
+           where page1.page_function not in ('Global Page'
+                                            ,'Login')) l on l.application_id = page.application_id
+                                                     and l.page_id = page.page_id
+-- Global Page must be excluded it cannot be run alone
+where page.page_id not in (select page_id
+                           from apex_application_pages p
+                           where p.page_function = 'Global Page')
