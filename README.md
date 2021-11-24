@@ -1,4 +1,8 @@
 # Apex-Visualizer
+## Release 21.2
+The Application is migrated to APEX 21.2.
+The new Page Migration with Subpage APEX 21.2 has been added for migration support.
+
 ## Release 2.0
 The Application is migrated to APEX 21.1.
 Plugins, Links and QA are added as new Features.
