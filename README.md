@@ -1,4 +1,8 @@
 # Apex-Visualizer
+## Release 21.2.1
+Deinstallation Script added.
+For the new APEX 21.2 Migration Page more sources to find Legacy Substitution Strings and a Refresh Button has been added.
+
 ## Release 21.2
 The Application is migrated to APEX 21.2.
 The new Page Migration with Subpage APEX 21.2 has been added for migration support.

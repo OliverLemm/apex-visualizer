@@ -14,7 +14,7 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_api.import_begin (
  p_version_yyyy_mm_dd=>'2021.10.15'
-,p_release=>'21.2.0'
+,p_release=>'21.2.1'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -28,7 +28,7 @@ prompt APPLICATION 347 - APEX Visualizer
 -- Application Export:
 --   Application:     347
 --   Name:            APEX Visualizer
---   Date and Time:   11:47 Wednesday November 24, 2021
+--   Date and Time:   18:22 Thursday December 9, 2021
 --   Exported By:     OLEMM
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -36,8 +36,8 @@ prompt APPLICATION 347 - APEX Visualizer
 --       Items:                   23
 --       Processes:                4
 --       Regions:                 48
---       Buttons:                  4
---       Dynamic Actions:         32
+--       Buttons:                  5
+--       Dynamic Actions:         33
 --     Shared Components:
 --       Logic:
 --         Build Options:          1
@@ -66,7 +66,7 @@ prompt APPLICATION 347 - APEX Visualizer
 --       E-Mail:
 --     Supporting Objects:  Included
 --       Install scripts:         15
---   Version:         21.2.0
+--   Version:         21.2.1
 --   Instance ID:     69411093447375
 --
 
@@ -101,7 +101,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'release 21.2'
+,p_flow_version=>'21.2.1'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -114,7 +114,7 @@ wwv_flow_api.create_flow(
 ,p_auto_time_zone=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20211124114703'
+,p_last_upd_yyyymmddhh24miss=>'20211209182229'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 ,p_print_server_type=>'INSTANCE'
@@ -23878,7 +23878,7 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20211124114703'
+,p_last_upd_yyyymmddhh24miss=>'20211209180346'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(46162163500404031)
@@ -23969,7 +23969,59 @@ wwv_flow_api.create_report_region(
 '            ,p.component_type',
 '            ,p.plsql_code_vc2 code_vc2',
 '      from av_plsql_v p',
-'      where p.application_id = :P0_APP_ID) x',
+'      where p.application_id = :P0_APP_ID',
+'      union all',
+'      -- static regions',
+'      select r.page_id',
+'            ,r.page_name',
+'            ,r.region_name component_name',
+'            ,''region'' component_type',
+'            ,to_char(substr(r.region_source',
+'                           ,0',
+'                           ,4000)) code_vc2',
+'      from apex_application_page_regions r',
+'      where r.application_id = :P0_APP_ID',
+'      and r.source_type_code in (''STATIC_TEXT'')',
+'      union all',
+'      -- javascript file urls in pages',
+'      select p.page_id',
+'            ,p.page_name',
+'            ,''JavaScript File Urls'' component_name',
+'            ,''javascript_file_urls'' component_type',
+'            ,p.javascript_file_urls code_vc2',
+'      from apex_application_pages p',
+'      where p.application_id = :P0_APP_ID',
+'      and p.javascript_file_urls is not null',
+'      union all',
+'      -- css file urls in pages',
+'      select p.page_id',
+'            ,p.page_name',
+'            ,''CSS File Urls'' component_name',
+'            ,''css_file_urls'' component_type',
+'            ,p.css_file_urls code_vc2',
+'      from apex_application_pages p',
+'      where p.application_id = :P0_APP_ID',
+'      and p.css_file_urls is not null',
+'      union all',
+'      -- javascript file urls in app',
+'      select 0 page_id',
+'            ,''User Interfaces'' page_name',
+'            ,''JavaScript File Urls'' component_name',
+'            ,''javascript_file_urls'' component_type',
+'            ,a.javascript_file_urls code_vc2',
+'      from apex_applications a',
+'      where a.application_id = :P0_APP_ID',
+'      and a.javascript_file_urls is not null',
+'      union all',
+'      -- css file urls in app',
+'      select 0 page_id',
+'            ,''User Interfaces'' page_name',
+'            ,''CSS File Urls'' component_name',
+'            ,''css_file_urls'' component_type',
+'            ,ui.css_file_urls code_vc2',
+'      from apex_appl_user_interfaces ui',
+'      where ui.application_id = :P0_APP_ID',
+'      and ui.css_file_urls is not null) x',
 'where instr(x.code_vc2',
 '           ,''IMAGE_PREFIX'') > 0',
 'or instr(x.code_vc2',
@@ -23979,7 +24031,8 @@ wwv_flow_api.create_report_region(
 'or instr(x.code_vc2',
 '       ,''THEME_IMAGES'') > 0',
 'or instr(x.code_vc2',
-'       ,''THEME_DB_IMAGES'') > 0'))
+'       ,''THEME_DB_IMAGES'') > 0',
+'order by page_id'))
 ,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'As of this release, the following apex.env substitution strings are deprecated and considered legacy: <b>APP_IMAGES, IMAGE_PREFIX, THEME_DB_IMAGES, THEME_IMAGES, WORKSPACE_IMAGES</b><br>',
 'While the legacy substitutions still function, Oracle recommends developers update their environments to use updated substitutions (listed below).',
@@ -24039,8 +24092,6 @@ wwv_flow_api.create_report_columns(
 ,p_column_display_sequence=>10
 ,p_column_heading=>'Page Id'
 ,p_use_as_row_header=>'N'
-,p_default_sort_column_sequence=>1
-,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
@@ -24051,7 +24102,6 @@ wwv_flow_api.create_report_columns(
 ,p_column_display_sequence=>20
 ,p_column_heading=>'Page Name'
 ,p_use_as_row_header=>'N'
-,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
@@ -24062,8 +24112,6 @@ wwv_flow_api.create_report_columns(
 ,p_column_display_sequence=>30
 ,p_column_heading=>'Component Name'
 ,p_use_as_row_header=>'N'
-,p_default_sort_column_sequence=>2
-,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
@@ -24074,7 +24122,6 @@ wwv_flow_api.create_report_columns(
 ,p_column_display_sequence=>40
 ,p_column_heading=>'Component Type'
 ,p_use_as_row_header=>'N'
-,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
@@ -24086,7 +24133,6 @@ wwv_flow_api.create_report_columns(
 ,p_column_heading=>'Code Vc2'
 ,p_use_as_row_header=>'N'
 ,p_column_hit_highlight=>'IMAGE_PREFIX,WORKSPACE_IMAGES,APP_IMAGES,THEME_IMAGES,THEME_DB_IMAGES'
-,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
@@ -24262,6 +24308,22 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(21028578538204850)
+,p_button_sequence=>60
+,p_button_plug_id=>wwv_flow_api.id(452496424516540365)
+,p_button_name=>'Refresh'
+,p_button_static_id=>'P708_BUTTON_REFRESH'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#:t-Button--iconRight'
+,p_button_template_id=>wwv_flow_api.id(452481802985466298)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Refresh'
+,p_button_execute_validations=>'N'
+,p_warn_on_unsaved_changes=>null
+,p_icon_css_classes=>'fa-refresh'
+,p_button_cattributes=>'style="margin-top:10px"'
+);
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(46163222869404042)
 ,p_name=>'change P0_APP_ID - refresh regions'
@@ -24301,12 +24363,67 @@ wwv_flow_api.create_page_da_action(
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_api.id(16423715186017308)
 );
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(22469509205353901)
+,p_name=>'click Refresh - Refresh Regions'
+,p_event_sequence=>20
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_api.id(21028578538204850)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(22469678000353902)
+,p_event_id=>wwv_flow_api.id(22469509205353901)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(46162660437404036)
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(22469767185353903)
+,p_event_id=>wwv_flow_api.id(22469509205353901)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(46163652145404046)
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(22469886537353904)
+,p_event_id=>wwv_flow_api.id(22469509205353901)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(16423715186017308)
+);
 end;
 /
 prompt --application/deployment/definition
 begin
 wwv_flow_api.create_install(
  p_id=>wwv_flow_api.id(294519018125278192)
+,p_deinstall_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'drop view av_applications_v;',
+'drop view av_components_v;',
+'drop view av_css_v;',
+'drop view av_javascript_v;',
+'drop view av_pages_v;',
+'drop view av_page_links_v;',
+'drop view av_plsql_v;',
+'drop view av_plugins_v;',
+'drop view av_p0100_js_code_by_page_v;',
+'drop view av_p0200_css_code_by_page_v;',
+'drop view av_p0300_plsql_code_by_page_v;',
+'drop view av_p0600_not_used_auth_schemes_v;',
+'drop view av_visibility_overview_v;',
+'drop view av_visibility_v;',
+'drop package av_general_pkg;'))
 );
 end;
 /
