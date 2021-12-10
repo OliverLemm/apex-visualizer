@@ -28,7 +28,7 @@ prompt APPLICATION 347 - APEX Visualizer
 -- Application Export:
 --   Application:     347
 --   Name:            APEX Visualizer
---   Date and Time:   18:22 Thursday December 9, 2021
+--   Date and Time:   12:11 Friday December 10, 2021
 --   Exported By:     OLEMM
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -65,7 +65,7 @@ prompt APPLICATION 347 - APEX Visualizer
 --       Reports:
 --       E-Mail:
 --     Supporting Objects:  Included
---       Install scripts:         15
+--       Install scripts:         16
 --   Version:         21.2.1
 --   Instance ID:     69411093447375
 --
@@ -101,7 +101,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'21.2.1'
+,p_flow_version=>'21.2.2'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -114,7 +114,7 @@ wwv_flow_api.create_flow(
 ,p_auto_time_zone=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20211209182229'
+,p_last_upd_yyyymmddhh24miss=>'20211210121153'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 ,p_print_server_type=>'INSTANCE'
@@ -23878,7 +23878,7 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20211209180346'
+,p_last_upd_yyyymmddhh24miss=>'20211210120652'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(46162163500404031)
@@ -23942,97 +23942,13 @@ wwv_flow_api.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select x.page_id',
-'      ,x.page_name',
-'      ,x.component_name',
-'      ,x.component_type',
-'      ,x.code_vc2',
-'from (select j.page_id',
-'            ,j.page_name',
-'            ,j.component_name',
-'            ,j.component_type',
-'            ,j.js_code_vc2 code_vc2',
-'      from av_javascript_v j',
-'      where j.application_id = :P0_APP_ID',
-'      union all',
-'      select c.page_id',
-'            ,c.page_name',
-'            ,c.component_name',
-'            ,c.component_type',
-'            ,c.css_code_vc2 code_vc2',
-'      from av_css_v c',
-'      where c.application_id = :P0_APP_ID',
-'      union all',
-'      select p.page_id',
-'            ,p.page_name',
-'            ,p.component_name',
-'            ,p.component_type',
-'            ,p.plsql_code_vc2 code_vc2',
-'      from av_plsql_v p',
-'      where p.application_id = :P0_APP_ID',
-'      union all',
-'      -- static regions',
-'      select r.page_id',
-'            ,r.page_name',
-'            ,r.region_name component_name',
-'            ,''region'' component_type',
-'            ,to_char(substr(r.region_source',
-'                           ,0',
-'                           ,4000)) code_vc2',
-'      from apex_application_page_regions r',
-'      where r.application_id = :P0_APP_ID',
-'      and r.source_type_code in (''STATIC_TEXT'')',
-'      union all',
-'      -- javascript file urls in pages',
-'      select p.page_id',
-'            ,p.page_name',
-'            ,''JavaScript File Urls'' component_name',
-'            ,''javascript_file_urls'' component_type',
-'            ,p.javascript_file_urls code_vc2',
-'      from apex_application_pages p',
-'      where p.application_id = :P0_APP_ID',
-'      and p.javascript_file_urls is not null',
-'      union all',
-'      -- css file urls in pages',
-'      select p.page_id',
-'            ,p.page_name',
-'            ,''CSS File Urls'' component_name',
-'            ,''css_file_urls'' component_type',
-'            ,p.css_file_urls code_vc2',
-'      from apex_application_pages p',
-'      where p.application_id = :P0_APP_ID',
-'      and p.css_file_urls is not null',
-'      union all',
-'      -- javascript file urls in app',
-'      select 0 page_id',
-'            ,''User Interfaces'' page_name',
-'            ,''JavaScript File Urls'' component_name',
-'            ,''javascript_file_urls'' component_type',
-'            ,a.javascript_file_urls code_vc2',
-'      from apex_applications a',
-'      where a.application_id = :P0_APP_ID',
-'      and a.javascript_file_urls is not null',
-'      union all',
-'      -- css file urls in app',
-'      select 0 page_id',
-'            ,''User Interfaces'' page_name',
-'            ,''CSS File Urls'' component_name',
-'            ,''css_file_urls'' component_type',
-'            ,ui.css_file_urls code_vc2',
-'      from apex_appl_user_interfaces ui',
-'      where ui.application_id = :P0_APP_ID',
-'      and ui.css_file_urls is not null) x',
-'where instr(x.code_vc2',
-'           ,''IMAGE_PREFIX'') > 0',
-'or instr(x.code_vc2',
-'       ,''WORKSPACE_IMAGES'') > 0',
-'or instr(x.code_vc2',
-'       ,''APP_IMAGES'') > 0',
-'or instr(x.code_vc2',
-'       ,''THEME_IMAGES'') > 0',
-'or instr(x.code_vc2',
-'       ,''THEME_DB_IMAGES'') > 0',
-'order by page_id'))
+'select page_id',
+'      ,page_name',
+'      ,component_name',
+'      ,component_type',
+'      ,code_vc2',
+'from av_p0708_legacy_subst_strings_v',
+'where application_id = :P0_APP_ID'))
 ,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'As of this release, the following apex.env substitution strings are deprecated and considered legacy: <b>APP_IMAGES, IMAGE_PREFIX, THEME_DB_IMAGES, THEME_IMAGES, WORKSPACE_IMAGES</b><br>',
 'While the legacy substitutions still function, Oracle recommends developers update their environments to use updated substitutions (listed below).',
@@ -24092,6 +24008,8 @@ wwv_flow_api.create_report_columns(
 ,p_column_display_sequence=>10
 ,p_column_heading=>'Page Id'
 ,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>1
+,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
@@ -24102,6 +24020,8 @@ wwv_flow_api.create_report_columns(
 ,p_column_display_sequence=>20
 ,p_column_heading=>'Page Name'
 ,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>2
+,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
@@ -24112,6 +24032,8 @@ wwv_flow_api.create_report_columns(
 ,p_column_display_sequence=>30
 ,p_column_heading=>'Component Name'
 ,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>3
+,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
@@ -24122,6 +24044,7 @@ wwv_flow_api.create_report_columns(
 ,p_column_display_sequence=>40
 ,p_column_heading=>'Component Type'
 ,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
@@ -24133,6 +24056,7 @@ wwv_flow_api.create_report_columns(
 ,p_column_heading=>'Code Vc2'
 ,p_use_as_row_header=>'N'
 ,p_column_hit_highlight=>'IMAGE_PREFIX,WORKSPACE_IMAGES,APP_IMAGES,THEME_IMAGES,THEME_DB_IMAGES'
+,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
@@ -24421,6 +24345,7 @@ wwv_flow_api.create_install(
 'drop view av_p0200_css_code_by_page_v;',
 'drop view av_p0300_plsql_code_by_page_v;',
 'drop view av_p0600_not_used_auth_schemes_v;',
+'drop view av_p0708_legacy_subst_strings_v;',
 'drop view av_visibility_overview_v;',
 'drop view av_visibility_v;',
 'drop package av_general_pkg;'))
@@ -24436,7 +24361,7 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>5
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE PACKAGE "AV_GENERAL_PKG" is',
+'CREATE OR REPLACE EDITIONABLE PACKAGE "AV_GENERAL_PKG" is',
 '',
 '  function f_get_page_designer_url',
 '  (',
@@ -24462,7 +24387,7 @@ wwv_flow_api.create_install_script(
 '/',
 '',
 '',
-'CREATE OR REPLACE PACKAGE BODY "AV_GENERAL_PKG" is',
+'CREATE OR REPLACE EDITIONABLE PACKAGE BODY "AV_GENERAL_PKG" is',
 '',
 '  -- Example url for editing page 100 in application 347',
 '  -- f?p=4000:4500:5354232430661:::1,4150:FB_FLOW_ID,FB_FLOW_PAGE_ID,F4000_P1_FLOW,F4000_P4150_GOTO_PAGE,F4000_P1_PAGE:347,100,347,100,100',
@@ -24544,7 +24469,7 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>10
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_APPLICATIONS_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_FUNCTION", "PAGE_ID") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_APPLICATIONS_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_FUNCTION", "PAGE_ID") AS ',
 '  select p.application_name',
 '      ,p.application_id',
 '      ,case p.page_function',
@@ -24589,7 +24514,7 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>20
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_COMPONENTS_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_ID", "PAGE_NAME", "PAGE", "COMPONENT", "AMOUNT") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_COMPONENTS_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_ID", "PAGE_NAME", "PAGE", "COMPONENT", "AMOUNT") AS ',
 '  select application_name, application_id, page_id, page_name, page_id || '' '' || page_name page, ''regions'' component, regions amount',
 'from apex_application_pages',
 'union all',
@@ -24640,8 +24565,8 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>30
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_CSS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "COMPONENT_NAME", "COMPONENT_TYPE", "CSS_CODE_TYPE", "BEST_PRACTICE", "CSS_CODE", "CSS_CODE_VC2'
-||'", "CSS_CODE_CLOB", "TOOLTIP", "CSS_CODE_LINES", "CSS_CODE_LENGTH") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_CSS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "COMPONENT_NAME", "COMPONENT_TYPE", "CSS_CODE_TYPE", "BEST_PRACTICE", "CSS_CODE", "'
+||'CSS_CODE_VC2", "CSS_CODE_CLOB", "TOOLTIP", "CSS_CODE_LINES", "CSS_CODE_LENGTH") AS ',
 '  select app.application_id',
 '      ,app.application_name',
 '      ,app.page_id',
@@ -24675,7 +24600,7 @@ wwv_flow_api.create_install_script(
 '             ,1 best_practice',
 '             ,cast(substr(to_clob(tf.file_content)',
 '                         ,0',
-'                         ,4000) as varchar2(4000)) css_code_vc2',
+'                         ,3900) as varchar2(4000)) css_code_vc2',
 '             ,to_clob(tf.file_content) css_code_clob',
 '             ,''theme_roller_custom_css'' css_code_type',
 '             ,''custom_css'' component_type',
@@ -24742,7 +24667,7 @@ wwv_flow_api.create_install_script(
 '             ,0 best_practice',
 '             ,to_char(substr(p.page_html_header',
 '                            ,0',
-'                            ,4000)) css_code_vc2',
+'                            ,3900)) css_code_vc2',
 '             ,to_clob(p.page_html_header) css_code_clob',
 '             ,''page_html_header'' css_code_type',
 '             ,''page'' component_type',
@@ -24784,7 +24709,7 @@ wwv_flow_api.create_install_script(
 '             ,1 best_practice',
 '             ,to_char(substr(inline_css',
 '                            ,0',
-'                            ,4000)) css_code_vc2',
+'                            ,3900)) css_code_vc2',
 '             ,p.inline_css css_code_clob',
 '             ,''inline_css'' css_code_type',
 '             ,''page'' component_type',
@@ -24907,8 +24832,8 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>40
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_JAVASCRIPT_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "COMPONENT_NAME", "COMPONENT_TYPE", "JS_CODE_TYPE", "BEST_PRACTICE", "JS_CODE", "JS_CODE'
-||'_VC2", "JS_CODE_CLOB", "TOOLTIP", "JS_CODE_LINES", "JS_CODE_LENGTH") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_JAVASCRIPT_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "COMPONENT_NAME", "COMPONENT_TYPE", "JS_CODE_TYPE", "BEST_PRACTICE", "JS_COD'
+||'E", "JS_CODE_VC2", "JS_CODE_CLOB", "TOOLTIP", "JS_CODE_LINES", "JS_CODE_LENGTH") AS ',
 '  select app.application_id',
 '      ,app.application_name',
 '      ,app.page_id',
@@ -25083,8 +25008,8 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>50
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_PAGES_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_MODE", "PAGE_ALIAS", "PAGE_FUNCTION", "PAGE_GROUP", "PAGE_TEMPLATE", "CREATED_BY", "CREATED_ON", "LAST_UPDATED_BY", "LAST_UPDATED_ON", "REL'
-||'OAD_ON_SUBMIT", "WARN_ON_UNSAVED_CHANGES") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PAGES_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_MODE", "PAGE_ALIAS", "PAGE_FUNCTION", "PAGE_GROUP", "PAGE_TEMPLATE", "CREATED_BY", "CREATED_ON", "LAST_UPDATED_BY", "LAST_UPDAT'
+||'ED_ON", "RELOAD_ON_SUBMIT", "WARN_ON_UNSAVED_CHANGES") AS ',
 '  select aap.application_id',
 '      ,aap.application_name',
 '      ,aap.page_id',
@@ -25127,8 +25052,8 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>60
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_PLSQL_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENT_NAME", "COMPONENT_TYPE", "PROCESS_POINT", "CODE_TYPE", "PLSQL_COD'
-||'E", "PLSQL_CODE_VC2", "PLSQL_CODE_CLOB", "TOOLTIP", "CODE_LINES", "CODE_LENGTH") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PLSQL_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENT_NAME", "COMPONENT_TYPE", "PROCESS_POINT", "CODE_TYPE"'
+||', "PLSQL_CODE", "PLSQL_CODE_VC2", "PLSQL_CODE_CLOB", "TOOLTIP", "CODE_LINES", "CODE_LENGTH") AS ',
 '  select app.application_id',
 '      ,app.application_name',
 '      ,p.page_id',
@@ -25167,7 +25092,7 @@ wwv_flow_api.create_install_script(
 '             ,p.process_type code_type',
 '             ,to_char(substr(p.process',
 '                            ,0',
-'                            ,4000)) plsql_code_vc2',
+'                            ,3900)) plsql_code_vc2',
 '             ,p.process plsql_code_clob',
 '             ,length(p.process) code_length',
 '      from apex_application_processes p',
@@ -25182,7 +25107,7 @@ wwv_flow_api.create_install_script(
 '             ,pp.process_type code_type',
 '             ,to_char(substr(pp.process_source',
 '                            ,0',
-'                            ,4000)) plsql_code_vc2',
+'                            ,3900)) plsql_code_vc2',
 '             ,pp.process_source plsql_code_clob',
 '             ,length(pp.process_source) code_length',
 '      from apex_application_page_proc pp',
@@ -25298,7 +25223,7 @@ wwv_flow_api.create_install_script(
 '             ,pr.source_type code_type',
 '             ,to_char(substr(pr.region_source',
 '                            ,0',
-'                            ,4000)) plsql_code_vc2',
+'                            ,3900)) plsql_code_vc2',
 '             ,pr.region_source plsql_code_clob',
 '             ,length(pr.region_source) code_length',
 '      from apex_application_page_regions pr',
@@ -25318,7 +25243,7 @@ wwv_flow_api.create_install_script(
 '             ,pcs.data_source_type code_type',
 '             ,to_char(substr(pcs.data_source',
 '                            ,0',
-'                            ,4000)) plsql_code_vc2',
+'                            ,3900)) plsql_code_vc2',
 '             ,pcs.data_source plsql_code_clob',
 '             ,length(pcs.data_source) code_length',
 '      from apex_application_page_chart_s pcs',
@@ -25351,7 +25276,8 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>70
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_VISIBILITY_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_NAME", "PAGE_ID", "COMPONENT_TYPE", "COMPONENT_NAME", "VISIBILITY_NAME", "VISIBILITY_ID", "VISIBILITY_CATEGORY", "VISIBILITY_TYPE", "VISIBILITY_EXP1") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_VISIBILITY_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_NAME", "PAGE_ID", "COMPONENT_TYPE", "COMPONENT_NAME", "VISIBILITY_NAME", "VISIBILITY_ID", "VISIBILITY_CATEGORY", "VISIBILITY_TYPE", "VISIBILITY_EX'
+||'P1") AS ',
 '  select aap.application_name',
 '      ,p.application_id',
 '      ,aap.page_name',
@@ -25611,7 +25537,7 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>80
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_VISIBILITY_OVERVIEW_V" ("APP_ID", "APP_NAME", "VISIBILTY_NAME") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_VISIBILITY_OVERVIEW_V" ("APP_ID", "APP_NAME", "VISIBILTY_NAME") AS ',
 '  select aaa.application_id            app_id',
 '      ,aaa.application_name          app_name',
 '      ,aaa.authorization_scheme_name visibilty_name',
@@ -25647,7 +25573,7 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>90
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_P0100_JS_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0100_JS_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
 '  select application_id',
 '      ,page_id',
 '      ,page_name || '' ('' || page_id || '')'' page_name_and_id',
@@ -25702,7 +25628,7 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>100
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_P0200_CSS_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0200_CSS_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
 '  select application_id',
 '      ,page_id',
 '      ,page_name || '' ('' || page_id || '')'' page_name_and_id',
@@ -25757,7 +25683,7 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>110
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_P0300_PLSQL_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0300_PLSQL_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
 '  select application_id',
 '      ,page_id',
 '      ,page_name || '' ('' || page_id || '')'' page_name_and_id',
@@ -25812,7 +25738,7 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>130
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_PAGE_LINKS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_GROUP", "LINK_TYPE", "LINK_NAME", "LINK_LABEL", "LINK_PAGE_ID", "PAGE_DESIGNER_URL") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PAGE_LINKS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_GROUP", "LINK_TYPE", "LINK_NAME", "LINK_LABEL", "LINK_PAGE_ID", "PAGE_DESIGNER_URL") AS ',
 '  select page.application_id',
 '      ,page.application_name',
 '      ,page.page_id',
@@ -25942,8 +25868,8 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>140
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_PLUGINS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PLUGIN_ID", "PLUGIN_TYPE", "NAME", "DISPLAY_NAME", "PLSQL_CODE", "API_VERSION", "RENDER_FUNCTION", "HELP_TEXT", "VERSION_IDENTIFIER", "ABOUT_URL", "PAGE_ID", "PAGE_NA'
-||'ME", "OBJECT_NAME", "OBJECT_LABEL", "PAGE_DESIGNER_URL") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PLUGINS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PLUGIN_ID", "PLUGIN_TYPE", "NAME", "DISPLAY_NAME", "PLSQL_CODE", "API_VERSION", "RENDER_FUNCTION", "HELP_TEXT", "VERSION_IDENTIFIER", "ABOUT_URL", "PAGE_I'
+||'D", "PAGE_NAME", "OBJECT_NAME", "OBJECT_LABEL", "PAGE_DESIGNER_URL") AS ',
 '  select p.application_id',
 '      ,p.application_name',
 '      ,p.plugin_id',
@@ -26034,7 +25960,7 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>150
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_P0600_NOT_USED_AUTH_SCHEMES_V" ("AUTHORIZATION_SCHEME_NAME", "APPLICATION_ID") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0600_NOT_USED_AUTH_SCHEMES_V" ("AUTHORIZATION_SCHEME_NAME", "APPLICATION_ID") AS ',
 '  with auth as',
 ' (select v1.visibility_id',
 '        ,v1.application_id',
@@ -26064,6 +25990,209 @@ wwv_flow_api.create_install_object(
 ,p_last_updated_on=>to_date('20210927225056','YYYYMMDDHH24MISS')
 ,p_created_by=>'OLEMM'
 ,p_created_on=>to_date('20210927225056','YYYYMMDDHH24MISS')
+);
+end;
+/
+prompt --application/deployment/install/install_av_p0708_legacy_subst_strings_v
+begin
+wwv_flow_api.create_install_script(
+ p_id=>wwv_flow_api.id(23141675338119207)
+,p_install_id=>wwv_flow_api.id(294519018125278192)
+,p_name=>'av_p0708_legacy_subst_strings_v'
+,p_sequence=>160
+,p_script_type=>'INSTALL'
+,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0708_LEGACY_SUBST_STRINGS_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME", "COMPONENT_NAME", "COMPONENT_TYPE", "CODE_VC2") AS ',
+'  select x.application_id',
+'      ,x.page_id',
+'      ,x.page_name',
+'      ,x.component_name',
+'      ,x.component_type',
+'      ,x.code_vc2',
+'from ( -- javascript Code',
+'      select j.application_id',
+'             ,j.page_id',
+'             ,j.page_name',
+'             ,j.component_name',
+'             ,j.component_type',
+'             ,j.js_code_vc2 code_vc2',
+'      from av_javascript_v j',
+'      union all',
+'      -- css Code',
+'      select c.application_id',
+'             ,c.page_id',
+'             ,c.page_name',
+'             ,c.component_name',
+'             ,c.component_type',
+'             ,c.css_code_vc2 code_vc2',
+'      from av_css_v c',
+'      union all',
+'      -- plsql code',
+'      select p.application_id',
+'             ,p.page_id',
+'             ,p.page_name',
+'             ,p.component_name',
+'             ,p.component_type',
+'             ,p.plsql_code_vc2 code_vc2',
+'      from av_plsql_v p',
+'      union all',
+'      -- static regions',
+'      select r.application_id',
+'             ,r.page_id',
+'             ,r.page_name',
+'             ,r.region_name component_name',
+'             ,''region'' component_type',
+'             ,to_char(substr(r.region_source',
+'                            ,0',
+'                            ,3900)) code_vc2',
+'      from apex_application_page_regions r',
+'      where r.source_type_code in (''STATIC_TEXT'')',
+'      union all',
+'      -- javascript file urls in pages',
+'      select p.application_id',
+'             ,p.page_id',
+'             ,p.page_name',
+'             ,''JavaScript File Urls'' component_name',
+'             ,''page'' component_type',
+'             ,p.javascript_file_urls code_vc2',
+'      from apex_application_pages p',
+'      where p.javascript_file_urls is not null',
+'',
+'      union all',
+'      -- javascript file urls in app',
+'      select a.application_id',
+'             ,0 page_id',
+'             ,''Shared Components'' page_name',
+'             ,''JavaScript File Urls'' component_name',
+'             ,''user_interface'' component_type',
+'             ,a.javascript_file_urls code_vc2',
+'      from apex_applications a',
+'      where a.javascript_file_urls is not null',
+'      union all',
+'      -- javascript file urls in page templates',
+'      select tp.application_id',
+'             ,0 page_id',
+'             ,''Templates'' page_name',
+'             ,tp.template_name component_name',
+'             ,''page_template'' component_type',
+'             ,tp.javascript_file_urls code_vc2',
+'      from apex_application_temp_page tp',
+'      where tp.javascript_file_urls is not null',
+'      union all',
+'      -- javascript file urls in list templates',
+'      select tp.application_id',
+'             ,0 page_id',
+'             ,''Templates'' page_name',
+'             ,tp.template_name component_name',
+'             ,''list_template'' component_type',
+'             ,tp.javascript_file_urls code_vc2',
+'      from apex_application_temp_list tp',
+'      where tp.javascript_file_urls is not null',
+'      union all',
+'      -- javascript file urls in region templates',
+'      select tp.application_id',
+'             ,0 page_id',
+'             ,''Templates'' page_name',
+'             ,tp.template_name component_name',
+'             ,''region_template'' component_type',
+'             ,tp.javascript_file_urls code_vc2',
+'      from apex_application_temp_region tp',
+'      where tp.javascript_file_urls is not null',
+'      union all',
+'      -- javascript file urls in themes',
+'      select ts.application_id',
+'             ,0 page_id',
+'             ,''Theme'' page_name',
+'             ,ts.theme_name component_name',
+'             ,''javascript_file_urls'' component_type',
+'             ,ts.javascript_file_urls code_vc2',
+'      from apex_application_themes ts',
+'      where ts.javascript_file_urls is not null',
+'      union all',
+'      -- css file urls in pages',
+'      select p.application_id',
+'             ,p.page_id',
+'             ,p.page_name',
+'             ,''CSS File Urls'' component_name',
+'             ,''page'' component_type',
+'             ,p.css_file_urls code_vc2',
+'      from apex_application_pages p',
+'      where p.css_file_urls is not null',
+'      union all',
+'      -- css file urls in app',
+'      select ui.application_id',
+'             ,0 page_id',
+'             ,''Shared Components'' page_name',
+'             ,''CSS File Urls'' component_name',
+'             ,''user_interface'' component_type',
+'             ,ui.css_file_urls code_vc2',
+'      from apex_appl_user_interfaces ui',
+'      where ui.css_file_urls is not null',
+'      union all',
+'      -- css file urls in themes',
+'      select ts.application_id',
+'             ,0 page_id',
+'             ,''Theme'' page_name',
+'             ,ts.theme_name component_name',
+'             ,''css_file_urls'' component_type',
+'             ,ts.css_file_urls code_vc2',
+'      from apex_application_themes ts',
+'      where ts.css_file_urls is not null',
+'      union all',
+'      -- Theme Styles',
+'      -- css file urls in theme styles',
+'      select ts.application_id',
+'             ,0 page_id',
+'             ,''Theme'' page_name',
+'             ,ts.name component_name',
+'             ,''theme_style'' component_type',
+'             ,ts.css_file_urls code_vc2',
+'      from apex_application_theme_styles ts',
+'      where ts.css_file_urls is not null',
+'      union all',
+'      -- input file urls in theme styles',
+'      select ts.application_id',
+'             ,0 page_id',
+'             ,''Theme'' page_name',
+'             ,ts.name component_name',
+'             ,''theme_roller_input_file_urls'' component_type',
+'             ,ts.theme_roller_input_file_urls code_vc2',
+'      from apex_application_theme_styles ts',
+'      where ts.theme_roller_input_file_urls is not null',
+'      union all',
+'      -- output file url in theme styles',
+'      select ts.application_id',
+'             ,0 page_id',
+'             ,''Theme'' page_name',
+'             ,ts.name component_name',
+'             ,''theme_roller_output_file_url'' component_type',
+'             ,ts.theme_roller_output_file_url code_vc2',
+'      from apex_application_theme_styles ts',
+'      where ts.theme_roller_output_file_url is not null) x',
+'where instr(x.code_vc2',
+'           ,''IMAGE_PREFIX'') > 0',
+'or instr(x.code_vc2',
+'       ,''WORKSPACE_IMAGES'') > 0',
+'or instr(x.code_vc2',
+'       ,''APP_IMAGES'') > 0',
+'or instr(x.code_vc2',
+'       ,''THEME_IMAGES'') > 0',
+'or instr(x.code_vc2',
+'       ,''THEME_DB_IMAGES'') > 0',
+';',
+'',
+''))
+);
+wwv_flow_api.create_install_object(
+ p_id=>wwv_flow_api.id(23141780501119210)
+,p_script_id=>wwv_flow_api.id(23141675338119207)
+,p_object_owner=>'#OWNER#'
+,p_object_type=>'VIEW'
+,p_object_name=>'AV_P0708_LEGACY_SUBST_STRINGS_V'
+,p_last_updated_by=>'OLEMM'
+,p_last_updated_on=>to_date('20211210120900','YYYYMMDDHH24MISS')
+,p_created_by=>'OLEMM'
+,p_created_on=>to_date('20211210120900','YYYYMMDDHH24MISS')
 );
 end;
 /

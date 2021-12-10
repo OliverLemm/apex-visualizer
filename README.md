@@ -1,4 +1,6 @@
 # Apex-Visualizer
+## Release 21.2.2
+For the new APEX 21.2 Migration Page more sources to find Legacy Substitution Strings added and minor tweaks regarding clob strings.
 ## Release 21.2.1
 Deinstallation Script added.
 For the new APEX 21.2 Migration Page more sources to find Legacy Substitution Strings and a Refresh Button has been added.

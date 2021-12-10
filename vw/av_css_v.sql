@@ -32,7 +32,7 @@ join ( -- Theme Roller Custom CSS
              ,1 best_practice
              ,cast(substr(to_clob(tf.file_content)
                          ,0
-                         ,4000) as varchar2(4000)) css_code_vc2
+                         ,3900) as varchar2(4000)) css_code_vc2
              ,to_clob(tf.file_content) css_code_clob
              ,'theme_roller_custom_css' css_code_type
              ,'custom_css' component_type
@@ -99,7 +99,7 @@ join ( -- Theme Roller Custom CSS
              ,0 best_practice
              ,to_char(substr(p.page_html_header
                             ,0
-                            ,4000)) css_code_vc2
+                            ,3900)) css_code_vc2
              ,to_clob(p.page_html_header) css_code_clob
              ,'page_html_header' css_code_type
              ,'page' component_type
@@ -141,7 +141,7 @@ join ( -- Theme Roller Custom CSS
              ,1 best_practice
              ,to_char(substr(inline_css
                             ,0
-                            ,4000)) css_code_vc2
+                            ,3900)) css_code_vc2
              ,p.inline_css css_code_clob
              ,'inline_css' css_code_type
              ,'page' component_type
@@ -237,4 +237,5 @@ join ( -- Theme Roller Custom CSS
       from apex_application_page_da_acts d
       join apex_application_page_da_acts a on a.dynamic_action_id = d.dynamic_action_id
       where a.action_code = 'NATIVE_ADD_CLASS') c on c.application_id = app.application_id
-                                              and c.page_id = app.page_id;
+                                              and c.page_id = app.page_id
+;

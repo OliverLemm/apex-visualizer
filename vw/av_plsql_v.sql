@@ -37,7 +37,7 @@ join (
              ,p.process_type code_type
              ,to_char(substr(p.process
                             ,0
-                            ,4000)) plsql_code_vc2
+                            ,3900)) plsql_code_vc2
              ,p.process plsql_code_clob
              ,length(p.process) code_length
       from apex_application_processes p
@@ -52,7 +52,7 @@ join (
              ,pp.process_type code_type
              ,to_char(substr(pp.process_source
                             ,0
-                            ,4000)) plsql_code_vc2
+                            ,3900)) plsql_code_vc2
              ,pp.process_source plsql_code_clob
              ,length(pp.process_source) code_length
       from apex_application_page_proc pp
@@ -168,7 +168,7 @@ join (
              ,pr.source_type code_type
              ,to_char(substr(pr.region_source
                             ,0
-                            ,4000)) plsql_code_vc2
+                            ,3900)) plsql_code_vc2
              ,pr.region_source plsql_code_clob
              ,length(pr.region_source) code_length
       from apex_application_page_regions pr
@@ -188,11 +188,10 @@ join (
              ,pcs.data_source_type code_type
              ,to_char(substr(pcs.data_source
                             ,0
-                            ,4000)) plsql_code_vc2
+                            ,3900)) plsql_code_vc2
              ,pcs.data_source plsql_code_clob
              ,length(pcs.data_source) code_length
       from apex_application_page_chart_s pcs
       --
       ) p on p.application_id = app.application_id
-      and p.page_id = app.page_id
-;
+      and p.page_id = app.page_id;
