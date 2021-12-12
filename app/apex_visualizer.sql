@@ -28,7 +28,7 @@ prompt APPLICATION 347 - APEX Visualizer
 -- Application Export:
 --   Application:     347
 --   Name:            APEX Visualizer
---   Date and Time:   12:11 Friday December 10, 2021
+--   Date and Time:   12:46 Sunday December 12, 2021
 --   Exported By:     OLEMM
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -101,7 +101,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'21.2.2'
+,p_flow_version=>'21.2.3'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -114,7 +114,7 @@ wwv_flow_api.create_flow(
 ,p_auto_time_zone=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20211210121153'
+,p_last_upd_yyyymmddhh24miss=>'20211212124553'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 ,p_print_server_type=>'INSTANCE'
@@ -23878,7 +23878,7 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20211210120652'
+,p_last_upd_yyyymmddhh24miss=>'20211212124553'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(46162163500404031)
@@ -24152,12 +24152,15 @@ wwv_flow_api.create_report_region(
 '      ,b.region',
 '      ,b.button_name',
 '      ,b.label',
+'      ,b.display_position',
 'from apex_application_page_buttons b',
 'where b.display_position_code in (''TOP''',
-'                                 ,''BOTTOM'')',
+'                                 ,''BOTTOM''',
+'                                 ,''BELOW_BOX''',
+'                                 ,''ABOVE_BOX'')',
 'and b.application_id = :P0_APP_ID'))
 ,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'The following region positions are marked as deprecated and display as "Legacy" in Page Designer: Top and Bottom (used for button positioning within a region)',
+'The following region positions are marked as deprecated and display as "Legacy" in Page Designer: Top, Bottom, Above and Below (used for button positioning within a region)',
 '',
 ''))
 ,p_ajax_enabled=>'Y'
@@ -24227,6 +24230,17 @@ wwv_flow_api.create_report_columns(
 ,p_column_alias=>'LABEL'
 ,p_column_display_sequence=>50
 ,p_column_heading=>'Label'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(22469907806353905)
+,p_query_column_id=>6
+,p_column_alias=>'DISPLAY_POSITION'
+,p_column_display_sequence=>60
+,p_column_heading=>'Display Position'
 ,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'

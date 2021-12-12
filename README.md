@@ -1,9 +1,13 @@
 # Apex-Visualizer
+## Release 21.2.3
+On the new APEX 21.2 Migration Page Region Positions Above and Below added for the Check "5.1.2 Deprecated Region Positions". 
+
 ## Release 21.2.2
-For the new APEX 21.2 Migration Page more sources to find Legacy Substitution Strings added and minor tweaks regarding clob strings.
+On the new APEX 21.2 Migration Page more sources to find Legacy Substitution Strings added and minor tweaks regarding clob strings.
+
 ## Release 21.2.1
+On the new APEX 21.2 Migration Page more sources to find Legacy Substitution Strings and a Refresh Button has been added.
 Deinstallation Script added.
-For the new APEX 21.2 Migration Page more sources to find Legacy Substitution Strings and a Refresh Button has been added.
 
 ## Release 21.2
 The Application is migrated to APEX 21.2.
