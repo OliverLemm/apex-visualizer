@@ -1,4 +1,7 @@
 # Apex-Visualizer
+## Release 21.2.4
+The APEX 20.1 Migration Page with major Deprecated and Desupported Checks has been added.
+
 ## Release 21.2.3
 On the new APEX 21.2 Migration Page Region Positions Above and Below added for the Check "5.1.2 Deprecated Region Positions". 
 
