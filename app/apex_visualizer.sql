@@ -28,8 +28,7 @@ prompt APPLICATION 347 - APEX Visualizer
 -- Application Export:
 --   Application:     347
 --   Name:            APEX Visualizer
---   Date and Time:   23:07 Sunday December 12, 2021
---   Exported By:     OLEMM
+--   Exported By:     APEX_VISUALIZER
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                     23
@@ -508,11 +507,6 @@ wwv_flow_api.create_list_of_values(
 end;
 /
 prompt --application/pages/page_groups
-begin
-null;
-end;
-/
-prompt --application/comments
 begin
 null;
 end;
@@ -14195,11 +14189,6 @@ wwv_flow_api.create_template_option(
 end;
 /
 prompt --application/shared_components/globalization/language
-begin
-null;
-end;
-/
-prompt --application/shared_components/globalization/translations
 begin
 null;
 end;

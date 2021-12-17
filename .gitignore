@@ -1,2 +1,3 @@
 /app/export_apex_app_sqlcl.bat
 /app/export_apex_app_sqlcl.sql
+/app/export_apex_app_sqlcl_split.sql

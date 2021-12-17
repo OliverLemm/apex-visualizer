@@ -4,8 +4,8 @@ begin
 --     INSTALL: INSTALL-av_javascript_v
 --   Manifest End
 wwv_flow_api.component_begin (
- p_version_yyyy_mm_dd=>'2020.10.01'
-,p_release=>'20.2.0.00.20'
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.1'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -18,12 +18,14 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>40
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_JAVASCRIPT_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_GROUP", "PAGE_FUNCTION", "COMPONENT_NAME", "COMPONENT_TYPE", "JS_CODE_TYPE", "BEST_PRACTICE", "JS_CODE", "JS_CODE_VC2", "JS_CODE_CLOB"'
-||', "JS_CODE_LINES", "JS_CODE_LENGTH") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_JAVASCRIPT_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "COMPONENT_NAME", "COMPONENT_TYPE", "JS_CODE_TYPE", "BEST_PRACTICE", "JS_COD'
+||'E", "JS_CODE_VC2", "JS_CODE_CLOB", "TOOLTIP", "JS_CODE_LINES", "JS_CODE_LENGTH") AS ',
 '  select app.application_id',
 '      ,app.application_name',
 '      ,app.page_id',
 '      ,app.page_name',
+'      ,av_general_pkg.f_get_page_designer_url(pi_app_id      => app.application_id',
+'                                             ,pi_app_page_id => app.page_id) page_designer_url',
 '      ,nvl(app.page_group',
 '          ,''no page group'') page_group',
 '      ,app.page_function',
@@ -39,6 +41,7 @@ wwv_flow_api.create_install_script(
 '      ,j.js_code_vc2 js_code -- only for backwards compatibility',
 '      ,j.js_code_vc2',
 '      ,j.js_code_clob',
+'      ,''<b>'' || j.component_name || '' ('' || j.component_type || '' - '' || js_code_type || '')</b><br>'' || j.js_code_vc2 tooltip',
 '      ,regexp_count(j.js_code_clob',
 '                   ,chr(10)) + 1 js_code_lines',
 '      ,length(j.js_code_clob) js_code_length',

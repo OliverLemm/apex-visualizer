@@ -4,8 +4,8 @@ begin
 --     PAGE: 00200
 --   Manifest End
 wwv_flow_api.component_begin (
- p_version_yyyy_mm_dd=>'2020.10.01'
-,p_release=>'20.2.0.00.20'
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.1'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -20,7 +20,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210129123651'
+,p_last_upd_yyyymmddhh24miss=>'20210923083752'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(455982233047916696)
@@ -30,10 +30,9 @@ wwv_flow_api.create_page_plug(
 ,p_plug_template=>wwv_flow_api.id(452458863643466246)
 ,p_plug_display_sequence=>30
 ,p_include_in_reg_disp_sel_yn=>'Y'
-,p_plug_display_point=>'BODY'
 ,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select page_name || '' - '' || v.component_name series_name, v.component_type, v.css_code, v.css_code_length, v.css_code_type',
+'select page_name || '' - '' || v.component_name series_name, v.component_type, v.css_code, v.css_code_length, v.css_code_type, v.tooltip, v.page_designer_url',
 'from av_css_v v',
 'where v.application_id = :P0_APP_ID ',
 'and (v.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)',
@@ -92,12 +91,12 @@ wwv_flow_api.create_jet_chart_series(
 ,p_series_name_column_name=>'SERIES_NAME'
 ,p_items_value_column_name=>'CSS_CODE_LENGTH'
 ,p_items_label_column_name=>'COMPONENT_TYPE'
-,p_items_short_desc_column_name=>'CSS_CODE'
+,p_items_short_desc_column_name=>'TOOLTIP'
 ,p_assigned_to_y2=>'off'
 ,p_items_label_rendered=>true
 ,p_items_label_position=>'auto'
-,p_items_label_display_as=>'PERCENT'
-,p_threshold_display=>'onIndicator'
+,p_link_target=>'&PAGE_DESIGNER_URL.'
+,p_link_target_type=>'REDIRECT_URL'
 );
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(294254842038372766)
@@ -135,7 +134,6 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_grid_column_span=>9
-,p_plug_display_point=>'BODY'
 ,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select page_id,',
@@ -238,7 +236,6 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_sequence=>20
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_new_grid_row=>false
-,p_plug_display_point=>'BODY'
 ,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select application_name',
@@ -312,6 +309,7 @@ wwv_flow_api.create_page_item(
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_lov_display_extra=>'NO'
+,p_encrypt_session_state_yn=>'N'
 ,p_attribute_01=>'NONE'
 ,p_attribute_02=>'N'
 );

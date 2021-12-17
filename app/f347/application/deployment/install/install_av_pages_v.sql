@@ -4,8 +4,8 @@ begin
 --     INSTALL: INSTALL-av_pages_v
 --   Manifest End
 wwv_flow_api.component_begin (
- p_version_yyyy_mm_dd=>'2020.10.01'
-,p_release=>'20.2.0.00.20'
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.1'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -18,8 +18,8 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>50
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_PAGES_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_MODE", "PAGE_ALIAS", "PAGE_FUNCTION", "PAGE_GROUP", "PAGE_TEMPLATE", "CREATED_BY", "CREATED_ON", "LAST_UPDATED_BY", "LAST_UPDATED_ON", "REL'
-||'OAD_ON_SUBMIT", "WARN_ON_UNSAVED_CHANGES") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PAGES_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_MODE", "PAGE_ALIAS", "PAGE_FUNCTION", "PAGE_GROUP", "PAGE_TEMPLATE", "CREATED_BY", "CREATED_ON", "LAST_UPDATED_BY", "LAST_UPDAT'
+||'ED_ON", "RELOAD_ON_SUBMIT", "WARN_ON_UNSAVED_CHANGES") AS ',
 '  select aap.application_id',
 '      ,aap.application_name',
 '      ,aap.page_id',

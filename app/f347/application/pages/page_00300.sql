@@ -4,8 +4,8 @@ begin
 --     PAGE: 00300
 --   Manifest End
 wwv_flow_api.component_begin (
- p_version_yyyy_mm_dd=>'2020.10.01'
-,p_release=>'20.2.0.00.20'
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.1'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -20,7 +20,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210129123806'
+,p_last_upd_yyyymmddhh24miss=>'20210923084254'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(618926415072524699)
@@ -30,10 +30,9 @@ wwv_flow_api.create_page_plug(
 ,p_plug_template=>wwv_flow_api.id(452458863643466246)
 ,p_plug_display_sequence=>30
 ,p_include_in_reg_disp_sel_yn=>'Y'
-,p_plug_display_point=>'BODY'
 ,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select component_type || '' - '' || v.component_name series_name, v.component_type, v.plsql_code, v.code_length, v.code_type',
+'select component_type || '' - '' || v.component_name series_name, v.component_type, v.plsql_code, v.code_length, v.code_type, v.tooltip, v.page_designer_url',
 'from av_plsql_v v',
 'where v.application_id = :P0_APP_ID ',
 'and (v.page_id = :P0_PAGE_ID)',
@@ -78,12 +77,12 @@ wwv_flow_api.create_jet_chart_series(
 ,p_series_name_column_name=>'SERIES_NAME'
 ,p_items_value_column_name=>'CODE_LENGTH'
 ,p_items_label_column_name=>'COMPONENT_TYPE'
-,p_items_short_desc_column_name=>'PLSQL_CODE'
+,p_items_short_desc_column_name=>'TOOLTIP'
 ,p_assigned_to_y2=>'off'
 ,p_items_label_rendered=>true
 ,p_items_label_position=>'auto'
-,p_items_label_display_as=>'PERCENT'
-,p_threshold_display=>'onIndicator'
+,p_link_target=>'&PAGE_DESIGNER_URL.'
+,p_link_target_type=>'REDIRECT_URL'
 );
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(294501544398993270)
@@ -137,7 +136,6 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_grid_column_span=>9
-,p_plug_display_point=>'BODY'
 ,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select page_id,',
@@ -199,21 +197,6 @@ wwv_flow_api.create_jet_chart_series(
 ,p_link_target_type=>'REDIRECT_URL'
 );
 wwv_flow_api.create_jet_chart_axis(
- p_id=>wwv_flow_api.id(126171335579891103)
-,p_chart_id=>wwv_flow_api.id(126171150057891101)
-,p_axis=>'x'
-,p_is_rendered=>'on'
-,p_title=>'number of plsql components'
-,p_format_scaling=>'auto'
-,p_scaling=>'linear'
-,p_baseline_scaling=>'zero'
-,p_major_tick_rendered=>'on'
-,p_minor_tick_rendered=>'off'
-,p_tick_label_rendered=>'on'
-,p_tick_label_rotation=>'auto'
-,p_tick_label_position=>'outside'
-);
-wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(126171416426891104)
 ,p_chart_id=>wwv_flow_api.id(126171150057891101)
 ,p_axis=>'y'
@@ -229,6 +212,21 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_minor_tick_rendered=>'off'
 ,p_tick_label_rendered=>'on'
 );
+wwv_flow_api.create_jet_chart_axis(
+ p_id=>wwv_flow_api.id(126171335579891103)
+,p_chart_id=>wwv_flow_api.id(126171150057891101)
+,p_axis=>'x'
+,p_is_rendered=>'on'
+,p_title=>'number of plsql components'
+,p_format_scaling=>'auto'
+,p_scaling=>'linear'
+,p_baseline_scaling=>'zero'
+,p_major_tick_rendered=>'on'
+,p_minor_tick_rendered=>'off'
+,p_tick_label_rendered=>'on'
+,p_tick_label_rotation=>'auto'
+,p_tick_label_position=>'outside'
+);
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(619058036662463987)
 ,p_plug_name=>'Place of PLSQL'
@@ -238,7 +236,6 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_sequence=>20
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_new_grid_row=>false
-,p_plug_display_point=>'BODY'
 ,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select application_name',
@@ -312,6 +309,7 @@ wwv_flow_api.create_page_item(
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_lov_display_extra=>'NO'
+,p_encrypt_session_state_yn=>'N'
 ,p_attribute_01=>'NONE'
 ,p_attribute_02=>'N'
 );

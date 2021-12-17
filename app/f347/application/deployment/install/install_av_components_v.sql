@@ -4,8 +4,8 @@ begin
 --     INSTALL: INSTALL-av_components_v
 --   Manifest End
 wwv_flow_api.component_begin (
- p_version_yyyy_mm_dd=>'2020.10.01'
-,p_release=>'20.2.0.00.20'
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.1'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -18,7 +18,7 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>20
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_COMPONENTS_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_ID", "PAGE_NAME", "PAGE", "COMPONENT", "AMOUNT") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_COMPONENTS_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_ID", "PAGE_NAME", "PAGE", "COMPONENT", "AMOUNT") AS ',
 '  select application_name, application_id, page_id, page_name, page_id || '' '' || page_name page, ''regions'' component, regions amount',
 'from apex_application_pages',
 'union all',

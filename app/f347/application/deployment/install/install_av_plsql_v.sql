@@ -4,8 +4,8 @@ begin
 --     INSTALL: INSTALL-av_plsql_v
 --   Manifest End
 wwv_flow_api.component_begin (
- p_version_yyyy_mm_dd=>'2020.10.01'
-,p_release=>'20.2.0.00.20'
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.1'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -18,12 +18,14 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>60
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_PLSQL_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENT_NAME", "COMPONENT_TYPE", "PROCESS_POINT", "CODE_TYPE", "PLSQL_CODE", "PLSQL_CODE_VC2",'
-||' "PLSQL_CODE_CLOB", "CODE_LINES", "CODE_LENGTH") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PLSQL_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENT_NAME", "COMPONENT_TYPE", "PROCESS_POINT", "CODE_TYPE"'
+||', "PLSQL_CODE", "PLSQL_CODE_VC2", "PLSQL_CODE_CLOB", "TOOLTIP", "CODE_LINES", "CODE_LENGTH") AS ',
 '  select app.application_id',
 '      ,app.application_name',
 '      ,p.page_id',
 '      ,app.page_name',
+'      ,av_general_pkg.f_get_page_designer_url(pi_app_id      => app.application_id',
+'                                             ,pi_app_page_id => app.page_id) page_designer_url',
 '      ,nvl(app.page_group',
 '          ,''no page group'') page_group',
 '      ,app.page_function',
@@ -40,6 +42,7 @@ wwv_flow_api.create_install_script(
 '      ,p.plsql_code_vc2 plsql_code -- only for backward compatibility',
 '      ,p.plsql_code_vc2',
 '      ,p.plsql_code_clob',
+'      ,''<b>'' || p.component_name || '' ('' || p.component_type || '' - '' || p.code_type || '')</b><br>'' || p.plsql_code_vc2 tooltip',
 '      ,regexp_count(p.plsql_code_clob',
 '                   ,chr(10)) + 1 code_lines',
 '      ,p.code_length',
@@ -55,7 +58,7 @@ wwv_flow_api.create_install_script(
 '             ,p.process_type code_type',
 '             ,to_char(substr(p.process',
 '                            ,0',
-'                            ,4000)) plsql_code_vc2',
+'                            ,3900)) plsql_code_vc2',
 '             ,p.process plsql_code_clob',
 '             ,length(p.process) code_length',
 '      from apex_application_processes p',
@@ -70,7 +73,7 @@ wwv_flow_api.create_install_script(
 '             ,pp.process_type code_type',
 '             ,to_char(substr(pp.process_source',
 '                            ,0',
-'                            ,4000)) plsql_code_vc2',
+'                            ,3900)) plsql_code_vc2',
 '             ,pp.process_source plsql_code_clob',
 '             ,length(pp.process_source) code_length',
 '      from apex_application_page_proc pp',
@@ -186,7 +189,7 @@ wwv_flow_api.create_install_script(
 '             ,pr.source_type code_type',
 '             ,to_char(substr(pr.region_source',
 '                            ,0',
-'                            ,4000)) plsql_code_vc2',
+'                            ,3900)) plsql_code_vc2',
 '             ,pr.region_source plsql_code_clob',
 '             ,length(pr.region_source) code_length',
 '      from apex_application_page_regions pr',
@@ -206,7 +209,7 @@ wwv_flow_api.create_install_script(
 '             ,pcs.data_source_type code_type',
 '             ,to_char(substr(pcs.data_source',
 '                            ,0',
-'                            ,4000)) plsql_code_vc2',
+'                            ,3900)) plsql_code_vc2',
 '             ,pcs.data_source plsql_code_clob',
 '             ,length(pcs.data_source) code_length',
 '      from apex_application_page_chart_s pcs',

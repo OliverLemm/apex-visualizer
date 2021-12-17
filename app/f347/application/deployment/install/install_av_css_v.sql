@@ -4,8 +4,8 @@ begin
 --     INSTALL: INSTALL-av_css_v
 --   Manifest End
 wwv_flow_api.component_begin (
- p_version_yyyy_mm_dd=>'2020.10.01'
-,p_release=>'20.2.0.00.20'
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.1'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -18,12 +18,14 @@ wwv_flow_api.create_install_script(
 ,p_sequence=>30
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE VIEW "AV_CSS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_GROUP", "PAGE_FUNCTION", "COMPONENT_NAME", "COMPONENT_TYPE", "CSS_CODE_TYPE", "BEST_PRACTICE", "CSS_CODE", "CSS_CODE_VC2", "CSS_CODE_CLOB", "'
-||'CSS_CODE_LINES", "CSS_CODE_LENGTH") AS ',
+'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_CSS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "COMPONENT_NAME", "COMPONENT_TYPE", "CSS_CODE_TYPE", "BEST_PRACTICE", "CSS_CODE", "'
+||'CSS_CODE_VC2", "CSS_CODE_CLOB", "TOOLTIP", "CSS_CODE_LINES", "CSS_CODE_LENGTH") AS ',
 '  select app.application_id',
 '      ,app.application_name',
 '      ,app.page_id',
 '      ,app.page_name',
+'      ,av_general_pkg.f_get_page_designer_url(pi_app_id      => app.application_id',
+'                                             ,pi_app_page_id => app.page_id) page_designer_url',
 '      ,nvl(app.page_group',
 '          ,''no page group'') page_group',
 '      ,app.page_function',
@@ -39,6 +41,7 @@ wwv_flow_api.create_install_script(
 '      ,c.css_code_vc2 css_code -- only for backward compatibility',
 '      ,c.css_code_vc2',
 '      ,c.css_code_clob',
+'      ,''<b>'' || c.component_name || '' ('' || c.component_type || '' - '' || c.css_code_type || '')</b><br>'' || c.css_code_vc2 tooltip',
 '      ,regexp_count(c.css_code_clob',
 '                   ,chr(10)) + 1 css_code_lines',
 '      ,length(c.css_code_clob) css_code_length',
@@ -50,7 +53,7 @@ wwv_flow_api.create_install_script(
 '             ,1 best_practice',
 '             ,cast(substr(to_clob(tf.file_content)',
 '                         ,0',
-'                         ,4000) as varchar2(4000)) css_code_vc2',
+'                         ,3900) as varchar2(4000)) css_code_vc2',
 '             ,to_clob(tf.file_content) css_code_clob',
 '             ,''theme_roller_custom_css'' css_code_type',
 '             ,''custom_css'' component_type',
@@ -117,7 +120,7 @@ wwv_flow_api.create_install_script(
 '             ,0 best_practice',
 '             ,to_char(substr(p.page_html_header',
 '                            ,0',
-'                            ,4000)) css_code_vc2',
+'                            ,3900)) css_code_vc2',
 '             ,to_clob(p.page_html_header) css_code_clob',
 '             ,''page_html_header'' css_code_type',
 '             ,''page'' component_type',
@@ -159,7 +162,7 @@ wwv_flow_api.create_install_script(
 '             ,1 best_practice',
 '             ,to_char(substr(inline_css',
 '                            ,0',
-'                            ,4000)) css_code_vc2',
+'                            ,3900)) css_code_vc2',
 '             ,p.inline_css css_code_clob',
 '             ,''inline_css'' css_code_type',
 '             ,''page'' component_type',
