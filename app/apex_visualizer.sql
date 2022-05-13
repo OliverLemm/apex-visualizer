@@ -14,7 +14,7 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_api.import_begin (
  p_version_yyyy_mm_dd=>'2021.10.15'
-,p_release=>'21.2.1'
+,p_release=>'21.2.7'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -39,6 +39,7 @@ prompt APPLICATION 347 - APEX Visualizer
 --       Dynamic Actions:         35
 --     Shared Components:
 --       Logic:
+--         Processes:              1
 --         Build Options:          1
 --       Navigation:
 --         Lists:                  2
@@ -65,7 +66,7 @@ prompt APPLICATION 347 - APEX Visualizer
 --       E-Mail:
 --     Supporting Objects:  Included
 --       Install scripts:         16
---   Version:         21.2.1
+--   Version:         21.2.7
 --   Instance ID:     69411093447375
 --
 
@@ -113,7 +114,7 @@ wwv_flow_api.create_flow(
 ,p_auto_time_zone=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20211212225857'
+,p_last_upd_yyyymmddhh24miss=>'20211229162943'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 ,p_print_server_type=>'INSTANCE'
@@ -426,6 +427,22 @@ end;
 prompt --application/shared_components/navigation/navigation_bar
 begin
 null;
+end;
+/
+prompt --application/shared_components/logic/application_processes/apex_nitro
+begin
+wwv_flow_api.create_flow_process(
+ p_id=>wwv_flow_api.id(28019854089825293)
+,p_process_sequence=>-9999
+,p_process_point=>'BEFORE_HEADER'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'APEX Nitro'
+,p_process_sql_clob=>'apex_application.g_flow_images := ''http://localhost:4000/'';'
+,p_process_clob_language=>'PLSQL'
+,p_process_when=>'owa_util.get_cgi_env(''APEX-Nitro'') is not null'
+,p_process_when_type=>'EXPRESSION'
+,p_process_when2=>'PLSQL'
+);
 end;
 /
 prompt --application/shared_components/logic/application_settings
