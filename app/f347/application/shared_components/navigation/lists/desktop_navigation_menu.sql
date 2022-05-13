@@ -205,7 +205,6 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'APEX 21.1'
 ,p_list_item_link_target=>'f?p=&APP_ID.:707:&SESSION.::&DEBUG.::::'
 ,p_parent_list_item_id=>wwv_flow_api.id(16405035169854428)
-,p_required_patch=>wwv_flow_api.id(291318289212148547)
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'707'
 );

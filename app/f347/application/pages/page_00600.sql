@@ -21,7 +21,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210927224450'
+,p_last_upd_yyyymmddhh24miss=>'20220513175406'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(38837724345637017)
@@ -567,14 +567,15 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
 ,p_prompt=>'Compatibility Mode'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>5
+,p_cSize=>10
 ,p_cMaxlength=>4
-,p_colspan=>3
+,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'These Compatibility Modes are equal',
+'These Compatibility Modes are equal<br>',
+'21.2 / 22.1<br>',
 '19.2 / 20.1 / 20.2 / 21.1<br>',
 '19.1<br>',
 '5.1 / 18.1 / 18.2<br>',
@@ -595,13 +596,13 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
 ,p_prompt=>'Session State Protection'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>5
+,p_cSize=>10
 ,p_begin_on_new_line=>'N'
-,p_colspan=>3
+,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
-,p_help_text=>'To ensure the safety in your application, activate the Session State protection in your application.'
+,p_help_text=>'To ensure the safety in your application, activate the Session State protection in your application. Keep in mind if you secure your items they cannot be changed inside JavaScript (Dynamic Actions).'
 ,p_encrypt_session_state_yn=>'N'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'N'
@@ -617,11 +618,14 @@ wwv_flow_api.create_page_item(
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>20
 ,p_begin_on_new_line=>'N'
-,p_colspan=>3
+,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
-,p_help_text=>'Runtime API Usage should be restricted as much as possible.'
+,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'Runtime API Usage should be restricted as much as possible. If you have a standard Application with no custom API calls it should be completely disabled.<br>',
+'The setting can be found in the shared components => Security in the section Database session. All Checkboxes should be uncheckd.<br>',
+'If you are using API-Calls try to only check the "Modify This Application" Checkbox. '))
 ,p_encrypt_session_state_yn=>'N'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'N'
@@ -635,13 +639,15 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
 ,p_prompt=>'Include Legacy Javascript'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>5
-,p_begin_on_new_line=>'N'
-,p_colspan=>3
+,p_cSize=>10
+,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
-,p_help_text=>'Supporting legacy JavaScript means always to load more JavaScript as necessary.'
+,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'Supporting legacy JavaScript means always to load more JavaScript as necessary.<br> ',
+'This attribute can be found inside your application in the shared components => user interface page in the section "JavaScript". If one of the Checkboxes "Include Deprecated or Desupported Javascript Functions" is switched on it will return Yes.<br>',
+'For best performance and up-to-date JS calls switch "Pre 18.1" and "18.x" off.'))
 ,p_encrypt_session_state_yn=>'N'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'N'
@@ -655,9 +661,9 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
 ,p_prompt=>'Include jQuery Migrate'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>5
+,p_cSize=>10
 ,p_begin_on_new_line=>'N'
-,p_colspan=>3
+,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
@@ -676,7 +682,7 @@ wwv_flow_api.create_page_item(
 ,p_prompt=>'Theme Name'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>30
-,p_colspan=>3
+,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
@@ -692,16 +698,18 @@ wwv_flow_api.create_page_item(
 ,p_name=>'P600_UT_VERSION'
 ,p_item_sequence=>60
 ,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
-,p_prompt=>'UT Refreshed'
+,p_prompt=>'UT Version'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>5
+,p_cSize=>10
 ,p_begin_on_new_line=>'N'
-,p_colspan=>3
+,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'If using Universal Theme, this information shows the version compared to the APEX version<br>',
+'UT 22.1 = APEX 22.1<br>',
+'UT 21.2 = APEX 21.2<br>',
 'UT 21.1 = APEX 21.1<br>',
 'UT  1.6 = APEX 20.2<br>',
 'UT  1.5 = APEX 20.1<br>',
@@ -794,7 +802,7 @@ wwv_flow_api.create_page_da_action(
 'from apex_application_themes t',
 'where t.application_id = :P0_APP_ID',
 'and t.ui_type_name = ''DESKTOP'';'))
-,p_attribute_02=>'P0_APP_ID'
+,p_attribute_02=>'P600_COMPATIBILITY_MODE,P600_SESSION_STATE_PROTECTION,P600_RUNTIME_API_USAGE,P0_APP_ID,P600_INCLUDE_LEGACY_JAVASCRIPT,P600_INCLUDE_JQUERY_MIGRATE,P600_THEME_NAME,P600_UT_VERSION'
 ,p_attribute_03=>'P600_COMPATIBILITY_MODE,P600_SESSION_STATE_PROTECTION,P600_RUNTIME_API_USAGE,P600_INCLUDE_LEGACY_JAVASCRIPT,P600_INCLUDE_JQUERY_MIGRATE,P600_THEME_NAME,P600_UT_VERSION'
 ,p_attribute_04=>'N'
 ,p_attribute_05=>'PLSQL'
@@ -823,14 +831,19 @@ wwv_flow_api.create_page_da_action(
 'var val = apex.item("P600_COMPATIBILITY_MODE").getValue();',
 'console.log("P600_COMPATIBILITY_MODE=" + val);',
 '',
-'if (val == ''19.2'') {',
+'// success - up-to-date => 21.2 / 22.1',
+'if (val == ''21.2'') {',
 '    $trigger.removeClass("u-danger");',
 '    $trigger.addClass("u-success");',
 '    $trigger.removeClass("u-warning");',
-'} else if ((val == ''19.1'') || (val == ''5.1'')) {',
+'',
+'// warning - not up-to-date => only one version before 19.2 / 20.1 / 20.2 / 21.1',
+'} else if (val == ''19.2'') {',
 '    $trigger.removeClass("u-danger");',
 '    $trigger.removeClass("u-success");',
 '    $trigger.addClass("u-warning");',
+'',
+'// danger - older than 19.2',
 '} else {',
 '    $trigger.addClass("u-danger");',
 '    $trigger.removeClass("u-success");',
@@ -993,6 +1006,18 @@ wwv_flow_api.create_page_da_action(
 '    $trigger.addClass("u-danger");',
 '}'))
 );
+wwv_flow_api.component_end;
+end;
+/
+begin
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.7'
+,p_default_workspace_id=>125633378786110814
+,p_default_application_id=>347
+,p_default_id_offset=>125634094441118325
+,p_default_owner=>'APEX_VISUALIZER'
+);
 wwv_flow_api.create_page_da_action(
  p_id=>wwv_flow_api.id(39143544057438738)
 ,p_event_id=>wwv_flow_api.id(39143191512438734)
@@ -1041,14 +1066,19 @@ wwv_flow_api.create_page_da_action(
 'var $trigger = $(this.triggeringElement);',
 'var val = $trigger.val();',
 '',
-'if (val == ''21.1'') {    ',
+'// success - up-to-date',
+'if (val == ''21.2'') {    ',
 '    $trigger.addClass("u-success");',
 '    $trigger.removeClass("u-warning");',
 '    $trigger.removeClass("u-danger");',
+'',
+'// danger - old versions',
 '} else if ((val == ''1.0'') || (val == ''1.1'')) {    ',
 '    $trigger.removeClass("u-success");',
 '    $trigger.removeClass("u-warning");',
 '    $trigger.addClass("u-danger");',
+'',
+'// warning - versions not old and not the newest',
 '} else {    ',
 '    $trigger.removeClass("u-success");',
 '    $trigger.addClass("u-warning");',

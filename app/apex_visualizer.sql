@@ -34,9 +34,9 @@ prompt APPLICATION 347 - APEX Visualizer
 --     Pages:                     23
 --       Items:                   23
 --       Processes:                4
---       Regions:                 58
+--       Regions:                 63
 --       Buttons:                  6
---       Dynamic Actions:         35
+--       Dynamic Actions:         36
 --     Shared Components:
 --       Logic:
 --         Processes:              1
@@ -84,8 +84,9 @@ wwv_flow_api.create_flow(
 ,p_alias=>nvl(wwv_flow_application_install.get_application_alias,'AV')
 ,p_page_view_logging=>'YES'
 ,p_page_protection_enabled_y_n=>'Y'
-,p_checksum_salt=>'9BD1DBA15F0D60CE37548FD25854911C9BA805390052698EAAB5D4B75DA875F7'
-,p_bookmark_checksum_function=>'MD5'
+,p_checksum_salt=>'A6E3BB2D2DE19934A5B6DE8C58FA65422D49912864CE2CE84F77196DBC8E0268'
+,p_checksum_salt_last_reset=>'20220513172708'
+,p_bookmark_checksum_function=>'SH512'
 ,p_accept_old_checksums=>false
 ,p_compatibility_mode=>'21.2'
 ,p_flow_language=>'en'
@@ -97,11 +98,11 @@ wwv_flow_api.create_flow(
 ,p_populate_roles=>'A'
 ,p_application_tab_set=>1
 ,p_logo_type=>'T'
-,p_logo_text=>'Apex Visualizer'
+,p_logo_text=>'APEX Visualizer'
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'21.2.4'
+,p_flow_version=>'21.2.5'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -114,7 +115,7 @@ wwv_flow_api.create_flow(
 ,p_auto_time_zone=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20211229162943'
+,p_last_upd_yyyymmddhh24miss=>'20220513182336'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 ,p_print_server_type=>'INSTANCE'
@@ -318,7 +319,6 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'APEX 21.1'
 ,p_list_item_link_target=>'f?p=&APP_ID.:707:&SESSION.::&DEBUG.::::'
 ,p_parent_list_item_id=>wwv_flow_api.id(16405035169854428)
-,p_required_patch=>wwv_flow_api.id(291318289212148547)
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'707'
 );
@@ -22693,7 +22693,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210927224450'
+,p_last_upd_yyyymmddhh24miss=>'20220513175406'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(38837724345637017)
@@ -23239,14 +23239,15 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
 ,p_prompt=>'Compatibility Mode'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>5
+,p_cSize=>10
 ,p_cMaxlength=>4
-,p_colspan=>3
+,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'These Compatibility Modes are equal',
+'These Compatibility Modes are equal<br>',
+'21.2 / 22.1<br>',
 '19.2 / 20.1 / 20.2 / 21.1<br>',
 '19.1<br>',
 '5.1 / 18.1 / 18.2<br>',
@@ -23267,13 +23268,13 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
 ,p_prompt=>'Session State Protection'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>5
+,p_cSize=>10
 ,p_begin_on_new_line=>'N'
-,p_colspan=>3
+,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
-,p_help_text=>'To ensure the safety in your application, activate the Session State protection in your application.'
+,p_help_text=>'To ensure the safety in your application, activate the Session State protection in your application. Keep in mind if you secure your items they cannot be changed inside JavaScript (Dynamic Actions).'
 ,p_encrypt_session_state_yn=>'N'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'N'
@@ -23289,11 +23290,14 @@ wwv_flow_api.create_page_item(
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>20
 ,p_begin_on_new_line=>'N'
-,p_colspan=>3
+,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
-,p_help_text=>'Runtime API Usage should be restricted as much as possible.'
+,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'Runtime API Usage should be restricted as much as possible. If you have a standard Application with no custom API calls it should be completely disabled.<br>',
+'The setting can be found in the shared components => Security in the section Database session. All Checkboxes should be uncheckd.<br>',
+'If you are using API-Calls try to only check the "Modify This Application" Checkbox. '))
 ,p_encrypt_session_state_yn=>'N'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'N'
@@ -23307,13 +23311,15 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
 ,p_prompt=>'Include Legacy Javascript'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>5
-,p_begin_on_new_line=>'N'
-,p_colspan=>3
+,p_cSize=>10
+,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
-,p_help_text=>'Supporting legacy JavaScript means always to load more JavaScript as necessary.'
+,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'Supporting legacy JavaScript means always to load more JavaScript as necessary.<br> ',
+'This attribute can be found inside your application in the shared components => user interface page in the section "JavaScript". If one of the Checkboxes "Include Deprecated or Desupported Javascript Functions" is switched on it will return Yes.<br>',
+'For best performance and up-to-date JS calls switch "Pre 18.1" and "18.x" off.'))
 ,p_encrypt_session_state_yn=>'N'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'N'
@@ -23327,9 +23333,9 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
 ,p_prompt=>'Include jQuery Migrate'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>5
+,p_cSize=>10
 ,p_begin_on_new_line=>'N'
-,p_colspan=>3
+,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
@@ -23348,7 +23354,7 @@ wwv_flow_api.create_page_item(
 ,p_prompt=>'Theme Name'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>30
-,p_colspan=>3
+,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
@@ -23364,16 +23370,18 @@ wwv_flow_api.create_page_item(
 ,p_name=>'P600_UT_VERSION'
 ,p_item_sequence=>60
 ,p_item_plug_id=>wwv_flow_api.id(39140850641438711)
-,p_prompt=>'UT Refreshed'
+,p_prompt=>'UT Version'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>5
+,p_cSize=>10
 ,p_begin_on_new_line=>'N'
-,p_colspan=>3
+,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_api.id(452481165926466293)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'If using Universal Theme, this information shows the version compared to the APEX version<br>',
+'UT 22.1 = APEX 22.1<br>',
+'UT 21.2 = APEX 21.2<br>',
 'UT 21.1 = APEX 21.1<br>',
 'UT  1.6 = APEX 20.2<br>',
 'UT  1.5 = APEX 20.1<br>',
@@ -23466,7 +23474,7 @@ wwv_flow_api.create_page_da_action(
 'from apex_application_themes t',
 'where t.application_id = :P0_APP_ID',
 'and t.ui_type_name = ''DESKTOP'';'))
-,p_attribute_02=>'P0_APP_ID'
+,p_attribute_02=>'P600_COMPATIBILITY_MODE,P600_SESSION_STATE_PROTECTION,P600_RUNTIME_API_USAGE,P0_APP_ID,P600_INCLUDE_LEGACY_JAVASCRIPT,P600_INCLUDE_JQUERY_MIGRATE,P600_THEME_NAME,P600_UT_VERSION'
 ,p_attribute_03=>'P600_COMPATIBILITY_MODE,P600_SESSION_STATE_PROTECTION,P600_RUNTIME_API_USAGE,P600_INCLUDE_LEGACY_JAVASCRIPT,P600_INCLUDE_JQUERY_MIGRATE,P600_THEME_NAME,P600_UT_VERSION'
 ,p_attribute_04=>'N'
 ,p_attribute_05=>'PLSQL'
@@ -23495,14 +23503,19 @@ wwv_flow_api.create_page_da_action(
 'var val = apex.item("P600_COMPATIBILITY_MODE").getValue();',
 'console.log("P600_COMPATIBILITY_MODE=" + val);',
 '',
-'if (val == ''19.2'') {',
+'// success - up-to-date => 21.2 / 22.1',
+'if (val == ''21.2'') {',
 '    $trigger.removeClass("u-danger");',
 '    $trigger.addClass("u-success");',
 '    $trigger.removeClass("u-warning");',
-'} else if ((val == ''19.1'') || (val == ''5.1'')) {',
+'',
+'// warning - not up-to-date => only one version before 19.2 / 20.1 / 20.2 / 21.1',
+'} else if (val == ''19.2'') {',
 '    $trigger.removeClass("u-danger");',
 '    $trigger.removeClass("u-success");',
 '    $trigger.addClass("u-warning");',
+'',
+'// danger - older than 19.2',
 '} else {',
 '    $trigger.addClass("u-danger");',
 '    $trigger.removeClass("u-success");',
@@ -23678,6 +23691,9 @@ wwv_flow_api.create_page_da_action(
 ,p_client_condition_element=>'P600_THEME_NAME'
 ,p_client_condition_expression=>'Universal Theme'
 );
+end;
+/
+begin
 wwv_flow_api.create_page_da_action(
  p_id=>wwv_flow_api.id(39143453638438737)
 ,p_event_id=>wwv_flow_api.id(39143191512438734)
@@ -23713,14 +23729,19 @@ wwv_flow_api.create_page_da_action(
 'var $trigger = $(this.triggeringElement);',
 'var val = $trigger.val();',
 '',
-'if (val == ''21.1'') {    ',
+'// success - up-to-date',
+'if (val == ''21.2'') {    ',
 '    $trigger.addClass("u-success");',
 '    $trigger.removeClass("u-warning");',
 '    $trigger.removeClass("u-danger");',
+'',
+'// danger - old versions',
 '} else if ((val == ''1.0'') || (val == ''1.1'')) {    ',
 '    $trigger.removeClass("u-success");',
 '    $trigger.removeClass("u-warning");',
 '    $trigger.addClass("u-danger");',
+'',
+'// warning - versions not old and not the newest',
 '} else {    ',
 '    $trigger.removeClass("u-success");',
 '    $trigger.addClass("u-warning");',
@@ -24726,11 +24747,329 @@ wwv_flow_api.create_page(
 ,p_name=>'APEX 21.1'
 ,p_alias=>'APEX-21-1'
 ,p_step_title=>'APEX 21.1'
+,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20211124102354'
+,p_last_upd_yyyymmddhh24miss=>'20220513182336'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(38827190612719748)
+,p_plug_name=>'5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Release Notes</a>'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(452458863643466246)
+,p_plug_display_sequence=>20
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(38827326218719750)
+,p_name=>'5.1.3 Date Picker (jQuery) Deprecated'
+,p_parent_plug_id=>wwv_flow_api.id(38827190612719748)
+,p_template=>wwv_flow_api.id(452458863643466246)
+,p_display_sequence=>10
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_display_point=>'SUB_REGIONS'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select ',
+'pi.page_id, ',
+'pi.page_name,',
+'pi.item_name, ',
+'pi.label',
+'from apex_application_page_items pi',
+'where pi.display_as_code = ''NATIVE_DATE_PICKER''',
+'and pi.application_id = :P0_APP_ID'))
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>true
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>99999
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No jQuery Date Picker items found.</b>'
+,p_query_num_rows_type=>'ROWS_X_TO_Y'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(41551207573456901)
+,p_query_column_id=>1
+,p_column_alias=>'PAGE_ID'
+,p_column_display_sequence=>10
+,p_column_heading=>'Page Id'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(41551395204456902)
+,p_query_column_id=>2
+,p_column_alias=>'PAGE_NAME'
+,p_column_display_sequence=>20
+,p_column_heading=>'Page Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(41551434569456903)
+,p_query_column_id=>3
+,p_column_alias=>'ITEM_NAME'
+,p_column_display_sequence=>30
+,p_column_heading=>'Item Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(41551500885456904)
+,p_query_column_id=>4
+,p_column_alias=>'LABEL'
+,p_column_display_sequence=>40
+,p_column_heading=>'Label'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(87704971292745113)
+,p_plug_name=>'7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/21.1/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Release Notes</a>'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(452458863643466246)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(38826465420719741)
+,p_name=>'7.1.11 apex.navigation.dialog.fireCloseHandler function is Desupported'
+,p_parent_plug_id=>wwv_flow_api.id(87704971292745113)
+,p_template=>wwv_flow_api.id(452458863643466246)
+,p_display_sequence=>50
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select j.page_id',
+'      ,j.page_name',
+'      ,j.component_name',
+'      ,j.component_type',
+'      ,j.js_code_vc2',
+'from av_javascript_v j',
+'where instr(j.js_code_clob',
+'           ,''apex.navigation.dialog.fireCloseHandler'') > 0',
+'and j.application_id = :P0_APP_ID'))
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>true
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>99999
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No calls like apex.navigation.dialog.fireCloseHandler found.</b>'
+,p_query_num_rows_type=>'ROWS_X_TO_Y'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(38826525553719742)
+,p_query_column_id=>1
+,p_column_alias=>'PAGE_ID'
+,p_column_display_sequence=>10
+,p_column_heading=>'Page Id'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(38826621397719743)
+,p_query_column_id=>2
+,p_column_alias=>'PAGE_NAME'
+,p_column_display_sequence=>20
+,p_column_heading=>'Page Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(38826793953719744)
+,p_query_column_id=>3
+,p_column_alias=>'COMPONENT_NAME'
+,p_column_display_sequence=>30
+,p_column_heading=>'Component Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(38826871715719745)
+,p_query_column_id=>4
+,p_column_alias=>'COMPONENT_TYPE'
+,p_column_display_sequence=>40
+,p_column_heading=>'Component Type'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(38826956611719746)
+,p_query_column_id=>5
+,p_column_alias=>'JS_CODE_VC2'
+,p_column_display_sequence=>50
+,p_column_heading=>'Js Code Vc2'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(57969039968358415)
+,p_name=>'7.1.9 afterModify is Desupported'
+,p_parent_plug_id=>wwv_flow_api.id(87704971292745113)
+,p_template=>wwv_flow_api.id(452458863643466246)
+,p_display_sequence=>40
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select j.page_id',
+'      ,j.page_name',
+'      ,j.component_name',
+'      ,j.component_type',
+'      ,j.js_code_vc2',
+'from av_javascript_v j',
+'where instr(j.js_code_clob',
+'           ,''.afterModify'') > 0',
+'and j.application_id = :P0_APP_ID'))
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>true
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>99999
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No calls like apex.item("P1_ITEM").afterModify() found.</b>'
+,p_query_num_rows_type=>'ROWS_X_TO_Y'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(38825709571719734)
+,p_query_column_id=>1
+,p_column_alias=>'PAGE_ID'
+,p_column_display_sequence=>10
+,p_column_heading=>'Page Id'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(38825875193719735)
+,p_query_column_id=>2
+,p_column_alias=>'PAGE_NAME'
+,p_column_display_sequence=>20
+,p_column_heading=>'Page Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(38825996962719736)
+,p_query_column_id=>3
+,p_column_alias=>'COMPONENT_NAME'
+,p_column_display_sequence=>30
+,p_column_heading=>'Component Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(38826012760719737)
+,p_query_column_id=>4
+,p_column_alias=>'COMPONENT_TYPE'
+,p_column_display_sequence=>40
+,p_column_heading=>'Component Type'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(38826184608719738)
+,p_query_column_id=>5
+,p_column_alias=>'JS_CODE_VC2'
+,p_column_display_sequence=>50
+,p_column_heading=>'Js Code Vc2'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(38826291025719739)
+,p_name=>'change P0_APP_ID - refresh regions'
+,p_event_sequence=>10
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P0_APP_ID'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'change'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(38826372938719740)
+,p_event_id=>wwv_flow_api.id(38826291025719739)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(57969039968358415)
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(38827053490719747)
+,p_event_id=>wwv_flow_api.id(38826291025719739)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(38826465420719741)
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(41551631471456905)
+,p_event_id=>wwv_flow_api.id(38826291025719739)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(38827326218719750)
 );
 end;
 /
@@ -26411,12 +26750,12 @@ wwv_flow_api.create_install_object(
 );
 end;
 /
-prompt --application/deployment/install/install_av_visibility_overview_v	
+prompt --application/deployment/install/install_av_visibility_overview_v
 begin
 wwv_flow_api.create_install_script(
  p_id=>wwv_flow_api.id(143657830019179125)
 ,p_install_id=>wwv_flow_api.id(294519018125278192)
-,p_name=>'av_visibility_overview_v	'
+,p_name=>'av_visibility_overview_v'
 ,p_sequence=>80
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(

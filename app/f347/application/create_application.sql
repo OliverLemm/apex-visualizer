@@ -18,8 +18,9 @@ wwv_flow_api.create_flow(
 ,p_alias=>nvl(wwv_flow_application_install.get_application_alias,'AV')
 ,p_page_view_logging=>'YES'
 ,p_page_protection_enabled_y_n=>'Y'
-,p_checksum_salt=>'9BD1DBA15F0D60CE37548FD25854911C9BA805390052698EAAB5D4B75DA875F7'
-,p_bookmark_checksum_function=>'MD5'
+,p_checksum_salt=>'A6E3BB2D2DE19934A5B6DE8C58FA65422D49912864CE2CE84F77196DBC8E0268'
+,p_checksum_salt_last_reset=>'20220513172708'
+,p_bookmark_checksum_function=>'SH512'
 ,p_accept_old_checksums=>false
 ,p_compatibility_mode=>'21.2'
 ,p_flow_language=>'en'
@@ -31,11 +32,11 @@ wwv_flow_api.create_flow(
 ,p_populate_roles=>'A'
 ,p_application_tab_set=>1
 ,p_logo_type=>'T'
-,p_logo_text=>'Apex Visualizer'
+,p_logo_text=>'APEX Visualizer'
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'21.2.4'
+,p_flow_version=>'21.2.5'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -48,7 +49,7 @@ wwv_flow_api.create_flow(
 ,p_auto_time_zone=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20220513105617'
+,p_last_upd_yyyymmddhh24miss=>'20220513182336'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 ,p_print_server_type=>'INSTANCE'
