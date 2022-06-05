@@ -44,6 +44,13 @@ wwv_flow_api.create_menu_option(
 ,p_page_id=>708
 );
 wwv_flow_api.create_menu_option(
+ p_id=>wwv_flow_api.id(45130162949362695)
+,p_parent_id=>wwv_flow_api.id(45074919437235331)
+,p_short_name=>'APEX 22.1'
+,p_link=>'f?p=&APP_ID.:709:&SESSION.::&DEBUG.:::'
+,p_page_id=>709
+);
+wwv_flow_api.create_menu_option(
  p_id=>wwv_flow_api.id(449487024914813011)
 ,p_parent_id=>0
 ,p_short_name=>'Apps'

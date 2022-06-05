@@ -122,6 +122,7 @@ prompt --install
 @@application/pages/page_00706.sql
 @@application/pages/page_00707.sql
 @@application/pages/page_00708.sql
+@@application/pages/page_00709.sql
 @@application/deployment/definition.sql
 @@application/deployment/install/install_av_general_pkg.sql
 @@application/deployment/install/install_av_applications_v.sql

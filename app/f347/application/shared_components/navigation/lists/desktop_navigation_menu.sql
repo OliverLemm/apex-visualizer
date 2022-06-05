@@ -138,7 +138,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_target=>'f?p=&APP_ID.:700:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'fa-wrench'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
-,p_list_item_current_for_pages=>'700,701,702,703,704,705,706,707,708'
+,p_list_item_current_for_pages=>'700,701,702,703,704,705,706,707,708,709'
 );
 wwv_flow_api.create_list_item(
  p_id=>wwv_flow_api.id(16406329864879493)
@@ -215,6 +215,15 @@ wwv_flow_api.create_list_item(
 ,p_parent_list_item_id=>wwv_flow_api.id(16405035169854428)
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'708'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(45129397329359590)
+,p_list_item_display_sequence=>430
+,p_list_item_link_text=>'APEX 22.1'
+,p_list_item_link_target=>'f?p=&APP_ID.:709:&APP_SESSION.::&DEBUG.:::'
+,p_parent_list_item_id=>wwv_flow_api.id(16405035169854428)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'709'
 );
 wwv_flow_api.component_end;
 end;

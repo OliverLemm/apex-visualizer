@@ -31,10 +31,10 @@ prompt APPLICATION 347 - APEX Visualizer
 --   Exported By:     APEX_VISUALIZER
 --   Flashback:       0
 --   Export Type:     Application Export
---     Pages:                     23
+--     Pages:                     24
 --       Items:                   23
 --       Processes:                4
---       Regions:                 79
+--       Regions:                 80
 --       Buttons:                  5
 --       Dynamic Actions:         38
 --     Shared Components:
@@ -44,7 +44,7 @@ prompt APPLICATION 347 - APEX Visualizer
 --       Navigation:
 --         Lists:                  2
 --         Breadcrumbs:            1
---           Entries:              7
+--           Entries:              8
 --       Security:
 --         Authentication:         2
 --       User Interface:
@@ -115,7 +115,7 @@ wwv_flow_api.create_flow(
 ,p_auto_time_zone=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20220605185212'
+,p_last_upd_yyyymmddhh24miss=>'20220605185755'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>7
 ,p_ui_type_name => null
@@ -253,7 +253,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_target=>'f?p=&APP_ID.:700:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'fa-wrench'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
-,p_list_item_current_for_pages=>'700,701,702,703,704,705,706,707,708'
+,p_list_item_current_for_pages=>'700,701,702,703,704,705,706,707,708,709'
 );
 wwv_flow_api.create_list_item(
  p_id=>wwv_flow_api.id(16406329864879493)
@@ -330,6 +330,15 @@ wwv_flow_api.create_list_item(
 ,p_parent_list_item_id=>wwv_flow_api.id(16405035169854428)
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'708'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(45129397329359590)
+,p_list_item_display_sequence=>430
+,p_list_item_link_text=>'APEX 22.1'
+,p_list_item_link_target=>'f?p=&APP_ID.:709:&APP_SESSION.::&DEBUG.:::'
+,p_parent_list_item_id=>wwv_flow_api.id(16405035169854428)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'709'
 );
 end;
 /
@@ -587,6 +596,13 @@ wwv_flow_api.create_menu_option(
 ,p_short_name=>'APEX 21.2'
 ,p_link=>'f?p=&APP_ID.:708:&SESSION.::&DEBUG.:::'
 ,p_page_id=>708
+);
+wwv_flow_api.create_menu_option(
+ p_id=>wwv_flow_api.id(45130162949362695)
+,p_parent_id=>wwv_flow_api.id(45074919437235331)
+,p_short_name=>'APEX 22.1'
+,p_link=>'f?p=&APP_ID.:709:&SESSION.::&DEBUG.:::'
+,p_page_id=>709
 );
 wwv_flow_api.create_menu_option(
  p_id=>wwv_flow_api.id(449487024914813011)
@@ -26519,6 +26535,37 @@ wwv_flow_api.create_page_da_action(
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_api.id(16423715186017308)
+);
+end;
+/
+prompt --application/pages/page_00709
+begin
+wwv_flow_api.create_page(
+ p_id=>709
+,p_user_interface_id=>wwv_flow_api.id(452492531566466351)
+,p_name=>'APEX 22.1'
+,p_alias=>'APEX-22-1'
+,p_step_title=>'APEX 22.1'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_last_updated_by=>'OLEMM'
+,p_last_upd_yyyymmddhh24miss=>'20220605185735'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(45105580925952525)
+,p_plug_name=>'APEX 22.1'
+,p_icon_css_classes=>'fa-wrench'
+,p_region_template_options=>'#DEFAULT#'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(452456691272466243)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'REGION_POSITION_01'
+,p_menu_id=>wwv_flow_api.id(452492814882466360)
+,p_plug_source_type=>'NATIVE_BREADCRUMB'
+,p_menu_template_id=>wwv_flow_api.id(452482206618466299)
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 );
 end;
 /
