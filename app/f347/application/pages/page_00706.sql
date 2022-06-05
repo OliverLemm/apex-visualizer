@@ -22,7 +22,7 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20220605181442'
+,p_last_upd_yyyymmddhh24miss=>'20220605185212'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(43370267182782523)
@@ -38,6 +38,18 @@ wwv_flow_api.create_page_plug(
 ,p_plug_source_type=>'NATIVE_BREADCRUMB'
 ,p_menu_template_id=>wwv_flow_api.id(452482206618466299)
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(45105451695952524)
+,p_plug_name=>'5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084">Release Notes</a>'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(452458863643466246)
+,p_plug_display_sequence=>30
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_source=>'No checks integrated.'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(132789394028534863)
@@ -297,6 +309,7 @@ wwv_flow_api.create_report_region(
 '       ,''closemodal'') > 0)',
 'and application_id = :P0_APP_ID'))
 ,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'Deprecated in APEX 20.1 and now desupported.<br>',
 '<b>openModal(''myRegionId'');</b> => <b>apex.theme.openRegion(''myRegionId'');</b> <a href="https://docs.oracle.com/en/database/oracle/application-express/20.2/aexjs/apex.theme.html#.openRegion" target="_blank">APEX 20.2 JS API apex.theme.openRegion</a><'
 ||'br>',
 '<b>closeModal(''myRegionId'');</b> => <b>apex.theme.closeRegion(''myRegionId'');</b> <a href="https://docs.oracle.com/en/database/oracle/application-express/20.2/aexjs/apex.theme.html#.closeRegion" target="_blank">APEX 20.2 JS API apex.theme.closeRegion<'
@@ -589,7 +602,7 @@ wwv_flow_api.create_report_region(
 ,p_name=>'7.1.13 Desupported JavaScript Functions'
 ,p_parent_plug_id=>wwv_flow_api.id(132789394028534863)
 ,p_template=>wwv_flow_api.id(452454481275466240)
-,p_display_sequence=>110
+,p_display_sequence=>120
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
 ,p_source_type=>'NATIVE_SQL_REPORT'
