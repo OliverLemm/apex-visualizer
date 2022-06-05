@@ -21,7 +21,22 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20211124102337'
+,p_last_upd_yyyymmddhh24miss=>'20220605170531'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(43370267182782523)
+,p_plug_name=>'APEX 20.2'
+,p_icon_css_classes=>'fa-wrench'
+,p_region_template_options=>'#DEFAULT#'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(452456691272466243)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'REGION_POSITION_01'
+,p_menu_id=>wwv_flow_api.id(452492814882466360)
+,p_plug_source_type=>'NATIVE_BREADCRUMB'
+,p_menu_template_id=>wwv_flow_api.id(452482206618466299)
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 );
 wwv_flow_api.component_end;
 end;

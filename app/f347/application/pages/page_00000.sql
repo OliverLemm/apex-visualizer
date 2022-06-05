@@ -20,11 +20,12 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'D'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210927111337'
+,p_last_upd_yyyymmddhh24miss=>'20220605154450'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(452496424516540365)
 ,p_plug_name=>'Filter'
+,p_region_name=>'av-region-right-column'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody:t-Form--labelsAbove'
 ,p_plug_template=>wwv_flow_api.id(452458863643466246)
 ,p_plug_display_sequence=>10
@@ -33,6 +34,29 @@ wwv_flow_api.create_page_plug(
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(45068108221137631)
+,p_button_sequence=>200
+,p_button_plug_id=>wwv_flow_api.id(452496424516540365)
+,p_button_name=>'Refresh'
+,p_button_static_id=>'P0_BUTTON_REFRESH'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#:t-Button--iconRight:t-Button--stretch'
+,p_button_template_id=>wwv_flow_api.id(452481802985466298)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Refresh'
+,p_button_position=>'CLOSE'
+,p_button_execute_validations=>'N'
+,p_warn_on_unsaved_changes=>null
+,p_button_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select le.entry_text',
+'from apex_application_list_entries le',
+'where le.application_id = 347',
+'and le.list_name = ''Desktop Navigation Menu''',
+'and le.parent_entry_text = ''Migration'''))
+,p_button_condition_type=>'EXISTS'
+,p_icon_css_classes=>'fa-refresh'
 );
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(449531905217422730)

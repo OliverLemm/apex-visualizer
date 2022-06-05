@@ -4,6 +4,8 @@ prompt --install
 @@application/create_application.sql
 @@application/shared_components/navigation/lists/desktop_navigation_menu.sql
 @@application/shared_components/navigation/lists/desktop_navigation_bar.sql
+@@application/shared_components/files/av_css.sql
+@@application/shared_components/files/av_min_css.sql
 @@application/plugin_settings.sql
 @@application/shared_components/navigation/navigation_bar.sql
 @@application/shared_components/logic/application_processes/apex_nitro.sql

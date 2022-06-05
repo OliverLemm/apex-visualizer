@@ -22,7 +22,7 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20211212225857'
+,p_last_upd_yyyymmddhh24miss=>'20220605170042'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(22470625676353912)
@@ -693,21 +693,20 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(23544952863929123)
-,p_button_sequence=>60
-,p_button_plug_id=>wwv_flow_api.id(452496424516540365)
-,p_button_name=>'Refresh'
-,p_button_static_id=>'P708_BUTTON_REFRESH'
-,p_button_action=>'DEFINED_BY_DA'
-,p_button_template_options=>'#DEFAULT#:t-Button--iconRight'
-,p_button_template_id=>wwv_flow_api.id(452481802985466298)
-,p_button_is_hot=>'Y'
-,p_button_image_alt=>'Refresh'
-,p_button_execute_validations=>'N'
-,p_warn_on_unsaved_changes=>null
-,p_icon_css_classes=>'fa-refresh'
-,p_button_cattributes=>'style="margin-top:10px"'
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(43370026133782521)
+,p_plug_name=>'APEX 20.1'
+,p_icon_css_classes=>'fa-wrench'
+,p_region_template_options=>'#DEFAULT#'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(452456691272466243)
+,p_plug_display_sequence=>40
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'REGION_POSITION_01'
+,p_menu_id=>wwv_flow_api.id(452492814882466360)
+,p_plug_source_type=>'NATIVE_BREADCRUMB'
+,p_menu_template_id=>wwv_flow_api.id(452482206618466299)
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(22470750244353913)
@@ -803,7 +802,7 @@ wwv_flow_api.create_page_da_event(
 ,p_name=>'click refresh - refresh regions'
 ,p_event_sequence=>20
 ,p_triggering_element_type=>'BUTTON'
-,p_triggering_button_id=>wwv_flow_api.id(23544952863929123)
+,p_triggering_button_id=>wwv_flow_api.id(45068108221137631)
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'click'
 );

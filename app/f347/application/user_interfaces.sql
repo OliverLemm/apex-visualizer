@@ -27,6 +27,7 @@ wwv_flow_api.create_user_interface(
 ,p_navigation_list_position=>'SIDE'
 ,p_navigation_list_template_id=>wwv_flow_api.id(452478253231466285)
 ,p_nav_list_template_options=>'#DEFAULT#:js-defaultCollapsed:js-navCollapsed--hidden:t-TreeNav--classic'
+,p_css_file_urls=>'#APP_FILES#av#MIN#.css'
 ,p_nav_bar_type=>'LIST'
 ,p_nav_bar_list_id=>wwv_flow_api.id(452492439461466348)
 ,p_nav_bar_list_template_id=>wwv_flow_api.id(452478069261466285)
