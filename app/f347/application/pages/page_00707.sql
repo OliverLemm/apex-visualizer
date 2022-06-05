@@ -22,7 +22,7 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20220605171250'
+,p_last_upd_yyyymmddhh24miss=>'20220605171920'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(38827190612719748)
@@ -112,6 +112,21 @@ wwv_flow_api.create_report_columns(
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(43370559179782526)
+,p_plug_name=>'5.1.4 Based On - Output of PL/SQL Code attribute Deprecated '
+,p_parent_plug_id=>wwv_flow_api.id(38827190612719748)
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(452454481275466240)
+,p_plug_display_sequence=>20
+,p_plug_display_point=>'SUB_REGIONS'
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'<b><span aria-hidden="true" class="fa fa-warning u-warning-text"></span> not yet supported</b>',
+''))
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(43370307523782524)

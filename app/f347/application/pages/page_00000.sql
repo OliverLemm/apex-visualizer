@@ -20,7 +20,7 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'D'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20220605154450'
+,p_last_upd_yyyymmddhh24miss=>'20220605173059'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(452496424516540365)
@@ -52,7 +52,7 @@ wwv_flow_api.create_page_button(
 ,p_button_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select le.entry_text',
 'from apex_application_list_entries le',
-'where le.application_id = 347',
+'where le.application_id = :APP_ID',
 'and le.list_name = ''Desktop Navigation Menu''',
 'and le.parent_entry_text = ''Migration'''))
 ,p_button_condition_type=>'EXISTS'

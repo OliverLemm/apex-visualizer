@@ -17,11 +17,12 @@ wwv_flow_api.create_page(
 ,p_name=>'APEX 19.2'
 ,p_alias=>'APEX-19-2'
 ,p_step_title=>'APEX 19.2'
+,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20211124102248'
+,p_last_upd_yyyymmddhh24miss=>'20220605173913'
 );
 wwv_flow_api.component_end;
 end;
