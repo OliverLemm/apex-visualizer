@@ -1,4 +1,4 @@
-prompt --application/shared_components/files/av_css
+prompt --application/shared_components/files/av_min_js
 begin
 --   Manifest
 --     APP STATIC FILES: 347
@@ -12,11 +12,12 @@ wwv_flow_api.component_begin (
 ,p_default_owner=>'APEX_VISUALIZER'
 );
 wwv_flow_api.g_varchar2_table := wwv_flow_api.empty_varchar2_table;
-wwv_flow_api.g_varchar2_table(1) := '2361762D726567696F6E2D72696768742D636F6C756D6E202E742D526567696F6E2D627574746F6E732D6C6566740D0A7B0D0A2020202077696474683A313030253B0D0A7D';
+wwv_flow_api.g_varchar2_table(1) := '66756E6374696F6E2061765F726566726573685F686964655F73686F775F726567696F6E7328297B2428222E742D526567696F6E2E742D526567696F6E2D2D6869646553686F7722292E65616368282866756E6374696F6E28297B6C657420653D242874';
+wwv_flow_api.g_varchar2_table(2) := '686973292E617474722822696422293B617065782E726567696F6E2865292E7265667265736828297D29297D';
 wwv_flow_api.create_app_static_file(
- p_id=>wwv_flow_api.id(45069494819170018)
-,p_file_name=>'av.css'
-,p_mime_type=>'text/css'
+ p_id=>wwv_flow_api.id(57382672707510970)
+,p_file_name=>'av.min.js'
+,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'
 ,p_file_content => wwv_flow_api.varchar2_to_blob(wwv_flow_api.g_varchar2_table)
 );
