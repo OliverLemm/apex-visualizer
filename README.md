@@ -1,4 +1,7 @@
 # Apex-Visualizer
+## Release 21.2.5
+The APEX 22.1 Migration Page with major Deprecated and Desupported Checks has been added. This version is the last version of APEX Visualizer for APEX 21.2. Next versions will need APEX 22.1 or higher.
+
 ## Release 21.2.4
 The APEX 20.1 Migration Page with major Deprecated and Desupported Checks has been added.
 

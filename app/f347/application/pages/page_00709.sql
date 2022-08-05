@@ -22,7 +22,7 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20220805103019'
+,p_last_upd_yyyymmddhh24miss=>'20220805142524'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(45105580925952525)
@@ -58,7 +58,6 @@ wwv_flow_api.create_report_region(
 ,p_display_sequence=>10
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
-,p_display_point=>'SUB_REGIONS'
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -162,7 +161,6 @@ wwv_flow_api.create_report_region(
 ,p_display_sequence=>20
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
-,p_display_point=>'SUB_REGIONS'
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -246,6 +244,361 @@ wwv_flow_api.create_report_columns(
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(57851335846603231)
+,p_name=>'6.1.3 Deprecated Attributes in App Builder'
+,p_parent_plug_id=>wwv_flow_api.id(57849785504603215)
+,p_template=>wwv_flow_api.id(452454481275466240)
+,p_display_sequence=>30
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select a.app_builder_icon_name, a.favicons, a.pwa_manifest_icon_url',
+'from apex_applications a',
+'where (a.app_builder_icon_name is not null or ',
+'       a.favicons is not null or',
+'       a.pwa_manifest_icon_url is not null)',
+'and a.application_id = :P0_APP_ID'))
+,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'In Edit Application Definition: <b>Progressive Web App - Icon URL</b> and <b>Application Icon - Icon File Name</b><br>',
+'In Edit User Interface: <b>Favicon</b>'))
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>false
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>15
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Deprecated Attributes in App Builder used</b>'
+,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57851933883603237)
+,p_query_column_id=>1
+,p_column_alias=>'APP_BUILDER_ICON_NAME'
+,p_column_display_sequence=>10
+,p_column_heading=>'App Builder Icon Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57852068419603238)
+,p_query_column_id=>2
+,p_column_alias=>'FAVICONS'
+,p_column_display_sequence=>20
+,p_column_heading=>'Favicons'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57888634654361005)
+,p_query_column_id=>3
+,p_column_alias=>'PWA_MANIFEST_ICON_URL'
+,p_column_display_sequence=>30
+,p_column_heading=>'Pwa Manifest Icon Url'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(57852166929603239)
+,p_plug_name=>'6.1.4 Deprecated Utilities'
+,p_parent_plug_id=>wwv_flow_api.id(57849785504603215)
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(452454481275466240)
+,p_plug_display_sequence=>40
+,p_plug_source=>'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'The APEXExport utility is deprecated, and will be removed in a future release. Oracle recommends using <a href="https://www.oracle.com/de/database/sqldeveloper/technologies/sqlcl/" target="_blank">SQLcl</a> instead.<br>',
+'<br>'))
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(57852286585603240)
+,p_name=>'6.1.5 Deprecated Legacy Web Service References'
+,p_parent_plug_id=>wwv_flow_api.id(57849785504603215)
+,p_template=>wwv_flow_api.id(452454481275466240)
+,p_display_sequence=>50
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select w.web_service_name',
+'      ,w.url',
+'      ,w.ACTION',
+'from apex_application_web_services w',
+'where w.application_id = :P0_APP_ID'))
+,p_header=>'SOAP style Web Service references and legacy support for REST style Web Services references are deprecated.'
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>false
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>99999
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Legacy Web Service References used</b>'
+,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57852317320603241)
+,p_query_column_id=>1
+,p_column_alias=>'WEB_SERVICE_NAME'
+,p_column_display_sequence=>10
+,p_column_heading=>'Web Service Name'
+,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>1
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57852471692603242)
+,p_query_column_id=>2
+,p_column_alias=>'URL'
+,p_column_display_sequence=>20
+,p_column_heading=>'Url'
+,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>2
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57852506528603243)
+,p_query_column_id=>3
+,p_column_alias=>'ACTION'
+,p_column_display_sequence=>30
+,p_column_heading=>'Action'
+,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>3
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(57852697994603244)
+,p_name=>'6.1.6 Deprecated Properties '
+,p_parent_plug_id=>wwv_flow_api.id(57849785504603215)
+,p_template=>wwv_flow_api.id(452454481275466240)
+,p_display_sequence=>60
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select r.page_id',
+'      ,r.page_name',
+'      ,r.region_name',
+'      ,r.ascending_image',
+'      ,r.ascending_image_attributes',
+'      ,r.descending_image',
+'      ,r.descending_image_attributes',
+'from apex_application_page_regions r',
+'where (r.ascending_image is not null',
+'or r.ascending_image_attributes is not null',
+'or r.descending_image is not null',
+'or r.descending_image_attributes is not null)',
+'and r.application_id = :P0_APP_ID'))
+,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'The properties <b>Region Image</b> and <b>Image Tag Attributes</b> are deprecated.',
+''))
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>false
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>99999
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Region Image and Image Tag Attributes used</b>'
+,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57853097265603248)
+,p_query_column_id=>1
+,p_column_alias=>'PAGE_ID'
+,p_column_display_sequence=>10
+,p_column_heading=>'Page Id'
+,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>1
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57853147129603249)
+,p_query_column_id=>2
+,p_column_alias=>'PAGE_NAME'
+,p_column_display_sequence=>20
+,p_column_heading=>'Page Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57853247353603250)
+,p_query_column_id=>3
+,p_column_alias=>'REGION_NAME'
+,p_column_display_sequence=>30
+,p_column_heading=>'Region Name'
+,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>2
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57888272228361001)
+,p_query_column_id=>4
+,p_column_alias=>'ASCENDING_IMAGE'
+,p_column_display_sequence=>40
+,p_column_heading=>'Ascending Image'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57888398662361002)
+,p_query_column_id=>5
+,p_column_alias=>'ASCENDING_IMAGE_ATTRIBUTES'
+,p_column_display_sequence=>50
+,p_column_heading=>'Ascending Image Attributes'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57888499842361003)
+,p_query_column_id=>6
+,p_column_alias=>'DESCENDING_IMAGE'
+,p_column_display_sequence=>60
+,p_column_heading=>'Descending Image'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57888534085361004)
+,p_query_column_id=>7
+,p_column_alias=>'DESCENDING_IMAGE_ATTRIBUTES'
+,p_column_display_sequence=>70
+,p_column_heading=>'Descending Image Attributes'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(57888782358361006)
+,p_name=>'6.1.7 Deprecated View Columns'
+,p_parent_plug_id=>wwv_flow_api.id(57849785504603215)
+,p_template=>wwv_flow_api.id(452454481275466240)
+,p_display_sequence=>70
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select a.app_builder_icon_name, a.favicons, a.pwa_manifest_icon_url',
+'from apex_applications a',
+'where (a.app_builder_icon_name is not null or ',
+'       a.favicons is not null or',
+'       a.pwa_manifest_icon_url is not null)',
+'and a.application_id = :P0_APP_ID'))
+,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'The following columns are marked as deprecated in the <b>apex_applications</b> view: <b>app_builder_icon_name, favicons, pwa_manifest_icon_url</b>.',
+''))
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>false
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>15
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Deprecated View Columns used</b>'
+,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57888875071361007)
+,p_query_column_id=>1
+,p_column_alias=>'APP_BUILDER_ICON_NAME'
+,p_column_display_sequence=>10
+,p_column_heading=>'App Builder Icon Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57888981011361008)
+,p_query_column_id=>2
+,p_column_alias=>'FAVICONS'
+,p_column_display_sequence=>20
+,p_column_heading=>'Favicons'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57889034799361009)
+,p_query_column_id=>3
+,p_column_alias=>'PWA_MANIFEST_ICON_URL'
+,p_column_display_sequence=>30
+,p_column_heading=>'Pwa Manifest Icon Url'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(57889174554361010)
+,p_plug_name=>'6.1.8 CKEditor4 Deprecation'
+,p_parent_plug_id=>wwv_flow_api.id(57849785504603215)
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(452458863643466246)
+,p_plug_display_sequence=>80
+,p_plug_source=>'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'Rich Text Editor items based on CKEditor4 are deprecated, and will be migrated to CKEditor5 automatically in the next APEX release.<br>',
+'<br>',
+'In the next APEX release, any custom code written against the CKEditor4 library will stop working, as CKEditor4 and CKEditor5 are not API-compatible. Any code included in the JavaScript Initialization Code attribute will be automatically commented ou'
+||'t and ignored. To try and preserve any custom HTML content produced with CKEditor4, all migrated items will have the "General HTML Support" CKEditor5 plug-in enabled.<br>',
+'<br>',
+'Oracle recommends developers manually switch to CKEditor5 now. You can also consider a 3rd party replacement of CKEditor4, or wait for the automatic migration to CKEditor5 in the next APEX release.<br><br>'))
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(103507256627550093)
@@ -554,6 +907,18 @@ wwv_flow_api.create_report_region(
 ,p_sort_null=>'L'
 ,p_plug_query_strip_html=>'N'
 );
+wwv_flow_api.component_end;
+end;
+/
+begin
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.8'
+,p_default_workspace_id=>125633378786110814
+,p_default_application_id=>347
+,p_default_id_offset=>125634094441118325
+,p_default_owner=>'APEX_VISUALIZER'
+);
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(57358028198164233)
 ,p_query_column_id=>1
@@ -617,11 +982,11 @@ wwv_flow_api.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_plug_template=>wwv_flow_api.id(452454481275466240)
 ,p_plug_display_sequence=>100
+,p_plug_source=>'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'The Popup LOV template type is desupported.<br>',
-'<br>',
-'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>'))
+'<br>'))
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
@@ -723,11 +1088,11 @@ wwv_flow_api.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_plug_template=>wwv_flow_api.id(452454481275466240)
 ,p_plug_display_sequence=>110
+,p_plug_source=>'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'The selection Output of PL/SQL Code of the attribute Based On is now desupported. <br>',
-'<br>',
-'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>'))
+'<br>'))
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
@@ -887,14 +1252,25 @@ wwv_flow_api.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select w.web_service_name',
-'      ,w.url',
-'      ,w.ACTION',
-'from apex_application_web_services w',
-'where w.application_id = :P0_APP_ID'))
-,p_header=>'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> The instance parameter APEX_REST_PATH-PREFIX is desupported. (check must be done separately)</b>'
+'select (select count(1)',
+'        from apex_rest_resource_handlers) apex_rest_resource_handlers_cnt',
+'      ,(select count(1)',
+'        from apex_rest_resource_modules) apex_rest_resource_modules_cnt',
+'      ,(select count(1)',
+'        from apex_rest_resource_parameters) apex_rest_resource_parameters_cnt',
+'      ,(select count(1)',
+'        from apex_rest_resource_templates) apex_rest_resource_templates_cnt',
+'from dual',
+'where (select count(1)',
+'       from apex_rest_resource_handlers) > 0',
+'or (select count(1)',
+'       from apex_rest_resource_modules) > 0',
+'or (select count(1)',
+'       from apex_rest_resource_parameters) > 0',
+'or (select count(1)',
+'       from apex_rest_resource_templates) > 0'))
+,p_footer=>'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> The instance parameter APEX_REST_PATH-PREFIX is desupported. (check must be done separately)</b>'
 ,p_ajax_enabled=>'Y'
-,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>false
 ,p_query_row_template=>wwv_flow_api.id(452468948793466267)
 ,p_query_num_rows=>99999
@@ -908,49 +1284,45 @@ wwv_flow_api.create_report_region(
 ,p_plug_query_strip_html=>'N'
 );
 wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(57849466445603212)
+ p_id=>wwv_flow_api.id(57889236937361011)
 ,p_query_column_id=>1
-,p_column_alias=>'WEB_SERVICE_NAME'
+,p_column_alias=>'APEX_REST_RESOURCE_HANDLERS_CNT'
 ,p_column_display_sequence=>10
-,p_column_heading=>'Web Service Name'
+,p_column_heading=>'Apex Rest Resource Handlers Cnt'
 ,p_use_as_row_header=>'N'
-,p_default_sort_column_sequence=>1
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
 wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(57849535702603213)
+ p_id=>wwv_flow_api.id(57889382475361012)
 ,p_query_column_id=>2
-,p_column_alias=>'URL'
+,p_column_alias=>'APEX_REST_RESOURCE_MODULES_CNT'
 ,p_column_display_sequence=>20
-,p_column_heading=>'Url'
+,p_column_heading=>'Apex Rest Resource Modules Cnt'
 ,p_use_as_row_header=>'N'
-,p_default_sort_column_sequence=>2
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-wwv_flow_api.component_end;
-end;
-/
-begin
-wwv_flow_api.component_begin (
- p_version_yyyy_mm_dd=>'2021.10.15'
-,p_release=>'21.2.8'
-,p_default_workspace_id=>125633378786110814
-,p_default_application_id=>347
-,p_default_id_offset=>125634094441118325
-,p_default_owner=>'APEX_VISUALIZER'
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57889436141361013)
+,p_query_column_id=>3
+,p_column_alias=>'APEX_REST_RESOURCE_PARAMETERS_CNT'
+,p_column_display_sequence=>30
+,p_column_heading=>'Apex Rest Resource Parameters Cnt'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
 );
 wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(57849690093603214)
-,p_query_column_id=>3
-,p_column_alias=>'ACTION'
-,p_column_display_sequence=>30
-,p_column_heading=>'Action'
+ p_id=>wwv_flow_api.id(57889591380361014)
+,p_query_column_id=>4
+,p_column_alias=>'APEX_REST_RESOURCE_TEMPLATES_CNT'
+,p_column_display_sequence=>40
+,p_column_heading=>'Apex Rest Resource Templates Cnt'
 ,p_use_as_row_header=>'N'
-,p_default_sort_column_sequence=>3
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
@@ -962,11 +1334,11 @@ wwv_flow_api.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_plug_template=>wwv_flow_api.id(452454481275466240)
 ,p_plug_display_sequence=>30
+,p_plug_source=>'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'Custom page template and custom region templates with duplicated positions are considered deprecated. For example, a region template referencing position #CHANGE# twice is not recommended because that duplicate position causes duplicate DOM IDs.<br>',
-'<br>',
-'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>'))
+'<br>'))
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
