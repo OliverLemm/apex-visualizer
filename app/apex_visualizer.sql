@@ -34,7 +34,7 @@ prompt APPLICATION 347 - APEX Visualizer
 --     Pages:                     24
 --       Items:                   23
 --       Processes:                4
---       Regions:                 88
+--       Regions:                 99
 --       Buttons:                  5
 --       Dynamic Actions:         40
 --     Shared Components:
@@ -115,7 +115,7 @@ wwv_flow_api.create_flow(
 ,p_auto_time_zone=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20220804165531'
+,p_last_upd_yyyymmddhh24miss=>'20220805103019'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>11
 ,p_ui_type_name => null
@@ -26581,7 +26581,7 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20220804165531'
+,p_last_upd_yyyymmddhh24miss=>'20220805103019'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(45105580925952525)
@@ -26597,6 +26597,214 @@ wwv_flow_api.create_page_plug(
 ,p_plug_source_type=>'NATIVE_BREADCRUMB'
 ,p_menu_template_id=>wwv_flow_api.id(452482206618466299)
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(57849785504603215)
+,p_plug_name=>'6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(452458863643466246)
+,p_plug_display_sequence=>30
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(57849888683603216)
+,p_name=>'6.1.1 Deprecated APIs '
+,p_parent_plug_id=>wwv_flow_api.id(57849785504603215)
+,p_template=>wwv_flow_api.id(452454481275466240)
+,p_display_sequence=>10
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_display_point=>'SUB_REGIONS'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select p.page_id',
+'      ,p.page_name',
+'      ,p.component_name',
+'      ,p.component_type',
+'      ,p.process_point',
+'      ,p.plsql_code_clob',
+'from av_plsql_v p',
+'where application_id = :P0_APP_ID',
+'and instr(upper(p.plsql_code_clob)',
+'        ,''APEX_IR.GET_REPORT'') > 0'))
+,p_header=>'The <b>APEX_IR.GET_REPORT</b> API is deprecated. Instead, use <b>APEX_REGION.OPEN_QUERY_CONTEXT</b> to get interactive report data.'
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>false
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>15
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no APEX_IR.GET_REPORT used</b>'
+,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57849954468603217)
+,p_query_column_id=>1
+,p_column_alias=>'PAGE_ID'
+,p_column_display_sequence=>10
+,p_column_heading=>'Page Id'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57850035789603218)
+,p_query_column_id=>2
+,p_column_alias=>'PAGE_NAME'
+,p_column_display_sequence=>20
+,p_column_heading=>'Page Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57850132471603219)
+,p_query_column_id=>3
+,p_column_alias=>'COMPONENT_NAME'
+,p_column_display_sequence=>30
+,p_column_heading=>'Component Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57850214899603220)
+,p_query_column_id=>4
+,p_column_alias=>'COMPONENT_TYPE'
+,p_column_display_sequence=>40
+,p_column_heading=>'Component Type'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57850341347603221)
+,p_query_column_id=>5
+,p_column_alias=>'PROCESS_POINT'
+,p_column_display_sequence=>50
+,p_column_heading=>'Process Point'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57850476791603222)
+,p_query_column_id=>6
+,p_column_alias=>'PLSQL_CODE_CLOB'
+,p_column_display_sequence=>60
+,p_column_heading=>'Plsql Code Clob'
+,p_use_as_row_header=>'N'
+,p_column_hit_highlight=>'APEX_IR.GET_REPORT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(57850543170603223)
+,p_name=>'6.1.2 Deprecated JavaScript APIs'
+,p_parent_plug_id=>wwv_flow_api.id(57849785504603215)
+,p_template=>wwv_flow_api.id(452454481275466240)
+,p_display_sequence=>20
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_display_point=>'SUB_REGIONS'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select j.page_id',
+'      ,j.page_name',
+'      ,j.component_name',
+'      ,j.component_type',
+'      ,j.js_code_vc2',
+'from av_javascript_v j',
+'where (instr(lower(j.js_code_clob)',
+'           ,''useIconList'') > 0 or',
+'       instr(lower(j.js_code_clob)',
+'           ,''iconListOptions'') > 0)',
+'and j.application_id = :P0_APP_ID'))
+,p_header=>'The <b>APEX_IR.GET_REPORT</b> API is deprecated. Instead, use <b>APEX_REGION.OPEN_QUERY_CONTEXT</b> to get interactive report data.'
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>false
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>15
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no APEX_IR.GET_REPORT used</b>'
+,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57850665318603224)
+,p_query_column_id=>1
+,p_column_alias=>'PAGE_ID'
+,p_column_display_sequence=>10
+,p_column_heading=>'Page Id'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57850791411603225)
+,p_query_column_id=>2
+,p_column_alias=>'PAGE_NAME'
+,p_column_display_sequence=>20
+,p_column_heading=>'Page Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57850807862603226)
+,p_query_column_id=>3
+,p_column_alias=>'COMPONENT_NAME'
+,p_column_display_sequence=>30
+,p_column_heading=>'Component Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57850910632603227)
+,p_query_column_id=>4
+,p_column_alias=>'COMPONENT_TYPE'
+,p_column_display_sequence=>40
+,p_column_heading=>'Component Type'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57851297280603230)
+,p_query_column_id=>5
+,p_column_alias=>'JS_CODE_VC2'
+,p_column_display_sequence=>50
+,p_column_heading=>'Js Code Vc2'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(103507256627550093)
@@ -26776,6 +26984,523 @@ wwv_flow_api.create_report_columns(
 ,p_column_display_sequence=>40
 ,p_column_heading=>'Affected Elements'
 ,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(57357322202164226)
+,p_name=>'8.1.8 apex.server Plug-in and Process Function Async Option Desupported'
+,p_parent_plug_id=>wwv_flow_api.id(103507256627550093)
+,p_template=>wwv_flow_api.id(452454481275466240)
+,p_display_sequence=>80
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select j.page_id',
+'      ,j.page_name',
+'      ,j.component_name',
+'      ,j.component_type',
+'      ,j.js_code_vc2',
+'from av_javascript_v j',
+'where instr(j.js_code_clob',
+'           ,''async'') > 0',
+'and j.application_id = :P0_APP_ID'))
+,p_header=>'This check searches for async in JavaScript. The complete code like <i>async: false</i> will be ignored from APEX in future.'
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>true
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>99999
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No <i>async: false</i> found.</b>'
+,p_query_num_rows_type=>'ROWS_X_TO_Y'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57357487843164227)
+,p_query_column_id=>1
+,p_column_alias=>'PAGE_ID'
+,p_column_display_sequence=>10
+,p_column_heading=>'Page Id'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57357554387164228)
+,p_query_column_id=>2
+,p_column_alias=>'PAGE_NAME'
+,p_column_display_sequence=>20
+,p_column_heading=>'Page Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57357622325164229)
+,p_query_column_id=>3
+,p_column_alias=>'COMPONENT_NAME'
+,p_column_display_sequence=>30
+,p_column_heading=>'Component Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57357739942164230)
+,p_query_column_id=>4
+,p_column_alias=>'COMPONENT_TYPE'
+,p_column_display_sequence=>40
+,p_column_heading=>'Component Type'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57357809437164231)
+,p_query_column_id=>5
+,p_column_alias=>'JS_CODE_VC2'
+,p_column_display_sequence=>50
+,p_column_heading=>'Js Code Vc2'
+,p_use_as_row_header=>'N'
+,p_column_hit_highlight=>'async'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(57357914395164232)
+,p_name=>'8.1.9 apex.widget.initPageItem Function Desupported '
+,p_parent_plug_id=>wwv_flow_api.id(103507256627550093)
+,p_template=>wwv_flow_api.id(452454481275466240)
+,p_display_sequence=>90
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select j.page_id',
+'      ,j.page_name',
+'      ,j.component_name',
+'      ,j.component_type',
+'      ,j.js_code_vc2',
+'from av_javascript_v j',
+'where instr(lower(j.js_code_clob)',
+'           ,''apex.widget.initPageItem'') > 0',
+'and j.application_id = :P0_APP_ID'))
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>true
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>99999
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No <i>apex.widget.initPageItem</i> found.</b>'
+,p_query_num_rows_type=>'ROWS_X_TO_Y'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57358028198164233)
+,p_query_column_id=>1
+,p_column_alias=>'PAGE_ID'
+,p_column_display_sequence=>10
+,p_column_heading=>'Page Id'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57358125750164234)
+,p_query_column_id=>2
+,p_column_alias=>'PAGE_NAME'
+,p_column_display_sequence=>20
+,p_column_heading=>'Page Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57358208423164235)
+,p_query_column_id=>3
+,p_column_alias=>'COMPONENT_NAME'
+,p_column_display_sequence=>30
+,p_column_heading=>'Component Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57358314153164236)
+,p_query_column_id=>4
+,p_column_alias=>'COMPONENT_TYPE'
+,p_column_display_sequence=>40
+,p_column_heading=>'Component Type'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57358454136164237)
+,p_query_column_id=>5
+,p_column_alias=>'JS_CODE_VC2'
+,p_column_display_sequence=>50
+,p_column_heading=>'Js Code Vc2'
+,p_use_as_row_header=>'N'
+,p_column_hit_highlight=>'apex.widget.initPageItem'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(57358574238164238)
+,p_plug_name=>'8.1.10 Popup LOV Template Desupported '
+,p_parent_plug_id=>wwv_flow_api.id(103507256627550093)
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(452454481275466240)
+,p_plug_display_sequence=>100
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'The Popup LOV template type is desupported.<br>',
+'<br>',
+'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>'))
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(57358699253164239)
+,p_name=>'8.1.12 Date Picker (jQuery) Desupported '
+,p_parent_plug_id=>wwv_flow_api.id(103507256627550093)
+,p_template=>wwv_flow_api.id(452454481275466240)
+,p_display_sequence=>120
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select p.page_id',
+'      ,p.page_name',
+'      ,p.region',
+'      ,p.item_name',
+'      ,p.label',
+'from apex_application_page_items p',
+'where p.display_as_code = ''NATIVE_DATE_PICKER''',
+'and p.application_id = :P0_APP_ID'))
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>true
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>99999
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Date Picker (jQuery) used</b>'
+,p_query_num_rows_type=>'ROWS_X_TO_Y'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57358795532164240)
+,p_query_column_id=>1
+,p_column_alias=>'PAGE_ID'
+,p_column_display_sequence=>10
+,p_column_heading=>'Page Id'
+,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>1
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57358838350164241)
+,p_query_column_id=>2
+,p_column_alias=>'PAGE_NAME'
+,p_column_display_sequence=>20
+,p_column_heading=>'Page Name'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57358984906164242)
+,p_query_column_id=>3
+,p_column_alias=>'REGION'
+,p_column_display_sequence=>30
+,p_column_heading=>'Region'
+,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>2
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57359030380164243)
+,p_query_column_id=>4
+,p_column_alias=>'ITEM_NAME'
+,p_column_display_sequence=>40
+,p_column_heading=>'Item Name'
+,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>3
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57359124592164244)
+,p_query_column_id=>5
+,p_column_alias=>'LABEL'
+,p_column_display_sequence=>50
+,p_column_heading=>'Label'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(57359286422164245)
+,p_plug_name=>'8.1.11 Based On - Output of PL/SQL Code attribute Desupported'
+,p_parent_plug_id=>wwv_flow_api.id(103507256627550093)
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(452454481275466240)
+,p_plug_display_sequence=>110
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'The selection Output of PL/SQL Code of the attribute Based On is now desupported. <br>',
+'<br>',
+'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>'))
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(57359359287164246)
+,p_name=>'8.1.13 Syntax {COLUMN_NAME}_LABEL in Interactive Grid Icon and Detail Views Desupported'
+,p_parent_plug_id=>wwv_flow_api.id(103507256627550093)
+,p_template=>wwv_flow_api.id(452454481275466240)
+,p_display_sequence=>130
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select page_id',
+'      ,page_name',
+'      ,region_name',
+'      ,icon_view_custom',
+'      ,detail_view_for_each_row',
+'from apex_appl_page_igs',
+'where application_id = :P0_APP_ID',
+'and (regexp_like(icon_view_custom',
+'               ,''&'' || ''\w+_LABEL\.''',
+'               ,''i'') or --',
+'      regexp_like(detail_view_for_each_row',
+'               ,''&'' || ''\w+_LABEL\.''',
+'               ,''i''))'))
+,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'The &{COLUMN_NAME}_LABEL. syntax which is used to reference the column label in Interactive Grid Detail and Icon views is desupported.<br><br>',
+'Instead use &{COLUMN_NAME}%LABEL.'))
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>false
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>99999
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no &{COLUMN_NAME}_LABEL. used</b>'
+,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57359649660164249)
+,p_query_column_id=>1
+,p_column_alias=>'PAGE_ID'
+,p_column_display_sequence=>30
+,p_column_heading=>'Page Id'
+,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>1
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57359771163164250)
+,p_query_column_id=>2
+,p_column_alias=>'PAGE_NAME'
+,p_column_display_sequence=>40
+,p_column_heading=>'Page Name'
+,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>2
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57848353287603201)
+,p_query_column_id=>3
+,p_column_alias=>'REGION_NAME'
+,p_column_display_sequence=>50
+,p_column_heading=>'Region Name'
+,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>3
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57848472341603202)
+,p_query_column_id=>4
+,p_column_alias=>'ICON_VIEW_CUSTOM'
+,p_column_display_sequence=>60
+,p_column_heading=>'Icon View Custom'
+,p_use_as_row_header=>'N'
+,p_column_hit_highlight=>'_LABEL.'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57848517377603203)
+,p_query_column_id=>5
+,p_column_alias=>'DETAIL_VIEW_FOR_EACH_ROW'
+,p_column_display_sequence=>70
+,p_column_heading=>'Detail View For Each Row'
+,p_use_as_row_header=>'N'
+,p_column_hit_highlight=>'_LABEL.'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(57848607300603204)
+,p_name=>'8.1.14 Removed Content Delivery Network '
+,p_parent_plug_id=>wwv_flow_api.id(103507256627550093)
+,p_template=>wwv_flow_api.id(452454481275466240)
+,p_display_sequence=>140
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select p.content_delivery_network',
+'from apex_applications p',
+'where p.application_id = :P0_APP_ID',
+'and p.content_delivery_network is not null'))
+,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'The attribute Content Delivery Network that could be found under User Interface Attributes, Javascript with options None, Google, Microsoft, and jQuery, has been removed. Enabling this option was only relevant for pulling in a few of the JavaScript l'
+||'ibraries that APEX needs.<br>',
+'<br>',
+'If you were using this option, it''s recommended to instead use the more modern, Oracle-provided CDN approach. For further information, see <a href="https://blogs.oracle.com/apex/post/announcing-oracle-apex-static-resources-on-content-delivery-network'
+||'" target="_blank">Announcing Oracle APEX Static Resources on Content Delivery Network</a>. '))
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>true
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>99999
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Content Delivery Network used</b>'
+,p_query_num_rows_type=>'ROWS_X_TO_Y'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57849238138603210)
+,p_query_column_id=>1
+,p_column_alias=>'CONTENT_DELIVERY_NETWORK'
+,p_column_display_sequence=>10
+,p_column_heading=>'Content Delivery Network'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(57849379238603211)
+,p_name=>'8.1.15 APEX-Based REST Services Desupported '
+,p_parent_plug_id=>wwv_flow_api.id(103507256627550093)
+,p_template=>wwv_flow_api.id(452454481275466240)
+,p_display_sequence=>150
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select w.web_service_name',
+'      ,w.url',
+'      ,w.ACTION',
+'from apex_application_web_services w',
+'where w.application_id = :P0_APP_ID'))
+,p_header=>'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> The instance parameter APEX_REST_PATH-PREFIX is desupported. (check must be done separately)</b>'
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>false
+,p_query_row_template=>wwv_flow_api.id(452468948793466267)
+,p_query_num_rows=>99999
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no APEX-Based REST Services used</b>'
+,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57849466445603212)
+,p_query_column_id=>1
+,p_column_alias=>'WEB_SERVICE_NAME'
+,p_column_display_sequence=>10
+,p_column_heading=>'Web Service Name'
+,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>1
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57849535702603213)
+,p_query_column_id=>2
+,p_column_alias=>'URL'
+,p_column_display_sequence=>20
+,p_column_heading=>'Url'
+,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>2
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+end;
+/
+begin
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(57849690093603214)
+,p_query_column_id=>3
+,p_column_alias=>'ACTION'
+,p_column_display_sequence=>30
+,p_column_heading=>'Action'
+,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>3
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
@@ -27128,7 +27853,7 @@ wwv_flow_api.create_report_region(
 '      ,j.component_type',
 '      ,j.js_code_vc2',
 'from av_javascript_v j',
-'where instr(j.js_code_clob',
+'where instr(lower(j.js_code_clob)',
 '           ,''apex.theme42.util.mq'') > 0',
 'and j.application_id = :P0_APP_ID'))
 ,p_header=>'Use apex.theme.mq instead of apex.theme42.util.mq'
