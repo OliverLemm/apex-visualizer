@@ -1,0 +1,116 @@
+[
+  {
+    "id":"2611240099797376"
+   ,"Identification":{
+      "Name":"Image"
+    }
+  }
+ ,{
+    "id":"16274217892838698"
+   ,"Identification":{
+      "Name":"Inline Drawer"
+    }
+  }
+ ,{
+    "id":"126012964265127296"
+   ,"Identification":{
+      "Name":"Inline Popup"
+    }
+  }
+ ,{
+    "id":"126019005093127303"
+   ,"Identification":{
+      "Name":"Cards Container"
+    }
+  }
+ ,{
+    "id":"452447143180466220"
+   ,"Identification":{
+      "Name":"Alert"
+    }
+  }
+ ,{
+    "id":"452448893974466229"
+   ,"Identification":{
+      "Name":"Blank with Attributes"
+    }
+  }
+ ,{
+    "id":"452449028418466229"
+   ,"Identification":{
+      "Name":"Buttons Container"
+    }
+  }
+ ,{
+    "id":"452449956596466229"
+   ,"Identification":{
+      "Name":"Content Block"
+    }
+  }
+ ,{
+    "id":"452450845712466232"
+   ,"Identification":{
+      "Name":"Blank with Attributes (No Grid)"
+    }
+  }
+ ,{
+    "id":"452451145470466232"
+   ,"Identification":{
+      "Name":"Carousel Container"
+    }
+  }
+ ,{
+    "id":"452454481275466240"
+   ,"Identification":{
+      "Name":"Collapsible"
+    }
+  }
+ ,{
+    "id":"452456691272466243"
+   ,"Identification":{
+      "Name":"Hero"
+    }
+  }
+ ,{
+    "id":"452457378883466245"
+   ,"Identification":{
+      "Name":"Inline Dialog"
+    }
+  }
+ ,{
+    "id":"452458457830466245"
+   ,"Identification":{
+      "Name":"Interactive Report"
+    }
+  }
+ ,{
+    "id":"452458716490466246"
+   ,"Identification":{
+      "Name":"Login"
+    }
+  }
+ ,{
+    "id":"452458863643466246"
+   ,"Identification":{
+      "Name":"Standard"
+    }
+  }
+ ,{
+    "id":"452462122710466251"
+   ,"Identification":{
+      "Name":"Tabs Container"
+    }
+  }
+ ,{
+    "id":"452463263462466253"
+   ,"Identification":{
+      "Name":"Title Bar"
+    }
+  }
+ ,{
+    "id":"452463685650466253"
+   ,"Identification":{
+      "Name":"Wizard Container"
+    }
+  }
+]

@@ -1,0 +1,668 @@
+---
+# ====== Page: PLSQL =========================================
+id: 300
+identification: 
+  name: PLSQL
+  title: PLSQL
+
+appearance: 
+  user-interface: Desktop # 452492531566466351
+  page-mode: Normal
+  page-template: Theme Default
+  template-options: 
+  - '#DEFAULT#'
+
+navigation-menu: 
+  override-user-interface-level: false
+
+navigation: 
+  cursor-focus: Do not focus cursor
+  warn-on-unsaved-changes: false
+
+security: 
+  authentication: Page Requires Authentication
+  deep-linking: Application Default
+  page-access-protection: Unrestricted
+  form-auto-complete: Off
+  browser-cache: Application Default
+
+session-management: 
+  rejoin-sessions: Application Default
+
+advanced: 
+  enable-duplicate-page-submissions: Yes - Enable page to be re-posted
+  reload-on-submit: Only for Success
+
+server-cache: 
+  caching: Disabled
+
+regions: 
+- # ====== Region: PLSQL in Page ===============================
+  id: 618926415072524699
+  identification: 
+    title: PLSQL in Page
+    type: Chart
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select component_type || ' - ' || v.component_name series_name, v.component_type, v.plsql_code, v.code_length, v.code_type, v.tooltip, v.page_designer_url
+      from av_plsql_v v
+      where v.application_id = :P0_APP_ID 
+      and (v.page_id = :P0_PAGE_ID)
+      and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = v.best_practice)
+      and (v.component_type = :P300_COMPONENT_TYPE or :P300_COMPONENT_TYPE is null)
+      order by code_length desc
+    page-items-to-submit: 
+    - P0_APP_ID
+    - P0_PAGE_ID
+    - P0_BEST_PRACTICE
+    - P300_COMPONENT_TYPE
+
+  layout: 
+    sequence: 30
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  security: 
+    escape-special-characters: true
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 294501057125993269
+    chart: 
+      type: Bar
+
+    appearance: 
+      orientation: Vertical
+      stack: false
+
+    layout: 
+      height: 350
+
+    data-cursor: 
+      cursor: Automatic
+      behavior: Automatic
+      dim-on-hover: false
+
+    multi-series-chart-data: 
+      fill-gaps-in-chart-data: true
+      sort-order: Label - Ascending
+      render-gap-as-zero: true
+
+    settings: 
+      zoom-and-scroll: No
+
+    animation: 
+      on-display: Automatic
+      on-data-change: Automatic
+
+    tooltip: 
+      show: true
+      show-series-name: true
+      show-group-name: true
+      show-value: true
+
+    legend: 
+      show: true
+      position: Automatic
+      hide-and-show-behavior: Rescale
+
+    series: 
+    - # ====== Series: PLSQL in Page ===============================
+      id: 294502752488993271
+      identification: 
+        name: PLSQL in Page
+
+      execution-options: 
+        sequence: 10
+
+      source: 
+        location: Region Source
+
+      column-mapping: 
+        series-name: SERIES_NAME
+        label: COMPONENT_TYPE
+        value-aggregation: No Aggregation
+        value: CODE_LENGTH
+        custom-tooltip: TOOLTIP
+
+      appearance: 
+        assigned-to-y2-axis: false
+
+      link: 
+        type: Redirect to URL
+        target: '&PAGE_DESIGNER_URL.'
+
+      label: 
+        show: true
+        position: Automatic
+
+    axes: 
+    - # ====== Axis: x =============================================
+      id: 294501544398993270
+      identification: 
+        name: x
+        show-axis: true
+
+      value: 
+        format-scaling: Automatic
+        baseline-scaling: Zero
+        scale: Linear
+
+      major-ticks: 
+        show: Yes
+
+      minor-ticks: 
+        show: false
+
+      tick-label: 
+        show: true
+        rotation: true
+        position: Outside
+
+    - # ====== Axis: y =============================================
+      id: 294502109885993271
+      identification: 
+        name: y
+        show-axis: true
+
+      value: 
+        format-scaling: Automatic
+        baseline-scaling: Zero
+        scale: Log
+
+      appearance: 
+        position: Automatic
+
+      major-ticks: 
+        show: Yes
+
+      minor-ticks: 
+        show: false
+
+      tick-label: 
+        show: true
+
+- # ====== Region: Characters of PLSQL Code per Page ===========
+  id: 618986948604000919
+  identification: 
+    title: Characters of PLSQL Code per Page
+    type: Chart
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select page_id,
+        page_name_and_id,
+        page_group,
+        page_function,
+        components_count,
+        code_length_sum,
+        code_lines_sum,
+        tooltip
+      from av_p0300_plsql_code_by_page_v t
+      where (t.application_id = :P0_APP_ID or :P0_APP_ID is null)
+      and t.page_id is not null
+      and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = t.best_practice)
+    page-items-to-submit: 
+    - P0_APP_ID
+    - P0_BEST_PRACTICE
+
+  layout: 
+    sequence: 10
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: 9
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  security: 
+    escape-special-characters: true
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 126171150057891101
+    chart: 
+      type: Bubble
+
+    layout: 
+      height: 400
+
+    data-cursor: 
+      cursor: Automatic
+      behavior: Automatic
+      dim-on-hover: true
+
+    multi-series-chart-data: 
+      fill-gaps-in-chart-data: true
+      sort-order: Label - Ascending
+
+    settings: 
+      zoom-and-scroll: No
+
+    animation: 
+      on-display: Automatic
+      on-data-change: Automatic
+
+    tooltip: 
+      show: true
+      show-series-name: true
+      show-group-name: true
+      show-value: true
+
+    legend: 
+      show: true
+      position: Automatic
+      hide-and-show-behavior: Rescale
+
+    series: 
+    - # ====== Series: Series 1 ====================================
+      id: 126171252229891102
+      identification: 
+        name: Series 1
+
+      execution-options: 
+        sequence: 10
+
+      source: 
+        location: Region Source
+
+      column-mapping: 
+        series-name: PAGE_GROUP
+        label: PAGE_NAME_AND_ID
+        x: COMPONENTS_COUNT
+        y: CODE_LINES_SUM
+        z: CODE_LENGTH_SUM
+        custom-tooltip: TOOLTIP
+
+      link: 
+        type: Redirect to URL
+        target: "javascript:$s(\"P0_PAGE_ID\",'&PAGE_ID.');"
+
+      line: 
+        style: Solid
+
+      marker: 
+        show: Automatic
+        shape: Automatic
+
+      label: 
+        show: true
+        position: Automatic
+
+    axes: 
+    - # ====== Axis: x =============================================
+      id: 126171335579891103
+      identification: 
+        name: x
+        show-axis: true
+        title: number of plsql components
+
+      value: 
+        format-scaling: Automatic
+        baseline-scaling: Zero
+        scale: Linear
+
+      major-ticks: 
+        show: Yes
+
+      minor-ticks: 
+        show: false
+
+      tick-label: 
+        show: true
+        rotation: true
+        position: Outside
+
+    - # ====== Axis: y =============================================
+      id: 126171416426891104
+      identification: 
+        name: y
+        show-axis: true
+        title: code lines
+
+      value: 
+        format: Decimal
+        decimal-places: 0
+        format-scaling: None
+        baseline-scaling: Zero
+        scale: Linear
+
+      appearance: 
+        position: Automatic
+
+      major-ticks: 
+        show: Yes
+
+      minor-ticks: 
+        show: false
+
+      tick-label: 
+        show: true
+
+- # ====== Region: Place of PLSQL ==============================
+  id: 619058036662463987
+  identification: 
+    title: Place of PLSQL
+    type: Chart
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select application_name
+            ,application_id
+            ,component_type || ' - ' || code_type component
+            ,sum(code_length) amount
+      from av_plsql_v
+      where (:P0_APP_ID is null or application_id = :P0_APP_ID)
+      and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID)
+      and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = best_practice)
+      group by application_name,application_id,component_type || ' - ' || code_type
+      order by sum(code_length) desc
+    page-items-to-submit: 
+    - P0_APP_ID
+    - P0_PAGE_ID
+    - P0_BEST_PRACTICE
+
+  layout: 
+    sequence: 20
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: false
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  security: 
+    escape-special-characters: true
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 294499652224993265
+    chart: 
+      type: Donut
+
+    layout: 
+      height: 400
+
+    data-cursor: 
+      cursor: Automatic
+      behavior: Automatic
+      dim-on-hover: false
+
+    settings: 
+      pie-selection-effect: Highlight
+
+    value: 
+      pie-chart-other-threshold: 0
+      format-scaling: Automatic
+
+    animation: 
+      on-display: None
+      on-data-change: None
+
+    tooltip: 
+      show: true
+      show-series-name: true
+      show-value: true
+
+    legend: 
+      show: true
+      position: Bottom
+      hide-and-show-behavior: Rescale
+
+    series: 
+    - # ====== Series: Place of PLSQL ==============================
+      id: 294500124855993266
+      identification: 
+        name: Place of PLSQL
+
+      execution-options: 
+        sequence: 10
+
+      source: 
+        location: Region Source
+
+      column-mapping: 
+        series-name: APPLICATION_NAME
+        label: COMPONENT
+        value-aggregation: No Aggregation
+        value: AMOUNT
+
+      label: 
+        show: true
+        position: Automatic
+        display-as: Percentage
+
+page-items: 
+- # ====== Page Item: P300_COMPONENT_TYPE ======================
+  id: 294503611638993283
+  identification: 
+    name: P300_COMPONENT_TYPE
+    type: Select List
+
+  label: 
+    label: Component type
+    alignment: Left
+
+  settings: 
+    page-action-on-selection: None
+    allow-multi-selection: false
+
+  layout: 
+    sequence: 200
+    region: Filter # 452496424516540365
+    position: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+    label-column-span: Page Template Default
+
+  appearance: 
+    template: Optional # 452481165926466293
+    template-options: 
+    - '#DEFAULT#'
+    height: 1
+
+  validation: 
+    value-required: false
+
+  list-of-values: 
+    type: SQL Query
+    sql-query: |
+      select distinct component_type d, component_type r
+      from av_plsql_v
+      where (:P0_APP_ID is null or application_id = :P0_APP_ID)
+      and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID)
+      
+    display-extra-values: false
+    display-null-value: true
+    null-display-value: all
+
+  cascading-list-of-values: 
+    parent-item(s): 
+    - P0_APP_ID
+    - P0_PAGE_ID
+    items-to-submit: 
+    - P0_APP_ID
+    - P0_PAGE_ID
+    parent-required: false
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+    maintain-session-state: Per Session (Disk)
+
+  quick-picks: 
+    show-quick-picks: false
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: false
+    restricted-characters: All characters can be saved.
+
+dynamic-actions: 
+- # ====== Dynamic Action: Change P0_APP_ID ====================
+  id: 294504007445993285
+  identification: 
+    name: Change P0_APP_ID
+
+  execution-options: 
+    sequence: 10
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P0_APP_ID
+    - P0_PAGE_ID
+    - P0_BEST_PRACTICE
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 294504565475993286
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Characters of PLSQL Code per Page # 618986948604000919
+
+    execution-options: 
+      sequence: 10
+      event: Change P0_APP_ID # 294504007445993285
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 294505088121993286
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Place of PLSQL # 619058036662463987
+
+    execution-options: 
+      sequence: 20
+      event: Change P0_APP_ID # 294504007445993285
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 294505520884993287
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: PLSQL in Page # 618926415072524699
+
+    execution-options: 
+      sequence: 30
+      event: Change P0_APP_ID # 294504007445993285
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+- # ====== Dynamic Action: Change P300_COMPONENT_TYPE ==========
+  id: 294505920002993287
+  identification: 
+    name: Change P300_COMPONENT_TYPE
+
+  execution-options: 
+    sequence: 20
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P300_COMPONENT_TYPE
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 294506504962993287
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: PLSQL in Page # 618926415072524699
+
+    execution-options: 
+      sequence: 10
+      event: Change P300_COMPONENT_TYPE # 294505920002993287
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+

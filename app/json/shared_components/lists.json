@@ -1,0 +1,719 @@
+[
+  {
+    "id":"452440279475466179"
+   ,"Identification":{
+      "Name":"Desktop Navigation Menu"
+     ,"Type":"Static Values"
+    }
+   ,"Entries":[
+      {
+        "id":"16405035169854428"
+       ,"Label":{
+          "Label":"Migration"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-wrench"
+        }
+       ,"Layout":{
+          "Sequence":340
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "700"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:700:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"700"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"16406329864879493"
+       ,"Label":{
+          "Label":"APEX 18.1"
+        }
+       ,"Layout":{
+          "Sequence":350
+         ,"Parent Entry":"Migration (16405035169854428)"
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "701"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:701:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"701"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+       ,"Configuration":{
+          "Build Option":"deactivated (291318289212148547)"
+        }
+      }
+     ,{
+        "id":"16407278174882045"
+       ,"Label":{
+          "Label":"APEX 18.2"
+        }
+       ,"Layout":{
+          "Sequence":360
+         ,"Parent Entry":"Migration (16405035169854428)"
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "702"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:702:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"702"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+       ,"Configuration":{
+          "Build Option":"deactivated (291318289212148547)"
+        }
+      }
+     ,{
+        "id":"16408165467884193"
+       ,"Label":{
+          "Label":"APEX 19.1"
+        }
+       ,"Layout":{
+          "Sequence":370
+         ,"Parent Entry":"Migration (16405035169854428)"
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "703"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:703:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"703"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+       ,"Configuration":{
+          "Build Option":"deactivated (291318289212148547)"
+        }
+      }
+     ,{
+        "id":"16409061489886029"
+       ,"Label":{
+          "Label":"APEX 19.2"
+        }
+       ,"Layout":{
+          "Sequence":380
+         ,"Parent Entry":"Migration (16405035169854428)"
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "704"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:704:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"704"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+       ,"Configuration":{
+          "Build Option":"deactivated (291318289212148547)"
+        }
+      }
+     ,{
+        "id":"16409977362888764"
+       ,"Label":{
+          "Label":"APEX 20.1"
+        }
+       ,"Layout":{
+          "Sequence":390
+         ,"Parent Entry":"Migration (16405035169854428)"
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "705"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:705:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"705"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"16410870801890950"
+       ,"Label":{
+          "Label":"APEX 20.2"
+        }
+       ,"Layout":{
+          "Sequence":400
+         ,"Parent Entry":"Migration (16405035169854428)"
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "706"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:706:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"706"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"16411778583892676"
+       ,"Label":{
+          "Label":"APEX 21.1"
+        }
+       ,"Layout":{
+          "Sequence":410
+         ,"Parent Entry":"Migration (16405035169854428)"
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "707"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:707:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"707"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"16412661838894615"
+       ,"Label":{
+          "Label":"APEX 21.2"
+        }
+       ,"Layout":{
+          "Sequence":420
+         ,"Parent Entry":"Migration (16405035169854428)"
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "708"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:708:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"708"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"37651385965650354"
+       ,"Label":{
+          "Label":"Plugins"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-plug"
+        }
+       ,"Layout":{
+          "Sequence":310
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "400"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:400:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"400"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"38833314477463243"
+       ,"Label":{
+          "Label":"Links"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-link"
+        }
+       ,"Layout":{
+          "Sequence":320
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "500"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:500:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"500"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"38896522583463809"
+       ,"Label":{
+          "Label":"QA"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-clipboard-check-alt"
+        }
+       ,"Layout":{
+          "Sequence":330
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "600"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:600:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"600"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"45129397329359590"
+       ,"Label":{
+          "Label":"APEX 22.1"
+        }
+       ,"Layout":{
+          "Sequence":430
+         ,"Parent Entry":"Migration (16405035169854428)"
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "709"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:709:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"709"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"291328116588371950"
+       ,"Label":{
+          "Label":"Page"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-file-o"
+        }
+       ,"Layout":{
+          "Sequence":30
+        }
+       ,"Is Current":{
+          "Type":"Target Page"
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:30:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"30"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+       ,"Configuration":{
+          "Build Option":"deactivated (291318289212148547)"
+        }
+      }
+     ,{
+        "id":"293335134729022457"
+       ,"Label":{
+          "Label":"JavaScript"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-repeat"
+        }
+       ,"Layout":{
+          "Sequence":100
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "100"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:100:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"100"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"293335881011024666"
+       ,"Label":{
+          "Label":"CSS"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-file-code-o"
+        }
+       ,"Layout":{
+          "Sequence":200
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "200"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:200:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"200"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"293408720997816411"
+       ,"Label":{
+          "Label":"Visibility"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-eye"
+        }
+       ,"Layout":{
+          "Sequence":40
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "40"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:40:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"40"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"293451767366398525"
+       ,"Label":{
+          "Label":"Last Updated"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-calendar-clock"
+        }
+       ,"Layout":{
+          "Sequence":50
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "50"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:50:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"50"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"294215766296992610"
+       ,"Label":{
+          "Label":"Templates"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-layout-header-nav-left-cards"
+        }
+       ,"Layout":{
+          "Sequence":60
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "60"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:60:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"60"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"294498933510993254"
+       ,"Label":{
+          "Label":"PL\/SQL"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-file-sql"
+        }
+       ,"Layout":{
+          "Sequence":300
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "300"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:300:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"300"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"452504942296429648"
+       ,"Label":{
+          "Label":"APEX"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-apex"
+        }
+       ,"Layout":{
+          "Sequence":5
+        }
+       ,"Is Current":{
+          "Type":"Target Page"
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:10:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"10"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+       ,"Configuration":{
+          "Build Option":"deactivated (291318289212148547)"
+        }
+      }
+     ,{
+        "id":"452506165952441537"
+       ,"Label":{
+          "Label":"Pages"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-files-o"
+        }
+       ,"Layout":{
+          "Sequence":20
+        }
+       ,"Is Current":{
+          "Type":"Target Page"
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:20:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"20"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"452538776854652078"
+       ,"Label":{
+          "Label":"Applications"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-layout-nav-left-header-header"
+        }
+       ,"Layout":{
+          "Sequence":10
+        }
+       ,"Is Current":{
+          "Type":"Target Page"
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:10:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"10"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+    ]
+  }
+ ,{
+    "id":"452492439461466348"
+   ,"Identification":{
+      "Name":"Desktop Navigation Bar"
+     ,"Type":"Static Values"
+    }
+   ,"Entries":[
+      {
+        "id":"452492581739466354"
+       ,"Label":{
+          "Label":"Log Out"
+        }
+       ,"Layout":{
+          "Sequence":10
+        }
+       ,"Is Current":{
+          "Type":"Target Page"
+        }
+       ,"Link":{
+          "Target":"\u0026LOGOUT_URL."
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+    ]
+  }
+]

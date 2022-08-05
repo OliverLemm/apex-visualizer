@@ -1,0 +1,548 @@
+{
+  "id":"40"
+ ,"Identification":{
+    "Name":"Visibility"
+   ,"Title":"Visibility"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (452492531566466351)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"293414946304888446"
+     ,"Identification":{
+        "Title":"Objects conditioned"
+       ,"Type":"Chart"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select count(1) amount_overall\n      ,v.application_id\n      ,v.component_type\n      ,(select count (1) from av_visibility_v v1 where v1.application_id = v.application_id and v1.component_type = v.component_type and v1.visibility_name is not null group by v1.component_type,v1.application_id) amount\nfrom av_visibility_v v\nwhere v.application_id = :P0_APP_ID or :P0_APP_ID is null\ngroup by application_id, component_type"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"4"
+      }
+     ,"Appearance":{
+        "Template":"Standard (452458863643466246)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":true
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"293415078905888447"
+       ,"Chart":{
+          "Type":"Funnel"
+        }
+       ,"Appearance":{
+          "Orientation":"Vertical"
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":false
+        }
+       ,"Settings":{
+          "Zoom and Scroll":"No"
+        }
+       ,"Value":{
+          "Format":"Decimal"
+         ,"Format Scaling":"Automatic"
+        }
+       ,"Animation":{
+          "On Display":"Automatic"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":true
+         ,"Hide and Show Behavior":"Rescale"
+        }
+       ,"Series":[
+          {
+            "id":"293415178310888448"
+           ,"Identification":{
+              "Name":"New"
+            }
+           ,"Execution Options":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Region Source"
+            }
+           ,"Column Mapping":{
+              "Series Name":"APPLICATION_ID"
+             ,"Label":"COMPONENT_TYPE"
+             ,"Value Aggregation":"No Aggregation"
+             ,"Value":"AMOUNT"
+             ,"Target Value":"AMOUNT_OVERALL"
+            }
+           ,"Label":{
+              "Show":true
+             ,"Position":"Automatic"
+            }
+          }
+        ]
+      }
+    }
+   ,{
+      "id":"293415696723888453"
+     ,"Identification":{
+        "Title":"Conditioned by"
+       ,"Type":"Chart"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select v.application_id\n      ,v.visibility_category\n      ,count(1) amount\nfrom av_visibility_v v\nwhere v.visibility_name is not null and (v.application_id = :P0_APP_ID or :P0_APP_ID is null)\ngroup by application_id, visibility_category"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (452458863643466246)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":true
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"293415769418888454"
+       ,"Chart":{
+          "Type":"Pie"
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":false
+        }
+       ,"Settings":{
+          "Pie Selection Effect":"Highlight"
+        }
+       ,"Value":{
+          "Pie Chart Other Threshold":0
+         ,"Format Scaling":"Automatic"
+        }
+       ,"Animation":{
+          "On Display":"Automatic"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":true
+         ,"Position":"Automatic"
+         ,"Hide and Show Behavior":"Rescale"
+        }
+       ,"Series":[
+          {
+            "id":"293415893959888455"
+           ,"Identification":{
+              "Name":"New"
+            }
+           ,"Execution Options":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Region Source"
+            }
+           ,"Column Mapping":{
+              "Series Name":"APPLICATION_ID"
+             ,"Label":"VISIBILITY_CATEGORY"
+             ,"Value Aggregation":"No Aggregation"
+             ,"Value":"AMOUNT"
+            }
+           ,"Label":{
+              "Show":true
+             ,"Position":"Automatic"
+             ,"Display As":"Percentage"
+            }
+          }
+        ]
+      }
+    }
+   ,{
+      "id":"293416287791888459"
+     ,"Identification":{
+        "Title":"Condition Details"
+       ,"Type":"Chart"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select v.application_id || \u0027 - \u0027  || v.application_name app\n      ,v.visibility_name\n      ,v.visibility_category\n      ,v.visibility_type\n      ,v.visibility_exp1\n      ,count(1) amount\n      ,visibility_type || \u0027\u003Cbr\u003Eamount=\u0027 || count(1) || \u0027\u003Cbr\u003E\u0027 || visibility_exp1 tooltip\nfrom av_visibility_v v\nwhere v.visibility_name is not null\nand v.application_id = :P0_APP_ID or :P0_APP_ID is null\ngroup by v.application_id || \u0027 - \u0027  || v.application_name\n        ,v.visibility_category\n        ,v.visibility_name\n        ,visibility_type\n        ,visibility_exp1\n"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (452458863643466246)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":true
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"293416386837888460"
+       ,"Chart":{
+          "Type":"Bar"
+        }
+       ,"Appearance":{
+          "Orientation":"Vertical"
+         ,"Stack":false
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":false
+        }
+       ,"Multi-Series Chart Data":{
+          "Fill Gaps in Chart Data":true
+         ,"Sort Order":"Label - Ascending"
+         ,"Render Gap as Zero":true
+        }
+       ,"Settings":{
+          "Zoom and Scroll":"No"
+        }
+       ,"Animation":{
+          "On Display":"Automatic"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":true
+         ,"Show Group Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":true
+         ,"Position":"Automatic"
+         ,"Hide and Show Behavior":"Rescale"
+        }
+       ,"Series":[
+          {
+            "id":"293416483617888461"
+           ,"Identification":{
+              "Name":"New"
+            }
+           ,"Execution Options":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Region Source"
+            }
+           ,"Column Mapping":{
+              "Series Name":"APP"
+             ,"Label":"VISIBILITY_NAME"
+             ,"Value Aggregation":"No Aggregation"
+             ,"Value":"AMOUNT"
+             ,"Custom Tooltip":"TOOLTIP"
+            }
+           ,"Appearance":{
+              "Assigned To Y2 Axis":false
+            }
+           ,"Label":{
+              "Show":false
+            }
+          }
+        ]
+       ,"Axes":[
+          {
+            "id":"293416519771888462"
+           ,"Identification":{
+              "Name":"x"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Major Ticks":{
+              "Show":"Yes"
+            }
+           ,"Minor Ticks":{
+              "Show":false
+            }
+           ,"Tick Label":{
+              "Show":true
+             ,"Rotation":true
+             ,"Position":"Outside"
+            }
+          }
+         ,{
+            "id":"293416656186888463"
+           ,"Identification":{
+              "Name":"y"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Appearance":{
+              "Position":"Automatic"
+            }
+           ,"Major Ticks":{
+              "Show":"Yes"
+            }
+           ,"Minor Ticks":{
+              "Show":false
+            }
+           ,"Tick Label":{
+              "Show":true
+            }
+          }
+        ]
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"293415469604888451"
+     ,"Identification":{
+        "Name":"change P0_APP_ID"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Client-side Condition":{
+        "Type":"Item is not null"
+       ,"Item":"P0_APP_ID"
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"293415592362888452"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Objects conditioned (293414946304888446)"
+          }
+         ,"Execution Options":{
+            "Sequence":20
+           ,"Event":"change P0_APP_ID (293415469604888451)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"293416123635888458"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Conditioned by (293415696723888453)"
+          }
+         ,"Execution Options":{
+            "Sequence":30
+           ,"Event":"change P0_APP_ID (293415469604888451)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"294195226983781247"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Condition Details (293416287791888459)"
+          }
+         ,"Execution Options":{
+            "Sequence":40
+           ,"Event":"change P0_APP_ID (293415469604888451)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"294195333088781248"
+         ,"Identification":{
+            "Action":"Show"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Condition Details (293416287791888459)"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"change P0_APP_ID (293415469604888451)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":true
+          }
+        }
+       ,{
+          "id":"294195414490781249"
+         ,"Identification":{
+            "Action":"Hide"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Condition Details (293416287791888459)"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"change P0_APP_ID (293415469604888451)"
+           ,"Fire When Event Result Is":"False"
+           ,"Fire on Initialization":true
+          }
+        }
+       ,{
+          "id":"294195566596781250"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Conditioned by (293415696723888453)"
+          }
+         ,"Execution Options":{
+            "Sequence":20
+           ,"Event":"change P0_APP_ID (293415469604888451)"
+           ,"Fire When Event Result Is":"False"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"294195626510781251"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Objects conditioned (293414946304888446)"
+          }
+         ,"Execution Options":{
+            "Sequence":30
+           ,"Event":"change P0_APP_ID (293415469604888451)"
+           ,"Fire When Event Result Is":"False"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

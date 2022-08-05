@@ -1,0 +1,32 @@
+---
+- # ====== Authentication: APEX ================================
+  id: 38869726273053514
+  identification: 
+    name: APEX
+
+  settings: 
+    type: Oracle APEX Accounts
+
+  session-not-valid: 
+    redirect-to: Login Page
+
+  login-processing: 
+    switch-in-session: false
+
+  real-application-security: 
+    ras-mode: Disabled
+
+- # ====== Authentication: No Authentication ===================
+  id: 452492707829466357
+  identification: 
+    name: No Authentication
+
+  settings: 
+    type: No Authentication
+
+  login-processing: 
+    switch-in-session: false
+
+  real-application-security: 
+    ras-mode: Disabled
+

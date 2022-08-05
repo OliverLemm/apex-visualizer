@@ -1,0 +1,35 @@
+[
+  {
+    "id":"38869726273053514"
+   ,"Identification":{
+      "Name":"APEX"
+    }
+   ,"Settings":{
+      "Type":"Oracle APEX Accounts"
+    }
+   ,"Session Not Valid":{
+      "Redirect to":"Login Page"
+    }
+   ,"Login Processing":{
+      "Switch in Session":false
+    }
+   ,"Real Application Security":{
+      "RAS Mode":"Disabled"
+    }
+  }
+ ,{
+    "id":"452492707829466357"
+   ,"Identification":{
+      "Name":"No Authentication"
+    }
+   ,"Settings":{
+      "Type":"No Authentication"
+    }
+   ,"Login Processing":{
+      "Switch in Session":false
+    }
+   ,"Real Application Security":{
+      "RAS Mode":"Disabled"
+    }
+  }
+]

@@ -1,0 +1,1220 @@
+{
+  "id":"500"
+ ,"Identification":{
+    "Name":"Links"
+   ,"Alias":"LINKS"
+   ,"Title":"Links"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (452492531566466351)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"37659795627724642"
+     ,"Identification":{
+        "Title":"Links to Page"
+       ,"Type":"Interactive Grid"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select PAGE_ID,\n       PAGE_NAME,\n       PAGE_GROUP,\n       LINK_TYPE,\n       LINK_NAME,\n       LINK_LABEL,\n       LINK_PAGE_ID,\n       PAGE_DESIGNER_URL\n  from AV_PAGE_LINKS_V\n where application_id = :P0_APP_ID and\n(:P0_PAGE_ID is null or :P0_PAGE_ID = link_page_id)"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+         ,"P0_PAGE_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (452458863643466246)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"37659856547724643"
+       ,"Edit":{
+          "Enabled":false
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Appearance":{
+          "Select First Row":true
+         ,"Fixed Row Height":true
+        }
+       ,"Pagination":{
+          "Type":"Scroll"
+         ,"Show Total Row Count":true
+        }
+       ,"Toolbar":{
+          "Show":true
+         ,"Controls":[
+            "Search Column Selection"
+           ,"Search Field"
+           ,"Actions Menu"
+           ,"Reset Button"
+           ,"Save Button"
+          ]
+        }
+       ,"Enable Users To":{
+          "Save Public Report":false
+         ,"Flashback":true
+         ,"Define Chart View":true
+         ,"Download":true
+        }
+       ,"Download":{
+          "Formats":[
+            "CSV"
+           ,"HTML"
+           ,"Excel"
+           ,"PDF"
+          ]
+         ,"Send as Email":true
+        }
+       ,"Heading":{
+          "Fixed To":"Page"
+        }
+       ,"Icon View":{
+          "Show":false
+        }
+       ,"Detail View":{
+          "Show":false
+        }
+       ,"Saved Reports":[
+          {
+            "id":"38841756995640153"
+           ,"Identification":{
+              "Name":"Primary Report"
+             ,"Alias":"388418"
+            }
+          }
+        ]
+      }
+     ,"Columns":[
+        {
+          "id":"37660110952724646"
+         ,"Identification":{
+            "Column Name":"PAGE_ID"
+           ,"Type":"Number Field"
+          }
+         ,"Heading":{
+            "Heading":"Page Id"
+           ,"Alignment":"end"
+          }
+         ,"Settings":{
+            "Number Alignment":"Right"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"end"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":true
+          }
+         ,"Link":{
+            "Target":"\u0026PAGE_DESIGNER_URL."
+           ,"Link Text":"\u0026PAGE_ID."
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PAGE_ID"
+           ,"Data Type":"NUMBER"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"37660299177724647"
+         ,"Identification":{
+            "Column Name":"PAGE_NAME"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Page Name"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":true
+           ,"Maximum Length":255
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PAGE_NAME"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"37660359412724648"
+         ,"Identification":{
+            "Column Name":"PAGE_GROUP"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Page Group"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":40
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":255
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PAGE_GROUP"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"37660415898724649"
+         ,"Identification":{
+            "Column Name":"LINK_TYPE"
+           ,"Type":"Text Field"
+          }
+         ,"Heading":{
+            "Heading":"Link Type"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Trim Spaces":"Leading and Trailing"
+           ,"Text Case":"NO CHANGE"
+          }
+         ,"Layout":{
+            "Sequence":50
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":15
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"LINK_TYPE"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"Distinct Column"
+           ,"Exact Match":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"37660566815724650"
+         ,"Identification":{
+            "Column Name":"LINK_NAME"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Link Name"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":60
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":4000
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"LINK_NAME"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"38836146359637001"
+         ,"Identification":{
+            "Column Name":"LINK_LABEL"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Link Label"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":70
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":4000
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"LINK_LABEL"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"38836233583637002"
+         ,"Identification":{
+            "Column Name":"LINK_PAGE_ID"
+           ,"Type":"Number Field"
+          }
+         ,"Heading":{
+            "Heading":"Link Page Id"
+           ,"Alignment":"end"
+          }
+         ,"Settings":{
+            "Number Alignment":"Right"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"end"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"LINK_PAGE_ID"
+           ,"Data Type":"NUMBER"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"38836372153637003"
+         ,"Identification":{
+            "Column Name":"PAGE_DESIGNER_URL"
+           ,"Type":"Hidden"
+          }
+         ,"Settings":{
+            "Value Protected":true
+          }
+         ,"Layout":{
+            "Sequence":80
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PAGE_DESIGNER_URL"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":false
+          }
+         ,"Enable Users To":{
+            "Sort":false
+          }
+        }
+      ]
+     ,"Printing":{
+        "Page":{
+          "Size":"Letter"
+         ,"Orientation":"Landscape"
+         ,"Units":"Inches"
+         ,"Width":11
+         ,"Height":8.5
+         ,"Border Width":0.5
+         ,"Border Color":"#666666"
+        }
+       ,"Page Header":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Normal"
+         ,"Font Size":12
+         ,"Font Color":"#000000"
+         ,"Alignment":"center"
+         ,"Page Header Text":"Links to Page"
+        }
+       ,"Column Headings":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Bold"
+         ,"Font Size":10
+         ,"Font Color":"#000000"
+         ,"Background Color":"#EEEEEE"
+        }
+       ,"Columns":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Normal"
+         ,"Font Size":10
+         ,"Font Color":"#000000"
+         ,"Background Color":"#FFFFFF"
+        }
+       ,"Page Footer":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Normal"
+         ,"Font Size":12
+         ,"Font Color":"#000000"
+         ,"Alignment":"center"
+        }
+      }
+    }
+   ,{
+      "id":"38836680437637006"
+     ,"Identification":{
+        "Title":"Links from Page"
+       ,"Type":"Interactive Grid"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select PAGE_ID,\n       PAGE_NAME,\n       PAGE_GROUP,\n       LINK_TYPE,\n       LINK_NAME,\n       LINK_LABEL,\n       LINK_PAGE_ID,\n       PAGE_DESIGNER_URL\n  from AV_PAGE_LINKS_V\n where application_id = :P0_APP_ID and\n(:P0_PAGE_ID is null or :P0_PAGE_ID = page_id)"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+         ,"P0_PAGE_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (452458863643466246)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"38836796775637007"
+       ,"Edit":{
+          "Enabled":false
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Appearance":{
+          "Select First Row":true
+         ,"Fixed Row Height":true
+        }
+       ,"Pagination":{
+          "Type":"Scroll"
+         ,"Show Total Row Count":true
+        }
+       ,"Toolbar":{
+          "Show":true
+         ,"Controls":[
+            "Search Column Selection"
+           ,"Search Field"
+           ,"Actions Menu"
+           ,"Reset Button"
+           ,"Save Button"
+          ]
+        }
+       ,"Enable Users To":{
+          "Save Public Report":false
+         ,"Flashback":true
+         ,"Define Chart View":true
+         ,"Download":true
+        }
+       ,"Download":{
+          "Formats":[
+            "CSV"
+           ,"HTML"
+           ,"Excel"
+           ,"PDF"
+          ]
+         ,"Send as Email":true
+        }
+       ,"Heading":{
+          "Fixed To":"Page"
+        }
+       ,"Icon View":{
+          "Show":false
+        }
+       ,"Detail View":{
+          "Show":false
+        }
+       ,"Saved Reports":[
+          {
+            "id":"38886295402436931"
+           ,"Identification":{
+              "Name":"Primary Report"
+             ,"Alias":"388863"
+            }
+          }
+        ]
+      }
+     ,"Columns":[
+        {
+          "id":"38836866125637008"
+         ,"Identification":{
+            "Column Name":"PAGE_NAME"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Page Name"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":true
+           ,"Maximum Length":255
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PAGE_NAME"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"38836946220637009"
+         ,"Identification":{
+            "Column Name":"PAGE_ID"
+           ,"Type":"Number Field"
+          }
+         ,"Heading":{
+            "Heading":"Page Id"
+           ,"Alignment":"end"
+          }
+         ,"Settings":{
+            "Number Alignment":"Right"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"end"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":true
+          }
+         ,"Link":{
+            "Target":"\u0026PAGE_DESIGNER_URL."
+           ,"Link Text":"\u0026PAGE_ID."
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PAGE_ID"
+           ,"Data Type":"NUMBER"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"38837056767637010"
+         ,"Identification":{
+            "Column Name":"LINK_PAGE_ID"
+           ,"Type":"Number Field"
+          }
+         ,"Heading":{
+            "Heading":"Link Page Id"
+           ,"Alignment":"end"
+          }
+         ,"Settings":{
+            "Number Alignment":"Right"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"end"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"LINK_PAGE_ID"
+           ,"Data Type":"NUMBER"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"38837189859637011"
+         ,"Identification":{
+            "Column Name":"PAGE_GROUP"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Page Group"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":40
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":255
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PAGE_GROUP"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"38837294762637012"
+         ,"Identification":{
+            "Column Name":"LINK_TYPE"
+           ,"Type":"Text Field"
+          }
+         ,"Heading":{
+            "Heading":"Link Type"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Trim Spaces":"Leading and Trailing"
+           ,"Text Case":"NO CHANGE"
+          }
+         ,"Layout":{
+            "Sequence":50
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":15
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"LINK_TYPE"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"Distinct Column"
+           ,"Exact Match":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"38837388002637013"
+         ,"Identification":{
+            "Column Name":"LINK_NAME"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Link Name"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":60
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":4000
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"LINK_NAME"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"38837432728637014"
+         ,"Identification":{
+            "Column Name":"LINK_LABEL"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Link Label"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":70
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":4000
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"LINK_LABEL"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"38837518568637015"
+         ,"Identification":{
+            "Column Name":"PAGE_DESIGNER_URL"
+           ,"Type":"Hidden"
+          }
+         ,"Settings":{
+            "Value Protected":true
+          }
+         ,"Layout":{
+            "Sequence":80
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PAGE_DESIGNER_URL"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":false
+          }
+         ,"Enable Users To":{
+            "Sort":false
+          }
+        }
+      ]
+     ,"Printing":{
+        "Page":{
+          "Size":"Letter"
+         ,"Orientation":"Landscape"
+         ,"Units":"Inches"
+         ,"Width":11
+         ,"Height":8.5
+         ,"Border Width":0.5
+         ,"Border Color":"#666666"
+        }
+       ,"Page Header":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Normal"
+         ,"Font Size":12
+         ,"Font Color":"#000000"
+         ,"Alignment":"center"
+         ,"Page Header Text":"Links from Page"
+        }
+       ,"Column Headings":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Bold"
+         ,"Font Size":10
+         ,"Font Color":"#000000"
+         ,"Background Color":"#EEEEEE"
+        }
+       ,"Columns":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Normal"
+         ,"Font Size":10
+         ,"Font Color":"#000000"
+         ,"Background Color":"#FFFFFF"
+        }
+       ,"Page Footer":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Normal"
+         ,"Font Size":12
+         ,"Font Color":"#000000"
+         ,"Alignment":"center"
+        }
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"38836434485637004"
+     ,"Identification":{
+        "Name":"change P0_APP_ID,P0_PAGE_ID - refresh Regions"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P0_APP_ID"
+         ,"P0_PAGE_ID"
+        ]
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"38836515561637005"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Links to Page (37659795627724642)"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"change P0_APP_ID,P0_PAGE_ID - refresh Regions (38836434485637004)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"38837652184637016"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Links from Page (38836680437637006)"
+          }
+         ,"Execution Options":{
+            "Sequence":20
+           ,"Event":"change P0_APP_ID,P0_PAGE_ID - refresh Regions (38836434485637004)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

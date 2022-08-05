@@ -1,0 +1,72 @@
+[
+  {
+    "id":"2758582320912314"
+   ,"Identification":{
+      "File Name":"icons\/app-icon-32.png"
+    }
+   ,"Attributes":{
+      "Mime Type":"image\/png"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"2758721976912323"
+   ,"Identification":{
+      "File Name":"icons\/app-icon-192.png"
+    }
+   ,"Attributes":{
+      "Mime Type":"image\/png"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"2759013877912329"
+   ,"Identification":{
+      "File Name":"icons\/app-icon-512.png"
+    }
+   ,"Attributes":{
+      "Mime Type":"image\/png"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"45069494819170018"
+   ,"Identification":{
+      "File Name":"av.css"
+    }
+   ,"Attributes":{
+      "Mime Type":"text\/css"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"45073219296177050"
+   ,"Identification":{
+      "File Name":"av.min.css"
+    }
+   ,"Attributes":{
+      "Mime Type":"text\/css"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"57381648008507893"
+   ,"Identification":{
+      "File Name":"av.js"
+    }
+   ,"Attributes":{
+      "Mime Type":"text\/javascript"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"57382672707510970"
+   ,"Identification":{
+      "File Name":"av.min.js"
+    }
+   ,"Attributes":{
+      "Mime Type":"text\/javascript"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+]

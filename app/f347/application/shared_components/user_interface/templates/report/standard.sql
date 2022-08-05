@@ -15,7 +15,7 @@ wwv_flow_imp_shared.create_row_template(
  p_id=>wwv_flow_imp.id(452468948793466267)
 ,p_row_template_name=>'Standard'
 ,p_internal_name=>'STANDARD'
-,p_row_template1=>'<td class="t-Report-cell" #ALIGNMENT# headers="#COLUMN_HEADER_NAME#">#COLUMN_VALUE#</td>'
+,p_row_template1=>'<td class="t-Report-cell" #ALIGNMENT# #ACCESSIBLE_HEADERS#>#COLUMN_VALUE#</td>'
 ,p_row_template_before_rows=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<div class="t-Report #COMPONENT_CSS_CLASSES#" id="report_#REGION_STATIC_ID#" #REPORT_ATTRIBUTES# data-region-id="#REGION_STATIC_ID#">',
 '  <div class="t-Report-wrap">',
@@ -34,7 +34,7 @@ wwv_flow_imp_shared.create_row_template(
 ,p_row_template_after_last=>'</tr>'
 ,p_row_template_type=>'GENERIC_COLUMNS'
 ,p_before_column_heading=>'<thead>'
-,p_column_heading_template=>'<th class="t-Report-colHead" #ALIGNMENT# id="#COLUMN_HEADER_NAME#" #COLUMN_WIDTH#>#COLUMN_HEADER#</th>'
+,p_column_heading_template=>'<th class="t-Report-colHead" #ARIA_SORT# #ALIGNMENT# id="#COLUMN_HEADER_NAME#" #COLUMN_WIDTH#>#COLUMN_HEADER#</th>'
 ,p_after_column_heading=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '</thead>',
 '<tbody>'))

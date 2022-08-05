@@ -1,0 +1,74 @@
+[
+  {
+    "id":"36405973436462598"
+   ,"Identification":{
+      "Name":"Contextual Info"
+    }
+  }
+ ,{
+    "id":"126136914167127378"
+   ,"Identification":{
+      "Name":"Content Row"
+    }
+  }
+ ,{
+    "id":"126140586173127381"
+   ,"Identification":{
+      "Name":"Media List"
+    }
+  }
+ ,{
+    "id":"452464347870466256"
+   ,"Identification":{
+      "Name":"Alerts"
+    }
+  }
+ ,{
+    "id":"452464366194466257"
+   ,"Identification":{
+      "Name":"Badge List"
+    }
+  }
+ ,{
+    "id":"452466159702466260"
+   ,"Identification":{
+      "Name":"Cards"
+    }
+  }
+ ,{
+    "id":"452468384633466265"
+   ,"Identification":{
+      "Name":"Comments"
+    }
+  }
+ ,{
+    "id":"452468838574466265"
+   ,"Identification":{
+      "Name":"Search Results"
+    }
+  }
+ ,{
+    "id":"452468948793466267"
+   ,"Identification":{
+      "Name":"Standard"
+    }
+  }
+ ,{
+    "id":"452470248712466268"
+   ,"Identification":{
+      "Name":"Timeline"
+    }
+  }
+ ,{
+    "id":"452470377415466270"
+   ,"Identification":{
+      "Name":"Value Attribute Pairs - Column"
+    }
+  }
+ ,{
+    "id":"452471434397466271"
+   ,"Identification":{
+      "Name":"Value Attribute Pairs - Row"
+    }
+  }
+]

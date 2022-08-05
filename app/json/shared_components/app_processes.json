@@ -1,0 +1,23 @@
+[
+  {
+    "id":"28019854089825293"
+   ,"Identification":{
+      "Name":"APEX Nitro"
+     ,"Type":"NATIVE_PLSQL"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Language":"PL\/SQL"
+     ,"PL\/SQL Code":"apex_application.g_flow_images := \u0027http:\/\/localhost:4000\/\u0027;"
+    }
+   ,"Execution Options":{
+      "Sequence":-9999
+     ,"Point":"Before Header"
+    }
+   ,"Server-side Condition":{
+      "Type":"Expression"
+     ,"Language":"PL\/SQL"
+     ,"PL\/SQL Expression":"owa_util.get_cgi_env(\u0027APEX-Nitro\u0027) is not null"
+    }
+  }
+]

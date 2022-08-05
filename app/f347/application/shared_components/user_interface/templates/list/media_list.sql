@@ -14,13 +14,13 @@ wwv_flow_imp.component_begin (
 wwv_flow_imp_shared.create_list_template(
  p_id=>wwv_flow_imp.id(452476439537466282)
 ,p_list_template_current=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'<li class="t-MediaList-item is-active #A04#" aria-current="page">',
+'<li class="t-MediaList-item is-active #A04#">',
 '  <a href="#LINK#" class="t-MediaList-itemWrap #A05#" #A03#>',
 '    <div class="t-MediaList-iconWrap" aria-hidden="true">',
 '      <span class="t-MediaList-icon u-color #A06#"><span class="t-Icon #ICON_CSS_CLASSES#" #IMAGE_ATTR#></span></span>',
 '    </div>',
 '    <div class="t-MediaList-body">',
-'      <h3 class="t-MediaList-title">#TEXT#</h3>',
+'      <h3 class="t-MediaList-title" aria-current="page">#TEXT#</h3>',
 '      <p class="t-MediaList-desc">#A01#</p>',
 '    </div>',
 '    <div class="t-MediaList-badgeWrap">',

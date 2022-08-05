@@ -1,0 +1,115 @@
+---
+# ====== Application: APEX Visualizer ========================
+id: 347
+identification: 
+  name: APEX Visualizer
+  alias: AV
+  version: 22.1
+
+row-search: 
+  tokenize: false
+
+availability: 
+  status: Available with Developer Toolbar
+  build-status: Run and Build Application
+
+error-handling: 
+  default-display-location: Inline with Field and in Notification
+
+report-printing: 
+  type: Use Instance Settings
+
+advanced: 
+  friendly-urls: false
+  allow-feedback: false
+  logging: true
+  debugging: true
+  compatibility-mode: 21.2 / 22.1
+
+authentication: 
+  public-user: APEX_PUBLIC_USER
+  authentication-scheme: APEX # 38869726273053514
+
+authorization: 
+  source-for-role-or-group-schemes: Authentication Scheme
+
+session-management: 
+  rejoin-sessions: Disabled
+
+session-state-protection: 
+  enabled: true
+
+security: 
+  deep-linking: Disabled
+  browser-cache: Disabled
+  embed-in-frames: Deny
+  referrer-policy: strict-origin-when-cross-origin
+  html-escaping-mode: Extended
+
+database-session: 
+  parsing-schema: APEX_VISUALIZER
+
+globalization: 
+  primary-language: English (en)
+  document-direction: Left-To-Right
+  language-derived-from: Application Primary Language
+  automatic-time-zone: false
+  automatic-csv-encoding: true
+
+character-value-comparison: 
+  behavior: Database session NLS setting (default)
+
+logo: 
+  type: Text
+  text: APEX Visualizer
+
+progressive-web-app: 
+  enable: false
+
+user-interfaces: 
+- # ====== User Interface: Desktop =============================
+  id: 452492531566466351
+  identification: 
+    name: Desktop
+
+  navigation: 
+    home-url: 
+      url: 'f?p=&APP_ID.:10:&SESSION.'
+      page: 10 # Applications
+
+    login-url: 
+      url: 'f?p=&APP_ID.:LOGIN:&APP_SESSION.::&DEBUG.:::'
+      page: LOGIN
+
+  navigation-menu: 
+    list-template: Side Navigation Menu # 452478253231466285
+    template-options: 
+    - '#DEFAULT#'
+    - js-defaultCollapsed
+    - js-navCollapsed--hidden
+    - t-TreeNav--classic
+    list-position: Side
+    list: Desktop Navigation Menu # 452440279475466179
+
+  navigation-bar: 
+    implementation: List
+    list: Desktop Navigation Bar # 452492439461466348
+    list-template: Navigation Bar # 452478069261466285
+    template-options: 
+    - '#DEFAULT#'
+
+  javascript: 
+    file-urls: 
+    - '#APP_FILES#av#MIN#.js'
+    include-jquery-migrate: false
+
+  css: 
+    file-urls: 
+    - '#APP_FILES#av#MIN#.css'
+
+  attributes: 
+    theme: Universal Theme # 42
+    global-page: 0
+    enable-end-users-to-choose-theme-style: false
+    add-"built-with-apex"-to-footer: true
+

@@ -1,0 +1,2221 @@
+---
+# ====== Page: APEX 20.1 =====================================
+id: 705
+identification: 
+  name: APEX 20.1
+  alias: APEX-20-1
+  title: APEX 20.1
+
+appearance: 
+  user-interface: Desktop # 452492531566466351
+  page-mode: Normal
+  page-template: Theme Default
+  template-options: 
+  - '#DEFAULT#'
+
+navigation-menu: 
+  override-user-interface-level: false
+
+navigation: 
+  cursor-focus: Do not focus cursor
+  warn-on-unsaved-changes: false
+
+security: 
+  authentication: Page Requires Authentication
+  deep-linking: Application Default
+  page-access-protection: Arguments Must Have Checksum
+  form-auto-complete: Off
+  browser-cache: Application Default
+
+session-management: 
+  rejoin-sessions: Application Default
+
+advanced: 
+  enable-duplicate-page-submissions: Yes - Enable page to be re-posted
+  reload-on-submit: Only for Success
+
+server-cache: 
+  caching: Disabled
+
+regions: 
+- # ====== Region: 7.1.2 Desupported JavaScript Functions ======
+  id: 22470004391353906
+  identification: 
+    title: 7.1.2 Desupported JavaScript Functions
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select j.page_id
+            ,j.page_name
+            ,j.component_name
+            ,j.component_type
+            ,j.js_code_vc2
+      from av_javascript_v j
+      where (instr(lower(j.js_code_vc2)
+                 ,'openmodal') > 0
+      or instr(lower(j.js_code_vc2)
+             ,'closemodal') > 0)
+      and application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 10
+    parent-region: '7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 22470625676353912
+    position: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      <ul>
+      <li><b>openModal('myRegionId');</b> => <b>apex.theme.openRegion('myRegionId');</b> <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/aexjs/apex.theme.html#.openRegion" target="_blank">APEX 20.1 JS API apex.theme.openRegion</a></li>
+      <li><b>closeModal('myRegionId');</b> => <b>apex.theme.closeRegion('myRegionId');</b> <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/aexjs/apex.theme.html#.closeRegion" target="_blank">APEX 20.1 JS API apex.theme.closeRegion</a></li>
+      </ul>
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Top and Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no openModal or closeModal used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 22470137634353907
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 22470272931353908
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_NAME ==============================
+    id: 22470380367353909
+    identification: 
+      column-name: COMPONENT_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Component Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_TYPE ==============================
+    id: 22470421602353910
+    identification: 
+      column-name: COMPONENT_TYPE
+      type: Plain Text
+
+    heading: 
+      heading: Component Type
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: JS_CODE_VC2 =================================
+    id: 22470551496353911
+    identification: 
+      column-name: JS_CODE_VC2
+      type: Plain Text
+
+    heading: 
+      heading: Js Code Vc2
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    column-formatting: 
+      highlight-words: openmodal,closemodal
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 7.1 Desupported Features -  <a href="https://
+  id: 22470625676353912
+  identification: 
+    title: '7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
+    type: Static Content
+
+  layout: 
+    sequence: 20
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: 6.1.1 Deprecated JavaScript Functions =======
+  id: 22470932571353915
+  identification: 
+    title: 6.1.1 Deprecated JavaScript Functions
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select j.page_id
+            ,j.page_name
+            ,j.component_name
+            ,j.component_type
+            ,j.js_code_vc2
+      from av_javascript_v j
+      where instr(lower(j.js_code_vc2)
+                 ,'apex.theme42.util.mq') > 0
+      and application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 10
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 22471528162353921
+    position: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: '<b>apex.theme42.util.mq => use apex.theme.mq</b> <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/aexjs/apex.theme.html#.mq" target="_blank">APEX 20.1 JS API apex.theme.mq</a>'
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Top and Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no apex.theme42.util.mq used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 22471016763353916
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 22471165868353917
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_NAME ==============================
+    id: 22471251629353918
+    identification: 
+      column-name: COMPONENT_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Component Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_TYPE ==============================
+    id: 22471309808353919
+    identification: 
+      column-name: COMPONENT_TYPE
+      type: Plain Text
+
+    heading: 
+      heading: Component Type
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: JS_CODE_VC2 =================================
+    id: 22471457637353920
+    identification: 
+      column-name: JS_CODE_VC2
+      type: Plain Text
+
+    heading: 
+      heading: Js Code Vc2
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    column-formatting: 
+      highlight-words: openmodal,closemodal
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 6.1 Deprecated Features - <a href="https://do
+  id: 22471528162353921
+  identification: 
+    title: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>'
+    type: Static Content
+
+  layout: 
+    sequence: 30
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: 6.1.10 apexrefresh Event is Deprecated ======
+  id: 22471713638353923
+  identification: 
+    title: 6.1.10 apexrefresh Event is Deprecated
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select j.page_id
+            ,j.page_name
+            ,j.component_name
+            ,j.component_type
+            ,j.js_code_vc2
+      from av_javascript_v j
+      where regexp_like(j.js_code_vc2
+                       ,'apex.event.trigger.*apexrefresh'
+                       ,'i')
+      and j.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 60
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 22471528162353921
+    position: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: '<b>apex.event.trigger( "#myRegionStaticID", "apexrefresh" ); => apex.region("myRegionStaticID").refresh();</b> <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/aexjs/region.html#refresh" target="_blank">APEX 20.1 JS API apex.region</a>'
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Top and Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no apex.theme42.util.mq used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 22471826404353924
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 22471966894353925
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_NAME ==============================
+    id: 22472050157353926
+    identification: 
+      column-name: COMPONENT_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Component Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_TYPE ==============================
+    id: 22472122222353927
+    identification: 
+      column-name: COMPONENT_TYPE
+      type: Plain Text
+
+    heading: 
+      heading: Component Type
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: JS_CODE_VC2 =================================
+    id: 22472205583353928
+    identification: 
+      column-name: JS_CODE_VC2
+      type: Plain Text
+
+    heading: 
+      heading: Js Code Vc2
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    column-formatting: 
+      highlight-words: apex.event.trigger
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 6.1.5 Tabular Forms Deprecated  =============
+  id: 22472425888353930
+  identification: 
+    title: '6.1.5 Tabular Forms Deprecated '
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select 
+       r.page_id
+      ,r.page_name
+      ,r.region_name 
+      from apex_application_page_regions r
+      where r.source_type = 'Tabular Form'
+      and r.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 30
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 22471528162353921
+    position: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 9999999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Top and Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Tabular Forms used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 22472516399353931
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 1
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 22472657530353932
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: REGION_NAME =================================
+    id: 22472722413353933
+    identification: 
+      column-name: REGION_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Region Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 2
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 6.1.7 Theme Style "Vista" Deprecated in Unive
+  id: 22472983108353935
+  identification: 
+    title: 6.1.7 Theme Style "Vista" Deprecated in Universal Theme
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select ty.name 
+      from apex_application_theme_styles ty
+      where ty.name = 'Vista'
+      and ty.is_current = 'Yes'
+      and ty.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 40
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 22471528162353921
+    position: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 15
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: No Pagination (Show All Rows)
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Vista Theme Style is used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: NAME ========================================
+    id: 22473334255353939
+    identification: 
+      column-name: NAME
+      type: Plain Text
+
+    heading: 
+      heading: Name
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 6.1.8 Post Calculation for Page Items Depreca
+  id: 22473599670353941
+  identification: 
+    title: '6.1.8 Post Calculation for Page Items Deprecated '
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select p.page_id
+            ,p.page_name
+            ,p.region
+            ,p.item_name
+      from apex_application_page_items p
+      where p.source_post_computation is not null
+      and p.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 50
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 22471528162353921
+    position: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 9999999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Top and Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Post Calculation for Page Items used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 22473759959353943
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 1
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 22473861649353944
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: REGION ======================================
+    id: 22473937564353945
+    identification: 
+      column-name: REGION
+      type: Plain Text
+
+    heading: 
+      heading: Region
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 2
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: ITEM_NAME ===================================
+    id: 22474023972353946
+    identification: 
+      column-name: ITEM_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Item Name
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 3
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 6.1.9 Show / Hide All Page Items On Same Line
+  id: 23546299057935810
+  identification: 
+    title: 6.1.9 Show / Hide All Page Items On Same Line attributes deprecated
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select a.page_id
+            ,a.page_name
+            ,a.dynamic_action_name
+            ,a.action_name
+      from apex_application_page_da_acts a
+      where a.action_name in ('Hide'
+                             ,'Show')
+      and a.attribute_01 = 'Y'
+      and a.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 70
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 22471528162353921
+    position: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 9999999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Top and Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Show / Hide All Page Items On Same Line attributes used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 23546334660935811
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 1
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 23546450899935812
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: DYNAMIC_ACTION_NAME =========================
+    id: 23546578203935813
+    identification: 
+      column-name: DYNAMIC_ACTION_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Dynamic Action Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 2
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: ACTION_NAME =================================
+    id: 23546623721935814
+    identification: 
+      column-name: ACTION_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Action Name
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 6.1.14 apex.widget.initPageItem Function Depr
+  id: 23547096181935818
+  identification: 
+    title: '6.1.14 apex.widget.initPageItem Function Deprecated '
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select j.page_id
+            ,j.page_name
+            ,j.component_name
+            ,j.component_type
+            ,j.js_code_vc2
+      from av_javascript_v j
+      where instr(lower(j.js_code_vc2)
+                 ,'apex.widget.initPageItem') > 0
+      and application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 140
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 22471528162353921
+    position: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: '<b>apex.widget.initPageItem => apex.item.create</b> <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/aexjs/apex.item.html#.create" target="_blank">APEX 20.1 JS API apex.item.create</a>'
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Top and Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no apex.widget.initPageItem used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 23547166361935819
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 23547261390935820
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_NAME ==============================
+    id: 23547342205935821
+    identification: 
+      column-name: COMPONENT_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Component Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_TYPE ==============================
+    id: 23547454971935822
+    identification: 
+      column-name: COMPONENT_TYPE
+      type: Plain Text
+
+    heading: 
+      heading: Component Type
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: JS_CODE_VC2 =================================
+    id: 23547520853935823
+    identification: 
+      column-name: JS_CODE_VC2
+      type: Plain Text
+
+    heading: 
+      heading: Js Code Vc2
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    column-formatting: 
+      highlight-words: apex.widget.initPageItem
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: APEX 20.1 ===================================
+  id: 43370026133782521
+  identification: 
+    title: APEX 20.1
+    type: Breadcrumb
+
+  source: 
+    breadcrumb: ' Breadcrumb' # 452492814882466360
+
+  layout: 
+    sequence: 40
+    parent-region: No Parent
+    position: REGION_POSITION_01
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Hero # 452456691272466243
+    template-options: 
+    - '#DEFAULT#'
+    icon: fa-wrench
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    appearance: 
+      breadcrumb-template: Breadcrumb # 452482206618466299
+      template-options: 
+      - '#DEFAULT#'
+
+dynamic-actions: 
+- # ====== Dynamic Action: change P0_APP_ID - refresh regions ==
+  id: 22470750244353913
+  identification: 
+    name: change P0_APP_ID - refresh regions
+
+  execution-options: 
+    sequence: 10
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P0_APP_ID
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 22470863156353914
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: 7.1.2 Desupported JavaScript Functions # 22470004391353906
+
+    execution-options: 
+      sequence: 2
+      event: change P0_APP_ID - refresh regions # 22470750244353913
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 22471632120353922
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: 6.1.1 Deprecated JavaScript Functions # 22470932571353915
+
+    execution-options: 
+      sequence: 10
+      event: change P0_APP_ID - refresh regions # 22470750244353913
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 22472367022353929
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: 6.1.10 apexrefresh Event is Deprecated # 22471713638353923
+
+    execution-options: 
+      sequence: 100
+      event: change P0_APP_ID - refresh regions # 22470750244353913
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 22472882344353934
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: '6.1.5 Tabular Forms Deprecated ' # 22472425888353930
+
+    execution-options: 
+      sequence: 50
+      event: change P0_APP_ID - refresh regions # 22470750244353913
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 22473418736353940
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: 6.1.7 Theme Style "Vista" Deprecated in Universal Theme # 22472983108353935
+
+    execution-options: 
+      sequence: 70
+      event: change P0_APP_ID - refresh regions # 22470750244353913
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 23545697416935804
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: '6.1.8 Post Calculation for Page Items Deprecated ' # 22473599670353941
+
+    execution-options: 
+      sequence: 80
+      event: change P0_APP_ID - refresh regions # 22470750244353913
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 23546708154935815
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: 6.1.9 Show / Hide All Page Items On Same Line attributes deprecated # 23546299057935810
+
+    execution-options: 
+      sequence: 90
+      event: change P0_APP_ID - refresh regions # 22470750244353913
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 23547693031935824
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: '6.1.14 apex.widget.initPageItem Function Deprecated ' # 23547096181935818
+
+    execution-options: 
+      sequence: 140
+      event: change P0_APP_ID - refresh regions # 22470750244353913
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+- # ====== Dynamic Action: click refresh - refresh regions =====
+  id: 22474128329353947
+  identification: 
+    name: click refresh - refresh regions
+
+  execution-options: 
+    sequence: 20
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CLICK
+    selection-type: Button
+    button: Refresh # 45068108221137631
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 22474248623353948
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: 6.1.1 Deprecated JavaScript Functions # 22470932571353915
+
+    execution-options: 
+      sequence: 10
+      event: click refresh - refresh regions # 22474128329353947
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 22474366676353949
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: 6.1.10 apexrefresh Event is Deprecated # 22471713638353923
+
+    execution-options: 
+      sequence: 110
+      event: click refresh - refresh regions # 22474128329353947
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 22474469364353950
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: '6.1.5 Tabular Forms Deprecated ' # 22472425888353930
+
+    execution-options: 
+      sequence: 50
+      event: click refresh - refresh regions # 22474128329353947
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 23545353645935801
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: 6.1.7 Theme Style "Vista" Deprecated in Universal Theme # 22472983108353935
+
+    execution-options: 
+      sequence: 70
+      event: click refresh - refresh regions # 22474128329353947
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 23545468405935802
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: '6.1.8 Post Calculation for Page Items Deprecated ' # 22473599670353941
+
+    execution-options: 
+      sequence: 80
+      event: click refresh - refresh regions # 22474128329353947
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 23545593299935803
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: 7.1.2 Desupported JavaScript Functions # 22470004391353906
+
+    execution-options: 
+      sequence: 2
+      event: click refresh - refresh regions # 22474128329353947
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 23546886716935816
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: 6.1.9 Show / Hide All Page Items On Same Line attributes deprecated # 23546299057935810
+
+    execution-options: 
+      sequence: 90
+      event: click refresh - refresh regions # 22474128329353947
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 23547783983935825
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: '6.1.14 apex.widget.initPageItem Function Deprecated ' # 23547096181935818
+
+    execution-options: 
+      sequence: 140
+      event: click refresh - refresh regions # 22474128329353947
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+

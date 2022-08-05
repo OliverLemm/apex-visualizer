@@ -1,0 +1,21 @@
+---
+- # ====== Application Process: APEX Nitro =====================
+  id: 28019854089825293
+  identification: 
+    name: APEX Nitro
+    type: NATIVE_PLSQL
+
+  source: 
+    location: Local Database
+    language: PL/SQL
+    pl/sql-code: "apex_application.g_flow_images := 'http://localhost:4000/';"
+
+  execution-options: 
+    sequence: -9999
+    point: Before Header
+
+  server-side-condition: 
+    type: Expression
+    language: PL/SQL
+    pl/sql-expression: owa_util.get_cgi_env('APEX-Nitro') is not null
+

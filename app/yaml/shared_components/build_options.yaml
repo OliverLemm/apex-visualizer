@@ -1,0 +1,11 @@
+---
+- # ====== Build Option: deactivated ===========================
+  id: 291318289212148547
+  identification: 
+    name: deactivated
+
+  status: 
+    status: Exclude
+    default-on-export: Same as Current Status
+    on-upgrade-keep-status: false
+

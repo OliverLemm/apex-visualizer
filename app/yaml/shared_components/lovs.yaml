@@ -1,0 +1,61 @@
+---
+- # ====== List of Values: LOGIN_REMEMBER_USERNAME =============
+  id: 38871578433053523
+  identification: 
+    name: LOGIN_REMEMBER_USERNAME
+
+  source: 
+    location: Static Values
+
+  entries: 
+  - # ====== Entry: Remember username ============================
+    id: 38871903627053523
+    entry: 
+      sequence: 10
+      display: Remember username
+      return: Y
+
+- # ====== List of Values: COMPONENTS (CHART) ==================
+  id: 291312490138046410
+  identification: 
+    name: COMPONENTS (CHART)
+
+  source: 
+    location: Local Database
+    type: Legacy SQL Query
+    sql-query: |
+      select lower(s.items_value_column_name) d, lower(s.items_value_column_name) r
+      from apex_application_page_chart_s s
+      where s.page_id = :APP_PAGE_ID
+      and s.items_value_column_name <> 'AMOUNT'
+      order by 1
+
+- # ====== List of Values: PAGES ===============================
+  id: 449550200431517744
+  identification: 
+    name: PAGES
+
+  source: 
+    location: Local Database
+    type: Legacy SQL Query
+    sql-query: |
+      select  page_name || ' (' || page_id || ')' page,
+             page_id 
+        from apex_application_pages
+      where application_id = :P0_APP_ID
+       order by 1
+
+- # ====== List of Values: APPLICATIONS ========================
+  id: 452494392205483479
+  identification: 
+    name: APPLICATIONS
+
+  source: 
+    location: Local Database
+    type: Legacy SQL Query
+    sql-query: |
+      select aa.application_id || ' - ' || aa.application_name app
+            ,aa.application_id
+      from apex_applications aa
+      order by aa.application_id
+

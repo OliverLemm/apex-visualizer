@@ -1,0 +1,519 @@
+{
+  "id":"50"
+ ,"Identification":{
+    "Name":"Last Updated"
+   ,"Title":"Last Updated"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (452492531566466351)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"293418366726888480"
+     ,"Identification":{
+        "Title":"Application changes"
+       ,"Type":"Chart"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select l.application_id\n      ,l.application_name\n      ,l.audit_action\n      ,trunc(audit_date)\n      ,count(1) amount\nfrom apex_developer_activity_log l\nwhere (l.application_id = :P0_APP_ID or :P0_APP_ID is null)\nand l.page_id is not null\nand (l.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)\ngroup by trunc(audit_date), audit_action, application_name, application_id"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+         ,"P0_PAGE_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (452458863643466246)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":true
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"293418624351888483"
+       ,"Chart":{
+          "Type":"Bar"
+        }
+       ,"Appearance":{
+          "Orientation":"Vertical"
+         ,"Stack":false
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":false
+        }
+       ,"Multi-Series Chart Data":{
+          "Fill Gaps in Chart Data":true
+         ,"Sort Order":"Label - Ascending"
+         ,"Render Gap as Zero":true
+        }
+       ,"Settings":{
+          "Zoom and Scroll":"No"
+        }
+       ,"Animation":{
+          "On Display":"Automatic"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":true
+         ,"Show Group Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":true
+         ,"Position":"Automatic"
+         ,"Hide and Show Behavior":"Rescale"
+        }
+       ,"Series":[
+          {
+            "id":"293418741618888484"
+           ,"Identification":{
+              "Name":"Last Updates"
+            }
+           ,"Execution Options":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Region Source"
+            }
+           ,"Column Mapping":{
+              "Series Name":"AUDIT_ACTION"
+             ,"Label":"TRUNC(AUDIT_DATE)"
+             ,"Value Aggregation":"No Aggregation"
+             ,"Value":"AMOUNT"
+            }
+           ,"Appearance":{
+              "Assigned To Y2 Axis":false
+            }
+           ,"Label":{
+              "Show":false
+            }
+          }
+        ]
+       ,"Axes":[
+          {
+            "id":"293418840172888485"
+           ,"Identification":{
+              "Name":"x"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format":"Date - Short"
+             ,"Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Major Ticks":{
+              "Show":"Yes"
+            }
+           ,"Minor Ticks":{
+              "Show":false
+            }
+           ,"Tick Label":{
+              "Show":true
+             ,"Rotation":true
+             ,"Position":"Outside"
+            }
+          }
+         ,{
+            "id":"293418971881888486"
+           ,"Identification":{
+              "Name":"y"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Appearance":{
+              "Position":"Automatic"
+            }
+           ,"Major Ticks":{
+              "Show":"Yes"
+            }
+           ,"Minor Ticks":{
+              "Show":false
+            }
+           ,"Tick Label":{
+              "Show":true
+            }
+          }
+        ]
+      }
+    }
+   ,{
+      "id":"293419197283888488"
+     ,"Identification":{
+        "Title":"Changes on Components"
+       ,"Type":"Chart"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select l.application_id\n      ,l.application_name\n      ,l.page_name\n      ,l.page_id\n      ,l.audit_action\n      ,l.component_name\n      ,l.component\n      ,trunc(audit_date)\n      ,count(1) amount\n      ,\u0027page: \u0027 || page_name || \u0027\u003Cbr\u003Ecomponent name: \u0027 || component_name || \u0027\u003Cbr\u003Ecomponent type: \u0027 || component tooltip\nfrom apex_developer_activity_log l\nwhere (l.application_id = :p0_app_id or :p0_app_id is null)\nand l.page_id is not null and component_name is not null\nand (l.page_id = :p0_page_id or :p0_page_id is null)\nand (trunc(audit_date) = to_date(:p50_date\n                               ,\u0027dd.mm.yyyy\u0027) or :p50_date is null)\ngroup by trunc(audit_date)\n        ,audit_action\n        ,application_name\n        ,application_id\n        ,l.component_name\n        ,component\n        ,page_name\n        ,page_id\norder by count(1) desc"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+         ,"P0_PAGE_ID"
+         ,"P50_DATE"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (452458863643466246)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":true
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"293419210270888489"
+       ,"Chart":{
+          "Type":"Bar"
+        }
+       ,"Appearance":{
+          "Orientation":"Vertical"
+         ,"Stack":false
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":false
+        }
+       ,"Multi-Series Chart Data":{
+          "Fill Gaps in Chart Data":true
+         ,"Sort Order":"Label - Ascending"
+         ,"Render Gap as Zero":true
+        }
+       ,"Settings":{
+          "Zoom and Scroll":"No"
+        }
+       ,"Animation":{
+          "On Display":"Automatic"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":true
+         ,"Show Group Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":true
+         ,"Position":"Automatic"
+         ,"Hide and Show Behavior":"Rescale"
+        }
+       ,"Series":[
+          {
+            "id":"293419343269888490"
+           ,"Identification":{
+              "Name":"New"
+            }
+           ,"Execution Options":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Region Source"
+            }
+           ,"Column Mapping":{
+              "Series Name":"COMPONENT"
+             ,"Label":"COMPONENT_NAME"
+             ,"Value Aggregation":"No Aggregation"
+             ,"Value":"AMOUNT"
+             ,"Custom Tooltip":"TOOLTIP"
+            }
+           ,"Appearance":{
+              "Assigned To Y2 Axis":false
+            }
+           ,"Label":{
+              "Show":false
+            }
+          }
+        ]
+       ,"Axes":[
+          {
+            "id":"293419491538888491"
+           ,"Identification":{
+              "Name":"x"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Major Ticks":{
+              "Show":"Yes"
+            }
+           ,"Minor Ticks":{
+              "Show":false
+            }
+           ,"Tick Label":{
+              "Show":true
+             ,"Rotation":true
+             ,"Position":"Outside"
+            }
+          }
+         ,{
+            "id":"293419557840888492"
+           ,"Identification":{
+              "Name":"y"
+             ,"Show Axis":true
+            }
+           ,"Value":{
+              "Format Scaling":"Automatic"
+             ,"Baseline Scaling":"Zero"
+             ,"Scale":"Linear"
+            }
+           ,"Appearance":{
+              "Position":"Automatic"
+            }
+           ,"Major Ticks":{
+              "Show":"Yes"
+            }
+           ,"Minor Ticks":{
+              "Show":false
+            }
+           ,"Tick Label":{
+              "Show":true
+            }
+          }
+        ]
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"293419072716888487"
+     ,"Identification":{
+        "Name":"P50_DATE"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"Date"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"None"
+       ,"Allow Multi Selection":false
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Filter (452496424516540365)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional (452481165926466293)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"SQL Query"
+       ,"SQL Query":"select to_char(trunc(audit_date), \u0027dd.mm.yyyy\u0027) d, to_char(trunc(audit_date), \u0027dd.mm.yyyy\u0027) r\nfrom apex_developer_activity_log l\nwhere (l.application_id = :P0_APP_ID or :P0_APP_ID is null)\nand l.page_id is not null\nand (l.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)\ngroup by trunc(audit_date)"
+       ,"Display Extra Values":false
+       ,"Display Null Value":true
+       ,"Null Display Value":"all"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"293418467306888481"
+     ,"Identification":{
+        "Name":"change P0_APP_ID"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P0_APP_ID"
+         ,"P0_PAGE_ID"
+        ]
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"293418576669888482"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Application changes (293418366726888480)"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"change P0_APP_ID (293418467306888481)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"293419812614888495"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Changes on Components (293419197283888488)"
+          }
+         ,"Execution Options":{
+            "Sequence":20
+           ,"Event":"change P0_APP_ID (293418467306888481)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"293419650163888493"
+     ,"Identification":{
+        "Name":"change P50_DATE"
+      }
+     ,"Execution Options":{
+        "Sequence":20
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P50_DATE"
+        ]
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"293419706299888494"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Changes on Components (293419197283888488)"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"change P50_DATE (293419650163888493)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

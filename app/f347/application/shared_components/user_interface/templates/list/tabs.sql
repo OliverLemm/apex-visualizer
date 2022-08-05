@@ -29,7 +29,7 @@ wwv_flow_imp_shared.create_list_template(
 '</li>'))
 ,p_list_template_name=>'Tabs'
 ,p_internal_name=>'TABS'
-,p_javascript_file_urls=>'#IMAGE_PREFIX#libraries/apex/#MIN_DIRECTORY#widget.apexTabs#MIN#.js?v=#APEX_VERSION#'
+,p_javascript_file_urls=>'#APEX_FILES#libraries/apex/#MIN_DIRECTORY#widget.apexTabs#MIN#.js?v=#APEX_VERSION#'
 ,p_theme_id=>42
 ,p_theme_class_id=>7
 ,p_preset_template_options=>'t-Tabs--simple'

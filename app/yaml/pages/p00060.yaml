@@ -1,0 +1,1186 @@
+---
+# ====== Page: Templates =====================================
+id: 60
+identification: 
+  name: Templates
+  title: Templates
+
+appearance: 
+  user-interface: Desktop # 452492531566466351
+  page-mode: Normal
+  page-template: Theme Default
+  template-options: 
+  - '#DEFAULT#'
+
+navigation-menu: 
+  override-user-interface-level: false
+
+navigation: 
+  cursor-focus: Do not focus cursor
+  warn-on-unsaved-changes: false
+
+security: 
+  authentication: Page Requires Authentication
+  deep-linking: Application Default
+  page-access-protection: Unrestricted
+  form-auto-complete: Off
+  browser-cache: Application Default
+
+session-management: 
+  rejoin-sessions: Application Default
+
+advanced: 
+  enable-duplicate-page-submissions: Yes - Enable page to be re-posted
+  reload-on-submit: Only for Success
+
+server-cache: 
+  caching: Disabled
+
+regions: 
+- # ====== Region: Details =====================================
+  id: 294196022433781255
+  identification: 
+    title: Details
+    type: Interactive Grid
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select th.application_id
+            ,th.application_name
+            ,th.theme_name
+            ,th.default_nav_list_position nav_pos
+            ,th.default_page_template page_temp
+            ,th.default_region_template region_temp
+            ,th.default_report_region_template rep_region_temp
+            ,th.default_button_template button_temp
+            ,th.icon_library      
+      from apex_application_themes th
+      where th.application_id = :P0_APP_ID or :P0_APP_ID is null
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 10
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Interactive Report # 452458457830466245
+    template-options: 
+    - '#DEFAULT#'
+    render-components: Above Content
+
+  advanced: 
+    static-id: details
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 294196184940781256
+    edit: 
+      enabled: false
+
+    performance: 
+      lazy-loading: false
+
+    appearance: 
+      show-null-values-as: '-'
+      select-first-row: true
+      fixed-row-height: true
+
+    pagination: 
+      type: Scroll
+      show-total-row-count: true
+
+    toolbar: 
+      show: true
+      controls: 
+      - Search Column Selection
+      - Search Field
+      - Actions Menu
+      - Search Column Selection
+      - Search Field
+      - Actions Menu
+      - Reset Button
+      - Save Button
+
+    enable-users-to: 
+      save-public-report: false
+      flashback: true
+      define-chart-view: true
+      download: true
+
+    download: 
+      formats: 
+      - CSV
+      - HTML
+      - PDF
+      - Excel
+      send-as-email: true
+
+    heading: 
+      fixed-to: Page
+
+    icon-view: 
+      show: false
+
+    detail-view: 
+      show: false
+
+    saved-reports: 
+    - # ====== Saved Report: Primary Report ========================
+      id: 294218165994011065
+      identification: 
+        name: Primary Report
+        alias: 1256361
+
+  columns: 
+  - # ====== Column: APPLICATION_ID ==============================
+    id: 294196238715781257
+    identification: 
+      column-name: APPLICATION_ID
+      type: Number Field
+
+    heading: 
+      heading: App ID
+      alignment: end
+
+    settings: 
+      number-alignment: Right
+
+    layout: 
+      sequence: 10
+      column-alignment: end
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: true
+
+    source: 
+      type: Database Column
+      database-column: APPLICATION_ID
+      data-type: NUMBER
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: true
+      control-break/aggregate: true
+      hide: true
+
+  - # ====== Column: APPLICATION_NAME ============================
+    id: 294196311927781258
+    identification: 
+      column-name: APPLICATION_NAME
+      type: Textarea
+
+    heading: 
+      heading: Application name
+      alignment: start
+
+    settings: 
+      resizable: true
+      auto-height: false
+      character-counter: false
+      trim-spaces: Leading and Trailing
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: true
+      maximum-length: 255
+
+    source: 
+      type: Database Column
+      database-column: APPLICATION_NAME
+      data-type: VARCHAR2
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      performance-impacting-operators: 
+      - Contains
+      - Starts With
+      - Case Insensitive
+      - Regular Expression
+      text-case: Mixed
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: false
+      hide: true
+
+  - # ====== Column: THEME_NAME ==================================
+    id: 294196456089781259
+    identification: 
+      column-name: THEME_NAME
+      type: Textarea
+
+    heading: 
+      heading: Theme name
+      alignment: start
+
+    settings: 
+      resizable: true
+      auto-height: false
+      character-counter: false
+      trim-spaces: Leading and Trailing
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: true
+      maximum-length: 255
+
+    source: 
+      type: Database Column
+      database-column: THEME_NAME
+      data-type: VARCHAR2
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      performance-impacting-operators: 
+      - Contains
+      - Starts With
+      - Case Insensitive
+      - Regular Expression
+      text-case: Mixed
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: false
+      hide: true
+
+  - # ====== Column: NAV_POS =====================================
+    id: 294196558076781260
+    identification: 
+      column-name: NAV_POS
+      type: Text Field
+
+    heading: 
+      heading: Nav pos
+      alignment: start
+
+    settings: 
+      trim-spaces: Leading and Trailing
+      text-case: NO CHANGE
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: false
+      maximum-length: 20
+
+    source: 
+      type: Database Column
+      database-column: NAV_POS
+      data-type: VARCHAR2
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      performance-impacting-operators: 
+      - Contains
+      - Starts With
+      - Case Insensitive
+      - Regular Expression
+      text-case: Mixed
+      lov-type: Distinct Column
+      exact-match: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: true
+      control-break/aggregate: true
+      hide: true
+
+  - # ====== Column: PAGE_TEMP ===================================
+    id: 294196687271781261
+    identification: 
+      column-name: PAGE_TEMP
+      type: Textarea
+
+    heading: 
+      heading: Page temp
+      alignment: start
+
+    settings: 
+      resizable: true
+      auto-height: false
+      character-counter: false
+      trim-spaces: Leading and Trailing
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: false
+      maximum-length: 255
+
+    source: 
+      type: Database Column
+      database-column: PAGE_TEMP
+      data-type: VARCHAR2
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      performance-impacting-operators: 
+      - Contains
+      - Starts With
+      - Case Insensitive
+      - Regular Expression
+      text-case: Mixed
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: false
+      hide: true
+
+  - # ====== Column: REGION_TEMP =================================
+    id: 294196804915781262
+    identification: 
+      column-name: REGION_TEMP
+      type: Textarea
+
+    heading: 
+      heading: Region temp
+      alignment: start
+
+    settings: 
+      resizable: true
+      auto-height: false
+      character-counter: false
+      trim-spaces: Leading and Trailing
+
+    layout: 
+      sequence: 60
+      column-alignment: start
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: false
+      maximum-length: 255
+
+    source: 
+      type: Database Column
+      database-column: REGION_TEMP
+      data-type: VARCHAR2
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      performance-impacting-operators: 
+      - Contains
+      - Starts With
+      - Case Insensitive
+      - Regular Expression
+      text-case: Mixed
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: false
+      hide: true
+
+  - # ====== Column: REP_REGION_TEMP =============================
+    id: 294196840743781263
+    identification: 
+      column-name: REP_REGION_TEMP
+      type: Textarea
+
+    heading: 
+      heading: Rep region temp
+      alignment: start
+
+    settings: 
+      resizable: true
+      auto-height: false
+      character-counter: false
+      trim-spaces: Leading and Trailing
+
+    layout: 
+      sequence: 70
+      column-alignment: start
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: false
+      maximum-length: 255
+
+    source: 
+      type: Database Column
+      database-column: REP_REGION_TEMP
+      data-type: VARCHAR2
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      performance-impacting-operators: 
+      - Contains
+      - Starts With
+      - Case Insensitive
+      - Regular Expression
+      text-case: Mixed
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: false
+      hide: true
+
+  - # ====== Column: BUTTON_TEMP =================================
+    id: 294196925342781264
+    identification: 
+      column-name: BUTTON_TEMP
+      type: Textarea
+
+    heading: 
+      heading: Button temp
+      alignment: start
+
+    settings: 
+      resizable: true
+      auto-height: false
+      character-counter: false
+      trim-spaces: Leading and Trailing
+
+    layout: 
+      sequence: 80
+      column-alignment: start
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: false
+      maximum-length: 255
+
+    source: 
+      type: Database Column
+      database-column: BUTTON_TEMP
+      data-type: VARCHAR2
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      performance-impacting-operators: 
+      - Contains
+      - Starts With
+      - Case Insensitive
+      - Regular Expression
+      text-case: Mixed
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: false
+      hide: true
+
+  - # ====== Column: ICON_LIBRARY ================================
+    id: 294197028888781265
+    identification: 
+      column-name: ICON_LIBRARY
+      type: Textarea
+
+    heading: 
+      heading: Icon library
+      alignment: start
+
+    settings: 
+      resizable: true
+      auto-height: false
+      character-counter: false
+      trim-spaces: Leading and Trailing
+
+    layout: 
+      sequence: 90
+      column-alignment: start
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: false
+      maximum-length: 255
+
+    source: 
+      type: Database Column
+      database-column: ICON_LIBRARY
+      data-type: VARCHAR2
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      performance-impacting-operators: 
+      - Contains
+      - Starts With
+      - Case Insensitive
+      - Regular Expression
+      text-case: Mixed
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: false
+      hide: true
+
+  printing: 
+    page: 
+      size: Letter
+      orientation: Landscape
+      units: Inches
+      width: 11
+      height: 8.5
+      border-width: 0.5
+      border-color: '#666666'
+
+    page-header: 
+      font: Helvetica
+      font-weight: Normal
+      font-size: 12
+      font-color: '#000000'
+      alignment: center
+
+    column-headings: 
+      font: Helvetica
+      font-weight: Bold
+      font-size: 10
+      font-color: '#000000'
+      background-color: '#EEEEEE'
+
+    columns: 
+      font: Helvetica
+      font-weight: Normal
+      font-size: 10
+      font-color: '#000000'
+      background-color: '#FFFFFF'
+
+    page-footer: 
+      font: Helvetica
+      font-weight: Normal
+      font-size: 12
+      font-color: '#000000'
+      alignment: center
+
+- # ====== Region: Templates Reference (overall) ===============
+  id: 294197401216781268
+  identification: 
+    title: Templates Reference (overall)
+    type: Chart
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select t.template_type || ' - ' || t.template_name template
+            ,case t.is_subscribed when 'No' then 'New defined Template' else 'Original Template' end new_or_original
+            ,t.reference_count
+            ,'Default=' || t.is_default || '<br>Subscribed =' || t.is_subscribed tooltip
+      from apex_application_templates t
+      join apex_application_themes th on th.theme_number = t.theme_number
+                                  and th.application_id = t.application_id
+      where th.is_current = 'Yes'
+      and t.reference_count > 0
+      and th.application_id = :P0_APP_ID
+      and (:P60_TEMPLATE_TYPE is null or :P60_TEMPLATE_TYPE = template_type)
+      order by template_type, reference_count desc
+    page-items-to-submit: 
+    - P0_APP_ID
+    - P60_TEMPLATE_TYPE
+
+  layout: 
+    sequence: 20
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  security: 
+    escape-special-characters: true
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 294197414380781269
+    chart: 
+      type: Bar
+
+    appearance: 
+      orientation: Horizontal
+      stack: false
+
+    layout: 
+      height: 600
+
+    data-cursor: 
+      cursor: Automatic
+      behavior: Automatic
+      dim-on-hover: false
+
+    multi-series-chart-data: 
+      fill-gaps-in-chart-data: true
+      sort-order: Label - Ascending
+      render-gap-as-zero: true
+
+    settings: 
+      zoom-and-scroll: No
+
+    animation: 
+      on-display: Automatic
+      on-data-change: Automatic
+
+    tooltip: 
+      show: true
+      show-series-name: true
+      show-group-name: true
+      show-value: true
+
+    legend: 
+      show: false
+
+    messages: 
+      when-no-data-found: Please select an Application
+
+    series: 
+    - # ====== Series: Template Reference ==========================
+      id: 294197579054781270
+      identification: 
+        name: Template Reference
+
+      execution-options: 
+        sequence: 10
+
+      source: 
+        location: Region Source
+
+      column-mapping: 
+        label: TEMPLATE
+        value-aggregation: No Aggregation
+        value: REFERENCE_COUNT
+        custom-tooltip: TOOLTIP
+
+      appearance: 
+        assigned-to-y2-axis: false
+
+      label: 
+        show: true
+        position: Automatic
+
+    axes: 
+    - # ====== Axis: x =============================================
+      id: 294197698674781271
+      identification: 
+        name: x
+        show-axis: true
+
+      value: 
+        format-scaling: Automatic
+        baseline-scaling: Zero
+        scale: Log
+
+      major-ticks: 
+        show: Yes
+
+      minor-ticks: 
+        show: false
+
+      tick-label: 
+        show: true
+        rotation: true
+        position: Outside
+
+    - # ====== Axis: y =============================================
+      id: 294197735731781272
+      identification: 
+        name: y
+        show-axis: true
+
+      value: 
+        format-scaling: Automatic
+        baseline-scaling: Zero
+        scale: Linear
+
+      appearance: 
+        position: Automatic
+
+      major-ticks: 
+        show: Yes
+
+      minor-ticks: 
+        show: false
+
+      tick-label: 
+        show: true
+
+- # ====== Region: Templates Reference (customized) ============
+  id: 294198292392781277
+  identification: 
+    title: Templates Reference (customized)
+    type: Chart
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select t.template_type || ' - ' || t.template_name template
+            ,case t.is_subscribed when 'No' then 'New defined Template' else 'Original Template' end new_or_original
+            ,t.reference_count
+            ,'Default=' || t.is_default || '<br>Last Updated =' || t.last_updated_by || ' - ' || t.last_updated_on tooltip
+      from apex_application_templates t
+      join apex_application_themes th on th.theme_number = t.theme_number
+                                  and th.application_id = t.application_id
+      where t.is_subscribed = 'No'
+      and th.application_id = :P0_APP_ID
+      and t.reference_count > 0
+      and (:P60_TEMPLATE_TYPE is null or :P60_TEMPLATE_TYPE = template_type)
+      order by template_type, reference_count desc
+    page-items-to-submit: 
+    - P0_APP_ID
+    - P60_TEMPLATE_TYPE
+
+  layout: 
+    sequence: 30
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: false
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  security: 
+    escape-special-characters: true
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 294198402729781278
+    chart: 
+      type: Bar
+
+    appearance: 
+      orientation: Horizontal
+      stack: false
+
+    layout: 
+      height: 600
+
+    data-cursor: 
+      cursor: Automatic
+      behavior: Automatic
+      dim-on-hover: false
+
+    multi-series-chart-data: 
+      fill-gaps-in-chart-data: true
+      sort-order: Label - Ascending
+      render-gap-as-zero: true
+
+    settings: 
+      zoom-and-scroll: No
+
+    animation: 
+      on-display: Automatic
+      on-data-change: Automatic
+
+    tooltip: 
+      show: true
+      show-series-name: true
+      show-group-name: true
+      show-value: true
+
+    legend: 
+      show: false
+
+    messages: 
+      when-no-data-found: Please select an Application
+
+    series: 
+    - # ====== Series: Customized ==================================
+      id: 294198482153781279
+      identification: 
+        name: Customized
+
+      execution-options: 
+        sequence: 10
+
+      source: 
+        location: Region Source
+
+      column-mapping: 
+        label: TEMPLATE
+        value-aggregation: No Aggregation
+        value: REFERENCE_COUNT
+        custom-tooltip: TOOLTIP
+
+      appearance: 
+        assigned-to-y2-axis: false
+
+      label: 
+        show: true
+        position: Automatic
+
+    axes: 
+    - # ====== Axis: x =============================================
+      id: 294198841378781283
+      identification: 
+        name: x
+        show-axis: true
+
+      value: 
+        format-scaling: Automatic
+        baseline-scaling: Zero
+        scale: Linear
+
+      major-ticks: 
+        show: Yes
+
+      minor-ticks: 
+        show: false
+
+      tick-label: 
+        show: true
+        rotation: true
+        position: Outside
+
+    - # ====== Axis: y =============================================
+      id: 294198932124781284
+      identification: 
+        name: y
+        show-axis: true
+
+      value: 
+        format-scaling: Automatic
+        baseline-scaling: Zero
+        scale: Linear
+
+      appearance: 
+        position: Automatic
+
+      major-ticks: 
+        show: Yes
+
+      minor-ticks: 
+        show: false
+
+      tick-label: 
+        show: true
+
+page-items: 
+- # ====== Page Item: P60_TEMPLATE_TYPE ========================
+  id: 294198002728781274
+  identification: 
+    name: P60_TEMPLATE_TYPE
+    type: Select List
+
+  label: 
+    label: Template type
+    alignment: Left
+
+  settings: 
+    page-action-on-selection: None
+    allow-multi-selection: false
+
+  layout: 
+    sequence: 40
+    region: Filter # 452496424516540365
+    position: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+    label-column-span: Page Template Default
+
+  appearance: 
+    template: Optional # 452481165926466293
+    template-options: 
+    - '#DEFAULT#'
+    height: 1
+
+  validation: 
+    value-required: false
+
+  list-of-values: 
+    type: SQL Query
+    sql-query: 'select distinct template_type d, template_type r from apex_application_templates where reference_count > 0 and application_id = :P0_APP_ID'
+    display-extra-values: false
+    display-null-value: true
+    null-display-value: all
+
+  cascading-list-of-values: 
+    parent-item(s): 
+    - P0_APP_ID
+    parent-required: true
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+    maintain-session-state: Per Session (Disk)
+
+  quick-picks: 
+    show-quick-picks: false
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: false
+    restricted-characters: All characters can be saved.
+
+dynamic-actions: 
+- # ====== Dynamic Action: Change P0_APP_ID ====================
+  id: 294197187100781266
+  identification: 
+    name: Change P0_APP_ID
+
+  execution-options: 
+    sequence: 10
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P0_APP_ID
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 294197217024781267
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Details # 294196022433781255
+
+    execution-options: 
+      sequence: 10
+      event: Change P0_APP_ID # 294197187100781266
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 294269612044521551
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Templates Reference (overall) # 294197401216781268
+
+    execution-options: 
+      sequence: 20
+      event: Change P0_APP_ID # 294197187100781266
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 294269711322521552
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Templates Reference (customized) # 294198292392781277
+
+    execution-options: 
+      sequence: 30
+      event: Change P0_APP_ID # 294197187100781266
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+- # ====== Dynamic Action: Change P60_TEMPLATE_TYPE ============
+  id: 294198068372781275
+  identification: 
+    name: Change P60_TEMPLATE_TYPE
+
+  execution-options: 
+    sequence: 20
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P60_TEMPLATE_TYPE
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 294198180597781276
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Templates Reference (overall) # 294197401216781268
+
+    execution-options: 
+      sequence: 10
+      event: Change P60_TEMPLATE_TYPE # 294198068372781275
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 294198765215781282
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Templates Reference (customized) # 294198292392781277
+
+    execution-options: 
+      sequence: 20
+      event: Change P60_TEMPLATE_TYPE # 294198068372781275
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+

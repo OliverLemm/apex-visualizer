@@ -1,0 +1,2264 @@
+{
+  "id":"705"
+ ,"Identification":{
+    "Name":"APEX 20.1"
+   ,"Alias":"APEX-20-1"
+   ,"Title":"APEX 20.1"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (452492531566466351)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"22470004391353906"
+     ,"Identification":{
+        "Title":"7.1.2 Desupported JavaScript Functions"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select j.page_id\n      ,j.page_name\n      ,j.component_name\n      ,j.component_type\n      ,j.js_code_vc2\nfrom av_javascript_v j\nwhere (instr(lower(j.js_code_vc2)\n           ,\u0027openmodal\u0027) \u003E 0\nor instr(lower(j.js_code_vc2)\n       ,\u0027closemodal\u0027) \u003E 0)\nand application_id = :P0_APP_ID"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"7.1 Desupported Features -  \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/htmrn\/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E (22470625676353912)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Collapsible (452454481275466240)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"is-expanded"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"\u003Cul\u003E\n\u003Cli\u003E\u003Cb\u003EopenModal(\u0027myRegionId\u0027);\u003C\/b\u003E =\u003E \u003Cb\u003Eapex.theme.openRegion(\u0027myRegionId\u0027);\u003C\/b\u003E \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/aexjs\/apex.theme.html#.openRegion\" target=\"_blank\"\u003EAPEX 20.1 JS API apex.theme.openRegion\u003C\/a\u003E\u003C\/li\u003E\n\u003Cli\u003E\u003Cb\u003EcloseModal(\u0027myRegionId\u0027);\u003C\/b\u003E =\u003E \u003Cb\u003Eapex.theme.closeRegion(\u0027myRegionId\u0027);\u003C\/b\u003E \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/aexjs\/apex.theme.html#.closeRegion\" target=\"_blank\"\u003EAPEX 20.1 JS API apex.theme.closeRegion\u003C\/a\u003E\u003C\/li\u003E\n\u003C\/ul\u003E"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":99999999
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (452468948793466267)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (no pagination)"
+         ,"Display Position":"Top and Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Messages":{
+          "When No Data Found":"\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-check-circle u-success-text\"\u003E\u003C\/span\u003E no openModal or closeModal used\u003C\/b\u003E"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"22470137634353907"
+         ,"Identification":{
+            "Column Name":"PAGE_ID"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Id"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22470272931353908"
+         ,"Identification":{
+            "Column Name":"PAGE_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22470380367353909"
+         ,"Identification":{
+            "Column Name":"COMPONENT_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Component Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22470421602353910"
+         ,"Identification":{
+            "Column Name":"COMPONENT_TYPE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Component Type"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":40
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22470551496353911"
+         ,"Identification":{
+            "Column Name":"JS_CODE_VC2"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Js Code Vc2"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":50
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Column Formatting":{
+            "Highlight Words":"openmodal,closemodal"
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"22470625676353912"
+     ,"Identification":{
+        "Title":"7.1 Desupported Features -  \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/htmrn\/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (452458863643466246)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"22470932571353915"
+     ,"Identification":{
+        "Title":"6.1.1 Deprecated JavaScript Functions"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select j.page_id\n      ,j.page_name\n      ,j.component_name\n      ,j.component_type\n      ,j.js_code_vc2\nfrom av_javascript_v j\nwhere instr(lower(j.js_code_vc2)\n           ,\u0027apex.theme42.util.mq\u0027) \u003E 0\nand application_id = :P0_APP_ID"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"6.1 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/htmrn\/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_bank\"\u003ELink to Release Notes\u003C\/a\u003E (22471528162353921)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Collapsible (452454481275466240)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"is-expanded"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"\u003Cb\u003Eapex.theme42.util.mq =\u003E use apex.theme.mq\u003C\/b\u003E \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/aexjs\/apex.theme.html#.mq\" target=\"_blank\"\u003EAPEX 20.1 JS API apex.theme.mq\u003C\/a\u003E"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":99999999
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (452468948793466267)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (no pagination)"
+         ,"Display Position":"Top and Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Messages":{
+          "When No Data Found":"\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-check-circle u-success-text\"\u003E\u003C\/span\u003E no apex.theme42.util.mq used\u003C\/b\u003E"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"22471016763353916"
+         ,"Identification":{
+            "Column Name":"PAGE_ID"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Id"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22471165868353917"
+         ,"Identification":{
+            "Column Name":"PAGE_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22471251629353918"
+         ,"Identification":{
+            "Column Name":"COMPONENT_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Component Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22471309808353919"
+         ,"Identification":{
+            "Column Name":"COMPONENT_TYPE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Component Type"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":40
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22471457637353920"
+         ,"Identification":{
+            "Column Name":"JS_CODE_VC2"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Js Code Vc2"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":50
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Column Formatting":{
+            "Highlight Words":"openmodal,closemodal"
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"22471528162353921"
+     ,"Identification":{
+        "Title":"6.1 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/htmrn\/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_bank\"\u003ELink to Release Notes\u003C\/a\u003E"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (452458863643466246)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"22471713638353923"
+     ,"Identification":{
+        "Title":"6.1.10 apexrefresh Event is Deprecated"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select j.page_id\n      ,j.page_name\n      ,j.component_name\n      ,j.component_type\n      ,j.js_code_vc2\nfrom av_javascript_v j\nwhere regexp_like(j.js_code_vc2\n                 ,\u0027apex.event.trigger.*apexrefresh\u0027\n                 ,\u0027i\u0027)\nand j.application_id = :P0_APP_ID"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":60
+       ,"Parent Region":"6.1 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/htmrn\/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_bank\"\u003ELink to Release Notes\u003C\/a\u003E (22471528162353921)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Collapsible (452454481275466240)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"is-expanded"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"\u003Cb\u003Eapex.event.trigger( \"#myRegionStaticID\", \"apexrefresh\" ); =\u003E apex.region(\"myRegionStaticID\").refresh();\u003C\/b\u003E \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/aexjs\/region.html#refresh\" target=\"_blank\"\u003EAPEX 20.1 JS API apex.region\u003C\/a\u003E"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":99999999
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (452468948793466267)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (no pagination)"
+         ,"Display Position":"Top and Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Messages":{
+          "When No Data Found":"\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-check-circle u-success-text\"\u003E\u003C\/span\u003E no apex.theme42.util.mq used\u003C\/b\u003E"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"22471826404353924"
+         ,"Identification":{
+            "Column Name":"PAGE_ID"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Id"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22471966894353925"
+         ,"Identification":{
+            "Column Name":"PAGE_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22472050157353926"
+         ,"Identification":{
+            "Column Name":"COMPONENT_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Component Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22472122222353927"
+         ,"Identification":{
+            "Column Name":"COMPONENT_TYPE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Component Type"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":40
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22472205583353928"
+         ,"Identification":{
+            "Column Name":"JS_CODE_VC2"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Js Code Vc2"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":50
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Column Formatting":{
+            "Highlight Words":"apex.event.trigger"
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"22472425888353930"
+     ,"Identification":{
+        "Title":"6.1.5 Tabular Forms Deprecated "
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select \n r.page_id\n,r.page_name\n,r.region_name \nfrom apex_application_page_regions r\nwhere r.source_type = \u0027Tabular Form\u0027\nand r.application_id = :P0_APP_ID"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"6.1 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/htmrn\/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_bank\"\u003ELink to Release Notes\u003C\/a\u003E (22471528162353921)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Collapsible (452454481275466240)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"is-expanded"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":9999999
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (452468948793466267)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (no pagination)"
+         ,"Display Position":"Top and Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Messages":{
+          "When No Data Found":"\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-check-circle u-success-text\"\u003E\u003C\/span\u003E no Tabular Forms used\u003C\/b\u003E"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"22472516399353931"
+         ,"Identification":{
+            "Column Name":"PAGE_ID"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Id"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Default Sequence":"1"
+           ,"Direction":"Ascending"
+           ,"Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22472657530353932"
+         ,"Identification":{
+            "Column Name":"PAGE_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22472722413353933"
+         ,"Identification":{
+            "Column Name":"REGION_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Region Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Default Sequence":"2"
+           ,"Direction":"Ascending"
+           ,"Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"22472983108353935"
+     ,"Identification":{
+        "Title":"6.1.7 Theme Style \"Vista\" Deprecated in Universal Theme"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select ty.name \nfrom apex_application_theme_styles ty\nwhere ty.name = \u0027Vista\u0027\nand ty.is_current = \u0027Yes\u0027\nand ty.application_id = :P0_APP_ID"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Parent Region":"6.1 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/htmrn\/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_bank\"\u003ELink to Release Notes\u003C\/a\u003E (22471528162353921)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Collapsible (452454481275466240)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"is-expanded"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":15
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (452468948793466267)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"No Pagination (Show All Rows)"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Messages":{
+          "When No Data Found":"\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-check-circle u-success-text\"\u003E\u003C\/span\u003E no Vista Theme Style is used\u003C\/b\u003E"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"22473334255353939"
+         ,"Identification":{
+            "Column Name":"NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"22473599670353941"
+     ,"Identification":{
+        "Title":"6.1.8 Post Calculation for Page Items Deprecated "
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select p.page_id\n      ,p.page_name\n      ,p.region\n      ,p.item_name\nfrom apex_application_page_items p\nwhere p.source_post_computation is not null\nand p.application_id = :P0_APP_ID"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":50
+       ,"Parent Region":"6.1 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/htmrn\/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_bank\"\u003ELink to Release Notes\u003C\/a\u003E (22471528162353921)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Collapsible (452454481275466240)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"is-expanded"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":9999999
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (452468948793466267)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (no pagination)"
+         ,"Display Position":"Top and Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Messages":{
+          "When No Data Found":"\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-check-circle u-success-text\"\u003E\u003C\/span\u003E no Post Calculation for Page Items used\u003C\/b\u003E"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"22473759959353943"
+         ,"Identification":{
+            "Column Name":"PAGE_ID"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Id"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Default Sequence":"1"
+           ,"Direction":"Ascending"
+           ,"Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22473861649353944"
+         ,"Identification":{
+            "Column Name":"PAGE_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22473937564353945"
+         ,"Identification":{
+            "Column Name":"REGION"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Region"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Default Sequence":"2"
+           ,"Direction":"Ascending"
+           ,"Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"22474023972353946"
+         ,"Identification":{
+            "Column Name":"ITEM_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Item Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":40
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Default Sequence":"3"
+           ,"Direction":"Ascending"
+           ,"Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"23546299057935810"
+     ,"Identification":{
+        "Title":"6.1.9 Show \/ Hide All Page Items On Same Line attributes deprecated"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select a.page_id\n      ,a.page_name\n      ,a.dynamic_action_name\n      ,a.action_name\nfrom apex_application_page_da_acts a\nwhere a.action_name in (\u0027Hide\u0027\n                       ,\u0027Show\u0027)\nand a.attribute_01 = \u0027Y\u0027\nand a.application_id = :P0_APP_ID"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":70
+       ,"Parent Region":"6.1 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/htmrn\/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_bank\"\u003ELink to Release Notes\u003C\/a\u003E (22471528162353921)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (452458863643466246)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":9999999
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (452468948793466267)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (no pagination)"
+         ,"Display Position":"Top and Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Messages":{
+          "When No Data Found":"\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-check-circle u-success-text\"\u003E\u003C\/span\u003E no Show \/ Hide All Page Items On Same Line attributes used\u003C\/b\u003E"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"23546334660935811"
+         ,"Identification":{
+            "Column Name":"PAGE_ID"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Id"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Default Sequence":"1"
+           ,"Direction":"Ascending"
+           ,"Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"23546450899935812"
+         ,"Identification":{
+            "Column Name":"PAGE_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"23546578203935813"
+         ,"Identification":{
+            "Column Name":"DYNAMIC_ACTION_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Dynamic Action Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Default Sequence":"2"
+           ,"Direction":"Ascending"
+           ,"Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"23546623721935814"
+         ,"Identification":{
+            "Column Name":"ACTION_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Action Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":40
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"23547096181935818"
+     ,"Identification":{
+        "Title":"6.1.14 apex.widget.initPageItem Function Deprecated "
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select j.page_id\n      ,j.page_name\n      ,j.component_name\n      ,j.component_type\n      ,j.js_code_vc2\nfrom av_javascript_v j\nwhere instr(lower(j.js_code_vc2)\n           ,\u0027apex.widget.initPageItem\u0027) \u003E 0\nand application_id = :P0_APP_ID"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":140
+       ,"Parent Region":"6.1 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/htmrn\/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_bank\"\u003ELink to Release Notes\u003C\/a\u003E (22471528162353921)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Collapsible (452454481275466240)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"is-expanded"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"\u003Cb\u003Eapex.widget.initPageItem =\u003E apex.item.create\u003C\/b\u003E \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/20.1\/aexjs\/apex.item.html#.create\" target=\"_blank\"\u003EAPEX 20.1 JS API apex.item.create\u003C\/a\u003E"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":99999999
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (452468948793466267)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (no pagination)"
+         ,"Display Position":"Top and Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Messages":{
+          "When No Data Found":"\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-check-circle u-success-text\"\u003E\u003C\/span\u003E no apex.widget.initPageItem used\u003C\/b\u003E"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"23547166361935819"
+         ,"Identification":{
+            "Column Name":"PAGE_ID"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Id"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"23547261390935820"
+         ,"Identification":{
+            "Column Name":"PAGE_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"23547342205935821"
+         ,"Identification":{
+            "Column Name":"COMPONENT_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Component Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"23547454971935822"
+         ,"Identification":{
+            "Column Name":"COMPONENT_TYPE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Component Type"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":40
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"23547520853935823"
+         ,"Identification":{
+            "Column Name":"JS_CODE_VC2"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Js Code Vc2"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":50
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Column Formatting":{
+            "Highlight Words":"apex.widget.initPageItem"
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"43370026133782521"
+     ,"Identification":{
+        "Title":"APEX 20.1"
+       ,"Type":"Breadcrumb"
+      }
+     ,"Source":{
+        "Breadcrumb":" Breadcrumb (452492814882466360)"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Hero (452456691272466243)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Icon":"fa-wrench"
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "Breadcrumb Template":"Breadcrumb (452482206618466299)"
+         ,"Template Options":[
+            "#DEFAULT#"
+          ]
+        }
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"22470750244353913"
+     ,"Identification":{
+        "Name":"change P0_APP_ID - refresh regions"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"22470863156353914"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"7.1.2 Desupported JavaScript Functions (22470004391353906)"
+          }
+         ,"Execution Options":{
+            "Sequence":2
+           ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"22471632120353922"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"6.1.1 Deprecated JavaScript Functions (22470932571353915)"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"22472367022353929"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"6.1.10 apexrefresh Event is Deprecated (22471713638353923)"
+          }
+         ,"Execution Options":{
+            "Sequence":100
+           ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"22472882344353934"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"6.1.5 Tabular Forms Deprecated  (22472425888353930)"
+          }
+         ,"Execution Options":{
+            "Sequence":50
+           ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"22473418736353940"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"6.1.7 Theme Style \"Vista\" Deprecated in Universal Theme (22472983108353935)"
+          }
+         ,"Execution Options":{
+            "Sequence":70
+           ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"23545697416935804"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"6.1.8 Post Calculation for Page Items Deprecated  (22473599670353941)"
+          }
+         ,"Execution Options":{
+            "Sequence":80
+           ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"23546708154935815"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"6.1.9 Show \/ Hide All Page Items On Same Line attributes deprecated (23546299057935810)"
+          }
+         ,"Execution Options":{
+            "Sequence":90
+           ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"23547693031935824"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"6.1.14 apex.widget.initPageItem Function Deprecated  (23547096181935818)"
+          }
+         ,"Execution Options":{
+            "Sequence":140
+           ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"22474128329353947"
+     ,"Identification":{
+        "Name":"click refresh - refresh regions"
+      }
+     ,"Execution Options":{
+        "Sequence":20
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"Button"
+       ,"Button":"Refresh (45068108221137631)"
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"22474248623353948"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"6.1.1 Deprecated JavaScript Functions (22470932571353915)"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"click refresh - refresh regions (22474128329353947)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"22474366676353949"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"6.1.10 apexrefresh Event is Deprecated (22471713638353923)"
+          }
+         ,"Execution Options":{
+            "Sequence":110
+           ,"Event":"click refresh - refresh regions (22474128329353947)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"22474469364353950"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"6.1.5 Tabular Forms Deprecated  (22472425888353930)"
+          }
+         ,"Execution Options":{
+            "Sequence":50
+           ,"Event":"click refresh - refresh regions (22474128329353947)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"23545353645935801"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"6.1.7 Theme Style \"Vista\" Deprecated in Universal Theme (22472983108353935)"
+          }
+         ,"Execution Options":{
+            "Sequence":70
+           ,"Event":"click refresh - refresh regions (22474128329353947)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"23545468405935802"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"6.1.8 Post Calculation for Page Items Deprecated  (22473599670353941)"
+          }
+         ,"Execution Options":{
+            "Sequence":80
+           ,"Event":"click refresh - refresh regions (22474128329353947)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"23545593299935803"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"7.1.2 Desupported JavaScript Functions (22470004391353906)"
+          }
+         ,"Execution Options":{
+            "Sequence":2
+           ,"Event":"click refresh - refresh regions (22474128329353947)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"23546886716935816"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"6.1.9 Show \/ Hide All Page Items On Same Line attributes deprecated (23546299057935810)"
+          }
+         ,"Execution Options":{
+            "Sequence":90
+           ,"Event":"click refresh - refresh regions (22474128329353947)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"23547783983935825"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"6.1.14 apex.widget.initPageItem Function Deprecated  (23547096181935818)"
+          }
+         ,"Execution Options":{
+            "Sequence":140
+           ,"Event":"click refresh - refresh regions (22474128329353947)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

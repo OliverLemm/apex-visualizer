@@ -1,0 +1,16 @@
+drop view av_applications_v;
+drop view av_components_v;
+drop view av_css_v;
+drop view av_javascript_v;
+drop view av_pages_v;
+drop view av_page_links_v;
+drop view av_plsql_v;
+drop view av_plugins_v;
+drop view av_p0100_js_code_by_page_v;
+drop view av_p0200_css_code_by_page_v;
+drop view av_p0300_plsql_code_by_page_v;
+drop view av_p0600_not_used_auth_schemes_v;
+drop view av_p0708_legacy_subst_strings_v;
+drop view av_visibility_overview_v;
+drop view av_visibility_v;
+drop package av_general_pkg;

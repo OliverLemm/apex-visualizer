@@ -22,7 +22,7 @@ wwv_flow_imp_shared.create_plug_template(
 ,p_sub_plug_template=>'<div data-label="#SUB_REGION_TITLE#" id="SR_#SUB_REGION_ID#">#SUB_REGION#</div>'
 ,p_page_plug_template_name=>'Tabs Container'
 ,p_internal_name=>'TABS_CONTAINER'
-,p_javascript_file_urls=>'#IMAGE_PREFIX#libraries/apex/#MIN_DIRECTORY#widget.apexTabs#MIN#.js?v=#APEX_VERSION#'
+,p_javascript_file_urls=>'#APEX_FILES#libraries/apex/#MIN_DIRECTORY#widget.apexTabs#MIN#.js?v=#APEX_VERSION#'
 ,p_theme_id=>42
 ,p_theme_class_id=>5
 ,p_preset_template_options=>'t-TabsRegion-mod--simple'
@@ -32,7 +32,7 @@ wwv_flow_imp_shared.create_plug_template(
 ,p_translate_this_template=>'N'
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(16250608116838689)
+ p_id=>wwv_flow_imp.id(2587289017797367)
 ,p_plug_template_id=>wwv_flow_imp.id(452462122710466251)
 ,p_name=>'Region Body'
 ,p_placeholder=>'BODY'
@@ -43,7 +43,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(16251104474838689)
+ p_id=>wwv_flow_imp.id(2587727654797367)
 ,p_plug_template_id=>wwv_flow_imp.id(452462122710466251)
 ,p_name=>'Tabs'
 ,p_placeholder=>'SUB_REGIONS'

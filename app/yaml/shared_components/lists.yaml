@@ -1,0 +1,648 @@
+---
+- # ====== List: Desktop Navigation Menu =======================
+  id: 452440279475466179
+  identification: 
+    name: Desktop Navigation Menu
+    type: Static Values
+
+  entries: 
+  - # ====== Entry: Migration ====================================
+    id: 16405035169854428
+    label: 
+      label: Migration
+
+    icon: 
+      image/icon-css-classes: fa-wrench
+
+    layout: 
+      sequence: 340
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 700
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:700:&SESSION.::&DEBUG.::::'
+        page: 700 # Migration
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: APEX 18.1 ====================================
+    id: 16406329864879493
+    label: 
+      label: APEX 18.1
+
+    layout: 
+      sequence: 350
+      parent-entry: Migration # 16405035169854428
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 701
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:701:&SESSION.::&DEBUG.::::'
+        page: 701 # APEX 18.1
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+    configuration: 
+      build-option: deactivated # 291318289212148547
+
+  - # ====== Entry: APEX 18.2 ====================================
+    id: 16407278174882045
+    label: 
+      label: APEX 18.2
+
+    layout: 
+      sequence: 360
+      parent-entry: Migration # 16405035169854428
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 702
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:702:&SESSION.::&DEBUG.::::'
+        page: 702 # APEX 18.2
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+    configuration: 
+      build-option: deactivated # 291318289212148547
+
+  - # ====== Entry: APEX 19.1 ====================================
+    id: 16408165467884193
+    label: 
+      label: APEX 19.1
+
+    layout: 
+      sequence: 370
+      parent-entry: Migration # 16405035169854428
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 703
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:703:&SESSION.::&DEBUG.::::'
+        page: 703 # APEX 19.1
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+    configuration: 
+      build-option: deactivated # 291318289212148547
+
+  - # ====== Entry: APEX 19.2 ====================================
+    id: 16409061489886029
+    label: 
+      label: APEX 19.2
+
+    layout: 
+      sequence: 380
+      parent-entry: Migration # 16405035169854428
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 704
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:704:&SESSION.::&DEBUG.::::'
+        page: 704 # APEX 19.2
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+    configuration: 
+      build-option: deactivated # 291318289212148547
+
+  - # ====== Entry: APEX 20.1 ====================================
+    id: 16409977362888764
+    label: 
+      label: APEX 20.1
+
+    layout: 
+      sequence: 390
+      parent-entry: Migration # 16405035169854428
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 705
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:705:&SESSION.::&DEBUG.::::'
+        page: 705 # APEX 20.1
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: APEX 20.2 ====================================
+    id: 16410870801890950
+    label: 
+      label: APEX 20.2
+
+    layout: 
+      sequence: 400
+      parent-entry: Migration # 16405035169854428
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 706
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:706:&SESSION.::&DEBUG.::::'
+        page: 706 # APEX 20.2
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: APEX 21.1 ====================================
+    id: 16411778583892676
+    label: 
+      label: APEX 21.1
+
+    layout: 
+      sequence: 410
+      parent-entry: Migration # 16405035169854428
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 707
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:707:&SESSION.::&DEBUG.::::'
+        page: 707 # APEX 21.1
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: APEX 21.2 ====================================
+    id: 16412661838894615
+    label: 
+      label: APEX 21.2
+
+    layout: 
+      sequence: 420
+      parent-entry: Migration # 16405035169854428
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 708
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:708:&APP_SESSION.::&DEBUG.:::'
+        page: 708 # APEX 21.2
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Plugins ======================================
+    id: 37651385965650354
+    label: 
+      label: Plugins
+
+    icon: 
+      image/icon-css-classes: fa-plug
+
+    layout: 
+      sequence: 310
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 400
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:400:&SESSION.::&DEBUG.::::'
+        page: 400 # Plugins
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Links ========================================
+    id: 38833314477463243
+    label: 
+      label: Links
+
+    icon: 
+      image/icon-css-classes: fa-link
+
+    layout: 
+      sequence: 320
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 500
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:500:&SESSION.::&DEBUG.::::'
+        page: 500 # Links
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: QA ===========================================
+    id: 38896522583463809
+    label: 
+      label: QA
+
+    icon: 
+      image/icon-css-classes: fa-clipboard-check-alt
+
+    layout: 
+      sequence: 330
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 600
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:600:&SESSION.::&DEBUG.::::'
+        page: 600 # QA
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: APEX 22.1 ====================================
+    id: 45129397329359590
+    label: 
+      label: APEX 22.1
+
+    layout: 
+      sequence: 430
+      parent-entry: Migration # 16405035169854428
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 709
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:709:&APP_SESSION.::&DEBUG.:::'
+        page: 709 # APEX 22.1
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Page =========================================
+    id: 291328116588371950
+    label: 
+      label: Page
+
+    icon: 
+      image/icon-css-classes: fa-file-o
+
+    layout: 
+      sequence: 30
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:30:&SESSION.::&DEBUG.::::'
+        page: 30 # Page
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+    configuration: 
+      build-option: deactivated # 291318289212148547
+
+  - # ====== Entry: JavaScript ===================================
+    id: 293335134729022457
+    label: 
+      label: JavaScript
+
+    icon: 
+      image/icon-css-classes: fa-repeat
+
+    layout: 
+      sequence: 100
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 100
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:100:&SESSION.::&DEBUG.::::'
+        page: 100 # JavaScript
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: CSS ==========================================
+    id: 293335881011024666
+    label: 
+      label: CSS
+
+    icon: 
+      image/icon-css-classes: fa-file-code-o
+
+    layout: 
+      sequence: 200
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 200
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:200:&SESSION.::&DEBUG.::::'
+        page: 200 # CSS
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Visibility ===================================
+    id: 293408720997816411
+    label: 
+      label: Visibility
+
+    icon: 
+      image/icon-css-classes: fa-eye
+
+    layout: 
+      sequence: 40
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 40
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:40:&SESSION.::&DEBUG.::::'
+        page: 40 # Visibility
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Last Updated =================================
+    id: 293451767366398525
+    label: 
+      label: Last Updated
+
+    icon: 
+      image/icon-css-classes: fa-calendar-clock
+
+    layout: 
+      sequence: 50
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 50
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:50:&SESSION.::&DEBUG.::::'
+        page: 50 # Last Updated
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Templates ====================================
+    id: 294215766296992610
+    label: 
+      label: Templates
+
+    icon: 
+      image/icon-css-classes: fa-layout-header-nav-left-cards
+
+    layout: 
+      sequence: 60
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 60
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:60:&SESSION.::&DEBUG.::::'
+        page: 60 # Templates
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: PL/SQL =======================================
+    id: 294498933510993254
+    label: 
+      label: PL/SQL
+
+    icon: 
+      image/icon-css-classes: fa-file-sql
+
+    layout: 
+      sequence: 300
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 300
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:300:&SESSION.::&DEBUG.::::'
+        page: 300 # PLSQL
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: APEX =========================================
+    id: 452504942296429648
+    label: 
+      label: APEX
+
+    icon: 
+      image/icon-css-classes: fa-apex
+
+    layout: 
+      sequence: 5
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:10:&SESSION.::&DEBUG.::::'
+        page: 10 # Applications
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+    configuration: 
+      build-option: deactivated # 291318289212148547
+
+  - # ====== Entry: Pages ========================================
+    id: 452506165952441537
+    label: 
+      label: Pages
+
+    icon: 
+      image/icon-css-classes: fa-files-o
+
+    layout: 
+      sequence: 20
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:20:&SESSION.::&DEBUG.::::'
+        page: 20 # Pages
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Applications =================================
+    id: 452538776854652078
+    label: 
+      label: Applications
+
+    icon: 
+      image/icon-css-classes: fa-layout-nav-left-header-header
+
+    layout: 
+      sequence: 10
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:10:&SESSION.::&DEBUG.::::'
+        page: 10 # Applications
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+- # ====== List: Desktop Navigation Bar ========================
+  id: 452492439461466348
+  identification: 
+    name: Desktop Navigation Bar
+    type: Static Values
+
+  entries: 
+  - # ====== Entry: Log Out ======================================
+    id: 452492581739466354
+    label: 
+      label: Log Out
+
+    layout: 
+      sequence: 10
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: '&LOGOUT_URL.'
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+

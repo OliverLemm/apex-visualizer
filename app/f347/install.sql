@@ -4,6 +4,9 @@ prompt --install
 @@application/create_application.sql
 @@application/shared_components/navigation/lists/desktop_navigation_menu.sql
 @@application/shared_components/navigation/lists/desktop_navigation_bar.sql
+@@application/shared_components/files/icons_app_icon_32_png.sql
+@@application/shared_components/files/icons_app_icon_192_png.sql
+@@application/shared_components/files/icons_app_icon_512_png.sql
 @@application/shared_components/files/av_css.sql
 @@application/shared_components/files/av_min_css.sql
 @@application/shared_components/files/av_js.sql
@@ -34,6 +37,7 @@ prompt --install
 @@application/shared_components/user_interface/templates/button/icon.sql
 @@application/shared_components/user_interface/templates/button/text.sql
 @@application/shared_components/user_interface/templates/button/text_with_icon.sql
+@@application/shared_components/user_interface/templates/region/image.sql
 @@application/shared_components/user_interface/templates/region/inline_drawer.sql
 @@application/shared_components/user_interface/templates/region/inline_popup.sql
 @@application/shared_components/user_interface/templates/region/cards_container.sql

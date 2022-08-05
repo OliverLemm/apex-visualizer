@@ -1,0 +1,1724 @@
+{
+  "id":"400"
+ ,"Identification":{
+    "Name":"Plugins"
+   ,"Alias":"PLUGINS"
+   ,"Title":"Plugins"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (452492531566466351)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"32937839366378139"
+     ,"Identification":{
+        "Title":"Plugins"
+       ,"Type":"Interactive Grid"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select distinct \nDISPLAY_NAME,\nPLUGIN_TYPE,\nNAME,       \nAPI_VERSION,\nRENDER_FUNCTION,\nHELP_TEXT,\nVERSION_IDENTIFIER,\nABOUT_URL\nfrom AV_PLUGINS_V\nwhere application_id = :P0_APP_ID"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Interactive Report (452458457830466245)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"32937948524378140"
+       ,"Edit":{
+          "Enabled":false
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Appearance":{
+          "Select First Row":true
+         ,"Fixed Row Height":true
+        }
+       ,"Pagination":{
+          "Type":"Scroll"
+         ,"Show Total Row Count":true
+        }
+       ,"Toolbar":{
+          "Show":true
+         ,"Controls":[
+            "Search Column Selection"
+           ,"Search Field"
+           ,"Actions Menu"
+           ,"Reset Button"
+           ,"Save Button"
+          ]
+        }
+       ,"Enable Users To":{
+          "Save Public Report":false
+         ,"Flashback":true
+         ,"Define Chart View":true
+         ,"Download":true
+        }
+       ,"Download":{
+          "Formats":[
+            "CSV"
+           ,"HTML"
+           ,"Excel"
+           ,"PDF"
+          ]
+         ,"Send as Email":true
+        }
+       ,"Heading":{
+          "Fixed To":"Page"
+        }
+       ,"Icon View":{
+          "Show":false
+        }
+       ,"Detail View":{
+          "Show":false
+        }
+       ,"Saved Reports":[
+          {
+            "id":"37661211352725029"
+           ,"Identification":{
+              "Name":"Primary Report"
+             ,"Alias":"376613"
+            }
+          }
+        ]
+      }
+     ,"Columns":[
+        {
+          "id":"32938289808378143"
+         ,"Identification":{
+            "Column Name":"PLUGIN_TYPE"
+           ,"Type":"Text Field"
+          }
+         ,"Heading":{
+            "Heading":"Plugin Type"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Trim Spaces":"Leading and Trailing"
+           ,"Text Case":"NO CHANGE"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":30
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PLUGIN_TYPE"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"Distinct Column"
+           ,"Exact Match":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"32938316089378144"
+         ,"Identification":{
+            "Column Name":"NAME"
+           ,"Type":"Text Field"
+          }
+         ,"Heading":{
+            "Heading":"Name"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Trim Spaces":"Leading and Trailing"
+           ,"Text Case":"NO CHANGE"
+          }
+         ,"Layout":{
+            "Sequence":40
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":true
+           ,"Maximum Length":45
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"NAME"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"Distinct Column"
+           ,"Exact Match":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"32938499148378145"
+         ,"Identification":{
+            "Column Name":"DISPLAY_NAME"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Display Name"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":50
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":true
+           ,"Maximum Length":100
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"DISPLAY_NAME"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"32938613192378147"
+         ,"Identification":{
+            "Column Name":"API_VERSION"
+           ,"Type":"Number Field"
+          }
+         ,"Heading":{
+            "Heading":"Api Version"
+           ,"Alignment":"end"
+          }
+         ,"Settings":{
+            "Number Alignment":"Right"
+          }
+         ,"Layout":{
+            "Sequence":70
+           ,"Column Alignment":"end"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":true
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"API_VERSION"
+           ,"Data Type":"NUMBER"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"32938783643378148"
+         ,"Identification":{
+            "Column Name":"RENDER_FUNCTION"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Render Function"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":80
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":255
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"RENDER_FUNCTION"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"32938871265378149"
+         ,"Identification":{
+            "Column Name":"HELP_TEXT"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Help Text"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":90
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":4000
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"HELP_TEXT"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"32938948285378150"
+         ,"Identification":{
+            "Column Name":"VERSION_IDENTIFIER"
+           ,"Type":"Text Field"
+          }
+         ,"Heading":{
+            "Heading":"Version Identifier"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Trim Spaces":"Leading and Trailing"
+           ,"Text Case":"NO CHANGE"
+          }
+         ,"Layout":{
+            "Sequence":100
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":30
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"VERSION_IDENTIFIER"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"Distinct Column"
+           ,"Exact Match":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"37655610713724601"
+         ,"Identification":{
+            "Column Name":"ABOUT_URL"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"About Url"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":110
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":512
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"ABOUT_URL"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+      ]
+     ,"Printing":{
+        "Page":{
+          "Size":"Letter"
+         ,"Orientation":"Landscape"
+         ,"Units":"Inches"
+         ,"Width":11
+         ,"Height":8.5
+         ,"Border Width":0.5
+         ,"Border Color":"#666666"
+        }
+       ,"Page Header":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Normal"
+         ,"Font Size":12
+         ,"Font Color":"#000000"
+         ,"Alignment":"center"
+         ,"Page Header Text":"Plugins"
+        }
+       ,"Column Headings":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Bold"
+         ,"Font Size":10
+         ,"Font Color":"#000000"
+         ,"Background Color":"#EEEEEE"
+        }
+       ,"Columns":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Normal"
+         ,"Font Size":10
+         ,"Font Color":"#000000"
+         ,"Background Color":"#FFFFFF"
+        }
+       ,"Page Footer":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Normal"
+         ,"Font Size":12
+         ,"Font Color":"#000000"
+         ,"Alignment":"center"
+        }
+      }
+    }
+   ,{
+      "id":"37656362232724608"
+     ,"Identification":{
+        "Title":"Plugin Overview"
+       ,"Type":"Chart"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"Table \/ View"
+       ,"Table Owner":"Parsing Schema"
+       ,"Table Name":"AV_PLUGINS_V"
+       ,"Include ROWID Column":false
+       ,"Where Clause":"application_id = :P0_APP_ID"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Order By":{
+        "Type":"None"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"4"
+      }
+     ,"Appearance":{
+        "Template":"Standard (452458863643466246)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":true
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"37656406799724609"
+       ,"Chart":{
+          "Type":"Donut"
+        }
+       ,"Layout":{
+          "Height":400
+        }
+       ,"Data Cursor":{
+          "Cursor":"Automatic"
+         ,"Behavior":"Automatic"
+         ,"Dim On Hover":true
+        }
+       ,"Settings":{
+          "Pie Selection Effect":"Highlight"
+        }
+       ,"Value":{
+          "Pie Chart Other Threshold":0
+         ,"Format":"Decimal"
+         ,"Decimal Places":0
+         ,"Format Scaling":"None"
+        }
+       ,"Animation":{
+          "On Display":"Automatic"
+         ,"On Data Change":"Automatic"
+        }
+       ,"Tooltip":{
+          "Show":true
+         ,"Show Series Name":true
+         ,"Show Value":true
+        }
+       ,"Legend":{
+          "Show":true
+         ,"Position":"Automatic"
+         ,"Hide and Show Behavior":"Rescale"
+        }
+       ,"Series":[
+          {
+            "id":"37656588517724610"
+           ,"Identification":{
+              "Name":"Plugins"
+            }
+           ,"Execution Options":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Location":"Region Source"
+            }
+           ,"Column Mapping":{
+              "Series Name":"NAME"
+             ,"Label":"DISPLAY_NAME"
+             ,"Value Aggregation":"Count"
+            }
+           ,"Label":{
+              "Show":true
+             ,"Position":"Automatic"
+             ,"Display As":"Label"
+            }
+          }
+        ]
+      }
+    }
+   ,{
+      "id":"37656915688724614"
+     ,"Identification":{
+        "Title":"Plugin Usage"
+       ,"Type":"Interactive Grid"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"Table \/ View"
+       ,"Table Owner":"Parsing Schema"
+       ,"Table Name":"AV_PLUGINS_V"
+       ,"Include ROWID Column":false
+       ,"Where Clause":"application_id = :P0_APP_ID\nand (:P400_PLUGIN_ID is null or :P400_PLUGIN_ID = plugin_id)"
+       ,"Order By Clause":"PAGE_ID"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+         ,"P400_PLUGIN_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"8"
+      }
+     ,"Appearance":{
+        "Template":"Interactive Report (452458457830466245)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"37657406999724619"
+       ,"Edit":{
+          "Enabled":false
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Appearance":{
+          "Select First Row":true
+         ,"Fixed Row Height":true
+        }
+       ,"Pagination":{
+          "Type":"Scroll"
+         ,"Show Total Row Count":true
+        }
+       ,"Toolbar":{
+          "Show":true
+         ,"Controls":[
+            "Search Column Selection"
+           ,"Search Field"
+           ,"Actions Menu"
+           ,"Reset Button"
+           ,"Save Button"
+          ]
+        }
+       ,"Enable Users To":{
+          "Save Public Report":false
+         ,"Flashback":true
+         ,"Define Chart View":true
+         ,"Download":true
+        }
+       ,"Download":{
+          "Formats":[
+            "CSV"
+           ,"HTML"
+           ,"Excel"
+           ,"PDF"
+          ]
+         ,"Send as Email":true
+        }
+       ,"Heading":{
+          "Fixed To":"Page"
+        }
+       ,"Icon View":{
+          "Show":false
+        }
+       ,"Detail View":{
+          "Show":false
+        }
+       ,"Saved Reports":[
+          {
+            "id":"38788121600878326"
+           ,"Identification":{
+              "Name":"Primary Report"
+             ,"Alias":"387882"
+            }
+          }
+        ]
+      }
+     ,"Columns":[
+        {
+          "id":"37657596684724620"
+         ,"Identification":{
+            "Column Name":"APPLICATION_ID"
+           ,"Type":"Hidden"
+          }
+         ,"Settings":{
+            "Value Protected":true
+          }
+         ,"Layout":{
+            "Sequence":140
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"APPLICATION_ID"
+           ,"Data Type":"NUMBER"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":false
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+          }
+        }
+       ,{
+          "id":"37657646361724621"
+         ,"Identification":{
+            "Column Name":"APPLICATION_NAME"
+           ,"Type":"Hidden"
+          }
+         ,"Settings":{
+            "Value Protected":true
+          }
+         ,"Layout":{
+            "Sequence":150
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"APPLICATION_NAME"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":false
+          }
+         ,"Enable Users To":{
+            "Sort":false
+          }
+        }
+       ,{
+          "id":"37657728870724622"
+         ,"Identification":{
+            "Column Name":"PLUGIN_TYPE"
+           ,"Type":"Text Field"
+          }
+         ,"Heading":{
+            "Heading":"Plugin Type"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Trim Spaces":"Leading and Trailing"
+           ,"Text Case":"NO CHANGE"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":30
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PLUGIN_TYPE"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"Distinct Column"
+           ,"Exact Match":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"37657859376724623"
+         ,"Identification":{
+            "Column Name":"NAME"
+           ,"Type":"Hidden"
+          }
+         ,"Settings":{
+            "Value Protected":true
+          }
+         ,"Layout":{
+            "Sequence":40
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"NAME"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":false
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+          }
+        }
+       ,{
+          "id":"37657966534724624"
+         ,"Identification":{
+            "Column Name":"DISPLAY_NAME"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Display Name"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":50
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":true
+           ,"Maximum Length":100
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"DISPLAY_NAME"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"37658076343724625"
+         ,"Identification":{
+            "Column Name":"PLSQL_CODE"
+           ,"Type":"Hidden"
+          }
+         ,"Settings":{
+            "Value Protected":true
+          }
+         ,"Layout":{
+            "Sequence":60
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PLSQL_CODE"
+           ,"Data Type":"CLOB"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":false
+          }
+        }
+       ,{
+          "id":"37658182988724626"
+         ,"Identification":{
+            "Column Name":"API_VERSION"
+           ,"Type":"Hidden"
+          }
+         ,"Settings":{
+            "Value Protected":true
+          }
+         ,"Layout":{
+            "Sequence":70
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"API_VERSION"
+           ,"Data Type":"NUMBER"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":false
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+          }
+        }
+       ,{
+          "id":"37658294427724627"
+         ,"Identification":{
+            "Column Name":"RENDER_FUNCTION"
+           ,"Type":"Hidden"
+          }
+         ,"Settings":{
+            "Value Protected":true
+          }
+         ,"Layout":{
+            "Sequence":80
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"RENDER_FUNCTION"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":false
+          }
+         ,"Enable Users To":{
+            "Sort":false
+          }
+        }
+       ,{
+          "id":"37658359689724628"
+         ,"Identification":{
+            "Column Name":"HELP_TEXT"
+           ,"Type":"Hidden"
+          }
+         ,"Settings":{
+            "Value Protected":true
+          }
+         ,"Layout":{
+            "Sequence":90
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"HELP_TEXT"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":false
+          }
+         ,"Enable Users To":{
+            "Sort":false
+          }
+        }
+       ,{
+          "id":"37658450822724629"
+         ,"Identification":{
+            "Column Name":"VERSION_IDENTIFIER"
+           ,"Type":"Hidden"
+          }
+         ,"Settings":{
+            "Value Protected":true
+          }
+         ,"Layout":{
+            "Sequence":100
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"VERSION_IDENTIFIER"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":false
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+          }
+        }
+       ,{
+          "id":"37658561661724630"
+         ,"Identification":{
+            "Column Name":"ABOUT_URL"
+           ,"Type":"Hidden"
+          }
+         ,"Settings":{
+            "Value Protected":true
+          }
+         ,"Layout":{
+            "Sequence":110
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"ABOUT_URL"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":false
+          }
+         ,"Enable Users To":{
+            "Sort":false
+          }
+        }
+       ,{
+          "id":"37658659859724631"
+         ,"Identification":{
+            "Column Name":"PAGE_ID"
+           ,"Type":"Link"
+          }
+         ,"Heading":{
+            "Heading":"Page Id"
+           ,"Alignment":"end"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"end"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Link":{
+            "Target":"\u0026PAGE_DESIGNER_URL."
+           ,"Link Text":"\u0026PAGE_ID."
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PAGE_ID"
+           ,"Data Type":"NUMBER"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"37658741650724632"
+         ,"Identification":{
+            "Column Name":"PAGE_NAME"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Page Name"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":255
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PAGE_NAME"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"37658850288724633"
+         ,"Identification":{
+            "Column Name":"OBJECT_NAME"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Object Name"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":120
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":255
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"OBJECT_NAME"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"37658998034724634"
+         ,"Identification":{
+            "Column Name":"OBJECT_LABEL"
+           ,"Type":"Textarea"
+          }
+         ,"Heading":{
+            "Heading":"Object Label"
+           ,"Alignment":"start"
+          }
+         ,"Settings":{
+            "Resizable":true
+           ,"Auto-Height":false
+           ,"Character Counter":false
+           ,"Trim Spaces":"Leading and Trailing"
+          }
+         ,"Layout":{
+            "Sequence":130
+           ,"Column Alignment":"start"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+           ,"Maximum Length":4000
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"OBJECT_LABEL"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"Performance Impacting Operators":[
+              "Contains"
+             ,"Starts With"
+             ,"Case Insensitive"
+             ,"Regular Expression"
+            ]
+           ,"Text Case":"Mixed"
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":false
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"37659436299724639"
+         ,"Identification":{
+            "Column Name":"PLUGIN_ID"
+           ,"Type":"Hidden"
+          }
+         ,"Settings":{
+            "Value Protected":true
+          }
+         ,"Layout":{
+            "Sequence":160
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PLUGIN_ID"
+           ,"Data Type":"NUMBER"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":false
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+          }
+        }
+       ,{
+          "id":"37659504566724640"
+         ,"Identification":{
+            "Column Name":"PAGE_DESIGNER_URL"
+           ,"Type":"Hidden"
+          }
+         ,"Settings":{
+            "Value Protected":true
+          }
+         ,"Layout":{
+            "Sequence":170
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PAGE_DESIGNER_URL"
+           ,"Data Type":"VARCHAR2"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":false
+          }
+         ,"Enable Users To":{
+            "Sort":false
+          }
+        }
+      ]
+     ,"Printing":{
+        "Page":{
+          "Size":"Letter"
+         ,"Orientation":"Landscape"
+         ,"Units":"Inches"
+         ,"Width":11
+         ,"Height":8.5
+         ,"Border Width":0.5
+         ,"Border Color":"#666666"
+        }
+       ,"Page Header":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Normal"
+         ,"Font Size":12
+         ,"Font Color":"#000000"
+         ,"Alignment":"center"
+         ,"Page Header Text":"Plugin Usage"
+        }
+       ,"Column Headings":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Bold"
+         ,"Font Size":10
+         ,"Font Color":"#000000"
+         ,"Background Color":"#EEEEEE"
+        }
+       ,"Columns":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Normal"
+         ,"Font Size":10
+         ,"Font Color":"#000000"
+         ,"Background Color":"#FFFFFF"
+        }
+       ,"Page Footer":{
+          "Font":"Helvetica"
+         ,"Font Weight":"Normal"
+         ,"Font Size":12
+         ,"Font Color":"#000000"
+         ,"Alignment":"center"
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"37659143163724636"
+     ,"Identification":{
+        "Name":"P400_PLUGIN_ID"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"Plugin"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"None"
+       ,"Allow Multi Selection":false
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Filter (452496424516540365)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional (452481165926466293)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"SQL Query"
+       ,"SQL Query":"select display_name, plugin_id \nfrom av_plugins_v\nwhere application_id = :P0_APP_ID\ngroup by display_name, plugin_id\norder by display_name"
+       ,"Display Extra Values":true
+       ,"Display Null Value":true
+       ,"Null Display Value":"all"
+      }
+     ,"Cascading List of Values":{
+        "Parent Item(s)":[
+          "P0_APP_ID"
+        ]
+       ,"Items to Submit":[
+          "P0_APP_ID"
+        ]
+       ,"Parent Required":true
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"37656162311724606"
+     ,"Identification":{
+        "Name":"change P0_APP_ID - refresh Regions"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P0_APP_ID"
+         ,"P400_PLUGIN_ID"
+        ]
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"37656265570724607"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Plugins (32937839366378139)"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"change P0_APP_ID - refresh Regions (37656162311724606)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":true
+          }
+        }
+       ,{
+          "id":"37656811632724613"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Plugin Overview (37656362232724608)"
+          }
+         ,"Execution Options":{
+            "Sequence":20
+           ,"Event":"change P0_APP_ID - refresh Regions (37656162311724606)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":true
+          }
+        }
+       ,{
+          "id":"37659059192724635"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Plugin Usage (37656915688724614)"
+          }
+         ,"Execution Options":{
+            "Sequence":30
+           ,"Event":"change P0_APP_ID - refresh Regions (37656162311724606)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":true
+          }
+        }
+      ]
+    }
+  ]
+}

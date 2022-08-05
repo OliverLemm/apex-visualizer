@@ -1,0 +1,543 @@
+---
+# ====== Page: Visibility ====================================
+id: 40
+identification: 
+  name: Visibility
+  title: Visibility
+
+appearance: 
+  user-interface: Desktop # 452492531566466351
+  page-mode: Normal
+  page-template: Theme Default
+  template-options: 
+  - '#DEFAULT#'
+
+navigation-menu: 
+  override-user-interface-level: false
+
+navigation: 
+  cursor-focus: Do not focus cursor
+  warn-on-unsaved-changes: false
+
+security: 
+  authentication: Page Requires Authentication
+  deep-linking: Application Default
+  page-access-protection: Unrestricted
+  form-auto-complete: Off
+  browser-cache: Application Default
+
+session-management: 
+  rejoin-sessions: Application Default
+
+advanced: 
+  enable-duplicate-page-submissions: Yes - Enable page to be re-posted
+  reload-on-submit: Only for Success
+
+server-cache: 
+  caching: Disabled
+
+regions: 
+- # ====== Region: Objects conditioned =========================
+  id: 293414946304888446
+  identification: 
+    title: Objects conditioned
+    type: Chart
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select count(1) amount_overall
+            ,v.application_id
+            ,v.component_type
+            ,(select count (1) from av_visibility_v v1 where v1.application_id = v.application_id and v1.component_type = v.component_type and v1.visibility_name is not null group by v1.component_type,v1.application_id) amount
+      from av_visibility_v v
+      where v.application_id = :P0_APP_ID or :P0_APP_ID is null
+      group by application_id, component_type
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 10
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: 4
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  security: 
+    escape-special-characters: true
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 293415078905888447
+    chart: 
+      type: Funnel
+
+    appearance: 
+      orientation: Vertical
+
+    data-cursor: 
+      cursor: Automatic
+      behavior: Automatic
+      dim-on-hover: false
+
+    settings: 
+      zoom-and-scroll: No
+
+    value: 
+      format: Decimal
+      format-scaling: Automatic
+
+    animation: 
+      on-display: Automatic
+      on-data-change: Automatic
+
+    tooltip: 
+      show: true
+      show-series-name: true
+      show-value: true
+
+    legend: 
+      show: true
+      hide-and-show-behavior: Rescale
+
+    series: 
+    - # ====== Series: New =========================================
+      id: 293415178310888448
+      identification: 
+        name: New
+
+      execution-options: 
+        sequence: 10
+
+      source: 
+        location: Region Source
+
+      column-mapping: 
+        series-name: APPLICATION_ID
+        label: COMPONENT_TYPE
+        value-aggregation: No Aggregation
+        value: AMOUNT
+        target-value: AMOUNT_OVERALL
+
+      label: 
+        show: true
+        position: Automatic
+
+- # ====== Region: Conditioned by ==============================
+  id: 293415696723888453
+  identification: 
+    title: Conditioned by
+    type: Chart
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select v.application_id
+            ,v.visibility_category
+            ,count(1) amount
+      from av_visibility_v v
+      where v.visibility_name is not null and (v.application_id = :P0_APP_ID or :P0_APP_ID is null)
+      group by application_id, visibility_category
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 20
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: false
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  security: 
+    escape-special-characters: true
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 293415769418888454
+    chart: 
+      type: Pie
+
+    data-cursor: 
+      cursor: Automatic
+      behavior: Automatic
+      dim-on-hover: false
+
+    settings: 
+      pie-selection-effect: Highlight
+
+    value: 
+      pie-chart-other-threshold: 0
+      format-scaling: Automatic
+
+    animation: 
+      on-display: Automatic
+      on-data-change: Automatic
+
+    tooltip: 
+      show: true
+      show-series-name: true
+      show-value: true
+
+    legend: 
+      show: true
+      position: Automatic
+      hide-and-show-behavior: Rescale
+
+    series: 
+    - # ====== Series: New =========================================
+      id: 293415893959888455
+      identification: 
+        name: New
+
+      execution-options: 
+        sequence: 10
+
+      source: 
+        location: Region Source
+
+      column-mapping: 
+        series-name: APPLICATION_ID
+        label: VISIBILITY_CATEGORY
+        value-aggregation: No Aggregation
+        value: AMOUNT
+
+      label: 
+        show: true
+        position: Automatic
+        display-as: Percentage
+
+- # ====== Region: Condition Details ===========================
+  id: 293416287791888459
+  identification: 
+    title: Condition Details
+    type: Chart
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select v.application_id || ' - '  || v.application_name app
+            ,v.visibility_name
+            ,v.visibility_category
+            ,v.visibility_type
+            ,v.visibility_exp1
+            ,count(1) amount
+            ,visibility_type || '<br>amount=' || count(1) || '<br>' || visibility_exp1 tooltip
+      from av_visibility_v v
+      where v.visibility_name is not null
+      and v.application_id = :P0_APP_ID or :P0_APP_ID is null
+      group by v.application_id || ' - '  || v.application_name
+              ,v.visibility_category
+              ,v.visibility_name
+              ,visibility_type
+              ,visibility_exp1
+      
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 30
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  security: 
+    escape-special-characters: true
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 293416386837888460
+    chart: 
+      type: Bar
+
+    appearance: 
+      orientation: Vertical
+      stack: false
+
+    data-cursor: 
+      cursor: Automatic
+      behavior: Automatic
+      dim-on-hover: false
+
+    multi-series-chart-data: 
+      fill-gaps-in-chart-data: true
+      sort-order: Label - Ascending
+      render-gap-as-zero: true
+
+    settings: 
+      zoom-and-scroll: No
+
+    animation: 
+      on-display: Automatic
+      on-data-change: Automatic
+
+    tooltip: 
+      show: true
+      show-series-name: true
+      show-group-name: true
+      show-value: true
+
+    legend: 
+      show: true
+      position: Automatic
+      hide-and-show-behavior: Rescale
+
+    series: 
+    - # ====== Series: New =========================================
+      id: 293416483617888461
+      identification: 
+        name: New
+
+      execution-options: 
+        sequence: 10
+
+      source: 
+        location: Region Source
+
+      column-mapping: 
+        series-name: APP
+        label: VISIBILITY_NAME
+        value-aggregation: No Aggregation
+        value: AMOUNT
+        custom-tooltip: TOOLTIP
+
+      appearance: 
+        assigned-to-y2-axis: false
+
+      label: 
+        show: false
+
+    axes: 
+    - # ====== Axis: x =============================================
+      id: 293416519771888462
+      identification: 
+        name: x
+        show-axis: true
+
+      value: 
+        format-scaling: Automatic
+        baseline-scaling: Zero
+        scale: Linear
+
+      major-ticks: 
+        show: Yes
+
+      minor-ticks: 
+        show: false
+
+      tick-label: 
+        show: true
+        rotation: true
+        position: Outside
+
+    - # ====== Axis: y =============================================
+      id: 293416656186888463
+      identification: 
+        name: y
+        show-axis: true
+
+      value: 
+        format-scaling: Automatic
+        baseline-scaling: Zero
+        scale: Linear
+
+      appearance: 
+        position: Automatic
+
+      major-ticks: 
+        show: Yes
+
+      minor-ticks: 
+        show: false
+
+      tick-label: 
+        show: true
+
+dynamic-actions: 
+- # ====== Dynamic Action: change P0_APP_ID ====================
+  id: 293415469604888451
+  identification: 
+    name: change P0_APP_ID
+
+  execution-options: 
+    sequence: 10
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P0_APP_ID
+
+  client-side-condition: 
+    type: Item is not null
+    item: P0_APP_ID
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 293415592362888452
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Objects conditioned # 293414946304888446
+
+    execution-options: 
+      sequence: 20
+      event: change P0_APP_ID # 293415469604888451
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 293416123635888458
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Conditioned by # 293415696723888453
+
+    execution-options: 
+      sequence: 30
+      event: change P0_APP_ID # 293415469604888451
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 294195226983781247
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Condition Details # 293416287791888459
+
+    execution-options: 
+      sequence: 40
+      event: change P0_APP_ID # 293415469604888451
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_SHOW =================================
+    id: 294195333088781248
+    identification: 
+      action: Show
+
+    affected-elements: 
+      selection-type: Region
+      region: Condition Details # 293416287791888459
+
+    execution-options: 
+      sequence: 10
+      event: change P0_APP_ID # 293415469604888451
+      fire-when-event-result-is: True
+      fire-on-initialization: true
+
+  - # ====== Action: NATIVE_HIDE =================================
+    id: 294195414490781249
+    identification: 
+      action: Hide
+
+    affected-elements: 
+      selection-type: Region
+      region: Condition Details # 293416287791888459
+
+    execution-options: 
+      sequence: 10
+      event: change P0_APP_ID # 293415469604888451
+      fire-when-event-result-is: False
+      fire-on-initialization: true
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 294195566596781250
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Conditioned by # 293415696723888453
+
+    execution-options: 
+      sequence: 20
+      event: change P0_APP_ID # 293415469604888451
+      fire-when-event-result-is: False
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 294195626510781251
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Objects conditioned # 293414946304888446
+
+    execution-options: 
+      sequence: 30
+      event: change P0_APP_ID # 293415469604888451
+      fire-when-event-result-is: False
+      fire-on-initialization: false
+

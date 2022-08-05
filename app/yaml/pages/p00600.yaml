@@ -1,0 +1,1821 @@
+---
+# ====== Page: QA ============================================
+id: 600
+identification: 
+  name: QA
+  alias: QA
+  title: QA
+
+appearance: 
+  user-interface: Desktop # 452492531566466351
+  page-mode: Normal
+  page-template: Theme Default
+  template-options: 
+  - '#DEFAULT#'
+
+navigation-menu: 
+  override-user-interface-level: false
+
+navigation: 
+  cursor-focus: Do not focus cursor
+  warn-on-unsaved-changes: false
+
+security: 
+  authentication: Page Requires Authentication
+  deep-linking: Application Default
+  page-access-protection: Unrestricted
+  form-auto-complete: Off
+  browser-cache: Application Default
+
+session-management: 
+  rejoin-sessions: Application Default
+
+advanced: 
+  enable-duplicate-page-submissions: Yes - Enable page to be re-posted
+  reload-on-submit: Only for Success
+
+server-cache: 
+  caching: Disabled
+
+regions: 
+- # ====== Region: unused plugins ==============================
+  id: 38837724345637017
+  identification: 
+    title: unused plugins
+    type: Interactive Grid
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select NAME,
+             DISPLAY_NAME
+        from AV_PLUGINS_V
+       where application_id = :P0_APP_ID and
+      page_name is null
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 30
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 38837870026637018
+    edit: 
+      enabled: false
+
+    performance: 
+      lazy-loading: true
+
+    appearance: 
+      select-first-row: true
+      fixed-row-height: true
+
+    pagination: 
+      type: Scroll
+      show-total-row-count: true
+
+    messages: 
+      when-no-data-found: no unused plugins found
+
+    toolbar: 
+      show: false
+
+    enable-users-to: 
+      save-public-report: false
+      flashback: false
+      define-chart-view: false
+      download: true
+
+    download: 
+      formats: 
+      - CSV
+      - HTML
+      - Excel
+      - PDF
+      send-as-email: true
+
+    heading: 
+      fixed-to: Page
+
+    icon-view: 
+      show: false
+
+    detail-view: 
+      show: false
+
+    saved-reports: 
+    - # ====== Saved Report: Primary Report ========================
+      id: 38899126329681623
+      identification: 
+        name: Primary Report
+        alias: 388992
+
+  columns: 
+  - # ====== Column: NAME ========================================
+    id: 38838315306637023
+    identification: 
+      column-name: NAME
+      type: Text Field
+
+    heading: 
+      heading: Name
+      alignment: start
+
+    settings: 
+      trim-spaces: Leading and Trailing
+      text-case: NO CHANGE
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: true
+      maximum-length: 45
+
+    source: 
+      type: Database Column
+      database-column: NAME
+      data-type: VARCHAR2
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      performance-impacting-operators: 
+      - Contains
+      - Starts With
+      - Case Insensitive
+      - Regular Expression
+      text-case: Mixed
+      lov-type: Distinct Column
+      exact-match: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: true
+      control-break/aggregate: true
+      hide: true
+
+  - # ====== Column: DISPLAY_NAME ================================
+    id: 38838487227637024
+    identification: 
+      column-name: DISPLAY_NAME
+      type: Text Field
+
+    heading: 
+      heading: Display Name
+      alignment: start
+
+    settings: 
+      trim-spaces: Leading and Trailing
+      text-case: NO CHANGE
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: true
+      maximum-length: 100
+
+    source: 
+      type: Database Column
+      database-column: DISPLAY_NAME
+      data-type: VARCHAR2
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      performance-impacting-operators: 
+      - Contains
+      - Starts With
+      - Case Insensitive
+      - Regular Expression
+      text-case: Mixed
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: true
+      control-break/aggregate: true
+      hide: true
+
+  printing: 
+    page: 
+      size: Letter
+      orientation: Landscape
+      units: Inches
+      width: 11
+      height: 8.5
+      border-width: 0.5
+      border-color: '#666666'
+
+    page-header: 
+      font: Helvetica
+      font-weight: Normal
+      font-size: 12
+      font-color: '#000000'
+      alignment: center
+      page-header-text: unused plugins
+
+    column-headings: 
+      font: Helvetica
+      font-weight: Bold
+      font-size: 10
+      font-color: '#000000'
+      background-color: '#EEEEEE'
+
+    columns: 
+      font: Helvetica
+      font-weight: Normal
+      font-size: 10
+      font-color: '#000000'
+      background-color: '#FFFFFF'
+
+    page-footer: 
+      font: Helvetica
+      font-weight: Normal
+      font-size: 12
+      font-color: '#000000'
+      alignment: center
+
+- # ====== Region: unused authorization schemes ================
+  id: 38839957986637039
+  identification: 
+    title: unused authorization schemes
+    type: Interactive Grid
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select a.authorization_scheme_name
+      from av_p0600_not_used_auth_schemes_v a
+      where a.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 40
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: false
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 38840001137637040
+    edit: 
+      enabled: false
+
+    performance: 
+      lazy-loading: true
+
+    appearance: 
+      select-first-row: true
+      fixed-row-height: true
+
+    pagination: 
+      type: Scroll
+      show-total-row-count: true
+
+    toolbar: 
+      show: false
+
+    enable-users-to: 
+      save-public-report: false
+      flashback: true
+      define-chart-view: true
+      download: true
+
+    download: 
+      formats: 
+      - CSV
+      - HTML
+      - Excel
+      - PDF
+      send-as-email: true
+
+    heading: 
+      fixed-to: Page
+
+    icon-view: 
+      show: false
+
+    detail-view: 
+      show: false
+
+    saved-reports: 
+    - # ====== Saved Report: Primary Report ========================
+      id: 38943868093775839
+      identification: 
+        name: Primary Report
+        alias: 389439
+
+  columns: 
+  - # ====== Column: AUTHORIZATION_SCHEME_NAME ===================
+    id: 38840174881637041
+    identification: 
+      column-name: AUTHORIZATION_SCHEME_NAME
+      type: Text Field
+
+    heading: 
+      heading: Authorization Scheme Name
+      alignment: start
+
+    settings: 
+      trim-spaces: Leading and Trailing
+      text-case: NO CHANGE
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: true
+      maximum-length: 255
+
+    source: 
+      type: Database Column
+      database-column: AUTHORIZATION_SCHEME_NAME
+      data-type: VARCHAR2
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      performance-impacting-operators: 
+      - Contains
+      - Starts With
+      - Case Insensitive
+      - Regular Expression
+      text-case: Mixed
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: true
+      control-break/aggregate: true
+      hide: true
+
+  printing: 
+    page: 
+      size: Letter
+      orientation: Landscape
+      units: Inches
+      width: 11
+      height: 8.5
+      border-width: 0.5
+      border-color: '#666666'
+
+    page-header: 
+      font: Helvetica
+      font-weight: Normal
+      font-size: 12
+      font-color: '#000000'
+      alignment: center
+      page-header-text: unused authorization schemes
+
+    column-headings: 
+      font: Helvetica
+      font-weight: Bold
+      font-size: 10
+      font-color: '#000000'
+      background-color: '#EEEEEE'
+
+    columns: 
+      font: Helvetica
+      font-weight: Normal
+      font-size: 10
+      font-color: '#000000'
+      background-color: '#FFFFFF'
+
+    page-footer: 
+      font: Helvetica
+      font-weight: Normal
+      font-size: 12
+      font-color: '#000000'
+      alignment: center
+
+- # ====== Region: never condition used ========================
+  id: 38840300408637043
+  identification: 
+    title: never condition used
+    type: Interactive Grid
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select v.page_name
+            ,v.page_id
+            ,v.component_type
+            ,v.component_name
+      from av_visibility_v v
+      where v.visibility_category = 'CONDITION'
+      and upper(v.visibility_type) = 'NEVER'
+      and v.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 50
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    id: 38840401895637044
+    edit: 
+      enabled: false
+
+    performance: 
+      lazy-loading: true
+
+    appearance: 
+      select-first-row: true
+      fixed-row-height: true
+
+    pagination: 
+      type: Scroll
+      show-total-row-count: true
+
+    toolbar: 
+      show: true
+      controls: 
+      - Search Column Selection
+      - Search Field
+      - Actions Menu
+      - Reset Button
+      - Save Button
+
+    enable-users-to: 
+      save-public-report: false
+      flashback: true
+      define-chart-view: true
+      download: true
+
+    download: 
+      formats: 
+      - CSV
+      - HTML
+      - Excel
+      - PDF
+      send-as-email: true
+
+    heading: 
+      fixed-to: Page
+
+    icon-view: 
+      show: false
+
+    detail-view: 
+      show: false
+
+    saved-reports: 
+    - # ====== Saved Report: Primary Report ========================
+      id: 39122190798318006
+      identification: 
+        name: Primary Report
+        alias: 391222
+
+  columns: 
+  - # ====== Column: PAGE_NAME ===================================
+    id: 38840579911637045
+    identification: 
+      column-name: PAGE_NAME
+      type: Textarea
+
+    heading: 
+      heading: Page Name
+      alignment: start
+
+    settings: 
+      resizable: true
+      auto-height: false
+      character-counter: false
+      trim-spaces: Leading and Trailing
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: true
+      maximum-length: 255
+
+    source: 
+      type: Database Column
+      database-column: PAGE_NAME
+      data-type: VARCHAR2
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      performance-impacting-operators: 
+      - Contains
+      - Starts With
+      - Case Insensitive
+      - Regular Expression
+      text-case: Mixed
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: false
+      hide: true
+
+  - # ====== Column: PAGE_ID =====================================
+    id: 38840661768637046
+    identification: 
+      column-name: PAGE_ID
+      type: Number Field
+
+    heading: 
+      heading: Page Id
+      alignment: end
+
+    settings: 
+      number-alignment: Right
+
+    layout: 
+      sequence: 20
+      column-alignment: end
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: false
+
+    source: 
+      type: Database Column
+      database-column: PAGE_ID
+      data-type: NUMBER
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: true
+      control-break/aggregate: true
+      hide: true
+
+  - # ====== Column: COMPONENT_TYPE ==============================
+    id: 38840718307637047
+    identification: 
+      column-name: COMPONENT_TYPE
+      type: Text Field
+
+    heading: 
+      heading: Component Type
+      alignment: start
+
+    settings: 
+      trim-spaces: Leading and Trailing
+      text-case: NO CHANGE
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: false
+      maximum-length: 14
+
+    source: 
+      type: Database Column
+      database-column: COMPONENT_TYPE
+      data-type: VARCHAR2
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      performance-impacting-operators: 
+      - Contains
+      - Starts With
+      - Case Insensitive
+      - Regular Expression
+      text-case: Mixed
+      lov-type: Distinct Column
+      exact-match: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: true
+      control-break/aggregate: true
+      hide: true
+
+  - # ====== Column: COMPONENT_NAME ==============================
+    id: 38840815817637048
+    identification: 
+      column-name: COMPONENT_NAME
+      type: Textarea
+
+    heading: 
+      heading: Component Name
+      alignment: start
+
+    settings: 
+      resizable: true
+      auto-height: false
+      character-counter: false
+      trim-spaces: Leading and Trailing
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: false
+      maximum-length: 4000
+
+    source: 
+      type: Database Column
+      database-column: COMPONENT_NAME
+      data-type: VARCHAR2
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      performance-impacting-operators: 
+      - Contains
+      - Starts With
+      - Case Insensitive
+      - Regular Expression
+      text-case: Mixed
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: false
+      hide: true
+
+  printing: 
+    page: 
+      size: Letter
+      orientation: Landscape
+      units: Inches
+      width: 11
+      height: 8.5
+      border-width: 0.5
+      border-color: '#666666'
+
+    page-header: 
+      font: Helvetica
+      font-weight: Normal
+      font-size: 12
+      font-color: '#000000'
+      alignment: center
+      page-header-text: never condition used
+
+    column-headings: 
+      font: Helvetica
+      font-weight: Bold
+      font-size: 10
+      font-color: '#000000'
+      background-color: '#EEEEEE'
+
+    columns: 
+      font: Helvetica
+      font-weight: Normal
+      font-size: 10
+      font-color: '#000000'
+      background-color: '#FFFFFF'
+
+    page-footer: 
+      font: Helvetica
+      font-weight: Normal
+      font-size: 12
+      font-color: '#000000'
+      alignment: center
+
+- # ====== Region: general application settings ================
+  id: 39140850641438711
+  identification: 
+    title: general application settings
+    type: Static Content
+
+  layout: 
+    sequence: 10
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+page-items: 
+- # ====== Page Item: P600_COMPATIBILITY_MODE ==================
+  id: 39140087451438703
+  identification: 
+    name: P600_COMPATIBILITY_MODE
+    type: Text Field
+
+  label: 
+    label: Compatibility Mode
+    alignment: Left
+
+  settings: 
+    subtype: Text
+    trim-spaces: Leading and Trailing
+    text-case: NO CHANGE
+    submit-when-enter-pressed: false
+    disabled: false
+
+  layout: 
+    sequence: 20
+    region: general application settings # 39140850641438711
+    position: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: 4
+    label-column-span: 2
+
+  appearance: 
+    template: Optional # 452481165926466293
+    template-options: 
+    - '#DEFAULT#'
+    width: 10
+
+  validation: 
+    value-required: true
+    maximum-length: 4
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+    maintain-session-state: Per Session (Disk)
+
+  quick-picks: 
+    show-quick-picks: false
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: false
+    restricted-characters: All characters can be saved.
+
+  help: 
+    help-text: |
+      These Compatibility Modes are equal<br>
+      21.2 / 22.1<br>
+      19.2 / 20.1 / 20.2 / 21.1<br>
+      19.1<br>
+      5.1 / 18.1 / 18.2<br>
+      5.0<br>
+      4.2<br>
+      4.1<br>
+      Pre 4.1
+
+- # ====== Page Item: P600_SESSION_STATE_PROTECTION ============
+  id: 39140929173438712
+  identification: 
+    name: P600_SESSION_STATE_PROTECTION
+    type: Text Field
+
+  label: 
+    label: Session State Protection
+    alignment: Left
+
+  settings: 
+    subtype: Text
+    trim-spaces: Leading and Trailing
+    text-case: NO CHANGE
+    submit-when-enter-pressed: false
+    disabled: false
+
+  layout: 
+    sequence: 30
+    region: general application settings # 39140850641438711
+    position: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: false
+    column: Automatic
+    new-column: true
+    column-span: 4
+    label-column-span: 2
+
+  appearance: 
+    template: Optional # 452481165926466293
+    template-options: 
+    - '#DEFAULT#'
+    width: 10
+
+  validation: 
+    value-required: false
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+    maintain-session-state: Per Session (Disk)
+
+  quick-picks: 
+    show-quick-picks: false
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: false
+    restricted-characters: All characters can be saved.
+
+  help: 
+    help-text: To ensure the safety in your application, activate the Session State protection in your application. Keep in mind if you secure your items they cannot be changed inside JavaScript (Dynamic Actions).
+
+- # ====== Page Item: P600_RUNTIME_API_USAGE ===================
+  id: 39141197902438714
+  identification: 
+    name: P600_RUNTIME_API_USAGE
+    type: Text Field
+
+  label: 
+    label: Runtime API Usage
+    alignment: Left
+
+  settings: 
+    subtype: Text
+    trim-spaces: Leading and Trailing
+    text-case: NO CHANGE
+    submit-when-enter-pressed: false
+    disabled: false
+
+  layout: 
+    sequence: 40
+    region: general application settings # 39140850641438711
+    position: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: false
+    column: Automatic
+    new-column: true
+    column-span: 4
+    label-column-span: 2
+
+  appearance: 
+    template: Optional # 452481165926466293
+    template-options: 
+    - '#DEFAULT#'
+    width: 20
+
+  validation: 
+    value-required: false
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+    maintain-session-state: Per Session (Disk)
+
+  quick-picks: 
+    show-quick-picks: false
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: false
+    restricted-characters: All characters can be saved.
+
+  help: 
+    help-text: |
+      Runtime API Usage should be restricted as much as possible. If you have a standard Application with no custom API calls it should be completely disabled.<br>
+      The setting can be found in the shared components => Security in the section Database session. All Checkboxes should be uncheckd.<br>
+      If you are using API-Calls try to only check the "Modify This Application" Checkbox. 
+
+- # ====== Page Item: P600_INCLUDE_LEGACY_JAVASCRIPT ===========
+  id: 39142412801438727
+  identification: 
+    name: P600_INCLUDE_LEGACY_JAVASCRIPT
+    type: Text Field
+
+  label: 
+    label: Include Legacy Javascript
+    alignment: Left
+
+  settings: 
+    subtype: Text
+    trim-spaces: Leading and Trailing
+    text-case: NO CHANGE
+    submit-when-enter-pressed: false
+    disabled: false
+
+  layout: 
+    sequence: 70
+    region: general application settings # 39140850641438711
+    position: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: 4
+    label-column-span: 2
+
+  appearance: 
+    template: Optional # 452481165926466293
+    template-options: 
+    - '#DEFAULT#'
+    width: 10
+
+  validation: 
+    value-required: false
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+    maintain-session-state: Per Session (Disk)
+
+  quick-picks: 
+    show-quick-picks: false
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: false
+    restricted-characters: All characters can be saved.
+
+  help: 
+    help-text: |
+      Supporting legacy JavaScript means always to load more JavaScript as necessary.<br> 
+      This attribute can be found inside your application in the shared components => user interface page in the section "JavaScript". If one of the Checkboxes "Include Deprecated or Desupported Javascript Functions" is switched on it will return Yes.<br>
+      For best performance and up-to-date JS calls switch "Pre 18.1" and "18.x" off.
+
+- # ====== Page Item: P600_INCLUDE_JQUERY_MIGRATE ==============
+  id: 39142595127438728
+  identification: 
+    name: P600_INCLUDE_JQUERY_MIGRATE
+    type: Text Field
+
+  label: 
+    label: Include jQuery Migrate
+    alignment: Left
+
+  settings: 
+    subtype: Text
+    trim-spaces: Leading and Trailing
+    text-case: NO CHANGE
+    submit-when-enter-pressed: false
+    disabled: false
+
+  layout: 
+    sequence: 80
+    region: general application settings # 39140850641438711
+    position: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: false
+    column: Automatic
+    new-column: true
+    column-span: 4
+    label-column-span: 2
+
+  appearance: 
+    template: Optional # 452481165926466293
+    template-options: 
+    - '#DEFAULT#'
+    width: 10
+
+  validation: 
+    value-required: false
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+    maintain-session-state: Per Session (Disk)
+
+  quick-picks: 
+    show-quick-picks: false
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: false
+    restricted-characters: All characters can be saved.
+
+  help: 
+    help-text: Using jQuery Migrate means, to support old deprecated JavaScript Code.
+
+- # ====== Page Item: P600_THEME_NAME ==========================
+  id: 39143035108438733
+  identification: 
+    name: P600_THEME_NAME
+    type: Text Field
+
+  label: 
+    label: Theme Name
+    alignment: Left
+
+  settings: 
+    subtype: Text
+    trim-spaces: Leading and Trailing
+    text-case: NO CHANGE
+    submit-when-enter-pressed: false
+    disabled: false
+
+  layout: 
+    sequence: 50
+    region: general application settings # 39140850641438711
+    position: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: 4
+    label-column-span: 2
+
+  appearance: 
+    template: Optional # 452481165926466293
+    template-options: 
+    - '#DEFAULT#'
+    width: 30
+
+  validation: 
+    value-required: false
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+    maintain-session-state: Per Session (Disk)
+
+  quick-picks: 
+    show-quick-picks: false
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: false
+    restricted-characters: All characters can be saved.
+
+  help: 
+    help-text: If you don't select Universal Theme for your application, not the full functionality is supported.
+
+- # ====== Page Item: P600_UT_VERSION ==========================
+  id: 39143353398438736
+  identification: 
+    name: P600_UT_VERSION
+    type: Text Field
+
+  label: 
+    label: UT Version
+    alignment: Left
+
+  settings: 
+    subtype: Text
+    trim-spaces: Leading and Trailing
+    text-case: NO CHANGE
+    submit-when-enter-pressed: false
+    disabled: false
+
+  layout: 
+    sequence: 60
+    region: general application settings # 39140850641438711
+    position: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: false
+    column: Automatic
+    new-column: true
+    column-span: 4
+    label-column-span: 2
+
+  appearance: 
+    template: Optional # 452481165926466293
+    template-options: 
+    - '#DEFAULT#'
+    width: 10
+
+  validation: 
+    value-required: false
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+    maintain-session-state: Per Session (Disk)
+
+  quick-picks: 
+    show-quick-picks: false
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: false
+    restricted-characters: All characters can be saved.
+
+  help: 
+    help-text: |
+      If using Universal Theme, this information shows the version compared to the APEX version<br>
+      UT 22.1 = APEX 22.1<br>
+      UT 21.2 = APEX 21.2<br>
+      UT 21.1 = APEX 21.1<br>
+      UT  1.6 = APEX 20.2<br>
+      UT  1.5 = APEX 20.1<br>
+      UT  1.4 = APEX 19.2<br>
+      UT  1.3 = APEX 19.1<br>
+      UT  1.2 = APEX 18.1 / 18.2<br>
+      UT  1.1 = APEX 5.1<br>
+      UT  1.0 = APEX 5.0
+      
+
+dynamic-actions: 
+- # ====== Dynamic Action: change P0_APP_ID - refresh regions ==
+  id: 38839615330637036
+  identification: 
+    name: change P0_APP_ID - refresh regions
+
+  execution-options: 
+    sequence: 10
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P0_APP_ID
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 38839706971637037
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: unused plugins # 38837724345637017
+
+    execution-options: 
+      sequence: 30
+      event: change P0_APP_ID - refresh regions # 38839615330637036
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 38840242541637042
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: unused authorization schemes # 38839957986637039
+
+    execution-options: 
+      sequence: 40
+      event: change P0_APP_ID - refresh regions # 38839615330637036
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_REFRESH ==============================
+    id: 38840926121637049
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: never condition used # 38840300408637043
+
+    execution-options: 
+      sequence: 50
+      event: change P0_APP_ID - refresh regions # 38839615330637036
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: NATIVE_EXECUTE_PLSQL_CODE ===================
+    id: 39142327540438726
+    identification: 
+      action: Execute Server-side Code
+
+    settings: 
+      language: PE.PROPERTY.SOURCE_SNIPPET_LANG.LOV.PLSQL.D
+      pl/sql-code: |
+        select
+         a.compatibility_mode
+        ,a.Session_State_Protection
+        ,nvl2(a.runtime_api_usage, replace(replace(replace(a.runtime_api_usage,'T','This'),'O','Other'),'W','Workspace'),'None')
+        into
+         :P600_COMPATIBILITY_MODE
+        ,:P600_SESSION_STATE_PROTECTION
+        ,:P600_RUNTIME_API_USAGE
+        from apex_applications a
+        where a.application_id = :P0_APP_ID;
+        
+        select 
+         ui.include_legacy_javascript 
+        ,ui.include_jquery_migrate
+        into
+         :P600_INCLUDE_LEGACY_JAVASCRIPT
+        ,:P600_INCLUDE_JQUERY_MIGRATE
+        from apex_appl_user_interfaces ui 
+        where ui.application_id = :P0_APP_ID
+        and ui.ui_type_name = 'DESKTOP';
+        
+        select 
+         t.theme_name 
+        ,replace(substr(t.file_prefix,instr(t.file_prefix,'theme_42') + 9),'/')
+        into 
+         :P600_THEME_NAME
+        ,:P600_UT_VERSION
+        from apex_application_themes t
+        where t.application_id = :P0_APP_ID
+        and t.ui_type_name = 'DESKTOP';
+      items-to-submit: 
+      - P600_COMPATIBILITY_MODE
+      - P600_SESSION_STATE_PROTECTION
+      - P600_RUNTIME_API_USAGE
+      - P0_APP_ID
+      - P600_INCLUDE_LEGACY_JAVASCRIPT
+      - P600_INCLUDE_JQUERY_MIGRATE
+      - P600_THEME_NAME
+      - P600_UT_VERSION
+      items-to-return: 
+      - P600_COMPATIBILITY_MODE
+      - P600_SESSION_STATE_PROTECTION
+      - P600_RUNTIME_API_USAGE
+      - P600_INCLUDE_LEGACY_JAVASCRIPT
+      - P600_INCLUDE_JQUERY_MIGRATE
+      - P600_THEME_NAME
+      - P600_UT_VERSION
+      suppress-change-event: false
+
+    execution-options: 
+      sequence: 90
+      event: change P0_APP_ID - refresh regions # 38839615330637036
+      fire-when-event-result-is: True
+      fire-on-initialization: true
+      stop-execution-on-error: true
+      wait-for-result: true
+
+- # ====== Dynamic Action: change P600_COMPATIBILITY_MODE - setC
+  id: 39141322171438716
+  identification: 
+    name: change P600_COMPATIBILITY_MODE - setColor
+
+  execution-options: 
+    sequence: 20
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P600_COMPATIBILITY_MODE
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+    id: 39141803140438721
+    identification: 
+      action: Execute JavaScript Code
+
+    settings: 
+      code: |
+        var $trigger = $(this.triggeringElement);
+        var val = apex.item("P600_COMPATIBILITY_MODE").getValue();
+        console.log("P600_COMPATIBILITY_MODE=" + val);
+        
+        // success - up-to-date => 21.2 / 22.1
+        if (val == '21.2') {
+            $trigger.removeClass("u-danger");
+            $trigger.addClass("u-success");
+            $trigger.removeClass("u-warning");
+        
+        // warning - not up-to-date => only one version before 19.2 / 20.1 / 20.2 / 21.1
+        } else if (val == '19.2') {
+            $trigger.removeClass("u-danger");
+            $trigger.removeClass("u-success");
+            $trigger.addClass("u-warning");
+        
+        // danger - older than 19.2
+        } else {
+            $trigger.addClass("u-danger");
+            $trigger.removeClass("u-success");
+            $trigger.removeClass("u-warning");
+        }
+
+    affected-elements: 
+      selection-type: Item(s)
+      item(s): 
+      - P600_COMPATIBILITY_MODE
+
+    execution-options: 
+      sequence: 50
+      event: change P600_COMPATIBILITY_MODE - setColor # 39141322171438716
+      fire-when-event-result-is: True
+      fire-on-initialization: true
+
+- # ====== Dynamic Action: change P600_SESSION_STATE_PROTECTION 
+  id: 39141941027438722
+  identification: 
+    name: change P600_SESSION_STATE_PROTECTION - setColor
+
+  execution-options: 
+    sequence: 30
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P600_SESSION_STATE_PROTECTION
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+    id: 39142032987438723
+    identification: 
+      action: Execute JavaScript Code
+
+    settings: 
+      code: |
+        var $trigger = $(this.triggeringElement);
+        var val = $trigger.val();
+        
+        if (val == 'Enabled') {    
+            $trigger.addClass("u-success");
+            $trigger.removeClass("u-warning");
+        } else {    
+            $trigger.removeClass("u-success");
+            $trigger.addClass("u-warning");
+        }
+
+    affected-elements: 
+      selection-type: Item(s)
+      item(s): 
+      - P600_SESSION_STATE_PROTECTION
+
+    execution-options: 
+      sequence: 10
+      event: change P600_SESSION_STATE_PROTECTION - setColor # 39141941027438722
+      fire-when-event-result-is: True
+      fire-on-initialization: true
+
+- # ====== Dynamic Action: change P600_RUNTIME_API_USAGE - setCo
+  id: 39142163743438724
+  identification: 
+    name: change P600_RUNTIME_API_USAGE - setColor
+
+  execution-options: 
+    sequence: 40
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P600_RUNTIME_API_USAGE
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+    id: 39142217790438725
+    identification: 
+      action: Execute JavaScript Code
+
+    settings: 
+      code: |
+        var $trigger = $(this.triggeringElement);
+        var val = $trigger.val();
+        
+        if (val == 'None') {    
+            $trigger.addClass("u-success");
+            $trigger.removeClass("u-warning");
+            $trigger.removeClass("u-danger");
+        } else if (val == 'This:Other:Workspace') {
+            $trigger.removeClass("u-success");
+            $trigger.removeClass("u-warning");
+            $trigger.addClass("u-danger");
+        } else {
+            $trigger.removeClass("u-success");
+            $trigger.addClass("u-warning");
+            $trigger.removeClass("u-danger");
+        }
+
+    affected-elements: 
+      selection-type: Item(s)
+      item(s): 
+      - P600_RUNTIME_API_USAGE
+
+    execution-options: 
+      sequence: 10
+      event: change P600_RUNTIME_API_USAGE - setColor # 39142163743438724
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+- # ====== Dynamic Action: change P600_INCLUDE_LEGACY_JAVASCRIPT
+  id: 39142633619438729
+  identification: 
+    name: change P600_INCLUDE_LEGACY_JAVASCRIPT - setColorl
+
+  execution-options: 
+    sequence: 50
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P600_INCLUDE_LEGACY_JAVASCRIPT
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+    id: 39142704166438730
+    identification: 
+      action: Execute JavaScript Code
+
+    settings: 
+      code: |
+        var $trigger = $(this.triggeringElement);
+        var val = $trigger.val();
+        
+        if (val == 'No') {    
+            $trigger.addClass("u-success");
+            $trigger.removeClass("u-warning");
+        } else {    
+            $trigger.removeClass("u-success");
+            $trigger.addClass("u-warning");
+        }
+
+    affected-elements: 
+      selection-type: Item(s)
+      item(s): 
+      - P600_INCLUDE_LEGACY_JAVASCRIPT
+
+    execution-options: 
+      sequence: 10
+      event: change P600_INCLUDE_LEGACY_JAVASCRIPT - setColorl # 39142633619438729
+      fire-when-event-result-is: True
+      fire-on-initialization: true
+
+- # ====== Dynamic Action: change P600_INCLUDE_JQUERY_MIGRATE - 
+  id: 39142800454438731
+  identification: 
+    name: change P600_INCLUDE_JQUERY_MIGRATE - setColorl
+
+  execution-options: 
+    sequence: 60
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P600_INCLUDE_JQUERY_MIGRATE
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+    id: 39142991575438732
+    identification: 
+      action: Execute JavaScript Code
+
+    settings: 
+      code: |
+        var $trigger = $(this.triggeringElement);
+        var val = $trigger.val();
+        
+        if (val == 'No') {    
+            $trigger.addClass("u-success");
+            $trigger.removeClass("u-danger");
+        } else {    
+            $trigger.removeClass("u-success");
+            $trigger.addClass("u-danger");
+        }
+
+    affected-elements: 
+      selection-type: Item(s)
+      item(s): 
+      - P600_INCLUDE_JQUERY_MIGRATE
+
+    execution-options: 
+      sequence: 10
+      event: change P600_INCLUDE_JQUERY_MIGRATE - setColorl # 39142800454438731
+      fire-when-event-result-is: True
+      fire-on-initialization: true
+
+- # ====== Dynamic Action: change P600_THEME_NAME - setColor sho
+  id: 39143191512438734
+  identification: 
+    name: change P600_THEME_NAME - setColor show/hide P600_UT_REFRESHED
+
+  execution-options: 
+    sequence: 80
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P600_THEME_NAME
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+    id: 39143222364438735
+    identification: 
+      action: Execute JavaScript Code
+
+    settings: 
+      code: |
+        var $trigger = $(this.triggeringElement);
+        var val = $trigger.val();
+        
+        if (val == 'Universal Theme') {    
+            $trigger.addClass("u-success");
+            $trigger.removeClass("u-danger");
+        } else {    
+            $trigger.removeClass("u-success");
+            $trigger.addClass("u-danger");
+        }
+
+    affected-elements: 
+      selection-type: Item(s)
+      item(s): 
+      - P600_THEME_NAME
+
+    execution-options: 
+      sequence: 10
+      event: change P600_THEME_NAME - setColor show/hide P600_UT_REFRESHED # 39143191512438734
+      fire-when-event-result-is: True
+      fire-on-initialization: true
+
+  - # ====== Action: NATIVE_SHOW =================================
+    id: 39143453638438737
+    identification: 
+      action: Show
+
+    affected-elements: 
+      selection-type: Item(s)
+      item(s): 
+      - P600_UT_VERSION
+
+    execution-options: 
+      sequence: 20
+      event: change P600_THEME_NAME - setColor show/hide P600_UT_REFRESHED # 39143191512438734
+      fire-when-event-result-is: True
+      fire-on-initialization: true
+
+    client-side-condition: 
+      type: Item = Value
+      item: P600_THEME_NAME
+      value: Universal Theme
+
+  - # ====== Action: NATIVE_HIDE =================================
+    id: 39143544057438738
+    identification: 
+      action: Hide
+
+    affected-elements: 
+      selection-type: Item(s)
+      item(s): 
+      - P600_UT_VERSION
+
+    execution-options: 
+      sequence: 10
+      event: change P600_THEME_NAME - setColor show/hide P600_UT_REFRESHED # 39143191512438734
+      fire-when-event-result-is: True
+      fire-on-initialization: true
+
+    client-side-condition: 
+      type: Item != Value
+      item: P600_THEME_NAME
+      value: Universal Theme
+
+- # ====== Dynamic Action: change P600_UT_VERSION - setColor ===
+  id: 39143632218438739
+  identification: 
+    name: change P600_UT_VERSION - setColor
+
+  execution-options: 
+    sequence: 90
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P600_UT_VERSION
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+    id: 39143767829438740
+    identification: 
+      action: Execute JavaScript Code
+
+    settings: 
+      code: |
+        var $trigger = $(this.triggeringElement);
+        var val = $trigger.val();
+        
+        // success - up-to-date
+        if (val == '22.1') {    
+            $trigger.addClass("u-success");
+            $trigger.removeClass("u-warning");
+            $trigger.removeClass("u-danger");
+        
+        // danger - old versions
+        } else if ((val == '1.0') || (val == '1.1')) {    
+            $trigger.removeClass("u-success");
+            $trigger.removeClass("u-warning");
+            $trigger.addClass("u-danger");
+        
+        // warning - versions not old and not the newest
+        } else {    
+            $trigger.removeClass("u-success");
+            $trigger.addClass("u-warning");
+            $trigger.removeClass("u-danger");
+        }
+
+    affected-elements: 
+      selection-type: Item(s)
+      item(s): 
+      - P600_UT_VERSION
+
+    execution-options: 
+      sequence: 10
+      event: change P600_UT_VERSION - setColor # 39143632218438739
+      fire-when-event-result-is: True
+      fire-on-initialization: true
+

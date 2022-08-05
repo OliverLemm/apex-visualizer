@@ -1,0 +1,4817 @@
+---
+# ====== Page: APEX 22.1 =====================================
+id: 709
+identification: 
+  name: APEX 22.1
+  alias: APEX-22-1
+  title: APEX 22.1
+
+appearance: 
+  user-interface: Desktop # 452492531566466351
+  page-mode: Normal
+  page-template: Theme Default
+  template-options: 
+  - '#DEFAULT#'
+
+navigation-menu: 
+  override-user-interface-level: false
+
+navigation: 
+  cursor-focus: Do not focus cursor
+  warn-on-unsaved-changes: false
+
+security: 
+  authentication: Page Requires Authentication
+  deep-linking: Application Default
+  page-access-protection: Arguments Must Have Checksum
+  form-auto-complete: Off
+  browser-cache: Application Default
+
+session-management: 
+  rejoin-sessions: Application Default
+
+advanced: 
+  enable-duplicate-page-submissions: Yes - Enable page to be re-posted
+  reload-on-submit: Only for Success
+
+server-cache: 
+  caching: Disabled
+
+regions: 
+- # ====== Region: APEX 22.1 ===================================
+  id: 45105580925952525
+  identification: 
+    title: APEX 22.1
+    type: Breadcrumb
+
+  source: 
+    breadcrumb: ' Breadcrumb' # 452492814882466360
+
+  layout: 
+    sequence: 10
+    parent-region: No Parent
+    position: REGION_POSITION_01
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Hero # 452456691272466243
+    template-options: 
+    - '#DEFAULT#'
+    icon: fa-wrench
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    appearance: 
+      breadcrumb-template: Breadcrumb # 452482206618466299
+      template-options: 
+      - '#DEFAULT#'
+
+- # ====== Region: 8.1.6 Post Calculation for Page Items Desuppo
+  id: 57355333344164206
+  identification: 
+    title: 8.1.6 Post Calculation for Page Items Desupported
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select p.page_id
+            ,p.page_name
+            ,p.region
+            ,p.item_name
+            ,p.label
+      from apex_application_page_items p
+      where p.source_post_computation is not null
+      and p.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 60
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: true
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Post Calculation for Page Items used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 57355469402164207
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 1
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 57355560207164208
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: REGION ======================================
+    id: 57355665997164209
+    identification: 
+      column-name: REGION
+      type: Plain Text
+
+    heading: 
+      heading: Region
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 2
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: LABEL =======================================
+    id: 57355856839164211
+    identification: 
+      column-name: LABEL
+      type: Plain Text
+
+    heading: 
+      heading: Label
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: ITEM_NAME ===================================
+    id: 57356057180164213
+    identification: 
+      column-name: ITEM_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Item Name
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 3
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 8.1.7 Show / Hide All Page Items On Same Line
+  id: 57356506175164218
+  identification: 
+    title: '8.1.7 Show / Hide All Page Items On Same Line Attributes Desupported '
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select d.page_id
+            ,d.page_name
+            ,d.dynamic_action_name
+            ,d.affected_elements
+      from apex_application_page_da_acts d
+      where d.affected_elements_type_code = 'ITEM'
+      and d.action_code in ('NATIVE_SHOW'
+                          ,'NATIVE_HIDE')
+      and d.attribute_01 = 'Y'
+      and d.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 70
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: true
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Dynamic Action with setting "Show all page items on same line" or "Hide all page items on same line" used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 57356603046164219
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 1
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 57356729951164220
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: DYNAMIC_ACTION_NAME =========================
+    id: 57357142482164224
+    identification: 
+      column-name: DYNAMIC_ACTION_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Dynamic Action Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: AFFECTED_ELEMENTS ===========================
+    id: 57357211104164225
+    identification: 
+      column-name: AFFECTED_ELEMENTS
+      type: Plain Text
+
+    heading: 
+      heading: Affected Elements
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 8.1.8 apex.server Plug-in and Process Functio
+  id: 57357322202164226
+  identification: 
+    title: 8.1.8 apex.server Plug-in and Process Function Async Option Desupported
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select j.page_id
+            ,j.page_name
+            ,j.component_name
+            ,j.component_type
+            ,j.js_code_vc2
+      from av_javascript_v j
+      where instr(j.js_code_clob
+                 ,'async') > 0
+      and j.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 80
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: 'This check searches for async in JavaScript. The complete code like <i>async: false</i> will be ignored from APEX in future.'
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: true
+
+    messages: 
+      when-no-data-found: '<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No <i>async: false</i> found.</b>'
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 57357487843164227
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 57357554387164228
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_NAME ==============================
+    id: 57357622325164229
+    identification: 
+      column-name: COMPONENT_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Component Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_TYPE ==============================
+    id: 57357739942164230
+    identification: 
+      column-name: COMPONENT_TYPE
+      type: Plain Text
+
+    heading: 
+      heading: Component Type
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: JS_CODE_VC2 =================================
+    id: 57357809437164231
+    identification: 
+      column-name: JS_CODE_VC2
+      type: Plain Text
+
+    heading: 
+      heading: Js Code Vc2
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    column-formatting: 
+      highlight-words: async
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 8.1.9 apex.widget.initPageItem Function Desup
+  id: 57357914395164232
+  identification: 
+    title: '8.1.9 apex.widget.initPageItem Function Desupported '
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select j.page_id
+            ,j.page_name
+            ,j.component_name
+            ,j.component_type
+            ,j.js_code_vc2
+      from av_javascript_v j
+      where instr(lower(j.js_code_clob)
+                 ,'apex.widget.initPageItem') > 0
+      and j.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 90
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: true
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No <i>apex.widget.initPageItem</i> found.</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 57358028198164233
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 57358125750164234
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_NAME ==============================
+    id: 57358208423164235
+    identification: 
+      column-name: COMPONENT_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Component Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_TYPE ==============================
+    id: 57358314153164236
+    identification: 
+      column-name: COMPONENT_TYPE
+      type: Plain Text
+
+    heading: 
+      heading: Component Type
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: JS_CODE_VC2 =================================
+    id: 57358454136164237
+    identification: 
+      column-name: JS_CODE_VC2
+      type: Plain Text
+
+    heading: 
+      heading: Js Code Vc2
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    column-formatting: 
+      highlight-words: apex.widget.initPageItem
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 8.1.10 Popup LOV Template Desupported  ======
+  id: 57358574238164238
+  identification: 
+    title: '8.1.10 Popup LOV Template Desupported '
+    type: Static Content
+
+  source: 
+    html-code: <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>
+
+  layout: 
+    sequence: 100
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      The Popup LOV template type is desupported.<br>
+      <br>
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: 8.1.12 Date Picker (jQuery) Desupported  ====
+  id: 57358699253164239
+  identification: 
+    title: '8.1.12 Date Picker (jQuery) Desupported '
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select p.page_id
+            ,p.page_name
+            ,p.region
+            ,p.item_name
+            ,p.label
+      from apex_application_page_items p
+      where p.display_as_code = 'NATIVE_DATE_PICKER'
+      and p.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 120
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: true
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Date Picker (jQuery) used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 57358795532164240
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 1
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 57358838350164241
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: REGION ======================================
+    id: 57358984906164242
+    identification: 
+      column-name: REGION
+      type: Plain Text
+
+    heading: 
+      heading: Region
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 2
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: ITEM_NAME ===================================
+    id: 57359030380164243
+    identification: 
+      column-name: ITEM_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Item Name
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 3
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: LABEL =======================================
+    id: 57359124592164244
+    identification: 
+      column-name: LABEL
+      type: Plain Text
+
+    heading: 
+      heading: Label
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 8.1.11 Based On - Output of PL/SQL Code attri
+  id: 57359286422164245
+  identification: 
+    title: 8.1.11 Based On - Output of PL/SQL Code attribute Desupported
+    type: Static Content
+
+  source: 
+    html-code: <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>
+
+  layout: 
+    sequence: 110
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      The selection Output of PL/SQL Code of the attribute Based On is now desupported. <br>
+      <br>
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: 8.1.13 Syntax {COLUMN_NAME}_LABEL in Interact
+  id: 57359359287164246
+  identification: 
+    title: 8.1.13 Syntax {COLUMN_NAME}_LABEL in Interactive Grid Icon and Detail Views Desupported
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select page_id
+            ,page_name
+            ,region_name
+            ,icon_view_custom
+            ,detail_view_for_each_row
+      from apex_appl_page_igs
+      where application_id = :P0_APP_ID
+      and (regexp_like(icon_view_custom
+                     ,'&' || '\w+_LABEL\.'
+                     ,'i') or --
+            regexp_like(detail_view_for_each_row
+                     ,'&' || '\w+_LABEL\.'
+                     ,'i'))
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 130
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      The &{COLUMN_NAME}_LABEL. syntax which is used to reference the column label in Interactive Grid Detail and Icon views is desupported.<br><br>
+      Instead use &{COLUMN_NAME}%LABEL.
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no &{COLUMN_NAME}_LABEL. used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 57359649660164249
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 1
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 57359771163164250
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 2
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: REGION_NAME =================================
+    id: 57848353287603201
+    identification: 
+      column-name: REGION_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Region Name
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 3
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: ICON_VIEW_CUSTOM ============================
+    id: 57848472341603202
+    identification: 
+      column-name: ICON_VIEW_CUSTOM
+      type: Plain Text
+
+    heading: 
+      heading: Icon View Custom
+      alignment: center
+
+    layout: 
+      sequence: 60
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    column-formatting: 
+      highlight-words: _LABEL.
+
+    sorting: 
+      sortable: false
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: DETAIL_VIEW_FOR_EACH_ROW ====================
+    id: 57848517377603203
+    identification: 
+      column-name: DETAIL_VIEW_FOR_EACH_ROW
+      type: Plain Text
+
+    heading: 
+      heading: Detail View For Each Row
+      alignment: center
+
+    layout: 
+      sequence: 70
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    column-formatting: 
+      highlight-words: _LABEL.
+
+    sorting: 
+      sortable: false
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 8.1.14 Removed Content Delivery Network  ====
+  id: 57848607300603204
+  identification: 
+    title: '8.1.14 Removed Content Delivery Network '
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select p.content_delivery_network
+      from apex_applications p
+      where p.application_id = :P0_APP_ID
+      and p.content_delivery_network is not null
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 140
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      The attribute Content Delivery Network that could be found under User Interface Attributes, Javascript with options None, Google, Microsoft, and jQuery, has been removed. Enabling this option was only relevant for pulling in a few of the JavaScript libraries that APEX needs.<br>
+      <br>
+      If you were using this option, it's recommended to instead use the more modern, Oracle-provided CDN approach. For further information, see <a href="https://blogs.oracle.com/apex/post/announcing-oracle-apex-static-resources-on-content-delivery-network" target="_blank">Announcing Oracle APEX Static Resources on Content Delivery Network</a>. 
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: true
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Content Delivery Network used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: CONTENT_DELIVERY_NETWORK ====================
+    id: 57849238138603210
+    identification: 
+      column-name: CONTENT_DELIVERY_NETWORK
+      type: Plain Text
+
+    heading: 
+      heading: Content Delivery Network
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 8.1.15 APEX-Based REST Services Desupported  
+  id: 57849379238603211
+  identification: 
+    title: '8.1.15 APEX-Based REST Services Desupported '
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select (select count(1)
+              from apex_rest_resource_handlers) apex_rest_resource_handlers_cnt
+            ,(select count(1)
+              from apex_rest_resource_modules) apex_rest_resource_modules_cnt
+            ,(select count(1)
+              from apex_rest_resource_parameters) apex_rest_resource_parameters_cnt
+            ,(select count(1)
+              from apex_rest_resource_templates) apex_rest_resource_templates_cnt
+      from dual
+      where (select count(1)
+             from apex_rest_resource_handlers) > 0
+      or (select count(1)
+             from apex_rest_resource_modules) > 0
+      or (select count(1)
+             from apex_rest_resource_parameters) > 0
+      or (select count(1)
+             from apex_rest_resource_templates) > 0
+
+  layout: 
+    sequence: 150
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    footer-text: <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> The instance parameter APEX_REST_PATH-PREFIX is desupported. (check must be done separately)</b>
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no APEX-Based REST Services used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: APEX_REST_RESOURCE_HANDLERS_CNT =============
+    id: 57889236937361011
+    identification: 
+      column-name: APEX_REST_RESOURCE_HANDLERS_CNT
+      type: Plain Text
+
+    heading: 
+      heading: Apex Rest Resource Handlers Cnt
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: APEX_REST_RESOURCE_MODULES_CNT ==============
+    id: 57889382475361012
+    identification: 
+      column-name: APEX_REST_RESOURCE_MODULES_CNT
+      type: Plain Text
+
+    heading: 
+      heading: Apex Rest Resource Modules Cnt
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: APEX_REST_RESOURCE_PARAMETERS_CNT ===========
+    id: 57889436141361013
+    identification: 
+      column-name: APEX_REST_RESOURCE_PARAMETERS_CNT
+      type: Plain Text
+
+    heading: 
+      heading: Apex Rest Resource Parameters Cnt
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: APEX_REST_RESOURCE_TEMPLATES_CNT ============
+    id: 57889591380361014
+    identification: 
+      column-name: APEX_REST_RESOURCE_TEMPLATES_CNT
+      type: Plain Text
+
+    heading: 
+      heading: Apex Rest Resource Templates Cnt
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 6.1 Deprecated Features - <a href="https://do
+  id: 57849785504603215
+  identification: 
+    title: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>'
+    type: Static Content
+
+  layout: 
+    sequence: 30
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: 6.1.1 Deprecated APIs  ======================
+  id: 57849888683603216
+  identification: 
+    title: '6.1.1 Deprecated APIs '
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select p.page_id
+            ,p.page_name
+            ,p.component_name
+            ,p.component_type
+            ,p.process_point
+            ,p.plsql_code_clob
+      from av_plsql_v p
+      where application_id = :P0_APP_ID
+      and instr(upper(p.plsql_code_clob)
+              ,'APEX_IR.GET_REPORT') > 0
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 10
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 57849785504603215
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: The <b>APEX_IR.GET_REPORT</b> API is deprecated. Instead, use <b>APEX_REGION.OPEN_QUERY_CONTEXT</b> to get interactive report data.
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 15
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no APEX_IR.GET_REPORT used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 57849954468603217
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 57850035789603218
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_NAME ==============================
+    id: 57850132471603219
+    identification: 
+      column-name: COMPONENT_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Component Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_TYPE ==============================
+    id: 57850214899603220
+    identification: 
+      column-name: COMPONENT_TYPE
+      type: Plain Text
+
+    heading: 
+      heading: Component Type
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PROCESS_POINT ===============================
+    id: 57850341347603221
+    identification: 
+      column-name: PROCESS_POINT
+      type: Plain Text
+
+    heading: 
+      heading: Process Point
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PLSQL_CODE_CLOB =============================
+    id: 57850476791603222
+    identification: 
+      column-name: PLSQL_CODE_CLOB
+      type: Plain Text
+
+    heading: 
+      heading: Plsql Code Clob
+      alignment: center
+
+    layout: 
+      sequence: 60
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    column-formatting: 
+      highlight-words: APEX_IR.GET_REPORT
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 6.1.2 Deprecated JavaScript APIs ============
+  id: 57850543170603223
+  identification: 
+    title: 6.1.2 Deprecated JavaScript APIs
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select j.page_id
+            ,j.page_name
+            ,j.component_name
+            ,j.component_type
+            ,j.js_code_vc2
+      from av_javascript_v j
+      where (instr(lower(j.js_code_clob)
+                 ,'useIconList') > 0 or
+             instr(lower(j.js_code_clob)
+                 ,'iconListOptions') > 0)
+      and j.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 20
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 57849785504603215
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: The <b>APEX_IR.GET_REPORT</b> API is deprecated. Instead, use <b>APEX_REGION.OPEN_QUERY_CONTEXT</b> to get interactive report data.
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 15
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no APEX_IR.GET_REPORT used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 57850665318603224
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 57850791411603225
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_NAME ==============================
+    id: 57850807862603226
+    identification: 
+      column-name: COMPONENT_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Component Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_TYPE ==============================
+    id: 57850910632603227
+    identification: 
+      column-name: COMPONENT_TYPE
+      type: Plain Text
+
+    heading: 
+      heading: Component Type
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: JS_CODE_VC2 =================================
+    id: 57851297280603230
+    identification: 
+      column-name: JS_CODE_VC2
+      type: Plain Text
+
+    heading: 
+      heading: Js Code Vc2
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 6.1.3 Deprecated Attributes in App Builder ==
+  id: 57851335846603231
+  identification: 
+    title: 6.1.3 Deprecated Attributes in App Builder
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select a.app_builder_icon_name, a.favicons, a.pwa_manifest_icon_url
+      from apex_applications a
+      where (a.app_builder_icon_name is not null or 
+             a.favicons is not null or
+             a.pwa_manifest_icon_url is not null)
+      and a.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 30
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 57849785504603215
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      In Edit Application Definition: <b>Progressive Web App - Icon URL</b> and <b>Application Icon - Icon File Name</b><br>
+      In Edit User Interface: <b>Favicon</b>
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 15
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Deprecated Attributes in App Builder used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: APP_BUILDER_ICON_NAME =======================
+    id: 57851933883603237
+    identification: 
+      column-name: APP_BUILDER_ICON_NAME
+      type: Plain Text
+
+    heading: 
+      heading: App Builder Icon Name
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: FAVICONS ====================================
+    id: 57852068419603238
+    identification: 
+      column-name: FAVICONS
+      type: Plain Text
+
+    heading: 
+      heading: Favicons
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PWA_MANIFEST_ICON_URL =======================
+    id: 57888634654361005
+    identification: 
+      column-name: PWA_MANIFEST_ICON_URL
+      type: Plain Text
+
+    heading: 
+      heading: Pwa Manifest Icon Url
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 6.1.4 Deprecated Utilities ==================
+  id: 57852166929603239
+  identification: 
+    title: 6.1.4 Deprecated Utilities
+    type: Static Content
+
+  source: 
+    html-code: <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>
+
+  layout: 
+    sequence: 40
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 57849785504603215
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      The APEXExport utility is deprecated, and will be removed in a future release. Oracle recommends using <a href="https://www.oracle.com/de/database/sqldeveloper/technologies/sqlcl/" target="_blank">SQLcl</a> instead.<br>
+      <br>
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: 6.1.5 Deprecated Legacy Web Service Reference
+  id: 57852286585603240
+  identification: 
+    title: 6.1.5 Deprecated Legacy Web Service References
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select w.web_service_name
+            ,w.url
+            ,w.ACTION
+      from apex_application_web_services w
+      where w.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 50
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 57849785504603215
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: SOAP style Web Service references and legacy support for REST style Web Services references are deprecated.
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Legacy Web Service References used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: WEB_SERVICE_NAME ============================
+    id: 57852317320603241
+    identification: 
+      column-name: WEB_SERVICE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Web Service Name
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 1
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: URL =========================================
+    id: 57852471692603242
+    identification: 
+      column-name: URL
+      type: Plain Text
+
+    heading: 
+      heading: Url
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 2
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: ACTION ======================================
+    id: 57852506528603243
+    identification: 
+      column-name: ACTION
+      type: Plain Text
+
+    heading: 
+      heading: Action
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 3
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 6.1.6 Deprecated Properties  ================
+  id: 57852697994603244
+  identification: 
+    title: '6.1.6 Deprecated Properties '
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select r.page_id
+            ,r.page_name
+            ,r.region_name
+            ,r.ascending_image
+            ,r.ascending_image_attributes
+            ,r.descending_image
+            ,r.descending_image_attributes
+      from apex_application_page_regions r
+      where (r.ascending_image is not null
+      or r.ascending_image_attributes is not null
+      or r.descending_image is not null
+      or r.descending_image_attributes is not null)
+      and r.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 60
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 57849785504603215
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      The properties <b>Region Image</b> and <b>Image Tag Attributes</b> are deprecated.
+      
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Region Image and Image Tag Attributes used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 57853097265603248
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 1
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 57853147129603249
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: REGION_NAME =================================
+    id: 57853247353603250
+    identification: 
+      column-name: REGION_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Region Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 2
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: ASCENDING_IMAGE =============================
+    id: 57888272228361001
+    identification: 
+      column-name: ASCENDING_IMAGE
+      type: Plain Text
+
+    heading: 
+      heading: Ascending Image
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: ASCENDING_IMAGE_ATTRIBUTES ==================
+    id: 57888398662361002
+    identification: 
+      column-name: ASCENDING_IMAGE_ATTRIBUTES
+      type: Plain Text
+
+    heading: 
+      heading: Ascending Image Attributes
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: DESCENDING_IMAGE ============================
+    id: 57888499842361003
+    identification: 
+      column-name: DESCENDING_IMAGE
+      type: Plain Text
+
+    heading: 
+      heading: Descending Image
+      alignment: center
+
+    layout: 
+      sequence: 60
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: DESCENDING_IMAGE_ATTRIBUTES =================
+    id: 57888534085361004
+    identification: 
+      column-name: DESCENDING_IMAGE_ATTRIBUTES
+      type: Plain Text
+
+    heading: 
+      heading: Descending Image Attributes
+      alignment: center
+
+    layout: 
+      sequence: 70
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 6.1.7 Deprecated View Columns ===============
+  id: 57888782358361006
+  identification: 
+    title: 6.1.7 Deprecated View Columns
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select a.app_builder_icon_name, a.favicons, a.pwa_manifest_icon_url
+      from apex_applications a
+      where (a.app_builder_icon_name is not null or 
+             a.favicons is not null or
+             a.pwa_manifest_icon_url is not null)
+      and a.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 70
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 57849785504603215
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      The following columns are marked as deprecated in the <b>apex_applications</b> view: <b>app_builder_icon_name, favicons, pwa_manifest_icon_url</b>.
+      
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 15
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Deprecated View Columns used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: APP_BUILDER_ICON_NAME =======================
+    id: 57888875071361007
+    identification: 
+      column-name: APP_BUILDER_ICON_NAME
+      type: Plain Text
+
+    heading: 
+      heading: App Builder Icon Name
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: FAVICONS ====================================
+    id: 57888981011361008
+    identification: 
+      column-name: FAVICONS
+      type: Plain Text
+
+    heading: 
+      heading: Favicons
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PWA_MANIFEST_ICON_URL =======================
+    id: 57889034799361009
+    identification: 
+      column-name: PWA_MANIFEST_ICON_URL
+      type: Plain Text
+
+    heading: 
+      heading: Pwa Manifest Icon Url
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 6.1.8 CKEditor4 Deprecation =================
+  id: 57889174554361010
+  identification: 
+    title: 6.1.8 CKEditor4 Deprecation
+    type: Static Content
+
+  source: 
+    html-code: <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>
+
+  layout: 
+    sequence: 80
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 57849785504603215
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      Rich Text Editor items based on CKEditor4 are deprecated, and will be migrated to CKEditor5 automatically in the next APEX release.<br>
+      <br>
+      In the next APEX release, any custom code written against the CKEditor4 library will stop working, as CKEditor4 and CKEditor5 are not API-compatible. Any code included in the JavaScript Initialization Code attribute will be automatically commented out and ignored. To try and preserve any custom HTML content produced with CKEditor4, all migrated items will have the "General HTML Support" CKEditor5 plug-in enabled.<br>
+      <br>
+      Oracle recommends developers manually switch to CKEditor5 now. You can also consider a 3rd party replacement of CKEditor4, or wait for the automatic migration to CKEditor5 in the next APEX release.<br><br>
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: 8.1.3 Custom Page Region Templates with Dupli
+  id: 73768426655163366
+  identification: 
+    title: 8.1.3 Custom Page Region Templates with Duplicated Positions Desupported
+    type: Static Content
+
+  source: 
+    html-code: <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>
+
+  layout: 
+    sequence: 30
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      Custom page template and custom region templates with duplicated positions are considered deprecated. For example, a region template referencing position #CHANGE# twice is not recommended because that duplicate position causes duplicate DOM IDs.<br>
+      <br>
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: 8.1.4 Legacy Substitution Strings Desupported
+  id: 73768514706163367
+  identification: 
+    title: 8.1.4 Legacy Substitution Strings Desupported
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select page_id
+            ,page_name
+            ,component_name
+            ,component_type
+            ,code_vc2
+      from av_p0708_legacy_subst_strings_v
+      where application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 40
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      As of this release, the following apex.env substitution strings are deprecated and considered legacy: <b>APP_IMAGES, IMAGE_PREFIX, THEME_DB_IMAGES, THEME_IMAGES, WORKSPACE_IMAGES</b><br>
+      While the legacy substitutions still function, Oracle recommends developers update their environments to use updated substitutions (listed below).
+      <ul>
+          <li>IMAGE_PREFIX => APEX_FILES</li>
+          <li>WORKSPACE_IMAGES => WORKSPACE_FILES</li>
+          <li>APP_IMAGES => APP_FILES</li>
+          <li>THEME_IMAGES => THEME_FILES</li>
+          <li>THEME_DB_IMAGES => THEME_DB_FILES</li>
+      </ul>
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: true
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Legacy Substitution Strings Deprecated used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 57350270816146068
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 1
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 57350644508146070
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 2
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_NAME ==============================
+    id: 57351066402146070
+    identification: 
+      column-name: COMPONENT_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Component Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 3
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_TYPE ==============================
+    id: 57351439002146070
+    identification: 
+      column-name: COMPONENT_TYPE
+      type: Plain Text
+
+    heading: 
+      heading: Component Type
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: CODE_VC2 ====================================
+    id: 57351824285146070
+    identification: 
+      column-name: CODE_VC2
+      type: Plain Text
+
+    heading: 
+      heading: Code Vc2
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    column-formatting: 
+      highlight-words: IMAGE_PREFIX,WORKSPACE_IMAGES,APP_IMAGES,THEME_IMAGES,THEME_DB_IMAGES
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 8.1 Desupported Features - <a href="https://d
+  id: 103507256627550093
+  identification: 
+    title: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>'
+    type: Static Content
+
+  layout: 
+    sequence: 20
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: 8.1.1 Desupported Page Positions  ===========
+  id: 103507459957550095
+  identification: 
+    title: '8.1.1 Desupported Page Positions '
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select page_id, page_name, region_name, display_position_code
+      from apex_application_page_regions r
+      where display_position_code in ( 'BODY_1', 'BODY_2', 'BODY_3', 'AFTER_HEADER', 'BEFORE_FOOTER' )
+      and application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 10
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    static-id: 8_1_1
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: 'The following page positions are marked as deprecated and display as "Legacy" in Page Designer: Body 1, Body 2, Body 3, After Header, Before Footer'
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: true
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Deprecated Page Positions used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 57345393736146064
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 1
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 57345797918146065
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: REGION_NAME =================================
+    id: 57346168797146065
+    identification: 
+      column-name: REGION_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Region Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 2
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: DISPLAY_POSITION_CODE =======================
+    id: 57346573651146065
+    identification: 
+      column-name: DISPLAY_POSITION_CODE
+      type: Plain Text
+
+    heading: 
+      heading: Display Position Code
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 8.1.2 Desupported Region Positions ==========
+  id: 103508451665550105
+  identification: 
+    title: 8.1.2 Desupported Region Positions
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select b.page_id
+            ,b.page_name
+            ,b.region
+            ,b.button_name
+            ,b.label
+            ,b.display_position
+      from apex_application_page_buttons b
+      where b.display_position_code in ('TOP'
+                                       ,'BOTTOM'
+                                       ,'BELOW_BOX'
+                                       ,'ABOVE_BOX')
+      and b.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 20
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      The following region positions are marked as deprecated and display as "Legacy" in Page Designer: Top, Bottom, Above and Below (used for button positioning within a region)
+      
+      
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: true
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Deprecated Region Positions used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: DISPLAY_POSITION ============================
+    id: 57347252814146065
+    identification: 
+      column-name: DISPLAY_POSITION
+      type: Plain Text
+
+    heading: 
+      heading: Display Position
+      alignment: center
+
+    layout: 
+      sequence: 60
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_ID =====================================
+    id: 57347673675146065
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 1
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 57348075794146067
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: REGION ======================================
+    id: 57348463175146067
+    identification: 
+      column-name: REGION
+      type: Plain Text
+
+    heading: 
+      heading: Region
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 2
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: BUTTON_NAME =================================
+    id: 57348832919146067
+    identification: 
+      column-name: BUTTON_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Button Name
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 3
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: LABEL =======================================
+    id: 57349279390146067
+    identification: 
+      column-name: LABEL
+      type: Plain Text
+
+    heading: 
+      heading: Label
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+- # ====== Region: 8.1.5 Desupported JavaScript Functions  =====
+  id: 115331742066566908
+  identification: 
+    title: '8.1.5 Desupported JavaScript Functions '
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select j.page_id
+            ,j.page_name
+            ,j.component_name
+            ,j.component_type
+            ,j.js_code_vc2
+      from av_javascript_v j
+      where instr(lower(j.js_code_clob)
+                 ,'apex.theme42.util.mq') > 0
+      and j.application_id = :P0_APP_ID
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  layout: 
+    sequence: 50
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.1/htmrn/index.html#HTMRN-GUID-4BCD1A37-908C-4770-8C3C-2F4F721E74A7" target="_blank">Link to Release Notes</a>' # 103507256627550093
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: Use apex.theme.mq instead of apex.theme42.util.mq
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (no pagination)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: true
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No calls like apex.theme42.util.mq found.</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 57363042087208495
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: center
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 57363496404208495
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: center
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_NAME ==============================
+    id: 57363809506208495
+    identification: 
+      column-name: COMPONENT_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Component Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_TYPE ==============================
+    id: 57364297259208495
+    identification: 
+      column-name: COMPONENT_TYPE
+      type: Plain Text
+
+    heading: 
+      heading: Component Type
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: JS_CODE_VC2 =================================
+    id: 57364680663208495
+    identification: 
+      column-name: JS_CODE_VC2
+      type: Plain Text
+
+    heading: 
+      heading: Js Code Vc2
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+dynamic-actions: 
+- # ====== Dynamic Action: change P0_APP_ID - refresh regions ==
+  id: 45107665582952546
+  identification: 
+    name: change P0_APP_ID - refresh regions
+
+  execution-options: 
+    sequence: 10
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P0_APP_ID
+    - P0_PAGE_ID
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+    id: 57356371334164216
+    identification: 
+      action: Execute JavaScript Code
+
+    settings: 
+      code: av_refresh_hide_show_regions()
+
+    execution-options: 
+      sequence: 10
+      event: change P0_APP_ID - refresh regions # 45107665582952546
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+- # ====== Dynamic Action: click refresh - refresh regions =====
+  id: 45108065073952550
+  identification: 
+    name: click refresh - refresh regions
+
+  execution-options: 
+    sequence: 20
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CLICK
+    selection-type: Button
+    button: Refresh # 45068108221137631
+
+  advanced: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+    id: 57356497423164217
+    identification: 
+      action: Execute JavaScript Code
+
+    settings: 
+      code: av_refresh_hide_show_regions()
+
+    execution-options: 
+      sequence: 10
+      event: click refresh - refresh regions # 45108065073952550
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+

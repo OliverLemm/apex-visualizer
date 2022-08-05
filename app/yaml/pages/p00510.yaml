@@ -1,0 +1,364 @@
+---
+# ====== Page: Login Page ====================================
+id: 510
+identification: 
+  name: Login Page
+  alias: LOGIN
+  title: Apex Visualizer - Log In
+
+appearance: 
+  user-interface: Desktop # 452492531566466351
+  page-mode: Normal
+  page-template: Login # 452443100862466212
+  template-options: 
+  - '#DEFAULT#'
+
+navigation-menu: 
+  override-user-interface-level: false
+
+navigation: 
+  cursor-focus: First item on page
+  warn-on-unsaved-changes: false
+
+security: 
+  authentication: Page Is Public
+  deep-linking: Application Default
+  page-access-protection: Unrestricted
+  form-auto-complete: Off
+  browser-cache: Application Default
+
+session-management: 
+  rejoin-sessions: Application Default
+
+advanced: 
+  enable-duplicate-page-submissions: Yes - Enable page to be re-posted
+  reload-on-submit: Only for Success
+
+server-cache: 
+  caching: Disabled
+
+regions: 
+- # ====== Region: Apex Visualizer =============================
+  id: 38870409361053521
+  identification: 
+    title: Apex Visualizer
+    type: Static Content
+
+  layout: 
+    sequence: 10
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Login # 452458716490466246
+    template-options: 
+    - '#DEFAULT#'
+    icon: fa-sign-in
+    render-components: Above Content
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: Text (escape special characters)
+      show-line-breaks: true
+
+page-items: 
+- # ====== Page Item: P510_USERNAME ============================
+  id: 38870874732053521
+  identification: 
+    name: P510_USERNAME
+    type: Text Field
+
+  label: 
+    label: Username
+    alignment: Right
+
+  settings: 
+    subtype: Text
+    trim-spaces: None
+    text-case: NO CHANGE
+    submit-when-enter-pressed: false
+    disabled: false
+
+  layout: 
+    sequence: 10
+    region: Apex Visualizer # 38870409361053521
+    position: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+    label-column-span: Page Template Default
+
+  appearance: 
+    template: Hidden # 452481109555466292
+    template-options: 
+    - '#DEFAULT#'
+    icon: fa-user
+    width: 40
+    value-placeholder: Username
+
+  validation: 
+    value-required: false
+    maximum-length: 100
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+    maintain-session-state: Per Request (Memory Only)
+
+  quick-picks: 
+    show-quick-picks: false
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: false
+    restricted-characters: All characters can be saved.
+
+- # ====== Page Item: P510_PASSWORD ============================
+  id: 38871284755053523
+  identification: 
+    name: P510_PASSWORD
+    type: Password
+
+  label: 
+    label: Password
+    alignment: Right
+
+  settings: 
+    submit-when-enter-pressed: true
+
+  layout: 
+    sequence: 20
+    region: Apex Visualizer # 38870409361053521
+    position: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+    label-column-span: Page Template Default
+
+  appearance: 
+    template: Hidden # 452481109555466292
+    template-options: 
+    - '#DEFAULT#'
+    icon: fa-key
+    width: 40
+    value-placeholder: Password
+
+  validation: 
+    value-required: false
+    maximum-length: 100
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+    maintain-session-state: Per Request (Memory Only)
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: false
+    restricted-characters: All characters can be saved.
+
+- # ====== Page Item: P510_REMEMBER ============================
+  id: 38872339463053525
+  identification: 
+    name: P510_REMEMBER
+    type: Checkbox Group
+
+  label: 
+    label: Remember username
+    alignment: Right
+
+  settings: 
+    number-of-columns: 1
+
+  layout: 
+    sequence: 30
+    region: Apex Visualizer # 38870409361053521
+    position: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+    label-column-span: Page Template Default
+
+  appearance: 
+    template: Hidden # 452481109555466292
+    template-options: 
+    - '#DEFAULT#'
+
+  validation: 
+    value-required: false
+
+  list-of-values: 
+    type: Shared Component
+    list-of-values: LOGIN_REMEMBER_USERNAME # 38871578433053523
+    display-extra-values: false
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+    maintain-session-state: Per Request (Memory Only)
+
+  server-side-condition: 
+    type: Expression
+    language: PL/SQL
+    pl/sql-expression: apex_authentication.persistent_cookies_enabled
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: false
+    escape-special-characters: true
+    restricted-characters: All characters can be saved.
+
+  help: 
+    help-text: |
+      <p>
+      If you select this checkbox, the application will save your username in a persistent browser cookie named "LOGIN_USERNAME_COOKIE".
+      When you go to the login page the next time,
+      the username field will be automatically populated with this value.
+      </p>
+      <p>
+      If you deselect this checkbox and your username is already saved in the cookie,
+      the application will overwrite it with an empty value.
+      You can also use your browser's developer tools to completely remove the cookie.
+      </p>
+
+buttons: 
+- # ====== Button: LOGIN =======================================
+  id: 38873272668053526
+  identification: 
+    button-name: LOGIN
+    label: Log In
+
+  layout: 
+    sequence: 40
+    region: Apex Visualizer # 38870409361053521
+    position: NEXT
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    button-template: Text # 452481721190466298
+    hot: true
+    template-options: 
+    - '#DEFAULT#'
+
+  behavior: 
+    action: Submit Page
+    execute-validations: true
+    warn-on-unsaved-changes: Do Not Check
+
+processes: 
+- # ====== Process: Login ======================================
+  id: 38873671018053528
+  identification: 
+    name: Login
+    type: Execute Code
+
+  source: 
+    location: Local Database
+    language: PL/SQL
+    pl/sql-code: |
+      apex_authentication.login(
+          p_username => :P510_USERNAME,
+          p_password => :P510_PASSWORD );
+
+  execution-options: 
+    sequence: 20
+    point: Processing
+    run-process: Once Per Page Visit (default)
+
+  error: 
+    display-location: Inline in Notification
+
+- # ====== Process: Set Username Cookie ========================
+  id: 38874022768053528
+  identification: 
+    name: Set Username Cookie
+    type: Execute Code
+
+  source: 
+    location: Local Database
+    language: PL/SQL
+    pl/sql-code: |
+      apex_authentication.send_login_username_cookie (
+          p_username => lower(:P510_USERNAME),
+          p_consent  => :P510_REMEMBER = 'Y' );
+
+  execution-options: 
+    sequence: 10
+    point: Processing
+    run-process: Once Per Page Visit (default)
+
+  error: 
+    display-location: Inline in Notification
+
+- # ====== Process: Get Username Cookie ========================
+  id: 38874452848053528
+  identification: 
+    name: Get Username Cookie
+    type: Execute Code
+
+  source: 
+    location: Local Database
+    language: PL/SQL
+    pl/sql-code: |
+      :P510_USERNAME := apex_authentication.get_login_username_cookie;
+      :P510_REMEMBER := case when :P510_USERNAME is not null then 'Y' end;
+
+  execution-options: 
+    sequence: 10
+    point: Before Header
+    run-process: Once Per Page Visit (default)
+
+- # ====== Process: Clear Page(s) Cache ========================
+  id: 38874872253053528
+  identification: 
+    name: Clear Page(s) Cache
+    type: Clear Session State
+
+  settings: 
+    type: Clear all Items on the Current Page
+
+  execution-options: 
+    sequence: 30
+    point: Processing
+    run-process: Once Per Page Visit (default)
+
+  error: 
+    display-location: Inline in Notification
+

@@ -1,0 +1,129 @@
+---
+- # ====== Install Script: av_p0708_legacy_subst_strings_v =====
+  id: 23141675338119207
+  identification: 
+    name: av_p0708_legacy_subst_strings_v
+
+  execution-options: 
+    sequence: 160
+
+- # ====== Install Script: av_general_pkg ======================
+  id: 36635523234100810
+  identification: 
+    name: av_general_pkg
+
+  execution-options: 
+    sequence: 5
+
+- # ====== Install Script: av_page_links_v =====================
+  id: 39381024812825137
+  identification: 
+    name: av_page_links_v
+
+  execution-options: 
+    sequence: 130
+
+- # ====== Install Script: av_plugins_v ========================
+  id: 39381560751833181
+  identification: 
+    name: av_plugins_v
+
+  execution-options: 
+    sequence: 140
+
+- # ====== Install Script: av_p0600_not_used_auth_schemes_v ====
+  id: 39381968875836612
+  identification: 
+    name: av_p0600_not_used_auth_schemes_v
+
+  execution-options: 
+    sequence: 150
+
+- # ====== Install Script: av_applications_v ===================
+  id: 143654115433153304
+  identification: 
+    name: av_applications_v
+
+  execution-options: 
+    sequence: 10
+
+- # ====== Install Script: av_components_v =====================
+  id: 143655127688162146
+  identification: 
+    name: av_components_v
+
+  execution-options: 
+    sequence: 20
+
+- # ====== Install Script: av_css_v ============================
+  id: 143655838191166975
+  identification: 
+    name: av_css_v
+
+  execution-options: 
+    sequence: 30
+
+- # ====== Install Script: av_javascript_v =====================
+  id: 143656314940170010
+  identification: 
+    name: av_javascript_v
+
+  execution-options: 
+    sequence: 40
+
+- # ====== Install Script: av_pages_v ==========================
+  id: 143656809123171918
+  identification: 
+    name: av_pages_v
+
+  execution-options: 
+    sequence: 50
+
+- # ====== Install Script: av_plsql_v ==========================
+  id: 143657339373176420
+  identification: 
+    name: av_plsql_v
+
+  execution-options: 
+    sequence: 60
+
+- # ====== Install Script: av_visibility_overview_v ============
+  id: 143657830019179125
+  identification: 
+    name: av_visibility_overview_v
+
+  execution-options: 
+    sequence: 80
+
+- # ====== Install Script: av_visibility_v =====================
+  id: 143658376089181348
+  identification: 
+    name: av_visibility_v
+
+  execution-options: 
+    sequence: 70
+
+- # ====== Install Script: av_p0100_js_code_by_page_v ==========
+  id: 145012607270562776
+  identification: 
+    name: av_p0100_js_code_by_page_v
+
+  execution-options: 
+    sequence: 90
+
+- # ====== Install Script: av_p0200_css_code_by_page_v =========
+  id: 145013191338565770
+  identification: 
+    name: av_p0200_css_code_by_page_v
+
+  execution-options: 
+    sequence: 100
+
+- # ====== Install Script: av_p0300_plsql_code_by_page_v =======
+  id: 145013681628567304
+  identification: 
+    name: av_p0300_plsql_code_by_page_v
+
+  execution-options: 
+    sequence: 110
+

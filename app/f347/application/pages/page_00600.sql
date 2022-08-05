@@ -22,7 +22,7 @@ wwv_flow_imp_page.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'21'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20220513175406'
+,p_last_upd_yyyymmddhh24miss=>'20220805145923'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(38837724345637017)
@@ -1068,7 +1068,7 @@ wwv_flow_imp_page.create_page_da_action(
 'var val = $trigger.val();',
 '',
 '// success - up-to-date',
-'if (val == ''21.2'') {    ',
+'if (val == ''22.1'') {    ',
 '    $trigger.addClass("u-success");',
 '    $trigger.removeClass("u-warning");',
 '    $trigger.removeClass("u-danger");',
