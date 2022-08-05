@@ -1,6 +1,6 @@
-# Apex-Visualizer
+# APEX Visualizer
 ## Release 22.1
-APEX Visualizer has been migrated to APEX 22.1. yaml and json exports have also been added to the repository.
+APEX Visualizer has been migrated to APEX 22.1. ZIP, yaml and json exports have also been added to the repository.
 
 ## Release 21.2.5
 The APEX 22.1 Migration Page with major Deprecated and Desupported Checks has been added. This version is the last version of APEX Visualizer for APEX 21.2. Next versions will need APEX 22.1 or higher.
