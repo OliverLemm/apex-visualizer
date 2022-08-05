@@ -3,16 +3,16 @@ begin
 --   Manifest
 --     REGION TEMPLATE: TOP_NAVIGATION_MEGA_MENU
 --   Manifest End
-wwv_flow_api.component_begin (
- p_version_yyyy_mm_dd=>'2021.10.15'
-,p_release=>'21.2.8'
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.3'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
 ,p_default_owner=>'APEX_VISUALIZER'
 );
-wwv_flow_api.create_list_template(
- p_id=>wwv_flow_api.id(126082212261127348)
+wwv_flow_imp_shared.create_list_template(
+ p_id=>wwv_flow_imp.id(126082212261127348)
 ,p_list_template_current=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<li class="t-MegaMenu-item t-MegaMenu-item--top t-MegaMenu-item--noSub is-active #A04#" data-current="true" data-id="#A01#" data-shortcut="#A05#">',
 '  <span class="a-Menu-item t-MegaMenu-itemBody #A08#">',
@@ -120,6 +120,6 @@ wwv_flow_api.create_list_template(
 ,p_a08_label=>'Menu Item Class'
 ,p_reference_id=>1665447133514362075
 );
-wwv_flow_api.component_end;
+wwv_flow_imp.component_end;
 end;
 /

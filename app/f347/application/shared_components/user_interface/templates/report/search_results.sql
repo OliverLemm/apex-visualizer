@@ -3,16 +3,16 @@ begin
 --   Manifest
 --     ROW TEMPLATE: SEARCH_RESULTS
 --   Manifest End
-wwv_flow_api.component_begin (
- p_version_yyyy_mm_dd=>'2021.10.15'
-,p_release=>'21.2.8'
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.3'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
 ,p_default_owner=>'APEX_VISUALIZER'
 );
-wwv_flow_api.create_row_template(
- p_id=>wwv_flow_api.id(452468838574466265)
+wwv_flow_imp_shared.create_row_template(
+ p_id=>wwv_flow_imp.id(452468838574466265)
 ,p_row_template_name=>'Search Results'
 ,p_internal_name=>'SEARCH_RESULTS'
 ,p_row_template1=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -91,6 +91,6 @@ wwv_flow_api.create_row_template(
 ,p_translate_this_template=>'N'
 ,p_row_template_comment=>' (SELECT link_text, link_target, detail1, detail2, last_modified)'
 );
-wwv_flow_api.component_end;
+wwv_flow_imp.component_end;
 end;
 /

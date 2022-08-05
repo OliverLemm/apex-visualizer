@@ -3,16 +3,16 @@ begin
 --   Manifest
 --     BUTTON TEMPLATE: TEXT_WITH_ICON
 --   Manifest End
-wwv_flow_api.component_begin (
- p_version_yyyy_mm_dd=>'2021.10.15'
-,p_release=>'21.2.8'
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.04.12'
+,p_release=>'22.1.3'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
 ,p_default_owner=>'APEX_VISUALIZER'
 );
-wwv_flow_api.create_button_templates(
- p_id=>wwv_flow_api.id(452481802985466298)
+wwv_flow_imp_shared.create_button_templates(
+ p_id=>wwv_flow_imp.id(452481802985466298)
 ,p_template_name=>'Text with Icon'
 ,p_internal_name=>'TEXT_WITH_ICON'
 ,p_template=>'<button class="t-Button t-Button--icon #BUTTON_CSS_CLASSES#" #BUTTON_ATTRIBUTES# onclick="#JAVASCRIPT#" type="button" id="#BUTTON_ID#"><span class="t-Icon t-Icon--left #ICON_CSS_CLASSES#" aria-hidden="true"></span><span class="t-Button-label">#LABEL#'
@@ -25,6 +25,6 @@ wwv_flow_api.create_button_templates(
 ,p_preset_template_options=>'t-Button--iconLeft'
 ,p_theme_id=>42
 );
-wwv_flow_api.component_end;
+wwv_flow_imp.component_end;
 end;
 /
