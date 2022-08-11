@@ -8,8 +8,8 @@
             "version": "22.1",
 			"icon" : "",
             "url": "https://github.com/OliverLemm/apex-visualizer",
-            "source": "https://github.com/OliverLemm/apex-visualizer/releases/download/v22.1/apex_visualizer.sql",
-            "zip": "https://github.com/OliverLemm/apex-visualizer/releases/download/v22.1/apex_visualizer.zip"
+            "source": "https://raw.githubusercontent.com/OliverLemm/apex-visualizer/master/app/apex_visualizer.sql",
+            "zip": "https://raw.githubusercontent.com/OliverLemm/apex-visualizer/master/app/apex_visualizer.zip"
         }
     ]
 }
