@@ -1,4 +1,7 @@
 # APEX Visualizer
+## Release 22.1.1
+Solving some Bugs for Pages CSS and JavaScript regarding charts and grouping issues.
+
 ## Release 22.1
 APEX Visualizer has been migrated to APEX 22.1. ZIP, yaml and json exports have also been added to the repository.
 
