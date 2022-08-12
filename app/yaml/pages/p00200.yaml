@@ -47,7 +47,7 @@ regions:
     location: Local Database
     type: SQL Query
     sql-query: |
-      select page_name || ' - ' || v.component_name series_name, v.component_type, v.css_code, v.css_code_length, v.css_code_type, v.tooltip, v.page_designer_url
+      select page_name || ' (' || v.page_id || ') - ' || v.component_name series_name, v.component_type, v.css_code, v.css_code_length, v.css_code_type, v.tooltip, v.page_designer_url
       from av_css_v v
       where v.application_id = :P0_APP_ID 
       and (v.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)

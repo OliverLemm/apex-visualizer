@@ -102,7 +102,7 @@ wwv_flow_imp.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'22.1'
+,p_flow_version=>'22.1.1'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -116,7 +116,7 @@ wwv_flow_imp.create_flow(
 ,p_tokenize_row_search=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20220805151544'
+,p_last_upd_yyyymmddhh24miss=>'20220812114419'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>14
 ,p_ui_type_name => null
@@ -20341,7 +20341,7 @@ wwv_flow_imp_page.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'04'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210923083752'
+,p_last_upd_yyyymmddhh24miss=>'20220812111436'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(455982233047916696)
@@ -20353,7 +20353,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select page_name || '' - '' || v.component_name series_name, v.component_type, v.css_code, v.css_code_length, v.css_code_type, v.tooltip, v.page_designer_url',
+'select page_name || '' ('' || v.page_id || '') - '' || v.component_name series_name, v.component_type, v.css_code, v.css_code_length, v.css_code_type, v.tooltip, v.page_designer_url',
 'from av_css_v v',
 'where v.application_id = :P0_APP_ID ',
 'and (v.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)',

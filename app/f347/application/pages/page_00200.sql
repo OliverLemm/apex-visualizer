@@ -21,7 +21,7 @@ wwv_flow_imp_page.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'04'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210923083752'
+,p_last_upd_yyyymmddhh24miss=>'20220812111436'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(455982233047916696)
@@ -33,7 +33,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select page_name || '' - '' || v.component_name series_name, v.component_type, v.css_code, v.css_code_length, v.css_code_type, v.tooltip, v.page_designer_url',
+'select page_name || '' ('' || v.page_id || '') - '' || v.component_name series_name, v.component_type, v.css_code, v.css_code_length, v.css_code_type, v.tooltip, v.page_designer_url',
 'from av_css_v v',
 'where v.application_id = :P0_APP_ID ',
 'and (v.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)',
