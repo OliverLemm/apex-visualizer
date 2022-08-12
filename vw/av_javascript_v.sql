@@ -1,4 +1,4 @@
-create or replace view av_javascript_v as
+create or replace force view av_javascript_v as
 select app.application_id
       ,app.application_name
       ,app.page_id
@@ -28,7 +28,7 @@ from apex_application_pages app
 join ( -- Page HTML Header
       select p.application_id
              ,p.page_id
-             ,p.page_name component_name
+             ,'Page HTML Header' component_name
              ,'page' component_type
              ,'page_html_header' js_code_type
              ,0 best_practice
@@ -44,7 +44,7 @@ join ( -- Page HTML Header
       -- Page HTML onload
       select p.application_id
              ,p.page_id
-             ,p.page_name component_name
+             ,'Execute when Page Loads' component_name
              ,'page' component_type
              ,'page_html_onload' js_code_type
              ,0 best_practice
@@ -58,7 +58,7 @@ join ( -- Page HTML Header
       -- Page Javascript Code
       select p.application_id
              ,p.page_id
-             ,p.page_name component_name
+             ,'JavaScript Function and Global Variable Declaration' component_name
              ,'page' component_type
              ,'javascript_code' js_code_type
              ,1 best_practice
@@ -72,7 +72,7 @@ join ( -- Page HTML Header
       -- Page Javascript Code onload
       select p.application_id
              ,p.page_id
-             ,p.page_name component_name
+             ,'JavaScript Execute when Page Loads' component_name
              ,'page' component_type
              ,'javascript_code_onload' js_code_type
              ,1 best_practice
@@ -86,7 +86,7 @@ join ( -- Page HTML Header
       -- Region - Header Text
       select pr.application_id
              ,pr.page_id
-             ,pr.region_name component_name
+             ,pr.region_name || ' - Region Header Text' component_name
              ,'region' component_type
              ,'region_header_text' js_code_type
              ,0 best_practice
@@ -100,7 +100,7 @@ join ( -- Page HTML Header
       -- Region - Footer Text
       select pr.application_id
              ,pr.page_id
-             ,pr.region_name component_name
+             ,pr.region_name || ' - Region Footer Text' component_name
              ,'region' component_type
              ,'region_footer_text' js_code_type
              ,0 best_practice
@@ -126,7 +126,7 @@ join ( -- Page HTML Header
       -- Dynamic Actions - JavaScript Code
       select pda.application_id
              ,pda.page_id
-             ,pda.dynamic_action_name component_name
+             ,pda.dynamic_action_name || ' - ' || pda.dynamic_action_event_result || ' (' || pda.action_sequence || ')' component_name
              ,'dynamic_action' component_type
              ,'native_javascript_code' js_code_type
              ,1 best_practice
@@ -138,7 +138,7 @@ join ( -- Page HTML Header
       union all
       select b.application_id
              ,b.page_id
-             ,b.button_name component_name
+             ,b.button_name || ' (' || b.button_sequence || ')' component_name
              ,'button' component_type
              ,'redirect_url' js_code_type
              ,1 best_practice
@@ -146,4 +146,5 @@ join ( -- Page HTML Header
              ,to_clob(b.redirect_url) js_code_clob
       from apex_application_page_buttons b
       where lower(b.redirect_url) like '%javascript:%') j on j.application_id = app.application_id
-                                                      and j.page_id = app.page_id;
+                                                      and j.page_id = app.page_id
+;

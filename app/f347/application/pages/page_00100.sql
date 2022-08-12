@@ -21,7 +21,7 @@ wwv_flow_imp_page.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'04'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210922211938'
+,p_last_upd_yyyymmddhh24miss=>'20220812120358'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(293281874355929169)
@@ -149,7 +149,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select page_name || '' - '' || v.component_name series_name, ',
+'select page_name || '' ('' || v.page_id || '') - '' || v.component_name series_name, ',
 '       v.component_type, ',
 '       v.js_code, ',
 '       v.js_code_length, ',

@@ -206,7 +206,7 @@ regions:
     location: Local Database
     type: SQL Query
     sql-query: |
-      select page_name || ' - ' || v.component_name series_name, 
+      select page_name || ' (' || v.page_id || ') - ' || v.component_name series_name, 
              v.component_type, 
              v.js_code, 
              v.js_code_length, 

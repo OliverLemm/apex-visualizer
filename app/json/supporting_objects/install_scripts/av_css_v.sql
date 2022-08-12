@@ -20,7 +20,7 @@ CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_CSS_V" ("APPLICATION_ID", "APPLICAT
       ,c.css_code_vc2 css_code -- only for backward compatibility
       ,c.css_code_vc2
       ,c.css_code_clob
-      ,'<b>' || c.component_name || ' (' || c.component_type || ' - ' || c.css_code_type || ')</b><br>' || c.css_code_vc2 tooltip
+      ,'<b>' || c.component_name || ' (page_id=' || c.page_id || ' - ' || c.component_type || ' - ' || c.css_code_type || ')</b><br>' || c.css_code_vc2 tooltip
       ,regexp_count(c.css_code_clob
                    ,chr(10)) + 1 css_code_lines
       ,length(c.css_code_clob) css_code_length
@@ -36,17 +36,19 @@ join ( -- Theme Roller Custom CSS
              ,to_clob(tf.file_content) css_code_clob
              ,'theme_roller_custom_css' css_code_type
              ,'custom_css' component_type
+             ,tf.theme_number component_number
       from apex_application_theme_files tf
       union all
       -- PAGE - Header Text
       select p.application_id
              ,p.page_id
-             ,p.page_name component_name
+             ,'Page Header Text' component_name
              ,0 best_practice
              ,p.header_text css_code_vc2
              ,to_clob(p.header_text) css_code_clob
              ,'header_text' css_code_type
              ,'page' component_type
+             ,null component_number
       from apex_application_pages p
       where p.header_text is not null
       and instr(p.header_text
@@ -55,12 +57,13 @@ join ( -- Theme Roller Custom CSS
       -- PAGE - Body Header
       select p.application_id
              ,p.page_id
-             ,p.page_name component_name
+             ,'Page Body Header' component_name
              ,0 best_practice
              ,p.body_header css_code
              ,to_clob(p.body_header) css_code_clob
              ,'body_header' css_code_type
              ,'page' component_type
+             ,null component_number
       from apex_application_pages p
       where p.body_header is not null
       and instr(p.body_header
@@ -69,12 +72,13 @@ join ( -- Theme Roller Custom CSS
       -- PAGE - Footer Text
       select p.application_id
              ,p.page_id
-             ,p.page_name component_name
+             ,'Page Footer text' component_name
              ,0 best_practice
              ,p.footer_text css_code_vc2
              ,to_clob(p.footer_text) css_code_clob
              ,'footer_text' css_code_type
              ,'page' component_type
+             ,null component_number
       from apex_application_pages p
       where p.body_header is not null
       and instr(p.footer_text
@@ -83,19 +87,20 @@ join ( -- Theme Roller Custom CSS
       -- Page - Page CSS Classes
       select p.application_id
              ,p.page_id
-             ,p.page_name component_name
+             ,'Page CSS Classes' component_name
              ,1 best_practice
              ,p.page_css_classes css_code_vc2
              ,to_clob(p.page_css_classes) css_code_clob
              ,'page_css_classes' css_code_type
              ,'page' component_type
+             ,null component_number
       from apex_application_pages p
       where p.page_css_classes is not null
       union all
       -- Page - Page HTML Header
       select p.application_id
              ,p.page_id
-             ,p.page_name component_name
+             ,'Page HTML Header' component_name
              ,0 best_practice
              ,to_char(substr(p.page_html_header
                             ,0
@@ -103,6 +108,7 @@ join ( -- Theme Roller Custom CSS
              ,to_clob(p.page_html_header) css_code_clob
              ,'page_html_header' css_code_type
              ,'page' component_type
+             ,null component_number
       from apex_application_pages p
       where p.page_html_header is not null
       and instr(p.page_html_header
@@ -111,12 +117,13 @@ join ( -- Theme Roller Custom CSS
       -- Page - Page HTML onload
       select p.application_id
              ,p.page_id
-             ,p.page_name component_name
+             ,'Page HTML onload' component_name
              ,0 best_practice
              ,p.page_html_onload css_code
              ,to_clob(p.page_html_onload) css_code_clob
              ,'page_html_onload' css_code_type
              ,'page' component_type
+             ,null component_number
       from apex_application_pages p
       where p.page_html_onload is not null
       and instr(p.page_html_onload
@@ -125,19 +132,20 @@ join ( -- Theme Roller Custom CSS
       -- Page - CSS file URLS
       select p.application_id
              ,p.page_id
-             ,p.page_name component_name
+             ,'CSS file URLs' component_name
              ,1 best_practice
              ,css_file_urls css_code_vc2
              ,to_clob(css_file_urls) css_code_clob
              ,'css_file_urls' css_code_type
              ,'page' component_type
+             ,null component_number
       from apex_application_pages p
       where p.css_file_urls is not null
       union all
       -- Page - inline CSS
       select p.application_id
              ,p.page_id
-             ,p.page_name component_name
+             ,'inline CSS' component_name
              ,1 best_practice
              ,to_char(substr(inline_css
                             ,0
@@ -145,54 +153,59 @@ join ( -- Theme Roller Custom CSS
              ,p.inline_css css_code_clob
              ,'inline_css' css_code_type
              ,'page' component_type
+             ,null component_number
       from apex_application_pages p
       where p.inline_css is not null
       union all
       -- Region - grid_column_css_classes
       select pr.application_id
              ,pr.page_id
-             ,pr.region_name component_name
+             ,pr.region_name || ' - Grid Column CSS Classes' component_name
              ,1 best_practice
              ,pr.grid_column_css_classes css_code_vc2
              ,to_clob(pr.grid_column_css_classes) css_code_clob
              ,'grid_column_css_classes' css_code_type
              ,'region' component_type
+             ,pr.display_sequence component_number
       from apex_application_page_regions pr
       where pr.grid_column_css_classes is not null
       union all
       -- Region - region_css_classes
       select pr.application_id
              ,pr.page_id
-             ,pr.region_name component_name
+             ,pr.region_name || ' - Region CSS Classes (' || pr.region_id || ')' component_name
              ,1 best_practice
              ,pr.region_css_classes css_code_vc2
              ,to_clob(pr.region_css_classes) css_code_clob
              ,'region_css_classes' css_code_type
              ,'region' component_type
+             ,pr.display_sequence component_number
       from apex_application_page_regions pr
       where pr.region_css_classes is not null
       union all
       -- Region - icon_css_classes
       select pr.application_id
              ,pr.page_id
-             ,pr.region_name component_name
+             ,pr.region_name || ' - Icon CSS Classes' component_name
              ,1 best_practice
              ,pr.icon_css_classes css_code_vc2
              ,to_clob(pr.icon_css_classes) css_code_clob
              ,'icon_css_classes' css_code_type
              ,'region' component_type
+             ,pr.display_sequence component_number
       from apex_application_page_regions pr
       where pr.icon_css_classes is not null
       union all
       -- Region - Header Text
       select pr.application_id
              ,pr.page_id
-             ,pr.region_name component_name
+             ,pr.region_name || ' - Region Header Text' component_name
              ,0 best_practice
              ,pr.region_header_text css_code_vc2
              ,to_clob(pr.region_header_text) css_code_clob
              ,'region_header_text' css_code_type
              ,'region' component_type
+             ,pr.display_sequence component_number
       from apex_application_page_regions pr
       where pr.region_header_text is not null
       and instr(lower(pr.region_header_text)
@@ -201,12 +214,13 @@ join ( -- Theme Roller Custom CSS
       -- Region - Footer Text
       select pr.application_id
              ,pr.page_id
-             ,pr.region_name component_name
+             ,pr.region_name || ' - Region Footer Text' component_name
              ,0 best_practice
              ,pr.region_footer_text css_code_vc2
              ,to_clob(pr.region_footer_text) css_code_clob
              ,'region_footer_text' css_code_type
              ,'region' component_type
+             ,pr.display_sequence component_number
       from apex_application_page_regions pr
       where pr.region_header_text is not null
       and instr(lower(pr.region_footer_text)
@@ -215,12 +229,13 @@ join ( -- Theme Roller Custom CSS
       -- Dynamic Actions - set CSS
       select d.application_id
              ,d.page_id
-             ,d.dynamic_action_name component_name
+             ,d.dynamic_action_name || ' - ' || a.dynamic_action_event_result || ' (' || a.action_sequence || ')' component_name
              ,1 best_practice
              ,a.attribute_01 || ' ' || a.attribute_02 css_code_vc2
              ,to_clob(a.attribute_01 || ' ' || a.attribute_02) css_code_clob
              ,lower(a.action_code) css_code_type
              ,'dynamic_action' component_type
+             ,d.dynamic_action_sequence component_number
       from apex_application_page_da d
       join apex_application_page_da_acts a on a.dynamic_action_id = d.dynamic_action_id
       where a.action_code = 'NATIVE_SET_CSS'
@@ -228,13 +243,14 @@ join ( -- Theme Roller Custom CSS
       -- Dynamic Actions - add Class
       select d.application_id
              ,d.page_id
-             ,d.dynamic_action_name component_name
+             ,d.dynamic_action_name || ' - ' || a.dynamic_action_event_result || ' (' || a.action_sequence || ')' component_name
              ,1 best_practice
              ,a.attribute_01 css_code_vc2
              ,to_clob(a.attribute_01) css_code_clob
              ,lower(a.action_code) css_code_type
              ,'dynamic_action' component_type
-      from apex_application_page_da_acts d
+             ,a.action_sequence component_number
+      from apex_application_page_da d
       join apex_application_page_da_acts a on a.dynamic_action_id = d.dynamic_action_id
       where a.action_code = 'NATIVE_ADD_CLASS') c on c.application_id = app.application_id
                                               and c.page_id = app.page_id
