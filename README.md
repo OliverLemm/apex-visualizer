@@ -1,5 +1,5 @@
 # APEX Visualizer
-simply add 
+simply add <br>
 https://raw.githubusercontent.com/OliverLemm/apex-visualizer/master/manifest.json
 inside your internal APEX workspace. Go Manage Instance => Instance Setting => Application Gallery and add a new line.
 
