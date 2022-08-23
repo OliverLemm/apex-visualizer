@@ -1,4 +1,8 @@
 # APEX Visualizer
+simply add 
+https://raw.githubusercontent.com/OliverLemm/apex-visualizer/master/manifest.json
+inside your internal APEX workspace. Go Manage Instance => Instance Setting => Application Gallery and add a new line.
+
 ## Release 22.1.1
 Solving some Bugs for Pages CSS and JavaScript regarding charts and grouping issues.
 
