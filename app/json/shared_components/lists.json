@@ -21,6 +21,7 @@
           "Type":"Pages"
          ,"Pages":[
             "700"
+           ,"710"
           ]
         }
        ,"Link":{
@@ -263,6 +264,34 @@
           "Target":{
             "url":"f?p=\u0026APP_ID.:708:\u0026APP_SESSION.::\u0026DEBUG.:::"
            ,"Page":"708"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"17832773868095406"
+       ,"Label":{
+          "Label":"APEX 22.2"
+        }
+       ,"Layout":{
+          "Sequence":440
+         ,"Parent Entry":"Migration (16405035169854428)"
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "710"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:710:\u0026SESSION.::\u0026DEBUG.::::"
+           ,"Page":"710"
           }
         }
        ,"Click Counting":{

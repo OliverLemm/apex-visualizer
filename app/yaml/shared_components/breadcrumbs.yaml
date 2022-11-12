@@ -5,6 +5,20 @@
     name: ' Breadcrumb'
 
   entries: 
+  - # ====== Entry: APEX 22.2 ====================================
+    id: 17833935019095414
+    identification: 
+      name: APEX 22.2
+      page-number: 710
+
+    execution-options: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:710:&APP_SESSION.::&DEBUG.:::'
+        page: 710 # APEX 22.2
+
   - # ====== Entry: Migation =====================================
     id: 45074919437235331
     identification: 

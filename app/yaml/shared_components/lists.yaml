@@ -21,6 +21,7 @@
       type: Pages
       pages: 
       - 700
+      - 710
 
     link: 
       target: 
@@ -238,6 +239,31 @@
       target: 
         url: 'f?p=&APP_ID.:708:&APP_SESSION.::&DEBUG.:::'
         page: 708 # APEX 21.2
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: APEX 22.2 ====================================
+    id: 17832773868095406
+    label: 
+      label: APEX 22.2
+
+    layout: 
+      sequence: 440
+      parent-entry: Migration # 16405035169854428
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 710
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:710:&SESSION.::&DEBUG.::::'
+        page: 710 # APEX 22.2
 
     click-counting: 
       count-clicks: false

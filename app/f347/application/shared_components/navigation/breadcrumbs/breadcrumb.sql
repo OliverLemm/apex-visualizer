@@ -16,6 +16,12 @@ wwv_flow_imp_shared.create_menu(
 ,p_name=>' Breadcrumb'
 );
 wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(17833935019095414)
+,p_short_name=>'APEX 22.2'
+,p_link=>'f?p=&APP_ID.:710:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>710
+);
+wwv_flow_imp_shared.create_menu_option(
  p_id=>wwv_flow_imp.id(45075267156240114)
 ,p_parent_id=>wwv_flow_imp.id(45074919437235331)
 ,p_short_name=>'APEX 20.1'
