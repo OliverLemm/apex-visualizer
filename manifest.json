@@ -3,7 +3,7 @@
         {
             "internalName": "APEX_VISUALIZER_22_1",
             "name": "APEX Visualizer 22.1.2",
-            "description": "An APEX Application, which can visualize many details of all applications in the same workspace. This version can be installed in APEX 22.1 or higher and supports migration checks till APEX version 22.2.",
+            "description": "An APEX Application, which can visualize many details of all applications in the same workspace. This version requires APEX 22.1 or higher.",
             "author": "Oliver Lemm",
             "version": "22.1.2",
 			"icon" : "",
@@ -13,7 +13,7 @@
         },{
             "internalName": "APEX_VISUALIZER_22_2",
             "name": "APEX Visualizer 22.2",
-            "description": "An APEX Application, which can visualize many details of all applications in the same workspace. This version can be installed in APEX 22.2 or higher and supports migration checks till APEX version 22.2.",
+            "description": "An APEX Application, which can visualize many details of all applications in the same workspace. This version requires APEX 22.2 or higher.",
             "author": "Oliver Lemm",
             "version": "22.2",
 			"icon" : "",
