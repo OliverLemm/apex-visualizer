@@ -926,7 +926,7 @@
        ,"Template Options":[
           "#DEFAULT#"
         ]
-       ,"Width":10
+       ,"Width":30
       }
      ,"Validation":{
         "Value Required":true
@@ -1104,7 +1104,7 @@
        ,"Template Options":[
           "#DEFAULT#"
         ]
-       ,"Width":10
+       ,"Width":30
       }
      ,"Validation":{
         "Value Required":false

@@ -896,7 +896,7 @@ page-items:
     template: Optional # 452481165926466293
     template-options: 
     - '#DEFAULT#'
-    width: 10
+    width: 30
 
   validation: 
     value-required: true
@@ -1080,7 +1080,7 @@ page-items:
     template: Optional # 452481165926466293
     template-options: 
     - '#DEFAULT#'
-    width: 10
+    width: 30
 
   validation: 
     value-required: false

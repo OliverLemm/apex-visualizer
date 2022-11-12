@@ -5,7 +5,7 @@ begin
 --   Manifest End
 wwv_flow_imp.component_begin (
  p_version_yyyy_mm_dd=>'2022.04.12'
-,p_release=>'22.1.3'
+,p_release=>'22.1.7'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -22,7 +22,7 @@ wwv_flow_imp_page.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'21'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20220805145923'
+,p_last_upd_yyyymmddhh24miss=>'20220916163121'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(38837724345637017)
@@ -568,7 +568,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_item_plug_id=>wwv_flow_imp.id(39140850641438711)
 ,p_prompt=>'Compatibility Mode'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>10
+,p_cSize=>30
 ,p_cMaxlength=>4
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
@@ -640,7 +640,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_item_plug_id=>wwv_flow_imp.id(39140850641438711)
 ,p_prompt=>'Include Legacy Javascript'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>10
+,p_cSize=>30
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
 ,p_field_template=>wwv_flow_imp.id(452481165926466293)
@@ -1013,7 +1013,7 @@ end;
 begin
 wwv_flow_imp.component_begin (
  p_version_yyyy_mm_dd=>'2022.04.12'
-,p_release=>'22.1.3'
+,p_release=>'22.1.7'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
