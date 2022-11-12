@@ -4,6 +4,14 @@ https://raw.githubusercontent.com/OliverLemm/apex-visualizer/master/manifest.jso
 inside your internal APEX workspace. <br>
 Go Manage Instance => Instance Setting => Application Gallery and add a new line.
 
+## Release 22.2
+Migrated to APEX 22.2.
+Solved a bug on the QA page when multiple themes are related to one application.
+
+## Release 22.1.2
+Migrated to APEX 22.1.7.
+Added checks for desupported and deprecated features for APEX 22.2.
+
 ## Release 22.1.1
 Solving some Bugs for Pages CSS and JavaScript regarding charts and grouping issues.
 
