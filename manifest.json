@@ -10,6 +10,17 @@
             "url": "https://github.com/OliverLemm/apex-visualizer",
             "source": "https://raw.githubusercontent.com/OliverLemm/apex-visualizer/v22.1.2/app/apex_visualizer.sql",
             "zip": "https://raw.githubusercontent.com/OliverLemm/apex-visualizer/v22.1.2/app/apex_visualizer.zip"
+        },
+		{
+            "internalName": "APEX_VISUALIZER",
+            "name": "APEX Visualizer",
+            "description": "An APEX Application, which can visualize many details of all applications in the same workspace. This version can be installed in APEX 22.2 or higher and supports migration checks till APEX version 22.2.",
+            "author": "Oliver Lemm",
+            "version": "22.2",
+			"icon" : "",
+            "url": "https://github.com/OliverLemm/apex-visualizer",
+            "source": "https://raw.githubusercontent.com/OliverLemm/apex-visualizer/v22.2/app/apex_visualizer.sql",
+            "zip": "https://raw.githubusercontent.com/OliverLemm/apex-visualizer/v22.2/app/apex_visualizer.zip"
         }
     ]
 }
