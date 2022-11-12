@@ -7,7 +7,6 @@ identification:
   title: Migration
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -64,6 +63,10 @@ regions:
     icon: fa-wrench
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -105,6 +108,10 @@ regions:
     - '#DEFAULT#'
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: true

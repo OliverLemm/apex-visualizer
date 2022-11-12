@@ -7,7 +7,6 @@ identification:
   title: Plugins
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -77,6 +76,10 @@ regions:
     template-options: 
     - '#DEFAULT#'
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: true
@@ -292,6 +295,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -320,7 +326,8 @@ regions:
       alignment: end
 
     settings: 
-      number-alignment: Right
+      number-alignment: End
+      virtual-keyboard: Text
 
     layout: 
       sequence: 70
@@ -393,6 +400,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -447,6 +457,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     column-filter: 
       enabled: true
@@ -558,6 +571,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -650,6 +666,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -705,7 +725,7 @@ regions:
       identification: 
         name: Plugins
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -756,6 +776,10 @@ regions:
     template-options: 
     - '#DEFAULT#'
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: true
@@ -848,6 +872,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     export-/-printing: 
       include-in-export-/-print: false
 
@@ -879,6 +906,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     export-/-printing: 
       include-in-export-/-print: false
@@ -966,6 +996,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     export-/-printing: 
       include-in-export-/-print: false
 
@@ -1011,6 +1044,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -1053,6 +1089,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     export-/-printing: 
       include-in-export-/-print: false
 
@@ -1080,6 +1119,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     export-/-printing: 
       include-in-export-/-print: false
@@ -1113,6 +1155,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     export-/-printing: 
       include-in-export-/-print: false
 
@@ -1143,6 +1188,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     export-/-printing: 
       include-in-export-/-print: false
@@ -1175,6 +1223,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     export-/-printing: 
       include-in-export-/-print: false
 
@@ -1206,6 +1257,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     export-/-printing: 
       include-in-export-/-print: false
@@ -1298,6 +1352,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -1352,6 +1409,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     column-filter: 
       enabled: true
@@ -1408,6 +1468,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -1450,6 +1513,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     export-/-printing: 
       include-in-export-/-print: false
 
@@ -1481,6 +1547,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     export-/-printing: 
       include-in-export-/-print: false
@@ -1588,7 +1657,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -1604,7 +1675,7 @@ dynamic-actions:
   identification: 
     name: change P0_APP_ID - refresh Regions
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -1614,11 +1685,12 @@ dynamic-actions:
     - P0_APP_ID
     - P400_PLUGIN_ID
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 37656265570724607
     identification: 
       action: Refresh
@@ -1627,13 +1699,13 @@ dynamic-actions:
       selection-type: Region
       region: Plugins # 32937839366378139
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P0_APP_ID - refresh Regions # 37656162311724606
       fire-when-event-result-is: True
       fire-on-initialization: true
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 37656811632724613
     identification: 
       action: Refresh
@@ -1642,13 +1714,13 @@ dynamic-actions:
       selection-type: Region
       region: Plugin Overview # 37656362232724608
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: change P0_APP_ID - refresh Regions # 37656162311724606
       fire-when-event-result-is: True
       fire-on-initialization: true
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 37659059192724635
     identification: 
       action: Refresh
@@ -1657,7 +1729,7 @@ dynamic-actions:
       selection-type: Region
       region: Plugin Usage # 37656915688724614
 
-    execution-options: 
+    execution: 
       sequence: 30
       event: change P0_APP_ID - refresh Regions # 37656162311724606
       fire-when-event-result-is: True

@@ -6,7 +6,6 @@ identification:
   title: Templates
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -76,6 +75,10 @@ regions:
     template-options: 
     - '#DEFAULT#'
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     static-id: details
@@ -159,7 +162,8 @@ regions:
       alignment: end
 
     settings: 
-      number-alignment: Right
+      number-alignment: End
+      virtual-keyboard: Text
 
     layout: 
       sequence: 10
@@ -232,6 +236,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -286,6 +293,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     column-filter: 
       enabled: true
@@ -397,6 +407,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -451,6 +464,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     column-filter: 
       enabled: true
@@ -507,6 +523,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -562,6 +581,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -616,6 +638,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     column-filter: 
       enabled: true
@@ -715,6 +740,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -775,7 +804,7 @@ regions:
       identification: 
         name: Template Reference
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -883,6 +912,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -943,7 +976,7 @@ regions:
       identification: 
         name: Customized
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -1062,7 +1095,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -1078,7 +1113,7 @@ dynamic-actions:
   identification: 
     name: Change P0_APP_ID
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -1087,11 +1122,12 @@ dynamic-actions:
     item(s): 
     - P0_APP_ID
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294197217024781267
     identification: 
       action: Refresh
@@ -1100,13 +1136,13 @@ dynamic-actions:
       selection-type: Region
       region: Details # 294196022433781255
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: Change P0_APP_ID # 294197187100781266
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294269612044521551
     identification: 
       action: Refresh
@@ -1115,13 +1151,13 @@ dynamic-actions:
       selection-type: Region
       region: Templates Reference (overall) # 294197401216781268
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: Change P0_APP_ID # 294197187100781266
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294269711322521552
     identification: 
       action: Refresh
@@ -1130,7 +1166,7 @@ dynamic-actions:
       selection-type: Region
       region: Templates Reference (customized) # 294198292392781277
 
-    execution-options: 
+    execution: 
       sequence: 30
       event: Change P0_APP_ID # 294197187100781266
       fire-when-event-result-is: True
@@ -1141,7 +1177,7 @@ dynamic-actions:
   identification: 
     name: Change P60_TEMPLATE_TYPE
 
-  execution-options: 
+  execution: 
     sequence: 20
 
   when: 
@@ -1150,11 +1186,12 @@ dynamic-actions:
     item(s): 
     - P60_TEMPLATE_TYPE
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294198180597781276
     identification: 
       action: Refresh
@@ -1163,13 +1200,13 @@ dynamic-actions:
       selection-type: Region
       region: Templates Reference (overall) # 294197401216781268
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: Change P60_TEMPLATE_TYPE # 294198068372781275
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294198765215781282
     identification: 
       action: Refresh
@@ -1178,7 +1215,7 @@ dynamic-actions:
       selection-type: Region
       region: Templates Reference (customized) # 294198292392781277
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: Change P60_TEMPLATE_TYPE # 294198068372781275
       fire-when-event-result-is: True

@@ -6,8 +6,7 @@
    ,"Title":"Migration"
   }
  ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-   ,"Page Mode":"Normal"
+    "Page Mode":"Normal"
    ,"Page Template":"Theme Default"
    ,"Template Options":[
       "#DEFAULT#"
@@ -65,6 +64,10 @@
        ,"Icon":"fa-wrench"
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -110,6 +113,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":true

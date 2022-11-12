@@ -7,7 +7,6 @@ identification:
   title: APEX 21.1
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -77,6 +76,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -312,6 +315,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -365,6 +372,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -571,6 +582,10 @@ regions:
     icon: fa-wrench
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -615,6 +630,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -670,6 +689,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -905,6 +928,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -926,7 +953,7 @@ dynamic-actions:
   identification: 
     name: change P0_APP_ID - refresh regions
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -935,11 +962,12 @@ dynamic-actions:
     item(s): 
     - P0_APP_ID
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 38826372938719740
     identification: 
       action: Refresh
@@ -948,13 +976,13 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.9 afterModify is Desupported # 57969039968358415
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P0_APP_ID - refresh regions # 38826291025719739
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 38827053490719747
     identification: 
       action: Refresh
@@ -963,13 +991,13 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.11 apex.navigation.dialog.fireCloseHandler function is Desupported # 38826465420719741
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: change P0_APP_ID - refresh regions # 38826291025719739
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 41551631471456905
     identification: 
       action: Refresh
@@ -978,7 +1006,7 @@ dynamic-actions:
       selection-type: Region
       region: 5.1.3 Date Picker (jQuery) Deprecated # 38827326218719750
 
-    execution-options: 
+    execution: 
       sequence: 30
       event: change P0_APP_ID - refresh regions # 38826291025719739
       fire-when-event-result-is: True

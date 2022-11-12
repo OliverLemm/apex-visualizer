@@ -5,8 +5,7 @@
    ,"Title":"Applications"
   }
  ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-   ,"Page Mode":"Normal"
+    "Page Mode":"Normal"
    ,"Page Template":"Theme Default"
    ,"Template Options":[
       "#DEFAULT#"
@@ -69,6 +68,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -119,7 +122,7 @@
            ,"Identification":{
               "Name":"Applications"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -172,6 +175,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":true
@@ -229,7 +236,7 @@
            ,"Identification":{
               "Name":"Applications"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -335,6 +342,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -394,7 +405,7 @@
            ,"Identification":{
               "Name":"Applications"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -500,6 +511,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Static ID":"details"
        ,"Region Display Selector":true
@@ -568,7 +583,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"Right"
+            "Number Alignment":"End"
+           ,"Virtual Keyboard":"Text"
           }
          ,"Layout":{
             "Sequence":150
@@ -640,6 +656,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Column Filter":{
             "Enabled":true
@@ -754,6 +773,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -811,6 +833,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -867,6 +892,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Column Filter":{
             "Enabled":true
@@ -981,6 +1009,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Column Filter":{
             "Enabled":true
@@ -1146,6 +1177,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -1218,7 +1252,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -1236,7 +1272,7 @@
      ,"Identification":{
         "Name":"change P0_COMPONENT - refresh shared chart"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":60
       }
      ,"When":{
@@ -1246,8 +1282,9 @@
           "P0_COMPONENT"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1259,7 +1296,7 @@
             "Selection Type":"Region"
            ,"Region":"Shared Components (449531401127422725)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P0_COMPONENT - refresh shared chart (293284377367929194)"
            ,"Fire When Event Result Is":"True"
@@ -1273,7 +1310,7 @@
      ,"Identification":{
         "Name":"change P10_COMPLEXITY_CATEGORY"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":70
       }
      ,"When":{
@@ -1283,8 +1320,9 @@
           "P10_COMPLEXITY_CATEGORY"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1296,7 +1334,7 @@
             "Selection Type":"Region"
            ,"Region":"Complexity (294199481042781289)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P10_COMPLEXITY_CATEGORY (294269372701521548)"
            ,"Fire When Event Result Is":"True"
@@ -1310,13 +1348,13 @@
      ,"Identification":{
         "Name":"hide component"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":80
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.READY"
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
       }
      ,"Actions":[
@@ -1331,7 +1369,7 @@
               "P0_COMPONENT"
             ]
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"hide component (294476816186578349)"
            ,"Fire When Event Result Is":"True"
@@ -1345,7 +1383,7 @@
      ,"Identification":{
         "Name":"change P0_APP_ID - refresh charts"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":20
       }
      ,"When":{
@@ -1355,8 +1393,9 @@
           "P0_APP_ID"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1368,7 +1407,7 @@
             "Selection Type":"Region"
            ,"Region":"Shared Components (449531401127422725)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":20
            ,"Event":"change P0_APP_ID - refresh charts (449465803018677324)"
            ,"Fire When Event Result Is":"True"
@@ -1384,7 +1423,7 @@
             "Selection Type":"Region"
            ,"Region":"Complexity (294199481042781289)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":30
            ,"Event":"change P0_APP_ID - refresh charts (449465803018677324)"
            ,"Fire When Event Result Is":"True"
@@ -1400,7 +1439,7 @@
             "Selection Type":"Region"
            ,"Region":"Page Functions (293283138176929182)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":40
            ,"Event":"change P0_APP_ID - refresh charts (449465803018677324)"
            ,"Fire When Event Result Is":"True"

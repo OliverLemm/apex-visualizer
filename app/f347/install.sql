@@ -2,6 +2,7 @@ prompt --install
 @@application/set_environment.sql
 @@application/delete_application.sql
 @@application/create_application.sql
+@@application/user_interfaces.sql
 @@application/shared_components/navigation/lists/desktop_navigation_menu.sql
 @@application/shared_components/navigation/lists/desktop_navigation_bar.sql
 @@application/shared_components/files/icons_app_icon_32_png.sql
@@ -37,6 +38,8 @@ prompt --install
 @@application/shared_components/user_interface/templates/button/icon.sql
 @@application/shared_components/user_interface/templates/button/text.sql
 @@application/shared_components/user_interface/templates/button/text_with_icon.sql
+@@application/shared_components/user_interface/templates/region/search_results_container.sql
+@@application/shared_components/user_interface/templates/region/item_container.sql
 @@application/shared_components/user_interface/templates/region/image.sql
 @@application/shared_components/user_interface/templates/region/inline_drawer.sql
 @@application/shared_components/user_interface/templates/region/inline_popup.sql
@@ -103,7 +106,6 @@ prompt --install
 @@application/shared_components/user_interface/shortcuts/delete_confirm_msg.sql
 @@application/shared_components/security/authentications/apex.sql
 @@application/shared_components/security/authentications/no_authentication.sql
-@@application/user_interfaces.sql
 @@application/user_interfaces/combined_files.sql
 @@application/pages/page_00000.sql
 @@application/pages/page_00010.sql

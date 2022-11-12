@@ -5,8 +5,7 @@
    ,"Title":"Last Updated"
   }
  ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-   ,"Page Mode":"Normal"
+    "Page Mode":"Normal"
    ,"Page Template":"Theme Default"
    ,"Template Options":[
       "#DEFAULT#"
@@ -70,6 +69,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -126,7 +129,7 @@
            ,"Identification":{
               "Name":"Last Updates"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -232,6 +235,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -288,7 +295,7 @@
            ,"Identification":{
               "Name":"New"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -411,7 +418,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -429,7 +438,7 @@
      ,"Identification":{
         "Name":"change P0_APP_ID"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":10
       }
      ,"When":{
@@ -440,8 +449,9 @@
          ,"P0_PAGE_ID"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -453,7 +463,7 @@
             "Selection Type":"Region"
            ,"Region":"Application changes (293418366726888480)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P0_APP_ID (293418467306888481)"
            ,"Fire When Event Result Is":"True"
@@ -469,7 +479,7 @@
             "Selection Type":"Region"
            ,"Region":"Changes on Components (293419197283888488)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":20
            ,"Event":"change P0_APP_ID (293418467306888481)"
            ,"Fire When Event Result Is":"True"
@@ -483,7 +493,7 @@
      ,"Identification":{
         "Name":"change P50_DATE"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":20
       }
      ,"When":{
@@ -493,8 +503,9 @@
           "P50_DATE"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -506,7 +517,7 @@
             "Selection Type":"Region"
            ,"Region":"Changes on Components (293419197283888488)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P50_DATE (293419650163888493)"
            ,"Fire When Event Result Is":"True"

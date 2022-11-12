@@ -7,7 +7,6 @@ identification:
   title: APEX 22.1
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -64,6 +63,10 @@ regions:
     icon: fa-wrench
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -118,6 +121,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -377,6 +384,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -597,6 +608,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -855,6 +870,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -1096,6 +1115,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -1154,6 +1177,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -1399,6 +1426,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -1462,6 +1493,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -1726,6 +1761,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -1860,6 +1899,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -2066,6 +2109,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -2121,6 +2168,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -2413,6 +2464,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -2664,6 +2719,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -2843,6 +2902,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -2898,6 +2961,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -3098,6 +3165,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -3420,6 +3491,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -3598,6 +3673,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -3647,6 +3726,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -3705,6 +3788,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -3961,6 +4048,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -4010,6 +4101,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     static-id: 8_1_1
@@ -4240,6 +4335,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -4536,6 +4635,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -4756,7 +4859,7 @@ dynamic-actions:
   identification: 
     name: change P0_APP_ID - refresh regions
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -4766,11 +4869,12 @@ dynamic-actions:
     - P0_APP_ID
     - P0_PAGE_ID
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+  - # ====== Action: Execute JavaScript Code =====================
     id: 57356371334164216
     identification: 
       action: Execute JavaScript Code
@@ -4778,7 +4882,7 @@ dynamic-actions:
     settings: 
       code: av_refresh_hide_show_regions()
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P0_APP_ID - refresh regions # 45107665582952546
       fire-when-event-result-is: True
@@ -4789,7 +4893,7 @@ dynamic-actions:
   identification: 
     name: click refresh - refresh regions
 
-  execution-options: 
+  execution: 
     sequence: 20
 
   when: 
@@ -4797,11 +4901,12 @@ dynamic-actions:
     selection-type: Button
     button: Refresh # 45068108221137631
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+  - # ====== Action: Execute JavaScript Code =====================
     id: 57356497423164217
     identification: 
       action: Execute JavaScript Code
@@ -4809,7 +4914,7 @@ dynamic-actions:
     settings: 
       code: av_refresh_hide_show_regions()
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: click refresh - refresh regions # 45108065073952550
       fire-when-event-result-is: True

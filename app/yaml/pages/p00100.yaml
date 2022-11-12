@@ -6,7 +6,6 @@ identification:
   title: JavaScript
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -72,6 +71,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -131,7 +134,7 @@ regions:
       identification: 
         name: JS Code Overall
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -242,6 +245,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -301,7 +308,7 @@ regions:
       identification: 
         name: JavaScript Code
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -414,6 +421,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -466,7 +477,7 @@ regions:
       identification: 
         name: Series 1
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -589,6 +600,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -642,7 +657,7 @@ regions:
       identification: 
         name: New
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -722,7 +737,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -738,7 +755,7 @@ dynamic-actions:
   identification: 
     name: change P0_ITEMS
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -749,11 +766,12 @@ dynamic-actions:
     - P0_PAGE_ID
     - P0_BEST_PRACTICE
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 293282500350929175
     identification: 
       action: Refresh
@@ -762,13 +780,13 @@ dynamic-actions:
       selection-type: Region
       region: Characters of JavaScript Code per Page # 293416813132888465
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P0_ITEMS # 293282369686929174
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 293283041326929181
     identification: 
       action: Refresh
@@ -777,13 +795,13 @@ dynamic-actions:
       selection-type: Region
       region: Place of JavaScript # 293417040775888467
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: change P0_ITEMS # 293282369686929174
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 293416976852888466
     identification: 
       action: Refresh
@@ -792,7 +810,7 @@ dynamic-actions:
       selection-type: Region
       region: JavaScript in Page # 293282571329929176
 
-    execution-options: 
+    execution: 
       sequence: 30
       event: change P0_ITEMS # 293282369686929174
       fire-when-event-result-is: True
@@ -803,7 +821,7 @@ dynamic-actions:
   identification: 
     name: change Component Type
 
-  execution-options: 
+  execution: 
     sequence: 20
 
   when: 
@@ -812,11 +830,12 @@ dynamic-actions:
     item(s): 
     - P100_COMPONENT_TYPE
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 293417705428888474
     identification: 
       action: Refresh
@@ -825,7 +844,7 @@ dynamic-actions:
       selection-type: Region
       region: JavaScript in Page # 293282571329929176
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change Component Type # 293417694705888473
       fire-when-event-result-is: True

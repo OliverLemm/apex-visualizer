@@ -7,7 +7,6 @@ identification:
   title: APEX 20.2
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -64,6 +63,10 @@ regions:
     icon: fa-wrench
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -114,6 +117,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -335,6 +342,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -555,6 +566,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -763,6 +778,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -819,6 +838,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -1078,6 +1101,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -1275,6 +1302,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -1529,6 +1560,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -1683,6 +1718,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -1921,6 +1960,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -1942,7 +1985,7 @@ dynamic-actions:
   identification: 
     name: change P0_APP_ID - refresh regions
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -1951,11 +1994,12 @@ dynamic-actions:
     item(s): 
     - P0_APP_ID
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 43371473126782535
     identification: 
       action: Refresh
@@ -1964,13 +2008,13 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.1 Theme Style "Vista" Desupported in Universal Theme # 103053462704148165
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P0_APP_ID - refresh regions # 43371359508782534
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 43371587078782536
     identification: 
       action: Refresh
@@ -1979,13 +2023,13 @@ dynamic-actions:
       selection-type: Region
       region: '7.1.2 apexrefresh Event is Desupported ' # 83910888156509491
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: change P0_APP_ID - refresh regions # 43371359508782534
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 43372720054782548
     identification: 
       action: Refresh
@@ -1994,13 +2038,13 @@ dynamic-actions:
       selection-type: Region
       region: '7.1.4 APEX_UTIL.STRING_TO_TABLE Function Desupported ' # 43371987095782540
 
-    execution-options: 
+    execution: 
       sequence: 30
       event: change P0_APP_ID - refresh regions # 43371359508782534
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 45103426540952504
     identification: 
       action: Refresh
@@ -2009,13 +2053,13 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.5 APEX_UTIL.TABLE_TO_STRING Function Desupported # 43372805416782549
 
-    execution-options: 
+    execution: 
       sequence: 40
       event: change P0_APP_ID - refresh regions # 43371359508782534
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 45104155052952511
     identification: 
       action: Refresh
@@ -2024,13 +2068,13 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.6 APEX_PAGE.IS_JQM_SMARTPHONE_UI is Desupported # 45103600515952506
 
-    execution-options: 
+    execution: 
       sequence: 50
       event: change P0_APP_ID - refresh regions # 43371359508782534
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 45104323871952513
     identification: 
       action: Refresh
@@ -2039,13 +2083,13 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.7 openModal and closeModal are Desupported # 67583992558351032
 
-    execution-options: 
+    execution: 
       sequence: 60
       event: change P0_APP_ID - refresh regions # 43371359508782534
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 45104586138952515
     identification: 
       action: Refresh
@@ -2054,13 +2098,13 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.8 Tabular Forms Desupported # 67590179445390848
 
-    execution-options: 
+    execution: 
       sequence: 70
       event: change P0_APP_ID - refresh regions # 43371359508782534
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 45104883239952518
     identification: 
       action: Refresh
@@ -2069,7 +2113,7 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.13 Desupported JavaScript Functions # 103090329709452747
 
-    execution-options: 
+    execution: 
       sequence: 80
       event: change P0_APP_ID - refresh regions # 43371359508782534
       fire-when-event-result-is: True
@@ -2080,7 +2124,7 @@ dynamic-actions:
   identification: 
     name: click Refresh - refresh regions
 
-  execution-options: 
+  execution: 
     sequence: 20
 
   when: 
@@ -2088,11 +2132,12 @@ dynamic-actions:
     selection-type: Button
     button: Refresh # 45068108221137631
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 43371756573782538
     identification: 
       action: Refresh
@@ -2101,13 +2146,13 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.1 Theme Style "Vista" Desupported in Universal Theme # 103053462704148165
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: click Refresh - refresh regions # 43371654653782537
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 43371849358782539
     identification: 
       action: Refresh
@@ -2116,13 +2161,13 @@ dynamic-actions:
       selection-type: Region
       region: '7.1.2 apexrefresh Event is Desupported ' # 83910888156509491
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: click Refresh - refresh regions # 43371654653782537
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 43372661994782547
     identification: 
       action: Refresh
@@ -2131,13 +2176,13 @@ dynamic-actions:
       selection-type: Region
       region: '7.1.4 APEX_UTIL.STRING_TO_TABLE Function Desupported ' # 43371987095782540
 
-    execution-options: 
+    execution: 
       sequence: 30
       event: click Refresh - refresh regions # 43371654653782537
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 45103534835952505
     identification: 
       action: Refresh
@@ -2146,13 +2191,13 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.5 APEX_UTIL.TABLE_TO_STRING Function Desupported # 43372805416782549
 
-    execution-options: 
+    execution: 
       sequence: 40
       event: click Refresh - refresh regions # 43371654653782537
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 45104270513952512
     identification: 
       action: Refresh
@@ -2161,13 +2206,13 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.6 APEX_PAGE.IS_JQM_SMARTPHONE_UI is Desupported # 45103600515952506
 
-    execution-options: 
+    execution: 
       sequence: 50
       event: click Refresh - refresh regions # 43371654653782537
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 45104448348952514
     identification: 
       action: Refresh
@@ -2176,13 +2221,13 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.7 openModal and closeModal are Desupported # 67583992558351032
 
-    execution-options: 
+    execution: 
       sequence: 60
       event: click Refresh - refresh regions # 43371654653782537
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 45104602659952516
     identification: 
       action: Refresh
@@ -2191,13 +2236,13 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.8 Tabular Forms Desupported # 67590179445390848
 
-    execution-options: 
+    execution: 
       sequence: 70
       event: click Refresh - refresh regions # 43371654653782537
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 45104931592952519
     identification: 
       action: Refresh
@@ -2206,7 +2251,7 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.13 Desupported JavaScript Functions # 103090329709452747
 
-    execution-options: 
+    execution: 
       sequence: 80
       event: click Refresh - refresh regions # 43371654653782537
       fire-when-event-result-is: True

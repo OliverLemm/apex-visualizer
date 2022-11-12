@@ -6,8 +6,7 @@
    ,"Title":"QA"
   }
  ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-   ,"Page Mode":"Normal"
+    "Page Mode":"Normal"
    ,"Page Template":"Theme Default"
    ,"Template Options":[
       "#DEFAULT#"
@@ -69,6 +68,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":true
@@ -324,6 +327,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -518,6 +525,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -627,6 +638,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -657,7 +671,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"Right"
+            "Number Alignment":"End"
+           ,"Virtual Keyboard":"Text"
           }
          ,"Layout":{
             "Sequence":20
@@ -788,6 +803,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -873,6 +891,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -938,7 +960,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -949,7 +973,7 @@
        ,"Restricted Characters":"All characters can be saved."
       }
      ,"Help":{
-        "Help Text":"These Compatibility Modes are equal\u003Cbr\u003E\n21.2 \/ 22.1\u003Cbr\u003E\n19.2 \/ 20.1 \/ 20.2 \/ 21.1\u003Cbr\u003E\n19.1\u003Cbr\u003E\n5.1 \/ 18.1 \/ 18.2\u003Cbr\u003E\n5.0\u003Cbr\u003E\n4.2\u003Cbr\u003E\n4.1\u003Cbr\u003E\nPre 4.1"
+        "Help Text":"These Compatibility Modes are equal\u003Cbr\u003E\n21.2 \/ 22.1 \/ 22.2\u003Cbr\u003E\n19.2 \/ 20.1 \/ 20.2 \/ 21.1\u003Cbr\u003E\n19.1\u003Cbr\u003E\n5.1 \/ 18.1 \/ 18.2\u003Cbr\u003E\n5.0\u003Cbr\u003E\n4.2\u003Cbr\u003E\n4.1\u003Cbr\u003E\nPre 4.1"
       }
     }
    ,{
@@ -997,7 +1021,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -1056,7 +1082,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -1115,7 +1143,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -1174,7 +1204,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -1233,7 +1265,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -1292,7 +1326,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -1303,7 +1339,7 @@
        ,"Restricted Characters":"All characters can be saved."
       }
      ,"Help":{
-        "Help Text":"If using Universal Theme, this information shows the version compared to the APEX version\u003Cbr\u003E\nUT 22.1 = APEX 22.1\u003Cbr\u003E\nUT 21.2 = APEX 21.2\u003Cbr\u003E\nUT 21.1 = APEX 21.1\u003Cbr\u003E\nUT  1.6 = APEX 20.2\u003Cbr\u003E\nUT  1.5 = APEX 20.1\u003Cbr\u003E\nUT  1.4 = APEX 19.2\u003Cbr\u003E\nUT  1.3 = APEX 19.1\u003Cbr\u003E\nUT  1.2 = APEX 18.1 \/ 18.2\u003Cbr\u003E\nUT  1.1 = APEX 5.1\u003Cbr\u003E\nUT  1.0 = APEX 5.0\n"
+        "Help Text":"If using Universal Theme, this information shows the version compared to the APEX version\u003Cbr\u003E\nUT 22.2 = APEX 22.2\u003Cbr\u003E\nUT 22.1 = APEX 22.1\u003Cbr\u003E\nUT 21.2 = APEX 21.2\u003Cbr\u003E\nUT 21.1 = APEX 21.1\u003Cbr\u003E\nUT  1.6 = APEX 20.2\u003Cbr\u003E\nUT  1.5 = APEX 20.1\u003Cbr\u003E\nUT  1.4 = APEX 19.2\u003Cbr\u003E\nUT  1.3 = APEX 19.1\u003Cbr\u003E\nUT  1.2 = APEX 18.1 \/ 18.2\u003Cbr\u003E\nUT  1.1 = APEX 5.1\u003Cbr\u003E\nUT  1.0 = APEX 5.0\n"
       }
     }
   ]
@@ -1313,7 +1349,7 @@
      ,"Identification":{
         "Name":"change P0_APP_ID - refresh regions"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":10
       }
      ,"When":{
@@ -1323,8 +1359,9 @@
           "P0_APP_ID"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1336,7 +1373,7 @@
             "Selection Type":"Region"
            ,"Region":"unused plugins (38837724345637017)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":30
            ,"Event":"change P0_APP_ID - refresh regions (38839615330637036)"
            ,"Fire When Event Result Is":"True"
@@ -1352,7 +1389,7 @@
             "Selection Type":"Region"
            ,"Region":"unused authorization schemes (38839957986637039)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":40
            ,"Event":"change P0_APP_ID - refresh regions (38839615330637036)"
            ,"Fire When Event Result Is":"True"
@@ -1368,7 +1405,7 @@
             "Selection Type":"Region"
            ,"Region":"never condition used (38840300408637043)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":50
            ,"Event":"change P0_APP_ID - refresh regions (38839615330637036)"
            ,"Fire When Event Result Is":"True"
@@ -1382,7 +1419,7 @@
           }
          ,"Settings":{
             "Language":"PE.PROPERTY.SOURCE_SNIPPET_LANG.LOV.PLSQL.D"
-           ,"PL\/SQL Code":"select\n a.compatibility_mode\n,a.Session_State_Protection\n,nvl2(a.runtime_api_usage, replace(replace(replace(a.runtime_api_usage,\u0027T\u0027,\u0027This\u0027),\u0027O\u0027,\u0027Other\u0027),\u0027W\u0027,\u0027Workspace\u0027),\u0027None\u0027)\ninto\n :P600_COMPATIBILITY_MODE\n,:P600_SESSION_STATE_PROTECTION\n,:P600_RUNTIME_API_USAGE\nfrom apex_applications a\nwhere a.application_id = :P0_APP_ID;\n\nselect \n ui.include_legacy_javascript \n,ui.include_jquery_migrate\ninto\n :P600_INCLUDE_LEGACY_JAVASCRIPT\n,:P600_INCLUDE_JQUERY_MIGRATE\nfrom apex_appl_user_interfaces ui \nwhere ui.application_id = :P0_APP_ID\nand ui.ui_type_name = \u0027DESKTOP\u0027;\n\nselect \n t.theme_name \n,replace(substr(t.file_prefix,instr(t.file_prefix,\u0027theme_42\u0027) + 9),\u0027\/\u0027)\ninto \n :P600_THEME_NAME\n,:P600_UT_VERSION\nfrom apex_application_themes t\nwhere t.application_id = :P0_APP_ID\nand t.ui_type_name = \u0027DESKTOP\u0027;"
+           ,"PL\/SQL Code":"select\n a.compatibility_mode\n,a.Session_State_Protection\n,nvl2(a.runtime_api_usage, replace(replace(replace(a.runtime_api_usage,\u0027T\u0027,\u0027This\u0027),\u0027O\u0027,\u0027Other\u0027),\u0027W\u0027,\u0027Workspace\u0027),\u0027None\u0027)\ninto\n :P600_COMPATIBILITY_MODE\n,:P600_SESSION_STATE_PROTECTION\n,:P600_RUNTIME_API_USAGE\nfrom apex_applications a\nwhere a.application_id = :P0_APP_ID;\n\nselect \n ui.include_legacy_javascript \n,ui.include_jquery_migrate\ninto\n :P600_INCLUDE_LEGACY_JAVASCRIPT\n,:P600_INCLUDE_JQUERY_MIGRATE\nfrom apex_appl_user_interfaces ui \nwhere ui.application_id = :P0_APP_ID\nand ui.ui_type_name = \u0027DESKTOP\u0027;\n\nselect \n t.theme_name \n,replace(substr(t.file_prefix,instr(t.file_prefix,\u0027theme_42\u0027) + 9),\u0027\/\u0027)\ninto \n :P600_THEME_NAME\n,:P600_UT_VERSION\nfrom apex_application_themes t\nwhere t.application_id = :P0_APP_ID\nand t.ui_type_name = \u0027DESKTOP\u0027\nand t.is_current = \u0027Yes\u0027;"
            ,"Items to Submit":[
               "P600_COMPATIBILITY_MODE"
              ,"P600_SESSION_STATE_PROTECTION"
@@ -1404,7 +1441,7 @@
             ]
            ,"Suppress Change Event":false
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":90
            ,"Event":"change P0_APP_ID - refresh regions (38839615330637036)"
            ,"Fire When Event Result Is":"True"
@@ -1420,7 +1457,7 @@
      ,"Identification":{
         "Name":"change P600_COMPATIBILITY_MODE - setColor"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":20
       }
      ,"When":{
@@ -1430,8 +1467,9 @@
           "P600_COMPATIBILITY_MODE"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1440,7 +1478,7 @@
             "Action":"Execute JavaScript Code"
           }
          ,"Settings":{
-            "Code":"var $trigger = $(this.triggeringElement);\nvar val = apex.item(\"P600_COMPATIBILITY_MODE\").getValue();\nconsole.log(\"P600_COMPATIBILITY_MODE=\" + val);\n\n\/\/ success - up-to-date =\u003E 21.2 \/ 22.1\nif (val == \u002721.2\u0027) {\n    $trigger.removeClass(\"u-danger\");\n    $trigger.addClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");\n\n\/\/ warning - not up-to-date =\u003E only one version before 19.2 \/ 20.1 \/ 20.2 \/ 21.1\n} else if (val == \u002719.2\u0027) {\n    $trigger.removeClass(\"u-danger\");\n    $trigger.removeClass(\"u-success\");\n    $trigger.addClass(\"u-warning\");\n\n\/\/ danger - older than 19.2\n} else {\n    $trigger.addClass(\"u-danger\");\n    $trigger.removeClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");\n}"
+            "Code":"var $trigger = $(this.triggeringElement);\nvar val = apex.item(\"P600_COMPATIBILITY_MODE\").getValue();\nconsole.log(\"P600_COMPATIBILITY_MODE=\" + val);\n\n\/\/ success - up-to-date =\u003E 21.2 \/ 22.1 \/ 22.2\nif (val == \u002721.2\u0027) {\n    $trigger.removeClass(\"u-danger\");\n    $trigger.addClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");\n\n\/\/ warning - not up-to-date =\u003E only one version before 19.2 \/ 20.1 \/ 20.2 \/ 21.1\n} else if (val == \u002719.2\u0027) {\n    $trigger.removeClass(\"u-danger\");\n    $trigger.removeClass(\"u-success\");\n    $trigger.addClass(\"u-warning\");\n\n\/\/ danger - older than 19.2\n} else {\n    $trigger.addClass(\"u-danger\");\n    $trigger.removeClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");\n}"
           }
          ,"Affected Elements":{
             "Selection Type":"Item(s)"
@@ -1448,7 +1486,7 @@
               "P600_COMPATIBILITY_MODE"
             ]
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":50
            ,"Event":"change P600_COMPATIBILITY_MODE - setColor (39141322171438716)"
            ,"Fire When Event Result Is":"True"
@@ -1462,7 +1500,7 @@
      ,"Identification":{
         "Name":"change P600_SESSION_STATE_PROTECTION - setColor"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":30
       }
      ,"When":{
@@ -1472,8 +1510,9 @@
           "P600_SESSION_STATE_PROTECTION"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1490,7 +1529,7 @@
               "P600_SESSION_STATE_PROTECTION"
             ]
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P600_SESSION_STATE_PROTECTION - setColor (39141941027438722)"
            ,"Fire When Event Result Is":"True"
@@ -1504,7 +1543,7 @@
      ,"Identification":{
         "Name":"change P600_RUNTIME_API_USAGE - setColor"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":40
       }
      ,"When":{
@@ -1514,8 +1553,9 @@
           "P600_RUNTIME_API_USAGE"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1532,7 +1572,7 @@
               "P600_RUNTIME_API_USAGE"
             ]
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P600_RUNTIME_API_USAGE - setColor (39142163743438724)"
            ,"Fire When Event Result Is":"True"
@@ -1546,7 +1586,7 @@
      ,"Identification":{
         "Name":"change P600_INCLUDE_LEGACY_JAVASCRIPT - setColorl"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":50
       }
      ,"When":{
@@ -1556,8 +1596,9 @@
           "P600_INCLUDE_LEGACY_JAVASCRIPT"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1574,7 +1615,7 @@
               "P600_INCLUDE_LEGACY_JAVASCRIPT"
             ]
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P600_INCLUDE_LEGACY_JAVASCRIPT - setColorl (39142633619438729)"
            ,"Fire When Event Result Is":"True"
@@ -1588,7 +1629,7 @@
      ,"Identification":{
         "Name":"change P600_INCLUDE_JQUERY_MIGRATE - setColorl"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":60
       }
      ,"When":{
@@ -1598,8 +1639,9 @@
           "P600_INCLUDE_JQUERY_MIGRATE"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1616,7 +1658,7 @@
               "P600_INCLUDE_JQUERY_MIGRATE"
             ]
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P600_INCLUDE_JQUERY_MIGRATE - setColorl (39142800454438731)"
            ,"Fire When Event Result Is":"True"
@@ -1630,7 +1672,7 @@
      ,"Identification":{
         "Name":"change P600_THEME_NAME - setColor show\/hide P600_UT_REFRESHED"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":80
       }
      ,"When":{
@@ -1640,8 +1682,9 @@
           "P600_THEME_NAME"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1658,7 +1701,7 @@
               "P600_THEME_NAME"
             ]
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P600_THEME_NAME - setColor show\/hide P600_UT_REFRESHED (39143191512438734)"
            ,"Fire When Event Result Is":"True"
@@ -1676,7 +1719,7 @@
               "P600_UT_VERSION"
             ]
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":20
            ,"Event":"change P600_THEME_NAME - setColor show\/hide P600_UT_REFRESHED (39143191512438734)"
            ,"Fire When Event Result Is":"True"
@@ -1699,7 +1742,7 @@
               "P600_UT_VERSION"
             ]
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P600_THEME_NAME - setColor show\/hide P600_UT_REFRESHED (39143191512438734)"
            ,"Fire When Event Result Is":"True"
@@ -1718,7 +1761,7 @@
      ,"Identification":{
         "Name":"change P600_UT_VERSION - setColor"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":90
       }
      ,"When":{
@@ -1728,8 +1771,9 @@
           "P600_UT_VERSION"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1738,7 +1782,7 @@
             "Action":"Execute JavaScript Code"
           }
          ,"Settings":{
-            "Code":"var $trigger = $(this.triggeringElement);\nvar val = $trigger.val();\n\n\/\/ success - up-to-date\nif (val == \u002722.1\u0027) {    \n    $trigger.addClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");\n    $trigger.removeClass(\"u-danger\");\n\n\/\/ danger - old versions\n} else if ((val == \u00271.0\u0027) || (val == \u00271.1\u0027)) {    \n    $trigger.removeClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");\n    $trigger.addClass(\"u-danger\");\n\n\/\/ warning - versions not old and not the newest\n} else {    \n    $trigger.removeClass(\"u-success\");\n    $trigger.addClass(\"u-warning\");\n    $trigger.removeClass(\"u-danger\");\n}"
+            "Code":"var $trigger = $(this.triggeringElement);\nvar val = $trigger.val();\n\n\/\/ success - up-to-date\nif (val == \u002722.2\u0027) {    \n    $trigger.addClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");\n    $trigger.removeClass(\"u-danger\");\n\n\/\/ danger - old versions which are not supported any more\n} else if ((val == \u00271.0\u0027) || (val == \u00271.1\u0027)) {    \n    $trigger.removeClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");\n    $trigger.addClass(\"u-danger\");\n\n\/\/ warning - versions not old and not the newest\n} else {    \n    $trigger.removeClass(\"u-success\");\n    $trigger.addClass(\"u-warning\");\n    $trigger.removeClass(\"u-danger\");\n}"
           }
          ,"Affected Elements":{
             "Selection Type":"Item(s)"
@@ -1746,7 +1790,7 @@
               "P600_UT_VERSION"
             ]
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P600_UT_VERSION - setColor (39143632218438739)"
            ,"Fire When Event Result Is":"True"

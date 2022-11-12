@@ -5,8 +5,7 @@
    ,"Title":"Visibility"
   }
  ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-   ,"Page Mode":"Normal"
+    "Page Mode":"Normal"
    ,"Page Template":"Theme Default"
    ,"Template Options":[
       "#DEFAULT#"
@@ -69,6 +68,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -121,7 +124,7 @@
            ,"Identification":{
               "Name":"New"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -174,6 +177,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -224,7 +231,7 @@
            ,"Identification":{
               "Name":"New"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -276,6 +283,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":true
@@ -333,7 +344,7 @@
            ,"Identification":{
               "Name":"New"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -412,7 +423,7 @@
      ,"Identification":{
         "Name":"change P0_APP_ID"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":10
       }
      ,"When":{
@@ -426,8 +437,9 @@
         "Type":"Item is not null"
        ,"Item":"P0_APP_ID"
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -439,7 +451,7 @@
             "Selection Type":"Region"
            ,"Region":"Objects conditioned (293414946304888446)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":20
            ,"Event":"change P0_APP_ID (293415469604888451)"
            ,"Fire When Event Result Is":"True"
@@ -455,7 +467,7 @@
             "Selection Type":"Region"
            ,"Region":"Conditioned by (293415696723888453)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":30
            ,"Event":"change P0_APP_ID (293415469604888451)"
            ,"Fire When Event Result Is":"True"
@@ -471,7 +483,7 @@
             "Selection Type":"Region"
            ,"Region":"Condition Details (293416287791888459)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":40
            ,"Event":"change P0_APP_ID (293415469604888451)"
            ,"Fire When Event Result Is":"True"
@@ -487,7 +499,7 @@
             "Selection Type":"Region"
            ,"Region":"Condition Details (293416287791888459)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P0_APP_ID (293415469604888451)"
            ,"Fire When Event Result Is":"True"
@@ -503,7 +515,7 @@
             "Selection Type":"Region"
            ,"Region":"Condition Details (293416287791888459)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P0_APP_ID (293415469604888451)"
            ,"Fire When Event Result Is":"False"
@@ -519,7 +531,7 @@
             "Selection Type":"Region"
            ,"Region":"Conditioned by (293415696723888453)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":20
            ,"Event":"change P0_APP_ID (293415469604888451)"
            ,"Fire When Event Result Is":"False"
@@ -535,7 +547,7 @@
             "Selection Type":"Region"
            ,"Region":"Objects conditioned (293414946304888446)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":30
            ,"Event":"change P0_APP_ID (293415469604888451)"
            ,"Fire When Event Result Is":"False"

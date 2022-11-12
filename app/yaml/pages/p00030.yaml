@@ -6,7 +6,6 @@ identification:
   title: Page
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -88,6 +87,10 @@ regions:
     - '#DEFAULT#'
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -152,7 +155,8 @@ regions:
       alignment: end
 
     settings: 
-      number-alignment: Right
+      number-alignment: End
+      virtual-keyboard: Text
 
     layout: 
       sequence: 10
@@ -225,6 +229,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -253,7 +260,8 @@ regions:
       alignment: end
 
     settings: 
-      number-alignment: Right
+      number-alignment: End
+      virtual-keyboard: Text
 
     layout: 
       sequence: 30
@@ -325,6 +333,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     column-filter: 
       enabled: true
@@ -436,6 +447,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -546,6 +560,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -601,6 +618,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -655,6 +675,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     column-filter: 
       enabled: true
@@ -759,6 +782,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     column-filter: 
       enabled: true
@@ -942,7 +968,7 @@ dynamic-actions:
   identification: 
     name: change P0_ITEMS
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -952,11 +978,12 @@ dynamic-actions:
     - P0_APP_ID
     - P0_PAGE_ID
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 293280119870929152
     identification: 
       action: Refresh
@@ -965,7 +992,7 @@ dynamic-actions:
       selection-type: Region
       region: Page # 611186331838208545
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P0_ITEMS # 293280066179929151
       fire-when-event-result-is: True

@@ -6,7 +6,6 @@ identification:
   title: CSS
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -77,6 +76,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -136,7 +139,7 @@ regions:
       identification: 
         name: CSS in Page
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -249,6 +252,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -303,7 +310,7 @@ regions:
       identification: 
         name: Series 1
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -426,6 +433,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -479,7 +490,7 @@ regions:
       identification: 
         name: Place of CSS
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -559,7 +570,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -575,7 +588,7 @@ dynamic-actions:
   identification: 
     name: Change P0_APP_ID
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -586,11 +599,12 @@ dynamic-actions:
     - P0_PAGE_ID
     - P0_BEST_PRACTICE
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294195822760781253
     identification: 
       action: Refresh
@@ -599,13 +613,13 @@ dynamic-actions:
       selection-type: Region
       region: Characters of CSS Code per Page # 456042766579392916
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: Change P0_APP_ID # 294195801218781252
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294199041704781285
     identification: 
       action: Refresh
@@ -614,13 +628,13 @@ dynamic-actions:
       selection-type: Region
       region: Place of CSS # 456113854637855984
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: Change P0_APP_ID # 294195801218781252
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294269594869521550
     identification: 
       action: Refresh
@@ -629,7 +643,7 @@ dynamic-actions:
       selection-type: Region
       region: CSS in Page # 455982233047916696
 
-    execution-options: 
+    execution: 
       sequence: 30
       event: Change P0_APP_ID # 294195801218781252
       fire-when-event-result-is: True
@@ -640,7 +654,7 @@ dynamic-actions:
   identification: 
     name: Change P200_COMPONENT_TYPE
 
-  execution-options: 
+  execution: 
     sequence: 20
 
   when: 
@@ -649,11 +663,12 @@ dynamic-actions:
     item(s): 
     - P200_COMPONENT_TYPE
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294199210454781287
     identification: 
       action: Refresh
@@ -662,7 +677,7 @@ dynamic-actions:
       selection-type: Region
       region: CSS in Page # 455982233047916696
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: Change P200_COMPONENT_TYPE # 294199135885781286
       fire-when-event-result-is: True

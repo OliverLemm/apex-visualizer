@@ -7,7 +7,6 @@ identification:
   title: Apex Visualizer - Log In
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Login # 452443100862466212
   template-options: 
@@ -22,6 +21,11 @@ navigation:
 
 security: 
   authentication: Page Is Public
+
+advanced: 
+  enable-meta-tags: false
+
+security: 
   deep-linking: Application Default
   page-access-protection: Unrestricted
   form-auto-complete: Off
@@ -60,6 +64,10 @@ regions:
     - '#DEFAULT#'
     icon: fa-sign-in
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -124,7 +132,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Request (Memory Only)
+
+  session-state: 
+    storage: Per Request (Memory Only)
 
   quick-picks: 
     show-quick-picks: false
@@ -177,7 +187,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Request (Memory Only)
+
+  session-state: 
+    storage: Per Request (Memory Only)
 
   security: 
     session-state-protection: Unrestricted
@@ -228,7 +240,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Request (Memory Only)
+
+  session-state: 
+    storage: Per Request (Memory Only)
 
   server-side-condition: 
     type: Expression
@@ -297,7 +311,7 @@ processes:
           p_username => :P510_USERNAME,
           p_password => :P510_PASSWORD );
 
-  execution-options: 
+  execution: 
     sequence: 20
     point: Processing
     run-process: Once Per Page Visit (default)
@@ -319,7 +333,7 @@ processes:
           p_username => lower(:P510_USERNAME),
           p_consent  => :P510_REMEMBER = 'Y' );
 
-  execution-options: 
+  execution: 
     sequence: 10
     point: Processing
     run-process: Once Per Page Visit (default)
@@ -340,7 +354,7 @@ processes:
       :P510_USERNAME := apex_authentication.get_login_username_cookie;
       :P510_REMEMBER := case when :P510_USERNAME is not null then 'Y' end;
 
-  execution-options: 
+  execution: 
     sequence: 10
     point: Before Header
     run-process: Once Per Page Visit (default)
@@ -354,7 +368,7 @@ processes:
   settings: 
     type: Clear all Items on the Current Page
 
-  execution-options: 
+  execution: 
     sequence: 30
     point: Processing
     run-process: Once Per Page Visit (default)

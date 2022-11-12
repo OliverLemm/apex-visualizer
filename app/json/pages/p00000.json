@@ -3,9 +3,6 @@
  ,"Identification":{
     "Name":"Global Page - Desktop"
   }
- ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-  }
  ,"Regions":[
     {
       "id":"452496424516540365"
@@ -31,6 +28,10 @@
          ,"t-Form--labelsAbove"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Static ID":"av-region-right-column"
@@ -89,7 +90,10 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
       }
      ,"Server-side Condition":{
         "Type":"Current Page is in comma delimited list"
@@ -152,7 +156,10 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
       }
      ,"Security":{
         "Session State Protection":"Unrestricted"
@@ -212,7 +219,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -279,11 +288,13 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
       }
      ,"Default":{
         "Type":"Static"
        ,"Static Value":"-1"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Server-side Condition":{
         "Type":"Current Page is in comma delimited list"
@@ -361,7 +372,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -433,12 +446,14 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
       }
      ,"Default":{
         "Type":"Expression"
        ,"Language":"PL\/SQL"
        ,"PL\/SQL Expression":":APP_ID"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -531,7 +546,7 @@
      ,"Identification":{
         "Name":"change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":20
       }
      ,"When":{
@@ -546,8 +561,9 @@
         "Type":"Item is not null"
        ,"Item":"P0_PAGE_ID"
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Configuration":{
         "Build Option":"deactivated (291318289212148547)"
@@ -574,7 +590,7 @@
               "P0_PAGE_DESIGNER_LINK"
             ]
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK (32936982364378130)"
            ,"Fire When Event Result Is":"True"
@@ -594,7 +610,7 @@
               "P0_PAGE_DESIGNER_LINK"
             ]
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK (32936982364378130)"
            ,"Fire When Event Result Is":"False"
@@ -612,7 +628,7 @@
               "P0_PAGE_DESIGNER_LINK"
             ]
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":30
            ,"Event":"change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK (32936982364378130)"
            ,"Fire When Event Result Is":"True"
@@ -633,7 +649,7 @@
               "P0_LINK"
             ]
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":40
            ,"Event":"change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK (32936982364378130)"
            ,"Fire When Event Result Is":"True"
@@ -647,7 +663,7 @@
      ,"Identification":{
         "Name":"Show Details"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":10
       }
      ,"When":{
@@ -659,8 +675,9 @@
         "Type":"JavaScript expression"
        ,"JavaScript Expression":"$(\u0027#details\u0027).is(\u0027:hidden\u0027)"
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -672,7 +689,7 @@
             "Selection Type":"jQuery Selector"
            ,"jQuery Selector":"#details"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"Show Details (449532155105422733)"
            ,"Fire When Event Result Is":"True"
@@ -688,7 +705,7 @@
             "Selection Type":"jQuery Selector"
            ,"jQuery Selector":"#details"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"Show Details (449532155105422733)"
            ,"Fire When Event Result Is":"False"

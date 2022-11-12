@@ -6,7 +6,6 @@ identification:
   title: Visibility
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -74,6 +73,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -126,7 +129,7 @@ regions:
       identification: 
         name: New
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -179,6 +182,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -229,7 +236,7 @@ regions:
       identification: 
         name: New
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -292,6 +299,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -348,7 +359,7 @@ regions:
       identification: 
         name: New
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -419,7 +430,7 @@ dynamic-actions:
   identification: 
     name: change P0_APP_ID
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -432,11 +443,12 @@ dynamic-actions:
     type: Item is not null
     item: P0_APP_ID
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 293415592362888452
     identification: 
       action: Refresh
@@ -445,13 +457,13 @@ dynamic-actions:
       selection-type: Region
       region: Objects conditioned # 293414946304888446
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: change P0_APP_ID # 293415469604888451
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 293416123635888458
     identification: 
       action: Refresh
@@ -460,13 +472,13 @@ dynamic-actions:
       selection-type: Region
       region: Conditioned by # 293415696723888453
 
-    execution-options: 
+    execution: 
       sequence: 30
       event: change P0_APP_ID # 293415469604888451
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294195226983781247
     identification: 
       action: Refresh
@@ -475,13 +487,13 @@ dynamic-actions:
       selection-type: Region
       region: Condition Details # 293416287791888459
 
-    execution-options: 
+    execution: 
       sequence: 40
       event: change P0_APP_ID # 293415469604888451
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_SHOW =================================
+  - # ====== Action: Show ========================================
     id: 294195333088781248
     identification: 
       action: Show
@@ -490,13 +502,13 @@ dynamic-actions:
       selection-type: Region
       region: Condition Details # 293416287791888459
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P0_APP_ID # 293415469604888451
       fire-when-event-result-is: True
       fire-on-initialization: true
 
-  - # ====== Action: NATIVE_HIDE =================================
+  - # ====== Action: Hide ========================================
     id: 294195414490781249
     identification: 
       action: Hide
@@ -505,13 +517,13 @@ dynamic-actions:
       selection-type: Region
       region: Condition Details # 293416287791888459
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P0_APP_ID # 293415469604888451
       fire-when-event-result-is: False
       fire-on-initialization: true
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294195566596781250
     identification: 
       action: Refresh
@@ -520,13 +532,13 @@ dynamic-actions:
       selection-type: Region
       region: Conditioned by # 293415696723888453
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: change P0_APP_ID # 293415469604888451
       fire-when-event-result-is: False
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294195626510781251
     identification: 
       action: Refresh
@@ -535,7 +547,7 @@ dynamic-actions:
       selection-type: Region
       region: Objects conditioned # 293414946304888446
 
-    execution-options: 
+    execution: 
       sequence: 30
       event: change P0_APP_ID # 293415469604888451
       fire-when-event-result-is: False

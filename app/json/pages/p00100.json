@@ -5,8 +5,7 @@
    ,"Title":"JavaScript"
   }
  ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-   ,"Page Mode":"Normal"
+    "Page Mode":"Normal"
    ,"Page Template":"Theme Default"
    ,"Template Options":[
       "#DEFAULT#"
@@ -69,6 +68,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -128,7 +131,7 @@
            ,"Identification":{
               "Name":"JS Code Overall"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -235,6 +238,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -294,7 +301,7 @@
            ,"Identification":{
               "Name":"JavaScript Code"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -404,6 +411,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -456,7 +467,7 @@
            ,"Identification":{
               "Name":"Series 1"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -578,6 +589,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -631,7 +646,7 @@
            ,"Identification":{
               "Name":"New"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -714,7 +729,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -732,7 +749,7 @@
      ,"Identification":{
         "Name":"change P0_ITEMS"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":10
       }
      ,"When":{
@@ -744,8 +761,9 @@
          ,"P0_BEST_PRACTICE"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -757,7 +775,7 @@
             "Selection Type":"Region"
            ,"Region":"Characters of JavaScript Code per Page (293416813132888465)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P0_ITEMS (293282369686929174)"
            ,"Fire When Event Result Is":"True"
@@ -773,7 +791,7 @@
             "Selection Type":"Region"
            ,"Region":"Place of JavaScript (293417040775888467)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":20
            ,"Event":"change P0_ITEMS (293282369686929174)"
            ,"Fire When Event Result Is":"True"
@@ -789,7 +807,7 @@
             "Selection Type":"Region"
            ,"Region":"JavaScript in Page (293282571329929176)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":30
            ,"Event":"change P0_ITEMS (293282369686929174)"
            ,"Fire When Event Result Is":"True"
@@ -803,7 +821,7 @@
      ,"Identification":{
         "Name":"change Component Type"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":20
       }
      ,"When":{
@@ -813,8 +831,9 @@
           "P100_COMPONENT_TYPE"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -826,7 +845,7 @@
             "Selection Type":"Region"
            ,"Region":"JavaScript in Page (293282571329929176)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change Component Type (293417694705888473)"
            ,"Fire When Event Result Is":"True"

@@ -5,8 +5,7 @@
    ,"Title":"CSS"
   }
  ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-   ,"Page Mode":"Normal"
+    "Page Mode":"Normal"
    ,"Page Template":"Theme Default"
    ,"Template Options":[
       "#DEFAULT#"
@@ -72,6 +71,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -131,7 +134,7 @@
            ,"Identification":{
               "Name":"CSS in Page"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -241,6 +244,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -295,7 +302,7 @@
            ,"Identification":{
               "Name":"Series 1"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -417,6 +424,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -470,7 +481,7 @@
            ,"Identification":{
               "Name":"Place of CSS"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -553,7 +564,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -571,7 +584,7 @@
      ,"Identification":{
         "Name":"Change P0_APP_ID"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":10
       }
      ,"When":{
@@ -583,8 +596,9 @@
          ,"P0_BEST_PRACTICE"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -596,7 +610,7 @@
             "Selection Type":"Region"
            ,"Region":"Characters of CSS Code per Page (456042766579392916)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"Change P0_APP_ID (294195801218781252)"
            ,"Fire When Event Result Is":"True"
@@ -612,7 +626,7 @@
             "Selection Type":"Region"
            ,"Region":"Place of CSS (456113854637855984)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":20
            ,"Event":"Change P0_APP_ID (294195801218781252)"
            ,"Fire When Event Result Is":"True"
@@ -628,7 +642,7 @@
             "Selection Type":"Region"
            ,"Region":"CSS in Page (455982233047916696)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":30
            ,"Event":"Change P0_APP_ID (294195801218781252)"
            ,"Fire When Event Result Is":"True"
@@ -642,7 +656,7 @@
      ,"Identification":{
         "Name":"Change P200_COMPONENT_TYPE"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":20
       }
      ,"When":{
@@ -652,8 +666,9 @@
           "P200_COMPONENT_TYPE"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -665,7 +680,7 @@
             "Selection Type":"Region"
            ,"Region":"CSS in Page (455982233047916696)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"Change P200_COMPONENT_TYPE (294199135885781286)"
            ,"Fire When Event Result Is":"True"

@@ -6,8 +6,7 @@
    ,"Title":"Plugins"
   }
  ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-   ,"Page Mode":"Normal"
+    "Page Mode":"Normal"
    ,"Page Template":"Theme Default"
    ,"Template Options":[
       "#DEFAULT#"
@@ -68,6 +67,10 @@
           "#DEFAULT#"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":true
@@ -292,6 +295,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -322,7 +328,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"Right"
+            "Number Alignment":"End"
+           ,"Virtual Keyboard":"Text"
           }
          ,"Layout":{
             "Sequence":70
@@ -396,6 +403,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -452,6 +462,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Column Filter":{
             "Enabled":true
@@ -567,6 +580,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -666,6 +682,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -721,7 +741,7 @@
            ,"Identification":{
               "Name":"Plugins"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -776,6 +796,10 @@
           "#DEFAULT#"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":true
@@ -873,6 +897,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Export \/ Printing":{
             "Include In Export \/ Print":false
           }
@@ -905,6 +932,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Export \/ Printing":{
             "Include In Export \/ Print":false
@@ -995,6 +1025,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Export \/ Printing":{
             "Include In Export \/ Print":false
           }
@@ -1041,6 +1074,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -1085,6 +1121,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Export \/ Printing":{
             "Include In Export \/ Print":false
           }
@@ -1113,6 +1152,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Export \/ Printing":{
             "Include In Export \/ Print":false
@@ -1147,6 +1189,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Export \/ Printing":{
             "Include In Export \/ Print":false
           }
@@ -1178,6 +1223,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Export \/ Printing":{
             "Include In Export \/ Print":false
@@ -1211,6 +1259,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Export \/ Printing":{
             "Include In Export \/ Print":false
           }
@@ -1243,6 +1294,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Export \/ Printing":{
             "Include In Export \/ Print":false
@@ -1337,6 +1391,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -1393,6 +1450,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Column Filter":{
             "Enabled":true
@@ -1451,6 +1511,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -1495,6 +1558,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Export \/ Printing":{
             "Include In Export \/ Print":false
           }
@@ -1527,6 +1593,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Export \/ Printing":{
             "Include In Export \/ Print":false
@@ -1637,7 +1706,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -1655,7 +1726,7 @@
      ,"Identification":{
         "Name":"change P0_APP_ID - refresh Regions"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":10
       }
      ,"When":{
@@ -1666,8 +1737,9 @@
          ,"P400_PLUGIN_ID"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1679,7 +1751,7 @@
             "Selection Type":"Region"
            ,"Region":"Plugins (32937839366378139)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P0_APP_ID - refresh Regions (37656162311724606)"
            ,"Fire When Event Result Is":"True"
@@ -1695,7 +1767,7 @@
             "Selection Type":"Region"
            ,"Region":"Plugin Overview (37656362232724608)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":20
            ,"Event":"change P0_APP_ID - refresh Regions (37656162311724606)"
            ,"Fire When Event Result Is":"True"
@@ -1711,7 +1783,7 @@
             "Selection Type":"Region"
            ,"Region":"Plugin Usage (37656915688724614)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":30
            ,"Event":"change P0_APP_ID - refresh Regions (37656162311724606)"
            ,"Fire When Event Result Is":"True"

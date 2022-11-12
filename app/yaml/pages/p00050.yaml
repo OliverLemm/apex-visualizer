@@ -6,7 +6,6 @@ identification:
   title: Last Updated
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -78,6 +77,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -134,7 +137,7 @@ regions:
       identification: 
         name: Last Updates
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -256,6 +259,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -312,7 +319,7 @@ regions:
       identification: 
         name: New
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -432,7 +439,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -448,7 +457,7 @@ dynamic-actions:
   identification: 
     name: change P0_APP_ID
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -458,11 +467,12 @@ dynamic-actions:
     - P0_APP_ID
     - P0_PAGE_ID
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 293418576669888482
     identification: 
       action: Refresh
@@ -471,13 +481,13 @@ dynamic-actions:
       selection-type: Region
       region: Application changes # 293418366726888480
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P0_APP_ID # 293418467306888481
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 293419812614888495
     identification: 
       action: Refresh
@@ -486,7 +496,7 @@ dynamic-actions:
       selection-type: Region
       region: Changes on Components # 293419197283888488
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: change P0_APP_ID # 293418467306888481
       fire-when-event-result-is: True
@@ -497,7 +507,7 @@ dynamic-actions:
   identification: 
     name: change P50_DATE
 
-  execution-options: 
+  execution: 
     sequence: 20
 
   when: 
@@ -506,11 +516,12 @@ dynamic-actions:
     item(s): 
     - P50_DATE
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 293419706299888494
     identification: 
       action: Refresh
@@ -519,7 +530,7 @@ dynamic-actions:
       selection-type: Region
       region: Changes on Components # 293419197283888488
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P50_DATE # 293419650163888493
       fire-when-event-result-is: True

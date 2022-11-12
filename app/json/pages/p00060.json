@@ -5,8 +5,7 @@
    ,"Title":"Templates"
   }
  ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-   ,"Page Mode":"Normal"
+    "Page Mode":"Normal"
    ,"Page Template":"Theme Default"
    ,"Template Options":[
       "#DEFAULT#"
@@ -67,6 +66,10 @@
           "#DEFAULT#"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Static ID":"details"
@@ -155,7 +158,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"Right"
+            "Number Alignment":"End"
+           ,"Virtual Keyboard":"Text"
           }
          ,"Layout":{
             "Sequence":10
@@ -229,6 +233,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -285,6 +292,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Column Filter":{
             "Enabled":true
@@ -400,6 +410,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -456,6 +469,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Column Filter":{
             "Enabled":true
@@ -514,6 +530,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -571,6 +590,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -627,6 +649,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Column Filter":{
             "Enabled":true
@@ -721,6 +746,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -781,7 +810,7 @@
            ,"Identification":{
               "Name":"Template Reference"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -886,6 +915,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -946,7 +979,7 @@
            ,"Identification":{
               "Name":"Customized"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -1075,7 +1108,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -1093,7 +1128,7 @@
      ,"Identification":{
         "Name":"Change P0_APP_ID"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":10
       }
      ,"When":{
@@ -1103,8 +1138,9 @@
           "P0_APP_ID"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1116,7 +1152,7 @@
             "Selection Type":"Region"
            ,"Region":"Details (294196022433781255)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"Change P0_APP_ID (294197187100781266)"
            ,"Fire When Event Result Is":"True"
@@ -1132,7 +1168,7 @@
             "Selection Type":"Region"
            ,"Region":"Templates Reference (overall) (294197401216781268)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":20
            ,"Event":"Change P0_APP_ID (294197187100781266)"
            ,"Fire When Event Result Is":"True"
@@ -1148,7 +1184,7 @@
             "Selection Type":"Region"
            ,"Region":"Templates Reference (customized) (294198292392781277)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":30
            ,"Event":"Change P0_APP_ID (294197187100781266)"
            ,"Fire When Event Result Is":"True"
@@ -1162,7 +1198,7 @@
      ,"Identification":{
         "Name":"Change P60_TEMPLATE_TYPE"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":20
       }
      ,"When":{
@@ -1172,8 +1208,9 @@
           "P60_TEMPLATE_TYPE"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1185,7 +1222,7 @@
             "Selection Type":"Region"
            ,"Region":"Templates Reference (overall) (294197401216781268)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"Change P60_TEMPLATE_TYPE (294198068372781275)"
            ,"Fire When Event Result Is":"True"
@@ -1201,7 +1238,7 @@
             "Selection Type":"Region"
            ,"Region":"Templates Reference (customized) (294198292392781277)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":20
            ,"Event":"Change P60_TEMPLATE_TYPE (294198068372781275)"
            ,"Fire When Event Result Is":"True"

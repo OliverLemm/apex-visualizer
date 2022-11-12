@@ -6,8 +6,7 @@
    ,"Title":"APEX 20.1"
   }
  ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-   ,"Page Mode":"Normal"
+    "Page Mode":"Normal"
    ,"Page Template":"Theme Default"
    ,"Template Options":[
       "#DEFAULT#"
@@ -70,6 +69,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":false
@@ -321,6 +324,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -370,6 +377,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":false
@@ -621,6 +632,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -670,6 +685,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":false
@@ -930,6 +949,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":false
        ,"Exclude Title from Translation":false
@@ -1121,6 +1144,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":false
        ,"Exclude Title from Translation":false
@@ -1240,6 +1267,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":false
@@ -1466,6 +1497,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":false
        ,"Exclude Title from Translation":false
@@ -1689,6 +1724,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":false
@@ -1943,6 +1982,10 @@
        ,"Icon":"fa-wrench"
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -1969,7 +2012,7 @@
      ,"Identification":{
         "Name":"change P0_APP_ID - refresh regions"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":10
       }
      ,"When":{
@@ -1979,8 +2022,9 @@
           "P0_APP_ID"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1992,7 +2036,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.2 Desupported JavaScript Functions (22470004391353906)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":2
            ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
            ,"Fire When Event Result Is":"True"
@@ -2008,7 +2052,7 @@
             "Selection Type":"Region"
            ,"Region":"6.1.1 Deprecated JavaScript Functions (22470932571353915)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
            ,"Fire When Event Result Is":"True"
@@ -2024,7 +2068,7 @@
             "Selection Type":"Region"
            ,"Region":"6.1.10 apexrefresh Event is Deprecated (22471713638353923)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":100
            ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
            ,"Fire When Event Result Is":"True"
@@ -2040,7 +2084,7 @@
             "Selection Type":"Region"
            ,"Region":"6.1.5 Tabular Forms Deprecated  (22472425888353930)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":50
            ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
            ,"Fire When Event Result Is":"True"
@@ -2056,7 +2100,7 @@
             "Selection Type":"Region"
            ,"Region":"6.1.7 Theme Style \"Vista\" Deprecated in Universal Theme (22472983108353935)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":70
            ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
            ,"Fire When Event Result Is":"True"
@@ -2072,7 +2116,7 @@
             "Selection Type":"Region"
            ,"Region":"6.1.8 Post Calculation for Page Items Deprecated  (22473599670353941)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":80
            ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
            ,"Fire When Event Result Is":"True"
@@ -2088,7 +2132,7 @@
             "Selection Type":"Region"
            ,"Region":"6.1.9 Show \/ Hide All Page Items On Same Line attributes deprecated (23546299057935810)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":90
            ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
            ,"Fire When Event Result Is":"True"
@@ -2104,7 +2148,7 @@
             "Selection Type":"Region"
            ,"Region":"6.1.14 apex.widget.initPageItem Function Deprecated  (23547096181935818)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":140
            ,"Event":"change P0_APP_ID - refresh regions (22470750244353913)"
            ,"Fire When Event Result Is":"True"
@@ -2118,7 +2162,7 @@
      ,"Identification":{
         "Name":"click refresh - refresh regions"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":20
       }
      ,"When":{
@@ -2126,8 +2170,9 @@
        ,"Selection Type":"Button"
        ,"Button":"Refresh (45068108221137631)"
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -2139,7 +2184,7 @@
             "Selection Type":"Region"
            ,"Region":"6.1.1 Deprecated JavaScript Functions (22470932571353915)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"click refresh - refresh regions (22474128329353947)"
            ,"Fire When Event Result Is":"True"
@@ -2155,7 +2200,7 @@
             "Selection Type":"Region"
            ,"Region":"6.1.10 apexrefresh Event is Deprecated (22471713638353923)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":110
            ,"Event":"click refresh - refresh regions (22474128329353947)"
            ,"Fire When Event Result Is":"True"
@@ -2171,7 +2216,7 @@
             "Selection Type":"Region"
            ,"Region":"6.1.5 Tabular Forms Deprecated  (22472425888353930)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":50
            ,"Event":"click refresh - refresh regions (22474128329353947)"
            ,"Fire When Event Result Is":"True"
@@ -2187,7 +2232,7 @@
             "Selection Type":"Region"
            ,"Region":"6.1.7 Theme Style \"Vista\" Deprecated in Universal Theme (22472983108353935)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":70
            ,"Event":"click refresh - refresh regions (22474128329353947)"
            ,"Fire When Event Result Is":"True"
@@ -2203,7 +2248,7 @@
             "Selection Type":"Region"
            ,"Region":"6.1.8 Post Calculation for Page Items Deprecated  (22473599670353941)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":80
            ,"Event":"click refresh - refresh regions (22474128329353947)"
            ,"Fire When Event Result Is":"True"
@@ -2219,7 +2264,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.2 Desupported JavaScript Functions (22470004391353906)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":2
            ,"Event":"click refresh - refresh regions (22474128329353947)"
            ,"Fire When Event Result Is":"True"
@@ -2235,7 +2280,7 @@
             "Selection Type":"Region"
            ,"Region":"6.1.9 Show \/ Hide All Page Items On Same Line attributes deprecated (23546299057935810)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":90
            ,"Event":"click refresh - refresh regions (22474128329353947)"
            ,"Fire When Event Result Is":"True"
@@ -2251,7 +2296,7 @@
             "Selection Type":"Region"
            ,"Region":"6.1.14 apex.widget.initPageItem Function Deprecated  (23547096181935818)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":140
            ,"Event":"click refresh - refresh regions (22474128329353947)"
            ,"Fire When Event Result Is":"True"

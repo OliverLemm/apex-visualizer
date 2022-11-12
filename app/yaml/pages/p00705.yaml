@@ -7,7 +7,6 @@ identification:
   title: APEX 20.1
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -79,6 +78,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -324,6 +327,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -378,6 +385,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -619,6 +630,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -674,6 +689,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -930,6 +949,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -1117,6 +1140,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -1236,6 +1263,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -1461,6 +1492,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
@@ -1683,6 +1718,10 @@ regions:
     - is-expanded
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: false
@@ -1927,6 +1966,10 @@ regions:
     icon: fa-wrench
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -1949,7 +1992,7 @@ dynamic-actions:
   identification: 
     name: change P0_APP_ID - refresh regions
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -1958,11 +2001,12 @@ dynamic-actions:
     item(s): 
     - P0_APP_ID
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 22470863156353914
     identification: 
       action: Refresh
@@ -1971,13 +2015,13 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.2 Desupported JavaScript Functions # 22470004391353906
 
-    execution-options: 
+    execution: 
       sequence: 2
       event: change P0_APP_ID - refresh regions # 22470750244353913
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 22471632120353922
     identification: 
       action: Refresh
@@ -1986,13 +2030,13 @@ dynamic-actions:
       selection-type: Region
       region: 6.1.1 Deprecated JavaScript Functions # 22470932571353915
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P0_APP_ID - refresh regions # 22470750244353913
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 22472367022353929
     identification: 
       action: Refresh
@@ -2001,13 +2045,13 @@ dynamic-actions:
       selection-type: Region
       region: 6.1.10 apexrefresh Event is Deprecated # 22471713638353923
 
-    execution-options: 
+    execution: 
       sequence: 100
       event: change P0_APP_ID - refresh regions # 22470750244353913
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 22472882344353934
     identification: 
       action: Refresh
@@ -2016,13 +2060,13 @@ dynamic-actions:
       selection-type: Region
       region: '6.1.5 Tabular Forms Deprecated ' # 22472425888353930
 
-    execution-options: 
+    execution: 
       sequence: 50
       event: change P0_APP_ID - refresh regions # 22470750244353913
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 22473418736353940
     identification: 
       action: Refresh
@@ -2031,13 +2075,13 @@ dynamic-actions:
       selection-type: Region
       region: 6.1.7 Theme Style "Vista" Deprecated in Universal Theme # 22472983108353935
 
-    execution-options: 
+    execution: 
       sequence: 70
       event: change P0_APP_ID - refresh regions # 22470750244353913
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 23545697416935804
     identification: 
       action: Refresh
@@ -2046,13 +2090,13 @@ dynamic-actions:
       selection-type: Region
       region: '6.1.8 Post Calculation for Page Items Deprecated ' # 22473599670353941
 
-    execution-options: 
+    execution: 
       sequence: 80
       event: change P0_APP_ID - refresh regions # 22470750244353913
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 23546708154935815
     identification: 
       action: Refresh
@@ -2061,13 +2105,13 @@ dynamic-actions:
       selection-type: Region
       region: 6.1.9 Show / Hide All Page Items On Same Line attributes deprecated # 23546299057935810
 
-    execution-options: 
+    execution: 
       sequence: 90
       event: change P0_APP_ID - refresh regions # 22470750244353913
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 23547693031935824
     identification: 
       action: Refresh
@@ -2076,7 +2120,7 @@ dynamic-actions:
       selection-type: Region
       region: '6.1.14 apex.widget.initPageItem Function Deprecated ' # 23547096181935818
 
-    execution-options: 
+    execution: 
       sequence: 140
       event: change P0_APP_ID - refresh regions # 22470750244353913
       fire-when-event-result-is: True
@@ -2087,7 +2131,7 @@ dynamic-actions:
   identification: 
     name: click refresh - refresh regions
 
-  execution-options: 
+  execution: 
     sequence: 20
 
   when: 
@@ -2095,11 +2139,12 @@ dynamic-actions:
     selection-type: Button
     button: Refresh # 45068108221137631
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 22474248623353948
     identification: 
       action: Refresh
@@ -2108,13 +2153,13 @@ dynamic-actions:
       selection-type: Region
       region: 6.1.1 Deprecated JavaScript Functions # 22470932571353915
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: click refresh - refresh regions # 22474128329353947
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 22474366676353949
     identification: 
       action: Refresh
@@ -2123,13 +2168,13 @@ dynamic-actions:
       selection-type: Region
       region: 6.1.10 apexrefresh Event is Deprecated # 22471713638353923
 
-    execution-options: 
+    execution: 
       sequence: 110
       event: click refresh - refresh regions # 22474128329353947
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 22474469364353950
     identification: 
       action: Refresh
@@ -2138,13 +2183,13 @@ dynamic-actions:
       selection-type: Region
       region: '6.1.5 Tabular Forms Deprecated ' # 22472425888353930
 
-    execution-options: 
+    execution: 
       sequence: 50
       event: click refresh - refresh regions # 22474128329353947
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 23545353645935801
     identification: 
       action: Refresh
@@ -2153,13 +2198,13 @@ dynamic-actions:
       selection-type: Region
       region: 6.1.7 Theme Style "Vista" Deprecated in Universal Theme # 22472983108353935
 
-    execution-options: 
+    execution: 
       sequence: 70
       event: click refresh - refresh regions # 22474128329353947
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 23545468405935802
     identification: 
       action: Refresh
@@ -2168,13 +2213,13 @@ dynamic-actions:
       selection-type: Region
       region: '6.1.8 Post Calculation for Page Items Deprecated ' # 22473599670353941
 
-    execution-options: 
+    execution: 
       sequence: 80
       event: click refresh - refresh regions # 22474128329353947
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 23545593299935803
     identification: 
       action: Refresh
@@ -2183,13 +2228,13 @@ dynamic-actions:
       selection-type: Region
       region: 7.1.2 Desupported JavaScript Functions # 22470004391353906
 
-    execution-options: 
+    execution: 
       sequence: 2
       event: click refresh - refresh regions # 22474128329353947
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 23546886716935816
     identification: 
       action: Refresh
@@ -2198,13 +2243,13 @@ dynamic-actions:
       selection-type: Region
       region: 6.1.9 Show / Hide All Page Items On Same Line attributes deprecated # 23546299057935810
 
-    execution-options: 
+    execution: 
       sequence: 90
       event: click refresh - refresh regions # 22474128329353947
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 23547783983935825
     identification: 
       action: Refresh
@@ -2213,7 +2258,7 @@ dynamic-actions:
       selection-type: Region
       region: '6.1.14 apex.widget.initPageItem Function Deprecated ' # 23547096181935818
 
-    execution-options: 
+    execution: 
       sequence: 140
       event: click refresh - refresh regions # 22474128329353947
       fire-when-event-result-is: True

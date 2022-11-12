@@ -6,7 +6,6 @@ identification:
   title: Pages
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -77,6 +76,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     static-id: horizontal
     region-display-selector: true
@@ -135,7 +138,7 @@ regions:
         name: Pages
         type: Bar
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -173,7 +176,7 @@ regions:
         name: Average Components over all Pages
         type: Line
 
-      execution-options: 
+      execution: 
         sequence: 20
 
       source: 
@@ -294,6 +297,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     static-id: overall
     region-display-selector: true
@@ -352,7 +359,7 @@ regions:
       identification: 
         name: Components Overall
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -452,6 +459,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -502,7 +513,7 @@ regions:
       identification: 
         name: Pages
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -576,6 +587,10 @@ regions:
     - is-collapsed
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     static-id: details
@@ -659,7 +674,8 @@ regions:
       alignment: end
 
     settings: 
-      number-alignment: Right
+      number-alignment: End
+      virtual-keyboard: Text
 
     layout: 
       sequence: 10
@@ -731,6 +747,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -759,7 +778,8 @@ regions:
       alignment: end
 
     settings: 
-      number-alignment: Right
+      number-alignment: End
+      virtual-keyboard: Text
 
     layout: 
       sequence: 30
@@ -830,6 +850,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     column-filter: 
       enabled: true
@@ -939,6 +962,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -1047,6 +1073,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -1101,6 +1130,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -1154,6 +1186,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     column-filter: 
       enabled: true
@@ -1257,6 +1292,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     column-filter: 
       enabled: true
@@ -1493,6 +1531,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     static-id: vertical
     region-display-selector: true
@@ -1552,7 +1594,7 @@ regions:
         name: validations
         type: Bar
 
-      execution-options: 
+      execution: 
         sequence: 50
 
       source: 
@@ -1581,7 +1623,7 @@ regions:
         name: processes
         type: Bar
 
-      execution-options: 
+      execution: 
         sequence: 60
 
       source: 
@@ -1610,7 +1652,7 @@ regions:
         name: branches
         type: Bar
 
-      execution-options: 
+      execution: 
         sequence: 70
 
       source: 
@@ -1638,7 +1680,7 @@ regions:
         name: dynamic actions
         type: Bar
 
-      execution-options: 
+      execution: 
         sequence: 90
 
       source: 
@@ -1668,7 +1710,7 @@ regions:
         name: regions
         type: Bar
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -1701,7 +1743,7 @@ regions:
         name: items
         type: Bar
 
-      execution-options: 
+      execution: 
         sequence: 20
 
       source: 
@@ -1733,7 +1775,7 @@ regions:
         name: buttons
         type: Bar
 
-      execution-options: 
+      execution: 
         sequence: 30
 
       source: 
@@ -1762,7 +1804,7 @@ regions:
         name: computations
         type: Bar
 
-      execution-options: 
+      execution: 
         sequence: 40
 
       source: 
@@ -1837,7 +1879,7 @@ dynamic-actions:
   identification: 
     name: change P0_ITEMS
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -1848,11 +1890,12 @@ dynamic-actions:
     - P0_PAGE_ID
     - P0_COMPONENT
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 291331927220200856
     identification: 
       action: Refresh
@@ -1861,13 +1904,13 @@ dynamic-actions:
       selection-type: Region
       region: Components Overall # 291331283250200849
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: change P0_ITEMS # 449530736080422718
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 291332339765200860
     identification: 
       action: Refresh
@@ -1876,13 +1919,13 @@ dynamic-actions:
       selection-type: Region
       region: Components per Page # 290525748852486780
 
-    execution-options: 
+    execution: 
       sequence: 30
       event: change P0_ITEMS # 449530736080422718
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 291332964336200866
     identification: 
       action: Refresh
@@ -1891,7 +1934,7 @@ dynamic-actions:
       selection-type: Region
       region: Number of Components per Page # 291332488082200861
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P0_ITEMS # 449530736080422718
       fire-when-event-result-is: True

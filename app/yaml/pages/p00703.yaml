@@ -7,7 +7,6 @@ identification:
   title: APEX 19.1
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 

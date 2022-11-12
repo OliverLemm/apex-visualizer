@@ -6,8 +6,7 @@
    ,"Title":"Links"
   }
  ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-   ,"Page Mode":"Normal"
+    "Page Mode":"Normal"
    ,"Page Template":"Theme Default"
    ,"Template Options":[
       "#DEFAULT#"
@@ -70,6 +69,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":true
@@ -153,7 +156,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"Right"
+            "Number Alignment":"End"
+           ,"Virtual Keyboard":"Text"
           }
          ,"Layout":{
             "Sequence":20
@@ -231,6 +235,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -287,6 +294,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Column Filter":{
             "Enabled":true
@@ -402,6 +412,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -459,6 +472,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -489,7 +505,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"Right"
+            "Number Alignment":"End"
+           ,"Virtual Keyboard":"Text"
           }
          ,"Layout":{
             "Sequence":30
@@ -549,6 +566,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Export \/ Printing":{
             "Include In Export \/ Print":false
@@ -631,6 +651,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":true
@@ -741,6 +765,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -771,7 +798,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"Right"
+            "Number Alignment":"End"
+           ,"Virtual Keyboard":"Text"
           }
          ,"Layout":{
             "Sequence":20
@@ -822,7 +850,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"Right"
+            "Number Alignment":"End"
+           ,"Virtual Keyboard":"Text"
           }
          ,"Layout":{
             "Sequence":30
@@ -895,6 +924,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Column Filter":{
             "Enabled":true
@@ -1010,6 +1042,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -1067,6 +1102,9 @@
          ,"Default":{
             "Duplicate Copies Existing Value":true
           }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
+          }
          ,"Column Filter":{
             "Enabled":true
            ,"Performance Impacting Operators":[
@@ -1110,6 +1148,9 @@
           }
          ,"Default":{
             "Duplicate Copies Existing Value":true
+          }
+         ,"Session State":{
+            "Data Type":"VARCHAR2"
           }
          ,"Export \/ Printing":{
             "Include In Export \/ Print":false
@@ -1167,7 +1208,7 @@
      ,"Identification":{
         "Name":"change P0_APP_ID,P0_PAGE_ID - refresh Regions"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":10
       }
      ,"When":{
@@ -1178,8 +1219,9 @@
          ,"P0_PAGE_ID"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1191,7 +1233,7 @@
             "Selection Type":"Region"
            ,"Region":"Links to Page (37659795627724642)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P0_APP_ID,P0_PAGE_ID - refresh Regions (38836434485637004)"
            ,"Fire When Event Result Is":"True"
@@ -1207,7 +1249,7 @@
             "Selection Type":"Region"
            ,"Region":"Links from Page (38836680437637006)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":20
            ,"Event":"change P0_APP_ID,P0_PAGE_ID - refresh Regions (38836434485637004)"
            ,"Fire When Event Result Is":"True"

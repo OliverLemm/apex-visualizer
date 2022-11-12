@@ -4,7 +4,7 @@ id: 347
 identification: 
   name: APEX Visualizer
   alias: AV
-  version: 22.1.1
+  version: 22.2
 
 row-search: 
   tokenize: false
@@ -24,7 +24,7 @@ advanced:
   allow-feedback: false
   logging: true
   debugging: true
-  compatibility-mode: 21.2 / 22.1
+  compatibility-mode: 21.2 / 22.1 / 22.2
 
 authentication: 
   public-user: APEX_PUBLIC_USER
@@ -66,50 +66,44 @@ logo:
 progressive-web-app: 
   enable: false
 
-user-interfaces: 
-- # ====== User Interface: Desktop =============================
-  id: 452492531566466351
-  identification: 
-    name: Desktop
+navigation: 
+  home-url: 
+    url: 'f?p=&APP_ID.:10:&SESSION.'
+    page: 10 # Applications
 
-  navigation: 
-    home-url: 
-      url: 'f?p=&APP_ID.:10:&SESSION.'
-      page: 10 # Applications
+  login-url: 
+    url: 'f?p=&APP_ID.:LOGIN:&APP_SESSION.::&DEBUG.:::'
+    page: LOGIN
 
-    login-url: 
-      url: 'f?p=&APP_ID.:LOGIN:&APP_SESSION.::&DEBUG.:::'
-      page: LOGIN
+navigation-menu: 
+  list-template: Side Navigation Menu # 452478253231466285
+  template-options: 
+  - '#DEFAULT#'
+  - js-defaultCollapsed
+  - js-navCollapsed--hidden
+  - t-TreeNav--classic
+  list-position: Side
+  list: Desktop Navigation Menu # 452440279475466179
 
-  navigation-menu: 
-    list-template: Side Navigation Menu # 452478253231466285
-    template-options: 
-    - '#DEFAULT#'
-    - js-defaultCollapsed
-    - js-navCollapsed--hidden
-    - t-TreeNav--classic
-    list-position: Side
-    list: Desktop Navigation Menu # 452440279475466179
+navigation-bar: 
+  implementation: List
+  list: Desktop Navigation Bar # 452492439461466348
+  list-template: Navigation Bar # 452478069261466285
+  template-options: 
+  - '#DEFAULT#'
 
-  navigation-bar: 
-    implementation: List
-    list: Desktop Navigation Bar # 452492439461466348
-    list-template: Navigation Bar # 452478069261466285
-    template-options: 
-    - '#DEFAULT#'
+javascript: 
+  file-urls: 
+  - '#APP_FILES#av#MIN#.js'
+  include-jquery-migrate: false
 
-  javascript: 
-    file-urls: 
-    - '#APP_FILES#av#MIN#.js'
-    include-jquery-migrate: false
+css: 
+  file-urls: 
+  - '#APP_FILES#av#MIN#.css'
 
-  css: 
-    file-urls: 
-    - '#APP_FILES#av#MIN#.css'
-
-  attributes: 
-    theme: Universal Theme # 42
-    global-page: 0
-    enable-end-users-to-choose-theme-style: false
-    add-"built-with-apex"-to-footer: true
+attributes: 
+  theme: Universal Theme # 42
+  global-page: 0
+  enable-end-users-to-choose-theme-style: false
+  add-"built-with-apex"-to-footer: true
 

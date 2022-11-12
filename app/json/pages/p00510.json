@@ -6,8 +6,7 @@
    ,"Title":"Apex Visualizer - Log In"
   }
  ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-   ,"Page Mode":"Normal"
+    "Page Mode":"Normal"
    ,"Page Template":"Login (452443100862466212)"
    ,"Template Options":[
       "#DEFAULT#"
@@ -22,7 +21,12 @@
   }
  ,"Security":{
     "Authentication":"Page Is Public"
-   ,"Deep Linking":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable Meta Tags":false
+  }
+ ,"Security":{
+    "Deep Linking":"Application Default"
    ,"Page Access Protection":"Unrestricted"
    ,"Form Auto Complete":"Off"
    ,"Browser Cache":"Application Default"
@@ -61,6 +65,10 @@
         ]
        ,"Icon":"fa-sign-in"
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":false
@@ -129,7 +137,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Request (Memory Only)"
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -184,7 +194,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Request (Memory Only)"
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
       }
      ,"Security":{
         "Session State Protection":"Unrestricted"
@@ -237,7 +249,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Request (Memory Only)"
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
       }
      ,"Server-side Condition":{
         "Type":"Expression"
@@ -298,7 +312,7 @@
        ,"Language":"PL\/SQL"
        ,"PL\/SQL Code":"apex_authentication.login(\n    p_username =\u003E :P510_USERNAME,\n    p_password =\u003E :P510_PASSWORD );"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":20
        ,"Point":"Processing"
        ,"Run Process":"Once Per Page Visit (default)"
@@ -318,7 +332,7 @@
        ,"Language":"PL\/SQL"
        ,"PL\/SQL Code":"apex_authentication.send_login_username_cookie (\n    p_username =\u003E lower(:P510_USERNAME),\n    p_consent  =\u003E :P510_REMEMBER = \u0027Y\u0027 );"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":10
        ,"Point":"Processing"
        ,"Run Process":"Once Per Page Visit (default)"
@@ -338,7 +352,7 @@
        ,"Language":"PL\/SQL"
        ,"PL\/SQL Code":":P510_USERNAME := apex_authentication.get_login_username_cookie;\n:P510_REMEMBER := case when :P510_USERNAME is not null then \u0027Y\u0027 end;"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":10
        ,"Point":"Before Header"
        ,"Run Process":"Once Per Page Visit (default)"
@@ -353,7 +367,7 @@
      ,"Settings":{
         "Type":"Clear all Items on the Current Page"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":30
        ,"Point":"Processing"
        ,"Run Process":"Once Per Page Visit (default)"

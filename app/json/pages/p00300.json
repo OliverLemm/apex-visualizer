@@ -5,8 +5,7 @@
    ,"Title":"PLSQL"
   }
  ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-   ,"Page Mode":"Normal"
+    "Page Mode":"Normal"
    ,"Page Template":"Theme Default"
    ,"Template Options":[
       "#DEFAULT#"
@@ -72,6 +71,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -131,7 +134,7 @@
            ,"Identification":{
               "Name":"PLSQL in Page"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -241,6 +244,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -295,7 +302,7 @@
            ,"Identification":{
               "Name":"Series 1"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -415,6 +422,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -468,7 +479,7 @@
            ,"Identification":{
               "Name":"Place of PLSQL"
             }
-           ,"Execution Options":{
+           ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
@@ -551,7 +562,9 @@
      ,"Source":{
         "Type":"Null"
        ,"Used":"Only when current value in session state is null"
-       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
       }
      ,"Quick Picks":{
         "Show Quick Picks":false
@@ -569,7 +582,7 @@
      ,"Identification":{
         "Name":"Change P0_APP_ID"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":10
       }
      ,"When":{
@@ -581,8 +594,9 @@
          ,"P0_BEST_PRACTICE"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -594,7 +608,7 @@
             "Selection Type":"Region"
            ,"Region":"Characters of PLSQL Code per Page (618986948604000919)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"Change P0_APP_ID (294504007445993285)"
            ,"Fire When Event Result Is":"True"
@@ -610,7 +624,7 @@
             "Selection Type":"Region"
            ,"Region":"Place of PLSQL (619058036662463987)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":20
            ,"Event":"Change P0_APP_ID (294504007445993285)"
            ,"Fire When Event Result Is":"True"
@@ -626,7 +640,7 @@
             "Selection Type":"Region"
            ,"Region":"PLSQL in Page (618926415072524699)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":30
            ,"Event":"Change P0_APP_ID (294504007445993285)"
            ,"Fire When Event Result Is":"True"
@@ -640,7 +654,7 @@
      ,"Identification":{
         "Name":"Change P300_COMPONENT_TYPE"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":20
       }
      ,"When":{
@@ -650,8 +664,9 @@
           "P300_COMPONENT_TYPE"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -663,7 +678,7 @@
             "Selection Type":"Region"
            ,"Region":"PLSQL in Page (618926415072524699)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"Change P300_COMPONENT_TYPE (294505920002993287)"
            ,"Fire When Event Result Is":"True"

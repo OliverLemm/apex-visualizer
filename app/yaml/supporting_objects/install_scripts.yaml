@@ -4,7 +4,7 @@
   identification: 
     name: av_p0708_legacy_subst_strings_v
 
-  execution-options: 
+  execution: 
     sequence: 160
 
 - # ====== Install Script: av_general_pkg ======================
@@ -12,7 +12,7 @@
   identification: 
     name: av_general_pkg
 
-  execution-options: 
+  execution: 
     sequence: 5
 
 - # ====== Install Script: av_page_links_v =====================
@@ -20,7 +20,7 @@
   identification: 
     name: av_page_links_v
 
-  execution-options: 
+  execution: 
     sequence: 130
 
 - # ====== Install Script: av_plugins_v ========================
@@ -28,7 +28,7 @@
   identification: 
     name: av_plugins_v
 
-  execution-options: 
+  execution: 
     sequence: 140
 
 - # ====== Install Script: av_p0600_not_used_auth_schemes_v ====
@@ -36,7 +36,7 @@
   identification: 
     name: av_p0600_not_used_auth_schemes_v
 
-  execution-options: 
+  execution: 
     sequence: 150
 
 - # ====== Install Script: av_applications_v ===================
@@ -44,7 +44,7 @@
   identification: 
     name: av_applications_v
 
-  execution-options: 
+  execution: 
     sequence: 10
 
 - # ====== Install Script: av_components_v =====================
@@ -52,7 +52,7 @@
   identification: 
     name: av_components_v
 
-  execution-options: 
+  execution: 
     sequence: 20
 
 - # ====== Install Script: av_css_v ============================
@@ -60,7 +60,7 @@
   identification: 
     name: av_css_v
 
-  execution-options: 
+  execution: 
     sequence: 30
 
 - # ====== Install Script: av_javascript_v =====================
@@ -68,7 +68,7 @@
   identification: 
     name: av_javascript_v
 
-  execution-options: 
+  execution: 
     sequence: 40
 
 - # ====== Install Script: av_pages_v ==========================
@@ -76,7 +76,7 @@
   identification: 
     name: av_pages_v
 
-  execution-options: 
+  execution: 
     sequence: 50
 
 - # ====== Install Script: av_plsql_v ==========================
@@ -84,7 +84,7 @@
   identification: 
     name: av_plsql_v
 
-  execution-options: 
+  execution: 
     sequence: 60
 
 - # ====== Install Script: av_visibility_overview_v ============
@@ -92,7 +92,7 @@
   identification: 
     name: av_visibility_overview_v
 
-  execution-options: 
+  execution: 
     sequence: 80
 
 - # ====== Install Script: av_visibility_v =====================
@@ -100,7 +100,7 @@
   identification: 
     name: av_visibility_v
 
-  execution-options: 
+  execution: 
     sequence: 70
 
 - # ====== Install Script: av_p0100_js_code_by_page_v ==========
@@ -108,7 +108,7 @@
   identification: 
     name: av_p0100_js_code_by_page_v
 
-  execution-options: 
+  execution: 
     sequence: 90
 
 - # ====== Install Script: av_p0200_css_code_by_page_v =========
@@ -116,7 +116,7 @@
   identification: 
     name: av_p0200_css_code_by_page_v
 
-  execution-options: 
+  execution: 
     sequence: 100
 
 - # ====== Install Script: av_p0300_plsql_code_by_page_v =======
@@ -124,6 +124,6 @@
   identification: 
     name: av_p0300_plsql_code_by_page_v
 
-  execution-options: 
+  execution: 
     sequence: 110
 

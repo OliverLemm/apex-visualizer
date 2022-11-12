@@ -7,7 +7,6 @@ identification:
   title: QA
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -72,6 +71,10 @@ regions:
     - '#DEFAULT#'
     - t-Region--scrollBody
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     region-display-selector: true
@@ -317,6 +320,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -508,6 +515,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -612,6 +623,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -640,7 +654,8 @@ regions:
       alignment: end
 
     settings: 
-      number-alignment: Right
+      number-alignment: End
+      virtual-keyboard: Text
 
     layout: 
       sequence: 20
@@ -768,6 +783,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -847,6 +865,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -908,7 +930,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -921,7 +945,7 @@ page-items:
   help: 
     help-text: |
       These Compatibility Modes are equal<br>
-      21.2 / 22.1<br>
+      21.2 / 22.1 / 22.2<br>
       19.2 / 20.1 / 20.2 / 21.1<br>
       19.1<br>
       5.1 / 18.1 / 18.2<br>
@@ -974,7 +998,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -1031,7 +1057,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -1091,7 +1119,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -1151,7 +1181,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -1208,7 +1240,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -1265,7 +1299,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -1278,6 +1314,7 @@ page-items:
   help: 
     help-text: |
       If using Universal Theme, this information shows the version compared to the APEX version<br>
+      UT 22.2 = APEX 22.2<br>
       UT 22.1 = APEX 22.1<br>
       UT 21.2 = APEX 21.2<br>
       UT 21.1 = APEX 21.1<br>
@@ -1296,7 +1333,7 @@ dynamic-actions:
   identification: 
     name: change P0_APP_ID - refresh regions
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -1305,11 +1342,12 @@ dynamic-actions:
     item(s): 
     - P0_APP_ID
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 38839706971637037
     identification: 
       action: Refresh
@@ -1318,13 +1356,13 @@ dynamic-actions:
       selection-type: Region
       region: unused plugins # 38837724345637017
 
-    execution-options: 
+    execution: 
       sequence: 30
       event: change P0_APP_ID - refresh regions # 38839615330637036
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 38840242541637042
     identification: 
       action: Refresh
@@ -1333,13 +1371,13 @@ dynamic-actions:
       selection-type: Region
       region: unused authorization schemes # 38839957986637039
 
-    execution-options: 
+    execution: 
       sequence: 40
       event: change P0_APP_ID - refresh regions # 38839615330637036
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 38840926121637049
     identification: 
       action: Refresh
@@ -1348,13 +1386,13 @@ dynamic-actions:
       selection-type: Region
       region: never condition used # 38840300408637043
 
-    execution-options: 
+    execution: 
       sequence: 50
       event: change P0_APP_ID - refresh regions # 38839615330637036
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_EXECUTE_PLSQL_CODE ===================
+  - # ====== Action: Execute Server-side Code ====================
     id: 39142327540438726
     identification: 
       action: Execute Server-side Code
@@ -1391,7 +1429,8 @@ dynamic-actions:
         ,:P600_UT_VERSION
         from apex_application_themes t
         where t.application_id = :P0_APP_ID
-        and t.ui_type_name = 'DESKTOP';
+        and t.ui_type_name = 'DESKTOP'
+        and t.is_current = 'Yes';
       items-to-submit: 
       - P600_COMPATIBILITY_MODE
       - P600_SESSION_STATE_PROTECTION
@@ -1411,7 +1450,7 @@ dynamic-actions:
       - P600_UT_VERSION
       suppress-change-event: false
 
-    execution-options: 
+    execution: 
       sequence: 90
       event: change P0_APP_ID - refresh regions # 38839615330637036
       fire-when-event-result-is: True
@@ -1424,7 +1463,7 @@ dynamic-actions:
   identification: 
     name: change P600_COMPATIBILITY_MODE - setColor
 
-  execution-options: 
+  execution: 
     sequence: 20
 
   when: 
@@ -1433,11 +1472,12 @@ dynamic-actions:
     item(s): 
     - P600_COMPATIBILITY_MODE
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+  - # ====== Action: Execute JavaScript Code =====================
     id: 39141803140438721
     identification: 
       action: Execute JavaScript Code
@@ -1448,7 +1488,7 @@ dynamic-actions:
         var val = apex.item("P600_COMPATIBILITY_MODE").getValue();
         console.log("P600_COMPATIBILITY_MODE=" + val);
         
-        // success - up-to-date => 21.2 / 22.1
+        // success - up-to-date => 21.2 / 22.1 / 22.2
         if (val == '21.2') {
             $trigger.removeClass("u-danger");
             $trigger.addClass("u-success");
@@ -1472,7 +1512,7 @@ dynamic-actions:
       item(s): 
       - P600_COMPATIBILITY_MODE
 
-    execution-options: 
+    execution: 
       sequence: 50
       event: change P600_COMPATIBILITY_MODE - setColor # 39141322171438716
       fire-when-event-result-is: True
@@ -1483,7 +1523,7 @@ dynamic-actions:
   identification: 
     name: change P600_SESSION_STATE_PROTECTION - setColor
 
-  execution-options: 
+  execution: 
     sequence: 30
 
   when: 
@@ -1492,11 +1532,12 @@ dynamic-actions:
     item(s): 
     - P600_SESSION_STATE_PROTECTION
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+  - # ====== Action: Execute JavaScript Code =====================
     id: 39142032987438723
     identification: 
       action: Execute JavaScript Code
@@ -1519,7 +1560,7 @@ dynamic-actions:
       item(s): 
       - P600_SESSION_STATE_PROTECTION
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P600_SESSION_STATE_PROTECTION - setColor # 39141941027438722
       fire-when-event-result-is: True
@@ -1530,7 +1571,7 @@ dynamic-actions:
   identification: 
     name: change P600_RUNTIME_API_USAGE - setColor
 
-  execution-options: 
+  execution: 
     sequence: 40
 
   when: 
@@ -1539,11 +1580,12 @@ dynamic-actions:
     item(s): 
     - P600_RUNTIME_API_USAGE
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+  - # ====== Action: Execute JavaScript Code =====================
     id: 39142217790438725
     identification: 
       action: Execute JavaScript Code
@@ -1572,7 +1614,7 @@ dynamic-actions:
       item(s): 
       - P600_RUNTIME_API_USAGE
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P600_RUNTIME_API_USAGE - setColor # 39142163743438724
       fire-when-event-result-is: True
@@ -1583,7 +1625,7 @@ dynamic-actions:
   identification: 
     name: change P600_INCLUDE_LEGACY_JAVASCRIPT - setColorl
 
-  execution-options: 
+  execution: 
     sequence: 50
 
   when: 
@@ -1592,11 +1634,12 @@ dynamic-actions:
     item(s): 
     - P600_INCLUDE_LEGACY_JAVASCRIPT
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+  - # ====== Action: Execute JavaScript Code =====================
     id: 39142704166438730
     identification: 
       action: Execute JavaScript Code
@@ -1619,7 +1662,7 @@ dynamic-actions:
       item(s): 
       - P600_INCLUDE_LEGACY_JAVASCRIPT
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P600_INCLUDE_LEGACY_JAVASCRIPT - setColorl # 39142633619438729
       fire-when-event-result-is: True
@@ -1630,7 +1673,7 @@ dynamic-actions:
   identification: 
     name: change P600_INCLUDE_JQUERY_MIGRATE - setColorl
 
-  execution-options: 
+  execution: 
     sequence: 60
 
   when: 
@@ -1639,11 +1682,12 @@ dynamic-actions:
     item(s): 
     - P600_INCLUDE_JQUERY_MIGRATE
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+  - # ====== Action: Execute JavaScript Code =====================
     id: 39142991575438732
     identification: 
       action: Execute JavaScript Code
@@ -1666,7 +1710,7 @@ dynamic-actions:
       item(s): 
       - P600_INCLUDE_JQUERY_MIGRATE
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P600_INCLUDE_JQUERY_MIGRATE - setColorl # 39142800454438731
       fire-when-event-result-is: True
@@ -1677,7 +1721,7 @@ dynamic-actions:
   identification: 
     name: change P600_THEME_NAME - setColor show/hide P600_UT_REFRESHED
 
-  execution-options: 
+  execution: 
     sequence: 80
 
   when: 
@@ -1686,11 +1730,12 @@ dynamic-actions:
     item(s): 
     - P600_THEME_NAME
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+  - # ====== Action: Execute JavaScript Code =====================
     id: 39143222364438735
     identification: 
       action: Execute JavaScript Code
@@ -1713,13 +1758,13 @@ dynamic-actions:
       item(s): 
       - P600_THEME_NAME
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P600_THEME_NAME - setColor show/hide P600_UT_REFRESHED # 39143191512438734
       fire-when-event-result-is: True
       fire-on-initialization: true
 
-  - # ====== Action: NATIVE_SHOW =================================
+  - # ====== Action: Show ========================================
     id: 39143453638438737
     identification: 
       action: Show
@@ -1729,7 +1774,7 @@ dynamic-actions:
       item(s): 
       - P600_UT_VERSION
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: change P600_THEME_NAME - setColor show/hide P600_UT_REFRESHED # 39143191512438734
       fire-when-event-result-is: True
@@ -1740,7 +1785,7 @@ dynamic-actions:
       item: P600_THEME_NAME
       value: Universal Theme
 
-  - # ====== Action: NATIVE_HIDE =================================
+  - # ====== Action: Hide ========================================
     id: 39143544057438738
     identification: 
       action: Hide
@@ -1750,7 +1795,7 @@ dynamic-actions:
       item(s): 
       - P600_UT_VERSION
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P600_THEME_NAME - setColor show/hide P600_UT_REFRESHED # 39143191512438734
       fire-when-event-result-is: True
@@ -1766,7 +1811,7 @@ dynamic-actions:
   identification: 
     name: change P600_UT_VERSION - setColor
 
-  execution-options: 
+  execution: 
     sequence: 90
 
   when: 
@@ -1775,11 +1820,12 @@ dynamic-actions:
     item(s): 
     - P600_UT_VERSION
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+  - # ====== Action: Execute JavaScript Code =====================
     id: 39143767829438740
     identification: 
       action: Execute JavaScript Code
@@ -1790,12 +1836,12 @@ dynamic-actions:
         var val = $trigger.val();
         
         // success - up-to-date
-        if (val == '22.1') {    
+        if (val == '22.2') {    
             $trigger.addClass("u-success");
             $trigger.removeClass("u-warning");
             $trigger.removeClass("u-danger");
         
-        // danger - old versions
+        // danger - old versions which are not supported any more
         } else if ((val == '1.0') || (val == '1.1')) {    
             $trigger.removeClass("u-success");
             $trigger.removeClass("u-warning");
@@ -1813,7 +1859,7 @@ dynamic-actions:
       item(s): 
       - P600_UT_VERSION
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P600_UT_VERSION - setColor # 39143632218438739
       fire-when-event-result-is: True

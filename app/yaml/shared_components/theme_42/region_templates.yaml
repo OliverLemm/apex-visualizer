@@ -1,4 +1,14 @@
 ---
+- # ====== Region Template: Search Results Container ===========
+  id: 2081235920935293
+  identification: 
+    name: Search Results Container
+
+- # ====== Region Template: Item Container =====================
+  id: 2085533797935298
+  identification: 
+    name: Item Container
+
 - # ====== Region Template: Image ==============================
   id: 2611240099797376
   identification: 

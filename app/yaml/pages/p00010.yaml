@@ -6,7 +6,6 @@ identification:
   title: Applications
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -74,6 +73,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -124,7 +127,7 @@ regions:
       identification: 
         name: Applications
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -187,6 +190,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -243,7 +250,7 @@ regions:
       identification: 
         name: Applications
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -366,6 +373,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -425,7 +436,7 @@ regions:
       identification: 
         name: Applications
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -536,6 +547,10 @@ regions:
     - t-Region--hiddenOverflow
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     static-id: details
     region-display-selector: true
@@ -601,7 +616,8 @@ regions:
       alignment: end
 
     settings: 
-      number-alignment: Right
+      number-alignment: End
+      virtual-keyboard: Text
 
     layout: 
       sequence: 150
@@ -672,6 +688,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     column-filter: 
       enabled: true
@@ -782,6 +801,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -837,6 +859,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -891,6 +916,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     column-filter: 
       enabled: true
@@ -1001,6 +1029,9 @@ regions:
 
     default: 
       duplicate-copies-existing-value: true
+
+    session-state: 
+      data-type: VARCHAR2
 
     column-filter: 
       enabled: true
@@ -1161,6 +1192,9 @@ regions:
     default: 
       duplicate-copies-existing-value: true
 
+    session-state: 
+      data-type: VARCHAR2
+
     column-filter: 
       enabled: true
       performance-impacting-operators: 
@@ -1227,7 +1261,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -1243,7 +1279,7 @@ dynamic-actions:
   identification: 
     name: change P0_COMPONENT - refresh shared chart
 
-  execution-options: 
+  execution: 
     sequence: 60
 
   when: 
@@ -1252,11 +1288,12 @@ dynamic-actions:
     item(s): 
     - P0_COMPONENT
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 293284433520929195
     identification: 
       action: Refresh
@@ -1265,7 +1302,7 @@ dynamic-actions:
       selection-type: Region
       region: Shared Components # 449531401127422725
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P0_COMPONENT - refresh shared chart # 293284377367929194
       fire-when-event-result-is: True
@@ -1276,7 +1313,7 @@ dynamic-actions:
   identification: 
     name: change P10_COMPLEXITY_CATEGORY
 
-  execution-options: 
+  execution: 
     sequence: 70
 
   when: 
@@ -1285,11 +1322,12 @@ dynamic-actions:
     item(s): 
     - P10_COMPLEXITY_CATEGORY
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294269478248521549
     identification: 
       action: Refresh
@@ -1298,7 +1336,7 @@ dynamic-actions:
       selection-type: Region
       region: Complexity # 294199481042781289
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change P10_COMPLEXITY_CATEGORY # 294269372701521548
       fire-when-event-result-is: True
@@ -1309,17 +1347,17 @@ dynamic-actions:
   identification: 
     name: hide component
 
-  execution-options: 
+  execution: 
     sequence: 80
 
   when: 
     event: EVENT.EVENT.BROWSER.READY
 
-  advanced: 
+  execution: 
     event-scope: Static
 
   actions: 
-  - # ====== Action: NATIVE_HIDE =================================
+  - # ====== Action: Hide ========================================
     id: 294476954847578350
     identification: 
       action: Hide
@@ -1329,7 +1367,7 @@ dynamic-actions:
       item(s): 
       - P0_COMPONENT
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: hide component # 294476816186578349
       fire-when-event-result-is: True
@@ -1340,7 +1378,7 @@ dynamic-actions:
   identification: 
     name: change P0_APP_ID - refresh charts
 
-  execution-options: 
+  execution: 
     sequence: 20
 
   when: 
@@ -1349,11 +1387,12 @@ dynamic-actions:
     item(s): 
     - P0_APP_ID
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294195118376781246
     identification: 
       action: Refresh
@@ -1362,13 +1401,13 @@ dynamic-actions:
       selection-type: Region
       region: Shared Components # 449531401127422725
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: change P0_APP_ID - refresh charts # 449465803018677324
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294269154307521546
     identification: 
       action: Refresh
@@ -1377,13 +1416,13 @@ dynamic-actions:
       selection-type: Region
       region: Complexity # 294199481042781289
 
-    execution-options: 
+    execution: 
       sequence: 30
       event: change P0_APP_ID - refresh charts # 449465803018677324
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294476643654578347
     identification: 
       action: Refresh
@@ -1392,7 +1431,7 @@ dynamic-actions:
       selection-type: Region
       region: Page Functions # 293283138176929182
 
-    execution-options: 
+    execution: 
       sequence: 40
       event: change P0_APP_ID - refresh charts # 449465803018677324
       fire-when-event-result-is: True

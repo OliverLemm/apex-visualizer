@@ -6,8 +6,7 @@
    ,"Title":"APEX 20.2"
   }
  ,"Appearance":{
-    "User Interface":"Desktop (452492531566466351)"
-   ,"Page Mode":"Normal"
+    "Page Mode":"Normal"
    ,"Page Template":"Theme Default"
    ,"Template Options":[
       "#DEFAULT#"
@@ -65,6 +64,10 @@
        ,"Icon":"fa-wrench"
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -116,6 +119,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":false
@@ -343,6 +350,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":false
        ,"Exclude Title from Translation":false
@@ -569,6 +580,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":false
        ,"Exclude Title from Translation":false
@@ -786,6 +801,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -835,6 +854,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":false
@@ -1095,6 +1118,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":false
        ,"Exclude Title from Translation":false
@@ -1291,6 +1318,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":false
@@ -1551,6 +1582,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":false
        ,"Exclude Title from Translation":false
@@ -1704,6 +1739,10 @@
          ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
         "Region Display Selector":false
@@ -1952,6 +1991,10 @@
         ]
        ,"Render Components":"Above Content"
       }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
      ,"Advanced":{
         "Region Display Selector":true
        ,"Exclude Title from Translation":false
@@ -1976,7 +2019,7 @@
      ,"Identification":{
         "Name":"change P0_APP_ID - refresh regions"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":10
       }
      ,"When":{
@@ -1986,8 +2029,9 @@
           "P0_APP_ID"
         ]
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1999,7 +2043,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.1 Theme Style \"Vista\" Desupported in Universal Theme (103053462704148165)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"change P0_APP_ID - refresh regions (43371359508782534)"
            ,"Fire When Event Result Is":"True"
@@ -2015,7 +2059,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.2 apexrefresh Event is Desupported  (83910888156509491)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":20
            ,"Event":"change P0_APP_ID - refresh regions (43371359508782534)"
            ,"Fire When Event Result Is":"True"
@@ -2031,7 +2075,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.4 APEX_UTIL.STRING_TO_TABLE Function Desupported  (43371987095782540)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":30
            ,"Event":"change P0_APP_ID - refresh regions (43371359508782534)"
            ,"Fire When Event Result Is":"True"
@@ -2047,7 +2091,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.5 APEX_UTIL.TABLE_TO_STRING Function Desupported (43372805416782549)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":40
            ,"Event":"change P0_APP_ID - refresh regions (43371359508782534)"
            ,"Fire When Event Result Is":"True"
@@ -2063,7 +2107,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.6 APEX_PAGE.IS_JQM_SMARTPHONE_UI is Desupported (45103600515952506)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":50
            ,"Event":"change P0_APP_ID - refresh regions (43371359508782534)"
            ,"Fire When Event Result Is":"True"
@@ -2079,7 +2123,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.7 openModal and closeModal are Desupported (67583992558351032)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":60
            ,"Event":"change P0_APP_ID - refresh regions (43371359508782534)"
            ,"Fire When Event Result Is":"True"
@@ -2095,7 +2139,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.8 Tabular Forms Desupported (67590179445390848)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":70
            ,"Event":"change P0_APP_ID - refresh regions (43371359508782534)"
            ,"Fire When Event Result Is":"True"
@@ -2111,7 +2155,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.13 Desupported JavaScript Functions (103090329709452747)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":80
            ,"Event":"change P0_APP_ID - refresh regions (43371359508782534)"
            ,"Fire When Event Result Is":"True"
@@ -2125,7 +2169,7 @@
      ,"Identification":{
         "Name":"click Refresh - refresh regions"
       }
-     ,"Execution Options":{
+     ,"Execution":{
         "Sequence":20
       }
      ,"When":{
@@ -2133,8 +2177,9 @@
        ,"Selection Type":"Button"
        ,"Button":"Refresh (45068108221137631)"
       }
-     ,"Advanced":{
+     ,"Execution":{
         "Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -2146,7 +2191,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.1 Theme Style \"Vista\" Desupported in Universal Theme (103053462704148165)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":10
            ,"Event":"click Refresh - refresh regions (43371654653782537)"
            ,"Fire When Event Result Is":"True"
@@ -2162,7 +2207,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.2 apexrefresh Event is Desupported  (83910888156509491)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":20
            ,"Event":"click Refresh - refresh regions (43371654653782537)"
            ,"Fire When Event Result Is":"True"
@@ -2178,7 +2223,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.4 APEX_UTIL.STRING_TO_TABLE Function Desupported  (43371987095782540)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":30
            ,"Event":"click Refresh - refresh regions (43371654653782537)"
            ,"Fire When Event Result Is":"True"
@@ -2194,7 +2239,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.5 APEX_UTIL.TABLE_TO_STRING Function Desupported (43372805416782549)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":40
            ,"Event":"click Refresh - refresh regions (43371654653782537)"
            ,"Fire When Event Result Is":"True"
@@ -2210,7 +2255,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.6 APEX_PAGE.IS_JQM_SMARTPHONE_UI is Desupported (45103600515952506)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":50
            ,"Event":"click Refresh - refresh regions (43371654653782537)"
            ,"Fire When Event Result Is":"True"
@@ -2226,7 +2271,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.7 openModal and closeModal are Desupported (67583992558351032)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":60
            ,"Event":"click Refresh - refresh regions (43371654653782537)"
            ,"Fire When Event Result Is":"True"
@@ -2242,7 +2287,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.8 Tabular Forms Desupported (67590179445390848)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":70
            ,"Event":"click Refresh - refresh regions (43371654653782537)"
            ,"Fire When Event Result Is":"True"
@@ -2258,7 +2303,7 @@
             "Selection Type":"Region"
            ,"Region":"7.1.13 Desupported JavaScript Functions (103090329709452747)"
           }
-         ,"Execution Options":{
+         ,"Execution":{
             "Sequence":80
            ,"Event":"click Refresh - refresh regions (43371654653782537)"
            ,"Fire When Event Result Is":"True"

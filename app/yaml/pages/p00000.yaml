@@ -4,9 +4,6 @@ id: 0
 identification: 
   name: Global Page - Desktop
 
-appearance: 
-  user-interface: Desktop # 452492531566466351
-
 regions: 
 - # ====== Region: Filter ======================================
   id: 452496424516540365
@@ -31,6 +28,10 @@ regions:
     - t-Region--scrollBody
     - t-Form--labelsAbove
     render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
 
   advanced: 
     static-id: av-region-right-column
@@ -85,7 +86,10 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    data-type: VARCHAR2
+    storage: Per Session (Persistent)
 
   server-side-condition: 
     type: Current Page is in comma delimited list
@@ -145,7 +149,10 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    data-type: VARCHAR2
+    storage: Per Session (Persistent)
 
   security: 
     session-state-protection: Unrestricted
@@ -203,7 +210,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -267,11 +276,13 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
 
   default: 
     type: Static
     static-value: '-1'
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   server-side-condition: 
     type: Current Page is in comma delimited list
@@ -347,7 +358,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -416,12 +429,14 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
 
   default: 
     type: Expression
     language: PL/SQL
     pl/sql-expression: ':APP_ID'
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -512,7 +527,7 @@ dynamic-actions:
   identification: 
     name: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK
 
-  execution-options: 
+  execution: 
     sequence: 20
 
   when: 
@@ -526,14 +541,15 @@ dynamic-actions:
     type: Item is not null
     item: P0_PAGE_ID
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   configuration: 
     build-option: deactivated # 291318289212148547
 
   actions: 
-  - # ====== Action: NATIVE_SET_VALUE ============================
+  - # ====== Action: Set Value ===================================
     id: 32937015388378131
     identification: 
       action: Set Value
@@ -557,7 +573,7 @@ dynamic-actions:
       item(s): 
       - P0_PAGE_DESIGNER_LINK
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK # 32936982364378130
       fire-when-event-result-is: True
@@ -565,7 +581,7 @@ dynamic-actions:
       stop-execution-on-error: true
       wait-for-result: true
 
-  - # ====== Action: NATIVE_HIDE =================================
+  - # ====== Action: Hide ========================================
     id: 32937155676378132
     identification: 
       action: Hide
@@ -575,13 +591,13 @@ dynamic-actions:
       item(s): 
       - P0_PAGE_DESIGNER_LINK
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK # 32936982364378130
       fire-when-event-result-is: False
       fire-on-initialization: true
 
-  - # ====== Action: NATIVE_SHOW =================================
+  - # ====== Action: Show ========================================
     id: 32937249040378133
     identification: 
       action: Show
@@ -591,13 +607,13 @@ dynamic-actions:
       item(s): 
       - P0_PAGE_DESIGNER_LINK
 
-    execution-options: 
+    execution: 
       sequence: 30
       event: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK # 32936982364378130
       fire-when-event-result-is: True
       fire-on-initialization: true
 
-  - # ====== Action: NATIVE_JAVASCRIPT_CODE ======================
+  - # ====== Action: Execute JavaScript Code =====================
     id: 32937796691378138
     identification: 
       action: Execute JavaScript Code
@@ -610,7 +626,7 @@ dynamic-actions:
       item(s): 
       - P0_LINK
 
-    execution-options: 
+    execution: 
       sequence: 40
       event: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK # 32936982364378130
       fire-when-event-result-is: True
@@ -621,7 +637,7 @@ dynamic-actions:
   identification: 
     name: Show Details
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -633,11 +649,12 @@ dynamic-actions:
     type: JavaScript expression
     javascript-expression: "$('#details').is(':hidden')"
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_SHOW =================================
+  - # ====== Action: Show ========================================
     id: 449532263751422734
     identification: 
       action: Show
@@ -646,13 +663,13 @@ dynamic-actions:
       selection-type: jQuery Selector
       jquery-selector: '#details'
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: Show Details # 449532155105422733
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_HIDE =================================
+  - # ====== Action: Hide ========================================
     id: 449532619134422737
     identification: 
       action: Hide
@@ -661,7 +678,7 @@ dynamic-actions:
       selection-type: jQuery Selector
       jquery-selector: '#details'
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: Show Details # 449532155105422733
       fire-when-event-result-is: False

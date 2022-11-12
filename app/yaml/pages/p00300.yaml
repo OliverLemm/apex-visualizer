@@ -6,7 +6,6 @@ identification:
   title: PLSQL
 
 appearance: 
-  user-interface: Desktop # 452492531566466351
   page-mode: Normal
   page-template: Theme Default
   template-options: 
@@ -77,6 +76,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -136,7 +139,7 @@ regions:
       identification: 
         name: PLSQL in Page
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -249,6 +252,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -303,7 +310,7 @@ regions:
       identification: 
         name: Series 1
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -424,6 +431,10 @@ regions:
     - t-Region--scrollBody
     render-components: Above Content
 
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
@@ -477,7 +488,7 @@ regions:
       identification: 
         name: Place of PLSQL
 
-      execution-options: 
+      execution: 
         sequence: 10
 
       source: 
@@ -557,7 +568,9 @@ page-items:
   source: 
     type: Null
     used: Only when current value in session state is null
-    maintain-session-state: Per Session (Disk)
+
+  session-state: 
+    storage: Per Session (Persistent)
 
   quick-picks: 
     show-quick-picks: false
@@ -573,7 +586,7 @@ dynamic-actions:
   identification: 
     name: Change P0_APP_ID
 
-  execution-options: 
+  execution: 
     sequence: 10
 
   when: 
@@ -584,11 +597,12 @@ dynamic-actions:
     - P0_PAGE_ID
     - P0_BEST_PRACTICE
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294504565475993286
     identification: 
       action: Refresh
@@ -597,13 +611,13 @@ dynamic-actions:
       selection-type: Region
       region: Characters of PLSQL Code per Page # 618986948604000919
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: Change P0_APP_ID # 294504007445993285
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294505088121993286
     identification: 
       action: Refresh
@@ -612,13 +626,13 @@ dynamic-actions:
       selection-type: Region
       region: Place of PLSQL # 619058036662463987
 
-    execution-options: 
+    execution: 
       sequence: 20
       event: Change P0_APP_ID # 294504007445993285
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294505520884993287
     identification: 
       action: Refresh
@@ -627,7 +641,7 @@ dynamic-actions:
       selection-type: Region
       region: PLSQL in Page # 618926415072524699
 
-    execution-options: 
+    execution: 
       sequence: 30
       event: Change P0_APP_ID # 294504007445993285
       fire-when-event-result-is: True
@@ -638,7 +652,7 @@ dynamic-actions:
   identification: 
     name: Change P300_COMPONENT_TYPE
 
-  execution-options: 
+  execution: 
     sequence: 20
 
   when: 
@@ -647,11 +661,12 @@ dynamic-actions:
     item(s): 
     - P300_COMPONENT_TYPE
 
-  advanced: 
+  execution: 
     event-scope: Static
+    type: Immediate
 
   actions: 
-  - # ====== Action: NATIVE_REFRESH ==============================
+  - # ====== Action: Refresh =====================================
     id: 294506504962993287
     identification: 
       action: Refresh
@@ -660,7 +675,7 @@ dynamic-actions:
       selection-type: Region
       region: PLSQL in Page # 618926415072524699
 
-    execution-options: 
+    execution: 
       sequence: 10
       event: Change P300_COMPONENT_TYPE # 294505920002993287
       fire-when-event-result-is: True

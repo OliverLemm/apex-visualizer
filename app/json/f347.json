@@ -3,7 +3,7 @@
  ,"Identification":{
     "Name":"APEX Visualizer"
    ,"Alias":"AV"
-   ,"Version":"22.1.1"
+   ,"Version":"22.2"
   }
  ,"Row Search":{
     "Tokenize":false
@@ -23,7 +23,7 @@
    ,"Allow Feedback":false
    ,"Logging":true
    ,"Debugging":true
-   ,"Compatibility Mode":"21.2 \/ 22.1"
+   ,"Compatibility Mode":"21.2 \/ 22.1 \/ 22.2"
   }
  ,"Authentication":{
     "Public User":"APEX_PUBLIC_USER"
@@ -65,58 +65,50 @@
  ,"Progressive Web App":{
     "Enable":false
   }
- ,"User Interfaces":[
-    {
-      "id":"452492531566466351"
-     ,"Identification":{
-        "Name":"Desktop"
-      }
-     ,"Navigation":{
-        "Home URL":{
-          "url":"f?p=\u0026APP_ID.:10:\u0026SESSION."
-         ,"Page":"10"
-        }
-       ,"Login URL":{
-          "url":"f?p=\u0026APP_ID.:LOGIN:\u0026APP_SESSION.::\u0026DEBUG.:::"
-         ,"Page":"LOGIN"
-        }
-      }
-     ,"Navigation Menu":{
-        "List Template":"Side Navigation Menu (452478253231466285)"
-       ,"Template Options":[
-          "#DEFAULT#"
-         ,"js-defaultCollapsed"
-         ,"js-navCollapsed--hidden"
-         ,"t-TreeNav--classic"
-        ]
-       ,"List Position":"Side"
-       ,"List":"Desktop Navigation Menu (452440279475466179)"
-      }
-     ,"Navigation Bar":{
-        "Implementation":"List"
-       ,"List":"Desktop Navigation Bar (452492439461466348)"
-       ,"List Template":"Navigation Bar (452478069261466285)"
-       ,"Template Options":[
-          "#DEFAULT#"
-        ]
-      }
-     ,"JavaScript":{
-        "File URLs":[
-          "#APP_FILES#av#MIN#.js"
-        ]
-       ,"Include jQuery Migrate":false
-      }
-     ,"CSS":{
-        "File URLs":[
-          "#APP_FILES#av#MIN#.css"
-        ]
-      }
-     ,"Attributes":{
-        "Theme":"Universal Theme (42)"
-       ,"Global Page":"0"
-       ,"Enable End Users to choose Theme Style":false
-       ,"Add \"Built with APEX\" to Footer":true
-      }
+ ,"Navigation":{
+    "Home URL":{
+      "url":"f?p=\u0026APP_ID.:10:\u0026SESSION."
+     ,"Page":"10"
     }
-  ]
+   ,"Login URL":{
+      "url":"f?p=\u0026APP_ID.:LOGIN:\u0026APP_SESSION.::\u0026DEBUG.:::"
+     ,"Page":"LOGIN"
+    }
+  }
+ ,"Navigation Menu":{
+    "List Template":"Side Navigation Menu (452478253231466285)"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"js-defaultCollapsed"
+     ,"js-navCollapsed--hidden"
+     ,"t-TreeNav--classic"
+    ]
+   ,"List Position":"Side"
+   ,"List":"Desktop Navigation Menu (452440279475466179)"
+  }
+ ,"Navigation Bar":{
+    "Implementation":"List"
+   ,"List":"Desktop Navigation Bar (452492439461466348)"
+   ,"List Template":"Navigation Bar (452478069261466285)"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"JavaScript":{
+    "File URLs":[
+      "#APP_FILES#av#MIN#.js"
+    ]
+   ,"Include jQuery Migrate":false
+  }
+ ,"CSS":{
+    "File URLs":[
+      "#APP_FILES#av#MIN#.css"
+    ]
+  }
+ ,"Attributes":{
+    "Theme":"Universal Theme (42)"
+   ,"Global Page":"0"
+   ,"Enable End Users to choose Theme Style":false
+   ,"Add \"Built with APEX\" to Footer":true
+  }
 }
