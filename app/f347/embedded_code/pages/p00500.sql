@@ -21,7 +21,7 @@ select PAGE_ID,
        PAGE_DESIGNER_URL
   from AV_PAGE_LINKS_V
  where application_id = :P0_APP_ID and
-(:P0_PAGE_ID is null or :P0_PAGE_ID = link_page_id)
+(:P0_PAGE_ID is null or :P0_PAGE_ID = link_page_id);
 
 -- ----------------------------------------
 -- Page: 500 - Links > Region: Links from Page > Source > SQL Query
@@ -36,5 +36,5 @@ select PAGE_ID,
        PAGE_DESIGNER_URL
   from AV_PAGE_LINKS_V
  where application_id = :P0_APP_ID and
-(:P0_PAGE_ID is null or :P0_PAGE_ID = page_id)
+(:P0_PAGE_ID is null or :P0_PAGE_ID = page_id);
 

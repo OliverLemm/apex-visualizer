@@ -23,7 +23,7 @@ where (r.ascending_image is not null
 or r.ascending_image_attributes is not null
 or r.descending_image is not null
 or r.descending_image_attributes is not null)
-and r.application_id = :P0_APP_ID
+and r.application_id = :P0_APP_ID;
 
 -- ----------------------------------------
 -- Page: 710 - APEX 22.2 > Region: 6.1.2 Deprecated User Interfaces Removed > Source > SQL Query
@@ -62,7 +62,7 @@ and (instr(upper(p.plsql_code_clob)
         ,'SUPPORTED_UI_TYPES') > 0 or
      instr(upper(p.plsql_code_clob)
         ,'SUPPORTED_UI_TYPES') > 0
-    )
+    );
 
 -- ----------------------------------------
 -- Page: 710 - APEX 22.2 > Region: 8.1.3 Desupported View Columns > Source > SQL Query
@@ -72,7 +72,7 @@ from apex_applications a
 where (a.app_builder_icon_name is not null or 
        a.favicons is not null or
        a.pwa_manifest_icon_url is not null)
-and a.application_id = :P0_APP_ID
+and a.application_id = :P0_APP_ID;
 
 -- ----------------------------------------
 -- Page: 710 - APEX 22.2 > Region: 8.1.1 Desupported Attributes in App Builder > Source > SQL Query
@@ -82,7 +82,7 @@ from apex_applications a
 where (a.app_builder_icon_name is not null or 
        a.favicons is not null or
        a.pwa_manifest_icon_url is not null)
-and a.application_id = :P0_APP_ID
+and a.application_id = :P0_APP_ID;
 
 -- ----------------------------------------
 -- Page: 710 - APEX 22.2 > Region: 6.1.4 Deprecated jQuery/JET Date Pickers > Source > SQL Query
@@ -95,7 +95,7 @@ select p.page_id
       ,case p.display_as_code when 'NATIVE_DATE_PICKER_JET' then 'JET Datepicker' else 'jQuery Datepicker' end display_as
 from apex_application_page_items p
 where p.display_as_code in ('NATIVE_DATE_PICKER_JET','NATIVE_DATE_PICKER')
-and p.application_id = :P0_APP_ID
+and p.application_id = :P0_APP_ID;
 
 -- ----------------------------------------
 -- Page: 710 - APEX 22.2 > Region: 6.1.3 Deprecated APIs and Parameters (PL/SQL API) > Source > SQL Query
@@ -114,7 +114,7 @@ and (instr(upper(p.plsql_code_clob)
         ,'APEX_PAGE.GET_UI_TYPE') > 0 or
      instr(upper(p.plsql_code_clob)
         ,'APEX_INSTANCE_ADMIN.ADD_WEB_ENTRY_POINT') > 0
-    )
+    );
 
 -- ----------------------------------------
 -- Page: 710 - APEX 22.2 > Region: 6.1.3 Deprecated APIs and Parameters (JavaScript API)  > Source > SQL Query
@@ -127,7 +127,7 @@ select j.page_id
 from av_javascript_v j
 where instr(lower(j.js_code_clob)
            ,'apex.pwa.gettnstalltext') > 0
-and j.application_id = :P0_APP_ID
+and j.application_id = :P0_APP_ID;
 
 -- ----------------------------------------
 -- Page: 710 - APEX 22.2 > Region: 8.1.8 Desupported Public Package APIs > Source > SQL Query
@@ -144,5 +144,5 @@ and (instr(upper(p.plsql_code_clob)
         ,'APEX_PAGE.IS_DESKTOP_UI') > 0 or
      instr(upper(p.plsql_code_clob)
         ,'APEX_PAGE.GET_UI_TYPE') > 0
-    )
+    );
 

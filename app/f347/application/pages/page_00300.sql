@@ -4,8 +4,8 @@ begin
 --     PAGE: 00300
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2022.10.07'
-,p_release=>'22.2.6'
+ p_version_yyyy_mm_dd=>'2023.04.28'
+,p_release=>'23.1.3'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -42,7 +42,6 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_source_type=>'NATIVE_JET_CHART'
 ,p_ajax_items_to_submit=>'P0_APP_ID,P0_PAGE_ID,P0_BEST_PRACTICE,P300_COMPONENT_TYPE'
 ,p_plug_query_num_rows=>15
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 );
 wwv_flow_imp_page.create_jet_chart(
  p_id=>wwv_flow_imp.id(294501057125993269)
@@ -153,7 +152,6 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_source_type=>'NATIVE_JET_CHART'
 ,p_ajax_items_to_submit=>'P0_APP_ID,P0_BEST_PRACTICE'
 ,p_plug_query_num_rows=>15
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 );
 wwv_flow_imp_page.create_jet_chart(
  p_id=>wwv_flow_imp.id(126171150057891101)
@@ -251,7 +249,6 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_source_type=>'NATIVE_JET_CHART'
 ,p_ajax_items_to_submit=>'P0_APP_ID,P0_PAGE_ID,P0_BEST_PRACTICE'
 ,p_plug_query_num_rows=>15
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 );
 wwv_flow_imp_page.create_jet_chart(
  p_id=>wwv_flow_imp.id(294499652224993265)

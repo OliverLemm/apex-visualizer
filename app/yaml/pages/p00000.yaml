@@ -60,7 +60,7 @@ page-items:
     alignment: Left
 
   settings: 
-    format: HTML
+    format: HTML (Unsafe)
     send-on-page-submit: true
 
   layout: 

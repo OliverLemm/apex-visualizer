@@ -97,7 +97,7 @@
         }
        ,"Pagination":{
           "Type":"Scroll"
-         ,"Show Total Row Count":true
+         ,"Show Total Count":true
         }
        ,"Messages":{
           "When No Data Found":"no unused plugins found"
@@ -355,7 +355,7 @@
         }
        ,"Pagination":{
           "Type":"Scroll"
-         ,"Show Total Row Count":true
+         ,"Show Total Count":true
         }
        ,"Toolbar":{
           "Show":false
@@ -553,7 +553,7 @@
         }
        ,"Pagination":{
           "Type":"Scroll"
-         ,"Show Total Row Count":true
+         ,"Show Total Count":true
         }
        ,"Toolbar":{
           "Show":true

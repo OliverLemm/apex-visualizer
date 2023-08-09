@@ -9,6 +9,40 @@
 // --------------------------------------------------------------------------------
 
 // ----------------------------------------
+// Page: 600 - QA > Dynamic Action: change P600_SESSION_STATE_PROTECTION - setColor > Action: Execute JavaScript Code > Settings > Code
+
+var $trigger = $(this.triggeringElement);
+var val = $trigger.val();
+
+if (val == 'Enabled') {    
+    $trigger.addClass("u-success");
+    $trigger.removeClass("u-warning");
+} else {    
+    $trigger.removeClass("u-success");
+    $trigger.addClass("u-warning");
+}
+
+// ----------------------------------------
+// Page: 600 - QA > Dynamic Action: change P600_RUNTIME_API_USAGE - setColor > Action: Execute JavaScript Code > Settings > Code
+
+var $trigger = $(this.triggeringElement);
+var val = $trigger.val();
+
+if (val == 'None') {    
+    $trigger.addClass("u-success");
+    $trigger.removeClass("u-warning");
+    $trigger.removeClass("u-danger");
+} else if (val == 'This:Other:Workspace') {
+    $trigger.removeClass("u-success");
+    $trigger.removeClass("u-warning");
+    $trigger.addClass("u-danger");
+} else {
+    $trigger.removeClass("u-success");
+    $trigger.addClass("u-warning");
+    $trigger.removeClass("u-danger");
+}
+
+// ----------------------------------------
 // Page: 600 - QA > Dynamic Action: change P600_UT_VERSION - setColor > Action: Execute JavaScript Code > Settings > Code
 
 var $trigger = $(this.triggeringElement);
@@ -34,32 +68,40 @@ if (val == '22.2') {
 }
 
 // ----------------------------------------
-// Page: 600 - QA > Dynamic Action: change P600_RUNTIME_API_USAGE - setColor > Action: Execute JavaScript Code > Settings > Code
+// Page: 600 - QA > Dynamic Action: change P600_THEME_NAME - setColor show/hide P600_UT_REFRESHED > Action: Execute JavaScript Code > Settings > Code
 
 var $trigger = $(this.triggeringElement);
 var val = $trigger.val();
 
-if (val == 'None') {    
+if (val == 'Universal Theme') {    
     $trigger.addClass("u-success");
-    $trigger.removeClass("u-warning");
     $trigger.removeClass("u-danger");
-} else if (val == 'This:Other:Workspace') {
+} else {    
     $trigger.removeClass("u-success");
-    $trigger.removeClass("u-warning");
     $trigger.addClass("u-danger");
-} else {
-    $trigger.removeClass("u-success");
-    $trigger.addClass("u-warning");
-    $trigger.removeClass("u-danger");
 }
 
 // ----------------------------------------
-// Page: 600 - QA > Dynamic Action: change P600_SESSION_STATE_PROTECTION - setColor > Action: Execute JavaScript Code > Settings > Code
+// Page: 600 - QA > Dynamic Action: change P600_INCLUDE_JQUERY_MIGRATE - setColorl > Action: Execute JavaScript Code > Settings > Code
 
 var $trigger = $(this.triggeringElement);
 var val = $trigger.val();
 
-if (val == 'Enabled') {    
+if (val == 'No') {    
+    $trigger.addClass("u-success");
+    $trigger.removeClass("u-danger");
+} else {    
+    $trigger.removeClass("u-success");
+    $trigger.addClass("u-danger");
+}
+
+// ----------------------------------------
+// Page: 600 - QA > Dynamic Action: change P600_INCLUDE_LEGACY_JAVASCRIPT - setColorl > Action: Execute JavaScript Code > Settings > Code
+
+var $trigger = $(this.triggeringElement);
+var val = $trigger.val();
+
+if (val == 'No') {    
     $trigger.addClass("u-success");
     $trigger.removeClass("u-warning");
 } else {    
@@ -91,47 +133,5 @@ if (val == '21.2') {
     $trigger.addClass("u-danger");
     $trigger.removeClass("u-success");
     $trigger.removeClass("u-warning");
-}
-
-// ----------------------------------------
-// Page: 600 - QA > Dynamic Action: change P600_INCLUDE_LEGACY_JAVASCRIPT - setColorl > Action: Execute JavaScript Code > Settings > Code
-
-var $trigger = $(this.triggeringElement);
-var val = $trigger.val();
-
-if (val == 'No') {    
-    $trigger.addClass("u-success");
-    $trigger.removeClass("u-warning");
-} else {    
-    $trigger.removeClass("u-success");
-    $trigger.addClass("u-warning");
-}
-
-// ----------------------------------------
-// Page: 600 - QA > Dynamic Action: change P600_INCLUDE_JQUERY_MIGRATE - setColorl > Action: Execute JavaScript Code > Settings > Code
-
-var $trigger = $(this.triggeringElement);
-var val = $trigger.val();
-
-if (val == 'No') {    
-    $trigger.addClass("u-success");
-    $trigger.removeClass("u-danger");
-} else {    
-    $trigger.removeClass("u-success");
-    $trigger.addClass("u-danger");
-}
-
-// ----------------------------------------
-// Page: 600 - QA > Dynamic Action: change P600_THEME_NAME - setColor show/hide P600_UT_REFRESHED > Action: Execute JavaScript Code > Settings > Code
-
-var $trigger = $(this.triggeringElement);
-var val = $trigger.val();
-
-if (val == 'Universal Theme') {    
-    $trigger.addClass("u-success");
-    $trigger.removeClass("u-danger");
-} else {    
-    $trigger.removeClass("u-success");
-    $trigger.addClass("u-danger");
 }
 

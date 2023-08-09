@@ -9,6 +9,11 @@
 // --------------------------------------------------------------------------------
 
 // ----------------------------------------
+// Page: 715 - APEX 23.1 > Dynamic Action: change P0_APP_ID - refresh regions > Action: Execute JavaScript Code > Settings > Code
+
+av_refresh_hide_show_regions()
+
+// ----------------------------------------
 // Page: 715 - APEX 23.1 > Dynamic Action: page load - add icons by class > Action: Execute JavaScript Code > Settings > Code
 
 console.log('running DA')
@@ -16,11 +21,6 @@ console.log(this.affectedElements);
 
 // ----------------------------------------
 // Page: 715 - APEX 23.1 > Dynamic Action: click refresh - refresh regions > Action: Execute JavaScript Code > Settings > Code
-
-av_refresh_hide_show_regions()
-
-// ----------------------------------------
-// Page: 715 - APEX 23.1 > Dynamic Action: change P0_APP_ID - refresh regions > Action: Execute JavaScript Code > Settings > Code
 
 av_refresh_hide_show_regions()
 

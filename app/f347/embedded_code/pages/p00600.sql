@@ -15,7 +15,7 @@ select NAME,
        DISPLAY_NAME
   from AV_PLUGINS_V
  where application_id = :P0_APP_ID and
-page_name is null
+page_name is null;
 
 -- ----------------------------------------
 -- Page: 600 - QA > Dynamic Action: change P0_APP_ID - refresh regions > Action: Execute Server-side Code > Settings > PL/SQL Code
@@ -62,12 +62,12 @@ select v.page_name
 from av_visibility_v v
 where v.visibility_category = 'CONDITION'
 and upper(v.visibility_type) = 'NEVER'
-and v.application_id = :P0_APP_ID
+and v.application_id = :P0_APP_ID;
 
 -- ----------------------------------------
 -- Page: 600 - QA > Region: unused authorization schemes > Source > SQL Query
 
 select a.authorization_scheme_name
 from av_p0600_not_used_auth_schemes_v a
-where a.application_id = :P0_APP_ID
+where a.application_id = :P0_APP_ID;
 

@@ -100,7 +100,7 @@ regions:
 
     pagination: 
       type: Scroll
-      show-total-row-count: true
+      show-total-count: true
 
     messages: 
       when-no-data-found: no unused plugins found
@@ -348,7 +348,7 @@ regions:
 
     pagination: 
       type: Scroll
-      show-total-row-count: true
+      show-total-count: true
 
     toolbar: 
       show: false
@@ -543,7 +543,7 @@ regions:
 
     pagination: 
       type: Scroll
-      show-total-row-count: true
+      show-total-count: true
 
     toolbar: 
       show: true

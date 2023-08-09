@@ -3,7 +3,9 @@
     "id":"452440279475466179"
    ,"Identification":{
       "Name":"Desktop Navigation Menu"
-     ,"Type":"Static Values"
+    }
+   ,"Source":{
+      "Type":"Static Values"
     }
    ,"Entries":[
       {
@@ -747,7 +749,9 @@
     "id":"452492439461466348"
    ,"Identification":{
       "Name":"Desktop Navigation Bar"
-     ,"Type":"Static Values"
+    }
+   ,"Source":{
+      "Type":"Static Values"
     }
    ,"Entries":[
       {

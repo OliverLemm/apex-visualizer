@@ -17,7 +17,7 @@ select page_id
       ,component_type
       ,code_vc2
 from av_p0708_legacy_subst_strings_v
-where application_id = :P0_APP_ID
+where application_id = :P0_APP_ID;
 
 -- ----------------------------------------
 -- Page: 708 - APEX 21.2 > Region: 5.1.2 Deprecated Region Positions > Source > SQL Query
@@ -33,7 +33,7 @@ where b.display_position_code in ('TOP'
                                  ,'BOTTOM'
                                  ,'BELOW_BOX'
                                  ,'ABOVE_BOX')
-and b.application_id = :P0_APP_ID
+and b.application_id = :P0_APP_ID;
 
 -- ----------------------------------------
 -- Page: 708 - APEX 21.2 > Region: 5.1.1 Deprecated Page Positions  > Source > SQL Query
@@ -41,5 +41,5 @@ and b.application_id = :P0_APP_ID
 select page_id, page_name, region_name, display_position_code
 from apex_application_page_regions r
 where display_position_code in ( 'BODY_1', 'BODY_2', 'BODY_3', 'AFTER_HEADER', 'BEFORE_FOOTER' )
-and application_id = :P0_APP_ID
+and application_id = :P0_APP_ID;
 

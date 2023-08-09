@@ -3,7 +3,7 @@
  ,"Identification":{
     "Name":"APEX Visualizer"
    ,"Alias":"AV"
-   ,"Version":"22.2"
+   ,"Version":"23.1"
   }
  ,"Row Search":{
     "Tokenize":false
@@ -44,6 +44,9 @@
    ,"Embed in Frames":"Deny"
    ,"Referrer Policy":"strict-origin-when-cross-origin"
    ,"HTML Escaping Mode":"Extended"
+  }
+ ,"Advanced":{
+    "Pass ECID":"N"
   }
  ,"Database Session":{
     "Parsing Schema":"APEX_VISUALIZER"

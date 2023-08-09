@@ -4,8 +4,8 @@ begin
 --     PAGE: 00710
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2022.10.07'
-,p_release=>'22.2.6'
+ p_version_yyyy_mm_dd=>'2023.04.28'
+,p_release=>'23.1.3'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -31,7 +31,6 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_template=>wwv_flow_imp.id(452458863643466246)
 ,p_plug_display_sequence=>20
 ,p_include_in_reg_disp_sel_yn=>'Y'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
@@ -425,7 +424,6 @@ wwv_flow_imp_page.create_page_plug(
 'Future releases may document new custom element markup, classes, and CSS variables to allow more supportable customization.<br>',
 '<br>',
 '<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>'))
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'Custom page template and custom region templates with duplicated positions are considered deprecated. For example, a region template referencing position #CHANGE# twice is not recommended because that duplicate position causes duplicate DOM IDs.<br>',
 '<br>'))
@@ -530,7 +528,6 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_template=>wwv_flow_imp.id(452458863643466246)
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
@@ -542,7 +539,6 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_template=>wwv_flow_imp.id(452454481275466240)
 ,p_plug_display_sequence=>50
 ,p_plug_display_point=>'SUB_REGIONS'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'Developers can no longer define App Builder Defaults from Workspace Utilities, App Builder Defaults. The Create Application Wizard no longer uses the defined attributes.<br> ',
 '<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>'))
@@ -557,7 +553,6 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_template=>wwv_flow_imp.id(452454481275466240)
 ,p_plug_display_sequence=>60
 ,p_plug_display_point=>'SUB_REGIONS'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'The Copy Theme Wizard no longer supports copying legacy themes. This includes Themes 1 - 26, and the jQuery Mobile theme.<br>',
 '<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>'))
@@ -572,7 +567,6 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_template=>wwv_flow_imp.id(452454481275466240)
 ,p_plug_display_sequence=>70
 ,p_plug_display_point=>'SUB_REGIONS'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'Rich Text Editor items based on CKEditor4, which are marked as deprecated since APEX 20.2, are now desupported and will be automatically converted to CKEditor5. CKEditor4 is removed from APEX completely.<br>',
 'Converted items receive the following configuration:',
@@ -842,18 +836,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-wwv_flow_imp.component_end;
-end;
-/
-begin
-wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2022.10.07'
-,p_release=>'22.2.6'
-,p_default_workspace_id=>125633378786110814
-,p_default_application_id=>347
-,p_default_id_offset=>125634094441118325
-,p_default_owner=>'APEX_VISUALIZER'
-);
 wwv_flow_imp_page.create_report_columns(
  p_id=>wwv_flow_imp.id(18080331143566610)
 ,p_query_column_id=>4
@@ -864,6 +846,18 @@ wwv_flow_imp_page.create_report_columns(
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
+);
+wwv_flow_imp.component_end;
+end;
+/
+begin
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2023.04.28'
+,p_release=>'23.1.3'
+,p_default_workspace_id=>125633378786110814
+,p_default_application_id=>347
+,p_default_id_offset=>125634094441118325
+,p_default_owner=>'APEX_VISUALIZER'
 );
 wwv_flow_imp_page.create_report_columns(
  p_id=>wwv_flow_imp.id(18080775078566610)
@@ -906,7 +900,6 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_template=>wwv_flow_imp.id(452454481275466240)
 ,p_plug_display_sequence=>40
 ,p_plug_display_point=>'SUB_REGIONS'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'FullCalendar v3 is desupported, including:<br>',
 '- deprecated plug-in attributes<br>',

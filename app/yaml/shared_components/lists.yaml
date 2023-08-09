@@ -3,6 +3,8 @@
   id: 452440279475466179
   identification: 
     name: Desktop Navigation Menu
+
+  source: 
     type: Static Values
 
   entries: 
@@ -674,6 +676,8 @@
   id: 452492439461466348
   identification: 
     name: Desktop Navigation Bar
+
+  source: 
     type: Static Values
 
   entries: 

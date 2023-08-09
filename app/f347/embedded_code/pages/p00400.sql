@@ -21,7 +21,7 @@ HELP_TEXT,
 VERSION_IDENTIFIER,
 ABOUT_URL
 from AV_PLUGINS_V
-where application_id = :P0_APP_ID
+where application_id = :P0_APP_ID;
 
 -- ----------------------------------------
 -- Page: 400 - Plugins > Page Item: P400_PLUGIN_ID > List of Values > SQL Query
@@ -30,5 +30,5 @@ select display_name, plugin_id
 from av_plugins_v
 where application_id = :P0_APP_ID
 group by display_name, plugin_id
-order by display_name
+order by display_name;
 

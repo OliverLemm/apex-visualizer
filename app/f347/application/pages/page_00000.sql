@@ -4,8 +4,8 @@ begin
 --     PAGE: 00000
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2022.10.07'
-,p_release=>'22.2.6'
+ p_version_yyyy_mm_dd=>'2023.04.28'
+,p_release=>'23.1.3'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -31,7 +31,6 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_display_point=>'REGION_POSITION_03'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
@@ -86,7 +85,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_required_patch=>wwv_flow_imp.id(291318289212148547)
 ,p_encrypt_session_state_yn=>'N'
 ,p_attribute_01=>'Y'
-,p_attribute_05=>'HTML'
+,p_attribute_05=>'HTML_UNSAFE'
 );
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(32937516050378136)

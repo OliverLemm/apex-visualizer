@@ -618,7 +618,7 @@ regions:
 
     pagination: 
       type: Scroll
-      show-total-row-count: true
+      show-total-count: true
 
     toolbar: 
       show: true

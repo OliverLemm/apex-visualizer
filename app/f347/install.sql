@@ -106,6 +106,13 @@ prompt --install
 @@application/shared_components/user_interface/shortcuts/delete_confirm_msg.sql
 @@application/shared_components/security/authentications/apex.sql
 @@application/shared_components/security/authentications/no_authentication.sql
+@@application/shared_components/plugins/template_component/theme_42_media_list.sql
+@@application/shared_components/plugins/template_component/theme_42_button.sql
+@@application/shared_components/plugins/template_component/theme_42_timeline.sql
+@@application/shared_components/plugins/template_component/theme_42_avatar.sql
+@@application/shared_components/plugins/template_component/theme_42_badge.sql
+@@application/shared_components/plugins/template_component/theme_42_comments.sql
+@@application/shared_components/plugins/template_component/theme_42_content_row.sql
 @@application/user_interfaces/combined_files.sql
 @@application/pages/page_00000.sql
 @@application/pages/page_00010.sql

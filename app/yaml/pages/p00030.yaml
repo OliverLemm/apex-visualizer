@@ -116,7 +116,7 @@ regions:
 
     pagination: 
       type: Scroll
-      show-total-row-count: false
+      show-total-count: false
 
     toolbar: 
       show: false

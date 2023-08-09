@@ -20,7 +20,7 @@ from apex_developer_activity_log l
 where (l.application_id = :P0_APP_ID or :P0_APP_ID is null)
 and l.page_id is not null
 and (l.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
-group by trunc(audit_date), audit_action, application_name, application_id
+group by trunc(audit_date), audit_action, application_name, application_id;
 
 -- ----------------------------------------
 -- Page: 50 - Last Updated > Page Item: P50_DATE > List of Values > SQL Query
@@ -30,7 +30,7 @@ from apex_developer_activity_log l
 where (l.application_id = :P0_APP_ID or :P0_APP_ID is null)
 and l.page_id is not null
 and (l.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
-group by trunc(audit_date)
+group by trunc(audit_date);
 
 -- ----------------------------------------
 -- Page: 50 - Last Updated > Region: Changes on Components > Source > SQL Query
@@ -59,5 +59,5 @@ group by trunc(audit_date)
         ,component
         ,page_name
         ,page_id
-order by count(1) desc
+order by count(1) desc;
 

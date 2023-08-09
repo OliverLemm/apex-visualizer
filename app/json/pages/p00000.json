@@ -63,7 +63,7 @@
         "Alignment":"Left"
       }
      ,"Settings":{
-        "Format":"HTML"
+        "Format":"HTML (Unsafe)"
        ,"Send On Page Submit":true
       }
      ,"Layout":{

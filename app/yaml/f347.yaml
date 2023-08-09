@@ -4,7 +4,7 @@ id: 347
 identification: 
   name: APEX Visualizer
   alias: AV
-  version: 22.2
+  version: 23.1
 
 row-search: 
   tokenize: false
@@ -45,6 +45,9 @@ security:
   embed-in-frames: Deny
   referrer-policy: strict-origin-when-cross-origin
   html-escaping-mode: Extended
+
+advanced: 
+  pass-ecid: N
 
 database-session: 
   parsing-schema: APEX_VISUALIZER

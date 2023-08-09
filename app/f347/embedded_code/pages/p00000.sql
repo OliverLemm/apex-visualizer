@@ -15,5 +15,5 @@ select le.entry_text
 from apex_application_list_entries le
 where le.application_id = :APP_ID
 and le.list_name = 'Desktop Navigation Menu'
-and le.parent_entry_text = 'Migration'
+and le.parent_entry_text = 'Migration';
 

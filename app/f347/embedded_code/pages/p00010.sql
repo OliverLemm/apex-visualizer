@@ -17,7 +17,7 @@ select application_name app
 from av_applications_v
 where application_id = :P0_APP_ID or :P0_APP_ID is null
 group by application_name , page_function
-order by count(page_id) desc
+order by count(page_id) desc;
 
 -- ----------------------------------------
 -- Page: 10 - Applications > Region: Complexity > Source > SQL Query
@@ -36,7 +36,7 @@ select * from (
 )
 where (application_id = :P0_APP_ID or :P0_APP_ID is null)
 and (lower(series_name) = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
-order by series_value desc
+order by series_value desc;
 
 -- ----------------------------------------
 -- Page: 10 - Applications > Region: Shared Components > Source > SQL Query
@@ -66,7 +66,7 @@ select * from (
     union
     select aa.application_name, aa.application_id, 'List of Values' series_name ,aa.lists_of_values series_value from apex_applications aa)
 where (application_id = :P0_APP_ID or :P0_APP_ID is null)
-and (lower(series_name) = :P0_COMPONENT or :P0_COMPONENT is null)
+and (lower(series_name) = :P0_COMPONENT or :P0_COMPONENT is null);
 
 -- ----------------------------------------
 -- Page: 10 - Applications > Region: Details > Source > SQL Query
@@ -84,5 +84,5 @@ select aa.application_id app_id
       ,aa.page_template
 from apex_applications aa
 where aa.application_id = :P0_APP_ID
-or :P0_APP_ID is null
+or :P0_APP_ID is null;
 

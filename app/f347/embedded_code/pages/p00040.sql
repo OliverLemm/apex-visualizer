@@ -17,7 +17,7 @@ select count(1) amount_overall
       ,(select count (1) from av_visibility_v v1 where v1.application_id = v.application_id and v1.component_type = v.component_type and v1.visibility_name is not null group by v1.component_type,v1.application_id) amount
 from av_visibility_v v
 where v.application_id = :P0_APP_ID or :P0_APP_ID is null
-group by application_id, component_type
+group by application_id, component_type;
 
 -- ----------------------------------------
 -- Page: 40 - Visibility > Region: Condition Details > Source > SQL Query
@@ -36,8 +36,7 @@ group by v.application_id || ' - '  || v.application_name
         ,v.visibility_category
         ,v.visibility_name
         ,visibility_type
-        ,visibility_exp1
-
+        ,visibility_exp1;
 
 -- ----------------------------------------
 -- Page: 40 - Visibility > Region: Conditioned by > Source > SQL Query
@@ -47,5 +46,5 @@ select v.application_id
       ,count(1) amount
 from av_visibility_v v
 where v.visibility_name is not null and (v.application_id = :P0_APP_ID or :P0_APP_ID is null)
-group by application_id, visibility_category
+group by application_id, visibility_category;
 

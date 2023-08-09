@@ -4,8 +4,8 @@ begin
 --     REGION TEMPLATE: WIZARD_CONTAINER
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2022.10.07'
-,p_release=>'22.2.6'
+ p_version_yyyy_mm_dd=>'2023.04.28'
+,p_release=>'23.1.3'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -39,7 +39,7 @@ wwv_flow_imp_shared.create_plug_template(
 ,p_translate_this_template=>'N'
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2077387001935292)
+ p_id=>wwv_flow_imp.id(2623612523530143)
 ,p_plug_template_id=>wwv_flow_imp.id(452463685650466253)
 ,p_name=>'Region Body'
 ,p_placeholder=>'BODY'
@@ -50,7 +50,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2077864607935292)
+ p_id=>wwv_flow_imp.id(2624123535530145)
 ,p_plug_template_id=>wwv_flow_imp.id(452463685650466253)
 ,p_name=>'Close'
 ,p_placeholder=>'CLOSE'
@@ -61,7 +61,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2078394695935292)
+ p_id=>wwv_flow_imp.id(2624611305530145)
 ,p_plug_template_id=>wwv_flow_imp.id(452463685650466253)
 ,p_name=>'Next'
 ,p_placeholder=>'NEXT'
@@ -72,7 +72,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2078806014935292)
+ p_id=>wwv_flow_imp.id(2625157451530145)
 ,p_plug_template_id=>wwv_flow_imp.id(452463685650466253)
 ,p_name=>'Previous'
 ,p_placeholder=>'PREVIOUS'
@@ -83,7 +83,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2079339614935293)
+ p_id=>wwv_flow_imp.id(2625622753530145)
 ,p_plug_template_id=>wwv_flow_imp.id(452463685650466253)
 ,p_name=>'Wizard Sub Regions'
 ,p_placeholder=>'SUB_REGIONS'
