@@ -22,7 +22,7 @@ wwv_flow_imp_page.create_page(
 ,p_protection_level=>'C'
 ,p_page_component_map=>'03'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20230522184948'
+,p_last_upd_yyyymmddhh24miss=>'20230809211252'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(52290580683870853)
@@ -52,9 +52,8 @@ wwv_flow_imp_page.create_report_region(
 '      ,p.region',
 '      ,p.item_name',
 '      ,p.label',
-'      ,case p.display_as_code when ''NATIVE_DATE_PICKER_JET'' then ''JET Datepicker'' else ''jQuery Datepicker'' end display_as',
 'from apex_application_page_items p',
-'where p.display_as_code in (''NATIVE_DATE_PICKER_JET'',''NATIVE_DATE_PICKER'')',
+'where p.display_as_code = (''NATIVE_RICH_TEXT_EDITOR'')',
 'and p.application_id = :P0_APP_ID'))
 ,p_header=>'CKEditor5 is deprecated. Existing items based on the CKEditor5 library continue to work. However, these items will be automatically converted to TinyMCE in a future release. Any custom code using CKEditor5 APIs must be re-worked.'
 ,p_ajax_enabled=>'Y'
@@ -63,7 +62,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_query_row_template=>wwv_flow_imp.id(452468948793466267)
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no JET or jQuery Datepickers used</b>'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no CKEditor used</b>'
 ,p_query_num_rows_type=>'ROWS_X_TO_Y'
 ,p_pagination_display_position=>'BOTTOM_RIGHT'
 ,p_csv_output=>'N'
@@ -129,21 +128,9 @@ wwv_flow_imp_page.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(33472025794770132)
-,p_query_column_id=>6
-,p_column_alias=>'DISPLAY_AS'
-,p_column_display_sequence=>60
-,p_column_heading=>'Display As'
-,p_use_as_row_header=>'N'
-,p_column_hit_highlight=>'JET Datepicker,jQuery Datepicker'
-,p_disable_sort_column=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
 wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(52290687495870854)
-,p_name=>'6.1.3 Deprecated APIs and Parameters (PL/SQL API)'
+,p_name=>'5.4 Display Only Item with Format HTML (Unsafe) Deprecated'
 ,p_parent_plug_id=>wwv_flow_imp.id(52290580683870853)
 ,p_template=>wwv_flow_imp.id(452454481275466240)
 ,p_display_sequence=>40
@@ -155,35 +142,27 @@ wwv_flow_imp_page.create_report_region(
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select p.page_id',
 '      ,p.page_name',
-'      ,p.component_name',
-'      ,p.component_type',
-'      ,p.process_point',
-'      ,p.plsql_code_clob',
-'from av_plsql_v p',
-'where application_id = :P0_APP_ID',
-'and (instr(upper(p.plsql_code_clob)',
-'        ,''APEX_PAGE.IS_DESKTOP_UI'') > 0 or',
-'     instr(upper(p.plsql_code_clob)',
-'        ,''APEX_PAGE.GET_UI_TYPE'') > 0 or',
-'     instr(upper(p.plsql_code_clob)',
-'        ,''APEX_INSTANCE_ADMIN.ADD_WEB_ENTRY_POINT'') > 0',
-'    )'))
+'      ,p.region',
+'      ,p.item_name',
+'      ,p.label',
+'from apex_application_page_items p',
+'where p.display_as_code = ''NATIVE_DISPLAY_ONLY''',
+'and p.attribute_05 = ''HTML'' -- Format',
+'and p.application_id = :P0_APP_ID'))
 ,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'Deprecated public package APIs:<br>',
-'- apex_page.is_desktop_ui function<br>',
-'- apex_page.get_ui_type function<br>',
+'As of APEX 23.1, Format HTML sanitizes the HTML content on the client before displaying it. This simplifies the display of user-provided HTML, including the content of HTML-based rich text editors.<br>',
 '<br>',
-'Deprecated parameters:<br>',
-'- For apex_instance_admin.add_web_entry_point, the parameter p_methods is deprecated.<br>',
+'To maintain backward compatibility with existing applications, all current Display Only page items using the Format HTML option will be migrated to HTML (Unsafe) to preserve their current behavior. However, going forward, this option is deprecated, a'
+||'nd displaying "unsafe" HTML, such as script tags or javascript: expressions, onclick attributes, and others, is no longer possible, as this content is stripped away.<br>',
 '<br>',
-'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> This check only searches for the apex_instance_admin.add_web_entry_point. You have to check whether the parameter p_methods is used.</b>'))
+'Although it is not recommended to display unsafe HTML content, you can still choose to display it. For more information, see HTML Sanitization.'))
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>false
 ,p_query_row_template=>wwv_flow_imp.id(452468948793466267)
 ,p_query_num_rows=>15
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no API calls used</b>'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Display Only with HTML used</b>'
 ,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
 ,p_pagination_display_position=>'BOTTOM_RIGHT'
 ,p_csv_output=>'N'
@@ -214,140 +193,29 @@ wwv_flow_imp_page.create_report_columns(
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36048820244379856)
-,p_query_column_id=>3
-,p_column_alias=>'COMPONENT_NAME'
-,p_column_display_sequence=>30
-,p_column_heading=>'Component Name'
-,p_use_as_row_header=>'N'
-,p_disable_sort_column=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36049246421379856)
-,p_query_column_id=>4
-,p_column_alias=>'COMPONENT_TYPE'
-,p_column_display_sequence=>40
-,p_column_heading=>'Component Type'
-,p_use_as_row_header=>'N'
-,p_disable_sort_column=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36049643269379856)
-,p_query_column_id=>5
-,p_column_alias=>'PROCESS_POINT'
-,p_column_display_sequence=>50
-,p_column_heading=>'Process Point'
-,p_use_as_row_header=>'N'
-,p_disable_sort_column=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36050040199379856)
-,p_query_column_id=>6
-,p_column_alias=>'PLSQL_CODE_CLOB'
-,p_column_display_sequence=>60
-,p_column_heading=>'Plsql Code Clob'
-,p_use_as_row_header=>'N'
-,p_column_hit_highlight=>'APEX_PAGE.IS_DESKTOP_UI,APEX_PAGE.GET_UI_TYPE,APEX_INSTANCE_ADMIN.ADD_WEB_ENTRY_POINT'
-,p_disable_sort_column=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_region(
- p_id=>wwv_flow_imp.id(111464456109993286)
-,p_name=>'6.1.4 Deprecated jQuery/JET Date Pickers'
-,p_parent_plug_id=>wwv_flow_imp.id(52290580683870853)
-,p_template=>wwv_flow_imp.id(452454481275466240)
-,p_display_sequence=>60
-,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
-,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
-,p_display_point=>'SUB_REGIONS'
-,p_source_type=>'NATIVE_SQL_REPORT'
-,p_query_type=>'SQL'
-,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select p.page_id',
-'      ,p.page_name',
-'      ,p.region',
-'      ,p.item_name',
-'      ,p.label',
-'      ,case p.display_as_code when ''NATIVE_DATE_PICKER_JET'' then ''JET Datepicker'' else ''jQuery Datepicker'' end display_as',
-'from apex_application_page_items p',
-'where p.display_as_code in (''NATIVE_DATE_PICKER_JET'',''NATIVE_DATE_PICKER'')',
-'and p.application_id = :P0_APP_ID'))
-,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'',
-'',
-'jQuery/JET Date Pickers are now deprecated and cannot be used for new pages or applications. The old jQuery Date Picker JavaScript APIs are not supported.<br>',
-'<br>',
-'The JET Date Picker will be removed in a future release. Oracle recommends replacing all old Date Pickers with the new Date Picker.'))
-,p_ajax_enabled=>'Y'
-,p_ajax_items_to_submit=>'P0_APP_ID'
-,p_lazy_loading=>true
-,p_query_row_template=>wwv_flow_imp.id(452468948793466267)
-,p_query_num_rows=>99999
-,p_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no JET or jQuery Datepickers used</b>'
-,p_query_num_rows_type=>'ROWS_X_TO_Y'
-,p_pagination_display_position=>'BOTTOM_RIGHT'
-,p_csv_output=>'N'
-,p_prn_output=>'N'
-,p_sort_null=>'L'
-,p_plug_query_strip_html=>'N'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36045761174379853)
-,p_query_column_id=>1
-,p_column_alias=>'PAGE_ID'
-,p_column_display_sequence=>10
-,p_column_heading=>'Page Id'
-,p_use_as_row_header=>'N'
-,p_default_sort_column_sequence=>1
-,p_disable_sort_column=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36046104940379853)
-,p_query_column_id=>2
-,p_column_alias=>'PAGE_NAME'
-,p_column_display_sequence=>20
-,p_column_heading=>'Page Name'
-,p_use_as_row_header=>'N'
-,p_disable_sort_column=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36046592983379854)
+ p_id=>wwv_flow_imp.id(33473870216770150)
 ,p_query_column_id=>3
 ,p_column_alias=>'REGION'
 ,p_column_display_sequence=>30
 ,p_column_heading=>'Region'
 ,p_use_as_row_header=>'N'
-,p_default_sort_column_sequence=>2
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36047375671379854)
+ p_id=>wwv_flow_imp.id(37285937446264601)
 ,p_query_column_id=>4
 ,p_column_alias=>'ITEM_NAME'
 ,p_column_display_sequence=>40
 ,p_column_heading=>'Item Name'
 ,p_use_as_row_header=>'N'
-,p_default_sort_column_sequence=>3
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36046953966379854)
+ p_id=>wwv_flow_imp.id(37286081114264602)
 ,p_query_column_id=>5
 ,p_column_alias=>'LABEL'
 ,p_column_display_sequence=>50
@@ -357,21 +225,9 @@ wwv_flow_imp_page.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36045328807379853)
-,p_query_column_id=>6
-,p_column_alias=>'DISPLAY_AS'
-,p_column_display_sequence=>60
-,p_column_heading=>'Display As'
-,p_use_as_row_header=>'N'
-,p_column_hit_highlight=>'JET Datepicker,jQuery Datepicker'
-,p_disable_sort_column=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
 wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(111940919893294362)
-,p_name=>'6.1.2 Deprecated User Interfaces Removed'
+,p_name=>'5.3 Preventing Double Escaping of LOV Display Values'
 ,p_parent_plug_id=>wwv_flow_imp.id(52290580683870853)
 ,p_template=>wwv_flow_imp.id(452454481275466240)
 ,p_display_sequence=>30
@@ -381,53 +237,40 @@ wwv_flow_imp_page.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select p.page_id',
-'      ,p.page_name',
-'      ,p.component_name',
-'      ,p.component_type',
-'      ,p.process_point',
-'      ,p.plsql_code_clob',
-'from av_plsql_v p',
-'where application_id = :P0_APP_ID',
-'and (instr(upper(p.plsql_code_clob)',
-'        ,''APEX_WORKSPACE_UI_TYPES'') > 0 or',
-'     instr(upper(p.plsql_code_clob)',
-'        ,''APEX_APPL_USER_INTERFACES'') > 0 or',
-'     instr(upper(p.plsql_code_clob)',
-'        ,''UI_DETECTION_CSS_URLS'') > 0 or',
-'     instr(upper(p.plsql_code_clob)',
-'        ,''USER_INTERFACE_ID'') > 0 or',
-'     instr(upper(p.plsql_code_clob)',
-'        ,''USER_INTERFACE_ID'') > 0 or',
-'     instr(upper(p.plsql_code_clob)',
-'        ,''PAGE_TRANSITION'') > 0 or',
-'     instr(upper(p.plsql_code_clob)',
-'        ,''POPUP_TRANSITION'') > 0 or',
-'     instr(upper(p.plsql_code_clob)',
-'        ,''UI_TYPE_ID'') > 0 or',
-'     instr(upper(p.plsql_code_clob)',
-'        ,''UI_TYPE_NAME'') > 0 or',
-'     instr(upper(p.plsql_code_clob)',
-'        ,''DEFAULT_PAGE_TRANSITION'') > 0 or',
-'     instr(upper(p.plsql_code_clob)',
-'        ,''DEFAULT_POPUP_TRANSITION'') > 0 or',
-'     instr(upper(p.plsql_code_clob)',
-'        ,''SUPPORTED_UI_TYPES'') > 0 or',
-'     instr(upper(p.plsql_code_clob)',
-'        ,''SUPPORTED_UI_TYPES'') > 0',
-'    )'))
+'select 0 page_id',
+'      ,''Shared Components'' page_name',
+'      ,aal.list_of_values_name lov_or_item_name',
+'      ,aal.list_of_values_query lov_query',
+'from apex_application_lovs aal',
+'where lov_type = ''Dynamic''',
+'and (upper(list_of_values_query) like ''%HTF.ESCAPE_SC%'' --',
+'      or upper(list_of_values_query) like ''%APEX_ESCAPE.HTML%'' --',
+'      or upper(list_of_values_query) like ''%WWV_FLOW_ESCAPE.HTML%'') --',
+'and aal.application_id = :p0_app_id',
+'union all',
+'select aapi.page_id',
+'      ,aapi.page_name',
+'      ,aapi.item_name      lov_or_item_name',
+'      ,aapi.lov_definition lov_query',
+'from apex_application_page_items aapi',
+'where lov_named_lov is null',
+'and (upper(lov_definition) like ''%HTF.ESCAPE_SC%'' --',
+'      or upper(lov_definition) like ''%APEX_ESCAPE.HTML%'' --',
+'      or upper(lov_definition) like ''%WWV_FLOW_ESCAPE.HTML%'') --',
+'and aapi.application_id = :p0_app_id',
+''))
 ,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'APEX previously defined multiple users interfaces for each application. This is no longer the case. This release cleans up deprecated user interfaces, which impacts many APEX Dictionary Views.<br>',
+'By default, APEX automatically HTML-escapes Lists of Values (LOV) display values as necessary. To ensure backward compatibility with legacy apps, APEX checks whether the LOV query already includes a utility function to escape the display value. If it'
+||' does, APEX avoids double-escaping the value when displaying it in a Select List, Popup LOV, Shuttle, Display Only item, or similar components.<br>',
 '<br>',
-'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> This check uses only the column names while crawling your PL/SQL or SQL Code. If other tables than apex_applications, apex_appl_concatenated_files, apex_application_p'
-||'ages, apex_application_themes, apex_appl_plugins, apex_appl_plugin_std_attrs, apex_appl_plugin_attributes are using the same column name you can ignore the findings.</b>'))
+'Oracle recommends removing redundant inline escaping calls from your LOVs. In a future version of APEX, this prevention mechanism may be removed, which could cause some display values to appear double-escaped. '))
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>false
 ,p_query_row_template=>wwv_flow_imp.id(452468948793466267)
-,p_query_num_rows=>15
+,p_query_num_rows=>1000
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no tables or columns used</b>'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Double Escapes used</b>'
 ,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
 ,p_pagination_display_position=>'BOTTOM_RIGHT'
 ,p_csv_output=>'N'
@@ -458,47 +301,23 @@ wwv_flow_imp_page.create_report_columns(
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36043164277379851)
+ p_id=>wwv_flow_imp.id(33473503532770147)
 ,p_query_column_id=>3
-,p_column_alias=>'COMPONENT_NAME'
+,p_column_alias=>'LOV_OR_ITEM_NAME'
 ,p_column_display_sequence=>30
-,p_column_heading=>'Component Name'
+,p_column_heading=>'Lov Or Item Name'
 ,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36043558264379851)
+ p_id=>wwv_flow_imp.id(33473636049770148)
 ,p_query_column_id=>4
-,p_column_alias=>'COMPONENT_TYPE'
+,p_column_alias=>'LOV_QUERY'
 ,p_column_display_sequence=>40
-,p_column_heading=>'Component Type'
+,p_column_heading=>'Lov Query'
 ,p_use_as_row_header=>'N'
-,p_disable_sort_column=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36043965338379851)
-,p_query_column_id=>5
-,p_column_alias=>'PROCESS_POINT'
-,p_column_display_sequence=>50
-,p_column_heading=>'Process Point'
-,p_use_as_row_header=>'N'
-,p_disable_sort_column=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36044315091379851)
-,p_query_column_id=>6
-,p_column_alias=>'PLSQL_CODE_CLOB'
-,p_column_display_sequence=>60
-,p_column_heading=>'Plsql Code Clob'
-,p_use_as_row_header=>'N'
-,p_column_hit_highlight=>'APEX_WORKSPACE_UI_TYPES,APEX_APPL_USER_INTERFACES,UI_DETECTION_CSS_URLS,USER_INTERFACE_ID,USER_INTERFACE_ID,PAGE_TRANSITION,POPUP_TRANSITION,UI_TYPE_ID,UI_TYPE_NAME,DEFAULT_PAGE_TRANSITION,DEFAULT_POPUP_TRANSITION,SUPPORTED_UI_TYPES,SUPPORTED_UI_TYPE'
-||'S'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
@@ -511,23 +330,19 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_template=>wwv_flow_imp.id(452454481275466240)
 ,p_plug_display_sequence=>20
 ,p_plug_display_point=>'SUB_REGIONS'
-,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'Some functionality in Object Browser is deprecated:',
-'<ul>',
-'<li>The Model tab for tables is removed.</li>',
-'<li>The Create Materialized View Wizard is removed. Create materialized views by using a CREATE MATERIALIZED VIEW statement in SQL Commands or SQL Scripts. You can still view materialized views in Object Browser.</li>',
-'</ul>',
-''))
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'Custom page template and custom region templates with duplicated positions are considered deprecated. For example, a region template referencing position #CHANGE# twice is not recommended because that duplicate position causes duplicate DOM IDs.<br>',
-'<br>'))
+'Some functionality in Object Browser is deprecated:',
+'<ul><li>The Model tab for tables is removed.</li>',
+'    <li>The Create Materialized View Wizard is removed.</li>',
+'</ul> Create materialized views by using a CREATE MATERIALIZED VIEW statement in SQL Commands or SQL Scripts. You can still view materialized views in Object Browser.<br>',
+'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no check needed / developer utilities</b>'))
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
 wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(169431787674333336)
-,p_name=>'6.1.3 Deprecated APIs and Parameters (JavaScript API) '
+,p_name=>'5.5 Deprecated Functions and Procedures'
 ,p_parent_plug_id=>wwv_flow_imp.id(52290580683870853)
 ,p_template=>wwv_flow_imp.id(452454481275466240)
 ,p_display_sequence=>50
@@ -537,23 +352,43 @@ wwv_flow_imp_page.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select j.page_id',
-'      ,j.page_name',
-'      ,j.component_name',
-'      ,j.component_type',
-'      ,j.js_code_vc2',
-'from av_javascript_v j',
-'where instr(lower(j.js_code_clob)',
-'           ,''apex.pwa.gettnstalltext'') > 0',
-'and j.application_id = :P0_APP_ID'))
-,p_header=>'JavaScript API apex.pwa.getInstallText is deprecated.'
+'select p.page_id',
+'      ,p.page_name',
+'      ,p.component_name',
+'      ,p.component_type',
+'      ,p.process_point',
+'      ,p.plsql_code_clob',
+'from av_plsql_v p',
+'where application_id = :P0_APP_ID',
+'and (instr(lower(p.plsql_code_clob)',
+'        ,''.set_build_option_status'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''.set_application_status'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''.get_application_status'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''.set_global_notification'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''.get_global_notification'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''.set_app_build_status'') > 0',
+'    )'))
+,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'As part of moving existing APIs from APEX_UTIL to APEX_APPLICATION_ADMIN, some comments changed. The following functions and procedures are deprecated:',
+'<ul><li>set_build_option_status</li>',
+'    <li>get_build_option_status (two times, overloaded)</li>',
+'    <li>set_application_status</li>',
+'    <li>get_application_status</li>',
+'    <li>set_global_notification</li>',
+'    <li>get_global_notification</li>',
+'    <li>set_app_build_status</li></ul>'))
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>true
 ,p_query_row_template=>wwv_flow_imp.id(452468948793466267)
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No calls like apex.theme42.util.mq found.</b>'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated API calls found.</b>'
 ,p_query_num_rows_type=>'ROWS_X_TO_Y'
 ,p_pagination_display_position=>'BOTTOM_RIGHT'
 ,p_csv_output=>'N'
@@ -606,11 +441,22 @@ wwv_flow_imp_page.create_report_columns(
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36052364162379857)
+ p_id=>wwv_flow_imp.id(37286138179264603)
 ,p_query_column_id=>5
-,p_column_alias=>'JS_CODE_VC2'
+,p_column_alias=>'PROCESS_POINT'
 ,p_column_display_sequence=>50
-,p_column_heading=>'Js Code Vc2'
+,p_column_heading=>'Process Point'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(37286223239264604)
+,p_query_column_id=>6
+,p_column_alias=>'PLSQL_CODE_CLOB'
+,p_column_display_sequence=>60
+,p_column_heading=>'Plsql Code Clob'
 ,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -639,15 +485,12 @@ wwv_flow_imp_page.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select p.page_id',
-'      ,p.page_name',
-'      ,p.region',
-'      ,p.item_name',
-'      ,p.label',
-'      ,case p.display_as_code when ''NATIVE_DATE_PICKER_JET'' then ''JET Datepicker'' else ''jQuery Datepicker'' end display_as',
-'from apex_application_page_items p',
-'where p.display_as_code in (''NATIVE_DATE_PICKER_JET'',''NATIVE_DATE_PICKER'')',
-'and p.application_id = :P0_APP_ID'))
+'select aap.page_id',
+'      ,aap.page_name',
+'      ,aap.dynamic_action_name',
+'from apex_application_page_da aap',
+'where aap.application_id = :P0_APP_ID',
+'and aap.when_selection_type_code = ''DOM'' -- not correct must be changed'))
 ,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'The DOM Object Dynamic Action selector type is desupported. Any page that uses this type for an action now throws an exception in the browser console, and the action does not execute.<br>',
 'Use the JavaScript Expression type instead of DOM Object.',
@@ -658,7 +501,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_query_row_template=>wwv_flow_imp.id(452468948793466267)
 ,p_query_num_rows=>15
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Desupported View Columns used</b>'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> check needs to be implemented</b>'
 ,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
 ,p_pagination_display_position=>'BOTTOM_RIGHT'
 ,p_csv_output=>'N'
@@ -673,6 +516,7 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_display_sequence=>10
 ,p_column_heading=>'Page Id'
 ,p_use_as_row_header=>'N'
+,p_default_sort_column_sequence=>1
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
@@ -689,44 +533,11 @@ wwv_flow_imp_page.create_report_columns(
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(33471047843770122)
+ p_id=>wwv_flow_imp.id(33473304259770145)
 ,p_query_column_id=>3
-,p_column_alias=>'REGION'
+,p_column_alias=>'DYNAMIC_ACTION_NAME'
 ,p_column_display_sequence=>30
-,p_column_heading=>'Region'
-,p_use_as_row_header=>'N'
-,p_disable_sort_column=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(33471190279770123)
-,p_query_column_id=>4
-,p_column_alias=>'ITEM_NAME'
-,p_column_display_sequence=>40
-,p_column_heading=>'Item Name'
-,p_use_as_row_header=>'N'
-,p_disable_sort_column=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(33471244365770124)
-,p_query_column_id=>5
-,p_column_alias=>'LABEL'
-,p_column_display_sequence=>50
-,p_column_heading=>'Label'
-,p_use_as_row_header=>'N'
-,p_disable_sort_column=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(33471329337770125)
-,p_query_column_id=>6
-,p_column_alias=>'DISPLAY_AS'
-,p_column_display_sequence=>60
-,p_column_heading=>'Display As'
+,p_column_heading=>'Dynamic Action Name'
 ,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -743,7 +554,9 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_display_sequence=>10
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_plug_header=>'SQL Workshop Query Builder is now desupported, and will be removed in a future release.'
+,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'SQL Workshop Query Builder is now desupported, and will be removed in a future release.<br>',
+'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> nothing to change / no check needed</b>'))
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
@@ -759,60 +572,55 @@ wwv_flow_imp_page.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select r.page_id',
-'      ,r.page_name',
-'      ,r.region_name',
-'      ,r.ascending_image',
-'      ,r.ascending_image_attributes',
-'      ,r.descending_image',
-'      ,r.descending_image_attributes',
-'from apex_application_page_regions r',
-'where (r.ascending_image is not null',
-'or r.ascending_image_attributes is not null',
-'or r.descending_image is not null',
-'or r.descending_image_attributes is not null)',
-'and r.application_id = :P0_APP_ID'))
+'select p.page_id',
+'      ,p.page_name',
+'      ,p.component_name',
+'      ,p.component_type',
+'      ,p.process_point',
+'      ,p.plsql_code_clob',
+'from av_plsql_v p',
+'where application_id = :P0_APP_ID',
+'and (instr(upper(p.plsql_code_clob)',
+'        ,''APEX_WORKSPACE_UI_TYPES'') > 0 or',
+'     instr(upper(p.plsql_code_clob)',
+'        ,''APEX_APPL_USER_INTERFACES'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''ui_detection_css_urls'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''user_interface_id'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''page_transition'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''popup_transition'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''ui_type_id'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''ui_type_name'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''default_page_transition'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''default_popup_transition'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''supported_ui_types'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''supported_ui_types'') > 0 or',
+'     instr(lower(p.plsql_code_clob)',
+'        ,''supported_ui_types'') > 0',
+'    )'))
 ,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'APEX previously defined multiple users interfaces for each application. This is no longer the case. This release cleans up desupported user interfaces, which impacts many APEX Dictionary Views:',
-'',
-'    Obsolete views:',
-'        apex_workspace_ui_types',
-'        apex_appl_user_interfaces',
-'    New view columns:',
-'        apex_applications.theme_style_by_user_pref',
-'        apex_applications.built_with_love',
-'        apex_applications.navigation_list',
-'        apex_applications.navigation_list_position',
-'        apex_applications.nav_bar_type',
-'        apex_applications.nav_bar_list',
-'        apex_applications.include_legacy_javascript',
-'        apex_applications.include_jquery_migrate',
-'    Obsolete view columns:',
-'        apex_applications.ui_detection_css_urls',
-'        apex_appl_concatenated_files.user_interface_id',
-'        apex_application_pages.user_interface_id',
-'        apex_application_pages.page_transition',
-'        apex_application_pages.popup_transition',
-'        apex_application_themes.ui_type_id',
-'        apex_application_themes.ui_type_name',
-'        apex_application_themes.default_page_transition',
-'        apex_application_themes.default_popup_transition',
-'        apex_appl_plugins.supported_ui_types',
-'        apex_appl_plugin_std_attrs.supported_ui_types',
-'        apex_appl_plugin_attributes.supported_ui_types',
-'    Removed Page Designer Properties:',
-'        Page Transition',
-'        Popup Transition',
-'        User Interface',
-'',
-'Older applications created when APEX could have two User Interfaces now only use the active user interface. Inactive user interfaces are removed from the metadata. '))
+'APEX previously defined multiple users interfaces for each application. This is no longer the case. This release cleans up desupported user interfaces, which impacts many APEX Dictionary Views:<br>',
+'Obsolete views:<br>',
+'<ul><li>apex_workspace_ui_types</li>',
+'    <li>apex_appl_user_interfaces</li>',
+'</ul>',
+'Multiple columns are also desupported. For details look into the release notes.'))
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>false
 ,p_query_row_template=>wwv_flow_imp.id(452468948793466267)
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Region Image and Image Tag Attributes used</b>'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no APEX Views or columns which are removed are used</b>'
 ,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
 ,p_pagination_display_position=>'BOTTOM_RIGHT'
 ,p_csv_output=>'N'
@@ -844,68 +652,44 @@ wwv_flow_imp_page.create_report_columns(
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36054113924379857)
+ p_id=>wwv_flow_imp.id(33472390202770135)
 ,p_query_column_id=>3
-,p_column_alias=>'REGION_NAME'
+,p_column_alias=>'COMPONENT_NAME'
 ,p_column_display_sequence=>30
-,p_column_heading=>'Region Name'
+,p_column_heading=>'Component Name'
 ,p_use_as_row_header=>'N'
-,p_default_sort_column_sequence=>2
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36054572947379859)
+ p_id=>wwv_flow_imp.id(33472432270770136)
 ,p_query_column_id=>4
-,p_column_alias=>'ASCENDING_IMAGE'
+,p_column_alias=>'COMPONENT_TYPE'
 ,p_column_display_sequence=>40
-,p_column_heading=>'Ascending Image'
+,p_column_heading=>'Component Type'
 ,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36054914763379859)
+ p_id=>wwv_flow_imp.id(33472546477770137)
 ,p_query_column_id=>5
-,p_column_alias=>'ASCENDING_IMAGE_ATTRIBUTES'
+,p_column_alias=>'PROCESS_POINT'
 ,p_column_display_sequence=>50
-,p_column_heading=>'Ascending Image Attributes'
+,p_column_heading=>'Process Point'
 ,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36055384579379859)
+ p_id=>wwv_flow_imp.id(33472649933770138)
 ,p_query_column_id=>6
-,p_column_alias=>'DESCENDING_IMAGE'
+,p_column_alias=>'PLSQL_CODE_CLOB'
 ,p_column_display_sequence=>60
-,p_column_heading=>'Descending Image'
-,p_use_as_row_header=>'N'
-,p_disable_sort_column=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp.component_end;
-end;
-/
-begin
-wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2022.10.07'
-,p_release=>'22.2.6'
-,p_default_workspace_id=>125633378786110814
-,p_default_application_id=>347
-,p_default_id_offset=>125634094441118325
-,p_default_owner=>'APEX_VISUALIZER'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(36055777288379859)
-,p_query_column_id=>7
-,p_column_alias=>'DESCENDING_IMAGE_ATTRIBUTES'
-,p_column_display_sequence=>70
-,p_column_heading=>'Descending Image Attributes'
+,p_column_heading=>'Plsql Code Clob'
 ,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -934,7 +718,7 @@ wwv_flow_imp_page.create_page_plug(
 '<li>Branch Utilities</li>',
 '</ul>',
 'You can edit items individually through Page Designer, or view them in bulk through the appropriate Utility area.<br> ',
-'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>'))
+'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no check needed / developer utilities</b>'))
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
@@ -968,7 +752,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_query_row_template=>wwv_flow_imp.id(452468948793466267)
 ,p_query_num_rows=>15
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Desupported View Columns used</b>'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no JET or old Datepicker are used</b>'
 ,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
 ,p_pagination_display_position=>'BOTTOM_RIGHT'
 ,p_csv_output=>'N'
@@ -1079,6 +863,18 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_execute_on_page_init=>'N'
 ,p_action=>'NATIVE_JAVASCRIPT_CODE'
 ,p_attribute_01=>'av_refresh_hide_show_regions()'
+);
+wwv_flow_imp.component_end;
+end;
+/
+begin
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.6'
+,p_default_workspace_id=>125633378786110814
+,p_default_application_id=>347
+,p_default_id_offset=>125634094441118325
+,p_default_owner=>'APEX_VISUALIZER'
 );
 wwv_flow_imp_page.create_page_da_event(
  p_id=>wwv_flow_imp.id(33472129158770133)

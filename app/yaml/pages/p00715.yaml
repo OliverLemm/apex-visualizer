@@ -47,15 +47,12 @@ regions:
     location: Local Database
     type: SQL Query
     sql-query: |
-      select p.page_id
-            ,p.page_name
-            ,p.region
-            ,p.item_name
-            ,p.label
-            ,case p.display_as_code when 'NATIVE_DATE_PICKER_JET' then 'JET Datepicker' else 'jQuery Datepicker' end display_as
-      from apex_application_page_items p
-      where p.display_as_code in ('NATIVE_DATE_PICKER_JET','NATIVE_DATE_PICKER')
-      and p.application_id = :P0_APP_ID
+      select aap.page_id
+            ,aap.page_name
+            ,aap.dynamic_action_name
+      from apex_application_page_da aap
+      where aap.application_id = :P0_APP_ID
+      and aap.when_selection_type_code = 'DOM' -- not correct must be changed
     page-items-to-submit: 
     - P0_APP_ID
 
@@ -119,7 +116,7 @@ regions:
       lazy-loading: false
 
     messages: 
-      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Desupported View Columns used</b>
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> check needs to be implemented</b>
 
     break-formatting: 
       break-columns: No Break
@@ -156,6 +153,8 @@ regions:
       value-identifies-row: false
 
     sorting: 
+      default-sequence: 1
+      direction: Ascending
       sortable: true
 
     export-/-printing: 
@@ -202,114 +201,18 @@ regions:
     security: 
       escape-special-characters: true
 
-  - # ====== Column: REGION ======================================
-    id: 33471047843770122
+  - # ====== Column: DYNAMIC_ACTION_NAME =========================
+    id: 33473304259770145
     identification: 
-      column-name: REGION
+      column-name: DYNAMIC_ACTION_NAME
       type: Plain Text
 
     heading: 
-      heading: Region
+      heading: Dynamic Action Name
       alignment: center
 
     layout: 
       sequence: 30
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: ITEM_NAME ===================================
-    id: 33471190279770123
-    identification: 
-      column-name: ITEM_NAME
-      type: Plain Text
-
-    heading: 
-      heading: Item Name
-      alignment: center
-
-    layout: 
-      sequence: 40
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: LABEL =======================================
-    id: 33471244365770124
-    identification: 
-      column-name: LABEL
-      type: Plain Text
-
-    heading: 
-      heading: Label
-      alignment: center
-
-    layout: 
-      sequence: 50
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: DISPLAY_AS ==================================
-    id: 33471329337770125
-    identification: 
-      column-name: DISPLAY_AS
-      type: Plain Text
-
-    heading: 
-      heading: Display As
-      alignment: center
-
-    layout: 
-      sequence: 60
       column-alignment: start
 
     accessibility: 
@@ -345,9 +248,8 @@ regions:
             ,p.region
             ,p.item_name
             ,p.label
-            ,case p.display_as_code when 'NATIVE_DATE_PICKER_JET' then 'JET Datepicker' else 'jQuery Datepicker' end display_as
       from apex_application_page_items p
-      where p.display_as_code in ('NATIVE_DATE_PICKER_JET','NATIVE_DATE_PICKER')
+      where p.display_as_code = ('NATIVE_RICH_TEXT_EDITOR')
       and p.application_id = :P0_APP_ID
     page-items-to-submit: 
     - P0_APP_ID
@@ -409,7 +311,7 @@ regions:
       lazy-loading: true
 
     messages: 
-      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no JET or jQuery Datepickers used</b>
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no CKEditor used</b>
 
     break-formatting: 
       break-columns: No Break
@@ -594,41 +496,6 @@ regions:
     security: 
       escape-special-characters: true
 
-  - # ====== Column: DISPLAY_AS ==================================
-    id: 33472025794770132
-    identification: 
-      column-name: DISPLAY_AS
-      type: Plain Text
-
-    heading: 
-      heading: Display As
-      alignment: center
-
-    layout: 
-      sequence: 60
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    column-formatting: 
-      highlight-words: JET Datepicker,jQuery Datepicker
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
 - # ====== Region: 5 Deprecated Features - <a href="https://docs
   id: 52290580683870853
   identification: 
@@ -671,10 +538,10 @@ regions:
       output-as: HTML
       expand-shortcuts: false
 
-- # ====== Region: 6.1.3 Deprecated APIs and Parameters (PL/SQL 
+- # ====== Region: 5.4 Display Only Item with Format HTML (Unsaf
   id: 52290687495870854
   identification: 
-    title: 6.1.3 Deprecated APIs and Parameters (PL/SQL API)
+    title: 5.4 Display Only Item with Format HTML (Unsafe) Deprecated
     type: Classic Report
 
   source: 
@@ -683,19 +550,13 @@ regions:
     sql-query: |
       select p.page_id
             ,p.page_name
-            ,p.component_name
-            ,p.component_type
-            ,p.process_point
-            ,p.plsql_code_clob
-      from av_plsql_v p
-      where application_id = :P0_APP_ID
-      and (instr(upper(p.plsql_code_clob)
-              ,'APEX_PAGE.IS_DESKTOP_UI') > 0 or
-           instr(upper(p.plsql_code_clob)
-              ,'APEX_PAGE.GET_UI_TYPE') > 0 or
-           instr(upper(p.plsql_code_clob)
-              ,'APEX_INSTANCE_ADMIN.ADD_WEB_ENTRY_POINT') > 0
-          )
+            ,p.region
+            ,p.item_name
+            ,p.label
+      from apex_application_page_items p
+      where p.display_as_code = 'NATIVE_DISPLAY_ONLY'
+      and p.attribute_05 = 'HTML' -- Format
+      and p.application_id = :P0_APP_ID
     page-items-to-submit: 
     - P0_APP_ID
 
@@ -727,14 +588,11 @@ regions:
 
   header-and-footer: 
     header-text: |
-      Deprecated public package APIs:<br>
-      - apex_page.is_desktop_ui function<br>
-      - apex_page.get_ui_type function<br>
+      As of APEX 23.1, Format HTML sanitizes the HTML content on the client before displaying it. This simplifies the display of user-provided HTML, including the content of HTML-based rich text editors.<br>
       <br>
-      Deprecated parameters:<br>
-      - For apex_instance_admin.add_web_entry_point, the parameter p_methods is deprecated.<br>
+      To maintain backward compatibility with existing applications, all current Display Only page items using the Format HTML option will be migrated to HTML (Unsafe) to preserve their current behavior. However, going forward, this option is deprecated, and displaying "unsafe" HTML, such as script tags or javascript: expressions, onclick attributes, and others, is no longer possible, as this content is stripped away.<br>
       <br>
-      <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> This check only searches for the apex_instance_admin.add_web_entry_point. You have to check whether the parameter p_methods is used.</b>
+      Although it is not recommended to display unsafe HTML content, you can still choose to display it. For more information, see HTML Sanitization.
 
   server-cache: 
     caching: Disabled
@@ -764,7 +622,7 @@ regions:
       lazy-loading: false
 
     messages: 
-      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no API calls used</b>
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Display Only with HTML used</b>
 
     break-formatting: 
       break-columns: No Break
@@ -783,6 +641,38 @@ regions:
       enabled: false
 
   columns: 
+  - # ====== Column: REGION ======================================
+    id: 33473870216770150
+    identification: 
+      column-name: REGION
+      type: Plain Text
+
+    heading: 
+      heading: Region
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
   - # ====== Column: PAGE_ID =====================================
     id: 36048073002379854
     identification: 
@@ -847,46 +737,14 @@ regions:
     security: 
       escape-special-characters: true
 
-  - # ====== Column: COMPONENT_NAME ==============================
-    id: 36048820244379856
+  - # ====== Column: ITEM_NAME ===================================
+    id: 37285937446264601
     identification: 
-      column-name: COMPONENT_NAME
+      column-name: ITEM_NAME
       type: Plain Text
 
     heading: 
-      heading: Component Name
-      alignment: center
-
-    layout: 
-      sequence: 30
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: COMPONENT_TYPE ==============================
-    id: 36049246421379856
-    identification: 
-      column-name: COMPONENT_TYPE
-      type: Plain Text
-
-    heading: 
-      heading: Component Type
+      heading: Item Name
       alignment: center
 
     layout: 
@@ -911,14 +769,14 @@ regions:
     security: 
       escape-special-characters: true
 
-  - # ====== Column: PROCESS_POINT ===============================
-    id: 36049643269379856
+  - # ====== Column: LABEL =======================================
+    id: 37286081114264602
     identification: 
-      column-name: PROCESS_POINT
+      column-name: LABEL
       type: Plain Text
 
     heading: 
-      heading: Process Point
+      heading: Label
       alignment: center
 
     layout: 
@@ -927,41 +785,6 @@ regions:
 
     accessibility: 
       value-identifies-row: false
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: PLSQL_CODE_CLOB =============================
-    id: 36050040199379856
-    identification: 
-      column-name: PLSQL_CODE_CLOB
-      type: Plain Text
-
-    heading: 
-      heading: Plsql Code Clob
-      alignment: center
-
-    layout: 
-      sequence: 60
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    column-formatting: 
-      highlight-words: APEX_PAGE.IS_DESKTOP_UI,APEX_PAGE.GET_UI_TYPE,APEX_INSTANCE_ADMIN.ADD_WEB_ENTRY_POINT
 
     sorting: 
       sortable: true
@@ -1020,355 +843,38 @@ regions:
       output-as: HTML
       expand-shortcuts: false
 
-- # ====== Region: 6.1.4 Deprecated jQuery/JET Date Pickers ====
-  id: 111464456109993286
-  identification: 
-    title: 6.1.4 Deprecated jQuery/JET Date Pickers
-    type: Classic Report
-
-  source: 
-    location: Local Database
-    type: SQL Query
-    sql-query: |
-      select p.page_id
-            ,p.page_name
-            ,p.region
-            ,p.item_name
-            ,p.label
-            ,case p.display_as_code when 'NATIVE_DATE_PICKER_JET' then 'JET Datepicker' else 'jQuery Datepicker' end display_as
-      from apex_application_page_items p
-      where p.display_as_code in ('NATIVE_DATE_PICKER_JET','NATIVE_DATE_PICKER')
-      and p.application_id = :P0_APP_ID
-    page-items-to-submit: 
-    - P0_APP_ID
-
-  layout: 
-    sequence: 60
-    parent-region: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.1/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 52290580683870853
-    position: SUB_REGIONS
-    start-new-layout: false
-    start-new-row: true
-    column: Automatic
-    new-column: true
-    column-span: Automatic
-
-  appearance: 
-    template: Collapsible # 452454481275466240
-    template-options: 
-    - '#DEFAULT#'
-    - is-expanded
-    - t-Region--scrollBody
-    render-components: Above Content
-
-  accessibility: 
-    use-landmark: true
-    landmark-type: Template Default
-
-  advanced: 
-    region-display-selector: false
-    exclude-title-from-translation: false
-
-  header-and-footer: 
-    header-text: |
-      
-      
-      jQuery/JET Date Pickers are now deprecated and cannot be used for new pages or applications. The old jQuery Date Picker JavaScript APIs are not supported.<br>
-      <br>
-      The JET Date Picker will be removed in a future release. Oracle recommends replacing all old Date Pickers with the new Date Picker.
-
-  server-cache: 
-    caching: Disabled
-
-  customization: 
-    customizable: Not Customizable By End Users
-
-  attributes: 
-    layout: 
-      number-of-rows-type: Static Value
-      number-of-rows: 99999
-
-    appearance: 
-      template-type: Theme
-      template: Standard # 452468948793466267
-      template-options: 
-      - '#DEFAULT#'
-      - t-Report--altRowsDefault
-      - t-Report--rowHighlight
-
-    pagination: 
-      type: Row Ranges X to Y (no pagination)
-      display-position: Bottom - Right
-      partial-page-refresh: true
-
-    performance: 
-      lazy-loading: true
-
-    messages: 
-      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no JET or jQuery Datepickers used</b>
-
-    break-formatting: 
-      break-columns: No Break
-
-    advanced: 
-      strip-html: false
-      sort-nulls: Last
-
-    heading: 
-      type: Custom Headings
-
-    download: 
-      csv-export-enabled: false
-
-    printing: 
-      enabled: false
-
-  columns: 
-  - # ====== Column: DISPLAY_AS ==================================
-    id: 36045328807379853
-    identification: 
-      column-name: DISPLAY_AS
-      type: Plain Text
-
-    heading: 
-      heading: Display As
-      alignment: center
-
-    layout: 
-      sequence: 60
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    column-formatting: 
-      highlight-words: JET Datepicker,jQuery Datepicker
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: PAGE_ID =====================================
-    id: 36045761174379853
-    identification: 
-      column-name: PAGE_ID
-      type: Plain Text
-
-    heading: 
-      heading: Page Id
-      alignment: center
-
-    layout: 
-      sequence: 10
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      default-sequence: 1
-      direction: Ascending
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: PAGE_NAME ===================================
-    id: 36046104940379853
-    identification: 
-      column-name: PAGE_NAME
-      type: Plain Text
-
-    heading: 
-      heading: Page Name
-      alignment: center
-
-    layout: 
-      sequence: 20
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: REGION ======================================
-    id: 36046592983379854
-    identification: 
-      column-name: REGION
-      type: Plain Text
-
-    heading: 
-      heading: Region
-      alignment: center
-
-    layout: 
-      sequence: 30
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      default-sequence: 2
-      direction: Ascending
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: LABEL =======================================
-    id: 36046953966379854
-    identification: 
-      column-name: LABEL
-      type: Plain Text
-
-    heading: 
-      heading: Label
-      alignment: center
-
-    layout: 
-      sequence: 50
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: ITEM_NAME ===================================
-    id: 36047375671379854
-    identification: 
-      column-name: ITEM_NAME
-      type: Plain Text
-
-    heading: 
-      heading: Item Name
-      alignment: center
-
-    layout: 
-      sequence: 40
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      default-sequence: 3
-      direction: Ascending
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-- # ====== Region: 6.1.2 Deprecated User Interfaces Removed ====
+- # ====== Region: 5.3 Preventing Double Escaping of LOV Display
   id: 111940919893294362
   identification: 
-    title: 6.1.2 Deprecated User Interfaces Removed
+    title: 5.3 Preventing Double Escaping of LOV Display Values
     type: Classic Report
 
   source: 
     location: Local Database
     type: SQL Query
     sql-query: |
-      select p.page_id
-            ,p.page_name
-            ,p.component_name
-            ,p.component_type
-            ,p.process_point
-            ,p.plsql_code_clob
-      from av_plsql_v p
-      where application_id = :P0_APP_ID
-      and (instr(upper(p.plsql_code_clob)
-              ,'APEX_WORKSPACE_UI_TYPES') > 0 or
-           instr(upper(p.plsql_code_clob)
-              ,'APEX_APPL_USER_INTERFACES') > 0 or
-           instr(upper(p.plsql_code_clob)
-              ,'UI_DETECTION_CSS_URLS') > 0 or
-           instr(upper(p.plsql_code_clob)
-              ,'USER_INTERFACE_ID') > 0 or
-           instr(upper(p.plsql_code_clob)
-              ,'USER_INTERFACE_ID') > 0 or
-           instr(upper(p.plsql_code_clob)
-              ,'PAGE_TRANSITION') > 0 or
-           instr(upper(p.plsql_code_clob)
-              ,'POPUP_TRANSITION') > 0 or
-           instr(upper(p.plsql_code_clob)
-              ,'UI_TYPE_ID') > 0 or
-           instr(upper(p.plsql_code_clob)
-              ,'UI_TYPE_NAME') > 0 or
-           instr(upper(p.plsql_code_clob)
-              ,'DEFAULT_PAGE_TRANSITION') > 0 or
-           instr(upper(p.plsql_code_clob)
-              ,'DEFAULT_POPUP_TRANSITION') > 0 or
-           instr(upper(p.plsql_code_clob)
-              ,'SUPPORTED_UI_TYPES') > 0 or
-           instr(upper(p.plsql_code_clob)
-              ,'SUPPORTED_UI_TYPES') > 0
-          )
+      select 0 page_id
+            ,'Shared Components' page_name
+            ,aal.list_of_values_name lov_or_item_name
+            ,aal.list_of_values_query lov_query
+      from apex_application_lovs aal
+      where lov_type = 'Dynamic'
+      and (upper(list_of_values_query) like '%HTF.ESCAPE_SC%' --
+            or upper(list_of_values_query) like '%APEX_ESCAPE.HTML%' --
+            or upper(list_of_values_query) like '%WWV_FLOW_ESCAPE.HTML%') --
+      and aal.application_id = :p0_app_id
+      union all
+      select aapi.page_id
+            ,aapi.page_name
+            ,aapi.item_name      lov_or_item_name
+            ,aapi.lov_definition lov_query
+      from apex_application_page_items aapi
+      where lov_named_lov is null
+      and (upper(lov_definition) like '%HTF.ESCAPE_SC%' --
+            or upper(lov_definition) like '%APEX_ESCAPE.HTML%' --
+            or upper(lov_definition) like '%WWV_FLOW_ESCAPE.HTML%') --
+      and aapi.application_id = :p0_app_id
+      
     page-items-to-submit: 
     - P0_APP_ID
 
@@ -1400,9 +906,9 @@ regions:
 
   header-and-footer: 
     header-text: |
-      APEX previously defined multiple users interfaces for each application. This is no longer the case. This release cleans up deprecated user interfaces, which impacts many APEX Dictionary Views.<br>
+      By default, APEX automatically HTML-escapes Lists of Values (LOV) display values as necessary. To ensure backward compatibility with legacy apps, APEX checks whether the LOV query already includes a utility function to escape the display value. If it does, APEX avoids double-escaping the value when displaying it in a Select List, Popup LOV, Shuttle, Display Only item, or similar components.<br>
       <br>
-      <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> This check uses only the column names while crawling your PL/SQL or SQL Code. If other tables than apex_applications, apex_appl_concatenated_files, apex_application_pages, apex_application_themes, apex_appl_plugins, apex_appl_plugin_std_attrs, apex_appl_plugin_attributes are using the same column name you can ignore the findings.</b>
+      Oracle recommends removing redundant inline escaping calls from your LOVs. In a future version of APEX, this prevention mechanism may be removed, which could cause some display values to appear double-escaped. 
 
   server-cache: 
     caching: Disabled
@@ -1413,7 +919,7 @@ regions:
   attributes: 
     layout: 
       number-of-rows-type: Static Value
-      number-of-rows: 15
+      number-of-rows: 1000
 
     appearance: 
       template-type: Theme
@@ -1432,7 +938,7 @@ regions:
       lazy-loading: false
 
     messages: 
-      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no tables or columns used</b>
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Double Escapes used</b>
 
     break-formatting: 
       break-columns: No Break
@@ -1451,6 +957,70 @@ regions:
       enabled: false
 
   columns: 
+  - # ====== Column: LOV_OR_ITEM_NAME ============================
+    id: 33473503532770147
+    identification: 
+      column-name: LOV_OR_ITEM_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Lov Or Item Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: LOV_QUERY ===================================
+    id: 33473636049770148
+    identification: 
+      column-name: LOV_QUERY
+      type: Plain Text
+
+    heading: 
+      heading: Lov Query
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
   - # ====== Column: PAGE_ID =====================================
     id: 36042381900379850
     identification: 
@@ -1515,137 +1085,6 @@ regions:
     security: 
       escape-special-characters: true
 
-  - # ====== Column: COMPONENT_NAME ==============================
-    id: 36043164277379851
-    identification: 
-      column-name: COMPONENT_NAME
-      type: Plain Text
-
-    heading: 
-      heading: Component Name
-      alignment: center
-
-    layout: 
-      sequence: 30
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: COMPONENT_TYPE ==============================
-    id: 36043558264379851
-    identification: 
-      column-name: COMPONENT_TYPE
-      type: Plain Text
-
-    heading: 
-      heading: Component Type
-      alignment: center
-
-    layout: 
-      sequence: 40
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: PROCESS_POINT ===============================
-    id: 36043965338379851
-    identification: 
-      column-name: PROCESS_POINT
-      type: Plain Text
-
-    heading: 
-      heading: Process Point
-      alignment: center
-
-    layout: 
-      sequence: 50
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: PLSQL_CODE_CLOB =============================
-    id: 36044315091379851
-    identification: 
-      column-name: PLSQL_CODE_CLOB
-      type: Plain Text
-
-    heading: 
-      heading: Plsql Code Clob
-      alignment: center
-
-    layout: 
-      sequence: 60
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    column-formatting: 
-      highlight-words: APEX_WORKSPACE_UI_TYPES,APEX_APPL_USER_INTERFACES,UI_DETECTION_CSS_URLS,USER_INTERFACE_ID,USER_INTERFACE_ID,PAGE_TRANSITION,POPUP_TRANSITION,UI_TYPE_ID,UI_TYPE_NAME,DEFAULT_PAGE_TRANSITION,DEFAULT_POPUP_TRANSITION,SUPPORTED_UI_TYPES,SUPPORTED_UI_TYPES
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
 - # ====== Region: 7.1 Desupported Query Builder ===============
   id: 111968951321516831
   identification: 
@@ -1683,7 +1122,9 @@ regions:
     exclude-title-from-translation: false
 
   header-and-footer: 
-    header-text: SQL Workshop Query Builder is now desupported, and will be removed in a future release.
+    header-text: |
+      SQL Workshop Query Builder is now desupported, and will be removed in a future release.<br>
+      <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> nothing to change / no check needed</b>
 
   server-cache: 
     caching: Disabled
@@ -1706,19 +1147,41 @@ regions:
     location: Local Database
     type: SQL Query
     sql-query: |
-      select r.page_id
-            ,r.page_name
-            ,r.region_name
-            ,r.ascending_image
-            ,r.ascending_image_attributes
-            ,r.descending_image
-            ,r.descending_image_attributes
-      from apex_application_page_regions r
-      where (r.ascending_image is not null
-      or r.ascending_image_attributes is not null
-      or r.descending_image is not null
-      or r.descending_image_attributes is not null)
-      and r.application_id = :P0_APP_ID
+      select p.page_id
+            ,p.page_name
+            ,p.component_name
+            ,p.component_type
+            ,p.process_point
+            ,p.plsql_code_clob
+      from av_plsql_v p
+      where application_id = :P0_APP_ID
+      and (instr(upper(p.plsql_code_clob)
+              ,'APEX_WORKSPACE_UI_TYPES') > 0 or
+           instr(upper(p.plsql_code_clob)
+              ,'APEX_APPL_USER_INTERFACES') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'ui_detection_css_urls') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'user_interface_id') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'page_transition') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'popup_transition') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'ui_type_id') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'ui_type_name') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'default_page_transition') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'default_popup_transition') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'supported_ui_types') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'supported_ui_types') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'supported_ui_types') > 0
+          )
     page-items-to-submit: 
     - P0_APP_ID
 
@@ -1750,39 +1213,12 @@ regions:
 
   header-and-footer: 
     header-text: |
-      APEX previously defined multiple users interfaces for each application. This is no longer the case. This release cleans up desupported user interfaces, which impacts many APEX Dictionary Views:
-      
-          Obsolete views:
-              apex_workspace_ui_types
-              apex_appl_user_interfaces
-          New view columns:
-              apex_applications.theme_style_by_user_pref
-              apex_applications.built_with_love
-              apex_applications.navigation_list
-              apex_applications.navigation_list_position
-              apex_applications.nav_bar_type
-              apex_applications.nav_bar_list
-              apex_applications.include_legacy_javascript
-              apex_applications.include_jquery_migrate
-          Obsolete view columns:
-              apex_applications.ui_detection_css_urls
-              apex_appl_concatenated_files.user_interface_id
-              apex_application_pages.user_interface_id
-              apex_application_pages.page_transition
-              apex_application_pages.popup_transition
-              apex_application_themes.ui_type_id
-              apex_application_themes.ui_type_name
-              apex_application_themes.default_page_transition
-              apex_application_themes.default_popup_transition
-              apex_appl_plugins.supported_ui_types
-              apex_appl_plugin_std_attrs.supported_ui_types
-              apex_appl_plugin_attributes.supported_ui_types
-          Removed Page Designer Properties:
-              Page Transition
-              Popup Transition
-              User Interface
-      
-      Older applications created when APEX could have two User Interfaces now only use the active user interface. Inactive user interfaces are removed from the metadata. 
+      APEX previously defined multiple users interfaces for each application. This is no longer the case. This release cleans up desupported user interfaces, which impacts many APEX Dictionary Views:<br>
+      Obsolete views:<br>
+      <ul><li>apex_workspace_ui_types</li>
+          <li>apex_appl_user_interfaces</li>
+      </ul>
+      Multiple columns are also desupported. For details look into the release notes.
 
   server-cache: 
     caching: Disabled
@@ -1812,7 +1248,7 @@ regions:
       lazy-loading: false
 
     messages: 
-      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Region Image and Image Tag Attributes used</b>
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no APEX Views or columns which are removed are used</b>
 
     break-formatting: 
       break-columns: No Break
@@ -1831,6 +1267,134 @@ regions:
       enabled: false
 
   columns: 
+  - # ====== Column: COMPONENT_NAME ==============================
+    id: 33472390202770135
+    identification: 
+      column-name: COMPONENT_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Component Name
+      alignment: center
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: COMPONENT_TYPE ==============================
+    id: 33472432270770136
+    identification: 
+      column-name: COMPONENT_TYPE
+      type: Plain Text
+
+    heading: 
+      heading: Component Type
+      alignment: center
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PROCESS_POINT ===============================
+    id: 33472546477770137
+    identification: 
+      column-name: PROCESS_POINT
+      type: Plain Text
+
+    heading: 
+      heading: Process Point
+      alignment: center
+
+    layout: 
+      sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PLSQL_CODE_CLOB =============================
+    id: 33472649933770138
+    identification: 
+      column-name: PLSQL_CODE_CLOB
+      type: Plain Text
+
+    heading: 
+      heading: Plsql Code Clob
+      alignment: center
+
+    layout: 
+      sequence: 60
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
   - # ====== Column: PAGE_ID =====================================
     id: 36053344343379857
     identification: 
@@ -1877,168 +1441,6 @@ regions:
 
     layout: 
       sequence: 20
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: REGION_NAME =================================
-    id: 36054113924379857
-    identification: 
-      column-name: REGION_NAME
-      type: Plain Text
-
-    heading: 
-      heading: Region Name
-      alignment: center
-
-    layout: 
-      sequence: 30
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      default-sequence: 2
-      direction: Ascending
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: ASCENDING_IMAGE =============================
-    id: 36054572947379859
-    identification: 
-      column-name: ASCENDING_IMAGE
-      type: Plain Text
-
-    heading: 
-      heading: Ascending Image
-      alignment: center
-
-    layout: 
-      sequence: 40
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: ASCENDING_IMAGE_ATTRIBUTES ==================
-    id: 36054914763379859
-    identification: 
-      column-name: ASCENDING_IMAGE_ATTRIBUTES
-      type: Plain Text
-
-    heading: 
-      heading: Ascending Image Attributes
-      alignment: center
-
-    layout: 
-      sequence: 50
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: DESCENDING_IMAGE ============================
-    id: 36055384579379859
-    identification: 
-      column-name: DESCENDING_IMAGE
-      type: Plain Text
-
-    heading: 
-      heading: Descending Image
-      alignment: center
-
-    layout: 
-      sequence: 60
-      column-alignment: start
-
-    accessibility: 
-      value-identifies-row: false
-
-    sorting: 
-      sortable: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    advanced: 
-      compute-sum: false
-
-    ui-defaults-reference: 
-      table-owner: Parsing Schema
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: DESCENDING_IMAGE_ATTRIBUTES =================
-    id: 36055777288379859
-    identification: 
-      column-name: DESCENDING_IMAGE_ATTRIBUTES
-      type: Plain Text
-
-    heading: 
-      heading: Descending Image Attributes
-      alignment: center
-
-    layout: 
-      sequence: 70
       column-alignment: start
 
     accessibility: 
@@ -2106,7 +1508,7 @@ regions:
       <li>Branch Utilities</li>
       </ul>
       You can edit items individually through Page Designer, or view them in bulk through the appropriate Utility area.<br> 
-      <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>
+      <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no check needed / developer utilities</b>
 
   server-cache: 
     caching: Disabled
@@ -2200,7 +1602,7 @@ regions:
       lazy-loading: false
 
     messages: 
-      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Desupported View Columns used</b>
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no JET or old Datepicker are used</b>
 
     break-formatting: 
       break-columns: No Break
@@ -2417,15 +1819,6 @@ regions:
     title: '5.2 Deprecated Object Browser Features '
     type: Static Content
 
-  source: 
-    html-code: |
-      Some functionality in Object Browser is deprecated:
-      <ul>
-      <li>The Model tab for tables is removed.</li>
-      <li>The Create Materialized View Wizard is removed. Create materialized views by using a CREATE MATERIALIZED VIEW statement in SQL Commands or SQL Scripts. You can still view materialized views in Object Browser.</li>
-      </ul>
-      
-
   layout: 
     sequence: 20
     parent-region: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.1/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 52290580683870853
@@ -2454,8 +1847,11 @@ regions:
 
   header-and-footer: 
     header-text: |
-      Custom page template and custom region templates with duplicated positions are considered deprecated. For example, a region template referencing position #CHANGE# twice is not recommended because that duplicate position causes duplicate DOM IDs.<br>
-      <br>
+      Some functionality in Object Browser is deprecated:
+      <ul><li>The Model tab for tables is removed.</li>
+          <li>The Create Materialized View Wizard is removed.</li>
+      </ul> Create materialized views by using a CREATE MATERIALIZED VIEW statement in SQL Commands or SQL Scripts. You can still view materialized views in Object Browser.<br>
+      <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no check needed / developer utilities</b>
 
   server-cache: 
     caching: Disabled
@@ -2468,25 +1864,37 @@ regions:
       output-as: HTML
       expand-shortcuts: false
 
-- # ====== Region: 6.1.3 Deprecated APIs and Parameters (JavaScr
+- # ====== Region: 5.5 Deprecated Functions and Procedures =====
   id: 169431787674333336
   identification: 
-    title: '6.1.3 Deprecated APIs and Parameters (JavaScript API) '
+    title: 5.5 Deprecated Functions and Procedures
     type: Classic Report
 
   source: 
     location: Local Database
     type: SQL Query
     sql-query: |
-      select j.page_id
-            ,j.page_name
-            ,j.component_name
-            ,j.component_type
-            ,j.js_code_vc2
-      from av_javascript_v j
-      where instr(lower(j.js_code_clob)
-                 ,'apex.pwa.gettnstalltext') > 0
-      and j.application_id = :P0_APP_ID
+      select p.page_id
+            ,p.page_name
+            ,p.component_name
+            ,p.component_type
+            ,p.process_point
+            ,p.plsql_code_clob
+      from av_plsql_v p
+      where application_id = :P0_APP_ID
+      and (instr(lower(p.plsql_code_clob)
+              ,'.set_build_option_status') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'.set_application_status') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'.get_application_status') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'.set_global_notification') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'.get_global_notification') > 0 or
+           instr(lower(p.plsql_code_clob)
+              ,'.set_app_build_status') > 0
+          )
     page-items-to-submit: 
     - P0_APP_ID
 
@@ -2517,7 +1925,15 @@ regions:
     exclude-title-from-translation: false
 
   header-and-footer: 
-    header-text: JavaScript API apex.pwa.getInstallText is deprecated.
+    header-text: |
+      As part of moving existing APIs from APEX_UTIL to APEX_APPLICATION_ADMIN, some comments changed. The following functions and procedures are deprecated:
+      <ul><li>set_build_option_status</li>
+          <li>get_build_option_status (two times, overloaded)</li>
+          <li>set_application_status</li>
+          <li>get_application_status</li>
+          <li>set_global_notification</li>
+          <li>get_global_notification</li>
+          <li>set_app_build_status</li></ul>
 
   server-cache: 
     caching: Disabled
@@ -2547,7 +1963,7 @@ regions:
       lazy-loading: true
 
     messages: 
-      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No calls like apex.theme42.util.mq found.</b>
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated API calls found.</b>
 
     break-formatting: 
       break-columns: No Break
@@ -2694,18 +2110,50 @@ regions:
     security: 
       escape-special-characters: true
 
-  - # ====== Column: JS_CODE_VC2 =================================
-    id: 36052364162379857
+  - # ====== Column: PROCESS_POINT ===============================
+    id: 37286138179264603
     identification: 
-      column-name: JS_CODE_VC2
+      column-name: PROCESS_POINT
       type: Plain Text
 
     heading: 
-      heading: Js Code Vc2
+      heading: Process Point
       alignment: center
 
     layout: 
       sequence: 50
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PLSQL_CODE_CLOB =============================
+    id: 37286223239264604
+    identification: 
+      column-name: PLSQL_CODE_CLOB
+      type: Plain Text
+
+    heading: 
+      heading: Plsql Code Clob
+      alignment: center
+
+    layout: 
+      sequence: 60
       column-alignment: start
 
     accessibility: 
