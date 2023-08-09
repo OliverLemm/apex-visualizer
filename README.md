@@ -4,6 +4,12 @@ https://raw.githubusercontent.com/OliverLemm/apex-visualizer/master/manifest.jso
 inside your internal APEX workspace. <br>
 Go Manage Instance => Instance Setting => Application Gallery and add a new line.
 
+## Release 23.1
+APEX Visualizer itself migrated to APEX 23.1.
+
+## Release 22.2.1
+Migration checks for APEX 23.1 have been added.
+
 ## Release 22.2
 Migrated to APEX 22.2.
 Solved a bug on the QA page when multiple themes are related to one application.
