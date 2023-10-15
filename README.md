@@ -5,8 +5,8 @@ inside your internal APEX workspace. <br>
 Go Manage Instance => Instance Setting => Application Gallery and add a new line.
 
 ## Release 23.1.1
-Check for correct Universal Theme version fixed.
-Check for unused plugins fixed.
+Check for correct Universal Theme version fixed.<br>
+Check for unused plugins fixed.<br>
 Migrated to APEX 23.1.5.
 
 ## Release 23.1
@@ -16,11 +16,11 @@ APEX Visualizer itself migrated to APEX 23.1.
 Migration checks for APEX 23.1 have been added.
 
 ## Release 22.2
-Migrated to APEX 22.2.
+Migrated to APEX 22.2.<br>
 Solved a bug on the QA page when multiple themes are related to one application.
 
 ## Release 22.1.2
-Migrated to APEX 22.1.7.
+Migrated to APEX 22.1.7.<br>
 Added checks for desupported and deprecated features for APEX 22.2.
 
 ## Release 22.1.1
