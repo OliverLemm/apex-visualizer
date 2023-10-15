@@ -5,7 +5,7 @@ begin
 --   Manifest End
 wwv_flow_imp.component_begin (
  p_version_yyyy_mm_dd=>'2023.04.28'
-,p_release=>'23.1.3'
+,p_release=>'23.1.5'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -18,7 +18,8 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>150
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0600_NOT_USED_AUTH_SCHEMES_V" ("AUTHORIZATION_SCHEME_NAME", "APPLICATION_ID") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0600_NOT_USED_AUTH_SCHEMES_V" ("AUTHORIZATION_SCHEME_NAME", "APPLICATION_ID") AS ',
 '  with auth as',
 ' (select v1.visibility_id',
 '        ,v1.application_id',
@@ -34,9 +35,7 @@ wwv_flow_imp_shared.create_install_script(
 'and to_char(''!'' || a.authorization_scheme_id) not in (select a1.visibility_id',
 '                                                     from auth a1',
 '                                                     where a1.application_id = a.application_id)',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(39382032294836612)

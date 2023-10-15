@@ -5,7 +5,7 @@ begin
 --   Manifest End
 wwv_flow_imp.component_begin (
  p_version_yyyy_mm_dd=>'2023.04.28'
-,p_release=>'23.1.3'
+,p_release=>'23.1.5'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -18,7 +18,8 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>130
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PAGE_LINKS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_GROUP", "LINK_TYPE", "LINK_NAME", "LINK_LABEL", "LINK_PAGE_ID", "PAGE_DESIGNER_URL") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PAGE_LINKS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_GROUP", "LINK_TYPE", "LINK_NAME", "LINK_LABEL", "LINK_PAGE_ID", "PAGE_DESIGNER_URL") AS ',
 '  select page.application_id',
 '      ,page.application_name',
 '      ,page.page_id',
@@ -122,9 +123,7 @@ wwv_flow_imp_shared.create_install_script(
 'where page.page_id not in (select page_id',
 '                           from apex_application_pages p',
 '                           where p.page_function = ''Global Page'')',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(39381158910825139)

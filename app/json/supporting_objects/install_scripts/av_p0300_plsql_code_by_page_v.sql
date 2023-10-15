@@ -1,4 +1,5 @@
-CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0300_PLSQL_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS 
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0300_PLSQL_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS 
   select application_id
       ,page_id
       ,page_name || ' (' || page_id || ')' page_name_and_id
@@ -28,4 +29,3 @@ from (select distinct application_id
                      ,sum(code_lines) over(partition by application_id, page_id) code_lines_sum
       from av_plsql_v)
 ;
-

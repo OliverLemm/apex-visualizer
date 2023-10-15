@@ -19,7 +19,7 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_imp.import_begin (
  p_version_yyyy_mm_dd=>'2023.04.28'
-,p_release=>'23.1.3'
+,p_release=>'23.1.5'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -73,7 +73,7 @@ prompt APPLICATION 347 - APEX Visualizer
 --       E-Mail:
 --     Supporting Objects:  Included
 --       Install scripts:         16
---   Version:         23.1.3
+--   Version:         23.1.5
 --   Instance ID:     69411093447375
 --
 
@@ -124,7 +124,7 @@ wwv_imp_workspace.create_flow(
 ,p_tokenize_row_search=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20230809215103'
+,p_last_upd_yyyymmddhh24miss=>'20231015132118'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>14
 ,p_print_server_type=>'INSTANCE'
@@ -26728,7 +26728,7 @@ wwv_flow_imp_page.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'21'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20221112144240'
+,p_last_upd_yyyymmddhh24miss=>'20231015130600'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(38837724345637017)
@@ -27414,6 +27414,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'If using Universal Theme, this information shows the version compared to the APEX version<br>',
+'UT 23.1 = APEX 23.1<br>',
 'UT 22.2 = APEX 22.2<br>',
 'UT 22.1 = APEX 22.1<br>',
 'UT 21.2 = APEX 21.2<br>',
@@ -27422,10 +27423,9 @@ wwv_flow_imp_page.create_page_item(
 'UT  1.5 = APEX 20.1<br>',
 'UT  1.4 = APEX 19.2<br>',
 'UT  1.3 = APEX 19.1<br>',
-'UT  1.2 = APEX 18.1 / 18.2<br>',
-'UT  1.1 = APEX 5.1<br>',
-'UT  1.0 = APEX 5.0',
-''))
+'UT  1.2 = APEX 18.1 / 18.2 (not supported any more)<br>',
+'UT  1.1 = APEX 5.1 (not supported any more)<br>',
+'UT  1.0 = APEX 5.0 (not supported any more)'))
 ,p_encrypt_session_state_yn=>'N'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'N'
@@ -27774,21 +27774,21 @@ wwv_flow_imp_page.create_page_da_action(
 'var val = $trigger.val();',
 '',
 '// success - up-to-date',
-'if (val == ''22.2'') {    ',
+'if (val == ''23.1'') {    ',
 '    $trigger.addClass("u-success");',
 '    $trigger.removeClass("u-warning");',
 '    $trigger.removeClass("u-danger");',
 '',
 '// danger - old versions which are not supported any more',
-'} else if ((val == ''1.0'') || (val == ''1.1'')) {    ',
-'    $trigger.removeClass("u-success");',
-'    $trigger.removeClass("u-warning");',
+'} else if ((val == ''1.0'') || (val == ''1.1'') || (val == ''1.2'')) {    ',
 '    $trigger.addClass("u-danger");',
+'    $trigger.removeClass("u-success");',
+'    $trigger.removeClass("u-warning");   ',
 '',
 '// warning - versions not old and not the newest',
 '} else {    ',
-'    $trigger.removeClass("u-success");',
 '    $trigger.addClass("u-warning");',
+'    $trigger.removeClass("u-success");    ',
 '    $trigger.removeClass("u-danger");',
 '}'))
 );
@@ -34150,7 +34150,7 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>5
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE EDITIONABLE PACKAGE "AV_GENERAL_PKG" is',
+'create or replace package av_general_pkg is',
 '',
 '  function f_get_page_designer_url',
 '  (',
@@ -34174,9 +34174,7 @@ wwv_flow_imp_shared.create_install_script(
 '',
 'end av_general_pkg;',
 '/',
-'',
-'',
-'CREATE OR REPLACE EDITIONABLE PACKAGE BODY "AV_GENERAL_PKG" is',
+'create or replace package body av_general_pkg is',
 '',
 '  -- Example url for editing page 100 in application 347',
 '  -- f?p=4000:4500:5354232430661:::1,4150:FB_FLOW_ID,FB_FLOW_PAGE_ID,F4000_P1_FLOW,F4000_P4150_GOTO_PAGE,F4000_P1_PAGE:347,100,347,100,100',
@@ -34232,9 +34230,7 @@ wwv_flow_imp_shared.create_install_script(
 '  end f_get_page_id_from_target_link;',
 '',
 'end av_general_pkg;',
-'/',
-'',
-''))
+'/'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(36635662461100812)
@@ -34258,7 +34254,8 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>10
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_APPLICATIONS_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_FUNCTION", "PAGE_ID") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_APPLICATIONS_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_FUNCTION", "PAGE_ID") AS ',
 '  select p.application_name',
 '      ,p.application_id',
 '      ,case p.page_function',
@@ -34277,9 +34274,7 @@ wwv_flow_imp_shared.create_install_script(
 '        ,page_function',
 'order by p.application_id',
 '        ,p.page_id',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(143654242120153307)
@@ -34303,7 +34298,8 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>20
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_COMPONENTS_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_ID", "PAGE_NAME", "PAGE", "COMPONENT", "AMOUNT") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_COMPONENTS_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_ID", "PAGE_NAME", "PAGE", "COMPONENT", "AMOUNT") AS ',
 '  select application_name, application_id, page_id, page_name, page_id || '' '' || page_name page, ''regions'' component, regions amount',
 'from apex_application_pages',
 'union all',
@@ -34328,9 +34324,7 @@ wwv_flow_imp_shared.create_install_script(
 'select application_name, application_id, page_id, page_name, page_id || '' '' || page_name page, ''dynamic_actions'' component, count(1) amount',
 'from apex_application_page_da',
 'group by application_name, application_id, page_id,page_name',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(143655274971162148)
@@ -34354,8 +34348,9 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>30
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_CSS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "COMPONENT_NAME", "COMPONENT_TYPE", "CSS_CODE_TYPE", "BEST_PRACTICE", "CSS_CODE", "'
-||'CSS_CODE_VC2", "CSS_CODE_CLOB", "TOOLTIP", "CSS_CODE_LINES", "CSS_CODE_LENGTH") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_CSS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "COMPONENT_NAME", "COMPONENT_TYPE", "CSS_CODE_TYPE", "BEST_PRACTICE", "CSS_CODE",'
+||' "CSS_CODE_VC2", "CSS_CODE_CLOB", "TOOLTIP", "CSS_CODE_LINES", "CSS_CODE_LENGTH") AS ',
 '  select app.application_id',
 '      ,app.application_name',
 '      ,app.page_id',
@@ -34611,9 +34606,7 @@ wwv_flow_imp_shared.create_install_script(
 '      join apex_application_page_da_acts a on a.dynamic_action_id = d.dynamic_action_id',
 '      where a.action_code = ''NATIVE_ADD_CLASS'') c on c.application_id = app.application_id',
 '                                              and c.page_id = app.page_id',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(143655908421166976)
@@ -34637,8 +34630,9 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>40
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_JAVASCRIPT_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "COMPONENT_NAME", "COMPONENT_TYPE", "JS_CODE_TYPE", "BEST_PRACTICE", "JS_COD'
-||'E", "JS_CODE_VC2", "JS_CODE_CLOB", "TOOLTIP", "JS_CODE_LINES", "JS_CODE_LENGTH") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_JAVASCRIPT_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "COMPONENT_NAME", "COMPONENT_TYPE", "JS_CODE_TYPE", "BEST_PRACTICE", "JS_C'
+||'ODE", "JS_CODE_VC2", "JS_CODE_CLOB", "TOOLTIP", "JS_CODE_LINES", "JS_CODE_LENGTH") AS ',
 '  select app.application_id',
 '      ,app.application_name',
 '      ,app.page_id',
@@ -34787,9 +34781,7 @@ wwv_flow_imp_shared.create_install_script(
 '      from apex_application_page_buttons b',
 '      where lower(b.redirect_url) like ''%javascript:%'') j on j.application_id = app.application_id',
 '                                                      and j.page_id = app.page_id',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(143656487097170010)
@@ -34813,8 +34805,9 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>50
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PAGES_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_MODE", "PAGE_ALIAS", "PAGE_FUNCTION", "PAGE_GROUP", "PAGE_TEMPLATE", "CREATED_BY", "CREATED_ON", "LAST_UPDATED_BY", "LAST_UPDAT'
-||'ED_ON", "RELOAD_ON_SUBMIT", "WARN_ON_UNSAVED_CHANGES") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PAGES_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_MODE", "PAGE_ALIAS", "PAGE_FUNCTION", "PAGE_GROUP", "PAGE_TEMPLATE", "CREATED_BY", "CREATED_ON", "LAST_UPDATED_BY", "LAST_UPD'
+||'ATED_ON", "RELOAD_ON_SUBMIT", "WARN_ON_UNSAVED_CHANGES") AS ',
 '  select aap.application_id',
 '      ,aap.application_name',
 '      ,aap.page_id',
@@ -34831,9 +34824,7 @@ wwv_flow_imp_shared.create_install_script(
 '      ,aap.reload_on_submit',
 '      ,aap.warn_on_unsaved_changes',
 'from apex_application_pages aap',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(143656961660171918)
@@ -34857,8 +34848,9 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>60
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PLSQL_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENT_NAME", "COMPONENT_TYPE", "PROCESS_POINT", "CODE_TYPE"'
-||', "PLSQL_CODE", "PLSQL_CODE_VC2", "PLSQL_CODE_CLOB", "TOOLTIP", "CODE_LINES", "CODE_LENGTH") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PLSQL_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENT_NAME", "COMPONENT_TYPE", "PROCESS_POINT", "CODE_TYP'
+||'E", "PLSQL_CODE", "PLSQL_CODE_VC2", "PLSQL_CODE_CLOB", "TOOLTIP", "CODE_LINES", "CODE_LENGTH") AS ',
 '  select app.application_id',
 '      ,app.application_name',
 '      ,p.page_id',
@@ -35055,9 +35047,7 @@ wwv_flow_imp_shared.create_install_script(
 '      --',
 '      ) p on p.application_id = app.application_id',
 '      and p.page_id = app.page_id',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(143657485639176421)
@@ -35081,8 +35071,9 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>70
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_VISIBILITY_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_NAME", "PAGE_ID", "COMPONENT_TYPE", "COMPONENT_NAME", "VISIBILITY_NAME", "VISIBILITY_ID", "VISIBILITY_CATEGORY", "VISIBILITY_TYPE", "VISIBILITY_EX'
-||'P1") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_VISIBILITY_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_NAME", "PAGE_ID", "COMPONENT_TYPE", "COMPONENT_NAME", "VISIBILITY_NAME", "VISIBILITY_ID", "VISIBILITY_CATEGORY", "VISIBILITY_TYPE", "VISIBILITY_'
+||'EXP1") AS ',
 '  select aap.application_name',
 '      ,p.application_id',
 '      ,aap.page_name',
@@ -35316,9 +35307,7 @@ wwv_flow_imp_shared.create_install_script(
 '             ,c.condition_expression1 visibility_exp1',
 '      from apex_application_page_rpt_cols c) p on p.application_id = aap.application_id',
 '                                           and p.page_id = aap.page_id',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(143658434170181348)
@@ -35342,7 +35331,8 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>80
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_VISIBILITY_OVERVIEW_V" ("APP_ID", "APP_NAME", "VISIBILTY_NAME") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_VISIBILITY_OVERVIEW_V" ("APP_ID", "APP_NAME", "VISIBILTY_NAME") AS ',
 '  select aaa.application_id            app_id',
 '      ,aaa.application_name          app_name',
 '      ,aaa.authorization_scheme_name visibilty_name',
@@ -35352,9 +35342,7 @@ wwv_flow_imp_shared.create_install_script(
 '      ,aa.application_name app_name',
 '      ,''condition'' visibilty_name',
 'from apex_applications aa',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(143657973539179125)
@@ -35378,7 +35366,8 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>90
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0100_JS_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0100_JS_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
 '  select application_id',
 '      ,page_id',
 '      ,page_name || '' ('' || page_id || '')'' page_name_and_id',
@@ -35407,9 +35396,7 @@ wwv_flow_imp_shared.create_install_script(
 '                     ,sum(js_code_length) over(partition by application_id, page_id) code_length_sum',
 '                     ,sum(js_code_lines) over(partition by application_id, page_id) code_lines_sum',
 '      from av_javascript_v)',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(145012700325562778)
@@ -35433,7 +35420,8 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>100
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0200_CSS_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0200_CSS_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
 '  select application_id',
 '      ,page_id',
 '      ,page_name || '' ('' || page_id || '')'' page_name_and_id',
@@ -35462,9 +35450,7 @@ wwv_flow_imp_shared.create_install_script(
 '                     ,sum(css_code_length) over(partition by application_id, page_id) code_length_sum',
 '                     ,sum(css_code_lines) over(partition by application_id, page_id) code_lines_sum',
 '      from av_css_v)',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(145013290061565770)
@@ -35488,7 +35474,8 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>110
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0300_PLSQL_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0300_PLSQL_CODE_BY_PAGE_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME_AND_ID", "PAGE_GROUP", "PAGE_FUNCTION", "BEST_PRACTICE", "COMPONENTS_COUNT", "CODE_LENGTH_SUM", "CODE_LINES_SUM", "TOOLTIP") AS ',
 '  select application_id',
 '      ,page_id',
 '      ,page_name || '' ('' || page_id || '')'' page_name_and_id',
@@ -35517,9 +35504,7 @@ wwv_flow_imp_shared.create_install_script(
 '                     ,sum(code_length) over(partition by application_id, page_id) code_length_sum',
 '                     ,sum(code_lines) over(partition by application_id, page_id) code_lines_sum',
 '      from av_plsql_v)',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(145013744119567306)
@@ -35543,7 +35528,8 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>130
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PAGE_LINKS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_GROUP", "LINK_TYPE", "LINK_NAME", "LINK_LABEL", "LINK_PAGE_ID", "PAGE_DESIGNER_URL") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PAGE_LINKS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_GROUP", "LINK_TYPE", "LINK_NAME", "LINK_LABEL", "LINK_PAGE_ID", "PAGE_DESIGNER_URL") AS ',
 '  select page.application_id',
 '      ,page.application_name',
 '      ,page.page_id',
@@ -35647,9 +35633,7 @@ wwv_flow_imp_shared.create_install_script(
 'where page.page_id not in (select page_id',
 '                           from apex_application_pages p',
 '                           where p.page_function = ''Global Page'')',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(39381158910825139)
@@ -35673,8 +35657,9 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>140
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PLUGINS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PLUGIN_ID", "PLUGIN_TYPE", "NAME", "DISPLAY_NAME", "PLSQL_CODE", "API_VERSION", "RENDER_FUNCTION", "HELP_TEXT", "VERSION_IDENTIFIER", "ABOUT_URL", "PAGE_I'
-||'D", "PAGE_NAME", "OBJECT_NAME", "OBJECT_LABEL", "PAGE_DESIGNER_URL") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PLUGINS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PLUGIN_ID", "PLUGIN_TYPE", "NAME", "DISPLAY_NAME", "PLSQL_CODE", "API_VERSION", "RENDER_FUNCTION", "HELP_TEXT", "VERSION_IDENTIFIER", "ABOUT_URL", "PAGE'
+||'_ID", "PAGE_NAME", "OBJECT_NAME", "OBJECT_LABEL", "PAGE_DESIGNER_URL") AS ',
 '  select p.application_id',
 '      ,p.application_name',
 '      ,p.plugin_id',
@@ -35739,9 +35724,8 @@ wwv_flow_imp_shared.create_install_script(
 '           where pp.process_type_code like ''PLUGIN%'') o on o.application_id = p.application_id',
 '                                                    and o.object_type = p.plugin_type',
 '                                                    and o.plugin_display_name = p.display_name',
-';',
-'',
-''))
+'where p.plugin_type <> ''Template Component''',
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(39381616075833181)
@@ -35765,7 +35749,8 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>150
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0600_NOT_USED_AUTH_SCHEMES_V" ("AUTHORIZATION_SCHEME_NAME", "APPLICATION_ID") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0600_NOT_USED_AUTH_SCHEMES_V" ("AUTHORIZATION_SCHEME_NAME", "APPLICATION_ID") AS ',
 '  with auth as',
 ' (select v1.visibility_id',
 '        ,v1.application_id',
@@ -35781,9 +35766,7 @@ wwv_flow_imp_shared.create_install_script(
 'and to_char(''!'' || a.authorization_scheme_id) not in (select a1.visibility_id',
 '                                                     from auth a1',
 '                                                     where a1.application_id = a.application_id)',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(39382032294836612)
@@ -35807,7 +35790,8 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>160
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0708_LEGACY_SUBST_STRINGS_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME", "COMPONENT_NAME", "COMPONENT_TYPE", "CODE_VC2") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0708_LEGACY_SUBST_STRINGS_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME", "COMPONENT_NAME", "COMPONENT_TYPE", "CODE_VC2") AS ',
 '  select x.application_id',
 '      ,x.page_id',
 '      ,x.page_name',
@@ -35984,9 +35968,7 @@ wwv_flow_imp_shared.create_install_script(
 '       ,''THEME_IMAGES'') > 0',
 'or instr(x.code_vc2',
 '       ,''THEME_DB_IMAGES'') > 0',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(23141780501119210)

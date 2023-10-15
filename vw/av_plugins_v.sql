@@ -62,4 +62,6 @@ left join ( -- Item Plugins
            from apex_application_page_proc pp
            where pp.process_type_code like 'PLUGIN%') o on o.application_id = p.application_id
                                                     and o.object_type = p.plugin_type
-                                                    and o.plugin_display_name = p.display_name;
+                                                    and o.plugin_display_name = p.display_name
+where p.plugin_type <> 'Template Component'
+;

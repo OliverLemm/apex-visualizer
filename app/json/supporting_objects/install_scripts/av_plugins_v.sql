@@ -1,4 +1,5 @@
-CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PLUGINS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PLUGIN_ID", "PLUGIN_TYPE", "NAME", "DISPLAY_NAME", "PLSQL_CODE", "API_VERSION", "RENDER_FUNCTION", "HELP_TEXT", "VERSION_IDENTIFIER", "ABOUT_URL", "PAGE_ID", "PAGE_NAME", "OBJECT_NAME", "OBJECT_LABEL", "PAGE_DESIGNER_URL") AS 
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PLUGINS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PLUGIN_ID", "PLUGIN_TYPE", "NAME", "DISPLAY_NAME", "PLSQL_CODE", "API_VERSION", "RENDER_FUNCTION", "HELP_TEXT", "VERSION_IDENTIFIER", "ABOUT_URL", "PAGE_ID", "PAGE_NAME", "OBJECT_NAME", "OBJECT_LABEL", "PAGE_DESIGNER_URL") AS 
   select p.application_id
       ,p.application_name
       ,p.plugin_id
@@ -63,5 +64,5 @@ left join ( -- Item Plugins
            where pp.process_type_code like 'PLUGIN%') o on o.application_id = p.application_id
                                                     and o.object_type = p.plugin_type
                                                     and o.plugin_display_name = p.display_name
+where p.plugin_type <> 'Template Component'
 ;
-

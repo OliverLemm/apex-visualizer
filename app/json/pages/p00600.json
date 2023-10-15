@@ -1339,7 +1339,7 @@
        ,"Restricted Characters":"All characters can be saved."
       }
      ,"Help":{
-        "Help Text":"If using Universal Theme, this information shows the version compared to the APEX version\u003Cbr\u003E\nUT 22.2 = APEX 22.2\u003Cbr\u003E\nUT 22.1 = APEX 22.1\u003Cbr\u003E\nUT 21.2 = APEX 21.2\u003Cbr\u003E\nUT 21.1 = APEX 21.1\u003Cbr\u003E\nUT  1.6 = APEX 20.2\u003Cbr\u003E\nUT  1.5 = APEX 20.1\u003Cbr\u003E\nUT  1.4 = APEX 19.2\u003Cbr\u003E\nUT  1.3 = APEX 19.1\u003Cbr\u003E\nUT  1.2 = APEX 18.1 \/ 18.2\u003Cbr\u003E\nUT  1.1 = APEX 5.1\u003Cbr\u003E\nUT  1.0 = APEX 5.0\n"
+        "Help Text":"If using Universal Theme, this information shows the version compared to the APEX version\u003Cbr\u003E\nUT 23.1 = APEX 23.1\u003Cbr\u003E\nUT 22.2 = APEX 22.2\u003Cbr\u003E\nUT 22.1 = APEX 22.1\u003Cbr\u003E\nUT 21.2 = APEX 21.2\u003Cbr\u003E\nUT 21.1 = APEX 21.1\u003Cbr\u003E\nUT  1.6 = APEX 20.2\u003Cbr\u003E\nUT  1.5 = APEX 20.1\u003Cbr\u003E\nUT  1.4 = APEX 19.2\u003Cbr\u003E\nUT  1.3 = APEX 19.1\u003Cbr\u003E\nUT  1.2 = APEX 18.1 \/ 18.2 (not supported any more)\u003Cbr\u003E\nUT  1.1 = APEX 5.1 (not supported any more)\u003Cbr\u003E\nUT  1.0 = APEX 5.0 (not supported any more)"
       }
     }
   ]
@@ -1782,7 +1782,7 @@
             "Action":"Execute JavaScript Code"
           }
          ,"Settings":{
-            "Code":"var $trigger = $(this.triggeringElement);\nvar val = $trigger.val();\n\n\/\/ success - up-to-date\nif (val == \u002722.2\u0027) {    \n    $trigger.addClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");\n    $trigger.removeClass(\"u-danger\");\n\n\/\/ danger - old versions which are not supported any more\n} else if ((val == \u00271.0\u0027) || (val == \u00271.1\u0027)) {    \n    $trigger.removeClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");\n    $trigger.addClass(\"u-danger\");\n\n\/\/ warning - versions not old and not the newest\n} else {    \n    $trigger.removeClass(\"u-success\");\n    $trigger.addClass(\"u-warning\");\n    $trigger.removeClass(\"u-danger\");\n}"
+            "Code":"var $trigger = $(this.triggeringElement);\nvar val = $trigger.val();\n\n\/\/ success - up-to-date\nif (val == \u002723.1\u0027) {    \n    $trigger.addClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");\n    $trigger.removeClass(\"u-danger\");\n\n\/\/ danger - old versions which are not supported any more\n} else if ((val == \u00271.0\u0027) || (val == \u00271.1\u0027) || (val == \u00271.2\u0027)) {    \n    $trigger.addClass(\"u-danger\");\n    $trigger.removeClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");   \n\n\/\/ warning - versions not old and not the newest\n} else {    \n    $trigger.addClass(\"u-warning\");\n    $trigger.removeClass(\"u-success\");    \n    $trigger.removeClass(\"u-danger\");\n}"
           }
          ,"Affected Elements":{
             "Selection Type":"Item(s)"

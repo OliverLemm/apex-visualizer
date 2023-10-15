@@ -1,4 +1,4 @@
-CREATE OR REPLACE EDITIONABLE PACKAGE "AV_GENERAL_PKG" is
+create or replace package av_general_pkg is
 
   function f_get_page_designer_url
   (
@@ -22,9 +22,7 @@ CREATE OR REPLACE EDITIONABLE PACKAGE "AV_GENERAL_PKG" is
 
 end av_general_pkg;
 /
-
-
-CREATE OR REPLACE EDITIONABLE PACKAGE BODY "AV_GENERAL_PKG" is
+create or replace package body av_general_pkg is
 
   -- Example url for editing page 100 in application 347
   -- f?p=4000:4500:5354232430661:::1,4150:FB_FLOW_ID,FB_FLOW_PAGE_ID,F4000_P1_FLOW,F4000_P4150_GOTO_PAGE,F4000_P1_PAGE:347,100,347,100,100
@@ -81,4 +79,3 @@ CREATE OR REPLACE EDITIONABLE PACKAGE BODY "AV_GENERAL_PKG" is
 
 end av_general_pkg;
 /
-

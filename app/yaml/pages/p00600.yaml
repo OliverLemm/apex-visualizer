@@ -1314,6 +1314,7 @@ page-items:
   help: 
     help-text: |
       If using Universal Theme, this information shows the version compared to the APEX version<br>
+      UT 23.1 = APEX 23.1<br>
       UT 22.2 = APEX 22.2<br>
       UT 22.1 = APEX 22.1<br>
       UT 21.2 = APEX 21.2<br>
@@ -1322,10 +1323,9 @@ page-items:
       UT  1.5 = APEX 20.1<br>
       UT  1.4 = APEX 19.2<br>
       UT  1.3 = APEX 19.1<br>
-      UT  1.2 = APEX 18.1 / 18.2<br>
-      UT  1.1 = APEX 5.1<br>
-      UT  1.0 = APEX 5.0
-      
+      UT  1.2 = APEX 18.1 / 18.2 (not supported any more)<br>
+      UT  1.1 = APEX 5.1 (not supported any more)<br>
+      UT  1.0 = APEX 5.0 (not supported any more)
 
 dynamic-actions: 
 - # ====== Dynamic Action: change P0_APP_ID - refresh regions ==
@@ -1836,21 +1836,21 @@ dynamic-actions:
         var val = $trigger.val();
         
         // success - up-to-date
-        if (val == '22.2') {    
+        if (val == '23.1') {    
             $trigger.addClass("u-success");
             $trigger.removeClass("u-warning");
             $trigger.removeClass("u-danger");
         
         // danger - old versions which are not supported any more
-        } else if ((val == '1.0') || (val == '1.1')) {    
-            $trigger.removeClass("u-success");
-            $trigger.removeClass("u-warning");
+        } else if ((val == '1.0') || (val == '1.1') || (val == '1.2')) {    
             $trigger.addClass("u-danger");
+            $trigger.removeClass("u-success");
+            $trigger.removeClass("u-warning");   
         
         // warning - versions not old and not the newest
         } else {    
-            $trigger.removeClass("u-success");
             $trigger.addClass("u-warning");
+            $trigger.removeClass("u-success");    
             $trigger.removeClass("u-danger");
         }
 

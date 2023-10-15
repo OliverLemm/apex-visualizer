@@ -5,7 +5,7 @@ begin
 --   Manifest End
 wwv_flow_imp.component_begin (
  p_version_yyyy_mm_dd=>'2023.04.28'
-,p_release=>'23.1.3'
+,p_release=>'23.1.5'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -18,7 +18,8 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>160
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0708_LEGACY_SUBST_STRINGS_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME", "COMPONENT_NAME", "COMPONENT_TYPE", "CODE_VC2") AS ',
+'',
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0708_LEGACY_SUBST_STRINGS_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME", "COMPONENT_NAME", "COMPONENT_TYPE", "CODE_VC2") AS ',
 '  select x.application_id',
 '      ,x.page_id',
 '      ,x.page_name',
@@ -195,9 +196,7 @@ wwv_flow_imp_shared.create_install_script(
 '       ,''THEME_IMAGES'') > 0',
 'or instr(x.code_vc2',
 '       ,''THEME_DB_IMAGES'') > 0',
-';',
-'',
-''))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(23141780501119210)

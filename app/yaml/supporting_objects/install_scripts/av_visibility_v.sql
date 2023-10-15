@@ -1,4 +1,5 @@
-CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_VISIBILITY_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_NAME", "PAGE_ID", "COMPONENT_TYPE", "COMPONENT_NAME", "VISIBILITY_NAME", "VISIBILITY_ID", "VISIBILITY_CATEGORY", "VISIBILITY_TYPE", "VISIBILITY_EXP1") AS 
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_VISIBILITY_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_NAME", "PAGE_ID", "COMPONENT_TYPE", "COMPONENT_NAME", "VISIBILITY_NAME", "VISIBILITY_ID", "VISIBILITY_CATEGORY", "VISIBILITY_TYPE", "VISIBILITY_EXP1") AS 
   select aap.application_name
       ,p.application_id
       ,aap.page_name
@@ -233,4 +234,3 @@ join ( -- PAGES
       from apex_application_page_rpt_cols c) p on p.application_id = aap.application_id
                                            and p.page_id = aap.page_id
 ;
-

@@ -5,7 +5,7 @@ begin
 --   Manifest End
 wwv_flow_imp.component_begin (
  p_version_yyyy_mm_dd=>'2023.04.28'
-,p_release=>'23.1.3'
+,p_release=>'23.1.5'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -21,7 +21,7 @@ wwv_flow_imp_page.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'21'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20221112144240'
+,p_last_upd_yyyymmddhh24miss=>'20231015130600'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(38837724345637017)
@@ -707,6 +707,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'If using Universal Theme, this information shows the version compared to the APEX version<br>',
+'UT 23.1 = APEX 23.1<br>',
 'UT 22.2 = APEX 22.2<br>',
 'UT 22.1 = APEX 22.1<br>',
 'UT 21.2 = APEX 21.2<br>',
@@ -715,10 +716,9 @@ wwv_flow_imp_page.create_page_item(
 'UT  1.5 = APEX 20.1<br>',
 'UT  1.4 = APEX 19.2<br>',
 'UT  1.3 = APEX 19.1<br>',
-'UT  1.2 = APEX 18.1 / 18.2<br>',
-'UT  1.1 = APEX 5.1<br>',
-'UT  1.0 = APEX 5.0',
-''))
+'UT  1.2 = APEX 18.1 / 18.2 (not supported any more)<br>',
+'UT  1.1 = APEX 5.1 (not supported any more)<br>',
+'UT  1.0 = APEX 5.0 (not supported any more)'))
 ,p_encrypt_session_state_yn=>'N'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'N'
@@ -1020,7 +1020,7 @@ end;
 begin
 wwv_flow_imp.component_begin (
  p_version_yyyy_mm_dd=>'2023.04.28'
-,p_release=>'23.1.3'
+,p_release=>'23.1.5'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -1076,21 +1076,21 @@ wwv_flow_imp_page.create_page_da_action(
 'var val = $trigger.val();',
 '',
 '// success - up-to-date',
-'if (val == ''22.2'') {    ',
+'if (val == ''23.1'') {    ',
 '    $trigger.addClass("u-success");',
 '    $trigger.removeClass("u-warning");',
 '    $trigger.removeClass("u-danger");',
 '',
 '// danger - old versions which are not supported any more',
-'} else if ((val == ''1.0'') || (val == ''1.1'')) {    ',
-'    $trigger.removeClass("u-success");',
-'    $trigger.removeClass("u-warning");',
+'} else if ((val == ''1.0'') || (val == ''1.1'') || (val == ''1.2'')) {    ',
 '    $trigger.addClass("u-danger");',
+'    $trigger.removeClass("u-success");',
+'    $trigger.removeClass("u-warning");   ',
 '',
 '// warning - versions not old and not the newest',
 '} else {    ',
-'    $trigger.removeClass("u-success");',
 '    $trigger.addClass("u-warning");',
+'    $trigger.removeClass("u-success");    ',
 '    $trigger.removeClass("u-danger");',
 '}'))
 );

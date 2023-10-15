@@ -4,6 +4,11 @@ https://raw.githubusercontent.com/OliverLemm/apex-visualizer/master/manifest.jso
 inside your internal APEX workspace. <br>
 Go Manage Instance => Instance Setting => Application Gallery and add a new line.
 
+## Release 23.1.1
+Check for correct Universal Theme version fixed.
+Check for unused plugins fixed.
+Migrated to APEX 23.1.5.
+
 ## Release 23.1
 APEX Visualizer itself migrated to APEX 23.1.
 

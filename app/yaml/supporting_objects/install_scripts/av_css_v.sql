@@ -1,4 +1,5 @@
-CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_CSS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "COMPONENT_NAME", "COMPONENT_TYPE", "CSS_CODE_TYPE", "BEST_PRACTICE", "CSS_CODE", "CSS_CODE_VC2", "CSS_CODE_CLOB", "TOOLTIP", "CSS_CODE_LINES", "CSS_CODE_LENGTH") AS 
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_CSS_V" ("APPLICATION_ID", "APPLICATION_NAME", "PAGE_ID", "PAGE_NAME", "PAGE_DESIGNER_URL", "PAGE_GROUP", "PAGE_FUNCTION", "COMPONENT_NAME", "COMPONENT_TYPE", "CSS_CODE_TYPE", "BEST_PRACTICE", "CSS_CODE", "CSS_CODE_VC2", "CSS_CODE_CLOB", "TOOLTIP", "CSS_CODE_LINES", "CSS_CODE_LENGTH") AS 
   select app.application_id
       ,app.application_name
       ,app.page_id
@@ -255,4 +256,3 @@ join ( -- Theme Roller Custom CSS
       where a.action_code = 'NATIVE_ADD_CLASS') c on c.application_id = app.application_id
                                               and c.page_id = app.page_id
 ;
-

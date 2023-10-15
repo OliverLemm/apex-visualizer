@@ -5,7 +5,7 @@ begin
 --   Manifest End
 wwv_flow_imp.component_begin (
  p_version_yyyy_mm_dd=>'2023.04.28'
-,p_release=>'23.1.3'
+,p_release=>'23.1.5'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -18,7 +18,7 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>5
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'CREATE OR REPLACE EDITIONABLE PACKAGE "AV_GENERAL_PKG" is',
+'create or replace package av_general_pkg is',
 '',
 '  function f_get_page_designer_url',
 '  (',
@@ -42,9 +42,7 @@ wwv_flow_imp_shared.create_install_script(
 '',
 'end av_general_pkg;',
 '/',
-'',
-'',
-'CREATE OR REPLACE EDITIONABLE PACKAGE BODY "AV_GENERAL_PKG" is',
+'create or replace package body av_general_pkg is',
 '',
 '  -- Example url for editing page 100 in application 347',
 '  -- f?p=4000:4500:5354232430661:::1,4150:FB_FLOW_ID,FB_FLOW_PAGE_ID,F4000_P1_FLOW,F4000_P4150_GOTO_PAGE,F4000_P1_PAGE:347,100,347,100,100',
@@ -100,9 +98,7 @@ wwv_flow_imp_shared.create_install_script(
 '  end f_get_page_id_from_target_link;',
 '',
 'end av_general_pkg;',
-'/',
-'',
-''))
+'/'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(36635662461100812)
