@@ -105,6 +105,8 @@ regions:
 
     value: 
       pie-chart-other-threshold: 0
+      format: Decimal
+      decimal-places: 0
       format-scaling: Automatic
 
     animation: 
@@ -141,30 +143,28 @@ regions:
 
       label: 
         show: true
-        position: Automatic
-        display-as: Percentage
+        position: Outside Slice
+        display-as: Value
 
-- # ====== Region: Complexity ==================================
+- # ====== Region: Code Complexity (characters) ================
   id: 294199481042781289
   identification: 
-    title: Complexity
+    title: Code Complexity (characters)
     type: Chart
 
   source: 
     location: Local Database
     type: SQL Query
     sql-query: |
-      select * from (
-          select aa.application_name, aa.application_id, 'Pages' series_name ,aa.pages series_value from apex_applications aa
+      select application_name, application_id, series_name, series_value from (
+          select j.application_name, j.application_id, 'JavaScript' series_name, sum(j.js_code_length) series_value 
+          from av_javascript_v j group by application_id, application_name
           union
-          select j.application_name, j.application_id, 'JavaScript', sum(j.js_code_length) series_value 
-          from av_javascript_v j group by application_id,application_name
+          select c.application_name, c.application_id, 'CSS' series_name, sum(c.css_code_length) series_value 
+          from av_css_v c group by application_id, application_name
           union
-          select c.application_name, c.application_id, 'CSS', sum(c.css_code_length) series_value 
-          from av_css_v c group by application_id,application_name
-          union
-          select p.application_name, p.application_id, 'PL/SQL', sum(p.code_length) series_value 
-          from av_plsql_v p group by application_id,application_name
+          select p.application_name, p.application_id, 'PL/SQL' series_name, sum(p.code_length) series_value 
+          from av_plsql_v p group by application_id, application_name
       )
       where (application_id = :P0_APP_ID or :P0_APP_ID is null)
       and (lower(series_name) = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
@@ -299,7 +299,9 @@ regions:
         show-axis: true
 
       value: 
-        format-scaling: Automatic
+        format: Decimal
+        decimal-places: 0
+        format-scaling: Thousand
         baseline-scaling: Zero
         scale: Linear
 
@@ -485,6 +487,8 @@ regions:
         show-axis: true
 
       value: 
+        format: Decimal
+        decimal-places: 0
         format-scaling: Automatic
         baseline-scaling: Zero
         scale: Linear
@@ -501,10 +505,10 @@ regions:
       tick-label: 
         show: true
 
-- # ====== Region: Details =====================================
+- # ====== Region: Applicatons =================================
   id: 455561419078523493
   identification: 
-    title: Details
+    title: Applicatons
     type: Interactive Grid
 
   source: 
@@ -516,12 +520,10 @@ regions:
             ,aa.alias
             ,aa.owner
             ,aa.version
-            ,aa.availability_status availability
-            ,aa.build_status
-            ,aa.last_updated_by
-            ,aa.last_updated_on
-            ,aa.compatibility_mode
-            ,aa.page_template
+            ,(select count(1) from apex_application_pages p1 where p1.application_id = aa.application_id) pages_overall
+            ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'simple') simple_pages
+            ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'normal') normal_pages
+            ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'complex') complex_pages
       from apex_applications aa
       where aa.application_id = :P0_APP_ID
       or :P0_APP_ID is null
@@ -580,7 +582,13 @@ regions:
       show-total-count: false
 
     toolbar: 
-      show: false
+      show: true
+      controls: 
+      - Search Column Selection
+      - Search Field
+      - Actions Menu
+      - Reset Button
+      - Save Button
 
     enable-users-to: 
       save-public-report: false
@@ -605,6 +613,197 @@ regions:
         alias: 1256353
 
   columns: 
+  - # ====== Column: PAGES_OVERALL ===============================
+    id: 37288733324264629
+    identification: 
+      column-name: PAGES_OVERALL
+      type: Number Field
+
+    heading: 
+      heading: Pages Overall
+      alignment: end
+
+    settings: 
+      number-alignment: Start
+      virtual-keyboard: Decimal
+
+    layout: 
+      sequence: 60
+      column-alignment: end
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: false
+
+    source: 
+      type: Database Column
+      database-column: PAGES_OVERALL
+      data-type: NUMBER
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: true
+      control-break/aggregate: true
+      hide: true
+
+  - # ====== Column: SIMPLE_PAGES ================================
+    id: 37288844448264630
+    identification: 
+      column-name: SIMPLE_PAGES
+      type: Number Field
+
+    heading: 
+      heading: Simple Pages
+      alignment: end
+
+    settings: 
+      number-alignment: Start
+      virtual-keyboard: Decimal
+
+    layout: 
+      sequence: 70
+      column-alignment: end
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: false
+
+    source: 
+      type: Database Column
+      database-column: SIMPLE_PAGES
+      data-type: NUMBER
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: true
+      control-break/aggregate: true
+      hide: true
+
+    help: 
+      help-text: test
+
+  - # ====== Column: NORMAL_PAGES ================================
+    id: 37288984433264631
+    identification: 
+      column-name: NORMAL_PAGES
+      type: Number Field
+
+    heading: 
+      heading: Normal Pages
+      alignment: end
+
+    settings: 
+      number-alignment: Start
+      virtual-keyboard: Decimal
+
+    layout: 
+      sequence: 80
+      column-alignment: end
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: false
+
+    source: 
+      type: Database Column
+      database-column: NORMAL_PAGES
+      data-type: NUMBER
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: true
+      control-break/aggregate: true
+      hide: true
+
+  - # ====== Column: COMPLEX_PAGES ===============================
+    id: 37289070470264632
+    identification: 
+      column-name: COMPLEX_PAGES
+      type: Number Field
+
+    heading: 
+      heading: Complex Pages
+      alignment: end
+
+    settings: 
+      number-alignment: Start
+      virtual-keyboard: Decimal
+
+    layout: 
+      sequence: 90
+      column-alignment: end
+      stretch: Use Report Setting
+
+    accessibility: 
+      value-identifies-row: false
+
+    validation: 
+      value-required: false
+
+    source: 
+      type: Database Column
+      database-column: COMPLEX_PAGES
+      data-type: NUMBER
+      query-only: false
+      primary-key: false
+
+    default: 
+      duplicate-copies-existing-value: true
+
+    column-filter: 
+      enabled: true
+      lov-type: None
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    enable-users-to: 
+      sort: true
+      control-break/aggregate: true
+      hide: true
+
   - # ====== Column: APP_ID ======================================
     id: 293283805228929189
     identification: 
@@ -612,7 +811,7 @@ regions:
       type: Number Field
 
     heading: 
-      heading: App id
+      heading: ID
       alignment: end
 
     settings: 
@@ -620,7 +819,7 @@ regions:
       virtual-keyboard: Text
 
     layout: 
-      sequence: 150
+      sequence: 10
       column-alignment: end
       stretch: Use Report Setting
 
@@ -659,7 +858,7 @@ regions:
       type: Textarea
 
     heading: 
-      heading: App name
+      heading: Name
       alignment: start
 
     settings: 
@@ -669,7 +868,7 @@ regions:
       trim-spaces: Leading and Trailing
 
     layout: 
-      sequence: 160
+      sequence: 20
       column-alignment: start
       stretch: Use Report Setting
 
@@ -678,6 +877,7 @@ regions:
 
     validation: 
       value-required: true
+      maximum-length: 255
 
     source: 
       type: Database Column
@@ -709,60 +909,6 @@ regions:
       sort: false
       hide: true
 
-  - # ====== Column: AVAILABILITY ================================
-    id: 293284029483929191
-    identification: 
-      column-name: AVAILABILITY
-      type: Text Field
-
-    heading: 
-      heading: Availability
-      alignment: start
-
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
-    layout: 
-      sequence: 170
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: AVAILABILITY
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: Distinct Column
-      exact-match: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
   - # ====== Column: ALIAS =======================================
     id: 414315753475562250
     identification: 
@@ -780,7 +926,7 @@ regions:
       trim-spaces: Leading and Trailing
 
     layout: 
-      sequence: 40
+      sequence: 30
       column-alignment: start
       stretch: Use Report Setting
 
@@ -838,7 +984,7 @@ regions:
       trim-spaces: Leading and Trailing
 
     layout: 
-      sequence: 50
+      sequence: 40
       column-alignment: start
       stretch: Use Report Setting
 
@@ -896,7 +1042,7 @@ regions:
       trim-spaces: Leading and Trailing
 
     layout: 
-      sequence: 60
+      sequence: 50
       column-alignment: start
       stretch: Use Report Setting
 
@@ -910,281 +1056,6 @@ regions:
     source: 
       type: Database Column
       database-column: VERSION
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: BUILD_STATUS ================================
-    id: 414316423432562256
-    identification: 
-      column-name: BUILD_STATUS
-      type: Text Field
-
-    heading: 
-      heading: Build status
-      alignment: start
-
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
-    layout: 
-      sequence: 100
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-      maximum-length: 30
-
-    source: 
-      type: Database Column
-      database-column: BUILD_STATUS
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: Distinct Column
-      exact-match: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: LAST_UPDATED_BY =============================
-    id: 414316525640562257
-    identification: 
-      column-name: LAST_UPDATED_BY
-      type: Textarea
-
-    heading: 
-      heading: Last updated by
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 110
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-      maximum-length: 255
-
-    source: 
-      type: Database Column
-      database-column: LAST_UPDATED_BY
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: LAST_UPDATED_ON =============================
-    id: 414316588179562258
-    identification: 
-      column-name: LAST_UPDATED_ON
-      type: Date Picker (jQuery) [Deprecated]
-
-    heading: 
-      heading: Last updated on
-      alignment: center
-
-    settings: 
-      show: On icon click
-      show-other-months: false
-      navigation-list-for: None
-
-    layout: 
-      sequence: 120
-      column-alignment: center
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: LAST_UPDATED_ON
-      data-type: DATE
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      lov-type: Distinct Column
-      date-ranges: All
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: COMPATIBILITY_MODE ==========================
-    id: 414316718241562259
-    identification: 
-      column-name: COMPATIBILITY_MODE
-      type: Text Field
-
-    heading: 
-      heading: Compatibility mode
-      alignment: start
-
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
-    layout: 
-      sequence: 130
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: true
-      maximum-length: 3
-
-    source: 
-      type: Database Column
-      database-column: COMPATIBILITY_MODE
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: Distinct Column
-      exact-match: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: PAGE_TEMPLATE ===============================
-    id: 414316846415562260
-    identification: 
-      column-name: PAGE_TEMPLATE
-      type: Textarea
-
-    heading: 
-      heading: Page template
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 140
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-      maximum-length: 255
-
-    source: 
-      type: Database Column
-      database-column: PAGE_TEMPLATE
       data-type: VARCHAR2
       query-only: false
       primary-key: false
@@ -1228,7 +1099,7 @@ page-items:
     allow-multi-selection: false
 
   layout: 
-    sequence: 40
+    sequence: 50
     region: Filter # 452496424516540365
     position: BODY
     alignment: Left
@@ -1334,7 +1205,7 @@ dynamic-actions:
 
     affected-elements: 
       selection-type: Region
-      region: Complexity # 294199481042781289
+      region: Code Complexity (characters) # 294199481042781289
 
     execution: 
       sequence: 10
@@ -1392,9 +1263,26 @@ dynamic-actions:
     type: Immediate
 
   actions: 
-  - # ====== Action: Refresh =====================================
+  - # ====== Action: Refresh Details =============================
+    id: 37288646583264628
+    identification: 
+      name: Refresh Details
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Applicatons # 455561419078523493
+
+    execution: 
+      sequence: 10
+      event: change P0_APP_ID - refresh charts # 449465803018677324
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: Refresh Shared Components ===================
     id: 294195118376781246
     identification: 
+      name: Refresh Shared Components
       action: Refresh
 
     affected-elements: 
@@ -1407,14 +1295,15 @@ dynamic-actions:
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: Refresh =====================================
+  - # ====== Action: Refresh Complexity ==========================
     id: 294269154307521546
     identification: 
+      name: Refresh Complexity
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Complexity # 294199481042781289
+      region: Code Complexity (characters) # 294199481042781289
 
     execution: 
       sequence: 30
@@ -1422,9 +1311,10 @@ dynamic-actions:
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: Refresh =====================================
+  - # ====== Action: Refresh Page Functions ======================
     id: 294476643654578347
     identification: 
+      name: Refresh Page Functions
       action: Refresh
 
     affected-elements: 

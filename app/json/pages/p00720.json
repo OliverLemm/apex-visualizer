@@ -1,0 +1,393 @@
+{
+  "id":"720"
+ ,"Identification":{
+    "Name":"APEX 23.2"
+   ,"Alias":"APEX-23-2"
+   ,"Title":"APEX 23.2"
+  }
+ ,"Appearance":{
+    "Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"54091584663833680"
+     ,"Identification":{
+        "Title":"5.1 Quick SQL Deprecated Functionality"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"5 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E (72910675567934407)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Collapsible (452454481275466240)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"is-expanded"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"\u003Cb\u003EDeprecated Settings\u003C\/b\u003E\u003Cbr\/\u003E\nThe following Quick SQL settings are deprecated:\u003Cbr\/\u003E\nData Language (\u003Ci\u003E#language:\"DE\"\u003C\/i\u003E): No longer generates sample data into different languages (German, Korean, Japanese, Spanish).\u003Cbr\/\u003E\nTags Framework (\u003Ci\u003E#tags:true\u003C\/i\u003E): No longer generates tag framework objects (table, trigger, sync procedure).\u003Cbr\/\u003E\nOn Delete (\u003Ci\u003E#ondelete:\"cascade\"\u003C\/i\u003E): No longer supports system-wide ondelete settings. Handle these settings through the new \/cascade column directive.\u003Cbr\/\u003E\nLonger Varchar2 (\u003Ci\u003E#longVC:true\u003C\/i\u003E): No longer supports artificially shortening or increasing VARCHAR2 size.\u003Cbr\/\u003E\nTenant ID (\u003Ci\u003E#tenantID:true\u003C\/i\u003E): No longer supported.\u003Cbr\/\u003E\n\u003Cbr\/\u003E\n\u003Cb\u003EDeprecated Directives\u003C\/b\u003E\u003Cbr\/\u003E\nThe following Quick SQL directives are deprecated:\u003Cbr\/\u003E\n\u003Ci\u003E\/select\u003C\/i\u003E: No longer generates a SQL SELECT statement after generating data for each table.\u003Cbr\/\u003E\n\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-exclamation-circle u-warning-text\"\u003E\u003C\/span\u003E no check integrated\u003C\/b\u003E"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"72910675567934407"
+     ,"Identification":{
+        "Title":"5 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (452458863643466246)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"72911772336934418"
+     ,"Identification":{
+        "Title":"7 Desupported Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (452458863643466246)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"132589046205580385"
+     ,"Identification":{
+        "Title":"7.1 Desupported Utilities "
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"7 Desupported Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E (72911772336934418)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Collapsible (452454481275466240)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"is-collapsed"
+         ,"t-Region--scrollBody"
+        ]
+       ,"CSS Classes":[
+          "av-no-check-needed"
+         ,"av-developer-functionality"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Static ID":"av-region-desupported-71"
+       ,"Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"The APEXExport utility is desupported and is no longer included with Oracle APEX. Oracle recommends using SQLcl to perform export operations.\u003Cbr\u003E\n\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-check-circle u-success-text\"\u003E\u003C\/span\u003E nothing to change \/ no check needed\u003C\/b\u003E"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"132592428687613229"
+     ,"Identification":{
+        "Title":"7.2 Querying Template Component Metadata"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"7 Desupported Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E (72911772336934418)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Collapsible (452454481275466240)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"is-expanded"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"For template components only, the ATTRIBUTE_01...ATTRIBUTE_25 columns of APEX_APPLICATION_PAGE_REGIONS and APEX_APPLICATION_PAGE_IR_COL public views now return null.\u003Cbr \/\u003E\nInstead, use the new ATTRIBUTES column that stores a JSON object of all attribute values. Use the attribute\u0027s Static ID as the object key. Note that a table alias is always needed when using the JSON dot notation.\u003Cbr \/\u003E\n\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-exclamation-circle u-warning-text\"\u003E\u003C\/span\u003E for this check your APEX must be 23.2\u003C\/b\u003E"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"20639674970063631"
+     ,"Identification":{
+        "Name":"change P0_APP_ID - refresh regions"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P0_APP_ID"
+        ]
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"20640128089063632"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"av_refresh_hide_show_regions()"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"change P0_APP_ID - refresh regions (20639674970063631)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"20640522029063634"
+     ,"Identification":{
+        "Name":"page load - add icons by class"
+      }
+     ,"Execution":{
+        "Sequence":30
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.READY"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"20641035999063634"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"console.log(\u0027running DA\u0027)\nconsole.log(this.affectedElements);"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"jQuery Selector"
+           ,"jQuery Selector":".av-no-check-needed,.av-developer-functionality"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"page load - add icons by class (20640522029063634)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"20641461359063634"
+     ,"Identification":{
+        "Name":"click refresh - refresh regions"
+      }
+     ,"Execution":{
+        "Sequence":20
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"Button"
+       ,"Button":"Refresh (45068108221137631)"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"20641974120063634"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"av_refresh_hide_show_regions()"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"click refresh - refresh regions (20641461359063634)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

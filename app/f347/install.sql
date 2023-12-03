@@ -140,6 +140,7 @@ prompt --install
 @@application/pages/page_00709.sql
 @@application/pages/page_00710.sql
 @@application/pages/page_00715.sql
+@@application/pages/page_00720.sql
 @@application/deployment/definition.sql
 @@application/deployment/install/install_av_general_pkg.sql
 @@application/deployment/install/install_av_applications_v.sql
@@ -157,6 +158,7 @@ prompt --install
 @@application/deployment/install/install_av_plugins_v.sql
 @@application/deployment/install/install_av_p0600_not_used_auth_schemes_v.sql
 @@application/deployment/install/install_av_p0708_legacy_subst_strings_v.sql
+@@application/deployment/install/install_av_page_complexity_v.sql
 @@application/deployment/checks.sql
 @@application/deployment/buildoptions.sql
 @@application/end_environment.sql

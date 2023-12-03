@@ -4,7 +4,7 @@ id: 347
 identification: 
   name: APEX Visualizer
   alias: AV
-  version: 23.1.1
+  version: 23.1.2
 
 row-search: 
   tokenize: false

@@ -140,6 +140,6 @@ select aap.application_id
       ,aap.reload_on_submit
       ,aap.warn_on_unsaved_changes
 from apex_application_pages aap
-where aap.application_id = :P0_APP_ID
-or :P0_APP_ID is null;
+where (aap.application_id = :P0_APP_ID or :P0_APP_ID is null)
+and (:P0_PAGE_ID is null or aap.page_id = :P0_PAGE_ID);
 

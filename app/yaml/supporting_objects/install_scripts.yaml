@@ -1,4 +1,12 @@
 ---
+- # ====== Install Script: av_page_complexity_v ================
+  id: 20704720800862810
+  identification: 
+    name: av_page_complexity_v
+
+  execution: 
+    sequence: 170
+
 - # ====== Install Script: av_p0708_legacy_subst_strings_v =====
   id: 23141675338119207
   identification: 

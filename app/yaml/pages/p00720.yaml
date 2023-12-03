@@ -1,0 +1,383 @@
+---
+# ====== Page: APEX 23.2 =====================================
+id: 720
+identification: 
+  name: APEX 23.2
+  alias: APEX-23-2
+  title: APEX 23.2
+
+appearance: 
+  page-mode: Normal
+  page-template: Theme Default
+  template-options: 
+  - '#DEFAULT#'
+
+navigation-menu: 
+  override-user-interface-level: false
+
+navigation: 
+  cursor-focus: Do not focus cursor
+  warn-on-unsaved-changes: false
+
+security: 
+  authentication: Page Requires Authentication
+  deep-linking: Application Default
+  page-access-protection: Arguments Must Have Checksum
+  form-auto-complete: Off
+  browser-cache: Application Default
+
+session-management: 
+  rejoin-sessions: Application Default
+
+advanced: 
+  enable-duplicate-page-submissions: Yes - Enable page to be re-posted
+  reload-on-submit: Only for Success
+
+server-cache: 
+  caching: Disabled
+
+regions: 
+- # ====== Region: 5.1 Quick SQL Deprecated Functionality ======
+  id: 54091584663833680
+  identification: 
+    title: 5.1 Quick SQL Deprecated Functionality
+    type: Static Content
+
+  layout: 
+    sequence: 10
+    parent-region: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 72910675567934407
+    position: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      <b>Deprecated Settings</b><br/>
+      The following Quick SQL settings are deprecated:<br/>
+      Data Language (<i>#language:"DE"</i>): No longer generates sample data into different languages (German, Korean, Japanese, Spanish).<br/>
+      Tags Framework (<i>#tags:true</i>): No longer generates tag framework objects (table, trigger, sync procedure).<br/>
+      On Delete (<i>#ondelete:"cascade"</i>): No longer supports system-wide ondelete settings. Handle these settings through the new /cascade column directive.<br/>
+      Longer Varchar2 (<i>#longVC:true</i>): No longer supports artificially shortening or increasing VARCHAR2 size.<br/>
+      Tenant ID (<i>#tenantID:true</i>): No longer supported.<br/>
+      <br/>
+      <b>Deprecated Directives</b><br/>
+      The following Quick SQL directives are deprecated:<br/>
+      <i>/select</i>: No longer generates a SQL SELECT statement after generating data for each table.<br/>
+      <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: 5 Deprecated Features - <a href="https://docs
+  id: 72910675567934407
+  identification: 
+    title: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>'
+    type: Static Content
+
+  layout: 
+    sequence: 20
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: 7 Desupported Features - <a href="https://doc
+  id: 72911772336934418
+  identification: 
+    title: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
+    type: Static Content
+
+  layout: 
+    sequence: 10
+    parent-region: No Parent
+    position: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard # 452458863643466246
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: true
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: 7.1 Desupported Utilities  ==================
+  id: 132589046205580385
+  identification: 
+    title: '7.1 Desupported Utilities '
+    type: Static Content
+
+  layout: 
+    sequence: 10
+    parent-region: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 72911772336934418
+    position: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-collapsed
+    - t-Region--scrollBody
+    css-classes: 
+    - av-no-check-needed
+    - av-developer-functionality
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    static-id: av-region-desupported-71
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      The APEXExport utility is desupported and is no longer included with Oracle APEX. Oracle recommends using SQLcl to perform export operations.<br>
+      <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> nothing to change / no check needed</b>
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+- # ====== Region: 7.2 Querying Template Component Metadata ====
+  id: 132592428687613229
+  identification: 
+    title: 7.2 Querying Template Component Metadata
+    type: Static Content
+
+  layout: 
+    sequence: 20
+    parent-region: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 72911772336934418
+    position: SUB_REGIONS
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Collapsible # 452454481275466240
+    template-options: 
+    - '#DEFAULT#'
+    - is-expanded
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  header-and-footer: 
+    header-text: |
+      For template components only, the ATTRIBUTE_01...ATTRIBUTE_25 columns of APEX_APPLICATION_PAGE_REGIONS and APEX_APPLICATION_PAGE_IR_COL public views now return null.<br />
+      Instead, use the new ATTRIBUTES column that stores a JSON object of all attribute values. Use the attribute's Static ID as the object key. Note that a table alias is always needed when using the JSON dot notation.<br />
+      <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> for this check your APEX must be 23.2</b>
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+dynamic-actions: 
+- # ====== Dynamic Action: change P0_APP_ID - refresh regions ==
+  id: 20639674970063631
+  identification: 
+    name: change P0_APP_ID - refresh regions
+
+  execution: 
+    sequence: 10
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CHANGE
+    selection-type: Item(s)
+    item(s): 
+    - P0_APP_ID
+
+  execution: 
+    event-scope: Static
+    type: Immediate
+
+  actions: 
+  - # ====== Action: Execute JavaScript Code =====================
+    id: 20640128089063632
+    identification: 
+      action: Execute JavaScript Code
+
+    settings: 
+      code: av_refresh_hide_show_regions()
+
+    execution: 
+      sequence: 10
+      event: change P0_APP_ID - refresh regions # 20639674970063631
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+- # ====== Dynamic Action: page load - add icons by class ======
+  id: 20640522029063634
+  identification: 
+    name: page load - add icons by class
+
+  execution: 
+    sequence: 30
+
+  when: 
+    event: EVENT.EVENT.BROWSER.READY
+
+  execution: 
+    event-scope: Static
+
+  actions: 
+  - # ====== Action: Execute JavaScript Code =====================
+    id: 20641035999063634
+    identification: 
+      action: Execute JavaScript Code
+
+    settings: 
+      code: |
+        console.log('running DA')
+        console.log(this.affectedElements);
+
+    affected-elements: 
+      selection-type: jQuery Selector
+      jquery-selector: .av-no-check-needed,.av-developer-functionality
+
+    execution: 
+      sequence: 10
+      event: page load - add icons by class # 20640522029063634
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+- # ====== Dynamic Action: click refresh - refresh regions =====
+  id: 20641461359063634
+  identification: 
+    name: click refresh - refresh regions
+
+  execution: 
+    sequence: 20
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CLICK
+    selection-type: Button
+    button: Refresh # 45068108221137631
+
+  execution: 
+    event-scope: Static
+    type: Immediate
+
+  actions: 
+  - # ====== Action: Execute JavaScript Code =====================
+    id: 20641974120063634
+    identification: 
+      action: Execute JavaScript Code
+
+    settings: 
+      code: av_refresh_hide_show_regions()
+
+    execution: 
+      sequence: 10
+      event: click refresh - refresh regions # 20641461359063634
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+

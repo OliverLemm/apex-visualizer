@@ -30,7 +30,7 @@ wwv_flow_imp_shared.create_theme_style(
  p_id=>wwv_flow_imp.id(2019691457529873)
 ,p_theme_id=>42
 ,p_name=>'Vita'
-,p_is_current=>true
+,p_is_current=>false
 ,p_is_public=>true
 ,p_is_accessible=>true
 ,p_theme_roller_input_file_urls=>'#THEME_FILES#less/theme/Vita.less'
@@ -73,6 +73,18 @@ wwv_flow_imp_shared.create_theme_style(
 ,p_theme_roller_output_file_url=>'#THEME_FILES#css/Vita-Slate#MIN#.css?v=#APEX_VERSION#'
 ,p_theme_roller_read_only=>true
 ,p_reference_id=>3291983347983194966
+);
+wwv_flow_imp_shared.create_theme_style(
+ p_id=>wwv_flow_imp.id(20659859344322223)
+,p_theme_id=>42
+,p_name=>'AV - Dark'
+,p_is_current=>true
+,p_is_public=>true
+,p_is_accessible=>false
+,p_theme_roller_input_file_urls=>'#THEME_FILES#less/theme/Vita-Dark.less'
+,p_theme_roller_config=>'{"classes":[],"vars":{"@Nav-Exp":"160px"},"customCSS":"","useCustomLess":"N"}'
+,p_theme_roller_output_file_url=>'#THEME_DB_FILES#20659859344322223.css'
+,p_theme_roller_read_only=>false
 );
 wwv_flow_imp_shared.create_theme_style(
  p_id=>wwv_flow_imp.id(37653172407708309)

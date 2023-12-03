@@ -20,19 +20,17 @@ group by application_name , page_function
 order by count(page_id) desc;
 
 -- ----------------------------------------
--- Page: 10 - Applications > Region: Complexity > Source > SQL Query
+-- Page: 10 - Applications > Region: Code Complexity (characters) > Source > SQL Query
 
-select * from (
-    select aa.application_name, aa.application_id, 'Pages' series_name ,aa.pages series_value from apex_applications aa
+select application_name, application_id, series_name, series_value from (
+    select j.application_name, j.application_id, 'JavaScript' series_name, sum(j.js_code_length) series_value 
+    from av_javascript_v j group by application_id, application_name
     union
-    select j.application_name, j.application_id, 'JavaScript', sum(j.js_code_length) series_value 
-    from av_javascript_v j group by application_id,application_name
+    select c.application_name, c.application_id, 'CSS' series_name, sum(c.css_code_length) series_value 
+    from av_css_v c group by application_id, application_name
     union
-    select c.application_name, c.application_id, 'CSS', sum(c.css_code_length) series_value 
-    from av_css_v c group by application_id,application_name
-    union
-    select p.application_name, p.application_id, 'PL/SQL', sum(p.code_length) series_value 
-    from av_plsql_v p group by application_id,application_name
+    select p.application_name, p.application_id, 'PL/SQL' series_name, sum(p.code_length) series_value 
+    from av_plsql_v p group by application_id, application_name
 )
 where (application_id = :P0_APP_ID or :P0_APP_ID is null)
 and (lower(series_name) = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
@@ -69,19 +67,17 @@ where (application_id = :P0_APP_ID or :P0_APP_ID is null)
 and (lower(series_name) = :P0_COMPONENT or :P0_COMPONENT is null);
 
 -- ----------------------------------------
--- Page: 10 - Applications > Region: Details > Source > SQL Query
+-- Page: 10 - Applications > Region: Applicatons > Source > SQL Query
 
 select aa.application_id app_id
       ,aa.application_name app_name
       ,aa.alias
       ,aa.owner
       ,aa.version
-      ,aa.availability_status availability
-      ,aa.build_status
-      ,aa.last_updated_by
-      ,aa.last_updated_on
-      ,aa.compatibility_mode
-      ,aa.page_template
+      ,(select count(1) from apex_application_pages p1 where p1.application_id = aa.application_id) pages_overall
+      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'simple') simple_pages
+      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'normal') normal_pages
+      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'complex') complex_pages
 from apex_applications aa
 where aa.application_id = :P0_APP_ID
 or :P0_APP_ID is null;

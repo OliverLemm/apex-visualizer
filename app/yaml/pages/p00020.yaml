@@ -542,7 +542,7 @@ regions:
   id: 449468052006677346
   identification: 
     title: Pages
-    type: Interactive Grid
+    type: Interactive Report
 
   source: 
     location: Local Database
@@ -564,10 +564,11 @@ regions:
             ,aap.reload_on_submit
             ,aap.warn_on_unsaved_changes
       from apex_application_pages aap
-      where aap.application_id = :P0_APP_ID
-      or :P0_APP_ID is null
+      where (aap.application_id = :P0_APP_ID or :P0_APP_ID is null)
+      and (:P0_PAGE_ID is null or aap.page_id = :P0_PAGE_ID)
     page-items-to-submit: 
     - P0_APP_ID
+    - P0_PAGE_ID
 
   layout: 
     sequence: 10
@@ -580,12 +581,9 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 452454481275466240
+    template: Interactive Report # 452458457830466245
     template-options: 
     - '#DEFAULT#'
-    - js-useLocalStorage
-    - is-collapsed
-    - t-Region--scrollBody
     render-components: Above Content
 
   accessibility: 
@@ -604,46 +602,52 @@ regions:
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 449468120928677347
-    edit: 
-      enabled: false
+    id: 37286981320264611
+    link: 
+      link-column: Exclude Link Column
+
+    pagination: 
+      type: Row Ranges X to Y
+      display-position: Bottom - Right
 
     performance: 
       lazy-loading: false
 
-    appearance: 
-      show-null-values-as: '-'
-      select-first-row: true
-      fixed-row-height: true
+    search-bar: 
+      include-search-bar: true
+      search-field: true
+      finder-drop-down: true
+      reports-select-list: true
+      rows-per-page-selector: true
+      maximum-rows-per-page: 10
 
-    pagination: 
-      type: Scroll
-      show-total-count: true
-
-    toolbar: 
-      show: true
-      controls: 
-      - Search Column Selection
-      - Search Field
-      - Actions Menu
-      - Search Column Selection
-      - Search Field
-      - Actions Menu
-      - Reset Button
-      - Save Button
-
-    enable-users-to: 
-      save-public-report: false
+    actions-menu: 
+      include-actions-menu: true
+      filter: true
+      select-columns: true
+      rows-per-page: true
+      sort: true
+      control-break: true
+      highlight: true
+      compute: true
+      aggregate: true
+      chart: true
+      group-by: true
+      pivot: true
       flashback: true
-      define-chart-view: true
+      save-report: true
+      save-public-report: false
+      reset: true
+      help: true
       download: true
+      subscription: true
 
     download: 
       formats: 
       - CSV
       - HTML
-      - PDF
       - Excel
+      - PDF
       send-as-email: true
 
     heading: 
@@ -657,856 +661,670 @@ regions:
 
     saved-reports: 
     - # ====== Saved Report: Primary Report ========================
-      id: 449535645960423025
+      id: 20679135579357148
       identification: 
         name: Primary Report
-        alias: 1256355
-
-  columns: 
-  - # ====== Column: APPLICATION_ID ==============================
-    id: 449468186248677348
-    identification: 
-      column-name: APPLICATION_ID
-      type: Number Field
-
-    heading: 
-      heading: Application id
-      alignment: end
-
-    settings: 
-      number-alignment: End
-      virtual-keyboard: Text
-
-    layout: 
-      sequence: 10
-      column-alignment: end
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: true
-
-    source: 
-      type: Database Column
-      database-column: APPLICATION_ID
-      data-type: NUMBER
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: APPLICATION_NAME ============================
-    id: 449468279815677349
-    identification: 
-      column-name: APPLICATION_NAME
-      type: Textarea
-
-    heading: 
-      heading: Application name
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 20
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: true
-
-    source: 
-      type: Database Column
-      database-column: APPLICATION_NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: PAGE_ID =====================================
-    id: 449468393581677350
-    identification: 
-      column-name: PAGE_ID
-      type: Number Field
-
-    heading: 
-      heading: Page id
-      alignment: end
-
-    settings: 
-      number-alignment: End
-      virtual-keyboard: Text
-
-    layout: 
-      sequence: 30
-      column-alignment: end
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: true
-
-    source: 
-      type: Database Column
-      database-column: PAGE_ID
-      data-type: NUMBER
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: PAGE_NAME ===================================
-    id: 449468513818677351
-    identification: 
-      column-name: PAGE_NAME
-      type: Textarea
-
-    heading: 
-      heading: Page name
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 40
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: true
-
-    source: 
-      type: Database Column
-      database-column: PAGE_NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: PAGE_MODE ===================================
-    id: 449468618930677352
-    identification: 
-      column-name: PAGE_MODE
-      type: Text Field
-
-    heading: 
-      heading: Page mode
-      alignment: start
-
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
-    layout: 
-      sequence: 50
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: PAGE_MODE
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: Distinct Column
-      exact-match: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: PAGE_ALIAS ==================================
-    id: 449468683272677353
-    identification: 
-      column-name: PAGE_ALIAS
-      type: Textarea
-
-    heading: 
-      heading: Page alias
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 60
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: PAGE_ALIAS
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: PAGE_FUNCTION ===============================
-    id: 449468813890677354
-    identification: 
-      column-name: PAGE_FUNCTION
-      type: Text Field
-
-    heading: 
-      heading: Page function
-      alignment: start
-
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
-    layout: 
-      sequence: 70
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: PAGE_FUNCTION
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: Distinct Column
-      exact-match: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: PAGE_GROUP ==================================
-    id: 449468879412677355
-    identification: 
-      column-name: PAGE_GROUP
-      type: Textarea
-
-    heading: 
-      heading: Page group
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 80
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: PAGE_GROUP
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: PAGE_TEMPLATE ===============================
-    id: 449469021858677356
-    identification: 
-      column-name: PAGE_TEMPLATE
-      type: Textarea
-
-    heading: 
-      heading: Page template
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 90
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: PAGE_TEMPLATE
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: CREATED_BY ==================================
-    id: 449469108189677357
-    identification: 
-      column-name: CREATED_BY
-      type: Textarea
-
-    heading: 
-      heading: Created by
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 100
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: CREATED_BY
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: CREATED_ON ==================================
-    id: 449469251579677358
-    identification: 
-      column-name: CREATED_ON
-      type: Date Picker (jQuery) [Deprecated]
-
-    heading: 
-      heading: Created on
-      alignment: center
-
-    settings: 
-      show: On icon click
-      show-other-months: false
-      navigation-list-for: None
-
-    layout: 
-      sequence: 110
-      column-alignment: center
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: CREATED_ON
-      data-type: DATE
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      lov-type: Distinct Column
-      date-ranges: All
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: LAST_UPDATED_BY =============================
-    id: 449469299477677359
-    identification: 
-      column-name: LAST_UPDATED_BY
-      type: Textarea
-
-    heading: 
-      heading: Last updated by
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 120
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: LAST_UPDATED_BY
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: LAST_UPDATED_ON =============================
-    id: 449469414506677360
-    identification: 
-      column-name: LAST_UPDATED_ON
-      type: Date Picker (jQuery) [Deprecated]
-
-    heading: 
-      heading: Last updated on
-      alignment: center
-
-    settings: 
-      show: On icon click
-      show-other-months: false
-      navigation-list-for: None
-
-    layout: 
-      sequence: 130
-      column-alignment: center
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: LAST_UPDATED_ON
-      data-type: DATE
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      lov-type: Distinct Column
-      date-ranges: All
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: RELOAD_ON_SUBMIT ============================
-    id: 449529967225422711
-    identification: 
-      column-name: RELOAD_ON_SUBMIT
-      type: Text Field
-
-    heading: 
-      heading: Reload on submit
-      alignment: start
-
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
-    layout: 
-      sequence: 140
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: RELOAD_ON_SUBMIT
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: Distinct Column
-      exact-match: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: WARN_ON_UNSAVED_CHANGES =====================
-    id: 449530100792422712
-    identification: 
-      column-name: WARN_ON_UNSAVED_CHANGES
-      type: Text Field
-
-    heading: 
-      heading: Warn on unsaved changes
-      alignment: start
-
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
-    layout: 
-      sequence: 150
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: WARN_ON_UNSAVED_CHANGES
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: Distinct Column
-      exact-match: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  printing: 
-    page: 
-      size: Letter
-      orientation: Landscape
-      units: Inches
-      width: 11
-      height: 8.5
-      border-width: 0.5
-      border-color: '#666666'
-
-    page-header: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 12
-      font-color: '#000000'
-      alignment: center
-
-    column-headings: 
-      font: Helvetica
-      font-weight: Bold
-      font-size: 10
-      font-color: '#000000'
-      background-color: '#EEEEEE'
+        alias: 206792
 
     columns: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 10
-      font-color: '#000000'
-      background-color: '#FFFFFF'
+    - # ====== Column: APPLICATION_ID ==============================
+      id: 37287031228264612
+      identification: 
+        column-name: APPLICATION_ID
+        type: Plain Text
 
-    page-footer: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 12
-      font-color: '#000000'
-      alignment: center
+      heading: 
+        heading: Application Id
+        alignment: end
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 10
+        column-alignment: end
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: APPLICATION_NAME ============================
+      id: 37287173688264613
+      identification: 
+        column-name: APPLICATION_NAME
+        type: Plain Text
+
+      heading: 
+        heading: Application Name
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 20
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: PAGE_ID =====================================
+      id: 37287256688264614
+      identification: 
+        column-name: PAGE_ID
+        type: Plain Text
+
+      heading: 
+        heading: Page
+        alignment: end
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 30
+        column-alignment: end
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: PAGE_NAME ===================================
+      id: 37287347330264615
+      identification: 
+        column-name: PAGE_NAME
+        type: Plain Text
+
+      heading: 
+        heading: Name
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 40
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: PAGE_MODE ===================================
+      id: 37287481941264616
+      identification: 
+        column-name: PAGE_MODE
+        type: Plain Text
+
+      heading: 
+        heading: Mode
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 50
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: PAGE_ALIAS ==================================
+      id: 37287502305264617
+      identification: 
+        column-name: PAGE_ALIAS
+        type: Plain Text
+
+      heading: 
+        heading: Alias
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 60
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: PAGE_FUNCTION ===============================
+      id: 37287608593264618
+      identification: 
+        column-name: PAGE_FUNCTION
+        type: Plain Text
+
+      heading: 
+        heading: Function
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 70
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: PAGE_GROUP ==================================
+      id: 37287720649264619
+      identification: 
+        column-name: PAGE_GROUP
+        type: Plain Text
+
+      heading: 
+        heading: Page Group
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 80
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: PAGE_TEMPLATE ===============================
+      id: 37287800967264620
+      identification: 
+        column-name: PAGE_TEMPLATE
+        type: Plain Text
+
+      heading: 
+        heading: Template
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 90
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: CREATED_BY ==================================
+      id: 37287945785264621
+      identification: 
+        column-name: CREATED_BY
+        type: Plain Text
+
+      heading: 
+        heading: Created By
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 100
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: CREATED_ON ==================================
+      id: 37288033693264622
+      identification: 
+        column-name: CREATED_ON
+        type: Plain Text
+
+      heading: 
+        heading: Created On
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 110
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+        date-ranges: All
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: LAST_UPDATED_BY =============================
+      id: 37288125268264623
+      identification: 
+        column-name: LAST_UPDATED_BY
+        type: Plain Text
+
+      heading: 
+        heading: Last Updated By
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 120
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: LAST_UPDATED_ON =============================
+      id: 37288202339264624
+      identification: 
+        column-name: LAST_UPDATED_ON
+        type: Plain Text
+
+      heading: 
+        heading: Last Updated On
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 130
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+        date-ranges: All
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: RELOAD_ON_SUBMIT ============================
+      id: 37288302565264625
+      identification: 
+        column-name: RELOAD_ON_SUBMIT
+        type: Plain Text
+
+      heading: 
+        heading: Reload On Submit
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 140
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: WARN_ON_UNSAVED_CHANGES =====================
+      id: 37288499012264626
+      identification: 
+        column-name: WARN_ON_UNSAVED_CHANGES
+        type: Plain Text
+
+      heading: 
+        heading: Warn On Unsaved Changes
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 150
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    printing: 
+      output: 
+        view-file-as: Attachment
+
+      page: 
+        size: Letter
+        orientation: Landscape
+        units: Inches
+        width: 11
+        height: 8.5
+        border-width: 0.5
+        border-color: '#666666'
+
+      page-header: 
+        font: Helvetica
+        font-weight: Normal
+        font-size: 12
+        font-color: '#000000'
+        alignment: center
+        page-header-text: Pages
+
+      column-headings: 
+        font: Helvetica
+        font-weight: Bold
+        font-size: 10
+        font-color: '#000000'
+        background-color: '#EEEEEE'
+
+      columns: 
+        font: Helvetica
+        font-weight: Normal
+        font-size: 10
+        font-color: '#000000'
+        background-color: '#FFFFFF'
+
+      page-footer: 
+        font: Helvetica
+        font-weight: Normal
+        font-size: 12
+        font-color: '#000000'
+        alignment: center
 
 - # ====== Region: Chart =======================================
   id: 449530174836422713
@@ -1896,6 +1714,21 @@ dynamic-actions:
 
   actions: 
   - # ====== Action: Refresh =====================================
+    id: 37288500508264627
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Pages # 449468052006677346
+
+    execution: 
+      sequence: 10
+      event: change P0_ITEMS # 449530736080422718
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: Refresh =====================================
     id: 291331927220200856
     identification: 
       action: Refresh
@@ -1905,7 +1738,7 @@ dynamic-actions:
       region: Components Overall # 291331283250200849
 
     execution: 
-      sequence: 20
+      sequence: 30
       event: change P0_ITEMS # 449530736080422718
       fire-when-event-result-is: True
       fire-on-initialization: false
@@ -1920,7 +1753,7 @@ dynamic-actions:
       region: Components per Page # 290525748852486780
 
     execution: 
-      sequence: 30
+      sequence: 40
       event: change P0_ITEMS # 449530736080422718
       fire-when-event-result-is: True
       fire-on-initialization: false
@@ -1935,7 +1768,7 @@ dynamic-actions:
       region: Number of Components per Page # 291332488082200861
 
     execution: 
-      sequence: 10
+      sequence: 20
       event: change P0_ITEMS # 449530736080422718
       fire-when-event-result-is: True
       fire-on-initialization: false

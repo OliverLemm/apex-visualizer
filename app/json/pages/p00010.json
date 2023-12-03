@@ -100,6 +100,8 @@
         }
        ,"Value":{
           "Pie Chart Other Threshold":0
+         ,"Format":"Decimal"
+         ,"Decimal Places":0
          ,"Format Scaling":"Automatic"
         }
        ,"Animation":{
@@ -136,8 +138,8 @@
             }
            ,"Label":{
               "Show":true
-             ,"Position":"Automatic"
-             ,"Display As":"Percentage"
+             ,"Position":"Outside Slice"
+             ,"Display As":"Value"
             }
           }
         ]
@@ -146,13 +148,13 @@
    ,{
       "id":"294199481042781289"
      ,"Identification":{
-        "Title":"Complexity"
+        "Title":"Code Complexity (characters)"
        ,"Type":"Chart"
       }
      ,"Source":{
         "Location":"Local Database"
        ,"Type":"SQL Query"
-       ,"SQL Query":"select * from (\n    select aa.application_name, aa.application_id, \u0027Pages\u0027 series_name ,aa.pages series_value from apex_applications aa\n    union\n    select j.application_name, j.application_id, \u0027JavaScript\u0027, sum(j.js_code_length) series_value \n    from av_javascript_v j group by application_id,application_name\n    union\n    select c.application_name, c.application_id, \u0027CSS\u0027, sum(c.css_code_length) series_value \n    from av_css_v c group by application_id,application_name\n    union\n    select p.application_name, p.application_id, \u0027PL\/SQL\u0027, sum(p.code_length) series_value \n    from av_plsql_v p group by application_id,application_name\n)\nwhere (application_id = :P0_APP_ID or :P0_APP_ID is null)\nand (lower(series_name) = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)\norder by series_value desc"
+       ,"SQL Query":"select application_name, application_id, series_name, series_value from (\n    select j.application_name, j.application_id, \u0027JavaScript\u0027 series_name, sum(j.js_code_length) series_value \n    from av_javascript_v j group by application_id, application_name\n    union\n    select c.application_name, c.application_id, \u0027CSS\u0027 series_name, sum(c.css_code_length) series_value \n    from av_css_v c group by application_id, application_name\n    union\n    select p.application_name, p.application_id, \u0027PL\/SQL\u0027 series_name, sum(p.code_length) series_value \n    from av_plsql_v p group by application_id, application_name\n)\nwhere (application_id = :P0_APP_ID or :P0_APP_ID is null)\nand (lower(series_name) = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)\norder by series_value desc"
        ,"Page Items to Submit":[
           "P0_APP_ID"
          ,"P10_COMPLEXITY_CATEGORY"
@@ -288,7 +290,9 @@
              ,"Show Axis":true
             }
            ,"Value":{
-              "Format Scaling":"Automatic"
+              "Format":"Decimal"
+             ,"Decimal Places":0
+             ,"Format Scaling":"Thousand"
              ,"Baseline Scaling":"Zero"
              ,"Scale":"Linear"
             }
@@ -457,7 +461,9 @@
              ,"Show Axis":true
             }
            ,"Value":{
-              "Format Scaling":"Automatic"
+              "Format":"Decimal"
+             ,"Decimal Places":0
+             ,"Format Scaling":"Automatic"
              ,"Baseline Scaling":"Zero"
              ,"Scale":"Linear"
             }
@@ -480,13 +486,13 @@
    ,{
       "id":"455561419078523493"
      ,"Identification":{
-        "Title":"Details"
+        "Title":"Applicatons"
        ,"Type":"Interactive Grid"
       }
      ,"Source":{
         "Location":"Local Database"
        ,"Type":"SQL Query"
-       ,"SQL Query":"select aa.application_id app_id\n      ,aa.application_name app_name\n      ,aa.alias\n      ,aa.owner\n      ,aa.version\n      ,aa.availability_status availability\n      ,aa.build_status\n      ,aa.last_updated_by\n      ,aa.last_updated_on\n      ,aa.compatibility_mode\n      ,aa.page_template\nfrom apex_applications aa\nwhere aa.application_id = :P0_APP_ID\nor :P0_APP_ID is null"
+       ,"SQL Query":"select aa.application_id app_id\n      ,aa.application_name app_name\n      ,aa.alias\n      ,aa.owner\n      ,aa.version\n      ,(select count(1) from apex_application_pages p1 where p1.application_id = aa.application_id) pages_overall\n      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = \u0027simple\u0027) simple_pages\n      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = \u0027normal\u0027) normal_pages\n      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = \u0027complex\u0027) complex_pages\nfrom apex_applications aa\nwhere aa.application_id = :P0_APP_ID\nor :P0_APP_ID is null"
        ,"Page Items to Submit":[
           "P0_APP_ID"
         ]
@@ -544,7 +550,14 @@
          ,"Show Total Count":false
         }
        ,"Toolbar":{
-          "Show":false
+          "Show":true
+         ,"Controls":[
+            "Search Column Selection"
+           ,"Search Field"
+           ,"Actions Menu"
+           ,"Reset Button"
+           ,"Save Button"
+          ]
         }
        ,"Enable Users To":{
           "Save Public Report":false
@@ -573,13 +586,208 @@
       }
      ,"Columns":[
         {
+          "id":"37288733324264629"
+         ,"Identification":{
+            "Column Name":"PAGES_OVERALL"
+           ,"Type":"Number Field"
+          }
+         ,"Heading":{
+            "Heading":"Pages Overall"
+           ,"Alignment":"end"
+          }
+         ,"Settings":{
+            "Number Alignment":"Start"
+           ,"Virtual Keyboard":"Decimal"
+          }
+         ,"Layout":{
+            "Sequence":60
+           ,"Column Alignment":"end"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"PAGES_OVERALL"
+           ,"Data Type":"NUMBER"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"37288844448264630"
+         ,"Identification":{
+            "Column Name":"SIMPLE_PAGES"
+           ,"Type":"Number Field"
+          }
+         ,"Heading":{
+            "Heading":"Simple Pages"
+           ,"Alignment":"end"
+          }
+         ,"Settings":{
+            "Number Alignment":"Start"
+           ,"Virtual Keyboard":"Decimal"
+          }
+         ,"Layout":{
+            "Sequence":70
+           ,"Column Alignment":"end"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"SIMPLE_PAGES"
+           ,"Data Type":"NUMBER"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+         ,"Help":{
+            "Help Text":"test"
+          }
+        }
+       ,{
+          "id":"37288984433264631"
+         ,"Identification":{
+            "Column Name":"NORMAL_PAGES"
+           ,"Type":"Number Field"
+          }
+         ,"Heading":{
+            "Heading":"Normal Pages"
+           ,"Alignment":"end"
+          }
+         ,"Settings":{
+            "Number Alignment":"Start"
+           ,"Virtual Keyboard":"Decimal"
+          }
+         ,"Layout":{
+            "Sequence":80
+           ,"Column Alignment":"end"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"NORMAL_PAGES"
+           ,"Data Type":"NUMBER"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+        }
+       ,{
+          "id":"37289070470264632"
+         ,"Identification":{
+            "Column Name":"COMPLEX_PAGES"
+           ,"Type":"Number Field"
+          }
+         ,"Heading":{
+            "Heading":"Complex Pages"
+           ,"Alignment":"end"
+          }
+         ,"Settings":{
+            "Number Alignment":"Start"
+           ,"Virtual Keyboard":"Decimal"
+          }
+         ,"Layout":{
+            "Sequence":90
+           ,"Column Alignment":"end"
+           ,"Stretch":"Use Report Setting"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Validation":{
+            "Value Required":false
+          }
+         ,"Source":{
+            "Type":"Database Column"
+           ,"Database Column":"COMPLEX_PAGES"
+           ,"Data Type":"NUMBER"
+           ,"Query Only":false
+           ,"Primary Key":false
+          }
+         ,"Default":{
+            "Duplicate Copies Existing Value":true
+          }
+         ,"Column Filter":{
+            "Enabled":true
+           ,"LOV Type":"None"
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Enable Users To":{
+            "Sort":true
+           ,"Control Break\/Aggregate":true
+           ,"Hide":true
+          }
+        }
+       ,{
           "id":"293283805228929189"
          ,"Identification":{
             "Column Name":"APP_ID"
            ,"Type":"Number Field"
           }
          ,"Heading":{
-            "Heading":"App id"
+            "Heading":"ID"
            ,"Alignment":"end"
           }
          ,"Settings":{
@@ -587,7 +795,7 @@
            ,"Virtual Keyboard":"Text"
           }
          ,"Layout":{
-            "Sequence":150
+            "Sequence":10
            ,"Column Alignment":"end"
            ,"Stretch":"Use Report Setting"
           }
@@ -627,7 +835,7 @@
            ,"Type":"Textarea"
           }
          ,"Heading":{
-            "Heading":"App name"
+            "Heading":"Name"
            ,"Alignment":"start"
           }
          ,"Settings":{
@@ -637,7 +845,7 @@
            ,"Trim Spaces":"Leading and Trailing"
           }
          ,"Layout":{
-            "Sequence":160
+            "Sequence":20
            ,"Column Alignment":"start"
            ,"Stretch":"Use Report Setting"
           }
@@ -646,6 +854,7 @@
           }
          ,"Validation":{
             "Value Required":true
+           ,"Maximum Length":255
           }
          ,"Source":{
             "Type":"Database Column"
@@ -680,62 +889,6 @@
           }
         }
        ,{
-          "id":"293284029483929191"
-         ,"Identification":{
-            "Column Name":"AVAILABILITY"
-           ,"Type":"Text Field"
-          }
-         ,"Heading":{
-            "Heading":"Availability"
-           ,"Alignment":"start"
-          }
-         ,"Settings":{
-            "Trim Spaces":"Leading and Trailing"
-           ,"Text Case":"NO CHANGE"
-          }
-         ,"Layout":{
-            "Sequence":170
-           ,"Column Alignment":"start"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":false
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"AVAILABILITY"
-           ,"Data Type":"VARCHAR2"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"Performance Impacting Operators":[
-              "Contains"
-             ,"Starts With"
-             ,"Case Insensitive"
-             ,"Regular Expression"
-            ]
-           ,"Text Case":"Mixed"
-           ,"LOV Type":"Distinct Column"
-           ,"Exact Match":true
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":true
-           ,"Control Break\/Aggregate":true
-           ,"Hide":true
-          }
-        }
-       ,{
           "id":"414315753475562250"
          ,"Identification":{
             "Column Name":"ALIAS"
@@ -752,7 +905,7 @@
            ,"Trim Spaces":"Leading and Trailing"
           }
          ,"Layout":{
-            "Sequence":40
+            "Sequence":30
            ,"Column Alignment":"start"
            ,"Stretch":"Use Report Setting"
           }
@@ -812,7 +965,7 @@
            ,"Trim Spaces":"Leading and Trailing"
           }
          ,"Layout":{
-            "Sequence":50
+            "Sequence":40
            ,"Column Alignment":"start"
            ,"Stretch":"Use Report Setting"
           }
@@ -872,7 +1025,7 @@
            ,"Trim Spaces":"Leading and Trailing"
           }
          ,"Layout":{
-            "Sequence":60
+            "Sequence":50
            ,"Column Alignment":"start"
            ,"Stretch":"Use Report Setting"
           }
@@ -886,290 +1039,6 @@
          ,"Source":{
             "Type":"Database Column"
            ,"Database Column":"VERSION"
-           ,"Data Type":"VARCHAR2"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Session State":{
-            "Data Type":"VARCHAR2"
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"Performance Impacting Operators":[
-              "Contains"
-             ,"Starts With"
-             ,"Case Insensitive"
-             ,"Regular Expression"
-            ]
-           ,"Text Case":"Mixed"
-           ,"LOV Type":"None"
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":false
-           ,"Hide":true
-          }
-        }
-       ,{
-          "id":"414316423432562256"
-         ,"Identification":{
-            "Column Name":"BUILD_STATUS"
-           ,"Type":"Text Field"
-          }
-         ,"Heading":{
-            "Heading":"Build status"
-           ,"Alignment":"start"
-          }
-         ,"Settings":{
-            "Trim Spaces":"Leading and Trailing"
-           ,"Text Case":"NO CHANGE"
-          }
-         ,"Layout":{
-            "Sequence":100
-           ,"Column Alignment":"start"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":false
-           ,"Maximum Length":30
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"BUILD_STATUS"
-           ,"Data Type":"VARCHAR2"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"Performance Impacting Operators":[
-              "Contains"
-             ,"Starts With"
-             ,"Case Insensitive"
-             ,"Regular Expression"
-            ]
-           ,"Text Case":"Mixed"
-           ,"LOV Type":"Distinct Column"
-           ,"Exact Match":true
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":true
-           ,"Control Break\/Aggregate":true
-           ,"Hide":true
-          }
-        }
-       ,{
-          "id":"414316525640562257"
-         ,"Identification":{
-            "Column Name":"LAST_UPDATED_BY"
-           ,"Type":"Textarea"
-          }
-         ,"Heading":{
-            "Heading":"Last updated by"
-           ,"Alignment":"start"
-          }
-         ,"Settings":{
-            "Resizable":true
-           ,"Auto-Height":false
-           ,"Character Counter":false
-           ,"Trim Spaces":"Leading and Trailing"
-          }
-         ,"Layout":{
-            "Sequence":110
-           ,"Column Alignment":"start"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":false
-           ,"Maximum Length":255
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"LAST_UPDATED_BY"
-           ,"Data Type":"VARCHAR2"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Session State":{
-            "Data Type":"VARCHAR2"
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"Performance Impacting Operators":[
-              "Contains"
-             ,"Starts With"
-             ,"Case Insensitive"
-             ,"Regular Expression"
-            ]
-           ,"Text Case":"Mixed"
-           ,"LOV Type":"None"
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":false
-           ,"Hide":true
-          }
-        }
-       ,{
-          "id":"414316588179562258"
-         ,"Identification":{
-            "Column Name":"LAST_UPDATED_ON"
-           ,"Type":"Date Picker (jQuery) [Deprecated]"
-          }
-         ,"Heading":{
-            "Heading":"Last updated on"
-           ,"Alignment":"center"
-          }
-         ,"Settings":{
-            "Show":"On icon click"
-           ,"Show other Months":false
-           ,"Navigation List for":"None"
-          }
-         ,"Layout":{
-            "Sequence":120
-           ,"Column Alignment":"center"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":false
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"LAST_UPDATED_ON"
-           ,"Data Type":"DATE"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"LOV Type":"Distinct Column"
-           ,"Date Ranges":"All"
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":true
-           ,"Control Break\/Aggregate":true
-           ,"Hide":true
-          }
-        }
-       ,{
-          "id":"414316718241562259"
-         ,"Identification":{
-            "Column Name":"COMPATIBILITY_MODE"
-           ,"Type":"Text Field"
-          }
-         ,"Heading":{
-            "Heading":"Compatibility mode"
-           ,"Alignment":"start"
-          }
-         ,"Settings":{
-            "Trim Spaces":"Leading and Trailing"
-           ,"Text Case":"NO CHANGE"
-          }
-         ,"Layout":{
-            "Sequence":130
-           ,"Column Alignment":"start"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":true
-           ,"Maximum Length":3
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"COMPATIBILITY_MODE"
-           ,"Data Type":"VARCHAR2"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"Performance Impacting Operators":[
-              "Contains"
-             ,"Starts With"
-             ,"Case Insensitive"
-             ,"Regular Expression"
-            ]
-           ,"Text Case":"Mixed"
-           ,"LOV Type":"Distinct Column"
-           ,"Exact Match":true
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":true
-           ,"Control Break\/Aggregate":true
-           ,"Hide":true
-          }
-        }
-       ,{
-          "id":"414316846415562260"
-         ,"Identification":{
-            "Column Name":"PAGE_TEMPLATE"
-           ,"Type":"Textarea"
-          }
-         ,"Heading":{
-            "Heading":"Page template"
-           ,"Alignment":"start"
-          }
-         ,"Settings":{
-            "Resizable":true
-           ,"Auto-Height":false
-           ,"Character Counter":false
-           ,"Trim Spaces":"Leading and Trailing"
-          }
-         ,"Layout":{
-            "Sequence":140
-           ,"Column Alignment":"start"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":false
-           ,"Maximum Length":255
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"PAGE_TEMPLATE"
            ,"Data Type":"VARCHAR2"
            ,"Query Only":false
            ,"Primary Key":false
@@ -1218,7 +1087,7 @@
        ,"Allow Multi Selection":false
       }
      ,"Layout":{
-        "Sequence":40
+        "Sequence":50
        ,"Region":"Filter (452496424516540365)"
        ,"Position":"BODY"
        ,"Alignment":"Left"
@@ -1332,7 +1201,7 @@
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Complexity (294199481042781289)"
+           ,"Region":"Code Complexity (characters) (294199481042781289)"
           }
          ,"Execution":{
             "Sequence":10
@@ -1399,9 +1268,27 @@
       }
      ,"Actions":[
         {
+          "id":"37288646583264628"
+         ,"Identification":{
+            "Name":"Refresh Details"
+           ,"Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Applicatons (455561419078523493)"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"change P0_APP_ID - refresh charts (449465803018677324)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
           "id":"294195118376781246"
          ,"Identification":{
-            "Action":"Refresh"
+            "Name":"Refresh Shared Components"
+           ,"Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
@@ -1417,11 +1304,12 @@
        ,{
           "id":"294269154307521546"
          ,"Identification":{
-            "Action":"Refresh"
+            "Name":"Refresh Complexity"
+           ,"Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Complexity (294199481042781289)"
+           ,"Region":"Code Complexity (characters) (294199481042781289)"
           }
          ,"Execution":{
             "Sequence":30
@@ -1433,7 +1321,8 @@
        ,{
           "id":"294476643654578347"
          ,"Identification":{
-            "Action":"Refresh"
+            "Name":"Refresh Page Functions"
+           ,"Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"

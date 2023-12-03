@@ -273,6 +273,31 @@
     user-defined-attributes: 
       translatable: false
 
+  - # ====== Entry: APEX 23.2 ====================================
+    id: 20620396540063575
+    label: 
+      label: APEX 23.2
+
+    layout: 
+      sequence: 460
+      parent-entry: Migration # 16405035169854428
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 720
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:720:&APP_SESSION.::&DEBUG.:::'
+        page: 720 # APEX 23.2
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
   - # ====== Entry: APEX 23.1 ====================================
     id: 36041090302379837
     label: 
