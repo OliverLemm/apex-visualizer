@@ -440,6 +440,8 @@
       }
      ,"Execution":{
         "Sequence":10
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -448,10 +450,6 @@
           "P0_APP_ID"
          ,"P0_PAGE_ID"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -495,6 +493,8 @@
       }
      ,"Execution":{
         "Sequence":20
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -502,10 +502,6 @@
        ,"Item(s)":[
           "P50_DATE"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {

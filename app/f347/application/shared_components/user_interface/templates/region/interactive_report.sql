@@ -4,8 +4,8 @@ begin
 --     REGION TEMPLATE: INTERACTIVE_REPORT
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2023.04.28'
-,p_release=>'23.1.5'
+ p_version_yyyy_mm_dd=>'2023.10.31'
+,p_release=>'23.2.1'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -34,7 +34,7 @@ wwv_flow_imp_shared.create_plug_template(
 ,p_translate_this_template=>'N'
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2551794611530109)
+ p_id=>wwv_flow_imp.id(2623171940453459)
 ,p_plug_template_id=>wwv_flow_imp.id(452458457830466245)
 ,p_name=>'Region Body'
 ,p_placeholder=>'BODY'
@@ -45,7 +45,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2552248066530109)
+ p_id=>wwv_flow_imp.id(2623689273453459)
 ,p_plug_template_id=>wwv_flow_imp.id(452458457830466245)
 ,p_name=>'Next'
 ,p_placeholder=>'NEXT'
@@ -56,7 +56,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2552744530530110)
+ p_id=>wwv_flow_imp.id(2624104075453459)
 ,p_plug_template_id=>wwv_flow_imp.id(452458457830466245)
 ,p_name=>'Sort Order'
 ,p_placeholder=>'ORDER_BY_ITEM'
@@ -67,7 +67,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2553295515530110)
+ p_id=>wwv_flow_imp.id(2624644136453459)
 ,p_plug_template_id=>wwv_flow_imp.id(452458457830466245)
 ,p_name=>'Previous'
 ,p_placeholder=>'PREVIOUS'
@@ -78,7 +78,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2553736950530110)
+ p_id=>wwv_flow_imp.id(2625187924453459)
 ,p_plug_template_id=>wwv_flow_imp.id(452458457830466245)
 ,p_name=>'Sub Regions'
 ,p_placeholder=>'SUB_REGIONS'

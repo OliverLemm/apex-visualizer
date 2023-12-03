@@ -234,7 +234,15 @@
       "id":"132592428687613229"
      ,"Identification":{
         "Title":"7.2 Querying Template Component Metadata"
-       ,"Type":"Static Content"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select r.page_id\n      ,r.page_name\n      ,r.region_name\nfrom apex_application_page_regions r\nwhere r.application_id = :P0_APP_ID\nand r.template_component_type_code is not null\nand (r.attribute_01 is not null or --\n      r.attribute_02 is not null or --\n      r.attribute_03 is not null or --\n      r.attribute_04 is not null or --\n      r.attribute_05 is not null or --\n      r.attribute_06 is not null or --\n      r.attribute_07 is not null or --  \n      r.attribute_08 is not null or --\n      r.attribute_09 is not null or --  \n      r.attribute_10 is not null or --\n      r.attribute_11 is not null or --\n      r.attribute_12 is not null or --\n      r.attribute_13 is not null or --\n      r.attribute_14 is not null or --\n      r.attribute_15 is not null or --\n      r.attribute_16 is not null or --\n      r.attribute_17 is not null or --  \n      r.attribute_18 is not null or --\n      r.attribute_19 is not null or --  \n      r.attribute_20 is not null or --\n      r.attribute_21 is not null or --\n      r.attribute_22 is not null or --\n      r.attribute_23 is not null or --\n      r.attribute_24 is not null or --\n      r.attribute_25 is not null)"
+       ,"Page Items to Submit":[
+          "P0_APP_ID"
+        ]
       }
      ,"Layout":{
         "Sequence":20
@@ -260,11 +268,12 @@
        ,"Landmark Type":"Template Default"
       }
      ,"Advanced":{
-        "Region Display Selector":false
+        "Static ID":"av-232-desup-72"
+       ,"Region Display Selector":false
        ,"Exclude Title from Translation":false
       }
      ,"Header and Footer":{
-        "Header Text":"For template components only, the ATTRIBUTE_01...ATTRIBUTE_25 columns of APEX_APPLICATION_PAGE_REGIONS and APEX_APPLICATION_PAGE_IR_COL public views now return null.\u003Cbr \/\u003E\nInstead, use the new ATTRIBUTES column that stores a JSON object of all attribute values. Use the attribute\u0027s Static ID as the object key. Note that a table alias is always needed when using the JSON dot notation.\u003Cbr \/\u003E\n\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-exclamation-circle u-warning-text\"\u003E\u003C\/span\u003E for this check your APEX must be 23.2\u003C\/b\u003E"
+        "Header Text":"For template components only, the ATTRIBUTE_01...ATTRIBUTE_25 columns of APEX_APPLICATION_PAGE_REGIONS and APEX_APPLICATION_PAGE_IR_COL public views now return null.\u003Cbr \/\u003E\nInstead, use the new ATTRIBUTES column that stores a JSON object of all attribute values. Use the attribute\u0027s Static ID as the object key. Note that a table alias is always needed when using the JSON dot notation."
       }
      ,"Server Cache":{
         "Caching":"Disabled"
@@ -273,11 +282,148 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Attributes":{
-        "Settings":{
-          "Output As":"HTML"
-         ,"Expand Shortcuts":false
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":15
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (452468948793466267)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (with next and previous links)"
+         ,"Display Position":"Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Messages":{
+          "When No Data Found":"\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-check-circle u-success-text\"\u003E\u003C\/span\u003E no Template Component with old Metadata used\u003C\/b\u003E"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
         }
       }
+     ,"Columns":[
+        {
+          "id":"37290400113264646"
+         ,"Identification":{
+            "Column Name":"PAGE_ID"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Id"
+           ,"Alignment":"end"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"end"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"37290544268264647"
+         ,"Identification":{
+            "Column Name":"PAGE_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Page Name"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"37290657322264648"
+         ,"Identification":{
+            "Column Name":"REGION_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Region Name"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
     }
   ]
  ,"Dynamic Actions":[
@@ -288,6 +434,8 @@
       }
      ,"Execution":{
         "Sequence":10
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -295,10 +443,6 @@
        ,"Item(s)":[
           "P0_APP_ID"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -325,12 +469,10 @@
       }
      ,"Execution":{
         "Sequence":30
+       ,"Event Scope":"Static"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.READY"
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
       }
      ,"Actions":[
         {
@@ -361,15 +503,13 @@
       }
      ,"Execution":{
         "Sequence":20
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CLICK"
        ,"Selection Type":"Button"
        ,"Button":"Refresh (45068108221137631)"
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {

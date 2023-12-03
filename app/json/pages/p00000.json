@@ -548,6 +548,8 @@
       }
      ,"Execution":{
         "Sequence":20
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -560,10 +562,6 @@
      ,"Client-side Condition":{
         "Type":"Item is not null"
        ,"Item":"P0_PAGE_ID"
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Configuration":{
         "Build Option":"deactivated (291318289212148547)"
@@ -665,6 +663,8 @@
       }
      ,"Execution":{
         "Sequence":10
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CLICK"
@@ -674,10 +674,6 @@
      ,"Client-side Condition":{
         "Type":"JavaScript expression"
        ,"JavaScript Expression":"$(\u0027#details\u0027).is(\u0027:hidden\u0027)"
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {

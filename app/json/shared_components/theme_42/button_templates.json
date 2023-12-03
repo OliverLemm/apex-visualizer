@@ -3,18 +3,221 @@
     "id":"452481568223466296"
    ,"Identification":{
       "Name":"Icon"
+     ,"Identifier":"ICON"
+     ,"Class":"Button, Alternative 2"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2347660919680321258"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Templates":{
+      "Normal":"\u003Cbutton class=\"t-Button t-Button--noLabel  t-Button--icon #BUTTON_CSS_CLASSES#\" #BUTTON_ATTRIBUTES# onclick=\"#JAVASCRIPT#\" type=\"button\" id=\"#BUTTON_ID#\" title=\"#LABEL!ATTR#\" aria-label=\"#LABEL!ATTR#\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/button\u003E"
+     ,"Hot":"\u003Cbutton class=\"t-Button t-Button--noLabel t-Button--icon #BUTTON_CSS_CLASSES# t-Button--hot\" #BUTTON_ATTRIBUTES# onclick=\"#JAVASCRIPT#\" type=\"button\" id=\"#BUTTON_ID#\" title=\"#LABEL!ATTR#\" aria-label=\"#LABEL!ATTR#\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/button\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"126148708958127393"
+       ,"Identification":{
+          "Name":"Spin"
+         ,"Identifier":"SPIN"
+         ,"Group":"Icon Hover Animation (2253147514453301)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Button--hoverIconSpin"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"The icon will spin on button hover or focus."
+        }
+      }
+     ,{
+        "id":"126149404713127393"
+       ,"Identification":{
+          "Name":"Push"
+         ,"Identifier":"PUSH"
+         ,"Group":"Icon Hover Animation (2253147514453301)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Button--hoverIconPush"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"The icon will animate to the right or left on button hover or focus."
+        }
+      }
+    ]
   }
  ,{
     "id":"452481721190466298"
    ,"Identification":{
       "Name":"Text"
+     ,"Identifier":"TEXT"
+     ,"Class":"Button"
+    }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"4070916158035059322"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Templates":{
+      "Normal":"\u003Cbutton onclick=\"#JAVASCRIPT#\" class=\"t-Button #BUTTON_CSS_CLASSES#\" type=\"button\" #BUTTON_ATTRIBUTES# id=\"#BUTTON_ID#\"\u003E\u003Cspan class=\"t-Button-label\"\u003E#LABEL#\u003C\/span\u003E\u003C\/button\u003E"
+     ,"Hot":"\u003Cbutton onclick=\"#JAVASCRIPT#\" class=\"t-Button t-Button--hot #BUTTON_CSS_CLASSES#\" type=\"button\" #BUTTON_ATTRIBUTES# id=\"#BUTTON_ID#\"\u003E\u003Cspan class=\"t-Button-label\"\u003E#LABEL#\u003C\/span\u003E\u003C\/button\u003E"
     }
   }
  ,{
     "id":"452481802985466298"
    ,"Identification":{
       "Name":"Text with Icon"
+     ,"Identifier":"TEXT_WITH_ICON"
+     ,"Class":"Button, Alternative 1"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2081382742158699622"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-Button--iconLeft"
+      ]
+    }
+   ,"Templates":{
+      "Normal":"\u003Cbutton class=\"t-Button t-Button--icon #BUTTON_CSS_CLASSES#\" #BUTTON_ATTRIBUTES# onclick=\"#JAVASCRIPT#\" type=\"button\" id=\"#BUTTON_ID#\"\u003E\u003Cspan class=\"t-Icon t-Icon--left #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003Cspan class=\"t-Button-label\"\u003E#LABEL#\u003C\/span\u003E\u003Cspan class=\"t-Icon t-Icon--right #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/button\u003E"
+     ,"Hot":"\u003Cbutton class=\"t-Button t-Button--icon #BUTTON_CSS_CLASSES# t-Button--hot\" #BUTTON_ATTRIBUTES# onclick=\"#JAVASCRIPT#\" type=\"button\" id=\"#BUTTON_ID#\"\u003E\u003Cspan class=\"t-Icon t-Icon--left #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003Cspan class=\"t-Button-label\"\u003E#LABEL#\u003C\/span\u003E\u003Cspan class=\"t-Icon t-Icon--right #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/button\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"16401358665838776"
+       ,"Identification":{
+          "Name":"Hide Icon on Desktop"
+         ,"Identifier":"HIDE_ICON_ON_DESKTOP"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Button--desktopHideIcon"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This template options hides the button icon on large screens."
+        }
+      }
+     ,{
+        "id":"126151400911127395"
+       ,"Identification":{
+          "Name":"Hide Label on Mobile"
+         ,"Identifier":"HIDE_LABEL_ON_MOBILE"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Button--mobileHideLabel"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This template options hides the button label on small screens."
+        }
+      }
+     ,{
+        "id":"126152190746127395"
+       ,"Identification":{
+          "Name":"Spin"
+         ,"Identifier":"SPIN"
+         ,"Group":"Icon Hover Animation (2253147514453301)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Button--hoverIconSpin"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"The icon will spin on button hover or focus."
+        }
+      }
+     ,{
+        "id":"126152899431127396"
+       ,"Identification":{
+          "Name":"Push"
+         ,"Identifier":"PUSH"
+         ,"Group":"Icon Hover Animation (2253147514453301)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Button--hoverIconPush"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"The icon will animate to the right or left on button hover or focus."
+        }
+      }
+     ,{
+        "id":"452482037738466298"
+       ,"Identification":{
+          "Name":"Left"
+         ,"Identifier":"LEFTICON"
+         ,"Group":"Icon Position (2253510533453301)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Button--iconLeft"
+          ]
+        }
+      }
+     ,{
+        "id":"452482063200466299"
+       ,"Identification":{
+          "Name":"Right"
+         ,"Identifier":"RIGHTICON"
+         ,"Group":"Icon Position (2253510533453301)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Button--iconRight"
+          ]
+        }
+      }
+    ]
   }
 ]

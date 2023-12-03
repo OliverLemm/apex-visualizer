@@ -1,0 +1,60 @@
+[
+  {
+    "id":"452482396029466306"
+   ,"Identification":{
+      "Name":"Search Dialog"
+     ,"Identifier":"winlov"
+    }
+   ,"Layout":{
+      "Template Class":"Standard"
+    }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2885398517835871876"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Search Field":{
+      "Before Field":"\u003Cdiv class=\"t-PopupLOV-actions t-Form--large\"\u003E"
+     ,"After Field":"\u003C\/div\u003E"
+     ,"Width":"20"
+     ,"Maximum Width":"100"
+     ,"Filter Text Attributes":"class=\"apex-item-text\""
+    }
+   ,"Find Button":{
+      "Text":"Search"
+     ,"Attributes":"class=\"t-Button t-Button--hot t-Button--padLeft\""
+    }
+   ,"Close Button":{
+      "Text":"Close"
+     ,"Attributes":"class=\"t-Button u-pullRight\""
+    }
+   ,"Next Button":{
+      "Text":"Next \u0026gt;"
+     ,"Attributes":"class=\"t-Button t-PopupLOV-button\""
+    }
+   ,"Previous Button":{
+      "Text":"\u0026lt; Previous"
+     ,"Attributes":"class=\"t-Button t-PopupLOV-button\""
+    }
+   ,"Window":{
+      "Scroll Bars":"1"
+     ,"Resizable":"1"
+     ,"Width":"380"
+    }
+   ,"Pagination":{
+      "Text":"\u003Cdiv class=\"t-PopupLOV-pagination\"\u003ERow(s) #FIRST_ROW# - #LAST_ROW#\u003C\/div\u003E"
+     ,"Rows per Page":100
+    }
+   ,"Result Set":{
+      "Before":"\u003Cdiv class=\"t-PopupLOV-links\"\u003E"
+     ,"After":"\u003C\/div\u003E"
+    }
+   ,"Page":{
+      "Head":"\u003C!DOCTYPE html\u003E\n\u003Chtml lang=\"\u0026BROWSER_LANGUAGE.\"\u003E\n\u003Chead\u003E\n\u003Ctitle\u003E#TITLE#\u003C\/title\u003E\n#APEX_CSS#\n#THEME_CSS#\n#THEME_STYLE_CSS#\n#FAVICONS#\n#APEX_JAVASCRIPT#\n#THEME_JAVASCRIPT#\n\u003Cmeta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\" \/\u003E\n\u003C\/head\u003E"
+     ,"Body Attributes":"onload=\"first_field()\" class=\"t-Page t-Page--popupLOV\""
+    }
+  }
+]

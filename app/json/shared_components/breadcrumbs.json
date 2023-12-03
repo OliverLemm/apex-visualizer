@@ -142,8 +142,7 @@
           "Sequence":10
         }
        ,"Appearance":{
-          "Parent Entry":"0 (0)"
-         ,"Long Name":"Applications"
+          "Long Name":"Applications"
         }
        ,"Link":{
           "Target":{
@@ -160,9 +159,6 @@
         }
        ,"Execution":{
           "Sequence":10
-        }
-       ,"Appearance":{
-          "Parent Entry":"0 (0)"
         }
        ,"Link":{
           "Target":{

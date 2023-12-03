@@ -3,60 +3,2281 @@
     "id":"16077155266838596"
    ,"Identification":{
       "Name":"Drawer"
+     ,"Identifier":"DRAWER"
+     ,"Class":"Custom 4"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"1659739787629394056"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "js-dialog-class-t-Drawer--pullOutEnd"
+      ]
+    }
+   ,"Page":{
+      "Type":"Dialog Page"
+     ,"Header":"\u003C!DOCTYPE html\u003E\n\u003Chtml class=\"no-js #RTL_CLASS# page-\u0026APP_PAGE_ID. app-\u0026APP_ALIAS.\" lang=\"\u0026BROWSER_LANGUAGE.\" #TEXT_DIRECTION#\u003E\n\u003Chead\u003E\n  \u003Cmeta http-equiv=\"x-ua-compatible\" content=\"IE=edge\" \/\u003E\n  \u003Cmeta charset=\"utf-8\"\u003E\n  \u003Ctitle\u003E#TITLE#\u003C\/title\u003E\n  #APEX_CSS#\n  #THEME_CSS#\n  #TEMPLATE_CSS#\n  #THEME_STYLE_CSS#\n  #APPLICATION_CSS#\n  #PAGE_CSS#\n  #FAVICONS#\n  #HEAD#\n  \u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" \/\u003E\n\u003C\/head\u003E\n\u003Cbody class=\"t-Drawer-page t-PageTemplate--drawer #DIALOG_CSS_CLASSES# #PAGE_CSS_CLASSES#\" #TEXT_DIRECTION# #ONLOAD#\u003E\n#FORM_OPEN#"
+     ,"Body":"\u003Cdiv class=\"t-Drawer\" role=\"dialog\" aria-label=\"#TITLE#\"\u003E\n  \u003Cdiv class=\"t-Drawer-header\"\u003E#REGION_POSITION_01#\u003C\/div\u003E\n  \u003Cdiv class=\"t-Drawer-bodyWrapperOut\"\u003E\n    \u003Cdiv class=\"t-Drawer-bodyWrapperIn\"\u003E\n      \u003Cdiv class=\"t-Drawer-body\" role=\"main\"\u003E#SUCCESS_MESSAGE##NOTIFICATION_MESSAGE##GLOBAL_NOTIFICATION##BODY#\u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Drawer-footer\"\u003E#REGION_POSITION_03#\u003C\/div\u003E\n\u003C\/div\u003E"
+     ,"Footer":"#FORM_CLOSE#\n#DEVELOPER_TOOLBAR#\n#APEX_JAVASCRIPT#\n#GENERATED_CSS#\n#THEME_JAVASCRIPT#\n#TEMPLATE_JAVASCRIPT#\n#APPLICATION_JAVASCRIPT#\n#PAGE_JAVASCRIPT#  \n#GENERATED_JAVASCRIPT#\n\u003C\/body\u003E\n\u003C\/html\u003E"
+    }
+   ,"JavaScript":{
+      "Execute when Page Loads":"apex.theme42.initializePage.modalDialog();"
+     ,"Dialog Initialization Code":"apex.theme42.dialog(#PAGE_URL#,{title:#TITLE#,w:#DIALOG_WIDTH#,mxw:#DIALOG_MAX_WIDTH#,modal:#IS_MODAL#,dialog:#DIALOG#,dlgCls:\u0027t-Drawer-page--standard \u0027+#DIALOG_CSS_CLASSES#,#DIALOG_ATTRIBUTES#},#PAGE_CSS_CLASSES#,#TRIGGERING_ELEMENT#)"
+     ,"Dialog Closure Code":"apex.theme42.dialog.close(#IS_MODAL#,#TARGET#)"
+     ,"Dialog Cancel Code":"apex.theme42.dialog.cancel(#IS_MODAL#)"
+    }
+   ,"Subtemplate":{
+      "Success Message":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--success t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Success\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-header\"\u003E\n          \u003Ch2 class=\"t-Alert-title\" role=\"alert\"\u003E#SUCCESS_MESSAGE#\u003C\/h2\u003E\n        \u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Success\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+     ,"Notification":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--warning t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Notification\" role=\"alert\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-body\"\u003E#MESSAGE#\u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Notification\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Layout":{
+      "Type":"Fixed Number of Columns"
+     ,"Maximum Columns":12
+     ,"Always use Max Columns":true
+     ,"Has Column Span":true
+     ,"Always Render Layout":true
+     ,"Emit Empty Leading Columns":true
+     ,"Emit Empty Trailing Columns":false
+     ,"Default Label Column Span":2
+     ,"First Column Attributes":"col-start"
+     ,"Last Column Attributes":"col-end"
+     ,"Container Template":"\u003Cdiv class=\"container\"\u003E\n#ROWS#\n\u003C\/div\u003E"
+     ,"Row Template":"\u003Cdiv class=\"row #CSS_CLASSES#\"\u003E\n#COLUMNS#\n\u003C\/div\u003E"
+     ,"Column Template":"\u003Cdiv class=\"col col-#COLUMN_SPAN_NUMBER# #CSS_CLASSES# #FIRST_LAST_COLUMN_ATTRIBUTES#\" #ATTRIBUTES#\u003E#CONTENT#\u003C\/div\u003E"
+    }
+   ,"Positions":{
+      "Breadcrumb Position":"REGION_POSITION_01"
+    }
+   ,"Dialog":{
+      "Width":"720"
+     ,"Height":"auto"
+     ,"Maximum Width":"960"
+     ,"Allow Embed In Frame":[
+        "Modal Dialog"
+      ]
+    }
+   ,"Error Page":{
+      "Template":"\u003Cdiv class=\"t-Alert t-Alert--danger t-Alert--wizard t-Alert--defaultIcons\"\u003E\n  \u003Cdiv class=\"t-Alert-wrap\"\u003E\n    \u003Cdiv class=\"t-Alert-icon\"\u003E\n      \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-content\"\u003E\n      \u003Cdiv class=\"t-Alert-body\"\u003E\n        \u003Ch1 class=\"t-Alert-errorTitle\"\u003E#MESSAGE#\u003C\/h1\u003E\n        \u003Cp\u003E#ADDITIONAL_INFO#\u003C\/p\u003E\n        \u003Cdiv class=\"t-Alert-inset\"\u003E#TECHNICAL_INFO#\u003C\/div\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-buttons\"\u003E\n      \u003Cbutton onclick=\"#BACK_LINK#\" class=\"t-Button t-Button--hot w50p t-Button--large\" type=\"button\"\u003E#OK#\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"16079151655838601"
+       ,"Identification":{
+          "Name":"Large"
+         ,"Identifier":"DRAWER_SIZE_LARGE"
+         ,"Group":"Size (2267980521453306)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-class-t-Drawer--lg"
+          ]
+        }
+      }
+     ,{
+        "id":"16079595172838601"
+       ,"Identification":{
+          "Name":"Medium"
+         ,"Identifier":"DRAWER_SIZE_MEDIUM"
+         ,"Group":"Size (2267980521453306)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-class-t-Drawer--md"
+          ]
+        }
+      }
+     ,{
+        "id":"16079915003838601"
+       ,"Identification":{
+          "Name":"End"
+         ,"Identifier":"POSITION_END"
+         ,"Group":"Position (2269588556453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-class-t-Drawer--pullOutEnd"
+          ]
+        }
+      }
+     ,{
+        "id":"16080377442838603"
+       ,"Identification":{
+          "Name":"Start"
+         ,"Identifier":"POSITION_START"
+         ,"Group":"Position (2269588556453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-class-t-Drawer--pullOutStart"
+          ]
+        }
+      }
+     ,{
+        "id":"16080761127838603"
+       ,"Identification":{
+          "Name":"Small"
+         ,"Identifier":"DRAWER_SIZE_SMALL"
+         ,"Group":"Size (2267980521453306)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-class-t-Drawer--sm"
+          ]
+        }
+      }
+     ,{
+        "id":"16081167305838603"
+       ,"Identification":{
+          "Name":"Extra Large"
+         ,"Identifier":"DRAWER_SIZE_EXTRA_LARGE"
+         ,"Group":"Size (2267980521453306)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-class-t-Drawer--xl"
+          ]
+        }
+      }
+     ,{
+        "id":"16081539615838603"
+       ,"Identification":{
+          "Name":"Remove Body Padding"
+         ,"Identifier":"REMOVE_BODY_PADDING"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Dialog--noPadding"
+          ]
+        }
+      }
+    ]
+   ,"Display Points":[
+      {
+        "id":"2380655657453351"
+       ,"Identification":{
+          "Name":"Content Body"
+         ,"Template Substitution":"BODY"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2381111699453351"
+       ,"Identification":{
+          "Name":"Dialog Header"
+         ,"Template Substitution":"REGION_POSITION_01"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2381682319453351"
+       ,"Identification":{
+          "Name":"Dialog Footer"
+         ,"Template Substitution":"REGION_POSITION_03"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+    ]
   }
  ,{
     "id":"452440439600466192"
    ,"Identification":{
       "Name":"Left Side Column"
+     ,"Identifier":"LEFT_SIDE_COLUMN"
+     ,"Class":"No Tabs with Sidebar"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2525196570560608698"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Page":{
+      "Type":"Normal Page"
+     ,"Header":"\u003C!DOCTYPE html\u003E\n\u003Chtml class=\"no-js #RTL_CLASS# page-\u0026APP_PAGE_ID. app-\u0026APP_ALIAS.\" lang=\"\u0026BROWSER_LANGUAGE.\" #TEXT_DIRECTION#\u003E\n\u003Chead\u003E\n  \u003Cmeta http-equiv=\"x-ua-compatible\" content=\"IE=edge\" \/\u003E\n  \u003Cmeta charset=\"utf-8\"\u003E\n  \u003Ctitle\u003E#TITLE#\u003C\/title\u003E\n  #APEX_CSS#\n  #THEME_CSS#\n  #TEMPLATE_CSS#\n  #THEME_STYLE_CSS#\n  #APPLICATION_CSS#\n  #PAGE_CSS#\n  #FAVICONS#\n  #HEAD#\n  \u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" \/\u003E\n\u003C\/head\u003E\n\u003Cbody class=\"t-PageBody t-PageBody--showLeft t-PageBody--hideActions no-anim t-PageTemplate--leftCol #PAGE_CSS_CLASSES#\" #TEXT_DIRECTION# #ONLOAD# id=\"t_PageBody\"\u003E\n\u003Ca href=\"#main\" id=\"t_Body_skipToContent\"\u003E\u0026APP_TEXT$UI_PAGE_SKIP_TO_CONTENT.\u003C\/a\u003E\n#FORM_OPEN#\n\u003Cheader class=\"t-Header\" id=\"t_Header\" role=\"banner\"\u003E\n  #REGION_POSITION_07#\n  \u003Cdiv class=\"t-Header-branding\"\u003E\n    \u003Cdiv class=\"t-Header-controls\"\u003E\n      \u003Cbutton class=\"t-Button t-Button--icon t-Button--header t-Button--headerTree\" aria-label=\"\u0026\"APP_TEXT$APEX.TEMPLATE.MAIN_NAV_LABEL\".\" title=\"\u0026\"APP_TEXT$APEX.TEMPLATE.MAIN_NAV_LABEL\".\" id=\"t_Button_navControl\" type=\"button\"\u003E\u003Cspan class=\"t-Header-controlsIcon\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Header-logo\"\u003E\n      \u003Ca href=\"#HOME_LINK#\" class=\"t-Header-logo-link\"\u003E#LOGO#\u003C\/a\u003E\n      #AFTER_LOGO#\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Header-navBar\"\u003E\n      \u003Cdiv class=\"t-Header-navBar--start\"\u003E#BEFORE_NAVIGATION_BAR#\u003C\/div\u003E\n      \u003Cdiv class=\"t-Header-navBar--center\"\u003E#NAVIGATION_BAR#\u003C\/div\u003E\n      \u003Cdiv class=\"t-Header-navBar--end\"\u003E#AFTER_NAVIGATION_BAR#\u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Header-nav\"\u003E#TOP_GLOBAL_NAVIGATION_LIST##REGION_POSITION_06#\u003C\/div\u003E\n\u003C\/header\u003E\n"
+     ,"Body":"\u003Cdiv class=\"t-Body\"\u003E\n  #SIDE_GLOBAL_NAVIGATION_LIST#\n  \u003Cdiv class=\"t-Body-main\"\u003E\n    \u003Cdiv class=\"t-Body-title\" id=\"t_Body_title\"\u003E#REGION_POSITION_01#\u003C\/div\u003E\n    \u003Cdiv class=\"t-Body-side\" id=\"t_Body_side\"\u003E#REGION_POSITION_02#\u003C\/div\u003E\n    \u003Cdiv class=\"t-Body-content\" id=\"t_Body_content\"\u003E\n      \u003Cmain class=\"t-Body-mainContent\" id=\"main\"\u003E\n        #SUCCESS_MESSAGE##NOTIFICATION_MESSAGE##GLOBAL_NOTIFICATION#\n        \u003Cdiv class=\"t-Body-fullContent\"\u003E#REGION_POSITION_08#\u003C\/div\u003E\n        \u003Cdiv class=\"t-Body-contentInner\"\u003E#BODY#\u003C\/div\u003E\n      \u003C\/main\u003E\n      \u003Cfooter class=\"t-Footer\" id=\"t_Footer\" role=\"contentinfo\"\u003E\n        \u003Cdiv class=\"t-Footer-body\"\u003E\n          \u003Cdiv class=\"t-Footer-content\"\u003E#REGION_POSITION_05#\u003C\/div\u003E\n          \u003Cdiv class=\"t-Footer-apex\"\u003E\n            \u003Cdiv class=\"t-Footer-version\"\u003E#APP_VERSION#\u003C\/div\u003E\n            \u003Cdiv class=\"t-Footer-customize\"\u003E#CUSTOMIZE#\u003C\/div\u003E\n            #BUILT_WITH_LOVE_USING_APEX#\n          \u003C\/div\u003E\n        \u003C\/div\u003E\n        \u003Cdiv class=\"t-Footer-top\"\u003E\n          \u003Ca href=\"#top\" class=\"t-Footer-topButton\" id=\"t_Footer_topButton\" title=\"\u0026\"APP_TEXT$APEX.UI.BACK_TO_TOP\".\" aria-label=\"\u0026\"APP_TEXT$APEX.UI.BACK_TO_TOP\".\"\u003E\u003Cspan class=\"a-Icon icon-up-chevron\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/a\u003E\n        \u003C\/div\u003E\n      \u003C\/footer\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n\u003Cdiv class=\"t-Body-inlineDialogs\" id=\"t_Body_inlineDialogs\"\u003E#REGION_POSITION_04#\u003C\/div\u003E"
+     ,"Footer":"#FORM_CLOSE#\n#DEVELOPER_TOOLBAR#\n#APEX_JAVASCRIPT#\n#GENERATED_CSS#\n#THEME_JAVASCRIPT#\n#TEMPLATE_JAVASCRIPT#\n#APPLICATION_JAVASCRIPT#\n#PAGE_JAVASCRIPT#  \n#GENERATED_JAVASCRIPT#\n\u003C\/body\u003E\n\u003C\/html\u003E"
+    }
+   ,"JavaScript":{
+      "Execute when Page Loads":"apex.theme42.initializePage.leftSideCol();"
+    }
+   ,"Subtemplate":{
+      "Success Message":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--success t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Success\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-header\"\u003E\n          \u003Ch2 class=\"t-Alert-title\" role=\"alert\"\u003E#SUCCESS_MESSAGE#\u003C\/h2\u003E\n        \u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Success\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+     ,"Navigation Bar":"\u003Cul class=\"t-NavigationBar\" data-mode=\"classic\"\u003E\n  \u003Cli class=\"t-NavigationBar-item\"\u003E\n    \u003Cspan class=\"t-Button t-Button--icon t-Button--noUI t-Button--header t-Button--navBar t-Button--headerUser\"\u003E\n      \u003Cspan class=\"t-Icon a-Icon icon-user\"\u003E\u003C\/span\u003E\n      \u003Cspan class=\"t-Button-label\"\u003E\u0026APP_USER.\u003C\/span\u003E\n    \u003C\/span\u003E\n  \u003C\/li\u003E#BAR_BODY#\n\u003C\/ul\u003E"
+     ,"Navigation Bar Entry":"\u003Cli class=\"t-NavigationBar-item\"\u003E\n  \u003Ca class=\"t-Button t-Button--icon t-Button--header t-Button--navBar\" href=\"#LINK#\"\u003E\n    \u003Cspan class=\"t-Icon #IMAGE#\"\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-Button-label\"\u003E#TEXT#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+     ,"Notification":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--warning t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Notification\" role=\"alert\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-body\"\u003E#MESSAGE#\u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Notification\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Layout":{
+      "Type":"Fixed Number of Columns"
+     ,"Maximum Columns":12
+     ,"Always use Max Columns":true
+     ,"Has Column Span":true
+     ,"Always Render Layout":true
+     ,"Emit Empty Leading Columns":true
+     ,"Emit Empty Trailing Columns":false
+     ,"Default Label Column Span":2
+     ,"First Column Attributes":"col-start"
+     ,"Last Column Attributes":"col-end"
+     ,"Container Template":"\u003Cdiv class=\"container\"\u003E\n#ROWS#\n\u003C\/div\u003E"
+     ,"Row Template":"\u003Cdiv class=\"row #CSS_CLASSES#\"\u003E\n#COLUMNS#\n\u003C\/div\u003E"
+     ,"Column Template":"\u003Cdiv class=\"col col-#COLUMN_SPAN_NUMBER# #CSS_CLASSES# #FIRST_LAST_COLUMN_ATTRIBUTES#\" #ATTRIBUTES#\u003E#CONTENT#\u003C\/div\u003E"
+    }
+   ,"Positions":{
+      "Breadcrumb Position":"REGION_POSITION_01"
+    }
+   ,"Error Page":{
+      "Template":"\u003Cdiv class=\"t-Alert t-Alert--danger t-Alert--wizard t-Alert--defaultIcons\"\u003E\n  \u003Cdiv class=\"t-Alert-wrap\"\u003E\n    \u003Cdiv class=\"t-Alert-icon\"\u003E\n      \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-content\"\u003E\n      \u003Cdiv class=\"t-Alert-body\"\u003E\n        \u003Ch1 class=\"t-Alert-errorTitle\"\u003E#MESSAGE#\u003C\/h1\u003E\n        \u003Cp\u003E#ADDITIONAL_INFO#\u003C\/p\u003E\n        \u003Cdiv class=\"t-Alert-inset\"\u003E#TECHNICAL_INFO#\u003C\/div\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-buttons\"\u003E\n      \u003Cbutton onclick=\"#BACK_LINK#\" class=\"t-Button t-Button--hot w50p t-Button--large\" type=\"button\"\u003E#OK#\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"125857009110127201"
+       ,"Identification":{
+          "Name":"Sticky Header on Mobile"
+         ,"Identifier":"STICKY_HEADER_ON_MOBILE"
+         ,"Sequence":100
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-pageStickyMobileHeader"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This will position the contents of the Breadcrumb Bar region position so it sticks to the top of the screen for small screens."
+        }
+      }
+    ]
+   ,"Display Points":[
+      {
+        "id":"2390779202453359"
+       ,"Identification":{
+          "Name":"After Logo"
+         ,"Template Substitution":"AFTER_LOGO"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2391229303453359"
+       ,"Identification":{
+          "Name":"After Navigation Bar"
+         ,"Template Substitution":"AFTER_NAVIGATION_BAR"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2391718655453359"
+       ,"Identification":{
+          "Name":"Before Navigation Bar"
+         ,"Template Substitution":"BEFORE_NAVIGATION_BAR"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2392298441453359"
+       ,"Identification":{
+          "Name":"Body"
+         ,"Template Substitution":"BODY"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":8
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2392765184453359"
+       ,"Identification":{
+          "Name":"Breadcrumb Bar"
+         ,"Template Substitution":"REGION_POSITION_01"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2393277444453359"
+       ,"Identification":{
+          "Name":"Left Column"
+         ,"Template Substitution":"REGION_POSITION_02"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2393786084453359"
+       ,"Identification":{
+          "Name":"Dialogs, Drawers and Popups"
+         ,"Template Substitution":"REGION_POSITION_04"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2394219859453360"
+       ,"Identification":{
+          "Name":"Footer"
+         ,"Template Substitution":"REGION_POSITION_05"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":8
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2394711918453360"
+       ,"Identification":{
+          "Name":"Top Navigation"
+         ,"Template Substitution":"REGION_POSITION_06"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2395260494453360"
+       ,"Identification":{
+          "Name":"Banner"
+         ,"Template Substitution":"REGION_POSITION_07"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2395717449453360"
+       ,"Identification":{
+          "Name":"Full Width Content"
+         ,"Template Substitution":"REGION_POSITION_08"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":8
+         ,"New Row":false
+        }
+      }
+    ]
   }
  ,{
     "id":"452441348158466209"
    ,"Identification":{
       "Name":"Left and Right Side Columns"
+     ,"Identifier":"LEFT_AND_RIGHT_SIDE_COLUMNS"
+     ,"Class":"No Tabs with Sidebar"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2525203692562657055"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Page":{
+      "Type":"Normal Page"
+     ,"Header":"\u003C!DOCTYPE html\u003E\n\u003Chtml class=\"no-js #RTL_CLASS# page-\u0026APP_PAGE_ID. app-\u0026APP_ALIAS.\" lang=\"\u0026BROWSER_LANGUAGE.\" #TEXT_DIRECTION#\u003E\n\u003Chead\u003E\n  \u003Cmeta http-equiv=\"x-ua-compatible\" content=\"IE=edge\" \/\u003E\n  \u003Cmeta charset=\"utf-8\"\u003E  \n  \u003Ctitle\u003E#TITLE#\u003C\/title\u003E\n  #APEX_CSS#\n  #THEME_CSS#\n  #TEMPLATE_CSS#\n  #THEME_STYLE_CSS#\n  #APPLICATION_CSS#\n  #PAGE_CSS#\n  #FAVICONS#\n  #HEAD#\n  \u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\/\u003E\n\u003C\/head\u003E\n\u003Cbody class=\"t-PageBody t-PageBody--showLeft no-anim t-PageTemplate--leftRightCol #PAGE_CSS_CLASSES#\" #TEXT_DIRECTION# #ONLOAD# id=\"t_PageBody\"\u003E\n\u003Cscript\u003E(sessionStorage.getItem(\"ORA_WWV_apex.toggleCore.right.\u0026APP_ID..\u0026APP_PAGE_ID..preferenceForExpanded\") === \"true\") ? document.getElementById(\u0027t_PageBody\u0027).classList.add(\u0027js-rightExpanded\u0027) : document.getElementById(\u0027t_PageBody\u0027).classList.add(\u0027js-rightCollapsed\u0027)\u003C\/script\u003E\n\u003Ca href=\"#main\" id=\"t_Body_skipToContent\"\u003E\u0026APP_TEXT$UI_PAGE_SKIP_TO_CONTENT.\u003C\/a\u003E\n#FORM_OPEN#\n\u003Cheader class=\"t-Header\" id=\"t_Header\" role=\"banner\"\u003E\n  #REGION_POSITION_07#\n  \u003Cdiv class=\"t-Header-branding\"\u003E\n    \u003Cdiv class=\"t-Header-controls\"\u003E\n      \u003Cbutton class=\"t-Button t-Button--icon t-Button--header t-Button--headerTree\" aria-label=\"\u0026\"APP_TEXT$APEX.TEMPLATE.MAIN_NAV_LABEL\".\" title=\"\u0026\"APP_TEXT$APEX.TEMPLATE.MAIN_NAV_LABEL\".\" id=\"t_Button_navControl\" type=\"button\"\u003E\u003Cspan class=\"t-Header-controlsIcon\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Header-logo\"\u003E\n      \u003Ca href=\"#HOME_LINK#\" class=\"t-Header-logo-link\"\u003E#LOGO#\u003C\/a\u003E\n      #AFTER_LOGO#\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Header-navBar\"\u003E\n      \u003Cdiv class=\"t-Header-navBar--start\"\u003E#BEFORE_NAVIGATION_BAR#\u003C\/div\u003E\n      \u003Cdiv class=\"t-Header-navBar--center\"\u003E#NAVIGATION_BAR#\u003C\/div\u003E\n      \u003Cdiv class=\"t-Header-navBar--end\"\u003E#AFTER_NAVIGATION_BAR#\u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Header-nav\"\u003E#TOP_GLOBAL_NAVIGATION_LIST##REGION_POSITION_06#\u003C\/div\u003E\n\u003C\/header\u003E\n"
+     ,"Body":"\u003Cdiv class=\"t-Body\"\u003E\n  #SIDE_GLOBAL_NAVIGATION_LIST#\n  \u003Cdiv class=\"t-Body-main\"\u003E\n    \u003Cdiv class=\"t-Body-title\" id=\"t_Body_title\"\u003E#REGION_POSITION_01#\u003C\/div\u003E\n    \u003Cdiv class=\"t-Body-side\" id=\"t_Body_side\"\u003E#REGION_POSITION_02#\u003C\/div\u003E\n    \u003Cdiv class=\"t-Body-content\" id=\"t_Body_content\"\u003E\n      \u003Cmain id=\"main\" class=\"t-Body-mainContent\"\u003E\n        #SUCCESS_MESSAGE##NOTIFICATION_MESSAGE##GLOBAL_NOTIFICATION#\n        \u003Cdiv class=\"t-Body-fullContent\"\u003E#REGION_POSITION_08#\u003C\/div\u003E\n        \u003Cdiv class=\"t-Body-contentInner\"\u003E#BODY#\u003C\/div\u003E\n      \u003C\/main\u003E\n      \u003Cfooter class=\"t-Footer\" id=\"t_Footer\" role=\"contentinfo\"\u003E\n        \u003Cdiv class=\"t-Footer-body\"\u003E\n          \u003Cdiv class=\"t-Footer-content\"\u003E#REGION_POSITION_05#\u003C\/div\u003E\n          \u003Cdiv class=\"t-Footer-apex\"\u003E\n            \u003Cdiv class=\"t-Footer-version\"\u003E#APP_VERSION#\u003C\/div\u003E\n            \u003Cdiv class=\"t-Footer-customize\"\u003E#CUSTOMIZE#\u003C\/div\u003E\n            #BUILT_WITH_LOVE_USING_APEX#\n          \u003C\/div\u003E\n        \u003C\/div\u003E\n        \u003Cdiv class=\"t-Footer-top\"\u003E\n          \u003Ca href=\"#top\" class=\"t-Footer-topButton\" id=\"t_Footer_topButton\" title=\"\u0026\"APP_TEXT$APEX.UI.BACK_TO_TOP\".\" aria-label=\"\u0026\"APP_TEXT$APEX.UI.BACK_TO_TOP\".\"\u003E\u003Cspan class=\"a-Icon icon-up-chevron\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/a\u003E\n        \u003C\/div\u003E\n      \u003C\/footer\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Body-actions\" id=\"t_Body_actions\"\u003E\n    \u003Cbutton class=\"t-Body-actionsToggle\" title=\"#EXPAND_COLLAPSE_SIDE_COL_LABEL#\" id=\"t_Button_rightControlButton\" type=\"button\"\u003E\u003Cspan class=\"t-Body-actionsControlsIcon\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n    \u003Cdiv class=\"t-Body-actionsContent\" role=\"complementary\"\u003E#REGION_POSITION_03#\u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n\u003Cdiv class=\"t-Body-inlineDialogs\" id=\"t_Body_inlineDialogs\"\u003E#REGION_POSITION_04#\u003C\/div\u003E"
+     ,"Footer":"#FORM_CLOSE#\n#DEVELOPER_TOOLBAR#\n#APEX_JAVASCRIPT#\n#GENERATED_CSS#\n#THEME_JAVASCRIPT#\n#TEMPLATE_JAVASCRIPT#\n#APPLICATION_JAVASCRIPT#\n#PAGE_JAVASCRIPT#  \n#GENERATED_JAVASCRIPT#\n\u003C\/body\u003E\n\u003C\/html\u003E"
+    }
+   ,"JavaScript":{
+      "Execute when Page Loads":"apex.theme42.initializePage.bothSideCols();"
+    }
+   ,"Subtemplate":{
+      "Success Message":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--success t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Success\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-header\"\u003E\n          \u003Ch2 class=\"t-Alert-title\" role=\"alert\"\u003E#SUCCESS_MESSAGE#\u003C\/h2\u003E\n        \u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Success\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+     ,"Navigation Bar":"\u003Cul class=\"t-NavigationBar\" data-mode=\"classic\"\u003E\n  \u003Cli class=\"t-NavigationBar-item\"\u003E\n    \u003Cspan class=\"t-Button t-Button--icon t-Button--noUI t-Button--header t-Button--navBar t-Button--headerUser\"\u003E\n      \u003Cspan class=\"t-Icon a-Icon icon-user\"\u003E\u003C\/span\u003E\n      \u003Cspan class=\"t-Button-label\"\u003E\u0026APP_USER.\u003C\/span\u003E\n    \u003C\/span\u003E\n  \u003C\/li\u003E#BAR_BODY#\n\u003C\/ul\u003E"
+     ,"Navigation Bar Entry":"\u003Cli class=\"t-NavigationBar-item\"\u003E\n  \u003Ca class=\"t-Button t-Button--icon t-Button--header t-Button--navBar\" href=\"#LINK#\"\u003E\n    \u003Cspan class=\"t-Icon #IMAGE#\"\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-Button-label\"\u003E#TEXT#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+     ,"Notification":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--warning t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Notification\" role=\"alert\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-body\"\u003E#MESSAGE#\u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Notification\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Layout":{
+      "Type":"Fixed Number of Columns"
+     ,"Maximum Columns":12
+     ,"Always use Max Columns":true
+     ,"Has Column Span":true
+     ,"Always Render Layout":true
+     ,"Emit Empty Leading Columns":true
+     ,"Emit Empty Trailing Columns":false
+     ,"Default Label Column Span":2
+     ,"First Column Attributes":"col-start"
+     ,"Last Column Attributes":"col-end"
+     ,"Container Template":"\u003Cdiv class=\"container\"\u003E\n#ROWS#\n\u003C\/div\u003E"
+     ,"Row Template":"\u003Cdiv class=\"row #CSS_CLASSES#\"\u003E\n#COLUMNS#\n\u003C\/div\u003E"
+     ,"Column Template":"\u003Cdiv class=\"col col-#COLUMN_SPAN_NUMBER# #CSS_CLASSES# #FIRST_LAST_COLUMN_ATTRIBUTES#\" #ATTRIBUTES#\u003E#CONTENT#\u003C\/div\u003E"
+    }
+   ,"Positions":{
+      "Breadcrumb Position":"REGION_POSITION_01"
+     ,"Sidebar Position":"REGION_POSITION_03"
+    }
+   ,"Error Page":{
+      "Template":"\u003Cdiv class=\"t-Alert t-Alert--danger t-Alert--wizard t-Alert--defaultIcons\"\u003E\n  \u003Cdiv class=\"t-Alert-wrap\"\u003E\n    \u003Cdiv class=\"t-Alert-icon\"\u003E\n      \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-content\"\u003E\n      \u003Cdiv class=\"t-Alert-body\"\u003E\n        \u003Ch1 class=\"t-Alert-errorTitle\"\u003E#MESSAGE#\u003C\/h1\u003E\n        \u003Cp\u003E#ADDITIONAL_INFO#\u003C\/p\u003E\n        \u003Cdiv class=\"t-Alert-inset\"\u003E#TECHNICAL_INFO#\u003C\/div\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-buttons\"\u003E\n      \u003Cbutton onclick=\"#BACK_LINK#\" class=\"t-Button t-Button--hot w50p t-Button--large\" type=\"button\"\u003E#OK#\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"125866131938127207"
+       ,"Identification":{
+          "Name":"Sticky Header on Mobile"
+         ,"Identifier":"STICKY_HEADER_ON_MOBILE"
+         ,"Sequence":100
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-pageStickyMobileHeader"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This will position the contents of the Breadcrumb Bar region position so it sticks to the top of the screen for small screens."
+        }
+      }
+    ]
+   ,"Display Points":[
+      {
+        "id":"2401649443453364"
+       ,"Identification":{
+          "Name":"After Logo"
+         ,"Template Substitution":"AFTER_LOGO"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2402152436453364"
+       ,"Identification":{
+          "Name":"After Navigation Bar"
+         ,"Template Substitution":"AFTER_NAVIGATION_BAR"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2402638368453364"
+       ,"Identification":{
+          "Name":"Before Navigation Bar"
+         ,"Template Substitution":"BEFORE_NAVIGATION_BAR"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2403138326453364"
+       ,"Identification":{
+          "Name":"Body"
+         ,"Template Substitution":"BODY"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":6
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2403694150453364"
+       ,"Identification":{
+          "Name":"Breadcrumb Bar"
+         ,"Template Substitution":"REGION_POSITION_01"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2404106207453364"
+       ,"Identification":{
+          "Name":"Left Column"
+         ,"Template Substitution":"REGION_POSITION_02"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":3
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2404553723453364"
+       ,"Identification":{
+          "Name":"Right Column"
+         ,"Template Substitution":"REGION_POSITION_03"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":3
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2405022173453364"
+       ,"Identification":{
+          "Name":"Dialogs, Drawers and Popups"
+         ,"Template Substitution":"REGION_POSITION_04"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2405533509453364"
+       ,"Identification":{
+          "Name":"Footer"
+         ,"Template Substitution":"REGION_POSITION_05"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":6
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2406033618453364"
+       ,"Identification":{
+          "Name":"Top Navigation"
+         ,"Template Substitution":"REGION_POSITION_06"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2406536445453364"
+       ,"Identification":{
+          "Name":"Banner"
+         ,"Template Substitution":"REGION_POSITION_07"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2407027810453364"
+       ,"Identification":{
+          "Name":"Full Width Content"
+         ,"Template Substitution":"REGION_POSITION_08"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":6
+         ,"New Row":false
+        }
+      }
+    ]
   }
  ,{
     "id":"452442331454466209"
    ,"Identification":{
       "Name":"Standard"
+     ,"Identifier":"STANDARD"
+     ,"Class":"One Level Tabs"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"4070909157481059304"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Page":{
+      "Type":"Normal Page"
+     ,"Header":"\u003C!DOCTYPE html\u003E\n\u003Chtml class=\"no-js #RTL_CLASS# page-\u0026APP_PAGE_ID. app-\u0026APP_ALIAS.\" lang=\"\u0026BROWSER_LANGUAGE.\" #TEXT_DIRECTION#\u003E\n\u003Chead\u003E\n  \u003Cmeta http-equiv=\"x-ua-compatible\" content=\"IE=edge\" \/\u003E\n  \u003Cmeta charset=\"utf-8\"\u003E\n  \u003Ctitle\u003E#TITLE#\u003C\/title\u003E\n  #APEX_CSS#\n  #THEME_CSS#\n  #TEMPLATE_CSS#\n  #THEME_STYLE_CSS#\n  #APPLICATION_CSS#\n  #PAGE_CSS#\n  #FAVICONS#\n  #HEAD#\n  \u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" \/\u003E\n\u003C\/head\u003E\n\u003Cbody class=\"t-PageBody t-PageBody--hideLeft t-PageBody--hideActions no-anim t-PageTemplate--standard #PAGE_CSS_CLASSES#\" #TEXT_DIRECTION# #ONLOAD# id=\"t_PageBody\"\u003E\n\u003Ca href=\"#main\" id=\"t_Body_skipToContent\"\u003E\u0026APP_TEXT$UI_PAGE_SKIP_TO_CONTENT.\u003C\/a\u003E\n#FORM_OPEN#\n\u003Cheader class=\"t-Header\" id=\"t_Header\" role=\"banner\"\u003E\n  #REGION_POSITION_07#\n  \u003Cdiv class=\"t-Header-branding\"\u003E\n    \u003Cdiv class=\"t-Header-controls\"\u003E\n      \u003Cbutton class=\"t-Button t-Button--icon t-Button--header t-Button--headerTree\" aria-label=\"\u0026\"APP_TEXT$APEX.TEMPLATE.MAIN_NAV_LABEL\".\" title=\"\u0026\"APP_TEXT$APEX.TEMPLATE.MAIN_NAV_LABEL\".\" id=\"t_Button_navControl\" type=\"button\"\u003E\u003Cspan class=\"t-Header-controlsIcon\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Header-logo\"\u003E\n      \u003Ca href=\"#HOME_LINK#\" class=\"t-Header-logo-link\"\u003E#LOGO#\u003C\/a\u003E\n      #AFTER_LOGO#\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Header-navBar\"\u003E\n      \u003Cdiv class=\"t-Header-navBar--start\"\u003E#BEFORE_NAVIGATION_BAR#\u003C\/div\u003E\n      \u003Cdiv class=\"t-Header-navBar--center\"\u003E#NAVIGATION_BAR#\u003C\/div\u003E\n      \u003Cdiv class=\"t-Header-navBar--end\"\u003E#AFTER_NAVIGATION_BAR#\u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Header-nav\"\u003E#TOP_GLOBAL_NAVIGATION_LIST##REGION_POSITION_06#\u003C\/div\u003E\n\u003C\/header\u003E\n"
+     ,"Body":"\u003Cdiv class=\"t-Body\"\u003E\n  #SIDE_GLOBAL_NAVIGATION_LIST#\n  \u003Cdiv class=\"t-Body-main\"\u003E\n    \u003Cdiv class=\"t-Body-title\" id=\"t_Body_title\"\u003E#REGION_POSITION_01#\u003C\/div\u003E\n    \u003Cdiv class=\"t-Body-content\" id=\"t_Body_content\"\u003E\n      \u003Cmain id=\"main\" class=\"t-Body-mainContent\"\u003E\n        #SUCCESS_MESSAGE##NOTIFICATION_MESSAGE##GLOBAL_NOTIFICATION#\n        \u003Cdiv class=\"t-Body-fullContent\"\u003E#REGION_POSITION_08#\u003C\/div\u003E\n        \u003Cdiv class=\"t-Body-contentInner\"\u003E#BODY#\u003C\/div\u003E\n      \u003C\/main\u003E\n      \u003Cfooter class=\"t-Footer\" id=\"t_Footer\" role=\"contentinfo\"\u003E\n        \u003Cdiv class=\"t-Footer-body\"\u003E\n          \u003Cdiv class=\"t-Footer-content\"\u003E#REGION_POSITION_05#\u003C\/div\u003E\n          \u003Cdiv class=\"t-Footer-apex\"\u003E\n            \u003Cdiv class=\"t-Footer-version\"\u003E#APP_VERSION#\u003C\/div\u003E\n            \u003Cdiv class=\"t-Footer-customize\"\u003E#CUSTOMIZE#\u003C\/div\u003E\n            #BUILT_WITH_LOVE_USING_APEX#\n          \u003C\/div\u003E\n        \u003C\/div\u003E\n        \u003Cdiv class=\"t-Footer-top\"\u003E\n          \u003Ca href=\"#top\" class=\"t-Footer-topButton\" id=\"t_Footer_topButton\" title=\"\u0026\"APP_TEXT$APEX.UI.BACK_TO_TOP\".\" aria-label=\"\u0026\"APP_TEXT$APEX.UI.BACK_TO_TOP\".\"\u003E\u003Cspan class=\"a-Icon icon-up-chevron\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/a\u003E\n        \u003C\/div\u003E\n      \u003C\/footer\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n\u003Cdiv class=\"t-Body-inlineDialogs\" id=\"t_Body_inlineDialogs\"\u003E#REGION_POSITION_04#\u003C\/div\u003E"
+     ,"Footer":"#FORM_CLOSE#\n#DEVELOPER_TOOLBAR#\n#APEX_JAVASCRIPT#\n#GENERATED_CSS#\n#THEME_JAVASCRIPT#\n#TEMPLATE_JAVASCRIPT#\n#APPLICATION_JAVASCRIPT#\n#PAGE_JAVASCRIPT#  \n#GENERATED_JAVASCRIPT#\n\u003C\/body\u003E\n\u003C\/html\u003E\n"
+    }
+   ,"JavaScript":{
+      "Execute when Page Loads":"apex.theme42.initializePage.noSideCol();"
+    }
+   ,"Subtemplate":{
+      "Success Message":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--success t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Success\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-header\"\u003E\n          \u003Ch2 class=\"t-Alert-title\" role=\"alert\"\u003E#SUCCESS_MESSAGE#\u003C\/h2\u003E\n        \u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+     ,"Navigation Bar":"\u003Cul class=\"t-NavigationBar t-NavigationBar--classic\" data-mode=\"classic\"\u003E\n  \u003Cli class=\"t-NavigationBar-item\"\u003E\n    \u003Cspan class=\"t-Button t-Button--icon t-Button--noUI t-Button--header t-Button--navBar t-Button--headerUser\"\u003E\n      \u003Cspan class=\"t-Icon a-Icon icon-user\"\u003E\u003C\/span\u003E\n      \u003Cspan class=\"t-Button-label\"\u003E\u0026APP_USER.\u003C\/span\u003E\n    \u003C\/span\u003E\n  \u003C\/li\u003E#BAR_BODY#\n\u003C\/ul\u003E"
+     ,"Navigation Bar Entry":"\u003Cli class=\"t-NavigationBar-item\"\u003E\n  \u003Ca class=\"t-Button t-Button--icon t-Button--header\" href=\"#LINK#\"\u003E\n    \u003Cspan class=\"t-Icon #IMAGE#\"\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-Button-label\"\u003E#TEXT#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+     ,"Notification":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--warning t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Notification\" role=\"alert\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-body\"\u003E#MESSAGE#\u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Layout":{
+      "Type":"Fixed Number of Columns"
+     ,"Maximum Columns":12
+     ,"Always use Max Columns":true
+     ,"Has Column Span":true
+     ,"Always Render Layout":true
+     ,"Emit Empty Leading Columns":true
+     ,"Emit Empty Trailing Columns":false
+     ,"Default Label Column Span":2
+     ,"First Column Attributes":"col-start"
+     ,"Last Column Attributes":"col-end"
+     ,"Container Template":"\u003Cdiv class=\"container\"\u003E\n#ROWS#\n\u003C\/div\u003E"
+     ,"Row Template":"\u003Cdiv class=\"row #CSS_CLASSES#\"\u003E\n#COLUMNS#\n\u003C\/div\u003E"
+     ,"Column Template":"\u003Cdiv class=\"col col-#COLUMN_SPAN_NUMBER# #CSS_CLASSES# #FIRST_LAST_COLUMN_ATTRIBUTES#\" #ATTRIBUTES#\u003E#CONTENT#\u003C\/div\u003E"
+    }
+   ,"Positions":{
+      "Breadcrumb Position":"REGION_POSITION_01"
+    }
+   ,"Error Page":{
+      "Template":"\u003Cdiv class=\"t-Alert t-Alert--danger t-Alert--wizard t-Alert--defaultIcons\"\u003E\n  \u003Cdiv class=\"t-Alert-wrap\"\u003E\n    \u003Cdiv class=\"t-Alert-icon\"\u003E\n      \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-content\"\u003E\n      \u003Cdiv class=\"t-Alert-body\"\u003E\n        \u003Ch1 class=\"t-Alert-errorTitle\"\u003E#MESSAGE#\u003C\/h1\u003E\n        \u003Cp\u003E#ADDITIONAL_INFO#\u003C\/p\u003E\n        \u003Cdiv class=\"t-Alert-inset\"\u003E#TECHNICAL_INFO#\u003C\/div\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-buttons\"\u003E\n      \u003Cbutton onclick=\"#BACK_LINK#\" class=\"t-Button t-Button--hot w50p t-Button--large\" type=\"button\"\u003E#OK#\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"125909838941127228"
+       ,"Identification":{
+          "Name":"Sticky Header on Mobile"
+         ,"Identifier":"STICKY_HEADER_ON_MOBILE"
+         ,"Sequence":100
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-pageStickyMobileHeader"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This will position the contents of the Breadcrumb Bar region position so it sticks to the top of the screen for small screens."
+        }
+      }
+    ]
+   ,"Display Points":[
+      {
+        "id":"2453562162453382"
+       ,"Identification":{
+          "Name":"After Logo"
+         ,"Template Substitution":"AFTER_LOGO"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2454085829453382"
+       ,"Identification":{
+          "Name":"After Navigation Bar"
+         ,"Template Substitution":"AFTER_NAVIGATION_BAR"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2454566069453382"
+       ,"Identification":{
+          "Name":"Before Navigation Bar"
+         ,"Template Substitution":"BEFORE_NAVIGATION_BAR"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2455023921453382"
+       ,"Identification":{
+          "Name":"Body"
+         ,"Template Substitution":"BODY"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2455545831453382"
+       ,"Identification":{
+          "Name":"Breadcrumb Bar"
+         ,"Template Substitution":"REGION_POSITION_01"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2456024774453382"
+       ,"Identification":{
+          "Name":"Dialogs, Drawers and Popups"
+         ,"Template Substitution":"REGION_POSITION_04"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2456500246453382"
+       ,"Identification":{
+          "Name":"Footer"
+         ,"Template Substitution":"REGION_POSITION_05"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2457028960453382"
+       ,"Identification":{
+          "Name":"Top Navigation"
+         ,"Template Substitution":"REGION_POSITION_06"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2457526779453384"
+       ,"Identification":{
+          "Name":"Banner"
+         ,"Template Substitution":"REGION_POSITION_07"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2458028960453384"
+       ,"Identification":{
+          "Name":"Full Width Content"
+         ,"Template Substitution":"REGION_POSITION_08"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+    ]
   }
  ,{
     "id":"452443100862466212"
    ,"Identification":{
       "Name":"Login"
+     ,"Identifier":"LOGIN"
+     ,"Class":"Login"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2099711150063350616"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Page":{
+      "Type":"Normal Page"
+     ,"Header":"\u003C!DOCTYPE html\u003E\n\u003Chtml class=\"no-js #RTL_CLASS# page-\u0026APP_PAGE_ID. app-\u0026APP_ALIAS.\" lang=\"\u0026BROWSER_LANGUAGE.\" #TEXT_DIRECTION#\u003E\n\u003Chead\u003E\n  \u003Cmeta http-equiv=\"x-ua-compatible\" content=\"IE=edge\" \/\u003E\n  \u003Cmeta charset=\"utf-8\"\u003E\n  \u003Ctitle\u003E#TITLE#\u003C\/title\u003E\n  #APEX_CSS#\n  #THEME_CSS#\n  #TEMPLATE_CSS#\n  #THEME_STYLE_CSS#\n  #APPLICATION_CSS#\n  #PAGE_CSS#\n  #FAVICONS#\n  #HEAD#\n  \u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" \/\u003E\n\u003C\/head\u003E\n\u003Cbody class=\"t-PageBody--login t-PageTemplate--login no-anim #PAGE_CSS_CLASSES#\" #TEXT_DIRECTION# #ONLOAD#\u003E\n#FORM_OPEN#\n\u003Cdiv class=\"t-Login-bg\"\u003E\n  #BACKGROUND_IMAGE#\n  \u003Cdiv class=\"t-Login-bgImg\"\u003E\u003C\/div\u003E\n\u003C\/div\u003E"
+     ,"Body":"\u003Cdiv class=\"t-Login-container\"\u003E\n  \u003Cheader class=\"t-Login-containerHeader\"\u003E#REGION_POSITION_01#\u003C\/header\u003E\n  \u003Cmain class=\"t-Login-containerBody\" id=\"main\"\u003E#SUCCESS_MESSAGE##NOTIFICATION_MESSAGE##GLOBAL_NOTIFICATION##BODY#\u003C\/main\u003E\n  \u003Cfooter class=\"t-Login-containerFooter\"\u003E#REGION_POSITION_02#\u003C\/footer\u003E\n\u003C\/div\u003E\n"
+     ,"Footer":"#FORM_CLOSE#\n#DEVELOPER_TOOLBAR#\n#APEX_JAVASCRIPT#\n#GENERATED_CSS#\n#THEME_JAVASCRIPT#\n#TEMPLATE_JAVASCRIPT#\n#APPLICATION_JAVASCRIPT#\n#PAGE_JAVASCRIPT#\n#GENERATED_JAVASCRIPT#\n\u003C\/body\u003E\n\u003C\/html\u003E"
+    }
+   ,"JavaScript":{
+      "Execute when Page Loads":"apex.theme42.initializePage.appLogin();"
+    }
+   ,"Subtemplate":{
+      "Success Message":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--success t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Success\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-header\"\u003E\n          \u003Ch2 class=\"t-Alert-title\" role=\"alert\"\u003E#SUCCESS_MESSAGE#\u003C\/h2\u003E\n        \u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Success\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+     ,"Notification":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--warning t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Notification\" role=\"alert\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-body\"\u003E#MESSAGE#\u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Notification\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Layout":{
+      "Type":"Fixed Number of Columns"
+     ,"Maximum Columns":12
+     ,"Always use Max Columns":true
+     ,"Has Column Span":true
+     ,"Always Render Layout":true
+     ,"Emit Empty Leading Columns":true
+     ,"Emit Empty Trailing Columns":false
+     ,"Default Label Column Span":2
+     ,"First Column Attributes":"col-start"
+     ,"Last Column Attributes":"col-end"
+     ,"Container Template":"\u003Cdiv class=\"container\"\u003E\n#ROWS#\n\u003C\/div\u003E"
+     ,"Row Template":"\u003Cdiv class=\"row #CSS_CLASSES#\"\u003E\n#COLUMNS#\n\u003C\/div\u003E"
+     ,"Column Template":"\u003Cdiv class=\"col col-#COLUMN_SPAN_NUMBER# #CSS_CLASSES# #FIRST_LAST_COLUMN_ATTRIBUTES#\" #ATTRIBUTES#\u003E#CONTENT#\u003C\/div\u003E"
+    }
+   ,"Positions":{
+      "Breadcrumb Position":"REGION_POSITION_01"
+    }
+   ,"Error Page":{
+      "Template":"\u003Cdiv class=\"t-Alert t-Alert--danger t-Alert--wizard t-Alert--defaultIcons\"\u003E\n  \u003Cdiv class=\"t-Alert-wrap\"\u003E\n    \u003Cdiv class=\"t-Alert-icon\"\u003E\n      \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-content\"\u003E\n      \u003Cdiv class=\"t-Alert-body\"\u003E\n        \u003Ch1 class=\"t-Alert-errorTitle\"\u003E#MESSAGE#\u003C\/h1\u003E\n        \u003Cp\u003E#ADDITIONAL_INFO#\u003C\/p\u003E\n        \u003Cdiv class=\"t-Alert-inset\"\u003E#TECHNICAL_INFO#\u003C\/div\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-buttons\"\u003E\n      \u003Cbutton onclick=\"#BACK_LINK#\" class=\"t-Button t-Button--hot w50p t-Button--large\" type=\"button\"\u003E#OK#\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"125869702990127209"
+       ,"Identification":{
+          "Name":"Split"
+         ,"Identifier":"PAGE_LAYOUT_SPLIT"
+         ,"Group":"Page Layout (2269136639453307)"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-LoginPage--split"
+          ]
+        }
+      }
+     ,{
+        "id":"125870415627127209"
+       ,"Identification":{
+          "Name":"Background 1"
+         ,"Identifier":"PAGE_BACKGROUND_1"
+         ,"Group":"Page Background (2268758312453306)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-LoginPage--bg1"
+          ]
+        }
+      }
+     ,{
+        "id":"125871183296127210"
+       ,"Identification":{
+          "Name":"Background 2"
+         ,"Identifier":"PAGE_BACKGROUND_2"
+         ,"Group":"Page Background (2268758312453306)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-LoginPage--bg2"
+          ]
+        }
+      }
+     ,{
+        "id":"125871826556127210"
+       ,"Identification":{
+          "Name":"Background 3"
+         ,"Identifier":"PAGE_BACKGROUND_3"
+         ,"Group":"Page Background (2268758312453306)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-LoginPage--bg3"
+          ]
+        }
+      }
+    ]
+   ,"Display Points":[
+      {
+        "id":"2409701120453365"
+       ,"Identification":{
+          "Name":"Background Image"
+         ,"Template Substitution":"BACKGROUND_IMAGE"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":12
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2410298476453367"
+       ,"Identification":{
+          "Name":"Content Body"
+         ,"Template Substitution":"BODY"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2410742411453367"
+       ,"Identification":{
+          "Name":"Body Header"
+         ,"Template Substitution":"REGION_POSITION_01"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2411278116453367"
+       ,"Identification":{
+          "Name":"Body Footer"
+         ,"Template Substitution":"REGION_POSITION_02"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+    ]
   }
  ,{
     "id":"452443432752466212"
    ,"Identification":{
       "Name":"Wizard Modal Dialog"
+     ,"Identifier":"WIZARD_MODAL_DIALOG"
+     ,"Class":"No Tabs"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2120348229686426515"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Page":{
+      "Type":"Dialog Page"
+     ,"Header":"\u003C!DOCTYPE html\u003E\n\u003Chtml class=\"no-js #RTL_CLASS# page-\u0026APP_PAGE_ID. app-\u0026APP_ALIAS.\" lang=\"\u0026BROWSER_LANGUAGE.\" #TEXT_DIRECTION#\u003E\n\u003Chead\u003E\n  \u003Cmeta http-equiv=\"x-ua-compatible\" content=\"IE=edge\" \/\u003E\n  \u003Cmeta charset=\"utf-8\"\u003E\n  \u003Ctitle\u003E#TITLE#\u003C\/title\u003E\n  #APEX_CSS#\n  #THEME_CSS#\n  #TEMPLATE_CSS#\n  #THEME_STYLE_CSS#\n  #APPLICATION_CSS#\n  #PAGE_CSS#\n  #FAVICONS#\n  #HEAD#\n  \u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" \/\u003E\n\u003C\/head\u003E\n\u003Cbody class=\"t-Dialog-page t-Dialog-page--wizard t-PageTemplate--wizard #DIALOG_CSS_CLASSES# #PAGE_CSS_CLASSES#\" #TEXT_DIRECTION# #ONLOAD#\u003E\n#FORM_OPEN#"
+     ,"Body":"\u003Cdiv class=\"t-Dialog\" role=\"dialog\" aria-label=\"#TITLE#\"\u003E\n  \u003Cdiv class=\"t-Dialog-header\"\u003E#REGION_POSITION_01#\u003C\/div\u003E\n  \u003Cdiv class=\"t-Dialog-bodyWrapperOut\"\u003E\n    \u003Cdiv class=\"t-Dialog-bodyWrapperIn\"\u003E\n      \u003Cdiv class=\"t-Dialog-body\" role=\"main\"\u003E#SUCCESS_MESSAGE##NOTIFICATION_MESSAGE##GLOBAL_NOTIFICATION##BODY#\u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Dialog-footer\"\u003E#REGION_POSITION_03#\u003C\/div\u003E\n\u003C\/div\u003E"
+     ,"Footer":"#FORM_CLOSE#\n#DEVELOPER_TOOLBAR#\n#APEX_JAVASCRIPT#\n#GENERATED_CSS#\n#THEME_JAVASCRIPT#\n#TEMPLATE_JAVASCRIPT#\n#APPLICATION_JAVASCRIPT#\n#PAGE_JAVASCRIPT#  \n#GENERATED_JAVASCRIPT#\n\u003C\/body\u003E\n\u003C\/html\u003E"
+    }
+   ,"JavaScript":{
+      "Execute when Page Loads":"apex.theme42.initializePage.wizardModal();"
+     ,"Dialog Initialization Code":"apex.theme42.dialog(#PAGE_URL#,{title:#TITLE#,h:#DIALOG_HEIGHT#,w:#DIALOG_WIDTH#,mxw:#DIALOG_MAX_WIDTH#,modal:#IS_MODAL#,dialog:#DIALOG#,dlgCls:\u0027t-Dialog-page--wizard \u0027+#DIALOG_CSS_CLASSES#,#DIALOG_ATTRIBUTES#},#PAGE_CSS_CLASSES#,#TRIGGERING_ELEMENT#)"
+     ,"Dialog Closure Code":"apex.theme42.dialog.close(#IS_MODAL#,#TARGET#)"
+     ,"Dialog Cancel Code":"apex.theme42.dialog.cancel(#IS_MODAL#)"
+    }
+   ,"Subtemplate":{
+      "Success Message":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--success t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Success\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-header\"\u003E\n          \u003Ch2 class=\"t-Alert-title\" role=\"alert\"\u003E#SUCCESS_MESSAGE#\u003C\/h2\u003E\n        \u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Success\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+     ,"Notification":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--warning t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Notification\" role=\"alert\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-body\"\u003E#MESSAGE#\u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Notification\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Layout":{
+      "Type":"Fixed Number of Columns"
+     ,"Maximum Columns":12
+     ,"Always use Max Columns":true
+     ,"Has Column Span":true
+     ,"Always Render Layout":true
+     ,"Emit Empty Leading Columns":true
+     ,"Emit Empty Trailing Columns":false
+     ,"Default Label Column Span":2
+     ,"First Column Attributes":"col-start"
+     ,"Last Column Attributes":"col-end"
+     ,"Container Template":"\u003Cdiv class=\"container\"\u003E\n#ROWS#\n\u003C\/div\u003E"
+     ,"Row Template":"\u003Cdiv class=\"row #CSS_CLASSES#\"\u003E\n#COLUMNS#\n\u003C\/div\u003E"
+     ,"Column Template":"\u003Cdiv class=\"col col-#COLUMN_SPAN_NUMBER# #CSS_CLASSES# #FIRST_LAST_COLUMN_ATTRIBUTES#\" #ATTRIBUTES#\u003E#CONTENT#\u003C\/div\u003E"
+    }
+   ,"Dialog":{
+      "Width":"720"
+     ,"Height":"auto"
+     ,"Maximum Width":"960"
+     ,"Allow Embed In Frame":[
+        "Modal Dialog"
+      ]
+    }
+   ,"Error Page":{
+      "Template":"\u003Cdiv class=\"t-Alert t-Alert--danger t-Alert--wizard t-Alert--defaultIcons\"\u003E\n  \u003Cdiv class=\"t-Alert-wrap\"\u003E\n    \u003Cdiv class=\"t-Alert-icon\"\u003E\n      \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-content\"\u003E\n      \u003Cdiv class=\"t-Alert-body\"\u003E\n        \u003Ch1 class=\"t-Alert-errorTitle\"\u003E#MESSAGE#\u003C\/h1\u003E\n        \u003Cp\u003E#ADDITIONAL_INFO#\u003C\/p\u003E\n        \u003Cdiv class=\"t-Alert-inset\"\u003E#TECHNICAL_INFO#\u003C\/div\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-buttons\"\u003E\n      \u003Cbutton onclick=\"#BACK_LINK#\" class=\"t-Button t-Button--hot w50p t-Button--large\" type=\"button\"\u003E#OK#\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"125913591846127229"
+       ,"Identification":{
+          "Name":"Remove Body Padding"
+         ,"Identifier":"REMOVE_BODY_PADDING"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Dialog--noPadding"
+          ]
+        }
+      }
+     ,{
+        "id":"452443836639466215"
+       ,"Identification":{
+          "Name":"Stretch to Fit Window"
+         ,"Identifier":"STRETCH_TO_FIT_WINDOW"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "ui-dialog--stretch"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Stretch the dialog to fit the browser window."
+        }
+      }
+    ]
+   ,"Display Points":[
+      {
+        "id":"2460393285453385"
+       ,"Identification":{
+          "Name":"Wizard Body"
+         ,"Template Substitution":"BODY"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2460840809453385"
+       ,"Identification":{
+          "Name":"Wizard Progress Bar"
+         ,"Template Substitution":"REGION_POSITION_01"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2461335754453385"
+       ,"Identification":{
+          "Name":"Wizard Buttons"
+         ,"Template Substitution":"REGION_POSITION_03"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+    ]
   }
  ,{
     "id":"452443905361466215"
    ,"Identification":{
       "Name":"Marquee"
+     ,"Identifier":"MASTER_DETAIL"
+     ,"Class":"No Tabs with Sidebar"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"1996914646461572319"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Page":{
+      "Type":"Normal Page"
+     ,"Header":"\u003C!DOCTYPE html\u003E\n\u003Chtml class=\"no-js #RTL_CLASS# page-\u0026APP_PAGE_ID. app-\u0026APP_ALIAS.\" lang=\"\u0026BROWSER_LANGUAGE.\" #TEXT_DIRECTION#\u003E\n\u003Chead\u003E\n  \u003Cmeta http-equiv=\"x-ua-compatible\" content=\"IE=edge\" \/\u003E\n  \u003Cmeta charset=\"utf-8\"\u003E\n  \u003Ctitle\u003E#TITLE#\u003C\/title\u003E\n  #APEX_CSS#\n  #THEME_CSS#\n  #TEMPLATE_CSS#\n  #THEME_STYLE_CSS#\n  #APPLICATION_CSS#\n  #PAGE_CSS#\n  #FAVICONS#\n  #HEAD#\n  \u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" \/\u003E\n\u003C\/head\u003E\n\u003Cbody class=\"t-PageBody t-PageBody--masterDetail t-PageBody--hideLeft no-anim t-PageTemplate--marquee #PAGE_CSS_CLASSES#\" #TEXT_DIRECTION# #ONLOAD# id=\"t_PageBody\"\u003E\n\u003Cscript\u003E(sessionStorage.getItem(\"ORA_WWV_apex.toggleCore.right.\u0026APP_ID..\u0026APP_PAGE_ID..preferenceForExpanded\") === \"true\") ? document.getElementById(\u0027t_PageBody\u0027).classList.add(\u0027js-rightExpanded\u0027) : document.getElementById(\u0027t_PageBody\u0027).classList.add(\u0027js-rightCollapsed\u0027)\u003C\/script\u003E\n\u003Ca href=\"#main\" id=\"t_Body_skipToContent\"\u003E\u0026APP_TEXT$UI_PAGE_SKIP_TO_CONTENT.\u003C\/a\u003E\n#FORM_OPEN#\n\u003Cheader class=\"t-Header\" id=\"t_Header\" role=\"banner\"\u003E\n  #REGION_POSITION_07#\n  \u003Cdiv class=\"t-Header-branding\"\u003E\n    \u003Cdiv class=\"t-Header-controls\"\u003E\n      \u003Cbutton class=\"t-Button t-Button--icon t-Button--header t-Button--headerTree\" aria-label=\"\u0026\"APP_TEXT$APEX.TEMPLATE.MAIN_NAV_LABEL\".\" title=\"\u0026\"APP_TEXT$APEX.TEMPLATE.MAIN_NAV_LABEL\".\" id=\"t_Button_navControl\" type=\"button\"\u003E\u003Cspan class=\"t-Header-controlsIcon\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Header-logo\"\u003E\n      \u003Ca href=\"#HOME_LINK#\" class=\"t-Header-logo-link\"\u003E#LOGO#\u003C\/a\u003E\n      #AFTER_LOGO#\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Header-navBar\"\u003E\n      \u003Cdiv class=\"t-Header-navBar--start\"\u003E#BEFORE_NAVIGATION_BAR#\u003C\/div\u003E\n      \u003Cdiv class=\"t-Header-navBar--center\"\u003E#NAVIGATION_BAR#\u003C\/div\u003E\n      \u003Cdiv class=\"t-Header-navBar--end\"\u003E#AFTER_NAVIGATION_BAR#\u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Header-nav\"\u003E#TOP_GLOBAL_NAVIGATION_LIST##REGION_POSITION_06#\u003C\/div\u003E\n\u003C\/header\u003E"
+     ,"Body":"\u003Cdiv class=\"t-Body\"\u003E\n  #SIDE_GLOBAL_NAVIGATION_LIST#\n  \u003Cdiv class=\"t-Body-main\"\u003E\n    \u003Cdiv class=\"t-Body-title\" id=\"t_Body_title\"\u003E#REGION_POSITION_01#\u003C\/div\u003E\n    \u003Cdiv class=\"t-Body-content\" id=\"t_Body_content\"\u003E\n      \u003Cmain id=\"main\" class=\"t-Body-mainContent\"\u003E\n        #SUCCESS_MESSAGE##NOTIFICATION_MESSAGE##GLOBAL_NOTIFICATION#\n        \u003Cdiv class=\"t-Body-fullContent\"\u003E#REGION_POSITION_08#\u003C\/div\u003E\n        \u003Cdiv class=\"t-Body-info\" id=\"t_Body_info\"\u003E#REGION_POSITION_02#\u003C\/div\u003E\n        \u003Cdiv class=\"t-Body-contentInner\" role=\"main\"\u003E#BODY#\u003C\/div\u003E\n      \u003C\/main\u003E\n      \u003Cfooter class=\"t-Footer\" id=\"t_Footer\" role=\"contentinfo\"\u003E\n        \u003Cdiv class=\"t-Footer-body\"\u003E\n          \u003Cdiv class=\"t-Footer-content\"\u003E#REGION_POSITION_05#\u003C\/div\u003E\n          \u003Cdiv class=\"t-Footer-apex\"\u003E\n            \u003Cdiv class=\"t-Footer-version\"\u003E#APP_VERSION#\u003C\/div\u003E\n            \u003Cdiv class=\"t-Footer-customize\"\u003E#CUSTOMIZE#\u003C\/div\u003E\n            #BUILT_WITH_LOVE_USING_APEX#\n          \u003C\/div\u003E\n        \u003C\/div\u003E\n        \u003Cdiv class=\"t-Footer-top\"\u003E\n          \u003Ca href=\"#top\" class=\"t-Footer-topButton\" id=\"t_Footer_topButton\" title=\"\u0026\"APP_TEXT$APEX.UI.BACK_TO_TOP\".\" aria-label=\"\u0026\"APP_TEXT$APEX.UI.BACK_TO_TOP\".\"\u003E\u003Cspan class=\"a-Icon icon-up-chevron\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/a\u003E\n        \u003C\/div\u003E\n      \u003C\/footer\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Body-actions\" id=\"t_Body_actions\"\u003E\n    \u003Cbutton class=\"t-Body-actionsToggle\" title=\"#EXPAND_COLLAPSE_SIDE_COL_LABEL#\" id=\"t_Button_rightControlButton\" type=\"button\"\u003E\u003Cspan class=\"t-Body-actionsControlsIcon\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n    \u003Cdiv class=\"t-Body-actionsContent\" role=\"complementary\"\u003E#REGION_POSITION_03#\u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n\u003Cdiv class=\"t-Body-inlineDialogs\" id=\"t_Body_inlineDialogs\"\u003E#REGION_POSITION_04#\u003C\/div\u003E"
+     ,"Footer":"#FORM_CLOSE#\n#DEVELOPER_TOOLBAR#\n#APEX_JAVASCRIPT#\n#GENERATED_CSS#\n#THEME_JAVASCRIPT#\n#TEMPLATE_JAVASCRIPT#\n#APPLICATION_JAVASCRIPT#\n#PAGE_JAVASCRIPT#  \n#GENERATED_JAVASCRIPT#\n\u003C\/body\u003E\n\u003C\/html\u003E"
+    }
+   ,"JavaScript":{
+      "File URLs":[
+        "#APEX_FILES#libraries\/apex\/#MIN_DIRECTORY#widget.stickyTableHeader#MIN#.js?v=#APEX_VERSION#"
+       ,"#APEX_FILES#libraries\/apex\/#MIN_DIRECTORY#widget.apexTabs#MIN#.js?v=#APEX_VERSION#"
+      ]
+     ,"Execute when Page Loads":"apex.theme42.initializePage.masterDetail();"
+    }
+   ,"Subtemplate":{
+      "Success Message":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--success t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Success\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-header\"\u003E\n          \u003Ch2 class=\"t-Alert-title\" role=\"alert\"\u003E#SUCCESS_MESSAGE#\u003C\/h2\u003E\n        \u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Success\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+     ,"Navigation Bar":"\u003Cul class=\"t-NavigationBar\" data-mode=\"classic\"\u003E\n  \u003Cli class=\"t-NavigationBar-item\"\u003E\n    \u003Cspan class=\"t-Button t-Button--icon t-Button--noUI t-Button--header t-Button--navBar t-Button--headerUser\"\u003E\n      \u003Cspan class=\"t-Icon a-Icon icon-user\"\u003E\u003C\/span\u003E\n      \u003Cspan class=\"t-Button-label\"\u003E\u0026APP_USER.\u003C\/span\u003E\n    \u003C\/span\u003E\n  \u003C\/li\u003E#BAR_BODY#\n\u003C\/ul\u003E"
+     ,"Navigation Bar Entry":"\u003Cli class=\"t-NavigationBar-item\"\u003E\n  \u003Ca class=\"t-Button t-Button--icon t-Button--header t-Button--navBar\" href=\"#LINK#\"\u003E\n    \u003Cspan class=\"t-Icon #IMAGE#\"\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-Button-label\"\u003E#TEXT#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+     ,"Notification":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--warning t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Notification\" role=\"alert\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-body\"\u003E#MESSAGE#\u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Notification\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Layout":{
+      "Type":"Fixed Number of Columns"
+     ,"Maximum Columns":12
+     ,"Always use Max Columns":true
+     ,"Has Column Span":true
+     ,"Always Render Layout":true
+     ,"Emit Empty Leading Columns":true
+     ,"Emit Empty Trailing Columns":false
+     ,"Default Label Column Span":2
+     ,"First Column Attributes":"col-start"
+     ,"Last Column Attributes":"col-end"
+     ,"Container Template":"\u003Cdiv class=\"container\"\u003E\n#ROWS#\n\u003C\/div\u003E"
+     ,"Row Template":"\u003Cdiv class=\"row #CSS_CLASSES#\"\u003E\n#COLUMNS#\n\u003C\/div\u003E"
+     ,"Column Template":"\u003Cdiv class=\"col col-#COLUMN_SPAN_NUMBER# #CSS_CLASSES# #FIRST_LAST_COLUMN_ATTRIBUTES#\" #ATTRIBUTES#\u003E#CONTENT#\u003C\/div\u003E"
+    }
+   ,"Positions":{
+      "Breadcrumb Position":"REGION_POSITION_01"
+     ,"Sidebar Position":"REGION_POSITION_03"
+    }
+   ,"Error Page":{
+      "Template":"\u003Cdiv class=\"t-Alert t-Alert--danger t-Alert--wizard t-Alert--defaultIcons\"\u003E\n  \u003Cdiv class=\"t-Alert-wrap\"\u003E\n    \u003Cdiv class=\"t-Alert-icon\"\u003E\n      \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-content\"\u003E\n      \u003Cdiv class=\"t-Alert-body\"\u003E\n        \u003Ch1 class=\"t-Alert-errorTitle\"\u003E#MESSAGE#\u003C\/h1\u003E\n        \u003Cp\u003E#ADDITIONAL_INFO#\u003C\/p\u003E\n        \u003Cdiv class=\"t-Alert-inset\"\u003E#TECHNICAL_INFO#\u003C\/div\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-buttons\"\u003E\n      \u003Cbutton onclick=\"#BACK_LINK#\" class=\"t-Button t-Button--hot w50p t-Button--large\" type=\"button\"\u003E#OK#\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"125883011788127215"
+       ,"Identification":{
+          "Name":"Sticky Header on Mobile"
+         ,"Identifier":"STICKY_HEADER_ON_MOBILE"
+         ,"Sequence":100
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-pageStickyMobileHeader"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This will position the contents of the Breadcrumb Bar region position so it sticks to the top of the screen for small screens."
+        }
+      }
+    ]
+   ,"Display Points":[
+      {
+        "id":"2419271372453370"
+       ,"Identification":{
+          "Name":"After Logo"
+         ,"Template Substitution":"AFTER_LOGO"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2419729099453370"
+       ,"Identification":{
+          "Name":"After Navigation Bar"
+         ,"Template Substitution":"AFTER_NAVIGATION_BAR"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2420244947453370"
+       ,"Identification":{
+          "Name":"Before Navigation Bar"
+         ,"Template Substitution":"BEFORE_NAVIGATION_BAR"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2420730469453370"
+       ,"Identification":{
+          "Name":"Body"
+         ,"Template Substitution":"BODY"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":8
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2421224474453370"
+       ,"Identification":{
+          "Name":"Breadcrumb Bar"
+         ,"Template Substitution":"REGION_POSITION_01"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2421736640453370"
+       ,"Identification":{
+          "Name":"Master Detail"
+         ,"Template Substitution":"REGION_POSITION_02"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":8
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2422228997453370"
+       ,"Identification":{
+          "Name":"Right Side Column"
+         ,"Template Substitution":"REGION_POSITION_03"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2422767579453371"
+       ,"Identification":{
+          "Name":"Dialogs, Drawers and Popups"
+         ,"Template Substitution":"REGION_POSITION_04"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2423213208453371"
+       ,"Identification":{
+          "Name":"Footer"
+         ,"Template Substitution":"REGION_POSITION_05"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":8
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2423726414453371"
+       ,"Identification":{
+          "Name":"Top Navigation"
+         ,"Template Substitution":"REGION_POSITION_06"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2424254831453371"
+       ,"Identification":{
+          "Name":"Banner"
+         ,"Template Substitution":"REGION_POSITION_07"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2424769972453371"
+       ,"Identification":{
+          "Name":"Full Width Content"
+         ,"Template Substitution":"REGION_POSITION_08"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":8
+         ,"New Row":true
+        }
+      }
+    ]
   }
  ,{
     "id":"452444891709466217"
    ,"Identification":{
       "Name":"Modal Dialog"
+     ,"Identifier":"MODAL_DIALOG"
+     ,"Class":"No Tabs"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2098960803539086924"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Page":{
+      "Type":"Dialog Page"
+     ,"Header":"\u003C!DOCTYPE html\u003E\n\u003Chtml class=\"no-js #RTL_CLASS# page-\u0026APP_PAGE_ID. app-\u0026APP_ALIAS.\" lang=\"\u0026BROWSER_LANGUAGE.\" #TEXT_DIRECTION#\u003E\n\u003Chead\u003E\n  \u003Cmeta http-equiv=\"x-ua-compatible\" content=\"IE=edge\" \/\u003E\n  \u003Cmeta charset=\"utf-8\"\u003E\n  \u003Ctitle\u003E#TITLE#\u003C\/title\u003E\n  #APEX_CSS#\n  #THEME_CSS#\n  #TEMPLATE_CSS#\n  #THEME_STYLE_CSS#\n  #APPLICATION_CSS#\n  #PAGE_CSS#\n  #FAVICONS#\n  #HEAD#\n  \u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" \/\u003E\n\u003C\/head\u003E\n\u003Cbody class=\"t-Dialog-page t-Dialog-page--standard t-PageTemplate--dialog #DIALOG_CSS_CLASSES# #PAGE_CSS_CLASSES#\" #TEXT_DIRECTION# #ONLOAD#\u003E\n#FORM_OPEN#"
+     ,"Body":"\u003Cdiv class=\"t-Dialog\" role=\"dialog\" aria-label=\"#TITLE#\"\u003E\n  \u003Cdiv class=\"t-Dialog-header\"\u003E#REGION_POSITION_01#\u003C\/div\u003E\n  \u003Cdiv class=\"t-Dialog-bodyWrapperOut\"\u003E\n    \u003Cdiv class=\"t-Dialog-bodyWrapperIn\"\u003E\n      \u003Cdiv class=\"t-Dialog-body\" role=\"main\"\u003E#SUCCESS_MESSAGE##NOTIFICATION_MESSAGE##GLOBAL_NOTIFICATION##BODY#\u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Dialog-footer\"\u003E#REGION_POSITION_03#\u003C\/div\u003E\n\u003C\/div\u003E"
+     ,"Footer":"#FORM_CLOSE#\n#DEVELOPER_TOOLBAR#\n#APEX_JAVASCRIPT#\n#GENERATED_CSS#\n#THEME_JAVASCRIPT#\n#TEMPLATE_JAVASCRIPT#\n#APPLICATION_JAVASCRIPT#\n#PAGE_JAVASCRIPT#  \n#GENERATED_JAVASCRIPT#\n\u003C\/body\u003E\n\u003C\/html\u003E"
+    }
+   ,"JavaScript":{
+      "Execute when Page Loads":"apex.theme42.initializePage.modalDialog();"
+     ,"Dialog Initialization Code":"apex.theme42.dialog(#PAGE_URL#,{title:#TITLE#,h:#DIALOG_HEIGHT#,w:#DIALOG_WIDTH#,mxw:#DIALOG_MAX_WIDTH#,modal:#IS_MODAL#,dialog:#DIALOG#,dlgCls:\u0027t-Dialog-page--standard \u0027+#DIALOG_CSS_CLASSES#,#DIALOG_ATTRIBUTES#},#PAGE_CSS_CLASSES#,#TRIGGERING_ELEMENT#)"
+     ,"Dialog Closure Code":"apex.theme42.dialog.close(#IS_MODAL#,#TARGET#)"
+     ,"Dialog Cancel Code":"apex.theme42.dialog.cancel(#IS_MODAL#)"
+    }
+   ,"Subtemplate":{
+      "Success Message":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--success t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Success\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-header\"\u003E\n          \u003Ch2 class=\"t-Alert-title\" role=\"alert\"\u003E#SUCCESS_MESSAGE#\u003C\/h2\u003E\n        \u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Success\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+     ,"Notification":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--warning t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Notification\" role=\"alert\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-body\"\u003E#MESSAGE#\u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Notification\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Layout":{
+      "Type":"Fixed Number of Columns"
+     ,"Maximum Columns":12
+     ,"Always use Max Columns":true
+     ,"Has Column Span":true
+     ,"Always Render Layout":true
+     ,"Emit Empty Leading Columns":true
+     ,"Emit Empty Trailing Columns":false
+     ,"Default Label Column Span":2
+     ,"First Column Attributes":"col-start"
+     ,"Last Column Attributes":"col-end"
+     ,"Container Template":"\u003Cdiv class=\"container\"\u003E\n#ROWS#\n\u003C\/div\u003E"
+     ,"Row Template":"\u003Cdiv class=\"row #CSS_CLASSES#\"\u003E\n#COLUMNS#\n\u003C\/div\u003E"
+     ,"Column Template":"\u003Cdiv class=\"col col-#COLUMN_SPAN_NUMBER# #CSS_CLASSES# #FIRST_LAST_COLUMN_ATTRIBUTES#\" #ATTRIBUTES#\u003E#CONTENT#\u003C\/div\u003E"
+    }
+   ,"Positions":{
+      "Breadcrumb Position":"REGION_POSITION_01"
+    }
+   ,"Dialog":{
+      "Width":"720"
+     ,"Height":"auto"
+     ,"Maximum Width":"960"
+     ,"Allow Embed In Frame":[
+        "Modal Dialog"
+      ]
+    }
+   ,"Error Page":{
+      "Template":"\u003Cdiv class=\"t-Alert t-Alert--danger t-Alert--wizard t-Alert--defaultIcons\"\u003E\n  \u003Cdiv class=\"t-Alert-wrap\"\u003E\n    \u003Cdiv class=\"t-Alert-icon\"\u003E\n      \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-content\"\u003E\n      \u003Cdiv class=\"t-Alert-body\"\u003E\n        \u003Ch1 class=\"t-Alert-errorTitle\"\u003E#MESSAGE#\u003C\/h1\u003E\n        \u003Cp\u003E#ADDITIONAL_INFO#\u003C\/p\u003E\n        \u003Cdiv class=\"t-Alert-inset\"\u003E#TECHNICAL_INFO#\u003C\/div\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-buttons\"\u003E\n      \u003Cbutton onclick=\"#BACK_LINK#\" class=\"t-Button t-Button--hot w50p t-Button--large\" type=\"button\"\u003E#OK#\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"125894027063127221"
+       ,"Identification":{
+          "Name":"Remove Body Padding"
+         ,"Identifier":"REMOVE_BODY_PADDING"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Dialog--noPadding"
+          ]
+        }
+      }
+     ,{
+        "id":"452445267704466217"
+       ,"Identification":{
+          "Name":"Stretch to Fit Window"
+         ,"Identifier":"STRETCH_TO_FIT_WINDOW"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "ui-dialog--stretch"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Stretch the dialog to fit the browser window."
+        }
+      }
+    ]
+   ,"Display Points":[
+      {
+        "id":"2436661728453376"
+       ,"Identification":{
+          "Name":"Content Body"
+         ,"Template Substitution":"BODY"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2437166519453376"
+       ,"Identification":{
+          "Name":"Dialog Header"
+         ,"Template Substitution":"REGION_POSITION_01"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2437674911453376"
+       ,"Identification":{
+          "Name":"Dialog Footer"
+         ,"Template Substitution":"REGION_POSITION_03"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+    ]
   }
  ,{
     "id":"452445445130466217"
    ,"Identification":{
       "Name":"Minimal (No Navigation)"
+     ,"Identifier":"MINIMAL_NO_NAVIGATION"
+     ,"Class":"Popup"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2977628563533209425"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Page":{
+      "Type":"Normal Page"
+     ,"Header":"\u003C!DOCTYPE html\u003E\n\u003Chtml class=\"no-js #RTL_CLASS# page-\u0026APP_PAGE_ID. app-\u0026APP_ALIAS.\" lang=\"\u0026BROWSER_LANGUAGE.\" #TEXT_DIRECTION#\u003E\n\u003Chead\u003E\n  \u003Cmeta http-equiv=\"x-ua-compatible\" content=\"IE=edge\" \/\u003E\n  \u003Cmeta charset=\"utf-8\"\u003E\n  \u003Ctitle\u003E#TITLE#\u003C\/title\u003E\n  #APEX_CSS#\n  #THEME_CSS#\n  #TEMPLATE_CSS#\n  #THEME_STYLE_CSS#\n  #APPLICATION_CSS#\n  #PAGE_CSS#  \n  #FAVICONS#\n  #HEAD#\n  \u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" \/\u003E\n\u003C\/head\u003E\n\u003Cbody class=\"t-PageBody t-PageBody--hideLeft t-PageBody--hideActions no-anim #PAGE_CSS_CLASSES# t-PageBody--noNav t-PageTemplate--minimal\" #TEXT_DIRECTION# #ONLOAD# id=\"t_PageBody\"\u003E\n\u003Ca href=\"#main\" id=\"t_Body_skipToContent\"\u003E\u0026APP_TEXT$UI_PAGE_SKIP_TO_CONTENT.\u003C\/a\u003E\n#FORM_OPEN#\n\u003Cheader class=\"t-Header\" id=\"t_Header\" role=\"banner\"\u003E\n  #REGION_POSITION_07#\n  \u003Cdiv class=\"t-Header-branding\"\u003E\n    \u003Cdiv class=\"t-Header-controls\"\u003E\n      \u003Cbutton class=\"t-Button t-Button--icon t-Button--header t-Button--headerTree\" aria-label=\"#EXPAND_COLLAPSE_NAV_LABEL#\" title=\"#EXPAND_COLLAPSE_NAV_LABEL#\" id=\"t_Button_navControl\" type=\"button\"\u003E\u003Cspan class=\"t-Icon fa fa-bars\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Header-logo\"\u003E\n      \u003Ca href=\"#HOME_LINK#\" class=\"t-Header-logo-link\"\u003E#LOGO#\u003C\/a\u003E\n      #AFTER_LOGO#\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Header-navBar\"\u003E\n      \u003Cdiv class=\"t-Header-navBar--start\"\u003E#BEFORE_NAVIGATION_BAR#\u003C\/div\u003E\n      \u003Cdiv class=\"t-Header-navBar--center\"\u003E#NAVIGATION_BAR#\u003C\/div\u003E\n      \u003Cdiv class=\"t-Header-navBar--end\"\u003E#AFTER_NAVIGATION_BAR#\u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/header\u003E\n    "
+     ,"Body":"\u003Cdiv class=\"t-Body\"\u003E\n  \u003Cdiv class=\"t-Body-main\"\u003E\n    \u003Cdiv class=\"t-Body-title\" id=\"t_Body_title\"\u003E#REGION_POSITION_01#\u003C\/div\u003E\n    \u003Cdiv class=\"t-Body-content\" id=\"t_Body_content\"\u003E\n      \u003Cmain id=\"main\" class=\"t-Body-mainContent\"\u003E\n        #SUCCESS_MESSAGE##NOTIFICATION_MESSAGE##GLOBAL_NOTIFICATION#\n        \u003Cdiv class=\"t-Body-fullContent\"\u003E#REGION_POSITION_08#\u003C\/div\u003E\n        \u003Cdiv class=\"t-Body-contentInner\"\u003E#BODY#\u003C\/div\u003E\n      \u003C\/main\u003E\n      \u003Cfooter class=\"t-Footer\" id=\"t_Footer\" role=\"contentinfo\"\u003E\n        \u003Cdiv class=\"t-Footer-body\"\u003E\n          \u003Cdiv class=\"t-Footer-content\"\u003E#REGION_POSITION_05#\u003C\/div\u003E\n          \u003Cdiv class=\"t-Footer-apex\"\u003E\n            \u003Cdiv class=\"t-Footer-version\"\u003E#APP_VERSION#\u003C\/div\u003E\n            \u003Cdiv class=\"t-Footer-customize\"\u003E#CUSTOMIZE#\u003C\/div\u003E\n            #BUILT_WITH_LOVE_USING_APEX#\n          \u003C\/div\u003E\n        \u003C\/div\u003E\n        \u003Cdiv class=\"t-Footer-top\"\u003E\n          \u003Ca href=\"#top\" class=\"t-Footer-topButton\" id=\"t_Footer_topButton\" title=\"\u0026\"APP_TEXT$APEX.UI.BACK_TO_TOP\".\" aria-label=\"\u0026\"APP_TEXT$APEX.UI.BACK_TO_TOP\".\"\u003E\u003Cspan class=\"a-Icon icon-up-chevron\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/a\u003E\n        \u003C\/div\u003E\n      \u003C\/footer\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n\u003Cdiv class=\"t-Body-inlineDialogs\" id=\"t_Body_inlineDialogs\"\u003E#REGION_POSITION_04#\u003C\/div\u003E"
+     ,"Footer":"#FORM_CLOSE#\n#DEVELOPER_TOOLBAR#\n#APEX_JAVASCRIPT#\n#GENERATED_CSS#\n#THEME_JAVASCRIPT#\n#TEMPLATE_JAVASCRIPT#\n#APPLICATION_JAVASCRIPT#\n#PAGE_JAVASCRIPT#  \n#GENERATED_JAVASCRIPT#\n\u003C\/body\u003E\n\u003C\/html\u003E\n"
+    }
+   ,"JavaScript":{
+      "Execute when Page Loads":"apex.theme42.initializePage.noSideCol();"
+    }
+   ,"Subtemplate":{
+      "Success Message":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--success t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Success\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-header\"\u003E\n          \u003Ch2 class=\"t-Alert-title\" role=\"alert\"\u003E#SUCCESS_MESSAGE#\u003C\/h2\u003E\n        \u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+     ,"Navigation Bar":"\u003Cul class=\"t-NavigationBar t-NavigationBar--classic\" data-mode=\"classic\"\u003E\n  \u003Cli class=\"t-NavigationBar-item\"\u003E\n    \u003Cspan class=\"t-Button t-Button--icon t-Button--noUI t-Button--header t-Button--navBar t-Button--headerUser\"\u003E\n      \u003Cspan class=\"t-Icon a-Icon icon-user\"\u003E\u003C\/span\u003E\n      \u003Cspan class=\"t-Button-label\"\u003E\u0026APP_USER.\u003C\/span\u003E\n    \u003C\/span\u003E\n  \u003C\/li\u003E#BAR_BODY#\n\u003C\/ul\u003E"
+     ,"Navigation Bar Entry":"\u003Cli class=\"t-NavigationBar-item\"\u003E\n  \u003Ca class=\"t-Button t-Button--icon t-Button--header\" href=\"#LINK#\"\u003E\n    \u003Cspan class=\"t-Icon #IMAGE#\"\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-Button-label\"\u003E#TEXT#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+     ,"Notification":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--warning t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Notification\" role=\"alert\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-body\"\u003E#MESSAGE#\u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Layout":{
+      "Type":"Fixed Number of Columns"
+     ,"Maximum Columns":12
+     ,"Always use Max Columns":true
+     ,"Has Column Span":true
+     ,"Always Render Layout":true
+     ,"Emit Empty Leading Columns":true
+     ,"Emit Empty Trailing Columns":false
+     ,"Default Label Column Span":2
+     ,"First Column Attributes":"col-start"
+     ,"Last Column Attributes":"col-end"
+     ,"Container Template":"\u003Cdiv class=\"container\"\u003E\n#ROWS#\n\u003C\/div\u003E"
+     ,"Row Template":"\u003Cdiv class=\"row #CSS_CLASSES#\"\u003E\n#COLUMNS#\n\u003C\/div\u003E"
+     ,"Column Template":"\u003Cdiv class=\"col col-#COLUMN_SPAN_NUMBER# #CSS_CLASSES# #FIRST_LAST_COLUMN_ATTRIBUTES#\" #ATTRIBUTES#\u003E#CONTENT#\u003C\/div\u003E"
+    }
+   ,"Positions":{
+      "Breadcrumb Position":"REGION_POSITION_01"
+    }
+   ,"Error Page":{
+      "Template":"\u003Cdiv class=\"t-Alert t-Alert--danger t-Alert--wizard t-Alert--defaultIcons\"\u003E\n  \u003Cdiv class=\"t-Alert-wrap\"\u003E\n    \u003Cdiv class=\"t-Alert-icon\"\u003E\n      \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-content\"\u003E\n      \u003Cdiv class=\"t-Alert-body\"\u003E\n        \u003Ch1 class=\"t-Alert-errorTitle\"\u003E#MESSAGE#\u003C\/h1\u003E\n        \u003Cp\u003E#ADDITIONAL_INFO#\u003C\/p\u003E\n        \u003Cdiv class=\"t-Alert-inset\"\u003E#TECHNICAL_INFO#\u003C\/div\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-buttons\"\u003E\n      \u003Cbutton onclick=\"#BACK_LINK#\" class=\"t-Button t-Button--hot w50p t-Button--large\" type=\"button\"\u003E#OK#\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"125890366215127220"
+       ,"Identification":{
+          "Name":"Sticky Header on Mobile"
+         ,"Identifier":"STICKY_HEADER_ON_MOBILE"
+         ,"Sequence":100
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-pageStickyMobileHeader"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This will position the contents of the Breadcrumb Bar region position so it sticks to the top of the screen for small screens."
+        }
+      }
+    ]
+   ,"Display Points":[
+      {
+        "id":"2429822561453373"
+       ,"Identification":{
+          "Name":"After Logo"
+         ,"Template Substitution":"AFTER_LOGO"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2430333828453373"
+       ,"Identification":{
+          "Name":"After Navigation Bar"
+         ,"Template Substitution":"AFTER_NAVIGATION_BAR"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2430893099453373"
+       ,"Identification":{
+          "Name":"Before Navigation Bar"
+         ,"Template Substitution":"BEFORE_NAVIGATION_BAR"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2431315044453375"
+       ,"Identification":{
+          "Name":"Body"
+         ,"Template Substitution":"BODY"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2431817579453375"
+       ,"Identification":{
+          "Name":"Breadcrumb Bar"
+         ,"Template Substitution":"REGION_POSITION_01"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2432367813453375"
+       ,"Identification":{
+          "Name":"Dialogs, Drawers and Popups"
+         ,"Template Substitution":"REGION_POSITION_04"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2432803669453375"
+       ,"Identification":{
+          "Name":"Footer"
+         ,"Template Substitution":"REGION_POSITION_05"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2433387579453375"
+       ,"Identification":{
+          "Name":"Top Navigation"
+         ,"Template Substitution":"REGION_POSITION_06"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2433857247453375"
+       ,"Identification":{
+          "Name":"Banner"
+         ,"Template Substitution":"REGION_POSITION_07"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2434316160453375"
+       ,"Identification":{
+          "Name":"Full Width Content"
+         ,"Template Substitution":"REGION_POSITION_08"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+    ]
   }
  ,{
     "id":"452446252138466218"
    ,"Identification":{
       "Name":"Right Side Column"
+     ,"Identifier":"RIGHT_SIDE_COLUMN"
+     ,"Class":"No Tabs with Sidebar"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2525200116240651575"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Page":{
+      "Type":"Normal Page"
+     ,"Header":"\u003C!DOCTYPE html\u003E\n\u003Chtml class=\"no-js #RTL_CLASS# page-\u0026APP_PAGE_ID. app-\u0026APP_ALIAS.\" lang=\"\u0026BROWSER_LANGUAGE.\" #TEXT_DIRECTION#\u003E\n\u003Chead\u003E\n  \u003Cmeta http-equiv=\"x-ua-compatible\" content=\"IE=edge\" \/\u003E\n  \u003Cmeta charset=\"utf-8\"\u003E \n  \u003Ctitle\u003E#TITLE#\u003C\/title\u003E\n  #APEX_CSS#\n  #THEME_CSS#\n  #TEMPLATE_CSS#\n  #THEME_STYLE_CSS#\n  #APPLICATION_CSS#\n  #PAGE_CSS#\n  #FAVICONS#\n  #HEAD#\n  \u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" \/\u003E\n\u003C\/head\u003E\n\u003Cbody class=\"t-PageBody t-PageBody--hideLeft no-anim t-PageTemplate--rightSideCol #PAGE_CSS_CLASSES#\" #TEXT_DIRECTION# #ONLOAD# id=\"t_PageBody\"\u003E\n\u003Cscript\u003E(sessionStorage.getItem(\"ORA_WWV_apex.toggleCore.right.\u0026APP_ID..\u0026APP_PAGE_ID..preferenceForExpanded\") === \"true\") ? document.getElementById(\u0027t_PageBody\u0027).classList.add(\u0027js-rightExpanded\u0027) : document.getElementById(\u0027t_PageBody\u0027).classList.add(\u0027js-rightCollapsed\u0027)\u003C\/script\u003E\n\u003Ca href=\"#main\" id=\"t_Body_skipToContent\"\u003E\u0026APP_TEXT$UI_PAGE_SKIP_TO_CONTENT.\u003C\/a\u003E\n#FORM_OPEN#\n\u003Cheader class=\"t-Header\" id=\"t_Header\" role=\"banner\"\u003E\n  #REGION_POSITION_07#\n  \u003Cdiv class=\"t-Header-branding\"\u003E\n    \u003Cdiv class=\"t-Header-controls\"\u003E\n      \u003Cbutton class=\"t-Button t-Button--icon t-Button--header t-Button--headerTree\" aria-label=\"\u0026\"APP_TEXT$APEX.TEMPLATE.MAIN_NAV_LABEL\".\" title=\"\u0026\"APP_TEXT$APEX.TEMPLATE.MAIN_NAV_LABEL\".\" id=\"t_Button_navControl\" type=\"button\"\u003E\u003Cspan class=\"t-Header-controlsIcon\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Header-logo\"\u003E\n      \u003Ca href=\"#HOME_LINK#\" class=\"t-Header-logo-link\"\u003E#LOGO#\u003C\/a\u003E\n      #AFTER_LOGO#\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Header-navBar\"\u003E\n      \u003Cdiv class=\"t-Header-navBar--start\"\u003E#BEFORE_NAVIGATION_BAR#\u003C\/div\u003E\n      \u003Cdiv class=\"t-Header-navBar--center\"\u003E#NAVIGATION_BAR#\u003C\/div\u003E\n      \u003Cdiv class=\"t-Header-navBar--end\"\u003E#AFTER_NAVIGATION_BAR#\u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Header-nav\"\u003E#TOP_GLOBAL_NAVIGATION_LIST##REGION_POSITION_06#\u003C\/div\u003E\n\u003C\/header\u003E"
+     ,"Body":"\u003Cdiv class=\"t-Body\"\u003E\n  #SIDE_GLOBAL_NAVIGATION_LIST#\n  \u003Cdiv class=\"t-Body-main\"\u003E\n    \u003Cdiv class=\"t-Body-title\" id=\"t_Body_title\"\u003E#REGION_POSITION_01#\u003C\/div\u003E\n    \u003Cdiv class=\"t-Body-content\" id=\"t_Body_content\"\u003E\n      \u003Cmain id=\"main\" class=\"t-Body-mainContent\"\u003E\n        #SUCCESS_MESSAGE##NOTIFICATION_MESSAGE##GLOBAL_NOTIFICATION#\n        \u003Cdiv class=\"t-Body-fullContent\"\u003E#REGION_POSITION_08#\u003C\/div\u003E\n        \u003Cdiv class=\"t-Body-contentInner\"\u003E#BODY#\u003C\/div\u003E\n      \u003C\/main\u003E\n      \u003Cfooter class=\"t-Footer\" id=\"t_Footer\" role=\"contentinfo\"\u003E\n        \u003Cdiv class=\"t-Footer-body\"\u003E\n          \u003Cdiv class=\"t-Footer-content\"\u003E#REGION_POSITION_05#\u003C\/div\u003E\n          \u003Cdiv class=\"t-Footer-apex\"\u003E\n            \u003Cdiv class=\"t-Footer-version\"\u003E#APP_VERSION#\u003C\/div\u003E\n            \u003Cdiv class=\"t-Footer-customize\"\u003E#CUSTOMIZE#\u003C\/div\u003E\n            #BUILT_WITH_LOVE_USING_APEX#\n          \u003C\/div\u003E\n        \u003C\/div\u003E\n        \u003Cdiv class=\"t-Footer-top\"\u003E\n          \u003Ca href=\"#top\" class=\"t-Footer-topButton\" id=\"t_Footer_topButton\" title=\"\u0026\"APP_TEXT$APEX.UI.BACK_TO_TOP\".\" aria-label=\"\u0026\"APP_TEXT$APEX.UI.BACK_TO_TOP\".\"\u003E\u003Cspan class=\"a-Icon icon-up-chevron\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/a\u003E\n        \u003C\/div\u003E\n      \u003C\/footer\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Body-actions\" id=\"t_Body_actions\"\u003E\n    \u003Cbutton class=\"t-Body-actionsToggle\" aria-label=\"#EXPAND_COLLAPSE_SIDE_COL_LABEL#\" title=\"#EXPAND_COLLAPSE_SIDE_COL_LABEL#\" id=\"t_Button_rightControlButton\" type=\"button\"\u003E\u003Cspan class=\"t-Body-actionsControlsIcon\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n    \u003Cdiv class=\"t-Body-actionsContent\" role=\"complementary\"\u003E#REGION_POSITION_03#\u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n\u003Cdiv class=\"t-Body-inlineDialogs\" id=\"t_Body_inlineDialogs\"\u003E#REGION_POSITION_04#\u003C\/div\u003E"
+     ,"Footer":"#FORM_CLOSE#\n#DEVELOPER_TOOLBAR#\n#APEX_JAVASCRIPT#\n#GENERATED_CSS#\n#THEME_JAVASCRIPT#\n#TEMPLATE_JAVASCRIPT#\n#APPLICATION_JAVASCRIPT#\n#PAGE_JAVASCRIPT#  \n#GENERATED_JAVASCRIPT#\n\u003C\/body\u003E\n\u003C\/html\u003E"
+    }
+   ,"JavaScript":{
+      "Execute when Page Loads":"apex.theme42.initializePage.rightSideCol();"
+    }
+   ,"Subtemplate":{
+      "Success Message":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--success t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Success\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-header\"\u003E\n          \u003Ch2 class=\"t-Alert-title\" role=\"alert\"\u003E#SUCCESS_MESSAGE#\u003C\/h2\u003E\n        \u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Success\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+     ,"Navigation Bar":"\u003Cul class=\"t-NavigationBar\" data-mode=\"classic\"\u003E\n  \u003Cli class=\"t-NavigationBar-item\"\u003E\n    \u003Cspan class=\"t-Button t-Button--icon t-Button--noUI t-Button--header t-Button--navBar t-Button--headerUser\"\u003E\n      \u003Cspan class=\"t-Icon a-Icon icon-user\"\u003E\u003C\/span\u003E\n      \u003Cspan class=\"t-Button-label\"\u003E\u0026APP_USER.\u003C\/span\u003E\n    \u003C\/span\u003E\n  \u003C\/li\u003E#BAR_BODY#\n\u003C\/ul\u003E"
+     ,"Navigation Bar Entry":"\u003Cli class=\"t-NavigationBar-item\"\u003E\n  \u003Ca class=\"t-Button t-Button--icon t-Button--header t-Button--navBar\" href=\"#LINK#\"\u003E\n    \u003Cspan class=\"t-Icon #IMAGE#\"\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-Button-label\"\u003E#TEXT#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+     ,"Notification":"\u003Cdiv class=\"t-Body-alert\"\u003E\n  \u003Cdiv class=\"t-Alert t-Alert--defaultIcons t-Alert--warning t-Alert--horizontal t-Alert--page t-Alert--colorBG\" id=\"t_Alert_Notification\" role=\"alert\"\u003E\n    \u003Cdiv class=\"t-Alert-wrap\"\u003E\n      \u003Cdiv class=\"t-Alert-icon\"\u003E\n        \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-content\"\u003E\n        \u003Cdiv class=\"t-Alert-body\"\u003E#MESSAGE#\u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-buttons\"\u003E\n        \u003Cbutton class=\"t-Button t-Button--noUI t-Button--icon t-Button--closeAlert\" onclick=\"apex.jQuery(\u0027#t_Alert_Notification\u0027).remove();\" type=\"button\" title=\"#CLOSE_NOTIFICATION#\"\u003E\u003Cspan class=\"t-Icon icon-close\"\u003E\u003C\/span\u003E\u003C\/button\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Layout":{
+      "Type":"Fixed Number of Columns"
+     ,"Maximum Columns":12
+     ,"Always use Max Columns":true
+     ,"Has Column Span":true
+     ,"Always Render Layout":true
+     ,"Emit Empty Leading Columns":true
+     ,"Emit Empty Trailing Columns":false
+     ,"Default Label Column Span":2
+     ,"First Column Attributes":"col-start"
+     ,"Last Column Attributes":"col-end"
+     ,"Container Template":"\u003Cdiv class=\"container\"\u003E\n#ROWS#\n\u003C\/div\u003E"
+     ,"Row Template":"\u003Cdiv class=\"row #CSS_CLASSES#\"\u003E\n#COLUMNS#\n\u003C\/div\u003E"
+     ,"Column Template":"\u003Cdiv class=\"col col-#COLUMN_SPAN_NUMBER# #CSS_CLASSES# #FIRST_LAST_COLUMN_ATTRIBUTES#\" #ATTRIBUTES#\u003E#CONTENT#\u003C\/div\u003E"
+    }
+   ,"Positions":{
+      "Breadcrumb Position":"REGION_POSITION_01"
+     ,"Sidebar Position":"REGION_POSITION_03"
+    }
+   ,"Error Page":{
+      "Template":"\u003Cdiv class=\"t-Alert t-Alert--danger t-Alert--wizard t-Alert--defaultIcons\"\u003E\n  \u003Cdiv class=\"t-Alert-wrap\"\u003E\n    \u003Cdiv class=\"t-Alert-icon\"\u003E\n      \u003Cspan class=\"t-Icon\"\u003E\u003C\/span\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-content\"\u003E\n      \u003Cdiv class=\"t-Alert-body\"\u003E\n        \u003Ch1 class=\"t-Alert-errorTitle\"\u003E#MESSAGE#\u003C\/h1\u003E\n        \u003Cp\u003E#ADDITIONAL_INFO#\u003C\/p\u003E\n        \u003Cdiv class=\"t-Alert-inset\"\u003E#TECHNICAL_INFO#\u003C\/div\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-buttons\"\u003E\n      \u003Cbutton onclick=\"#BACK_LINK#\" class=\"t-Button t-Button--hot w50p t-Button--large\" type=\"button\"\u003E#OK#\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"125902507066127225"
+       ,"Identification":{
+          "Name":"Sticky Header on Mobile"
+         ,"Identifier":"STICKY_HEADER_ON_MOBILE"
+         ,"Sequence":100
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-pageStickyMobileHeader"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This will position the contents of the Breadcrumb Bar region position so it sticks to the top of the screen for small screens."
+        }
+      }
+    ]
+   ,"Display Points":[
+      {
+        "id":"2443479113453379"
+       ,"Identification":{
+          "Name":"After Logo"
+         ,"Template Substitution":"AFTER_LOGO"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2443992082453379"
+       ,"Identification":{
+          "Name":"After Navigation Bar"
+         ,"Template Substitution":"AFTER_NAVIGATION_BAR"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2444442333453379"
+       ,"Identification":{
+          "Name":"Before Navigation Bar"
+         ,"Template Substitution":"BEFORE_NAVIGATION_BAR"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2444993417453379"
+       ,"Identification":{
+          "Name":"Body"
+         ,"Template Substitution":"BODY"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":8
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2445440930453379"
+       ,"Identification":{
+          "Name":"Breadcrumb Bar"
+         ,"Template Substitution":"REGION_POSITION_01"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2445906573453379"
+       ,"Identification":{
+          "Name":"Right Column"
+         ,"Template Substitution":"REGION_POSITION_03"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"Maximum Fixed Columns":4
+         ,"New Row":false
+        }
+      }
+     ,{
+        "id":"2446459317453379"
+       ,"Identification":{
+          "Name":"Dialogs, Drawers and Popups"
+         ,"Template Substitution":"REGION_POSITION_04"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":12
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2446962180453379"
+       ,"Identification":{
+          "Name":"Footer"
+         ,"Template Substitution":"REGION_POSITION_05"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":true
+         ,"Buttons":true
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":8
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2447402956453379"
+       ,"Identification":{
+          "Name":"Top Navigation"
+         ,"Template Substitution":"REGION_POSITION_06"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2447978608453379"
+       ,"Identification":{
+          "Name":"Banner"
+         ,"Template Substitution":"REGION_POSITION_07"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":false
+         ,"New Row":true
+        }
+      }
+     ,{
+        "id":"2448480612453381"
+       ,"Identification":{
+          "Name":"Full Width Content"
+         ,"Template Substitution":"REGION_POSITION_08"
+        }
+       ,"Component Type Support":{
+          "Regions":true
+         ,"Items":false
+         ,"Buttons":false
+        }
+       ,"Grid Layout Rendering":{
+          "Grid":true
+         ,"Maximum Fixed Columns":8
+         ,"New Row":true
+        }
+      }
+    ]
   }
 ]

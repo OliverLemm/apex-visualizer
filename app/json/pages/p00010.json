@@ -1140,6 +1140,8 @@
       }
      ,"Execution":{
         "Sequence":60
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -1147,10 +1149,6 @@
        ,"Item(s)":[
           "P0_COMPONENT"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1178,6 +1176,8 @@
       }
      ,"Execution":{
         "Sequence":70
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -1185,10 +1185,6 @@
        ,"Item(s)":[
           "P10_COMPLEXITY_CATEGORY"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1216,12 +1212,10 @@
       }
      ,"Execution":{
         "Sequence":80
+       ,"Event Scope":"Static"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.READY"
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
       }
      ,"Actions":[
         {
@@ -1251,6 +1245,8 @@
       }
      ,"Execution":{
         "Sequence":20
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -1258,10 +1254,6 @@
        ,"Item(s)":[
           "P0_APP_ID"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {

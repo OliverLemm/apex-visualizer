@@ -19,5 +19,8 @@
      ,"Language":"PL\/SQL"
      ,"PL\/SQL Expression":"owa_util.get_cgi_env(\u0027APEX-Nitro\u0027) is not null"
     }
+   ,"Subscription":{
+      "Version Number":1
+    }
   }
 ]

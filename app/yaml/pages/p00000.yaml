@@ -529,6 +529,8 @@ dynamic-actions:
 
   execution: 
     sequence: 20
+    event-scope: Static
+    type: Immediate
 
   when: 
     event: EVENT.EVENT.BROWSER.CHANGE
@@ -540,10 +542,6 @@ dynamic-actions:
   client-side-condition: 
     type: Item is not null
     item: P0_PAGE_ID
-
-  execution: 
-    event-scope: Static
-    type: Immediate
 
   configuration: 
     build-option: deactivated # 291318289212148547
@@ -639,6 +637,8 @@ dynamic-actions:
 
   execution: 
     sequence: 10
+    event-scope: Static
+    type: Immediate
 
   when: 
     event: EVENT.EVENT.BROWSER.CLICK
@@ -648,10 +648,6 @@ dynamic-actions:
   client-side-condition: 
     type: JavaScript expression
     javascript-expression: "$('#details').is(':hidden')"
-
-  execution: 
-    event-scope: Static
-    type: Immediate
 
   actions: 
   - # ====== Action: Show ========================================

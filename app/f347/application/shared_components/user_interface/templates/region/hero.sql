@@ -4,8 +4,8 @@ begin
 --     REGION TEMPLATE: HERO
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2023.04.28'
-,p_release=>'23.1.5'
+ p_version_yyyy_mm_dd=>'2023.10.31'
+,p_release=>'23.2.1'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -43,7 +43,7 @@ wwv_flow_imp_shared.create_plug_template(
 ,p_translate_this_template=>'N'
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2491738369530082)
+ p_id=>wwv_flow_imp.id(2563431148453432)
 ,p_plug_template_id=>wwv_flow_imp.id(452456691272466243)
 ,p_name=>'Region Body'
 ,p_placeholder=>'BODY'
@@ -54,7 +54,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2492282364530082)
+ p_id=>wwv_flow_imp.id(2563971312453432)
 ,p_plug_template_id=>wwv_flow_imp.id(452456691272466243)
 ,p_name=>'Next'
 ,p_placeholder=>'NEXT'
@@ -65,7 +65,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2492745199530082)
+ p_id=>wwv_flow_imp.id(2564439427453432)
 ,p_plug_template_id=>wwv_flow_imp.id(452456691272466243)
 ,p_name=>'Search Field and Smart Filters'
 ,p_placeholder=>'SMART_FILTERS'
@@ -76,7 +76,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2493223254530082)
+ p_id=>wwv_flow_imp.id(2564985203453432)
 ,p_plug_template_id=>wwv_flow_imp.id(452456691272466243)
 ,p_name=>'Sub Regions'
 ,p_placeholder=>'SUB_REGIONS'
@@ -87,7 +87,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2493708048530082)
+ p_id=>wwv_flow_imp.id(2565406650453434)
 ,p_plug_template_id=>wwv_flow_imp.id(452456691272466243)
 ,p_name=>'Up'
 ,p_placeholder=>'UP'

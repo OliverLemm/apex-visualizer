@@ -21,12 +21,7 @@
   }
  ,"Security":{
     "Authentication":"Page Is Public"
-  }
- ,"Advanced":{
-    "Enable Meta Tags":false
-  }
- ,"Security":{
-    "Deep Linking":"Application Default"
+   ,"Deep Linking":"Application Default"
    ,"Page Access Protection":"Unrestricted"
    ,"Form Auto Complete":"Off"
    ,"Browser Cache":"Application Default"
@@ -35,7 +30,8 @@
     "Rejoin Sessions":"Application Default"
   }
  ,"Advanced":{
-    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+    "Enable Meta Tags":false
+   ,"Enable duplicate page submissions":"Yes - Enable page to be re-posted"
    ,"Reload on Submit":"Only for Success"
   }
  ,"Server Cache":{

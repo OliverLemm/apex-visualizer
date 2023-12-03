@@ -4,8 +4,8 @@ begin
 --     PAGE: 00720
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2023.04.28'
-,p_release=>'23.1.5'
+ p_version_yyyy_mm_dd=>'2023.10.31'
+,p_release=>'23.2.1'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -22,7 +22,7 @@ wwv_flow_imp_page.create_page(
 ,p_protection_level=>'C'
 ,p_page_component_map=>'11'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20231203170902'
+,p_last_upd_yyyymmddhh24miss=>'20231203214525'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(72910675567934407)
@@ -84,20 +84,103 @@ wwv_flow_imp_page.create_page_plug(
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
-wwv_flow_imp_page.create_page_plug(
+wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(132592428687613229)
-,p_plug_name=>'7.2 Querying Template Component Metadata'
+,p_name=>'7.2 Querying Template Component Metadata'
+,p_region_name=>'av-232-desup-72'
 ,p_parent_plug_id=>wwv_flow_imp.id(72911772336934418)
+,p_template=>wwv_flow_imp.id(452454481275466240)
+,p_display_sequence=>20
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
-,p_plug_template=>wwv_flow_imp.id(452454481275466240)
-,p_plug_display_sequence=>20
-,p_plug_display_point=>'SUB_REGIONS'
-,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_display_point=>'SUB_REGIONS'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select r.page_id',
+'      ,r.page_name',
+'      ,r.region_name',
+'from apex_application_page_regions r',
+'where r.application_id = :P0_APP_ID',
+'and r.template_component_type_code is not null',
+'and (r.attribute_01 is not null or --',
+'      r.attribute_02 is not null or --',
+'      r.attribute_03 is not null or --',
+'      r.attribute_04 is not null or --',
+'      r.attribute_05 is not null or --',
+'      r.attribute_06 is not null or --',
+'      r.attribute_07 is not null or --  ',
+'      r.attribute_08 is not null or --',
+'      r.attribute_09 is not null or --  ',
+'      r.attribute_10 is not null or --',
+'      r.attribute_11 is not null or --',
+'      r.attribute_12 is not null or --',
+'      r.attribute_13 is not null or --',
+'      r.attribute_14 is not null or --',
+'      r.attribute_15 is not null or --',
+'      r.attribute_16 is not null or --',
+'      r.attribute_17 is not null or --  ',
+'      r.attribute_18 is not null or --',
+'      r.attribute_19 is not null or --  ',
+'      r.attribute_20 is not null or --',
+'      r.attribute_21 is not null or --',
+'      r.attribute_22 is not null or --',
+'      r.attribute_23 is not null or --',
+'      r.attribute_24 is not null or --',
+'      r.attribute_25 is not null)'))
+,p_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'For template components only, the ATTRIBUTE_01...ATTRIBUTE_25 columns of APEX_APPLICATION_PAGE_REGIONS and APEX_APPLICATION_PAGE_IR_COL public views now return null.<br />',
-'Instead, use the new ATTRIBUTES column that stores a JSON object of all attribute values. Use the attribute''s Static ID as the object key. Note that a table alias is always needed when using the JSON dot notation.<br />',
-'<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> for this check your APEX must be 23.2</b>'))
-,p_attribute_01=>'N'
-,p_attribute_02=>'HTML'
+'Instead, use the new ATTRIBUTES column that stores a JSON object of all attribute values. Use the attribute''s Static ID as the object key. Note that a table alias is always needed when using the JSON dot notation.'))
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>false
+,p_query_row_template=>wwv_flow_imp.id(452468948793466267)
+,p_query_num_rows=>15
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Template Component with old Metadata used</b>'
+,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(37290400113264646)
+,p_query_column_id=>1
+,p_column_alias=>'PAGE_ID'
+,p_column_display_sequence=>10
+,p_column_heading=>'Page Id'
+,p_use_as_row_header=>'N'
+,p_column_alignment=>'RIGHT'
+,p_heading_alignment=>'RIGHT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(37290544268264647)
+,p_query_column_id=>2
+,p_column_alias=>'PAGE_NAME'
+,p_column_display_sequence=>20
+,p_column_heading=>'Page Name'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(37290657322264648)
+,p_query_column_id=>3
+,p_column_alias=>'REGION_NAME'
+,p_column_display_sequence=>30
+,p_column_heading=>'Region Name'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_page_da_event(
  p_id=>wwv_flow_imp.id(20639674970063631)

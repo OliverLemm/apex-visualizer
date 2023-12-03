@@ -3,7 +3,7 @@
  ,"Identification":{
     "Name":"APEX Visualizer"
    ,"Alias":"AV"
-   ,"Version":"23.1.2"
+   ,"Version":"23.2"
   }
  ,"Row Search":{
     "Tokenize":false
@@ -24,6 +24,7 @@
    ,"Logging":true
    ,"Debugging":true
    ,"Compatibility Mode":"21.2 \/ 22.1 \/ 22.2"
+   ,"Pass ECID":"N"
   }
  ,"Authentication":{
     "Public User":"APEX_PUBLIC_USER"
@@ -44,9 +45,6 @@
    ,"Embed in Frames":"Deny"
    ,"Referrer Policy":"strict-origin-when-cross-origin"
    ,"HTML Escaping Mode":"Extended"
-  }
- ,"Advanced":{
-    "Pass ECID":"N"
   }
  ,"Database Session":{
     "Parsing Schema":"APEX_VISUALIZER"
@@ -114,4 +112,145 @@
    ,"Enable End Users to choose Theme Style":false
    ,"Add \"Built with APEX\" to Footer":true
   }
+ ,"Component Settings":[
+    {
+      "id":"749327167872204"
+     ,"Identification":{
+        "Name":"NATIVE_MAP_REGION"
+       ,"Type":"Region"
+      }
+     ,"Settings":{
+        "Attribute 1":"Y"
+      }
+     ,"Subscription":{
+        "Version Number":1
+      }
+    }
+   ,{
+      "id":"1423689913401021"
+     ,"Identification":{
+        "Name":"NATIVE_ADFBC"
+       ,"Type":"REST Data Source"
+      }
+     ,"Subscription":{
+        "Version Number":63780166
+      }
+    }
+   ,{
+      "id":"1470406920886125"
+     ,"Identification":{
+        "Name":"NATIVE_DATE_PICKER_APEX"
+       ,"Type":"Item"
+      }
+     ,"Settings":{
+        "Attribute 1":"MONTH-PICKER:YEAR-PICKER"
+       ,"Attribute 2":"VISIBLE"
+       ,"Attribute 3":"15"
+       ,"Attribute 4":"FOCUS"
+      }
+     ,"Subscription":{
+        "Version Number":1
+      }
+    }
+   ,{
+      "id":"6674292391672879"
+     ,"Identification":{
+        "Name":"NATIVE_GEOCODED_ADDRESS"
+       ,"Type":"Item"
+      }
+     ,"Settings":{
+        "Attribute 1":"RELAX_HOUSE_NUMBER"
+       ,"Attribute 2":"N"
+       ,"Attribute 3":"POPUP:ITEM"
+       ,"Attribute 4":"default"
+       ,"Attribute 6":"LIST"
+      }
+     ,"Subscription":{
+        "Version Number":1
+      }
+    }
+   ,{
+      "id":"125634287171118390"
+     ,"Identification":{
+        "Name":"NATIVE_SINGLE_CHECKBOX"
+       ,"Type":"Item"
+      }
+     ,"Settings":{
+        "Attribute 1":"Y"
+       ,"Attribute 2":"N"
+      }
+     ,"Subscription":{
+        "Version Number":1
+      }
+    }
+   ,{
+      "id":"125634625873118390"
+     ,"Identification":{
+        "Name":"NATIVE_STAR_RATING"
+       ,"Type":"Item"
+      }
+     ,"Settings":{
+        "Attribute 1":"fa-star"
+       ,"Attribute 4":"#VALUE#"
+      }
+     ,"Subscription":{
+        "Version Number":1
+      }
+    }
+   ,{
+      "id":"452439741163466178"
+     ,"Identification":{
+        "Name":"NATIVE_IR"
+       ,"Type":"Region"
+      }
+     ,"Settings":{
+        "Attribute 1":"IG"
+      }
+     ,"Subscription":{
+        "Version Number":1
+      }
+    }
+   ,{
+      "id":"452439786945466178"
+     ,"Identification":{
+        "Name":"NATIVE_DISPLAY_SELECTOR"
+       ,"Type":"Region"
+      }
+     ,"Settings":{
+        "Attribute 1":"Y"
+      }
+     ,"Subscription":{
+        "Version Number":1
+      }
+    }
+   ,{
+      "id":"452439931379466178"
+     ,"Identification":{
+        "Name":"NATIVE_YES_NO"
+       ,"Type":"Item"
+      }
+     ,"Settings":{
+        "Attribute 1":"Y"
+       ,"Attribute 3":"N"
+       ,"Attribute 5":"SWITCH"
+      }
+     ,"Subscription":{
+        "Version Number":1
+      }
+    }
+   ,{
+      "id":"452440133844466179"
+     ,"Identification":{
+        "Name":"NATIVE_COLOR_PICKER"
+       ,"Type":"Item"
+      }
+     ,"Settings":{
+        "Attribute 1":"FULL"
+       ,"Attribute 2":"POPUP"
+      }
+     ,"Subscription":{
+        "Version Number":1
+      }
+    }
+  ]
 }

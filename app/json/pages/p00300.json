@@ -584,6 +584,8 @@
       }
      ,"Execution":{
         "Sequence":10
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -593,10 +595,6 @@
          ,"P0_PAGE_ID"
          ,"P0_BEST_PRACTICE"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -656,6 +654,8 @@
       }
      ,"Execution":{
         "Sequence":20
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -663,10 +663,6 @@
        ,"Item(s)":[
           "P300_COMPONENT_TYPE"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {

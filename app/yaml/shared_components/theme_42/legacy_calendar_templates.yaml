@@ -3,4 +3,13 @@
   id: 452482344230466301
   identification: 
     name: Calendar
+    identifier: CALENDAR
+    class: Calendar
+
+  subscription: 
+    master: 
+      referenced-id: 4070916747979059326
+
+  advanced: 
+    translatable: false
 

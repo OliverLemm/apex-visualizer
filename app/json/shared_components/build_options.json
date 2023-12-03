@@ -9,5 +9,8 @@
      ,"Default on Export":"Same as Current Status"
      ,"On Upgrade Keep Status":false
     }
+   ,"Subscription":{
+      "Version Number":1
+    }
   }
 ]

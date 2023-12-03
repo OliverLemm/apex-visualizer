@@ -235,7 +235,45 @@ regions:
   id: 132592428687613229
   identification: 
     title: 7.2 Querying Template Component Metadata
-    type: Static Content
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select r.page_id
+            ,r.page_name
+            ,r.region_name
+      from apex_application_page_regions r
+      where r.application_id = :P0_APP_ID
+      and r.template_component_type_code is not null
+      and (r.attribute_01 is not null or --
+            r.attribute_02 is not null or --
+            r.attribute_03 is not null or --
+            r.attribute_04 is not null or --
+            r.attribute_05 is not null or --
+            r.attribute_06 is not null or --
+            r.attribute_07 is not null or --  
+            r.attribute_08 is not null or --
+            r.attribute_09 is not null or --  
+            r.attribute_10 is not null or --
+            r.attribute_11 is not null or --
+            r.attribute_12 is not null or --
+            r.attribute_13 is not null or --
+            r.attribute_14 is not null or --
+            r.attribute_15 is not null or --
+            r.attribute_16 is not null or --
+            r.attribute_17 is not null or --  
+            r.attribute_18 is not null or --
+            r.attribute_19 is not null or --  
+            r.attribute_20 is not null or --
+            r.attribute_21 is not null or --
+            r.attribute_22 is not null or --
+            r.attribute_23 is not null or --
+            r.attribute_24 is not null or --
+            r.attribute_25 is not null)
+    page-items-to-submit: 
+    - P0_APP_ID
 
   layout: 
     sequence: 20
@@ -260,14 +298,14 @@ regions:
     landmark-type: Template Default
 
   advanced: 
+    static-id: av-232-desup-72
     region-display-selector: false
     exclude-title-from-translation: false
 
   header-and-footer: 
     header-text: |
       For template components only, the ATTRIBUTE_01...ATTRIBUTE_25 columns of APEX_APPLICATION_PAGE_REGIONS and APEX_APPLICATION_PAGE_IR_COL public views now return null.<br />
-      Instead, use the new ATTRIBUTES column that stores a JSON object of all attribute values. Use the attribute's Static ID as the object key. Note that a table alias is always needed when using the JSON dot notation.<br />
-      <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> for this check your APEX must be 23.2</b>
+      Instead, use the new ATTRIBUTES column that stores a JSON object of all attribute values. Use the attribute's Static ID as the object key. Note that a table alias is always needed when using the JSON dot notation.
 
   server-cache: 
     caching: Disabled
@@ -276,9 +314,141 @@ regions:
     customizable: Not Customizable By End Users
 
   attributes: 
-    settings: 
-      output-as: HTML
-      expand-shortcuts: false
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 15
+
+    appearance: 
+      template-type: Theme
+      template: Standard # 452468948793466267
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    messages: 
+      when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Template Component with old Metadata used</b>
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: PAGE_ID =====================================
+    id: 37290400113264646
+    identification: 
+      column-name: PAGE_ID
+      type: Plain Text
+
+    heading: 
+      heading: Page Id
+      alignment: end
+
+    layout: 
+      sequence: 10
+      column-alignment: end
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGE_NAME ===================================
+    id: 37290544268264647
+    identification: 
+      column-name: PAGE_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Page Name
+      alignment: start
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: REGION_NAME =================================
+    id: 37290657322264648
+    identification: 
+      column-name: REGION_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Region Name
+      alignment: start
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
 
 dynamic-actions: 
 - # ====== Dynamic Action: change P0_APP_ID - refresh regions ==
@@ -288,16 +458,14 @@ dynamic-actions:
 
   execution: 
     sequence: 10
+    event-scope: Static
+    type: Immediate
 
   when: 
     event: EVENT.EVENT.BROWSER.CHANGE
     selection-type: Item(s)
     item(s): 
     - P0_APP_ID
-
-  execution: 
-    event-scope: Static
-    type: Immediate
 
   actions: 
   - # ====== Action: Execute JavaScript Code =====================
@@ -321,12 +489,10 @@ dynamic-actions:
 
   execution: 
     sequence: 30
+    event-scope: Static
 
   when: 
     event: EVENT.EVENT.BROWSER.READY
-
-  execution: 
-    event-scope: Static
 
   actions: 
   - # ====== Action: Execute JavaScript Code =====================
@@ -356,15 +522,13 @@ dynamic-actions:
 
   execution: 
     sequence: 20
+    event-scope: Static
+    type: Immediate
 
   when: 
     event: EVENT.EVENT.BROWSER.CLICK
     selection-type: Button
     button: Refresh # 45068108221137631
-
-  execution: 
-    event-scope: Static
-    type: Immediate
 
   actions: 
   - # ====== Action: Execute JavaScript Code =====================

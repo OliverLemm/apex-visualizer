@@ -4,8 +4,8 @@ begin
 --     MENU:  Breadcrumb
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2023.04.28'
-,p_release=>'23.1.5'
+ p_version_yyyy_mm_dd=>'2023.10.31'
+,p_release=>'23.2.1'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -58,7 +58,6 @@ wwv_flow_imp_shared.create_menu_option(
 );
 wwv_flow_imp_shared.create_menu_option(
  p_id=>wwv_flow_imp.id(449487024914813011)
-,p_parent_id=>0
 ,p_short_name=>'Apps'
 ,p_long_name=>'Applications'
 ,p_link=>'f?p=&APP_ID.:10:&SESSION.::&DEBUG.:::'
@@ -66,7 +65,6 @@ wwv_flow_imp_shared.create_menu_option(
 );
 wwv_flow_imp_shared.create_menu_option(
  p_id=>wwv_flow_imp.id(449487545049847382)
-,p_parent_id=>0
 ,p_short_name=>'Pages'
 ,p_link=>'f?p=&APP_ID.:20:&SESSION.::&DEBUG.:::'
 ,p_page_id=>20

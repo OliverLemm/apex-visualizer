@@ -108,9 +108,12 @@
   --a-filedrop-focus-border-color: var(--a-field-input-focus-border-color);
   --a-filedrop-item-spacing: 0.25rem;
   --a-filedrop-icon-size: 2rem;
+  --a-filedrop-icon-spacing: 0.25rem;
   --a-filedrop-heading-font-size: 1.25rem;
   --a-filedrop-heading-line-height: 1.75rem;
   --a-filedrop-heading-text-color: var(--ut-component-text-title-color);
+  --a-filedrop-count-badge-font-size: 0.625rem;
+  --a-filedrop-count-badge-line-height: 0.875rem;
   --a-filedrop-font-size: 0.875rem;
   --a-filedrop-line-height: 1rem;
   --a-filedrop-progress-width: 15rem;
@@ -346,6 +349,9 @@
   --ojet-medium-font-size: 1rem;
   --ojet-large-font-size: 1.125rem;
   --ojet-larger-font-size: 1.25rem;
+  --ojet-tooltip-primary-text-color: #000000;
+  --ojet-tooltip-secondary-text-color: rgba(0, 0, 0, 0.65);
+  --ojet-tooltip-disabled-text-color: rgba(0, 0, 0, 0.4);
 }
 :root {
   --ut-color-scheme: dark;
@@ -412,12 +418,17 @@
   --ut-tabs-item-hint-highlight-color: rgba(255, 255, 255, 0.2);
   --ut-tabs-item-active-font-weight: var(--a-base-font-weight-bold, 700);
   --ut-comment-chat-background-color: rgba(255, 255, 255, 0.1);
+  --ut-comment-chat-active-background-color: rgba(255, 255, 255, 0.15);
   --ut-resultsregion-background-color: #000;
   --ut-resultsregion-border-color: var(--ut-region-border-color);
   --ut-resultsregion-search-border-color: rgba(255, 255, 255, 0.15);
   --ut-resultsregion-search-background-color: rgba(255, 255, 255, 0.025);
   --ut-wp-marker-color: #262626;
   --ut-wp-track-color: #262626;
+  --a-qrcode-size: 8rem;
+  --a-qrcode-size-sm: 8rem;
+  --a-qrcode-size-md: 16rem;
+  --a-qrcode-size-lg: 32rem;
   --fc-neutral-bg-color: rgba(255, 255, 255, 0.2);
   --fc-neutral-text-color: #fff;
   --fc-event-selected-overlay-color: rgba(255, 255, 255, 0.2);
@@ -1940,6 +1951,7 @@ input:checked + .u-radio:after {
   --a-datepicker-calendar-day-current-background-color: rgba(255, 255, 255, 0.2);
   --a-datepicker-calendar-day-current-text-color: var(--a-palette-primary-contrast);
   --a-datepicker-calendar-day-current-border-color: rgba(255, 255, 255, 0.2);
+  --a-filedrop-icon-action-background-color: #000000;
   --prism-comment: #6A9955;
   --prism-string: #CE9178;
   --prism-literal: #9CDCFE;

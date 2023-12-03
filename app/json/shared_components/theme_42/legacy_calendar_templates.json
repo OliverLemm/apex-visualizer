@@ -3,6 +3,16 @@
     "id":"452482344230466301"
    ,"Identification":{
       "Name":"Calendar"
+     ,"Identifier":"CALENDAR"
+     ,"Class":"Calendar"
+    }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"4070916747979059326"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
     }
   }
 ]

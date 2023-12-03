@@ -128,7 +128,6 @@
       sequence: 10
 
     appearance: 
-      parent-entry: 0 # 0
       long-name: Applications
 
     link: 
@@ -144,9 +143,6 @@
 
     execution: 
       sequence: 10
-
-    appearance: 
-      parent-entry: 0 # 0
 
     link: 
       target: 

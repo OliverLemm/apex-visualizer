@@ -3,78 +3,2488 @@
     "id":"126082212261127348"
    ,"Identification":{
       "Name":"Top Navigation Mega Menu"
+     ,"Identifier":"TOP_NAVIGATION_MEGA_MENU"
+     ,"Class":"Pull Down Menu"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"1665447133514362075"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"List":{
+      "Before Rows":"\u003Cdiv class=\"t-MegaMenu #COMPONENT_CSS_CLASSES#\" id=\"t_MenuNav\" style=\"display:none;\"\u003E\n  \u003Cdiv class=\"a-Menu-content t-MegaMenu-container\"\u003E\n    \u003Cdiv class=\"t-MegaMenu-body\"\u003E\n    \u003Cul class=\"t-MegaMenu-list t-MegaMenu-list--top\"\u003E"
+    }
+   ,"Entry":{
+      "Current":"\u003Cli class=\"t-MegaMenu-item t-MegaMenu-item--top t-MegaMenu-item--noSub is-active #A04#\" data-current=\"true\" data-id=\"#A01#\" data-shortcut=\"#A05#\"\u003E\n  \u003Cspan class=\"a-Menu-item t-MegaMenu-itemBody #A08#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\n    \u003Ca class=\"a-Menu-label t-MegaMenu-labelWrap\" href=\"#LINK#\" target=\"#A06#\"\u003E\n      \u003Cspan class=\"t-MegaMenu-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\n      \u003Cspan class=\"t-MegaMenu-desc\"\u003E#A03#\u003C\/span\u003E\n    \u003C\/a\u003E\n    \u003Cspan class=\"t-MegaMenu-badge #A07#\"\u003E#A02#\u003C\/span\u003E\n  \u003C\/span\u003E\n\u003C\/li\u003E"
+     ,"Current with Sublist":"\u003Cli class=\"t-MegaMenu-item t-MegaMenu-item--top t-MegaMenu-item--hasSub is-active #A04#\" data-current=\"true\" data-id=\"#A01#\" data-shortcut=\"#A05#\"\u003E\n  \u003Cspan class=\"a-Menu-item t-MegaMenu-itemBody #A08#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\n    \u003Ca class=\"a-Menu-label t-MegaMenu-labelWrap\" href=\"#LINK#\" target=\"#A06#\"\u003E\n      \u003Cspan class=\"t-MegaMenu-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\n      \u003Cspan class=\"t-MegaMenu-desc\"\u003E#A03#\u003C\/span\u003E\n    \u003C\/a\u003E\n    \u003Cspan class=\"t-MegaMenu-badge #A07#\"\u003E#A02#\u003C\/span\u003E\n  \u003C\/span\u003E"
+     ,"Noncurrent":"\u003Cli class=\"t-MegaMenu-item t-MegaMenu-item--top t-MegaMenu-item--noSub #A04#\" data-current=\"false\" data-id=\"#A01#\" data-shortcut=\"#A05#\"\u003E\n  \u003Cspan class=\"a-Menu-item t-MegaMenu-itemBody #A08#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\n    \u003Ca class=\"a-Menu-label t-MegaMenu-labelWrap\" href=\"#LINK#\" target=\"#A06#\"\u003E\n      \u003Cspan class=\"t-MegaMenu-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\n      \u003Cspan class=\"t-MegaMenu-desc\"\u003E#A03#\u003C\/span\u003E\n    \u003C\/a\u003E\n    \u003Cspan class=\"t-MegaMenu-badge #A07#\"\u003E#A02#\u003C\/span\u003E\n  \u003C\/span\u003E\n\u003C\/li\u003E"
+     ,"Noncurrent with Sublist":"\u003Cli class=\"t-MegaMenu-item t-MegaMenu-item--top t-MegaMenu-item--hasSub #A04#\" data-current=\"false\" data-id=\"#A01#\" data-shortcut=\"#A05#\"\u003E\n  \u003Cspan class=\"a-Menu-item t-MegaMenu-itemBody #A08#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\n    \u003Ca class=\"a-Menu-label t-MegaMenu-labelWrap\" href=\"#LINK#\" target=\"#A06#\"\u003E\n      \u003Cspan class=\"t-MegaMenu-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\n      \u003Cspan class=\"t-MegaMenu-desc\"\u003E#A03#\u003C\/span\u003E\n    \u003C\/a\u003E\n    \u003Cspan class=\"t-MegaMenu-badge #A07#\"\u003E#A02#\u003C\/span\u003E\n  \u003C\/span\u003E\n\u003C\/li\u003E"
+    }
+   ,"SubList":{
+      "Before Rows":"\u003Cul class=\"t-MegaMenu-list t-MegaMenu-list--sub\"\u003E"
+     ,"After Rows":"\u003C\/ul\u003E\u003C\/li\u003E"
+    }
+   ,"Sublist Entry":{
+      "Current":"\u003Cli class=\"t-MegaMenu-item is-active #A04#\" data-current=\"true\" data-id=\"#A01#\" data-shortcut=\"#A05#\"\u003E\n  \u003Cspan class=\"a-Menu-item t-MegaMenu-itemBody #A08#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\n    \u003Ca class=\"a-Menu-label t-MegaMenu-labelWrap\" href=\"#LINK#\" target=\"#A06#\"\u003E\n      \u003Cspan class=\"t-MegaMenu-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\n      \u003Cspan class=\"t-MegaMenu-desc\"\u003E#A03#\u003C\/span\u003E\n    \u003C\/a\u003E\n    \u003Cspan class=\"t-MegaMenu-badge #A07#\"\u003E#A02#\u003C\/span\u003E\n  \u003C\/span\u003E\n\u003C\/li\u003E"
+     ,"Current with Sublist":"\u003Cli class=\"t-MegaMenu-item is-active #A04#\" data-current=\"true\" data-id=\"#A01#\" data-shortcut=\"#A05#\"\u003E\n  \u003Cspan class=\"a-Menu-item t-MegaMenu-itemBody #A08#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\n    \u003Ca class=\"a-Menu-label t-MegaMenu-labelWrap\" href=\"#LINK#\" target=\"#A06#\"\u003E\n      \u003Cspan class=\"t-MegaMenu-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\n      \u003Cspan class=\"t-MegaMenu-desc\"\u003E#A03#\u003C\/span\u003E\n    \u003C\/a\u003E\n    \u003Cspan class=\"t-MegaMenu-badge #A07#\"\u003E#A02#\u003C\/span\u003E\n  \u003C\/span\u003E"
+     ,"Noncurrent":"\u003Cli class=\"t-MegaMenu-item #A04#\" data-current=\"false\" data-id=\"#A01#\" data-shortcut=\"#A05#\"\u003E\n  \u003Cspan class=\"a-Menu-item t-MegaMenu-itemBody #A08#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\n    \u003Ca class=\"a-Menu-label t-MegaMenu-labelWrap\" href=\"#LINK#\" target=\"#A06#\"\u003E\n      \u003Cspan class=\"t-MegaMenu-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\n      \u003Cspan class=\"t-MegaMenu-desc\"\u003E#A03#\u003C\/span\u003E\n    \u003C\/a\u003E\n    \u003Cspan class=\"t-MegaMenu-badge #A07#\"\u003E#A02#\u003C\/span\u003E\n  \u003C\/span\u003E\n\u003C\/li\u003E"
+     ,"Noncurrent with Sublist Items":"\u003Cli class=\"t-MegaMenu-item #A04#\" data-current=\"false\" data-id=\"#A01#\" data-shortcut=\"#A05#\"\u003E\n  \u003Cspan class=\"a-Menu-item t-MegaMenu-itemBody #A08#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\n    \u003Ca class=\"a-Menu-label t-MegaMenu-labelWrap\" href=\"#LINK#\" target=\"#A06#\"\u003E\n      \u003Cspan class=\"t-MegaMenu-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\n      \u003Cspan class=\"t-MegaMenu-desc\"\u003E#A03#\u003C\/span\u003E\n    \u003C\/a\u003E\n    \u003Cspan class=\"t-MegaMenu-badge #A07#\"\u003E#A02#\u003C\/span\u003E\n  \u003C\/span\u003E"
+    }
+   ,"After List Entry":{
+      "After Rows":" \u003C\/ul\u003E\u003C\/div\u003E\u003C\/div\u003E\u003C\/div\u003E"
+    }
+   ,"Attribute Descriptions":{
+      "A01":"ID Attribute"
+     ,"A02":"Badge Value"
+     ,"A03":"Description"
+     ,"A04":"List Item Class"
+     ,"A05":"Shortcut Key"
+     ,"A06":"Link Target"
+     ,"A07":"Badge Class"
+     ,"A08":"Menu Item Class"
+    }
+   ,"Template Options":[
+      {
+        "id":"126082799048127348"
+       ,"Identification":{
+          "Name":"2 Columns"
+         ,"Identifier":"2_COLUMNS"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MegaMenu--layout2Cols"
+          ]
+        }
+      }
+     ,{
+        "id":"126083111908127348"
+       ,"Identification":{
+          "Name":"3 Columns"
+         ,"Identifier":"3_COLUMNS"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MegaMenu--layout3Cols"
+          ]
+        }
+      }
+     ,{
+        "id":"126083538347127348"
+       ,"Identification":{
+          "Name":"4 Columns"
+         ,"Identifier":"4_COLUMNS"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MegaMenu--layout4Cols"
+          ]
+        }
+      }
+     ,{
+        "id":"126083920498127350"
+       ,"Identification":{
+          "Name":"5 Columns"
+         ,"Identifier":"5_COLUMNS"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MegaMenu--layout5Cols"
+          ]
+        }
+      }
+     ,{
+        "id":"126084340133127350"
+       ,"Identification":{
+          "Name":"Add Actions"
+         ,"Identifier":"ADD_ACTIONS"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-addActions"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Use this option to add shortcuts for menu items. Note that actions.js must be included on your page to support this functionality."
+        }
+      }
+     ,{
+        "id":"126084771793127350"
+       ,"Identification":{
+          "Name":"Custom"
+         ,"Identifier":"CUSTOM"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":60
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MegaMenu--layoutCustom"
+          ]
+        }
+      }
+     ,{
+        "id":"126085183438127350"
+       ,"Identification":{
+          "Name":"Display Menu Callout"
+         ,"Identifier":"DISPLAY_MENU_CALLOUT"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-menu-callout"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Displays a callout arrow that points to where the menu was activated from."
+        }
+      }
+     ,{
+        "id":"126085505376127350"
+       ,"Identification":{
+          "Name":"Full Width"
+         ,"Identifier":"FULL_WIDTH"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MegaMenu--fullWidth"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Stretches the menu to fill the width of the screen."
+        }
+      }
+     ,{
+        "id":"126085973664127350"
+       ,"Identification":{
+          "Name":"Stacked"
+         ,"Identifier":"STACKED"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":60
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MegaMenu--layoutStacked"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"126086253919127350"
    ,"Identification":{
       "Name":"Top Navigation Tabs"
+     ,"Identifier":"TOP_NAVIGATION_TABS"
+     ,"Class":"Tabbed Navigation List"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"1453011561172885578"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-NavTabs--inlineLabels-lg"
+       ,"t-NavTabs--displayLabels-sm"
+      ]
+    }
+   ,"List":{
+      "Before Rows":"\u003Cul class=\"t-NavTabs #COMPONENT_CSS_CLASSES#\" id=\"#PARENT_STATIC_ID#_navtabs\"\u003E"
+    }
+   ,"Entry":{
+      "Current":"\u003Cli class=\"t-NavTabs-item #A03# is-active\" aria-current=\"page\" id=\"#A01#\"\u003E\n  \u003Ca href=\"#LINK#\" class=\"t-NavTabs-link #A04# \" title=\"#TEXT_ESC_SC#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-NavTabs-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\n    \u003Cspan class=\"t-NavTabs-badge #A05#\"\u003E#A02#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+     ,"Noncurrent":"\u003Cli class=\"t-NavTabs-item #A03#\" id=\"#A01#\"\u003E\n  \u003Ca href=\"#LINK#\" class=\"t-NavTabs-link #A04# \" title=\"#TEXT_ESC_SC#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-NavTabs-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\n    \u003Cspan class=\"t-NavTabs-badge #A05#\"\u003E#A02#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+    }
+   ,"After List Entry":{
+      "After Rows":"\u003C\/ul\u003E"
+    }
+   ,"Attribute Descriptions":{
+      "A01":"List Item ID"
+     ,"A02":"Badge Value"
+     ,"A03":"List Item Class"
+     ,"A04":"Link Class"
+     ,"A05":"Badge Class"
+    }
+   ,"Template Options":[
+      {
+        "id":"126086792028127350"
+       ,"Identification":{
+          "Name":"Display labels"
+         ,"Identifier":"DISPLAY_LABELS_SM"
+         ,"Group":"Mobile (2266359991453306)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-NavTabs--displayLabels-sm"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Displays the label for the list items below the icon"
+        }
+      }
+     ,{
+        "id":"126087133284127350"
+       ,"Identification":{
+          "Name":"Do not display labels"
+         ,"Identifier":"HIDE_LABELS_SM"
+         ,"Group":"Mobile (2266359991453306)"
+         ,"Sequence":50
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-NavTabs--hiddenLabels-sm"
+          ]
+        }
+      }
+     ,{
+        "id":"126087576798127350"
+       ,"Identification":{
+          "Name":"Display labels above"
+         ,"Identifier":"LABEL_ABOVE_LG"
+         ,"Group":"Desktop (2263501738453304)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-NavTabs--stacked"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Display the label stacked above the icon and badge"
+        }
+      }
+     ,{
+        "id":"126087938089127351"
+       ,"Identification":{
+          "Name":"Display labels inline"
+         ,"Identifier":"LABEL_INLINE_LG"
+         ,"Group":"Desktop (2263501738453304)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-NavTabs--inlineLabels-lg"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Display the label inline with the icon and badge"
+        }
+      }
+     ,{
+        "id":"126088376223127351"
+       ,"Identification":{
+          "Name":"Do not display labels"
+         ,"Identifier":"NO_LABEL_LG"
+         ,"Group":"Desktop (2263501738453304)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-NavTabs--hiddenLabels-lg"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Hides the label for the list item"
+        }
+      }
+    ]
   }
  ,{
     "id":"452472316686466273"
    ,"Identification":{
       "Name":"Badge List"
+     ,"Identifier":"BADGE_LIST"
+     ,"Class":"Horizontal Links List"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2062482847268086664"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-BadgeList--large"
+       ,"t-BadgeList--cols t-BadgeList--3cols"
+       ,"t-BadgeList--circular"
+      ]
+    }
+   ,"List":{
+      "Before Rows":"\u003Cul class=\"t-BadgeList #COMPONENT_CSS_CLASSES#\"\u003E"
+    }
+   ,"Entry":{
+      "Current":"\u003Cli class=\"t-BadgeList-item #A02# is-current\" aria-current=\"page\"\u003E\n  \u003Ca class=\"t-BadgeList-wrap u-color #A04#\" href=\"#LINK#\" #A03#\u003E\n    \u003Cspan class=\"t-BadgeList-label\"\u003E#TEXT#\u003C\/span\u003E\n    \u003Cspan class=\"t-BadgeList-value\"\u003E#A01#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E\n"
+     ,"Noncurrent":"\u003Cli class=\"t-BadgeList-item #A02#\"\u003E\n  \u003Ca class=\"t-BadgeList-wrap u-color #A04#\" href=\"#LINK#\" #A03#\u003E\n    \u003Cspan class=\"t-BadgeList-label\"\u003E#TEXT#\u003C\/span\u003E\n    \u003Cspan class=\"t-BadgeList-value\"\u003E#A01#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E\n"
+    }
+   ,"After List Entry":{
+      "After Rows":"\u003C\/ul\u003E"
+    }
+   ,"Attribute Descriptions":{
+      "A01":"Value"
+     ,"A02":"List item CSS Classes"
+     ,"A03":"Link Attributes"
+     ,"A04":"Link Classes"
+    }
+   ,"Comments":{
+      "Comments":"A01: Large Number\nA02: List Item Classes\nA03: Link Attributes"
+    }
+   ,"Template Options":[
+      {
+        "id":"126021717040127306"
+       ,"Identification":{
+          "Name":"Apply Theme Colors"
+         ,"Identifier":"APPLY_THEME_COLORS"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "u-colors"
+          ]
+        }
+      }
+     ,{
+        "id":"126022457792127306"
+       ,"Identification":{
+          "Name":"Circular"
+         ,"Identifier":"CIRCULAR"
+         ,"Group":"Style (2267160888453306)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--circular"
+          ]
+        }
+      }
+     ,{
+        "id":"126023166504127306"
+       ,"Identification":{
+          "Name":"Grid"
+         ,"Identifier":"GRID"
+         ,"Group":"Style (2267160888453306)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--dash"
+          ]
+        }
+      }
+     ,{
+        "id":"452472476704466276"
+       ,"Identification":{
+          "Name":"2 Column Grid"
+         ,"Identifier":"2COLUMNGRID"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--cols"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Arrange badges in a two column grid"
+        }
+      }
+     ,{
+        "id":"452472614173466276"
+       ,"Identification":{
+          "Name":"3 Column Grid"
+         ,"Identifier":"3COLUMNGRID"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--cols"
+           ,"t-BadgeList--3cols"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Arrange badges in a 3 column grid"
+        }
+      }
+     ,{
+        "id":"452472702013466276"
+       ,"Identification":{
+          "Name":"4 Column Grid"
+         ,"Identifier":"4COLUMNGRID"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--cols"
+           ,"t-BadgeList--4cols"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Arrange badges in 4 column grid"
+        }
+      }
+     ,{
+        "id":"452472850435466276"
+       ,"Identification":{
+          "Name":"5 Column Grid"
+         ,"Identifier":"5COLUMNGRID"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":50
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--cols"
+           ,"t-BadgeList--5cols"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Arrange badges in a 5 column grid"
+        }
+      }
+     ,{
+        "id":"452472956794466276"
+       ,"Identification":{
+          "Name":"Span Horizontally"
+         ,"Identifier":"FIXED"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":60
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--fixed"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Span badges horizontally"
+        }
+      }
+     ,{
+        "id":"452473006467466276"
+       ,"Identification":{
+          "Name":"Flexible Box"
+         ,"Identifier":"FLEXIBLEBOX"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":80
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--flex"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Use flexbox to arrange items"
+        }
+      }
+     ,{
+        "id":"452473070584466276"
+       ,"Identification":{
+          "Name":"Float Items"
+         ,"Identifier":"FLOATITEMS"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":70
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--float"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Float badges to left"
+        }
+      }
+     ,{
+        "id":"452473304231466278"
+       ,"Identification":{
+          "Name":"64px"
+         ,"Identifier":"LARGE"
+         ,"Group":"Badge Size (2261913572453304)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--large"
+          ]
+        }
+      }
+     ,{
+        "id":"452473389253466278"
+       ,"Identification":{
+          "Name":"48px"
+         ,"Identifier":"MEDIUM"
+         ,"Group":"Badge Size (2261913572453304)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--medium"
+          ]
+        }
+      }
+     ,{
+        "id":"452473634098466278"
+       ,"Identification":{
+          "Name":"32px"
+         ,"Identifier":"SMALL"
+         ,"Group":"Badge Size (2261913572453304)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--small"
+          ]
+        }
+      }
+     ,{
+        "id":"452473732424466278"
+       ,"Identification":{
+          "Name":"Stacked"
+         ,"Identifier":"STACKED"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--stacked"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Stack badges on top of each other"
+        }
+      }
+     ,{
+        "id":"452473826561466278"
+       ,"Identification":{
+          "Name":"96px"
+         ,"Identifier":"XLARGE"
+         ,"Group":"Badge Size (2261913572453304)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--xlarge"
+          ]
+        }
+      }
+     ,{
+        "id":"452473863232466278"
+       ,"Identification":{
+          "Name":"128px"
+         ,"Identifier":"XXLARGE"
+         ,"Group":"Badge Size (2261913572453304)"
+         ,"Sequence":50
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BadgeList--xxlarge"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"452473988755466278"
    ,"Identification":{
       "Name":"Cards"
+     ,"Identifier":"CARDS"
+     ,"Class":"Horizontal Images with Label List"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2885322685880632508"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-Cards--animColorFill"
+       ,"t-Cards--3cols"
+       ,"t-Cards--basic"
+      ]
+    }
+   ,"List":{
+      "Before Rows":"\u003Cul class=\"t-Cards #COMPONENT_CSS_CLASSES#\"\u003E"
+    }
+   ,"Entry":{
+      "Current":"\u003Cli class=\"t-Cards-item is-active #A04#\" aria-current=\"page\"\u003E\n  \u003Cdiv class=\"t-Card\"\u003E\n    \u003Ca href=\"#LINK#\" class=\"t-Card-wrap\" #A05#\u003E\n      \u003Cdiv class=\"t-Card-icon u-color #A06#\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003Cspan class=\"t-Card-initials\" role=\"presentation\"\u003E#A03#\u003C\/span\u003E\u003C\/span\u003E\u003C\/div\u003E\n      \u003Cdiv class=\"t-Card-titleWrap\"\u003E\n        \u003Ch3 class=\"t-Card-title\"\u003E#TEXT#\u003C\/h3\u003E\n        \u003Ch4 class=\"t-Card-subtitle\"\u003E#A07#\u003C\/h4\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Card-body\"\u003E\n        \u003Cdiv class=\"t-Card-desc\"\u003E#A01#\u003C\/div\u003E\n        \u003Cdiv class=\"t-Card-info\"\u003E#A02#\u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cspan class=\"t-Card-colorFill u-color #A06#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\n    \u003C\/a\u003E\n  \u003C\/div\u003E\n\u003C\/li\u003E"
+     ,"Noncurrent":"\u003Cli class=\"t-Cards-item #A04#\"\u003E\n  \u003Cdiv class=\"t-Card\"\u003E\n    \u003Ca href=\"#LINK#\" class=\"t-Card-wrap\" #A05#\u003E\n      \u003Cdiv class=\"t-Card-icon u-color #A06#\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003Cspan class=\"t-Card-initials\" role=\"presentation\"\u003E#A03#\u003C\/span\u003E\u003C\/span\u003E\u003C\/div\u003E\n      \u003Cdiv class=\"t-Card-titleWrap\"\u003E\n        \u003Ch3 class=\"t-Card-title\"\u003E#TEXT#\u003C\/h3\u003E\n        \u003Ch4 class=\"t-Card-subtitle\"\u003E#A07#\u003C\/h4\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Card-body\"\u003E\n        \u003Cdiv class=\"t-Card-desc\"\u003E#A01#\u003C\/div\u003E\n        \u003Cdiv class=\"t-Card-info\"\u003E#A02#\u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cspan class=\"t-Card-colorFill u-color #A06#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\n    \u003C\/a\u003E\n  \u003C\/div\u003E\n\u003C\/li\u003E"
+    }
+   ,"After List Entry":{
+      "After Rows":"\u003C\/ul\u003E"
+    }
+   ,"Attribute Descriptions":{
+      "A01":"Description"
+     ,"A02":"Secondary Information"
+     ,"A03":"Initials"
+     ,"A04":"List Item CSS Classes"
+     ,"A05":"Link Attributes"
+     ,"A06":"Card Color Class"
+     ,"A07":"Subtitle"
+    }
+   ,"Template Options":[
+      {
+        "id":"126033343919127318"
+       ,"Identification":{
+          "Name":"Square"
+         ,"Identifier":"ICONS_SQUARE"
+         ,"Group":"Icon Shape (2264785530453304)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--iconsSquare"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"The icons are displayed within a square shape."
+        }
+      }
+     ,{
+        "id":"126034094766127318"
+       ,"Identification":{
+          "Name":"Rounded Corners"
+         ,"Identifier":"ICONS_ROUNDED"
+         ,"Group":"Icon Shape (2264785530453304)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--iconsRounded"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"The icons are displayed within a square with rounded corners."
+        }
+      }
+     ,{
+        "id":"126034496349127318"
+       ,"Identification":{
+          "Name":"Display Subtitle"
+         ,"Identifier":"DISPLAY_SUBTITLE"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--displaySubtitle"
+          ]
+        }
+      }
+     ,{
+        "id":"126035162592127320"
+       ,"Identification":{
+          "Name":"Block"
+         ,"Identifier":"BLOCK"
+         ,"Group":"Style (2267160888453306)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--featured"
+           ,"t-Cards--block"
+           ,"force-fa-lg"
+          ]
+        }
+      }
+     ,{
+        "id":"452474108521466279"
+       ,"Identification":{
+          "Name":"2 Columns"
+         ,"Identifier":"2_COLUMNS"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--cols"
+          ]
+        }
+      }
+     ,{
+        "id":"452474319177466279"
+       ,"Identification":{
+          "Name":"2 Lines"
+         ,"Identifier":"2_LINES"
+         ,"Group":"Body Text (2262369906453304)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--desc-2ln"
+          ]
+        }
+      }
+     ,{
+        "id":"452474393257466279"
+       ,"Identification":{
+          "Name":"3 Columns"
+         ,"Identifier":"3_COLUMNS"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--3cols"
+          ]
+        }
+      }
+     ,{
+        "id":"452474499554466279"
+       ,"Identification":{
+          "Name":"3 Lines"
+         ,"Identifier":"3_LINES"
+         ,"Group":"Body Text (2262369906453304)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--desc-3ln"
+          ]
+        }
+      }
+     ,{
+        "id":"452474657748466279"
+       ,"Identification":{
+          "Name":"4 Columns"
+         ,"Identifier":"4_COLUMNS"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--4cols"
+          ]
+        }
+      }
+     ,{
+        "id":"452474743406466279"
+       ,"Identification":{
+          "Name":"4 Lines"
+         ,"Identifier":"4_LINES"
+         ,"Group":"Body Text (2262369906453304)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--desc-4ln"
+          ]
+        }
+      }
+     ,{
+        "id":"452474798142466279"
+       ,"Identification":{
+          "Name":"5 Columns"
+         ,"Identifier":"5_COLUMNS"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":50
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--5cols"
+          ]
+        }
+      }
+     ,{
+        "id":"452475034850466279"
+       ,"Identification":{
+          "Name":"Basic"
+         ,"Identifier":"BASIC"
+         ,"Group":"Style (2267160888453306)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--basic"
+          ]
+        }
+      }
+     ,{
+        "id":"452475074614466279"
+       ,"Identification":{
+          "Name":"Stacked"
+         ,"Identifier":"CARDS_STACKED"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":5
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--stacked"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Stacks the cards on top of each other."
+        }
+      }
+     ,{
+        "id":"452475320688466281"
+       ,"Identification":{
+          "Name":"Color Fill"
+         ,"Identifier":"COLOR_FILL"
+         ,"Group":"Animation (2261534516453304)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--animColorFill"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Fills the card background with the color of the icon or default link style."
+        }
+      }
+     ,{
+        "id":"452475423068466281"
+       ,"Identification":{
+          "Name":"Compact"
+         ,"Identifier":"COMPACT"
+         ,"Group":"Style (2267160888453306)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--compact"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Use this option when you want to show smaller cards."
+        }
+      }
+     ,{
+        "id":"452475571491466281"
+       ,"Identification":{
+          "Name":"Display Icons"
+         ,"Identifier":"DISPLAY_ICONS"
+         ,"Group":"Icons (2264304774453304)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--displayIcons"
+          ]
+        }
+      }
+     ,{
+        "id":"452475723035466281"
+       ,"Identification":{
+          "Name":"Display Initials"
+         ,"Identifier":"DISPLAY_INITIALS"
+         ,"Group":"Icons (2264304774453304)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--displayInitials"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Initials come from List Attribute 3"
+        }
+      }
+     ,{
+        "id":"452475776326466281"
+       ,"Identification":{
+          "Name":"Featured"
+         ,"Identifier":"FEATURED"
+         ,"Group":"Style (2267160888453306)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--featured"
+           ,"force-fa-lg"
+          ]
+        }
+      }
+     ,{
+        "id":"452475938345466281"
+       ,"Identification":{
+          "Name":"Float"
+         ,"Identifier":"FLOAT"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":60
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--float"
+          ]
+        }
+      }
+     ,{
+        "id":"452476011101466281"
+       ,"Identification":{
+          "Name":"Hidden"
+         ,"Identifier":"HIDDEN_BODY_TEXT"
+         ,"Group":"Body Text (2262369906453304)"
+         ,"Sequence":50
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--hideBody"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This option hides the card body which contains description and subtext."
+        }
+      }
+     ,{
+        "id":"452476133739466281"
+       ,"Identification":{
+          "Name":"Raise Card"
+         ,"Identifier":"RAISE_CARD"
+         ,"Group":"Animation (2261534516453304)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--animRaiseCard"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Raises the card so it pops up."
+        }
+      }
+     ,{
+        "id":"452476194904466281"
+       ,"Identification":{
+          "Name":"Span Horizontally"
+         ,"Identifier":"SPAN_HORIZONTALLY"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":70
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Cards--spanHorizontally"
+          ]
+        }
+      }
+     ,{
+        "id":"452476263837466282"
+       ,"Identification":{
+          "Name":"Apply Theme Colors"
+         ,"Identifier":"USE_THEME_COLORS"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "u-colors"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Applies the colors from the theme\u0027s color palette to the icons or initials within cards."
+        }
+      }
+    ]
   }
  ,{
     "id":"452476439537466282"
    ,"Identification":{
       "Name":"Media List"
+     ,"Identifier":"MEDIA_LIST"
+     ,"Class":"Vertical Images List"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2066548068783481421"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Default":[
+        "t-MediaList--showIcons"
+       ,"t-MediaList--showDesc"
+      ]
+    }
+   ,"List":{
+      "Before Rows":"\u003Cul class=\"t-MediaList #COMPONENT_CSS_CLASSES#\"\u003E"
+    }
+   ,"Entry":{
+      "Current":"\u003Cli class=\"t-MediaList-item is-active #A04#\"\u003E\n  \u003Ca href=\"#LINK#\" class=\"t-MediaList-itemWrap #A05#\" #A03#\u003E\n    \u003Cdiv class=\"t-MediaList-iconWrap\" aria-hidden=\"true\"\u003E\n      \u003Cspan class=\"t-MediaList-icon u-color #A06#\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" #IMAGE_ATTR#\u003E\u003C\/span\u003E\u003C\/span\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-MediaList-body\"\u003E\n      \u003Ch3 class=\"t-MediaList-title\" aria-current=\"page\"\u003E#TEXT#\u003C\/h3\u003E\n      \u003Cp class=\"t-MediaList-desc\"\u003E#A01#\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-MediaList-badgeWrap\"\u003E\n      \u003Cspan class=\"t-MediaList-badge\"\u003E#A02#\u003C\/span\u003E\n    \u003C\/div\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+     ,"Noncurrent":"\u003Cli class=\"t-MediaList-item  #A04#\"\u003E\n  \u003Ca href=\"#LINK#\" class=\"t-MediaList-itemWrap #A05#\" #A03#\u003E\n    \u003Cdiv class=\"t-MediaList-iconWrap\" aria-hidden=\"true\"\u003E\n      \u003Cspan class=\"t-MediaList-icon u-color #A06#\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" #IMAGE_ATTR#\u003E\u003C\/span\u003E\u003C\/span\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-MediaList-body\"\u003E\n      \u003Ch3 class=\"t-MediaList-title\"\u003E#TEXT#\u003C\/h3\u003E\n      \u003Cp class=\"t-MediaList-desc\"\u003E#A01#\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-MediaList-badgeWrap\"\u003E\n      \u003Cspan class=\"t-MediaList-badge\"\u003E#A02#\u003C\/span\u003E\n    \u003C\/div\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+    }
+   ,"After List Entry":{
+      "After Rows":"\u003C\/ul\u003E"
+    }
+   ,"Attribute Descriptions":{
+      "A01":"Description"
+     ,"A02":"Badge Value"
+     ,"A03":"Link Attributes"
+     ,"A04":"List Item CSS Classes"
+     ,"A05":"Link Class"
+     ,"A06":"Icon Color Class"
+    }
+   ,"Template Options":[
+      {
+        "id":"126052368762127329"
+       ,"Identification":{
+          "Name":"Square"
+         ,"Identifier":"ICONS_SQUARE"
+         ,"Group":"Icon Shape (2264785530453304)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MediaList--iconsSquare"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"The icons are displayed within a square shape."
+        }
+      }
+     ,{
+        "id":"126053030264127331"
+       ,"Identification":{
+          "Name":"Rounded Corners"
+         ,"Identifier":"ICONS_ROUNDED"
+         ,"Group":"Icon Shape (2264785530453304)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MediaList--iconsRounded"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"The icons are displayed within a square with rounded corners."
+        }
+      }
+     ,{
+        "id":"452476505118466282"
+       ,"Identification":{
+          "Name":"2 Column Grid"
+         ,"Identifier":"2COLUMNGRID"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MediaList--cols"
+           ,"t-MediaList--2cols"
+          ]
+        }
+      }
+     ,{
+        "id":"452476653792466282"
+       ,"Identification":{
+          "Name":"3 Column Grid"
+         ,"Identifier":"3COLUMNGRID"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MediaList--cols"
+           ,"t-MediaList--3cols"
+          ]
+        }
+      }
+     ,{
+        "id":"452476667430466282"
+       ,"Identification":{
+          "Name":"4 Column Grid"
+         ,"Identifier":"4COLUMNGRID"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MediaList--cols"
+           ,"t-MediaList--4cols"
+          ]
+        }
+      }
+     ,{
+        "id":"452476810402466282"
+       ,"Identification":{
+          "Name":"5 Column Grid"
+         ,"Identifier":"5COLUMNGRID"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MediaList--cols"
+           ,"t-MediaList--5cols"
+          ]
+        }
+      }
+     ,{
+        "id":"452476914311466282"
+       ,"Identification":{
+          "Name":"Apply Theme Colors"
+         ,"Identifier":"APPLY_THEME_COLORS"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "u-colors"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Applies colors from the Theme\u0027s color palette to icons in the list."
+        }
+      }
+     ,{
+        "id":"452477145964466282"
+       ,"Identification":{
+          "Name":"Large"
+         ,"Identifier":"LIST_SIZE_LARGE"
+         ,"Group":"Size (2266709809453306)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MediaList--large"
+           ,"force-fa-lg"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Increases the size of the text and icons in the list."
+        }
+      }
+     ,{
+        "id":"452477214334466282"
+       ,"Identification":{
+          "Name":"Show Badges"
+         ,"Identifier":"SHOW_BADGES"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MediaList--showBadges"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Show a badge (Attribute 2) to the right of the list item."
+        }
+      }
+     ,{
+        "id":"452477324888466282"
+       ,"Identification":{
+          "Name":"Show Description"
+         ,"Identifier":"SHOW_DESCRIPTION"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MediaList--showDesc"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Shows the description (Attribute 1) for each list item."
+        }
+      }
+     ,{
+        "id":"452477444131466284"
+       ,"Identification":{
+          "Name":"Show Icons"
+         ,"Identifier":"SHOW_ICONS"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MediaList--showIcons"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Display an icon next to the list item."
+        }
+      }
+     ,{
+        "id":"452477476029466284"
+       ,"Identification":{
+          "Name":"Span Horizontal"
+         ,"Identifier":"SPANHORIZONTAL"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":50
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-MediaList--horizontal"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Show all list items in one horizontal row."
+        }
+      }
+    ]
   }
  ,{
     "id":"452477594352466284"
    ,"Identification":{
       "Name":"Menu Bar"
+     ,"Identifier":"MENU_BAR"
+     ,"Class":"Pull Down Menu"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2008709236185638887"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Default":[
+        "js-showSubMenuIcons"
+      ]
+    }
+   ,"List":{
+      "Before Rows":"\u003Cdiv class=\"t-MenuBar #COMPONENT_CSS_CLASSES#\" id=\"#PARENT_STATIC_ID#_menubar\"\u003E\u003Cul\u003E"
+    }
+   ,"Entry":{
+      "Current":"\u003Cli data-current=\"true\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Current with Sublist":"\u003Cli data-current=\"true\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E"
+     ,"Noncurrent":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Noncurrent with Sublist":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E"
+    }
+   ,"SubList":{
+      "Before Rows":"\u003Cul\u003E"
+     ,"After Rows":"\u003C\/ul\u003E\u003C\/li\u003E"
+    }
+   ,"Sublist Entry":{
+      "Current":"\u003Cli data-current=\"true\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Current with Sublist":"\u003Cli data-current=\"true\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E"
+     ,"Noncurrent":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Noncurrent with Sublist Items":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E"
+    }
+   ,"After List Entry":{
+      "After Rows":"\u003C\/ul\u003E\u003C\/div\u003E"
+    }
+   ,"JavaScript":{
+      "Execute when Page Loads":"var e = apex.jQuery(\"##PARENT_STATIC_ID#_menubar\", apex.gPageContext$);\nif (e.hasClass(\"js-addActions\")) {\n  apex.actions.addFromMarkup( e );\n}\ne.menu({\n  behaveLikeTabs: e.hasClass(\"js-tabLike\"),\n  menubarShowSubMenuIcon: e.hasClass(\"js-showSubMenuIcons\") || null,\n  iconType: \u0027fa\u0027,\n  menubar: true,\n  menubarOverflow: true,\n  callout: e.hasClass(\"js-menu-callout\")\n});"
+    }
+   ,"Attribute Descriptions":{
+      "A01":"Menu Item ID \/ Action Name"
+     ,"A02":"Disabled (True\/False)"
+     ,"A03":"Hidden (True\/False)"
+     ,"A04":"Title Attribute (Used By Actions Only)"
+     ,"A05":"Shortcut"
+     ,"A06":"Link Target"
+    }
+   ,"Template Options":[
+      {
+        "id":"126060058435127334"
+       ,"Identification":{
+          "Name":"Display Menu Callout"
+         ,"Identifier":"DISPLAY_MENU_CALLOUT"
+         ,"Sequence":50
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-menu-callout"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Use this option to add display a callout for the menu."
+        }
+      }
+     ,{
+        "id":"452477740636466284"
+       ,"Identification":{
+          "Name":"Add Actions"
+         ,"Identifier":"ADD_ACTIONS"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-addActions"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Use this option to add shortcuts for menu items. Note that actions.js must be included on your page to support this functionality."
+        }
+      }
+     ,{
+        "id":"452477794124466285"
+       ,"Identification":{
+          "Name":"Behave Like Tabs"
+         ,"Identifier":"BEHAVE_LIKE_TABS"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-tabLike"
+          ]
+        }
+      }
+     ,{
+        "id":"452478035560466285"
+       ,"Identification":{
+          "Name":"Show Sub Menu Icons"
+         ,"Identifier":"SHOW_SUB_MENU_ICONS"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-showSubMenuIcons"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"452478069261466285"
    ,"Identification":{
       "Name":"Navigation Bar"
+     ,"Identifier":"NAVIGATION_BAR"
+     ,"Class":"Pull Down Menu"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2846096252961119197"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"List":{
+      "Before Rows":"\u003Cul class=\"t-NavigationBar #COMPONENT_CSS_CLASSES#\" id=\"#LIST_ID#\"\u003E"
+    }
+   ,"Entry":{
+      "Current":"\u003Cli class=\"t-NavigationBar-item is-active #A02#\" aria-current=\"page\"\u003E\n  \u003Ca class=\"t-Button t-Button--icon t-Button--header t-Button--navBar\" href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" aria-hidden=\"true\" #IMAGE_ATTR#\u003E\u003C\/span\u003E\u003Cspan class=\"t-Button-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\u003Cspan class=\"t-Button-badge\"\u003E#A01#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+     ,"Current with Sublist":"\u003Cli class=\"t-NavigationBar-item is-active #A02#\" aria-current=\"page\"\u003E\n  \u003Cbutton class=\"t-Button t-Button--icon t-Button t-Button--header t-Button--navBar\" type=\"button\" id=\"#LIST_ITEM_ID#\" data-menu=\"menu_#LIST_ITEM_ID#\" title=\"#A04#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" aria-hidden=\"true\" #IMAGE_ATTR#\u003E\u003C\/span\u003E\u003Cspan class=\"t-Button-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\u003Cspan class=\"t-Button-badge\"\u003E#A01#\u003C\/span\u003E\u003Cspan class=\"a-Icon icon-down-arrow\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\n  \u003C\/button\u003E"
+     ,"Noncurrent":"\u003Cli class=\"t-NavigationBar-item #A02#\"\u003E\n  \u003Ca class=\"t-Button t-Button--icon t-Button--header t-Button--navBar\" href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" aria-hidden=\"true\" #IMAGE_ATTR#\u003E\u003C\/span\u003E\u003Cspan class=\"t-Button-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\u003Cspan class=\"t-Button-badge\"\u003E#A01#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+     ,"Noncurrent with Sublist":"\u003Cli class=\"t-NavigationBar-item #A02#\"\u003E\n  \u003Cbutton class=\"t-Button t-Button--icon t-Button t-Button--header t-Button--navBar\" type=\"button\" id=\"#LIST_ITEM_ID#\" data-menu=\"menu_#LIST_ITEM_ID#\" title=\"#A04#\"\u003E\n      \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" aria-hidden=\"true\" #IMAGE_ATTR#\u003E\u003C\/span\u003E\u003Cspan class=\"t-Button-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\u003Cspan class=\"t-Button-badge\"\u003E#A01#\u003C\/span\u003E\u003Cspan class=\"a-Icon icon-down-arrow\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\n  \u003C\/button\u003E"
+    }
+   ,"SubList":{
+      "Before Rows":"\u003Cdiv class=\"t-NavigationBar-menu\" style=\"display: none\" id=\"menu_#PARENT_LIST_ITEM_ID#\"\u003E\u003Cul\u003E"
+     ,"After Rows":"\u003C\/ul\u003E\u003C\/div\u003E\u003C\/li\u003E"
+    }
+   ,"Sublist Entry":{
+      "Current":"\u003Cli class=\"#A02#\" data-current=\"true\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Current with Sublist":"\u003Cli class=\"#A02#\" data-current=\"true\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Noncurrent":"\u003Cli class=\"#A02#\" data-current=\"false\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Noncurrent with Sublist Items":"\u003Cli class=\"#A02#\" data-current=\"false\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+    }
+   ,"After List Entry":{
+      "After Rows":"\u003C\/ul\u003E"
+    }
+   ,"Attribute Descriptions":{
+      "A01":"Badge Value"
+     ,"A02":"List  Item CSS Classes"
+     ,"A04":"Title Attribute"
+     ,"A06":"Link Target"
+    }
+   ,"Template Options":[
+      {
+        "id":"126063609052127337"
+       ,"Identification":{
+          "Name":"Display Menu Callout"
+         ,"Identifier":"DISPLAY_MENU_CALLOUT"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-menu-callout"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Use this option to add display a callout for the menu."
+        }
+      }
+    ]
   }
  ,{
     "id":"452478253231466285"
    ,"Identification":{
       "Name":"Side Navigation Menu"
+     ,"Identifier":"SIDE_NAVIGATION_MENU"
+     ,"Class":"Vertical Sidebar List"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2466292414354694776"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-TreeNav--styleA"
+       ,"js-navCollapsed--hidden"
+      ]
+     ,"Default":[
+        "js-defaultCollapsed"
+      ]
+    }
+   ,"List":{
+      "Before Rows":"\u003Cdiv class=\"t-Body-nav\" id=\"t_Body_nav\" role=\"navigation\" aria-label=\"\u0026\"APP_TEXT$APEX.TEMPLATE.APPLICATION\".\"\u003E\n  \u003Cdiv class=\"a-TreeView t-TreeNav #COMPONENT_CSS_CLASSES#\" id=\"t_TreeNav\" data-id=\"#PARENT_STATIC_ID#_tree\" aria-label=\"\u0026\"APP_TEXT$APEX.TEMPLATE.MAIN_NAV_LABEL\".\"\u003E\n    \u003Cul\u003E\n"
+    }
+   ,"Entry":{
+      "Current":"\u003Cli data-current=\"true\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-icon=\"#ICON_CSS_CLASSES#\" data-shortcut=\"#A05#\"\u003E\n  \u003Ca href=\"#LINK#\" title=\"#A04#\" style=\"display: none\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\n  \u003Cdiv class=\"a-TreeView-node a-TreeView-node--topLevel\" aria-hidden=\"true\"\u003E\n    \u003Cdiv role=\"none\" class=\"a-TreeView-row\"\u003E\u003C\/div\u003E\n    \u003Cdiv role=\"none\" class=\"a-TreeView-content\"\u003E\n      \u003Cspan class=\"fa fa-file-o #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\n      \u003Cspan class=\"a-TreeView-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/li\u003E\n"
+     ,"Current with Sublist":"\u003Cli data-current=\"true\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-icon=\"#ICON_CSS_CLASSES#\" data-shortcut=\"#A05#\"\u003E\n  \u003Ca href=\"#LINK#\" title=\"#A04#\" style=\"display: none\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\n  \u003Cdiv class=\"a-TreeView-node a-TreeView-node--topLevel\" aria-hidden=\"true\"\u003E\n    \u003Cdiv role=\"none\" class=\"a-TreeView-row\"\u003E\u003C\/div\u003E\n    \u003Cdiv role=\"none\" class=\"a-TreeView-content\"\u003E\n      \u003Cspan class=\"fa fa-file-o #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\n      \u003Cspan class=\"a-TreeView-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n"
+     ,"Noncurrent":"\u003Cli data-current=\"false\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-icon=\"#ICON_CSS_CLASSES#\" data-shortcut=\"#A05#\"\u003E\n  \u003Ca href=\"#LINK#\" title=\"#A04#\" style=\"display: none\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\n  \u003Cdiv class=\"a-TreeView-node a-TreeView-node--topLevel\" aria-hidden=\"true\"\u003E\n    \u003Cdiv role=\"none\" class=\"a-TreeView-row\"\u003E\u003C\/div\u003E\n    \u003Cdiv role=\"none\" class=\"a-TreeView-content\"\u003E\n      \u003Cspan class=\"fa fa-file-o #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\n      \u003Cspan class=\"a-TreeView-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/li\u003E"
+     ,"Noncurrent with Sublist":"\u003Cli data-current=\"false\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-icon=\"#ICON_CSS_CLASSES#\" data-shortcut=\"#A05#\"\u003E\n  \u003Ca href=\"#LINK#\" title=\"#A04#\" style=\"display: none\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\n  \u003Cdiv class=\"a-TreeView-node a-TreeView-node--topLevel\" aria-hidden=\"true\"\u003E\n    \u003Cdiv role=\"none\" class=\"a-TreeView-row\"\u003E\u003C\/div\u003E\n    \u003Cdiv role=\"none\" class=\"a-TreeView-content\"\u003E\n      \u003Cspan class=\"fa fa-file-o #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\n      \u003Cspan class=\"a-TreeView-label\"\u003E#TEXT_ESC_SC#\u003C\/span\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n"
+    }
+   ,"SubList":{
+      "Before Rows":"\u003Cul style=\"display:none\"\u003E"
+     ,"After Rows":"\u003C\/ul\u003E\u003C\/li\u003E"
+    }
+   ,"Sublist Entry":{
+      "Current":"\u003Cli data-current=\"true\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-icon=\"#ICON_CSS_CLASSES#\" data-shortcut=\"#A05#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Current with Sublist":"\u003Cli data-current=\"true\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-icon=\"#ICON_CSS_CLASSES#\" data-shortcut=\"#A05#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E"
+     ,"Noncurrent":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-icon=\"#ICON_CSS_CLASSES#\" data-shortcut=\"#A05#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Noncurrent with Sublist Items":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-icon=\"#ICON_CSS_CLASSES#\" data-shortcut=\"#A05#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E"
+    }
+   ,"After List Entry":{
+      "After Rows":"    \u003C\/ul\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n\u003Cscript\u003E\n(() =\u003E {\n  const pref = \"ORA_WWV_apex.toggleCore.nav.\u0026APP_ID..preferenceForExpanded\",\n        nav  = document.getElementById(\u0027t_TreeNav\u0027).classList,\n        body = document.getElementById(\u0027t_PageBody\u0027);\n  if ( !sessionStorage.getItem( pref ) ) { sessionStorage.setItem( pref, !nav.contains(\u0027js-defaultCollapsed\u0027) ); }\n  if ( nav.contains(\u0027js-navCollapsed--default\u0027) ) {\n      body?.classList.add(\u0027js-navCollapsed--icons\u0027);\n      if ( sessionStorage.getItem( pref ) === \"false\" ) { body?.classList.add(\u0027js-navCollapsed\u0027); }\n  }\n  if ( sessionStorage.getItem( pref ) === \"true\" \u0026\u0026 window.matchMedia(\"(min-width: \" + getComputedStyle(document.documentElement).getPropertyValue(\"--js-mq-lg\") + \")\").matches) { body?.classList.add(\u0027js-navExpanded\u0027); }\n  for (const label of document.querySelectorAll(\".a-TreeView .a-TreeView-label\")) {\n      label.textContent = label.textContent.replaceAll(\/\u005C[(.*?)\u005C]\/ig, \u0027\u0027);\n  }\n})();\n\u003C\/script\u003E"
+    }
+   ,"JavaScript":{
+      "File URLs":[
+        "#APEX_FILES#libraries\/apex\/#MIN_DIRECTORY#widget.treeView#MIN#.js?v=#APEX_VERSION#"
+      ]
+     ,"Execute when Page Loads":"apex.jQuery(\u0027body\u0027).addClass(\u0027t-PageBody--leftNav\u0027);"
+    }
+   ,"Attribute Descriptions":{
+      "A01":"ID Attribute"
+     ,"A02":"Disabled (True\/False)"
+     ,"A04":"Title Attribute (Used By Actions Only)"
+     ,"A05":"Shortcut Key"
+     ,"A06":"Link Target"
+    }
+   ,"Template Options":[
+      {
+        "id":"126064995288127339"
+       ,"Identification":{
+          "Name":"Style A"
+         ,"Identifier":"STYLE_A"
+         ,"Group":"Style (2267160888453306)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-TreeNav--styleA"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Style Variation A"
+        }
+      }
+     ,{
+        "id":"126065664612127339"
+       ,"Identification":{
+          "Name":"Style B"
+         ,"Identifier":"STYLE_B"
+         ,"Group":"Style (2267160888453306)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-TreeNav--styleB"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Style Variation B"
+        }
+      }
+     ,{
+        "id":"126066375706127339"
+       ,"Identification":{
+          "Name":"Classic"
+         ,"Identifier":"STYLE_C"
+         ,"Group":"Style (2267160888453306)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-TreeNav--classic"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Classic Style"
+        }
+      }
+     ,{
+        "id":"126067075019127339"
+       ,"Identification":{
+          "Name":"Hidden"
+         ,"Identifier":"COLLAPSE_STYLE_HIDDEN"
+         ,"Group":"Collapse Mode (2262797451453304)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-navCollapsed--hidden"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Completely hide the navigation menu when it is collapsed."
+        }
+      }
+     ,{
+        "id":"126067425534127339"
+       ,"Identification":{
+          "Name":"Add Actions"
+         ,"Identifier":"ADD_ACTIONS"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-addActions"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Use this option to add shortcuts for menu items. Note that actions.js must be included on your page to support this functionality."
+        }
+      }
+     ,{
+        "id":"126068174053127339"
+       ,"Identification":{
+          "Name":"Icon"
+         ,"Identifier":"ICON_DEFAULT"
+         ,"Group":"Collapse Mode (2262797451453304)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-navCollapsed--default"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Display icons when the navigation menu is collapsed for large screens."
+        }
+      }
+     ,{
+        "id":"126068543169127339"
+       ,"Identification":{
+          "Name":"Collapsed by Default"
+         ,"Identifier":"COLLAPSED_DEFAULT"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-defaultCollapsed"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This option will load the side navigation menu in a collapsed state by default."
+        }
+      }
+    ]
   }
  ,{
     "id":"452478300262466287"
    ,"Identification":{
       "Name":"Tabs"
+     ,"Identifier":"TABS"
+     ,"Class":"Tabbed Navigation List"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"3288206686691809997"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-Tabs--simple"
+      ]
+    }
+   ,"List":{
+      "Before Rows":"\u003Cul class=\"t-Tabs #COMPONENT_CSS_CLASSES#\"\u003E"
+    }
+   ,"Entry":{
+      "Current":"\u003Cli class=\"t-Tabs-item is-active #A03#\" aria-current=\"page\" id=\"#A01#\"\u003E\n  \u003Ca href=\"#LINK#\" class=\"t-Tabs-link #A04#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-Tabs-label\"\u003E#TEXT#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+     ,"Noncurrent":"\u003Cli class=\"t-Tabs-item #A03#\" id=\"#A01#\"\u003E\n  \u003Ca href=\"#LINK#\" class=\"t-Tabs-link #A04#\"\u003E\n    \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-Tabs-label\"\u003E#TEXT#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+    }
+   ,"After List Entry":{
+      "After Rows":"\u003C\/ul\u003E"
+    }
+   ,"JavaScript":{
+      "File URLs":[
+        "#APEX_FILES#libraries\/apex\/#MIN_DIRECTORY#widget.apexTabs#MIN#.js?v=#APEX_VERSION#"
+      ]
+    }
+   ,"Attribute Descriptions":{
+      "A01":"List Item ID"
+     ,"A03":"List Item Class"
+     ,"A04":"Link Class"
+    }
+   ,"Template Options":[
+      {
+        "id":"452478370416466287"
+       ,"Identification":{
+          "Name":"Above Label"
+         ,"Identifier":"ABOVE_LABEL"
+         ,"Group":"Icons (2264304774453304)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Tabs--iconsAbove"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Places icons above tab label."
+        }
+      }
+     ,{
+        "id":"452478523249466287"
+       ,"Identification":{
+          "Name":"Fill Labels"
+         ,"Identifier":"FILL_LABELS"
+         ,"Group":"Layout (2265994797453306)"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Tabs--fillLabels"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Stretch tabs to fill to the width of the tabs container."
+        }
+      }
+     ,{
+        "id":"452478595511466287"
+       ,"Identification":{
+          "Name":"Inline with Label"
+         ,"Identifier":"INLINE_WITH_LABEL"
+         ,"Group":"Icons (2264304774453304)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Tabs--inlineIcons"
+          ]
+        }
+      }
+     ,{
+        "id":"452478680093466287"
+       ,"Identification":{
+          "Name":"Large"
+         ,"Identifier":"LARGE"
+         ,"Group":"Size (2266709809453306)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Tabs--large"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Increases font size and white space around tab items."
+        }
+      }
+     ,{
+        "id":"452478790591466289"
+       ,"Identification":{
+          "Name":"Pill"
+         ,"Identifier":"PILL"
+         ,"Group":"Style (2267160888453306)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Tabs--pill"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Displays tabs in a pill container."
+        }
+      }
+     ,{
+        "id":"452478907440466289"
+       ,"Identification":{
+          "Name":"Simple"
+         ,"Identifier":"SIMPLE"
+         ,"Group":"Style (2267160888453306)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Tabs--simple"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"A very simplistic tab UI."
+        }
+      }
+     ,{
+        "id":"452478981265466289"
+       ,"Identification":{
+          "Name":"Small"
+         ,"Identifier":"SMALL"
+         ,"Group":"Size (2266709809453306)"
+         ,"Sequence":5
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Tabs--small"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"452479077726466289"
    ,"Identification":{
       "Name":"Top Navigation Menu"
+     ,"Identifier":"TOP_NAVIGATION_MENU"
+     ,"Class":"Pull Down Menu"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2525307901300239072"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Default":[
+        "js-tabLike"
+      ]
+    }
+   ,"List":{
+      "Before Rows":"\u003Cdiv class=\"t-Header-nav-list #COMPONENT_CSS_CLASSES#\" id=\"t_MenuNav\"\u003E\u003Cul\u003E"
+    }
+   ,"Entry":{
+      "Current":"\u003Cli class=\"a-MenuBar-item a-Menu--current\" data-current=\"true\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca class=\"a-MenuBar-label\" href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Current with Sublist":"\u003Cli class=\"a-MenuBar-item a-Menu--current\" data-current=\"true\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca class=\"a-MenuBar-label\" href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E"
+     ,"Noncurrent":"\u003Cli class=\"a-MenuBar-item\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca class=\"a-MenuBar-label\" href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Noncurrent with Sublist":"\u003Cli class=\"a-MenuBar-item\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca class=\"a-MenuBar-label\" href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E"
+    }
+   ,"SubList":{
+      "Before Rows":"\u003Cul style=\"display: none\"\u003E"
+     ,"After Rows":"\u003C\/ul\u003E\u003C\/li\u003E"
+    }
+   ,"Sublist Entry":{
+      "Current":"\u003Cli data-current=\"true\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Current with Sublist":"\u003Cli data-current=\"true\" data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E"
+     ,"Noncurrent":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Noncurrent with Sublist Items":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E"
+    }
+   ,"After List Entry":{
+      "After Rows":"\u003C\/ul\u003E\u003C\/div\u003E"
+    }
+   ,"JavaScript":{
+      "Execute when Page Loads":"var e = apex.jQuery(\"#t_MenuNav\", apex.gPageContext$);\nif (e.hasClass(\"js-addActions\")) {\n  apex.actions.addFromMarkup( e );\n}\ne.menu({\n  behaveLikeTabs: e.hasClass(\"js-tabLike\"),\n  menubarShowSubMenuIcon: e.hasClass(\"js-showSubMenuIcons\") || null,\n  menubar: true,\n  menubarOverflow: true,\n  callout: e.hasClass(\"js-menu-callout\")\n});\n"
+    }
+   ,"Attribute Descriptions":{
+      "A01":"Menu Item ID \/ Action Name"
+     ,"A02":"Disabled (True\/False)"
+     ,"A03":"Hidden (True\/False)"
+     ,"A04":"Title Attribute (Used By Actions Only)"
+     ,"A05":"Shortcut Key"
+     ,"A06":"Link Target"
+    }
+   ,"Template Options":[
+      {
+        "id":"126077615110127345"
+       ,"Identification":{
+          "Name":"Display Menu Callout"
+         ,"Identifier":"DISPLAY_MENU_CALLOUT"
+         ,"Sequence":50
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-menu-callout"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Use this option to add display a callout for the menu."
+        }
+      }
+     ,{
+        "id":"452479241862466289"
+       ,"Identification":{
+          "Name":"Add Actions"
+         ,"Identifier":"ADD_ACTIONS"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-addActions"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Use this option to add shortcuts for menu items. Note that actions.js must be included on your page to support this functionality."
+        }
+      }
+     ,{
+        "id":"452479293359466289"
+       ,"Identification":{
+          "Name":"Behave Like Tabs"
+         ,"Identifier":"BEHAVE_LIKE_TABS"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-tabLike"
+          ]
+        }
+      }
+     ,{
+        "id":"452479490024466289"
+       ,"Identification":{
+          "Name":"Show Sub Menu Icons"
+         ,"Identifier":"SHOW_SUB_MENU_ICONS"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-showSubMenuIcons"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"452479649977466289"
    ,"Identification":{
       "Name":"Wizard Progress"
+     ,"Identifier":"WIZARD_PROGRESS"
+     ,"Class":"Wizard Progress List"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2008702338707394488"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-WizardSteps--displayLabels"
+      ]
+    }
+   ,"List":{
+      "Before Rows":"\u003Cul aria-label=\"#CURRENT_PROGRESS#\" class=\"t-WizardSteps #COMPONENT_CSS_CLASSES#\" id=\"#LIST_ID#\"\u003E"
+    }
+   ,"Entry":{
+      "Current":"\u003Cli class=\"t-WizardSteps-step is-active\" aria-current=\"step\" id=\"#LIST_ITEM_ID#\"\u003E\n  \u003Cdiv class=\"t-WizardSteps-wrap\" data-link=\"#LINK#\"\u003E\n    \u003Cspan class=\"t-WizardSteps-marker\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-WizardSteps-label\"\u003E#TEXT# \u003Cspan aria-hidden=\"true\" class=\"t-WizardSteps-labelState\"\u003E\u003C\/span\u003E\u003C\/span\u003E\n  \u003C\/div\u003E\n\u003C\/li\u003E"
+     ,"Noncurrent":"\u003Cli class=\"t-WizardSteps-step\" id=\"#LIST_ITEM_ID#\"\u003E\n  \u003Cdiv class=\"t-WizardSteps-wrap\" data-link=\"#LINK#\"\u003E\n    \u003Cspan class=\"t-WizardSteps-marker\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-WizardSteps-label\"\u003E#TEXT# \u003Cspan aria-hidden=\"true\" class=\"t-WizardSteps-labelState\"\u003E\u003C\/span\u003E\u003C\/span\u003E\n  \u003C\/div\u003E\n\u003C\/li\u003E"
+    }
+   ,"After List Entry":{
+      "After Rows":"\u003C\/ul\u003E"
+    }
+   ,"JavaScript":{
+      "Execute when Page Loads":"apex.theme.initWizardProgressBar();"
+    }
+   ,"Template Options":[
+      {
+        "id":"126079577463127346"
+       ,"Identification":{
+          "Name":"Make Wizard Steps Clickable"
+         ,"Identifier":"WIZARD_PROGRESS_LINKS"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-wizardProgressLinks"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This option will make the wizard steps clickable links."
+        }
+      }
+     ,{
+        "id":"452479834295466289"
+       ,"Identification":{
+          "Name":"All Steps"
+         ,"Identifier":"ALLSTEPS"
+         ,"Group":"Label Display (2265581373453306)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-WizardSteps--displayLabels"
+          ]
+        }
+      }
+     ,{
+        "id":"452479923474466290"
+       ,"Identification":{
+          "Name":"Current Step Only"
+         ,"Identifier":"CURRENTSTEPONLY"
+         ,"Group":"Label Display (2265581373453306)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-WizardSteps--displayCurrentLabelOnly"
+          ]
+        }
+      }
+     ,{
+        "id":"452479966426466290"
+       ,"Identification":{
+          "Name":"Hide Labels"
+         ,"Identifier":"HIDELABELS"
+         ,"Group":"Label Display (2265581373453306)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-WizardSteps--hideLabels"
+          ]
+        }
+      }
+     ,{
+        "id":"452480098305466290"
+       ,"Identification":{
+          "Name":"Vertical Orientation"
+         ,"Identifier":"VERTICAL_LIST"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-WizardSteps--vertical"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Displays the wizard progress list in a vertical orientation and is suitable for displaying within a side column of a page."
+        }
+      }
+    ]
   }
  ,{
     "id":"452480217536466290"
    ,"Identification":{
       "Name":"Links List"
+     ,"Identifier":"LINKS_LIST"
+     ,"Class":"Vertical Unordered List without Bullets"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"4070914341144059318"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"List":{
+      "Before Rows":"\u003Cul class=\"t-LinksList #COMPONENT_CSS_CLASSES#\" id=\"#LIST_ID#\"\u003E"
+    }
+   ,"Entry":{
+      "Current":"\u003Cli class=\"t-LinksList-item is-current #A03#\" aria-current=\"page\"\u003E\n  \u003Ca href=\"#LINK#\" class=\"t-LinksList-link\" #A02#\u003E\n    \u003Cspan class=\"t-LinksList-icon\" aria-hidden=\"true\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-LinksList-label\"\u003E#TEXT#\u003C\/span\u003E\n    \u003Cspan class=\"t-LinksList-badge\"\u003E#A01#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E\n"
+     ,"Current with Sublist":"\u003Cli class=\"t-LinksList-item is-current #A03#\" aria-current=\"page\"\u003E\n  \u003Ca href=\"#LINK#\" class=\"t-LinksList-link\" #A02#\u003E\n    \u003Cspan class=\"t-LinksList-icon\" aria-hidden=\"true\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-LinksList-label\"\u003E#TEXT#\u003C\/span\u003E\n    \u003Cspan class=\"t-LinksList-badge\"\u003E#A01#\u003C\/span\u003E\n  \u003C\/a\u003E\n  #SUB_LISTS#\n\u003C\/li\u003E"
+     ,"Noncurrent":"\u003Cli class=\"t-LinksList-item #A03#\"\u003E\n  \u003Ca href=\"#LINK#\" class=\"t-LinksList-link\" #A02#\u003E\n    \u003Cspan class=\"t-LinksList-icon\" aria-hidden=\"true\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-LinksList-label\"\u003E#TEXT#\u003C\/span\u003E\n    \u003Cspan class=\"t-LinksList-badge\"\u003E#A01#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+     ,"Noncurrent with Sublist":"\u003Cli class=\"t-LinksList-item #A03#\"\u003E\n  \u003Ca href=\"#LINK#\" class=\"t-LinksList-link\" #A02#\u003E\n    \u003Cspan class=\"t-LinksList-icon\" aria-hidden=\"true\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-LinksList-label\"\u003E#TEXT#\u003C\/span\u003E\n    \u003Cspan class=\"t-LinksList-badge\"\u003E#A01#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E"
+    }
+   ,"SubList":{
+      "Before Rows":"\u003Cul class=\"t-LinksList-list\"\u003E"
+     ,"After Rows":"\u003C\/ul\u003E"
+    }
+   ,"Sublist Entry":{
+      "Current":"\u003Cli class=\"t-LinksList-item is-current #A03#\" aria-current=\"page\"\u003E\n  \u003Ca href=\"#LINK#\" class=\"t-LinksList-link\" #A02#\u003E\n    \u003Cspan class=\"t-LinksList-icon\" aria-hidden=\"true\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-LinksList-label\"\u003E#TEXT#\u003C\/span\u003E\n    \u003Cspan class=\"t-LinksList-badge\"\u003E#A01#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E\n"
+     ,"Noncurrent":"\u003Cli class=\"t-LinksList-item #A03#\"\u003E\n  \u003Ca href=\"#LINK#\" class=\"t-LinksList-link\" #A02#\u003E\n    \u003Cspan class=\"t-LinksList-icon\" aria-hidden=\"true\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\u003C\/span\u003E\n    \u003Cspan class=\"t-LinksList-label\"\u003E#TEXT#\u003C\/span\u003E\n    \u003Cspan class=\"t-LinksList-badge\"\u003E#A01#\u003C\/span\u003E\n  \u003C\/a\u003E\n\u003C\/li\u003E\n"
+    }
+   ,"After List Entry":{
+      "After Rows":"\u003C\/ul\u003E"
+    }
+   ,"Attribute Descriptions":{
+      "A01":"Badge Value"
+     ,"A02":"Link Attributes"
+     ,"A03":"List Item CSS Classes"
+    }
+   ,"Template Options":[
+      {
+        "id":"452480327720466290"
+       ,"Identification":{
+          "Name":"Actions"
+         ,"Identifier":"ACTIONS"
+         ,"Group":"Style (2267160888453306)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-LinksList--actions"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Render as actions to be placed on the right side column."
+        }
+      }
+     ,{
+        "id":"452480371222466290"
+       ,"Identification":{
+          "Name":"Disable Text Wrapping"
+         ,"Identifier":"DISABLETEXTWRAPPING"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-LinksList--nowrap"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Do not allow link text to wrap to new lines. Truncate with ellipsis."
+        }
+      }
+     ,{
+        "id":"452480488545466290"
+       ,"Identification":{
+          "Name":"Show Badges"
+         ,"Identifier":"SHOWBADGES"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-LinksList--showBadge"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Show badge to right of link (requires Attribute 1 to be populated)"
+        }
+      }
+     ,{
+        "id":"452480598201466290"
+       ,"Identification":{
+          "Name":"Show Right Arrow"
+         ,"Identifier":"SHOWGOTOARROW"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-LinksList--showArrow"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Show arrow to the right of link"
+        }
+      }
+     ,{
+        "id":"452480826652466290"
+       ,"Identification":{
+          "Name":"For All Items"
+         ,"Identifier":"SHOWICONS"
+         ,"Group":"Display Icons (2263953708453304)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-LinksList--showIcons"
+          ]
+        }
+      }
+     ,{
+        "id":"452480888521466292"
+       ,"Identification":{
+          "Name":"For Top Level Items Only"
+         ,"Identifier":"SHOWTOPICONS"
+         ,"Group":"Display Icons (2263953708453304)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-LinksList--showTopIcons"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This will show icons for top level items of the list only. It will not show icons for sub lists."
+        }
+      }
+    ]
   }
  ,{
     "id":"452481054948466292"
    ,"Identification":{
       "Name":"Menu Popup"
+     ,"Identifier":"MENU_POPUP"
+     ,"Class":"Pull Down Menu"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"3492264004432431646"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"List":{
+      "Before Rows":"\u003Cdiv id=\"#PARENT_STATIC_ID#_menu\" class=\"#COMPONENT_CSS_CLASSES#\" style=\"display:none;\"\u003E\u003Cul\u003E"
+    }
+   ,"Entry":{
+      "Current":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E\n"
+     ,"Current with Sublist":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E"
+     ,"Noncurrent":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E\n"
+     ,"Noncurrent with Sublist":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E"
+    }
+   ,"SubList":{
+      "Before Rows":"\u003Cul\u003E"
+     ,"After Rows":"\u003C\/ul\u003E\u003C\/li\u003E"
+    }
+   ,"Sublist Entry":{
+      "Current":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Current with Sublist":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E"
+     ,"Noncurrent":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E\u003C\/li\u003E"
+     ,"Noncurrent with Sublist Items":"\u003Cli data-id=\"#A01#\" data-disabled=\"#A02#\" data-hide=\"#A03#\" data-shortcut=\"#A05#\" data-icon=\"#ICON_CSS_CLASSES#\"\u003E\u003Ca href=\"#LINK#\" title=\"#A04#\" target=\"#A06#\"\u003E#TEXT_ESC_SC#\u003C\/a\u003E"
+    }
+   ,"After List Entry":{
+      "After Rows":"\u003C\/ul\u003E\u003C\/div\u003E"
+    }
+   ,"JavaScript":{
+      "Execute when Page Loads":"var e = apex.jQuery(\"##PARENT_STATIC_ID#_menu\", apex.gPageContext$);\nif (e.hasClass(\"js-addActions\")) {\n  apex.actions.addFromMarkup( e );\n}\ne.menu({ iconType: \u0027fa\u0027, callout: e.hasClass(\"js-menu-callout\")});"
+    }
+   ,"Attribute Descriptions":{
+      "A01":"Menu Item ID \/ Action Name"
+     ,"A02":"Disabled (True\/False)"
+     ,"A03":"Hidden (True\/False)"
+     ,"A04":"Title Attribute (Used By Actions Only)"
+     ,"A05":"Shortcut"
+     ,"A06":"Link Target"
+    }
+   ,"Template Options":[
+      {
+        "id":"126061925649127335"
+       ,"Identification":{
+          "Name":"Add Actions"
+         ,"Identifier":"ADD_ACTIONS"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-addActions"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Enables you to define a keyboard shortcut to activate the menu item."
+        }
+      }
+     ,{
+        "id":"126062329823127335"
+       ,"Identification":{
+          "Name":"Display Menu Callout"
+         ,"Identifier":"DISPLAY_MENU_CALLOUT"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-menu-callout"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Use this option to add display a callout for the menu. Note that callout will only be displayed if the data-parent-element custom attribute is defined."
+        }
+      }
+    ]
   }
 ]

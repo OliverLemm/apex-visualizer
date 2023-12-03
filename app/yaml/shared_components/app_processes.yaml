@@ -19,3 +19,6 @@
     language: PL/SQL
     pl/sql-expression: owa_util.get_cgi_env('APEX-Nitro') is not null
 
+  subscription: 
+    version-number: 1
+

@@ -9,3 +9,6 @@
     default-on-export: Same as Current Status
     on-upgrade-keep-status: false
 
+  subscription: 
+    version-number: 1
+

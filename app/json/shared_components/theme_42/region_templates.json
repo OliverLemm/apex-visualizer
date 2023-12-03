@@ -3,126 +3,4276 @@
     "id":"2081235920935293"
    ,"Identification":{
       "Name":"Search Results Container"
+     ,"Identifier":"SEARCH_RESULTS_CONTAINER"
+     ,"Class":"Region without Title"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"1554292095258992441"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Default":[
+        "u-colors"
+      ]
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv class=\"t-ResultsRegion #REGION_CSS_CLASSES#\" id=\"#REGION_STATIC_ID#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E\n  \u003Cdiv class=\"t-ResultsRegion-search\"\u003E#SEARCH_FIELD#\u003C\/div\u003E\n  #BODY#\n  #SUB_REGIONS#\n\u003C\/div\u003E\n"
+    }
+   ,"Accessibility":{
+      "Landmark Type":"Region"
+    }
+   ,"Template Options":[
+      {
+        "id":"2083292193935296"
+       ,"Identification":{
+          "Name":"Apply Theme Colors"
+         ,"Identifier":"APPLY_THEME_COLORS"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "u-colors"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Applies the colors from the theme\u0027s color palette to the icons or initials within search results."
+        }
+      }
+     ,{
+        "id":"2083638967935296"
+       ,"Identification":{
+          "Name":"Large"
+         ,"Identifier":"ICON_SIZE_LARGE"
+         ,"Group":"Icon Size (2279127047453309)"
+         ,"Sequence":3
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ResultsRegion--iconLg"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Sets the icon size to large (64px)."
+        }
+      }
+     ,{
+        "id":"2084083365935296"
+       ,"Identification":{
+          "Name":"Medium"
+         ,"Identifier":"ICON_SIZE_MEDIUM"
+         ,"Group":"Icon Size (2279127047453309)"
+         ,"Sequence":2
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ResultsRegion--iconMd"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Sets the icon size to medium (32px)."
+        }
+      }
+     ,{
+        "id":"2084415117935296"
+       ,"Identification":{
+          "Name":"Small"
+         ,"Identifier":"ICON_SIZE_SMALL"
+         ,"Group":"Icon Size (2279127047453309)"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ResultsRegion--iconSm"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Sets the icon size to small (16px)."
+        }
+      }
+     ,{
+        "id":"2084830446935296"
+       ,"Identification":{
+          "Name":"Boxed"
+         ,"Identifier":"RESULT_APPEARANCE_BOXED"
+         ,"Group":"Result Appearance (2286349264453312)"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ResultsRegion--boxed"
+          ]
+        }
+      }
+     ,{
+        "id":"2085245192935298"
+       ,"Identification":{
+          "Name":"Flat"
+         ,"Identifier":"RESULT_APPEARANCE_FLAT"
+         ,"Group":"Result Appearance (2286349264453312)"
+         ,"Sequence":2
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ResultsRegion--flat"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"2085533797935298"
    ,"Identification":{
       "Name":"Item Container"
+     ,"Identifier":"ITEM_CONTAINER"
+     ,"Class":"Custom 1"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"1568547778806319863"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv class=\"t-ItemContainer #REGION_CSS_CLASSES#\" id=\"#REGION_STATIC_ID#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E\n  \u003Cdiv class=\"t-ItemContainer-start\"\u003E#BUTTON_START#\u003C\/div\u003E\n  \u003Cdiv class=\"t-ItemContainer-item\"\u003E#BODY#\u003C\/div\u003E\n  \u003Cdiv class=\"t-ItemContainer-end\"\u003E#BUTTON_END#\u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"2087511487935298"
+       ,"Identification":{
+          "Name":"Center"
+         ,"Identifier":"ALIGNMENT_CENTER"
+         ,"Group":"Alignment (2271951190453307)"
+         ,"Sequence":11
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ItemContainer--alignCenter"
+          ]
+        }
+      }
+     ,{
+        "id":"2087927245935298"
+       ,"Identification":{
+          "Name":"End"
+         ,"Identifier":"ALIGNMENT_END"
+         ,"Group":"Alignment (2271951190453307)"
+         ,"Sequence":12
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ItemContainer--alignEnd"
+          ]
+        }
+      }
+     ,{
+        "id":"2088337213935298"
+       ,"Identification":{
+          "Name":"Start"
+         ,"Identifier":"ALIGNMENT_START"
+         ,"Group":"Alignment (2271951190453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ItemContainer--alignStart"
+          ]
+        }
+      }
+     ,{
+        "id":"2088789273935298"
+       ,"Identification":{
+          "Name":"Stretch"
+         ,"Identifier":"ALIGNMENT_STRETCH"
+         ,"Group":"Alignment (2271951190453307)"
+         ,"Sequence":13
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ItemContainer--alignStretch"
+          ]
+        }
+      }
+     ,{
+        "id":"2089150282935298"
+       ,"Identification":{
+          "Name":"Stack on Mobile"
+         ,"Identifier":"STACK_MOBILE"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ItemContainer--stackMobile"
+          ]
+        }
+      }
+     ,{
+        "id":"2089554267935300"
+       ,"Identification":{
+          "Name":"Wrap Items"
+         ,"Identifier":"WRAP_ITEMS"
+         ,"Sequence":2
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ItemContainer--wrap"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"2611240099797376"
    ,"Identification":{
       "Name":"Image"
+     ,"Identifier":"IMAGE"
+     ,"Class":"Custom 1"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"1673953645642781634"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-ImageRegion--auto"
+       ,"t-ImageRegion--cover"
+       ,"t-ImageRegion--square"
+       ,"t-ImageRegion--noFilter"
+      ]
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv id=\"#REGION_STATIC_ID#\" class=\"t-ImageRegion #REGION_CSS_CLASSES#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E\u003Cimg src=\"#REGION_IMAGE_URL#\" alt=\"#REGION_IMAGE_ALT_TEXT#\" #REGION_IMAGE_ATTRIBUTES# \/\u003E\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"2612758264797379"
+       ,"Identification":{
+          "Name":"16:9 (Widescreen)"
+         ,"Identifier":"RATIO_16_9"
+         ,"Group":"Ratio (2279986974453310)"
+         ,"Sequence":120
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--16x9"
+          ]
+        }
+      }
+     ,{
+        "id":"2613165930797379"
+       ,"Identification":{
+          "Name":"1:1 (Square)"
+         ,"Identifier":"RATIO_1_1"
+         ,"Group":"Ratio (2279986974453310)"
+         ,"Sequence":110
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--1x1"
+          ]
+        }
+      }
+     ,{
+        "id":"2613596896797379"
+       ,"Identification":{
+          "Name":"2:1 (Univisium)"
+         ,"Identifier":"RATIO_2_1"
+         ,"Group":"Ratio (2279986974453310)"
+         ,"Sequence":140
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--2x1"
+          ]
+        }
+      }
+     ,{
+        "id":"2613959520797379"
+       ,"Identification":{
+          "Name":"4:3 (Standard)"
+         ,"Identifier":"RATIO_4_3"
+         ,"Group":"Ratio (2279986974453310)"
+         ,"Sequence":130
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--4x3"
+          ]
+        }
+      }
+     ,{
+        "id":"2614348177797379"
+       ,"Identification":{
+          "Name":"Auto"
+         ,"Identifier":"RATIO_AUTO"
+         ,"Group":"Ratio (2279986974453310)"
+         ,"Sequence":100
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--auto"
+          ]
+        }
+      }
+     ,{
+        "id":"2614773797797379"
+       ,"Identification":{
+          "Name":"Blur"
+         ,"Identifier":"FILTER_BLUR"
+         ,"Group":"Filter (2279598751453309)"
+         ,"Sequence":430
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--blur"
+          ]
+        }
+      }
+     ,{
+        "id":"2615177590797379"
+       ,"Identification":{
+          "Name":"Circle"
+         ,"Identifier":"SHAPE_CIRCLE"
+         ,"Group":"Shape (2280721371453310)"
+         ,"Sequence":320
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--circle"
+          ]
+        }
+      }
+     ,{
+        "id":"2615538255797379"
+       ,"Identification":{
+          "Name":"Contain"
+         ,"Identifier":"SCALE_CONTAIN"
+         ,"Group":"Scale (2280397593453310)"
+         ,"Sequence":200
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--contain"
+          ]
+        }
+      }
+     ,{
+        "id":"2615901525797379"
+       ,"Identification":{
+          "Name":"Cover"
+         ,"Identifier":"SCALE_COVER"
+         ,"Group":"Scale (2280397593453310)"
+         ,"Sequence":210
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--cover"
+          ]
+        }
+      }
+     ,{
+        "id":"2616333074797381"
+       ,"Identification":{
+          "Name":"Fill"
+         ,"Identifier":"SCALE_FILL"
+         ,"Group":"Scale (2280397593453310)"
+         ,"Sequence":220
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--fill"
+          ]
+        }
+      }
+     ,{
+        "id":"2616780770797381"
+       ,"Identification":{
+          "Name":"Grayscale"
+         ,"Identifier":"FILTER_GRAYSCALE"
+         ,"Group":"Filter (2279598751453309)"
+         ,"Sequence":410
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--grayscale"
+          ]
+        }
+      }
+     ,{
+        "id":"2617114636797381"
+       ,"Identification":{
+          "Name":"Invert"
+         ,"Identifier":"FILTER_INVERT"
+         ,"Group":"Filter (2279598751453309)"
+         ,"Sequence":440
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--invert"
+          ]
+        }
+      }
+     ,{
+        "id":"2617581294797381"
+       ,"Identification":{
+          "Name":"None"
+         ,"Identifier":"FILTER_NONE"
+         ,"Group":"Filter (2279598751453309)"
+         ,"Sequence":400
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--noFilter"
+          ]
+        }
+      }
+     ,{
+        "id":"2617984866797381"
+       ,"Identification":{
+          "Name":"Rounded"
+         ,"Identifier":"SHAPE_ROUNDED"
+         ,"Group":"Shape (2280721371453310)"
+         ,"Sequence":310
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--rounded"
+          ]
+        }
+      }
+     ,{
+        "id":"2618333418797381"
+       ,"Identification":{
+          "Name":"Saturate"
+         ,"Identifier":"FILTER_SATURATE"
+         ,"Group":"Filter (2279598751453309)"
+         ,"Sequence":450
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--saturate"
+          ]
+        }
+      }
+     ,{
+        "id":"2618762314797381"
+       ,"Identification":{
+          "Name":"Scale Down"
+         ,"Identifier":"SCALE_DOWN"
+         ,"Group":"Scale (2280397593453310)"
+         ,"Sequence":230
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--scale-down"
+          ]
+        }
+      }
+     ,{
+        "id":"2619170842797381"
+       ,"Identification":{
+          "Name":"Sepia"
+         ,"Identifier":"FILTER_SEPIA"
+         ,"Group":"Filter (2279598751453309)"
+         ,"Sequence":420
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--sepia"
+          ]
+        }
+      }
+     ,{
+        "id":"2619591675797381"
+       ,"Identification":{
+          "Name":"Square"
+         ,"Identifier":"SHAPE_SQUARE"
+         ,"Group":"Shape (2280721371453310)"
+         ,"Sequence":300
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--square"
+          ]
+        }
+      }
+     ,{
+        "id":"2619973712797381"
+       ,"Identification":{
+          "Name":"Image Stretch"
+         ,"Identifier":"IMAGE_STRETCH"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ImageRegion--stretch"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"16274217892838698"
    ,"Identification":{
       "Name":"Inline Drawer"
+     ,"Identifier":"INLINE_DRAWER"
+     ,"Class":"Custom 4"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"1659526333647509386"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "js-dialog-class-t-Drawer--pullOutEnd"
+      ]
+     ,"Default":[
+        "js-modal"
+      ]
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv id=\"#REGION_STATIC_ID#_parent\"\u003E\n  \u003Cdiv id=\"#REGION_STATIC_ID#\" class=\"t-DrawerRegion js-dialog-class-ui-dialog--drawer #REGION_CSS_CLASSES# js-regionDialog\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES# style=\"display:none\" title=\"#TITLE!ATTR#\"\u003E\n    \u003Cdiv class=\"t-DrawerRegion-wrap\"\u003E\n      \u003Cdiv class=\"t-DrawerRegion-bodyWrapperOut\"\u003E\n        \u003Cdiv class=\"t-DrawerRegion-bodyWrapperIn\"\u003E\n          \u003Cdiv class=\"t-DrawerRegion-body\"\u003E#BODY##SUB_REGIONS#\u003C\/div\u003E\n        \u003C\/div\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-DrawerRegion-buttons\"\u003E\n        \u003Cdiv class=\"t-ButtonRegion t-ButtonRegion--dialogRegion\"\u003E\n          \u003Cdiv class=\"t-ButtonRegion-wrap\"\u003E\n            \u003Cdiv class=\"t-ButtonRegion-col t-ButtonRegion-col--left\"\u003E\n              \u003Cdiv class=\"t-ButtonRegion-buttons\"\u003E#PREVIOUS##DELETE##CLOSE#\u003C\/div\u003E\n            \u003C\/div\u003E\n            \u003Cdiv class=\"t-ButtonRegion-col t-ButtonRegion-col--right\"\u003E\n              \u003Cdiv class=\"t-ButtonRegion-buttons\"\u003E#EDIT##CREATE##NEXT#\u003C\/div\u003E\n            \u003C\/div\u003E\n          \u003C\/div\u003E\n        \u003C\/div\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"16278751641838701"
+       ,"Identification":{
+          "Name":"Large"
+         ,"Identifier":"DRAWER_SIZE_LARGE"
+         ,"Group":"Size (2275910227453309)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-class-t-Drawer--lg"
+          ]
+        }
+      }
+     ,{
+        "id":"16279107194838701"
+       ,"Identification":{
+          "Name":"Medium"
+         ,"Identifier":"DRAWER_SIZE_MEDIUM"
+         ,"Group":"Size (2275910227453309)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-class-t-Drawer--md"
+          ]
+        }
+      }
+     ,{
+        "id":"16279577210838701"
+       ,"Identification":{
+          "Name":"End"
+         ,"Identifier":"POSITION_END"
+         ,"Group":"Position (2284776556453310)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-class-t-Drawer--pullOutEnd"
+          ]
+        }
+      }
+     ,{
+        "id":"16279988847838701"
+       ,"Identification":{
+          "Name":"Start"
+         ,"Identifier":"POSITION_START"
+         ,"Group":"Position (2284776556453310)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-class-t-Drawer--pullOutStart"
+          ]
+        }
+      }
+     ,{
+        "id":"16280342111838701"
+       ,"Identification":{
+          "Name":"Small"
+         ,"Identifier":"DRAWER_SIZE_SMALL"
+         ,"Group":"Size (2275910227453309)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-class-t-Drawer--sm"
+          ]
+        }
+      }
+     ,{
+        "id":"16280794330838701"
+       ,"Identification":{
+          "Name":"Extra Large"
+         ,"Identifier":"DRAWER_SIZE_EXTRA_LARGE"
+         ,"Group":"Size (2275910227453309)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-class-t-Drawer--xl"
+          ]
+        }
+      }
+     ,{
+        "id":"16281184931838703"
+       ,"Identification":{
+          "Name":"None (Auto)"
+         ,"Identifier":"NONE"
+         ,"Group":"Size (2275910227453309)"
+         ,"Sequence":5
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-nosize"
+          ]
+        }
+      }
+     ,{
+        "id":"16281574297838703"
+       ,"Identification":{
+          "Name":"Modal"
+         ,"Identifier":"MODAL"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-modal"
+          ]
+        }
+      }
+     ,{
+        "id":"16281983572838703"
+       ,"Identification":{
+          "Name":"Remove Body Padding"
+         ,"Identifier":"REMOVE_BODY_PADDING"
+         ,"Sequence":5
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-DialogRegion--noPadding"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes the padding around the region body."
+        }
+      }
+    ]
   }
  ,{
     "id":"126012964265127296"
    ,"Identification":{
       "Name":"Inline Popup"
+     ,"Identifier":"INLINE_POPUP"
+     ,"Class":"Custom 4"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"1483922538999385230"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "js-dialog-size600x400"
+      ]
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv id=\"#REGION_STATIC_ID#_parent\"\u003E\n\u003Cdiv id=\"#REGION_STATIC_ID#\" class=\"t-DialogRegion #REGION_CSS_CLASSES# js-regionPopup\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES# style=\"display:none\" title=\"#TITLE!ATTR#\"\u003E\n  \u003Cdiv class=\"t-DialogRegion-wrap\"\u003E\n    \u003Cdiv class=\"t-DialogRegion-bodyWrapperOut\"\u003E\u003Cdiv class=\"t-DialogRegion-bodyWrapperIn\"\u003E\u003Cdiv class=\"t-DialogRegion-body\"\u003E#BODY##SUB_REGIONS#\u003C\/div\u003E\u003C\/div\u003E\u003C\/div\u003E\n    \u003Cdiv class=\"t-DialogRegion-buttons\"\u003E\n       \u003Cdiv class=\"t-ButtonRegion t-ButtonRegion--dialogRegion\"\u003E\n         \u003Cdiv class=\"t-ButtonRegion-wrap\"\u003E\n           \u003Cdiv class=\"t-ButtonRegion-col t-ButtonRegion-col--left\"\u003E\u003Cdiv class=\"t-ButtonRegion-buttons\"\u003E#PREVIOUS##DELETE##CLOSE#\u003C\/div\u003E\u003C\/div\u003E\n           \u003Cdiv class=\"t-ButtonRegion-col t-ButtonRegion-col--right\"\u003E\u003Cdiv class=\"t-ButtonRegion-buttons\"\u003E#EDIT##CREATE##NEXT#\u003C\/div\u003E\u003C\/div\u003E\n         \u003C\/div\u003E\n       \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"126013990261127300"
+       ,"Identification":{
+          "Name":"Above"
+         ,"Identifier":"ABOVE"
+         ,"Group":"Callout Position (2274391301453307)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-popup-pos-above"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Positions the callout above or typically on top of the parent."
+        }
+      }
+     ,{
+        "id":"126014383463127300"
+       ,"Identification":{
+          "Name":"After"
+         ,"Identifier":"AFTER"
+         ,"Group":"Callout Position (2274391301453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-popup-pos-after"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Positions the callout after or typically to the right of the parent."
+        }
+      }
+     ,{
+        "id":"126014733390127300"
+       ,"Identification":{
+          "Name":"Auto Height"
+         ,"Identifier":"AUTO_HEIGHT_INLINE_DIALOG"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-autoheight"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This option will set the height of the dialog to fit its contents."
+        }
+      }
+     ,{
+        "id":"126015125958127300"
+       ,"Identification":{
+          "Name":"Before"
+         ,"Identifier":"BEFORE"
+         ,"Group":"Callout Position (2274391301453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-popup-pos-before"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Positions the callout before or typically to the left of the parent."
+        }
+      }
+     ,{
+        "id":"126015553205127300"
+       ,"Identification":{
+          "Name":"Below"
+         ,"Identifier":"BELOW"
+         ,"Group":"Callout Position (2274391301453307)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-popup-pos-below"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Positions the callout below or typically to the bottom of the parent."
+        }
+      }
+     ,{
+        "id":"126015962719127301"
+       ,"Identification":{
+          "Name":"Display Popup Callout"
+         ,"Identifier":"DISPLAY_POPUP_CALLOUT"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-popup-callout"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Use this option to add display a callout for the popup. Note that callout will only be displayed if the data-parent-element custom attribute is defined."
+        }
+      }
+     ,{
+        "id":"126016397992127301"
+       ,"Identification":{
+          "Name":"Inside"
+         ,"Identifier":"INSIDE"
+         ,"Group":"Callout Position (2274391301453307)"
+         ,"Sequence":50
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-popup-pos-inside"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Positions the callout inside of the parent. This is useful when the parent is sufficiently large, such as a report or large region."
+        }
+      }
+     ,{
+        "id":"126016760215127301"
+       ,"Identification":{
+          "Name":"Large (720x480)"
+         ,"Identifier":"LARGE_720X480"
+         ,"Group":"Size (2275910227453309)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-size720x480"
+          ]
+        }
+      }
+     ,{
+        "id":"126017135940127301"
+       ,"Identification":{
+          "Name":"Medium (600x400)"
+         ,"Identifier":"MEDIUM_600X400"
+         ,"Group":"Size (2275910227453309)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-size600x400"
+          ]
+        }
+      }
+     ,{
+        "id":"126017576440127301"
+       ,"Identification":{
+          "Name":"None"
+         ,"Identifier":"NONE"
+         ,"Group":"Size (2275910227453309)"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-nosize"
+          ]
+        }
+      }
+     ,{
+        "id":"126017913070127301"
+       ,"Identification":{
+          "Name":"Remove Body Padding"
+         ,"Identifier":"REMOVE_BODY_PADDING"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-DialogRegion--noPadding"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes the padding around the region body."
+        }
+      }
+     ,{
+        "id":"126018314391127301"
+       ,"Identification":{
+          "Name":"Remove Page Overlay"
+         ,"Identifier":"REMOVE_PAGE_OVERLAY"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-popup-noOverlay"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This option will display the inline dialog without an overlay on the background."
+        }
+      }
+     ,{
+        "id":"126018775959127301"
+       ,"Identification":{
+          "Name":"Small (480x320)"
+         ,"Identifier":"SMALL_480X320"
+         ,"Group":"Size (2275910227453309)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-size480x320"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"126019005093127303"
    ,"Identification":{
       "Name":"Cards Container"
+     ,"Identifier":"CARDS_CONTAINER"
+     ,"Class":"Custom 1"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2071277712695139743"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Default":[
+        "u-colors"
+      ]
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv class=\"t-CardsRegion #REGION_CSS_CLASSES#\" id=\"#REGION_STATIC_ID#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E\n  \u003Cdiv class=\"t-Region-orderBy\"\u003E#ORDER_BY_ITEM#\u003C\/div\u003E\n  #BODY#\n  #SUB_REGIONS#\n\u003C\/div\u003E"
+    }
+   ,"Accessibility":{
+      "Landmark Type":"Region"
+    }
+   ,"Template Options":[
+      {
+        "id":"126019543622127303"
+       ,"Identification":{
+          "Name":"Apply Theme Colors"
+         ,"Identifier":"APPLY_THEME_COLORS"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "u-colors"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Applies the colors from the theme\u0027s color palette to the icons or initials within cards."
+        }
+      }
+     ,{
+        "id":"126019956405127303"
+       ,"Identification":{
+          "Name":"Style A"
+         ,"Identifier":"STYLE_A"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-CardsRegion--styleA"
+          ]
+        }
+      }
+     ,{
+        "id":"126020344851127303"
+       ,"Identification":{
+          "Name":"Style B"
+         ,"Identifier":"STYLE_B"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-CardsRegion--styleB"
+          ]
+        }
+      }
+     ,{
+        "id":"126020792056127303"
+       ,"Identification":{
+          "Name":"Style C"
+         ,"Identifier":"STYLE_C"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-CardsRegion--styleC"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"452447143180466220"
    ,"Identification":{
       "Name":"Alert"
+     ,"Identifier":"ALERT"
+     ,"Class":"Custom 1"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2039236646100190748"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-Alert--horizontal"
+       ,"t-Alert--defaultIcons"
+       ,"t-Alert--warning"
+      ]
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv class=\"t-Alert #REGION_CSS_CLASSES#\" id=\"#REGION_STATIC_ID#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E\n  \u003Cdiv class=\"t-Alert-wrap\"\u003E\n    \u003Cdiv class=\"t-Alert-icon\"\u003E\n      \u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-content\"\u003E\n      \u003Cdiv class=\"t-Alert-header\"\u003E\n        \u003Ch2 class=\"t-Alert-title\" id=\"#REGION_STATIC_ID#_heading\" data-apex-heading\u003E#TITLE#\u003C\/h2\u003E\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-Alert-body\"\u003E#BODY##SUB_REGIONS#\u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Alert-buttons\"\u003E#PREVIOUS##CLOSE##CREATE##NEXT#\u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Accessibility":{
+      "Landmark Type":"Region"
+    }
+   ,"Template Options":[
+      {
+        "id":"452447278267466224"
+       ,"Identification":{
+          "Name":"Highlight Background"
+         ,"Identifier":"COLOREDBACKGROUND"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Alert--colorBG"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Set alert background color to that of the alert type (warning, success, etc.)"
+        }
+      }
+     ,{
+        "id":"452447525953466226"
+       ,"Identification":{
+          "Name":"Danger"
+         ,"Identifier":"DANGER"
+         ,"Group":"Alert Type (2271586806453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Alert--danger"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Show an error or danger alert."
+        }
+      }
+     ,{
+        "id":"452447662882466226"
+       ,"Identification":{
+          "Name":"Hidden but Accessible"
+         ,"Identifier":"HIDDENHEADER"
+         ,"Group":"Alert Title (2271128524453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Alert--accessibleHeading"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Visually hides the alert title, but assistive technologies can still read it."
+        }
+      }
+     ,{
+        "id":"452447838798466226"
+       ,"Identification":{
+          "Name":"Hidden"
+         ,"Identifier":"HIDDENHEADERNOAT"
+         ,"Group":"Alert Title (2271128524453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Alert--removeHeading"
+           ,"js-removeLandmark"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Hides the Alert Title from being displayed."
+        }
+      }
+     ,{
+        "id":"452448042955466226"
+       ,"Identification":{
+          "Name":"Horizontal"
+         ,"Identifier":"HORIZONTAL"
+         ,"Group":"Alert Display (2270350833453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Alert--horizontal"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Show horizontal alert with buttons to the right."
+        }
+      }
+     ,{
+        "id":"452448127831466226"
+       ,"Identification":{
+          "Name":"Information"
+         ,"Identifier":"INFORMATION"
+         ,"Group":"Alert Type (2271586806453307)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Alert--info"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Show informational alert."
+        }
+      }
+     ,{
+        "id":"452448240524466228"
+       ,"Identification":{
+          "Name":"Success"
+         ,"Identifier":"SUCCESS"
+         ,"Group":"Alert Type (2271586806453307)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Alert--success"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Show success alert."
+        }
+      }
+     ,{
+        "id":"452448403327466228"
+       ,"Identification":{
+          "Name":"Show Default Icons"
+         ,"Identifier":"USEDEFAULTICONS"
+         ,"Group":"Alert Icons (2270756884453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Alert--defaultIcons"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Uses default icons for alert types."
+        }
+      }
+     ,{
+        "id":"452448507778466228"
+       ,"Identification":{
+          "Name":"Warning"
+         ,"Identifier":"WARNING"
+         ,"Group":"Alert Type (2271586806453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Alert--warning"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Show a warning alert."
+        }
+      }
+     ,{
+        "id":"452448618126466228"
+       ,"Identification":{
+          "Name":"Wizard"
+         ,"Identifier":"WIZARD"
+         ,"Group":"Alert Display (2270350833453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Alert--wizard"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Show the alert in a wizard style region."
+        }
+      }
+     ,{
+        "id":"452448697729466228"
+       ,"Identification":{
+          "Name":"Show Custom Icons"
+         ,"Identifier":"SHOW_CUSTOM_ICONS"
+         ,"Group":"Alert Icons (2270756884453307)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Alert--customIcons"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Set custom icons by modifying the Alert Region\u0027s Icon CSS Classes property."
+        }
+      }
+     ,{
+        "id":"452448776658466229"
+       ,"Identification":{
+          "Name":"Hide Icons"
+         ,"Identifier":"HIDE_ICONS"
+         ,"Group":"Alert Icons (2270756884453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Alert--noIcon"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Hides alert icons"
+        }
+      }
+    ]
   }
  ,{
     "id":"452448893974466229"
    ,"Identification":{
       "Name":"Blank with Attributes"
+     ,"Identifier":"BLANK_WITH_ATTRIBUTES"
+     ,"Class":"Borderless Region"
+    }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"4499993862448380551"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv id=\"#REGION_STATIC_ID#\" class=\"#REGION_CSS_CLASSES#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E#PREVIOUS##BODY##SUB_REGIONS##NEXT#\u003C\/div\u003E"
     }
   }
  ,{
     "id":"452449028418466229"
    ,"Identification":{
       "Name":"Buttons Container"
+     ,"Identifier":"BUTTONS_CONTAINER"
+     ,"Class":"Button Region without Title"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2124982336649579661"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv class=\"t-ButtonRegion t-Form--floatLeft #REGION_CSS_CLASSES#\" id=\"#REGION_STATIC_ID#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E\n  \u003Cdiv class=\"t-ButtonRegion-wrap\"\u003E\n    \u003Cdiv class=\"t-ButtonRegion-col t-ButtonRegion-col--left\"\u003E\u003Cdiv class=\"t-ButtonRegion-buttons\"\u003E#PREVIOUS##CLOSE##DELETE#\u003C\/div\u003E\u003C\/div\u003E\n    \u003Cdiv class=\"t-ButtonRegion-col t-ButtonRegion-col--content\"\u003E\n      #BODY#\n      \u003Cdiv class=\"t-ButtonRegion-buttons\"\u003E#CHANGE#\u003C\/div\u003E\n      #SUB_REGIONS#\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-ButtonRegion-col t-ButtonRegion-col--right\"\u003E\u003Cdiv class=\"t-ButtonRegion-buttons\"\u003E#EDIT##CREATE##NEXT#\u003C\/div\u003E\u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Accessibility":{
+      "Landmark Type":"Region"
+    }
+   ,"Template Options":[
+      {
+        "id":"125927196681127240"
+       ,"Identification":{
+          "Name":"Stick to Bottom for Mobile"
+         ,"Identifier":"STICK_TO_BOTTOM"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ButtonRegion--stickToBottom"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This will position the button container region to the bottom of the screen for small screens."
+        }
+      }
+     ,{
+        "id":"452449384178466229"
+       ,"Identification":{
+          "Name":"Borderless"
+         ,"Identifier":"BORDERLESS"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ButtonRegion--noBorder"
+          ]
+        }
+      }
+     ,{
+        "id":"452449591533466229"
+       ,"Identification":{
+          "Name":"No Padding"
+         ,"Identifier":"NOPADDING"
+         ,"Group":"Body Padding (2273502106453307)"
+         ,"Sequence":3
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ButtonRegion--noPadding"
+          ]
+        }
+      }
+     ,{
+        "id":"452449707583466229"
+       ,"Identification":{
+          "Name":"Remove UI Decoration"
+         ,"Identifier":"REMOVEUIDECORATION"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":4
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ButtonRegion--noUI"
+          ]
+        }
+      }
+     ,{
+        "id":"452449847352466229"
+       ,"Identification":{
+          "Name":"Slim Padding"
+         ,"Identifier":"SLIMPADDING"
+         ,"Group":"Body Padding (2273502106453307)"
+         ,"Sequence":5
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ButtonRegion--slimPadding"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"452449956596466229"
    ,"Identification":{
       "Name":"Content Block"
+     ,"Identifier":"CONTENT_BLOCK"
+     ,"Class":"Custom 1"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2320668864738842174"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-ContentBlock--h1"
+      ]
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv class=\"t-ContentBlock #REGION_CSS_CLASSES#\" id=\"#REGION_STATIC_ID#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E\n  \u003Cdiv class=\"t-ContentBlock-header\"\u003E\n    \u003Cdiv class=\"t-ContentBlock-headerItems t-ContentBlock-headerItems--title\"\u003E\n      \u003Cspan class=\"t-ContentBlock-headerIcon\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/span\u003E\n      \u003Ch2 class=\"t-ContentBlock-title\" id=\"#REGION_STATIC_ID#_heading\" data-apex-heading\u003E#TITLE#\u003C\/h2\u003E\n      #EDIT#\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-ContentBlock-headerItems t-ContentBlock-headerItems--buttons\"\u003E#CHANGE#\u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-ContentBlock-body\"\u003E#BODY##SUB_REGIONS#\u003C\/div\u003E\n  \u003Cdiv class=\"t-ContentBlock-buttons\"\u003E#PREVIOUS##NEXT#\u003C\/div\u003E\n\u003C\/div\u003E\n"
+    }
+   ,"Accessibility":{
+      "Landmark Type":"Region"
+     ,"Region Title HTML ID":"#REGION_STATIC_ID#_heading"
+    }
+   ,"Template Options":[
+      {
+        "id":"1950760105935235"
+       ,"Identification":{
+          "Name":"Hidden but accessible"
+         ,"Identifier":"HIDEREGIONHEADER"
+         ,"Group":"Header (2277172574453309)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ContentBlock--hideHeader"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This option will hide the region header.  Note that the region title will still be audible for Screen Readers. Buttons placed in the region header will be hidden and inaccessible."
+        }
+      }
+     ,{
+        "id":"1951414403935235"
+       ,"Identification":{
+          "Name":"Hidden"
+         ,"Identifier":"HIDDENHEADERNOAT"
+         ,"Group":"Header (2277172574453309)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--removeHeader"
+           ,"js-removeLandmark"
+          ]
+        }
+      }
+     ,{
+        "id":"36230976885462490"
+       ,"Identification":{
+          "Name":"Alternative"
+         ,"Identifier":"HEADING_FONT_ALTERNATIVE"
+         ,"Group":"Heading Font (2277552268453309)"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ContentBlock--headingFontAlt"
+          ]
+        }
+      }
+     ,{
+        "id":"125962002704127259"
+       ,"Identification":{
+          "Name":"Show Region Icon"
+         ,"Identifier":"SHOW_REGION_ICON"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ContentBlock--showIcon"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Displays the region icon in the region header beside the region title"
+        }
+      }
+     ,{
+        "id":"452450015860466231"
+       ,"Identification":{
+          "Name":"Add Body Padding"
+         ,"Identifier":"ADD_BODY_PADDING"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ContentBlock--padded"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Adds padding to the region\u0027s body container."
+        }
+      }
+     ,{
+        "id":"452450205397466231"
+       ,"Identification":{
+          "Name":"Large"
+         ,"Identifier":"CONTENT_TITLE_H1"
+         ,"Group":"Region Title (2285570534453310)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ContentBlock--h1"
+          ]
+        }
+      }
+     ,{
+        "id":"452450302021466231"
+       ,"Identification":{
+          "Name":"Medium"
+         ,"Identifier":"CONTENT_TITLE_H2"
+         ,"Group":"Region Title (2285570534453310)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ContentBlock--h2"
+          ]
+        }
+      }
+     ,{
+        "id":"452450385611466231"
+       ,"Identification":{
+          "Name":"Small"
+         ,"Identifier":"CONTENT_TITLE_H3"
+         ,"Group":"Region Title (2285570534453310)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ContentBlock--h3"
+          ]
+        }
+      }
+     ,{
+        "id":"452450635696466232"
+       ,"Identification":{
+          "Name":"Light Background"
+         ,"Identifier":"LIGHT_BACKGROUND"
+         ,"Group":"Body Style (2273963546453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ContentBlock--lightBG"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Gives the region body a slightly lighter background."
+        }
+      }
+     ,{
+        "id":"452450757468466232"
+       ,"Identification":{
+          "Name":"Shadow Background"
+         ,"Identifier":"SHADOW_BACKGROUND"
+         ,"Group":"Body Style (2273963546453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-ContentBlock--shadowBG"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Gives the region body a slightly darker background."
+        }
+      }
+    ]
   }
  ,{
     "id":"452450845712466232"
    ,"Identification":{
       "Name":"Blank with Attributes (No Grid)"
+     ,"Identifier":"BLANK_WITH_ATTRIBUTES_NO_GRID"
+     ,"Class":"Borderless Region"
+    }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"3369790999010910123"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv id=\"#REGION_STATIC_ID#\" class=\"#REGION_CSS_CLASSES#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E#PREVIOUS##BODY##SUB_REGIONS##NEXT#\u003C\/div\u003E"
     }
   }
  ,{
     "id":"452451145470466232"
    ,"Identification":{
       "Name":"Carousel Container"
+     ,"Identifier":"CAROUSEL_CONTAINER"
+     ,"Class":"Navigation Region"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2865840475322558786"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-Region--hiddenOverflow"
+      ]
+     ,"Default":[
+        "t-Region--showCarouselControls"
+      ]
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv class=\"t-Region t-Region--carousel #REGION_CSS_CLASSES#\" id=\"#REGION_STATIC_ID#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E\n  \u003Cdiv class=\"t-Region-header\"\u003E\n    \u003Cdiv class=\"t-Region-headerItems t-Region-headerItems--title\"\u003E\n      \u003Cspan class=\"t-Region-headerIcon\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/span\u003E\n      \u003Ch2 class=\"t-Region-title\" id=\"#REGION_STATIC_ID#_heading\" data-apex-heading\u003E#TITLE#\u003C\/h2\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Region-headerItems t-Region-headerItems--buttons\"\u003E#COPY##EDIT#\u003Cspan class=\"js-maximizeButtonContainer\"\u003E\u003C\/span\u003E\u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv role=\"region\" aria-label=\"#TITLE#\" class=\"t-Region-bodyWrap\"\u003E\n    \u003Cdiv class=\"t-Region-buttons t-Region-buttons--top\"\u003E\n      \u003Cdiv class=\"t-Region-buttons-left\"\u003E#PREVIOUS#\u003C\/div\u003E\n      \u003Cdiv class=\"t-Region-buttons-right\"\u003E#NEXT#\u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Region-body\"\u003E\n      #BODY#\n      \u003Cdiv class=\"t-Region-carouselRegions\"\u003E#SUB_REGIONS#\u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-Region-buttons t-Region-buttons--bottom\"\u003E\n      \u003Cdiv class=\"t-Region-buttons-left\"\u003E#CLOSE##HELP#\u003C\/div\u003E\n      \u003Cdiv class=\"t-Region-buttons-right\"\u003E#DELETE##CHANGE##CREATE#\u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Accessibility":{
+      "Landmark Type":"Region"
+    }
+   ,"Sub Regions":{
+      "Template":"\u003Cdiv data-label=\"#SUB_REGION_TITLE#\" id=\"SR_#SUB_REGION_ID#\"\u003E\n  #SUB_REGION#\n\u003C\/div\u003E"
+    }
+   ,"JavaScript":{
+      "File URLs":[
+        "#APEX_FILES#libraries\/apex\/#MIN_DIRECTORY#widget.apexTabs#MIN#.js?v=#APEX_VERSION#"
+       ,"#APEX_FILES#plugins\/com.oracle.apex.carousel\/1.1\/com.oracle.apex.carousel#MIN#.js?v=#APEX_VERSION#"
+      ]
+    }
+   ,"Template Options":[
+      {
+        "id":"125932380388127243"
+       ,"Identification":{
+          "Name":"Show Region Icon"
+         ,"Identifier":"SHOW_REGION_ICON"
+         ,"Sequence":50
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--showIcon"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Displays the region icon in the region header beside the region title"
+        }
+      }
+     ,{
+        "id":"452451532184466234"
+       ,"Identification":{
+          "Name":"10 Seconds"
+         ,"Identifier":"10_SECONDS"
+         ,"Group":"Timer (2288722592453312)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-cycle10s"
+          ]
+        }
+      }
+     ,{
+        "id":"452451564422466235"
+       ,"Identification":{
+          "Name":"15 Seconds"
+         ,"Identifier":"15_SECONDS"
+         ,"Group":"Timer (2288722592453312)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-cycle15s"
+          ]
+        }
+      }
+     ,{
+        "id":"452451700696466235"
+       ,"Identification":{
+          "Name":"20 Seconds"
+         ,"Identifier":"20_SECONDS"
+         ,"Group":"Timer (2288722592453312)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-cycle20s"
+          ]
+        }
+      }
+     ,{
+        "id":"452451875001466235"
+       ,"Identification":{
+          "Name":"240px"
+         ,"Identifier":"240PX"
+         ,"Group":"Body Height (2272778136453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "i-h240"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Sets region body height to 240px."
+        }
+      }
+     ,{
+        "id":"452452060298466235"
+       ,"Identification":{
+          "Name":"320px"
+         ,"Identifier":"320PX"
+         ,"Group":"Body Height (2272778136453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "i-h320"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Sets region body height to 320px."
+        }
+      }
+     ,{
+        "id":"452452125705466235"
+       ,"Identification":{
+          "Name":"480px"
+         ,"Identifier":"480PX"
+         ,"Group":"Body Height (2272778136453307)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "i-h480"
+          ]
+        }
+      }
+     ,{
+        "id":"452452244327466235"
+       ,"Identification":{
+          "Name":"5 Seconds"
+         ,"Identifier":"5_SECONDS"
+         ,"Group":"Timer (2288722592453312)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-cycle5s"
+          ]
+        }
+      }
+     ,{
+        "id":"452452314968466235"
+       ,"Identification":{
+          "Name":"640px"
+         ,"Identifier":"640PX"
+         ,"Group":"Body Height (2272778136453307)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "i-h640"
+          ]
+        }
+      }
+     ,{
+        "id":"452452558753466235"
+       ,"Identification":{
+          "Name":"Accent 1"
+         ,"Identifier":"ACCENT_1"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent1"
+          ]
+        }
+      }
+     ,{
+        "id":"452452565746466237"
+       ,"Identification":{
+          "Name":"Accent 2"
+         ,"Identifier":"ACCENT_2"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent2"
+          ]
+        }
+      }
+     ,{
+        "id":"452452760048466237"
+       ,"Identification":{
+          "Name":"Accent 3"
+         ,"Identifier":"ACCENT_3"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent3"
+          ]
+        }
+      }
+     ,{
+        "id":"452452786926466237"
+       ,"Identification":{
+          "Name":"Accent 4"
+         ,"Identifier":"ACCENT_4"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent4"
+          ]
+        }
+      }
+     ,{
+        "id":"452452899516466237"
+       ,"Identification":{
+          "Name":"Accent 5"
+         ,"Identifier":"ACCENT_5"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":50
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent5"
+          ]
+        }
+      }
+     ,{
+        "id":"452453090336466237"
+       ,"Identification":{
+          "Name":"Hidden"
+         ,"Identifier":"HIDDENHEADERNOAT"
+         ,"Group":"Header (2277172574453309)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--removeHeader"
+          ]
+        }
+      }
+     ,{
+        "id":"452453314644466237"
+       ,"Identification":{
+          "Name":"Hide"
+         ,"Identifier":"HIDEOVERFLOW"
+         ,"Group":"Body Overflow (2273130286453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--hiddenOverflow"
+          ]
+        }
+      }
+     ,{
+        "id":"452453406079466239"
+       ,"Identification":{
+          "Name":"Hidden but accessible"
+         ,"Identifier":"HIDEREGIONHEADER"
+         ,"Group":"Header (2277172574453309)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--hideHeader"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This option will hide the region header.  Note that the region title will still be audible for Screen Readers. Buttons placed in the region header will be hidden and inaccessible."
+        }
+      }
+     ,{
+        "id":"452453496769466239"
+       ,"Identification":{
+          "Name":"Remove Body Padding"
+         ,"Identifier":"NOBODYPADDING"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--noPadding"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes padding from region body."
+        }
+      }
+     ,{
+        "id":"452453630419466239"
+       ,"Identification":{
+          "Name":"Remove Borders"
+         ,"Identifier":"NOBORDER"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--noBorder"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes borders from the region."
+        }
+      }
+     ,{
+        "id":"452453741286466239"
+       ,"Identification":{
+          "Name":"Remember Carousel Slide"
+         ,"Identifier":"REMEMBER_CAROUSEL_SLIDE"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-useLocalStorage"
+          ]
+        }
+      }
+     ,{
+        "id":"452453808756466239"
+       ,"Identification":{
+          "Name":"Scroll"
+         ,"Identifier":"SCROLLBODY"
+         ,"Group":"Body Overflow (2273130286453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--scrollBody"
+          ]
+        }
+      }
+     ,{
+        "id":"452453903543466239"
+       ,"Identification":{
+          "Name":"Show Maximize Button"
+         ,"Identifier":"SHOW_MAXIMIZE_BUTTON"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-showMaximizeButton"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Displays a button in the Region Header to maximize the region. Clicking this button will toggle the maximize state and stretch the region to fill the screen."
+        }
+      }
+     ,{
+        "id":"452454031113466239"
+       ,"Identification":{
+          "Name":"Show Next and Previous Buttons"
+         ,"Identifier":"SHOW_NEXT_AND_PREVIOUS_BUTTONS"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--showCarouselControls"
+          ]
+        }
+      }
+     ,{
+        "id":"452454236655466239"
+       ,"Identification":{
+          "Name":"Slide"
+         ,"Identifier":"SLIDE"
+         ,"Group":"Animation (2272324967453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--carouselSlide"
+          ]
+        }
+      }
+     ,{
+        "id":"452454291364466240"
+       ,"Identification":{
+          "Name":"Spin"
+         ,"Identifier":"SPIN"
+         ,"Group":"Animation (2272324967453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--carouselSpin"
+          ]
+        }
+      }
+     ,{
+        "id":"452454451846466240"
+       ,"Identification":{
+          "Name":"Stack Region"
+         ,"Identifier":"STACKED"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--stacked"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes side borders and shadows, and can be useful for accordions and regions that need to be grouped together vertically."
+        }
+      }
+    ]
   }
  ,{
     "id":"452454481275466240"
    ,"Identification":{
       "Name":"Collapsible"
+     ,"Identifier":"COLLAPSIBLE"
+     ,"Class":"Hide and Show Region"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2662888092628347716"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "is-expanded"
+       ,"t-Region--scrollBody"
+      ]
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv class=\"t-Region t-Region--hideShow #REGION_CSS_CLASSES#\" id=\"#REGION_STATIC_ID#\" data-region-id=\"#REGION_ID#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E\n \u003Cdiv class=\"t-Region-header\"\u003E\n  \u003Cdiv class=\"t-Region-headerItems t-Region-headerItems--controls\"\u003E\u003Cspan class=\"t-Button t-Button--icon t-Button--hideShow\"\u003E\u003Cspan class=\"a-Icon _a-Collapsible-icon\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/span\u003E\u003C\/div\u003E\n  \u003Cdiv class=\"t-Region-headerItems t-Region-headerItems--title\"\u003E\n    \u003Ch2 id=\"#REGION_STATIC_ID#_heading\" class=\"t-Region-title\" data-apex-heading\u003E\u003Cbutton class=\"t-Region-titleButton\" type=\"button\"\u003E#TITLE#\u003C\/button\u003E\u003C\/h2\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Region-headerItems t-Region-headerItems--buttons\"\u003E#EDIT#\u003C\/div\u003E\n \u003C\/div\u003E\n \u003Cdiv class=\"t-Region-bodyWrap\"\u003E\n   \u003Cdiv class=\"t-Region-buttons t-Region-buttons--top\"\u003E\n    \u003Cdiv class=\"t-Region-buttons-left\"\u003E#CLOSE#\u003C\/div\u003E\n    \u003Cdiv class=\"t-Region-buttons-right\"\u003E#CREATE#\u003C\/div\u003E\n   \u003C\/div\u003E\n   \u003Cdiv class=\"t-Region-body\"\u003E\n     \u003Cdiv class=\"t-Region-orderBy\"\u003E#ORDER_BY_ITEM#\u003C\/div\u003E\n     #COPY#\n     #BODY#\n     #SUB_REGIONS#\n     #CHANGE#\n   \u003C\/div\u003E\n   \u003Cdiv class=\"t-Region-buttons t-Region-buttons--bottom\"\u003E\n    \u003Cdiv class=\"t-Region-buttons-left\"\u003E#PREVIOUS#\u003C\/div\u003E\n    \u003Cdiv class=\"t-Region-buttons-right\"\u003E#NEXT#\u003C\/div\u003E\n   \u003C\/div\u003E\n \u003C\/div\u003E\n\u003C\/div\u003E\n\u003Cscript\u003E\n    (() =\u003E {\n        const region = document.getElementById(\u0027#REGION_STATIC_ID#\u0027).classList;\n        const pref = sessionStorage.getItem(\u0027ORA_WWV_apex.toggleCore.a_Collapsible_#REGION_ID#.\u0026APP_ID..\u0026APP_PAGE_ID..preferenceForExpanded\u0027);\n        if (region.contains(\u0027js-useLocalStorage\u0027)) { region.toggle(\u0027is-collapsed\u0027, pref === \u0027false\u0027 || region.contains(\u0027is-collapsed\u0027)); }\n    })();\n\u003C\/script\u003E"
+    }
+   ,"Accessibility":{
+      "Landmark Type":"Region"
+     ,"Region Title HTML ID":"#REGION_STATIC_ID#_heading"
+    }
+   ,"Template Options":[
+      {
+        "id":"36206205781462476"
+       ,"Identification":{
+          "Name":"Accent 6"
+         ,"Identifier":"ACCENT_6"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":60
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent6"
+          ]
+        }
+      }
+     ,{
+        "id":"36206922042462476"
+       ,"Identification":{
+          "Name":"Accent 7"
+         ,"Identifier":"ACCENT_7"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":70
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent7"
+          ]
+        }
+      }
+     ,{
+        "id":"36207636846462476"
+       ,"Identification":{
+          "Name":"Accent 8"
+         ,"Identifier":"ACCENT_8"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":80
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent8"
+          ]
+        }
+      }
+     ,{
+        "id":"36208312886462478"
+       ,"Identification":{
+          "Name":"Accent 9"
+         ,"Identifier":"ACCENT_9"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":90
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent9"
+          ]
+        }
+      }
+     ,{
+        "id":"36209070961462478"
+       ,"Identification":{
+          "Name":"Accent 10"
+         ,"Identifier":"ACCENT_10"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":100
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent10"
+          ]
+        }
+      }
+     ,{
+        "id":"36209722446462478"
+       ,"Identification":{
+          "Name":"Accent 11"
+         ,"Identifier":"ACCENT_11"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":110
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent11"
+          ]
+        }
+      }
+     ,{
+        "id":"36210407312462478"
+       ,"Identification":{
+          "Name":"Accent 12"
+         ,"Identifier":"ACCENT_12"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":120
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent12"
+          ]
+        }
+      }
+     ,{
+        "id":"36211136203462479"
+       ,"Identification":{
+          "Name":"Accent 13"
+         ,"Identifier":"ACCENT_13"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":130
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent13"
+          ]
+        }
+      }
+     ,{
+        "id":"36211803104462479"
+       ,"Identification":{
+          "Name":"Accent 14"
+         ,"Identifier":"ACCENT_14"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":140
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent14"
+          ]
+        }
+      }
+     ,{
+        "id":"36212587669462479"
+       ,"Identification":{
+          "Name":"Accent 15"
+         ,"Identifier":"ACCENT_15"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":150
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent15"
+          ]
+        }
+      }
+     ,{
+        "id":"125949239469127251"
+       ,"Identification":{
+          "Name":"Plus or Minus"
+         ,"Identifier":"ICONS_PLUS_OR_MINUS"
+         ,"Group":"Collapsible Button Icons (2274755876453307)"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--hideShowIconsMath"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Use the plus and minus icons for the expand and collapse button."
+        }
+      }
+     ,{
+        "id":"125949991184127251"
+       ,"Identification":{
+          "Name":"End"
+         ,"Identifier":"CONRTOLS_POSITION_END"
+         ,"Group":"Collapsible Icon Position (2275183058453307)"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--controlsPosEnd"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Position the expand \/ collapse button to the end of the region header."
+        }
+      }
+     ,{
+        "id":"452454847928466240"
+       ,"Identification":{
+          "Name":"240px"
+         ,"Identifier":"240PX"
+         ,"Group":"Body Height (2272778136453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "i-h240"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Sets region body height to 240px."
+        }
+      }
+     ,{
+        "id":"452454875806466240"
+       ,"Identification":{
+          "Name":"320px"
+         ,"Identifier":"320PX"
+         ,"Group":"Body Height (2272778136453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "i-h320"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Sets region body height to 320px."
+        }
+      }
+     ,{
+        "id":"452455038729466240"
+       ,"Identification":{
+          "Name":"480px"
+         ,"Identifier":"480PX"
+         ,"Group":"Body Height (2272778136453307)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "i-h480"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Sets body height to 480px."
+        }
+      }
+     ,{
+        "id":"452455062350466240"
+       ,"Identification":{
+          "Name":"640px"
+         ,"Identifier":"640PX"
+         ,"Group":"Body Height (2272778136453307)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "i-h640"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Sets body height to 640px."
+        }
+      }
+     ,{
+        "id":"452455213003466242"
+       ,"Identification":{
+          "Name":"Accent 1"
+         ,"Identifier":"ACCENT_1"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent1"
+          ]
+        }
+      }
+     ,{
+        "id":"452455268138466242"
+       ,"Identification":{
+          "Name":"Accent 2"
+         ,"Identifier":"ACCENT_2"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent2"
+          ]
+        }
+      }
+     ,{
+        "id":"452455419246466242"
+       ,"Identification":{
+          "Name":"Accent 3"
+         ,"Identifier":"ACCENT_3"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent3"
+          ]
+        }
+      }
+     ,{
+        "id":"452455462776466242"
+       ,"Identification":{
+          "Name":"Accent 4"
+         ,"Identifier":"ACCENT_4"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent4"
+          ]
+        }
+      }
+     ,{
+        "id":"452455614700466242"
+       ,"Identification":{
+          "Name":"Accent 5"
+         ,"Identifier":"ACCENT_5"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":50
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent5"
+          ]
+        }
+      }
+     ,{
+        "id":"452455762734466242"
+       ,"Identification":{
+          "Name":"Collapsed"
+         ,"Identifier":"COLLAPSED"
+         ,"Group":"Default State (2275582488453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "is-collapsed"
+          ]
+        }
+      }
+     ,{
+        "id":"452455876079466242"
+       ,"Identification":{
+          "Name":"Expanded"
+         ,"Identifier":"EXPANDED"
+         ,"Group":"Default State (2275582488453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "is-expanded"
+          ]
+        }
+      }
+     ,{
+        "id":"452455980987466242"
+       ,"Identification":{
+          "Name":"Hide"
+         ,"Identifier":"HIDEOVERFLOW"
+         ,"Group":"Body Overflow (2273130286453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--hiddenOverflow"
+          ]
+        }
+      }
+     ,{
+        "id":"452456100880466242"
+       ,"Identification":{
+          "Name":"Remove Body Padding"
+         ,"Identifier":"NOBODYPADDING"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--noPadding"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes padding from region body."
+        }
+      }
+     ,{
+        "id":"452456180341466242"
+       ,"Identification":{
+          "Name":"Remove Borders"
+         ,"Identifier":"NOBORDER"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--noBorder"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes borders from the region."
+        }
+      }
+     ,{
+        "id":"452456319853466243"
+       ,"Identification":{
+          "Name":"Remember Collapsible State"
+         ,"Identifier":"REMEMBER_COLLAPSIBLE_STATE"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-useLocalStorage"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This option saves the current state of the collapsible region for the duration of the session."
+        }
+      }
+     ,{
+        "id":"452456392502466243"
+       ,"Identification":{
+          "Name":"Remove UI Decoration"
+         ,"Identifier":"REMOVE_UI_DECORATION"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--noUI"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes UI decoration (borders, backgrounds, shadows, etc) from the region."
+        }
+      }
+     ,{
+        "id":"452456478453466243"
+       ,"Identification":{
+          "Name":"Scroll - Default"
+         ,"Identifier":"SCROLLBODY"
+         ,"Group":"Body Overflow (2273130286453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--scrollBody"
+          ]
+        }
+      }
+     ,{
+        "id":"452456608882466243"
+       ,"Identification":{
+          "Name":"Stack Region"
+         ,"Identifier":"STACKED"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--stacked"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes side borders and shadows, and can be useful for accordions and regions that need to be grouped together vertically."
+        }
+      }
+    ]
   }
  ,{
     "id":"452456691272466243"
    ,"Identification":{
       "Name":"Hero"
+     ,"Identifier":"HERO"
+     ,"Class":"Custom 2"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2672571031438297268"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv class=\"t-HeroRegion #REGION_CSS_CLASSES#\" id=\"#REGION_STATIC_ID#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E\n  \u003Cdiv class=\"t-HeroRegion-top\"\u003E\n    \u003Cdiv class=\"t-HeroRegion-wrap\"\u003E\n      \u003Cdiv class=\"t-HeroRegion-col t-HeroRegion-col--beforeIcon\"\u003E#UP#\u003C\/div\u003E\n      \u003Cdiv class=\"t-HeroRegion-col t-HeroRegion-col--left\"\u003E#REGION_IMAGE#\u003Cspan class=\"t-HeroRegion-icon t-Icon #ICON_CSS_CLASSES#\"\u003E\u003C\/span\u003E\u003C\/div\u003E\n      \u003Cdiv class=\"t-HeroRegion-col t-HeroRegion-col--content\"\u003E\n        \u003Ch1 id=\"#REGION_STATIC_ID#_heading\" class=\"t-HeroRegion-title\" data-apex-heading\u003E#TITLE#\u003C\/h1\u003E\n        #BODY#\n      \u003C\/div\u003E\n      \u003Cdiv class=\"t-HeroRegion-col t-HeroRegion-col--right\"\u003E\u003Cdiv class=\"t-HeroRegion-form\"\u003E#SUB_REGIONS#\u003C\/div\u003E\u003Cdiv class=\"t-HeroRegion-buttons\"\u003E#NEXT#\u003C\/div\u003E\u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-HeroRegion-bottom\"\u003E#SMART_FILTERS#\u003C\/div\u003E\n\u003C\/div\u003E\n"
+    }
+   ,"Accessibility":{
+      "Landmark Type":"Region"
+     ,"Region Title HTML ID":"#REGION_STATIC_ID#_heading"
+    }
+   ,"Image":{
+      "Template":"\u003Cimg class=\"t-HeroRegion-icon\" src=\"#REGION_IMAGE_URL#\" alt=\"\" \/\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"36237011469462493"
+       ,"Identification":{
+          "Name":"Alternative"
+         ,"Identifier":"HEADING_FONT_ALTERNATIVE"
+         ,"Group":"Heading Font (2277552268453309)"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-HeroRegion--headingFontAlt"
+          ]
+        }
+      }
+     ,{
+        "id":"125967514977127262"
+       ,"Identification":{
+          "Name":"Circle"
+         ,"Identifier":"ICONS_CIRCULAR"
+         ,"Group":"Icon Shape (2278759129453309)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-HeroRegion--iconsCircle"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"The icons are displayed within a circle."
+        }
+      }
+     ,{
+        "id":"125968259434127262"
+       ,"Identification":{
+          "Name":"Square"
+         ,"Identifier":"ICONS_SQUARE"
+         ,"Group":"Icon Shape (2278759129453309)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-HeroRegion--iconsSquare"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"The icons are displayed within a square."
+        }
+      }
+     ,{
+        "id":"452457019963466243"
+       ,"Identification":{
+          "Name":"No"
+         ,"Identifier":"DISPLAY_ICON_NO"
+         ,"Group":"Display Icon (2276306813453309)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-HeroRegion--hideIcon"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Hide the Hero Region icon."
+        }
+      }
+     ,{
+        "id":"452457124485466243"
+       ,"Identification":{
+          "Name":"Featured"
+         ,"Identifier":"FEATURED"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-HeroRegion--featured"
+          ]
+        }
+      }
+     ,{
+        "id":"452457164892466243"
+       ,"Identification":{
+          "Name":"Remove Body Padding"
+         ,"Identifier":"REMOVE_BODY_PADDING"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-HeroRegion--noPadding"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes the padding around the hero region."
+        }
+      }
+     ,{
+        "id":"452457284067466243"
+       ,"Identification":{
+          "Name":"Stacked Featured"
+         ,"Identifier":"STACKED_FEATURED"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-HeroRegion--featured"
+           ,"t-HeroRegion--centered"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"452457378883466245"
    ,"Identification":{
       "Name":"Inline Dialog"
+     ,"Identifier":"INLINE_DIALOG"
+     ,"Class":"Custom 4"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2671226943886536762"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "js-dialog-size600x400"
+      ]
+     ,"Default":[
+        "js-modal"
+       ,"js-draggable"
+       ,"js-resizable"
+      ]
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv id=\"#REGION_STATIC_ID#_parent\"\u003E\n\u003Cdiv id=\"#REGION_STATIC_ID#\" class=\"t-DialogRegion #REGION_CSS_CLASSES# js-regionDialog\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES# style=\"display:none\" title=\"#TITLE!ATTR#\"\u003E\n  \u003Cdiv class=\"t-DialogRegion-wrap\"\u003E\n    \u003Cdiv class=\"t-DialogRegion-bodyWrapperOut\"\u003E\u003Cdiv class=\"t-DialogRegion-bodyWrapperIn\"\u003E\u003Cdiv class=\"t-DialogRegion-body\"\u003E#BODY##SUB_REGIONS#\u003C\/div\u003E\u003C\/div\u003E\u003C\/div\u003E\n    \u003Cdiv class=\"t-DialogRegion-buttons\"\u003E\n       \u003Cdiv class=\"t-ButtonRegion t-ButtonRegion--dialogRegion\"\u003E\n         \u003Cdiv class=\"t-ButtonRegion-wrap\"\u003E\n           \u003Cdiv class=\"t-ButtonRegion-col t-ButtonRegion-col--left\"\u003E\u003Cdiv class=\"t-ButtonRegion-buttons\"\u003E#PREVIOUS##DELETE##CLOSE#\u003C\/div\u003E\u003C\/div\u003E\n           \u003Cdiv class=\"t-ButtonRegion-col t-ButtonRegion-col--right\"\u003E\u003Cdiv class=\"t-ButtonRegion-buttons\"\u003E#EDIT##CREATE##NEXT#\u003C\/div\u003E\u003C\/div\u003E\n         \u003C\/div\u003E\n       \u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"16192745295838660"
+       ,"Identification":{
+          "Name":"None"
+         ,"Identifier":"NONE"
+         ,"Group":"Size (2275910227453309)"
+         ,"Sequence":5
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-nosize"
+          ]
+        }
+      }
+     ,{
+        "id":"125973168663127267"
+       ,"Identification":{
+          "Name":"Remove Body Padding"
+         ,"Identifier":"REMOVE_BODY_PADDING"
+         ,"Sequence":5
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-DialogRegion--noPadding"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes the padding around the region body."
+        }
+      }
+     ,{
+        "id":"452457609435466245"
+       ,"Identification":{
+          "Name":"Auto Height"
+         ,"Identifier":"AUTO_HEIGHT_INLINE_DIALOG"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-autoheight"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This option will set the height of the dialog to fit its contents."
+        }
+      }
+     ,{
+        "id":"452457718706466245"
+       ,"Identification":{
+          "Name":"Draggable"
+         ,"Identifier":"DRAGGABLE"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-draggable"
+          ]
+        }
+      }
+     ,{
+        "id":"452457918423466245"
+       ,"Identification":{
+          "Name":"Large (720x480)"
+         ,"Identifier":"LARGE_720X480"
+         ,"Group":"Size (2275910227453309)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-size720x480"
+          ]
+        }
+      }
+     ,{
+        "id":"452458053518466245"
+       ,"Identification":{
+          "Name":"Medium (600x400)"
+         ,"Identifier":"MEDIUM_600X400"
+         ,"Group":"Size (2275910227453309)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-size600x400"
+          ]
+        }
+      }
+     ,{
+        "id":"452458108220466245"
+       ,"Identification":{
+          "Name":"Modal"
+         ,"Identifier":"MODAL"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-modal"
+          ]
+        }
+      }
+     ,{
+        "id":"452458167068466245"
+       ,"Identification":{
+          "Name":"Resizable"
+         ,"Identifier":"RESIZABLE"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-resizable"
+          ]
+        }
+      }
+     ,{
+        "id":"452458358068466245"
+       ,"Identification":{
+          "Name":"Small (480x320)"
+         ,"Identifier":"SMALL_480X320"
+         ,"Group":"Size (2275910227453309)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-dialog-size480x320"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"452458457830466245"
    ,"Identification":{
       "Name":"Interactive Report"
+     ,"Identifier":"INTERACTIVE_REPORT"
+     ,"Class":"Reports Region"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2099079838218790610"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv id=\"#REGION_STATIC_ID#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES# class=\"t-IRR-region #REGION_CSS_CLASSES#\"\u003E\n    \u003Cdiv class=\"t-Region-orderBy\"\u003E#ORDER_BY_ITEM#\u003C\/div\u003E\n    #PREVIOUS#\n    #BODY#\n    #SUB_REGIONS#\n    #NEXT#\n\u003C\/div\u003E\n"
+    }
+   ,"Accessibility":{
+      "Landmark Type":"Region"
+    }
+   ,"Template Options":[
+      {
+        "id":"452458537533466246"
+       ,"Identification":{
+          "Name":"Remove Borders"
+         ,"Identifier":"REMOVEBORDERS"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-IRR-region--noBorders"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes borders around the Interactive Report"
+        }
+      }
+     ,{
+        "id":"452458570434466246"
+       ,"Identification":{
+          "Name":"Show Maximize Button"
+         ,"Identifier":"SHOW_MAXIMIZE_BUTTON"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-showMaximizeButton"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Displays a button in the Interactive Reports toolbar to maximize the report. Clicking this button will toggle the maximize state and stretch the report to fill the screen."
+        }
+      }
+    ]
   }
  ,{
     "id":"452458716490466246"
    ,"Identification":{
       "Name":"Login"
+     ,"Identifier":"LOGIN"
+     ,"Class":"Custom 3"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2672711194551076376"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv class=\"t-Login-region t-Form--stretchInputs t-Form--labelsAbove #REGION_CSS_CLASSES#\" id=\"#REGION_ID#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E\n  \u003Cdiv class=\"t-Login-header\"\u003E\n    #REGION_IMAGE#\n    \u003Cspan class=\"t-Login-logo #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\n    \u003Ch2 class=\"t-Login-title\" id=\"#REGION_STATIC_ID#_heading\" data-apex-heading\u003E#TITLE#\u003C\/h2\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Login-body\"\u003E#BODY#\u003C\/div\u003E\n  \u003Cdiv class=\"t-Login-buttons\"\u003E#NEXT#\u003C\/div\u003E\n  \u003Cdiv class=\"t-Login-links\"\u003E#EDIT##CREATE#\u003C\/div\u003E\n  \u003Cdiv class=\"t-Login-subRegions\"\u003E#SUB_REGIONS#\u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Accessibility":{
+      "Landmark Type":"Region"
+     ,"Region Title HTML ID":"#REGION_STATIC_ID#_heading"
+    }
+   ,"Image":{
+      "Template":"\u003Cimg class=\"t-Login-logo\" src=\"#REGION_IMAGE_URL#\" alt=\"\" data-app-icon \/\u003E"
+    }
+   ,"Template Options":[
+      {
+        "id":"125979276003127273"
+       ,"Identification":{
+          "Name":"Icon"
+         ,"Identifier":"LOGIN_HEADER_ICON"
+         ,"Group":"Login Header (2283508457453310)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Login-region--headerIcon"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Displays only the Region Icon in the Login region."
+        }
+      }
+     ,{
+        "id":"125979917081127273"
+       ,"Identification":{
+          "Name":"Title"
+         ,"Identifier":"LOGIN_HEADER_TITLE"
+         ,"Group":"Login Header (2283508457453310)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Login-region--headerTitle"
+           ,"js-removeLandmark"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Displays only the Region Title in the Login region."
+        }
+      }
+     ,{
+        "id":"125980625081127275"
+       ,"Identification":{
+          "Name":"Hidden"
+         ,"Identifier":"LOGO_HEADER_HIDDEN"
+         ,"Group":"Login Header (2283508457453310)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Login-region--headerHidden"
+           ,"js-removeLandmark"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Hides both the Region Icon and Title from the Login region."
+        }
+      }
+    ]
   }
  ,{
     "id":"452458863643466246"
    ,"Identification":{
       "Name":"Standard"
+     ,"Identifier":"STANDARD"
+     ,"Class":"Form Region"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"4070912133526059312"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-Region--scrollBody"
+      ]
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv class=\"t-Region #REGION_CSS_CLASSES#\" id=\"#REGION_STATIC_ID#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E\n \u003Cdiv class=\"t-Region-header\"\u003E\n  \u003Cdiv class=\"t-Region-headerItems t-Region-headerItems--title\"\u003E\n    \u003Cspan class=\"t-Region-headerIcon\"\u003E\u003Cspan class=\"t-Icon #ICON_CSS_CLASSES#\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003C\/span\u003E\n    \u003Ch2 class=\"t-Region-title\" id=\"#REGION_STATIC_ID#_heading\" data-apex-heading\u003E#TITLE#\u003C\/h2\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Region-headerItems t-Region-headerItems--buttons\"\u003E#COPY##EDIT#\u003Cspan class=\"js-maximizeButtonContainer\"\u003E\u003C\/span\u003E\u003C\/div\u003E\n \u003C\/div\u003E\n \u003Cdiv class=\"t-Region-bodyWrap\"\u003E\n   \u003Cdiv class=\"t-Region-buttons t-Region-buttons--top\"\u003E\n    \u003Cdiv class=\"t-Region-buttons-left\"\u003E#PREVIOUS#\u003C\/div\u003E\n    \u003Cdiv class=\"t-Region-buttons-right\"\u003E#NEXT#\u003C\/div\u003E\n   \u003C\/div\u003E\n   \u003Cdiv class=\"t-Region-body\"\u003E\n     \u003Cdiv class=\"t-Region-orderBy\"\u003E#ORDER_BY_ITEM#\u003C\/div\u003E\n     #BODY#\n     #SUB_REGIONS#\n   \u003C\/div\u003E\n   \u003Cdiv class=\"t-Region-buttons t-Region-buttons--bottom\"\u003E\n    \u003Cdiv class=\"t-Region-buttons-left\"\u003E#CLOSE##HELP#\u003C\/div\u003E\n    \u003Cdiv class=\"t-Region-buttons-right\"\u003E#DELETE##CHANGE##CREATE#\u003C\/div\u003E\n   \u003C\/div\u003E\n \u003C\/div\u003E\n\u003C\/div\u003E\n"
+    }
+   ,"Accessibility":{
+      "Landmark Type":"Region"
+    }
+   ,"Template Options":[
+      {
+        "id":"125984948842127278"
+       ,"Identification":{
+          "Name":"Show Region Icon"
+         ,"Identifier":"SHOW_REGION_ICON"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--showIcon"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Displays the region icon in the region header beside the region title"
+        }
+      }
+     ,{
+        "id":"452459252347466246"
+       ,"Identification":{
+          "Name":"240px"
+         ,"Identifier":"240PX"
+         ,"Group":"Body Height (2272778136453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "i-h240"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Sets region body height to 240px."
+        }
+      }
+     ,{
+        "id":"452459327760466246"
+       ,"Identification":{
+          "Name":"320px"
+         ,"Identifier":"320PX"
+         ,"Group":"Body Height (2272778136453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "i-h320"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Sets region body height to 320px."
+        }
+      }
+     ,{
+        "id":"452459378299466248"
+       ,"Identification":{
+          "Name":"480px"
+         ,"Identifier":"480PX"
+         ,"Group":"Body Height (2272778136453307)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "i-h480"
+          ]
+        }
+      }
+     ,{
+        "id":"452459530173466248"
+       ,"Identification":{
+          "Name":"640px"
+         ,"Identifier":"640PX"
+         ,"Group":"Body Height (2272778136453307)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "i-h640"
+          ]
+        }
+      }
+     ,{
+        "id":"452459638620466248"
+       ,"Identification":{
+          "Name":"Accent 1"
+         ,"Identifier":"ACCENT_1"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent1"
+          ]
+        }
+      }
+     ,{
+        "id":"452459757079466248"
+       ,"Identification":{
+          "Name":"Accent 10"
+         ,"Identifier":"ACCENT_10"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":100
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent10"
+          ]
+        }
+      }
+     ,{
+        "id":"452459819184466248"
+       ,"Identification":{
+          "Name":"Accent 11"
+         ,"Identifier":"ACCENT_11"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":110
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent11"
+          ]
+        }
+      }
+     ,{
+        "id":"452459877573466248"
+       ,"Identification":{
+          "Name":"Accent 12"
+         ,"Identifier":"ACCENT_12"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":120
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent12"
+          ]
+        }
+      }
+     ,{
+        "id":"452460002842466248"
+       ,"Identification":{
+          "Name":"Accent 13"
+         ,"Identifier":"ACCENT_13"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":130
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent13"
+          ]
+        }
+      }
+     ,{
+        "id":"452460153077466248"
+       ,"Identification":{
+          "Name":"Accent 14"
+         ,"Identifier":"ACCENT_14"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":140
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent14"
+          ]
+        }
+      }
+     ,{
+        "id":"452460208106466248"
+       ,"Identification":{
+          "Name":"Accent 15"
+         ,"Identifier":"ACCENT_15"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":150
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent15"
+          ]
+        }
+      }
+     ,{
+        "id":"452460329851466248"
+       ,"Identification":{
+          "Name":"Accent 2"
+         ,"Identifier":"ACCENT_2"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent2"
+          ]
+        }
+      }
+     ,{
+        "id":"452460365622466248"
+       ,"Identification":{
+          "Name":"Accent 3"
+         ,"Identifier":"ACCENT_3"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent3"
+          ]
+        }
+      }
+     ,{
+        "id":"452460473869466248"
+       ,"Identification":{
+          "Name":"Accent 4"
+         ,"Identifier":"ACCENT_4"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent4"
+          ]
+        }
+      }
+     ,{
+        "id":"452460616795466249"
+       ,"Identification":{
+          "Name":"Accent 5"
+         ,"Identifier":"ACCENT_5"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":50
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent5"
+          ]
+        }
+      }
+     ,{
+        "id":"452460702817466249"
+       ,"Identification":{
+          "Name":"Accent 6"
+         ,"Identifier":"ACCENT_6"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":60
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent6"
+          ]
+        }
+      }
+     ,{
+        "id":"452460766399466249"
+       ,"Identification":{
+          "Name":"Accent 7"
+         ,"Identifier":"ACCENT_7"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":70
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent7"
+          ]
+        }
+      }
+     ,{
+        "id":"452460935807466249"
+       ,"Identification":{
+          "Name":"Accent 8"
+         ,"Identifier":"ACCENT_8"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":80
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent8"
+          ]
+        }
+      }
+     ,{
+        "id":"452461012729466249"
+       ,"Identification":{
+          "Name":"Accent 9"
+         ,"Identifier":"ACCENT_9"
+         ,"Group":"Accent (2269960217453307)"
+         ,"Sequence":90
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--accent9"
+          ]
+        }
+      }
+     ,{
+        "id":"452461129839466249"
+       ,"Identification":{
+          "Name":"Hidden"
+         ,"Identifier":"HIDDENHEADERNOAT"
+         ,"Group":"Header (2277172574453309)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--removeHeader"
+           ,"js-removeLandmark"
+          ]
+        }
+      }
+     ,{
+        "id":"452461216049466249"
+       ,"Identification":{
+          "Name":"Hide"
+         ,"Identifier":"HIDEOVERFLOW"
+         ,"Group":"Body Overflow (2273130286453307)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--hiddenOverflow"
+          ]
+        }
+      }
+     ,{
+        "id":"452461350900466249"
+       ,"Identification":{
+          "Name":"Hidden but accessible"
+         ,"Identifier":"HIDEREGIONHEADER"
+         ,"Group":"Header (2277172574453309)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--hideHeader"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"This option will hide the region header.  Note that the region title will still be audible for Screen Readers. Buttons placed in the region header will be hidden and inaccessible."
+        }
+      }
+     ,{
+        "id":"452461409189466249"
+       ,"Identification":{
+          "Name":"Remove Body Padding"
+         ,"Identifier":"NOBODYPADDING"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--noPadding"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes padding from region body."
+        }
+      }
+     ,{
+        "id":"452461538796466249"
+       ,"Identification":{
+          "Name":"Remove Borders"
+         ,"Identifier":"NOBORDER"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--noBorder"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes borders from the region."
+        }
+      }
+     ,{
+        "id":"452461603050466249"
+       ,"Identification":{
+          "Name":"Remove UI Decoration"
+         ,"Identifier":"REMOVE_UI_DECORATION"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":30
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--noUI"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes UI decoration (borders, backgrounds, shadows, etc) from the region."
+        }
+      }
+     ,{
+        "id":"452461754734466251"
+       ,"Identification":{
+          "Name":"Scroll - Default"
+         ,"Identifier":"SCROLLBODY"
+         ,"Group":"Body Overflow (2273130286453307)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--scrollBody"
+          ]
+        }
+      }
+     ,{
+        "id":"452461776394466251"
+       ,"Identification":{
+          "Name":"Show Maximize Button"
+         ,"Identifier":"SHOW_MAXIMIZE_BUTTON"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-showMaximizeButton"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Displays a button in the Region Header to maximize the region. Clicking this button will toggle the maximize state and stretch the region to fill the screen."
+        }
+      }
+     ,{
+        "id":"452461920278466251"
+       ,"Identification":{
+          "Name":"Stack Region"
+         ,"Identifier":"STACKED"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--stacked"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Removes side borders and shadows, and can be useful for accordions and regions that need to be grouped together vertically."
+        }
+      }
+     ,{
+        "id":"452461964816466251"
+       ,"Identification":{
+          "Name":"Text Content"
+         ,"Identifier":"TEXT_CONTENT"
+         ,"Group":"Style (2287504005453312)"
+         ,"Sequence":40
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Region--textContent"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Useful for displaying primarily text-based content, such as FAQs and more."
+        }
+      }
+    ]
   }
  ,{
     "id":"452462122710466251"
    ,"Identification":{
       "Name":"Tabs Container"
+     ,"Identifier":"TABS_CONTAINER"
+     ,"Class":"Navigation Region"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"3221725015618492759"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-TabsRegion-mod--simple"
+      ]
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv class=\"t-TabsRegion #REGION_CSS_CLASSES# apex-tabs-region\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES# id=\"#REGION_STATIC_ID#\"\u003E\n  #BODY#\n  \u003Cdiv class=\"t-TabsRegion-items\"\u003E#SUB_REGIONS#\u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Sub Regions":{
+      "Template":"\u003Cdiv data-label=\"#SUB_REGION_TITLE!ATTR#\" id=\"SR_#SUB_REGION_ID#\"\u003E#SUB_REGION#\u003C\/div\u003E"
+    }
+   ,"JavaScript":{
+      "File URLs":[
+        "#APEX_FILES#libraries\/apex\/#MIN_DIRECTORY#widget.apexTabs#MIN#.js?v=#APEX_VERSION#"
+      ]
+    }
+   ,"Template Options":[
+      {
+        "id":"452462511597466251"
+       ,"Identification":{
+          "Name":"Fill Tab Labels"
+         ,"Identifier":"FILL_TAB_LABELS"
+         ,"Group":"Layout (2283181049453310)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-TabsRegion-mod--fillLabels"
+          ]
+        }
+      }
+     ,{
+        "id":"452462712358466253"
+       ,"Identification":{
+          "Name":"Pill"
+         ,"Identifier":"PILL"
+         ,"Group":"Tab Style (2288388746453312)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-TabsRegion-mod--pill"
+          ]
+        }
+      }
+     ,{
+        "id":"452462844184466253"
+       ,"Identification":{
+          "Name":"Remember Active Tab"
+         ,"Identifier":"REMEMBER_ACTIVE_TAB"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "js-useLocalStorage"
+          ]
+        }
+      }
+     ,{
+        "id":"452462866121466253"
+       ,"Identification":{
+          "Name":"Simple"
+         ,"Identifier":"SIMPLE"
+         ,"Group":"Tab Style (2288388746453312)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-TabsRegion-mod--simple"
+          ]
+        }
+      }
+     ,{
+        "id":"452463066856466253"
+       ,"Identification":{
+          "Name":"Large"
+         ,"Identifier":"TABSLARGE"
+         ,"Group":"Tabs Size (2287956972453312)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-TabsRegion-mod--large"
+          ]
+        }
+      }
+     ,{
+        "id":"452463202844466253"
+       ,"Identification":{
+          "Name":"Small"
+         ,"Identifier":"TABS_SMALL"
+         ,"Group":"Tabs Size (2287956972453312)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-TabsRegion-mod--small"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"452463263462466253"
    ,"Identification":{
       "Name":"Title Bar"
+     ,"Identifier":"TITLE_BAR"
+     ,"Class":"Breadcrumb Region"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2530016523834132090"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-BreadcrumbRegion--useBreadcrumbTitle"
+      ]
+     ,"Default":[
+        "t-BreadcrumbRegion--showBreadcrumb"
+      ]
+    }
+   ,"Template":{
+      "Template":"\u003Cnav id=\"#REGION_STATIC_ID#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES# class=\"t-BreadcrumbRegion #REGION_CSS_CLASSES#\"\u003E\n  \u003Cdiv class=\"t-BreadcrumbRegion-top\"\u003E\n    \u003Cdiv class=\"t-BreadcrumbRegion-buttons t-BreadcrumbRegion-buttons--start\"\u003E#UP#\u003C\/div\u003E\n    \u003Cdiv class=\"t-BreadcrumbRegion-body\"\u003E\n      \u003Cdiv class=\"t-BreadcrumbRegion-breadcrumb\"\u003E#BODY#\u003C\/div\u003E\n        \u003Cdiv class=\"t-BreadcrumbRegion-title\"\u003E\n        \u003Ch1 id=\"#REGION_STATIC_ID#_heading\" class=\"t-BreadcrumbRegion-titleText\" data-apex-heading\u003E#TITLE#\u003C\/h1\u003E\n      \u003C\/div\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"t-BreadcrumbRegion-buttons t-BreadcrumbRegion-buttons--end\"\u003E#PREVIOUS##CLOSE##DELETE##HELP##CHANGE##EDIT##COPY##CREATE##NEXT#\u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-BreadcrumbRegion-bottom\"\u003E#SMART_FILTERS#\u003C\/div\u003E\n\u003C\/nav\u003E\n"
+    }
+   ,"Accessibility":{
+      "Landmark Type":"Navigation"
+    }
+   ,"Template Options":[
+      {
+        "id":"36290127688462526"
+       ,"Identification":{
+          "Name":"Alternative"
+         ,"Identifier":"HEADING_FONT_ALTERNATIVE"
+         ,"Group":"Heading Font (2277552268453309)"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BreadcrumbRegion--headingFontAlt"
+          ]
+        }
+      }
+     ,{
+        "id":"126008165462127293"
+       ,"Identification":{
+          "Name":"Use Compact Style"
+         ,"Identifier":"USE_COMPACT_STYLE"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BreadcrumbRegion--compactTitle"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Uses a compact style for the breadcrumbs."
+        }
+      }
+     ,{
+        "id":"452463371049466253"
+       ,"Identification":{
+          "Name":"Use Current Breadcrumb Entry"
+         ,"Identifier":"GET_TITLE_FROM_BREADCRUMB"
+         ,"Group":"Region Title (2285570534453310)"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BreadcrumbRegion--useBreadcrumbTitle"
+          ]
+        }
+      }
+     ,{
+        "id":"452463520976466253"
+       ,"Identification":{
+          "Name":"Show Breadcrumbs"
+         ,"Identifier":"HIDE_BREADCRUMB"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BreadcrumbRegion--showBreadcrumb"
+          ]
+        }
+      }
+     ,{
+        "id":"452463635099466253"
+       ,"Identification":{
+          "Name":"Use Region Title"
+         ,"Identifier":"REGION_HEADER_VISIBLE"
+         ,"Group":"Region Title (2285570534453310)"
+         ,"Sequence":1
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-BreadcrumbRegion--useRegionTitle"
+          ]
+        }
+      }
+    ]
   }
  ,{
     "id":"452463685650466253"
    ,"Identification":{
       "Name":"Wizard Container"
+     ,"Identifier":"WIZARD_CONTAINER"
+     ,"Class":"Form Region"
     }
+   ,"Subscription":{
+      "Master":{
+        "Referenced Id":"2117602213152591491"
+      }
+    }
+   ,"Advanced":{
+      "Translatable":false
+    }
+   ,"Template Options":{
+      "Preset":[
+        "t-Wizard--hideStepsXSmall"
+      ]
+    }
+   ,"Template":{
+      "Template":"\u003Cdiv class=\"t-Wizard #REGION_CSS_CLASSES#\" id=\"#REGION_STATIC_ID#\" #REGION_LANDMARK_ATTRIBUTES# #REGION_ATTRIBUTES#\u003E\n  \u003Cdiv class=\"t-Wizard-header\"\u003E\n    \u003Ch1 class=\"t-Wizard-title\" id=\"#REGION_STATIC_ID#_heading\" data-apex-heading\u003E#TITLE#\u003C\/h1\u003E\n    \u003Cdiv class=\"u-Table t-Wizard-controls\"\u003E\n      \u003Cdiv class=\"u-Table-fit t-Wizard-buttons\"\u003E#PREVIOUS##CLOSE#\u003C\/div\u003E\n      \u003Cdiv class=\"u-Table-fill t-Wizard-steps\"\u003E#BODY#\u003C\/div\u003E\n      \u003Cdiv class=\"u-Table-fit t-Wizard-buttons\"\u003E#NEXT#\u003C\/div\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n  \u003Cdiv class=\"t-Wizard-body\"\u003E#SUB_REGIONS#\u003C\/div\u003E\n\u003C\/div\u003E"
+    }
+   ,"Accessibility":{
+      "Landmark Type":"Region"
+     ,"Region Title HTML ID":"#REGION_STATIC_ID#_heading"
+    }
+   ,"Template Options":[
+      {
+        "id":"452464044388466254"
+       ,"Identification":{
+          "Name":"Small Screens (Tablet)"
+         ,"Identifier":"HIDESMALLSCREENS"
+         ,"Group":"Hide Steps For (2278344930453309)"
+         ,"Sequence":20
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Wizard--hideStepsSmall"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Hides the wizard progress steps for screens that are smaller than 768px wide."
+        }
+      }
+     ,{
+        "id":"452464090488466254"
+       ,"Identification":{
+          "Name":"X Small Screens (Mobile)"
+         ,"Identifier":"HIDEXSMALLSCREENS"
+         ,"Group":"Hide Steps For (2278344930453309)"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Wizard--hideStepsXSmall"
+          ]
+        }
+       ,"Help":{
+          "Help Text":"Hides the wizard progress steps for screens that are smaller than 768px wide."
+        }
+      }
+     ,{
+        "id":"452464261300466254"
+       ,"Identification":{
+          "Name":"Show Title"
+         ,"Identifier":"SHOW_TITLE"
+         ,"Sequence":10
+        }
+       ,"Settings":{
+          "Advanced":false
+        }
+       ,"Appearance":{
+          "CSS Classes":[
+            "t-Wizard--showTitle"
+          ]
+        }
+      }
+    ]
   }
 ]

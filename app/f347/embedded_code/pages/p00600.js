@@ -49,7 +49,7 @@ var $trigger = $(this.triggeringElement);
 var val = $trigger.val();
 
 // success - up-to-date
-if (val == '23.1') {    
+if (val == '23.2') {    
     $trigger.addClass("u-success");
     $trigger.removeClass("u-warning");
     $trigger.removeClass("u-danger");

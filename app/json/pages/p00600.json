@@ -1351,6 +1351,8 @@
       }
      ,"Execution":{
         "Sequence":10
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -1358,10 +1360,6 @@
        ,"Item(s)":[
           "P0_APP_ID"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1459,6 +1457,8 @@
       }
      ,"Execution":{
         "Sequence":20
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -1466,10 +1466,6 @@
        ,"Item(s)":[
           "P600_COMPATIBILITY_MODE"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1502,6 +1498,8 @@
       }
      ,"Execution":{
         "Sequence":30
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -1509,10 +1507,6 @@
        ,"Item(s)":[
           "P600_SESSION_STATE_PROTECTION"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1545,6 +1539,8 @@
       }
      ,"Execution":{
         "Sequence":40
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -1552,10 +1548,6 @@
        ,"Item(s)":[
           "P600_RUNTIME_API_USAGE"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1588,6 +1580,8 @@
       }
      ,"Execution":{
         "Sequence":50
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -1595,10 +1589,6 @@
        ,"Item(s)":[
           "P600_INCLUDE_LEGACY_JAVASCRIPT"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1631,6 +1621,8 @@
       }
      ,"Execution":{
         "Sequence":60
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -1638,10 +1630,6 @@
        ,"Item(s)":[
           "P600_INCLUDE_JQUERY_MIGRATE"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1674,6 +1662,8 @@
       }
      ,"Execution":{
         "Sequence":80
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -1681,10 +1671,6 @@
        ,"Item(s)":[
           "P600_THEME_NAME"
         ]
-      }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
       }
      ,"Actions":[
         {
@@ -1763,6 +1749,8 @@
       }
      ,"Execution":{
         "Sequence":90
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
       }
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CHANGE"
@@ -1771,10 +1759,6 @@
           "P600_UT_VERSION"
         ]
       }
-     ,"Execution":{
-        "Event Scope":"Static"
-       ,"Type":"Immediate"
-      }
      ,"Actions":[
         {
           "id":"39143767829438740"
@@ -1782,7 +1766,7 @@
             "Action":"Execute JavaScript Code"
           }
          ,"Settings":{
-            "Code":"var $trigger = $(this.triggeringElement);\nvar val = $trigger.val();\n\n\/\/ success - up-to-date\nif (val == \u002723.1\u0027) {    \n    $trigger.addClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");\n    $trigger.removeClass(\"u-danger\");\n\n\/\/ danger - old versions which are not supported any more\n} else if ((val == \u00271.0\u0027) || (val == \u00271.1\u0027) || (val == \u00271.2\u0027)) {    \n    $trigger.addClass(\"u-danger\");\n    $trigger.removeClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");   \n\n\/\/ warning - versions not old and not the newest\n} else {    \n    $trigger.addClass(\"u-warning\");\n    $trigger.removeClass(\"u-success\");    \n    $trigger.removeClass(\"u-danger\");\n}"
+            "Code":"var $trigger = $(this.triggeringElement);\nvar val = $trigger.val();\n\n\/\/ success - up-to-date\nif (val == \u002723.2\u0027) {    \n    $trigger.addClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");\n    $trigger.removeClass(\"u-danger\");\n\n\/\/ danger - old versions which are not supported any more\n} else if ((val == \u00271.0\u0027) || (val == \u00271.1\u0027) || (val == \u00271.2\u0027)) {    \n    $trigger.addClass(\"u-danger\");\n    $trigger.removeClass(\"u-success\");\n    $trigger.removeClass(\"u-warning\");   \n\n\/\/ warning - versions not old and not the newest\n} else {    \n    $trigger.addClass(\"u-warning\");\n    $trigger.removeClass(\"u-success\");    \n    $trigger.removeClass(\"u-danger\");\n}"
           }
          ,"Affected Elements":{
             "Selection Type":"Item(s)"

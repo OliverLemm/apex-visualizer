@@ -1,0 +1,1690 @@
+[
+  {
+    "id":"2252786012453301"
+   ,"Identification":{
+      "Template Type":"Button"
+     ,"Name":"Button Set"
+     ,"Identifier":"BUTTON_SET"
+     ,"Sequence":40
+    }
+   ,"Help":{
+      "Help Text":"Enables you to group many buttons together into a pill. You can use this option to specify where the button is within this set. Set the option to Default if this button is not part of a button set."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2253147514453301"
+   ,"Identification":{
+      "Template Type":"Button"
+     ,"Name":"Icon Hover Animation"
+     ,"Identifier":"ICON_HOVER_ANIMATION"
+     ,"Sequence":55
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2253510533453301"
+   ,"Identification":{
+      "Template Type":"Button"
+     ,"Name":"Icon Position"
+     ,"Identifier":"ICON_POSITION"
+     ,"Sequence":50
+    }
+   ,"Help":{
+      "Help Text":"Sets the position of the icon relative to the label."
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2253971028453301"
+   ,"Identification":{
+      "Template Type":"Button"
+     ,"Name":"Size"
+     ,"Identifier":"SIZE"
+     ,"Sequence":10
+    }
+   ,"Help":{
+      "Help Text":"Sets the size of the button."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2254347369453301"
+   ,"Identification":{
+      "Template Type":"Button"
+     ,"Name":"Spacing Bottom"
+     ,"Identifier":"SPACING_BOTTOM"
+     ,"Sequence":100
+    }
+   ,"Help":{
+      "Help Text":"Controls the spacing to the bottom of the button."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2254764189453301"
+   ,"Identification":{
+      "Template Type":"Button"
+     ,"Name":"Spacing Left"
+     ,"Identifier":"SPACING_LEFT"
+     ,"Sequence":70
+    }
+   ,"Help":{
+      "Help Text":"Controls the spacing to the left of the button."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2255154145453303"
+   ,"Identification":{
+      "Template Type":"Button"
+     ,"Name":"Spacing Right"
+     ,"Identifier":"SPACING_RIGHT"
+     ,"Sequence":80
+    }
+   ,"Help":{
+      "Help Text":"Controls the spacing to the right of the button."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2255504613453303"
+   ,"Identification":{
+      "Template Type":"Button"
+     ,"Name":"Spacing Top"
+     ,"Identifier":"SPACING_TOP"
+     ,"Sequence":90
+    }
+   ,"Help":{
+      "Help Text":"Controls the spacing to the top of the button."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2255931230453303"
+   ,"Identification":{
+      "Template Type":"Button"
+     ,"Name":"Style"
+     ,"Identifier":"STYLE"
+     ,"Sequence":30
+    }
+   ,"Help":{
+      "Help Text":"Sets the style of the button. Use the \"Simple\" option for secondary actions or sets of buttons. Use the \"Remove UI Decoration\" option to make the button appear as text."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2256356262453303"
+   ,"Identification":{
+      "Template Type":"Button"
+     ,"Name":"Type"
+     ,"Identifier":"TYPE"
+     ,"Sequence":20
+    }
+   ,"Settings":{
+      "Null Text":"Normal"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2256748030453303"
+   ,"Identification":{
+      "Template Type":"Button"
+     ,"Name":"Width"
+     ,"Identifier":"WIDTH"
+     ,"Sequence":60
+    }
+   ,"Help":{
+      "Help Text":"Sets the width of the button."
+    }
+   ,"Settings":{
+      "Null Text":"Auto - Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2257115099453303"
+   ,"Identification":{
+      "Template Type":"Item"
+     ,"Name":"Bottom Margin"
+     ,"Identifier":"BOTTOM_MARGIN"
+     ,"Sequence":220
+    }
+   ,"Help":{
+      "Help Text":"Set the bottom margin for this field."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2257594983453303"
+   ,"Identification":{
+      "Template Type":"Item"
+     ,"Name":"Display Text Style"
+     ,"Identifier":"DISPLAY_TEXT_STYLE"
+     ,"Sequence":400
+    }
+   ,"Help":{
+      "Help Text":"Determines the display style for Display Only \u0026 Read Only display items."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2257909440453303"
+   ,"Identification":{
+      "Template Type":"Item"
+     ,"Name":"Item Post Text"
+     ,"Identifier":"ITEM_POST_TEXT"
+     ,"Sequence":30
+    }
+   ,"Help":{
+      "Help Text":"Adjust the display of the Item Post Text"
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2258303728453303"
+   ,"Identification":{
+      "Template Type":"Item"
+     ,"Name":"Item Pre Text"
+     ,"Identifier":"ITEM_PRE_TEXT"
+     ,"Sequence":20
+    }
+   ,"Help":{
+      "Help Text":"Adjust the display of the Item Pre Text"
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2258768437453304"
+   ,"Identification":{
+      "Template Type":"Item"
+     ,"Name":"Left Margin"
+     ,"Identifier":"LEFT_MARGIN"
+     ,"Sequence":220
+    }
+   ,"Help":{
+      "Help Text":"Set the left margin for this field."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2259120458453304"
+   ,"Identification":{
+      "Template Type":"Item"
+     ,"Name":"Preserve Label Spacing"
+     ,"Identifier":"PRESERVE_LABEL_SPACING"
+     ,"Sequence":1
+    }
+   ,"Help":{
+      "Help Text":"Preserves the label space and enables use of the Label Column Span property."
+    }
+   ,"Settings":{
+      "Null Text":"Yes"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2259586573453304"
+   ,"Identification":{
+      "Template Type":"Item"
+     ,"Name":"Item Group Display"
+     ,"Identifier":"RADIO_GROUP_DISPLAY"
+     ,"Sequence":300
+    }
+   ,"Help":{
+      "Help Text":"Determines the display style for radio and check box items."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2259956792453304"
+   ,"Identification":{
+      "Template Type":"Item"
+     ,"Name":"Required Indicator"
+     ,"Identifier":"REQUIRED_INDICATOR"
+     ,"Sequence":1
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2260328037453304"
+   ,"Identification":{
+      "Template Type":"Item"
+     ,"Name":"Right Margin"
+     ,"Identifier":"RIGHT_MARGIN"
+     ,"Sequence":230
+    }
+   ,"Help":{
+      "Help Text":"Set the right margin for this field."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2260784161453304"
+   ,"Identification":{
+      "Template Type":"Item"
+     ,"Name":"Size"
+     ,"Identifier":"SIZE"
+     ,"Sequence":10
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2261187499453304"
+   ,"Identification":{
+      "Template Type":"Item"
+     ,"Name":"Top Margin"
+     ,"Identifier":"TOP_MARGIN"
+     ,"Sequence":200
+    }
+   ,"Help":{
+      "Help Text":"Set the top margin for this field."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2261534516453304"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Animation"
+     ,"Identifier":"ANIMATION"
+     ,"Sequence":80
+    }
+   ,"Help":{
+      "Help Text":"Sets the hover and focus animation."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2261913572453304"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Badge Size"
+     ,"Identifier":"BADGE_SIZE"
+     ,"Sequence":70
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2262369906453304"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Body Text"
+     ,"Identifier":"BODY_TEXT"
+     ,"Sequence":40
+    }
+   ,"Help":{
+      "Help Text":"Determines the height of the card body."
+    }
+   ,"Settings":{
+      "Null Text":"Auto"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2262797451453304"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Collapse Mode"
+     ,"Identifier":"COLLAPSE_STYLE"
+     ,"Sequence":30
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2263178659453304"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Color Accents"
+     ,"Identifier":"COLOR_ACCENTS"
+     ,"Sequence":50
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2263501738453304"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Desktop"
+     ,"Identifier":"DESKTOP"
+     ,"Sequence":90
+    }
+   ,"Help":{
+      "Help Text":"Determines the display for a desktop-sized screen"
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2263953708453304"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Display Icons"
+     ,"Identifier":"DISPLAY_ICONS"
+     ,"Sequence":30
+    }
+   ,"Settings":{
+      "Null Text":"No Icons"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2264304774453304"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Icons"
+     ,"Identifier":"ICONS"
+     ,"Sequence":20
+    }
+   ,"Settings":{
+      "Null Text":"No Icons"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2264785530453304"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Icon Shape"
+     ,"Identifier":"ICON_SHAPE"
+     ,"Sequence":60
+    }
+   ,"Help":{
+      "Help Text":"Determines the shape of the icon."
+    }
+   ,"Settings":{
+      "Null Text":"Circle"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2265123046453304"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Icon Style"
+     ,"Identifier":"ICON_STYLE"
+     ,"Sequence":35
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2265581373453306"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Label Display"
+     ,"Identifier":"LABEL_DISPLAY"
+     ,"Sequence":50
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2265994797453306"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Layout"
+     ,"Identifier":"LAYOUT"
+     ,"Sequence":30
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2266359991453306"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Mobile"
+     ,"Identifier":"MOBILE"
+     ,"Sequence":100
+    }
+   ,"Help":{
+      "Help Text":"Determines the display for a mobile-sized screen"
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2266709809453306"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Size"
+     ,"Identifier":"SIZE"
+     ,"Sequence":1
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2267160888453306"
+   ,"Identification":{
+      "Template Type":"List"
+     ,"Name":"Style"
+     ,"Identifier":"STYLE"
+     ,"Sequence":10
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2267571910453306"
+   ,"Identification":{
+      "Template Type":"Page"
+     ,"Name":"Content Padding"
+     ,"Identifier":"CONTENT_PADDING"
+     ,"Sequence":1
+    }
+   ,"Help":{
+      "Help Text":"Sets the Content Body padding for the page."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2267980521453306"
+   ,"Identification":{
+      "Template Type":"Page"
+     ,"Name":"Size"
+     ,"Identifier":"DIALOG_SIZE"
+     ,"Sequence":1
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2268320023453306"
+   ,"Identification":{
+      "Template Type":"Page"
+     ,"Name":"Display Mode"
+     ,"Identifier":"DISPLAY_MODE"
+     ,"Sequence":30
+    }
+   ,"Help":{
+      "Help Text":"Determines the default display appearance and positioning of the dialog. The default opens a floating dialog position at the center of the screen."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2268758312453306"
+   ,"Identification":{
+      "Template Type":"Page"
+     ,"Name":"Page Background"
+     ,"Identifier":"PAGE_BACKGROUND"
+     ,"Sequence":20
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2269136639453307"
+   ,"Identification":{
+      "Template Type":"Page"
+     ,"Name":"Page Layout"
+     ,"Identifier":"PAGE_LAYOUT"
+     ,"Sequence":10
+    }
+   ,"Settings":{
+      "Null Text":"Floating (Default)"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2269588556453307"
+   ,"Identification":{
+      "Template Type":"Page"
+     ,"Name":"Position"
+     ,"Identifier":"PAGE_POSITION"
+     ,"Sequence":1
+    }
+   ,"Help":{
+      "Help Text":"Sets the position of the page."
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2269960217453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Accent"
+     ,"Identifier":"ACCENT"
+     ,"Sequence":30
+    }
+   ,"Help":{
+      "Help Text":"Set the Region\u0027s accent. This accent corresponds to a Theme-Rollable color and sets the background of the Region\u0027s Header."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2270350833453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Alert Display"
+     ,"Identifier":"ALERT_DISPLAY"
+     ,"Sequence":1
+    }
+   ,"Help":{
+      "Help Text":"Sets the layout of the Alert Region."
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2270756884453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Alert Icons"
+     ,"Identifier":"ALERT_ICONS"
+     ,"Sequence":2
+    }
+   ,"Help":{
+      "Help Text":"Sets how icons are handled for the Alert Region."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2271128524453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Alert Title"
+     ,"Identifier":"ALERT_TITLE"
+     ,"Sequence":40
+    }
+   ,"Help":{
+      "Help Text":"Determines how the title of the alert is displayed."
+    }
+   ,"Settings":{
+      "Null Text":"Visible - Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2271586806453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Alert Type"
+     ,"Identifier":"ALERT_TYPE"
+     ,"Sequence":3
+    }
+   ,"Help":{
+      "Help Text":"Sets the type of alert which can be used to determine the icon, icon color, and the background color."
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2271951190453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Alignment"
+     ,"Identifier":"ALIGNMENT"
+     ,"Sequence":1
+    }
+   ,"Help":{
+      "Help Text":"This sets the vertical alignment of the region."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2272324967453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Animation"
+     ,"Identifier":"ANIMATION"
+     ,"Sequence":10
+    }
+   ,"Help":{
+      "Help Text":"Sets the animation when navigating within the Carousel Region."
+    }
+   ,"Settings":{
+      "Null Text":"Fade"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2272778136453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Body Height"
+     ,"Identifier":"BODY_HEIGHT"
+     ,"Sequence":10
+    }
+   ,"Help":{
+      "Help Text":"Sets the Region Body height. You can also specify a custom height by modifying the Region\u0027s CSS Classes and using the height helper classes \"i-hXXX\" where XXX is any increment of 10 from 100 to 800."
+    }
+   ,"Settings":{
+      "Null Text":"Auto - Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2273130286453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Body Overflow"
+     ,"Identifier":"BODY_OVERFLOW"
+     ,"Sequence":2
+    }
+   ,"Help":{
+      "Help Text":"Determines the scroll behavior when the region contents are larger than their container."
+    }
+   ,"Settings":{
+      "Advanced":true
+    }
+  }
+ ,{
+    "id":"2273502106453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Body Padding"
+     ,"Identifier":"BODY_PADDING"
+     ,"Sequence":1
+    }
+   ,"Help":{
+      "Help Text":"Sets the Region Body padding for the region."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2273963546453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Body Style"
+     ,"Identifier":"BODY_STYLE"
+     ,"Sequence":20
+    }
+   ,"Help":{
+      "Help Text":"Controls the display of the region\u0027s body container."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2274391301453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Callout Position"
+     ,"Identifier":"CALLOUT_POSITION"
+     ,"Sequence":10
+    }
+   ,"Help":{
+      "Help Text":"Determines where the callout for the popup will be positioned relative to its parent."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2274755876453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Collapsible Button Icons"
+     ,"Identifier":"COLLAPSIBLE_BUTTON_ICONS"
+     ,"Sequence":1
+    }
+   ,"Help":{
+      "Help Text":"Determines which arrows to use to represent the icons for the collapse and expand button."
+    }
+   ,"Settings":{
+      "Null Text":"Arrows"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2275183058453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Collapsible Icon Position"
+     ,"Identifier":"COLLAPSIBLE_ICON_POSITION"
+     ,"Sequence":1
+    }
+   ,"Help":{
+      "Help Text":"Determines the position of the expand and collapse toggle for the region."
+    }
+   ,"Settings":{
+      "Null Text":"Start"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2275582488453307"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Default State"
+     ,"Identifier":"DEFAULT_STATE"
+     ,"Sequence":1
+    }
+   ,"Help":{
+      "Help Text":"Sets the default state of the region."
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2275910227453309"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Size"
+     ,"Identifier":"DIALOG_SIZE"
+     ,"Sequence":1
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2276306813453309"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Display Icon"
+     ,"Identifier":"DISPLAY_ICON"
+     ,"Sequence":50
+    }
+   ,"Help":{
+      "Help Text":"Display the Hero Region icon."
+    }
+   ,"Settings":{
+      "Null Text":"Yes (Default)"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2276744112453309"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Display Mode"
+     ,"Identifier":"DISPLAY_MODE"
+     ,"Sequence":1
+    }
+   ,"Help":{
+      "Help Text":"Determines the default display appearance and positioning of the dialog. The default opens a floating dialog position at the center of the screen."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2277172574453309"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Header"
+     ,"Identifier":"HEADER"
+     ,"Sequence":20
+    }
+   ,"Help":{
+      "Help Text":"Determines the display of the Region Header which also contains the Region Title."
+    }
+   ,"Settings":{
+      "Null Text":"Visible - Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2277552268453309"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Heading Font"
+     ,"Identifier":"HEADING_FONT"
+     ,"Sequence":100
+    }
+   ,"Help":{
+      "Help Text":"Sets the font-family of the heading for this region."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2277914075453309"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Heading Level"
+     ,"Identifier":"HEADING_LEVEL"
+     ,"Sequence":1
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2278344930453309"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Hide Steps For"
+     ,"Identifier":"HIDE_STEPS_FOR"
+     ,"Sequence":1
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2278759129453309"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Icon Shape"
+     ,"Identifier":"ICON_SHAPE"
+     ,"Sequence":60
+    }
+   ,"Help":{
+      "Help Text":"Determines the shape of the icon."
+    }
+   ,"Settings":{
+      "Null Text":"Rounded Corners"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2279127047453309"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Icon Size"
+     ,"Identifier":"ICON_SIZE"
+     ,"Sequence":3
+    }
+   ,"Settings":{
+      "Null Text":"Initial"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2279598751453309"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Filter"
+     ,"Identifier":"IMAGE_FILTER"
+     ,"Sequence":40
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2279986974453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Ratio"
+     ,"Identifier":"IMAGE_RATIO"
+     ,"Sequence":10
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2280397593453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Scale"
+     ,"Identifier":"IMAGE_SCALE"
+     ,"Sequence":20
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2280721371453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Shape"
+     ,"Identifier":"IMAGE_SHAPE"
+     ,"Sequence":30
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2281158527453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Item Spacing"
+     ,"Identifier":"ITEM_PADDING"
+     ,"Sequence":100
+    }
+   ,"Help":{
+      "Help Text":"Sets the padding around items within this region."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2281572811453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Item Size"
+     ,"Identifier":"ITEM_SIZE"
+     ,"Sequence":110
+    }
+   ,"Help":{
+      "Help Text":"Sets the size of the form items within this region."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2281940507453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Item Width"
+     ,"Identifier":"ITEM_WIDTH"
+     ,"Sequence":120
+    }
+   ,"Help":{
+      "Help Text":"Sets the width of the form items within this region."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2282385027453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Label Alignment"
+     ,"Identifier":"LABEL_ALIGNMENT"
+     ,"Sequence":130
+    }
+   ,"Help":{
+      "Help Text":"Set the label text alignment for items within this region."
+    }
+   ,"Settings":{
+      "Null Text":"Right"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2282793652453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Label Position"
+     ,"Identifier":"LABEL_POSITION"
+     ,"Sequence":140
+    }
+   ,"Help":{
+      "Help Text":"Sets the position of the label relative to the form item."
+    }
+   ,"Settings":{
+      "Null Text":"Inline - Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2283181049453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Layout"
+     ,"Identifier":"LAYOUT"
+     ,"Sequence":1
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2283508457453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Login Header"
+     ,"Identifier":"LOGIN_HEADER"
+     ,"Sequence":10
+    }
+   ,"Help":{
+      "Help Text":"Controls the display of the Login region header."
+    }
+   ,"Settings":{
+      "Null Text":"Icon and Title (Default)"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2283972505453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Bottom Margin"
+     ,"Identifier":"REGION_BOTTOM_MARGIN"
+     ,"Sequence":210
+    }
+   ,"Help":{
+      "Help Text":"Set the bottom margin for this region."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2284392405453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Left Margin"
+     ,"Identifier":"REGION_LEFT_MARGIN"
+     ,"Sequence":220
+    }
+   ,"Help":{
+      "Help Text":"Set the left margin for this region."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2284776556453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Position"
+     ,"Identifier":"REGION_POSITION"
+     ,"Sequence":1
+    }
+   ,"Help":{
+      "Help Text":"Sets the position of the region."
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2285130364453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Right Margin"
+     ,"Identifier":"REGION_RIGHT_MARGIN"
+     ,"Sequence":230
+    }
+   ,"Help":{
+      "Help Text":"Set the right margin for this region."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2285570534453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Region Title"
+     ,"Identifier":"REGION_TITLE"
+     ,"Sequence":1
+    }
+   ,"Help":{
+      "Help Text":"Sets the source of the Title Bar region\u0027s title."
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2285996820453310"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Top Margin"
+     ,"Identifier":"REGION_TOP_MARGIN"
+     ,"Sequence":200
+    }
+   ,"Help":{
+      "Help Text":"Set the top margin for this region."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2286349264453312"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Result Appearance"
+     ,"Identifier":"RESULT_APPEARANCE"
+     ,"Sequence":1
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2286738156453312"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Result Separator"
+     ,"Identifier":"RESULT_SEPARATOR"
+     ,"Sequence":2
+    }
+   ,"Settings":{
+      "Null Text":"Show"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2287160434453312"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Sort Order Alignment"
+     ,"Identifier":"SORT_ORDER_ALIGNMENT"
+     ,"Sequence":145
+    }
+   ,"Help":{
+      "Help Text":"Sets the alignment of the sort order item."
+    }
+   ,"Settings":{
+      "Null Text":"Default (Start)"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2287504005453312"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Style"
+     ,"Identifier":"STYLE"
+     ,"Sequence":40
+    }
+   ,"Help":{
+      "Help Text":"Determines how the region is styled. Use the \"Remove Borders\" template option to remove the region\u0027s borders and shadows."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2287956972453312"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Tabs Size"
+     ,"Identifier":"TABS_SIZE"
+     ,"Sequence":1
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2288388746453312"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Tab Style"
+     ,"Identifier":"TAB_STYLE"
+     ,"Sequence":1
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2288722592453312"
+   ,"Identification":{
+      "Template Type":"Region"
+     ,"Name":"Timer"
+     ,"Identifier":"TIMER"
+     ,"Sequence":2
+    }
+   ,"Help":{
+      "Help Text":"Sets the timer for when to automatically navigate to the next region within the Carousel Region."
+    }
+   ,"Settings":{
+      "Null Text":"No Timer"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2289141053453312"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Alternating Rows"
+     ,"Identifier":"ALTERNATING_ROWS"
+     ,"Sequence":10
+    }
+   ,"Help":{
+      "Help Text":"Shades alternate rows in the report with slightly different background colors."
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2289561710453312"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Animation"
+     ,"Identifier":"ANIMATION"
+     ,"Sequence":70
+    }
+   ,"Help":{
+      "Help Text":"Sets the hover and focus animation."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2289979346453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Badge Size"
+     ,"Identifier":"BADGE_SIZE"
+     ,"Sequence":10
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2290351122453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Body Text"
+     ,"Identifier":"BODY_TEXT"
+     ,"Sequence":40
+    }
+   ,"Help":{
+      "Help Text":"Determines the height of the card body."
+    }
+   ,"Settings":{
+      "Null Text":"Auto"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2290786841453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Color Accents"
+     ,"Identifier":"COLOR_ACCENTS"
+     ,"Sequence":50
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2291178289453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Actions"
+     ,"Identifier":"COL_ACTIONS"
+     ,"Sequence":150
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2291504401453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Description"
+     ,"Identifier":"COL_CONTENT_DESCRIPTION"
+     ,"Sequence":130
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2291923842453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Title"
+     ,"Identifier":"COL_CONTENT_TITLE"
+     ,"Sequence":120
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2292365309453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Icon"
+     ,"Identifier":"COL_ICON"
+     ,"Sequence":110
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2292752858453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Misc"
+     ,"Identifier":"COL_MISC"
+     ,"Sequence":140
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2293121083453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Selection"
+     ,"Identifier":"COL_SELECTION"
+     ,"Sequence":100
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2293589058453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Comments Style"
+     ,"Identifier":"COMMENTS_STYLE"
+     ,"Sequence":10
+    }
+   ,"Help":{
+      "Help Text":"Determines the style in which comments are displayed."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2293992669453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Content Alignment"
+     ,"Identifier":"CONTENT_ALIGNMENT"
+     ,"Sequence":90
+    }
+   ,"Settings":{
+      "Null Text":"Center (Default)"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2294319499453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Display Items"
+     ,"Identifier":"DISPLAY_ITEMS"
+     ,"Sequence":20
+    }
+   ,"Settings":{
+      "Null Text":"Inline (Default)"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2294758480453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Display Labels"
+     ,"Identifier":"DISPLAY_LABELS"
+     ,"Sequence":30
+    }
+   ,"Settings":{
+      "Null Text":"Inline (Default)"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2295187532453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Icons"
+     ,"Identifier":"ICONS"
+     ,"Sequence":20
+    }
+   ,"Help":{
+      "Help Text":"Controls how to handle icons in the report."
+    }
+   ,"Settings":{
+      "Null Text":"No Icons"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2295518147453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Icon Shape"
+     ,"Identifier":"ICON_SHAPE"
+     ,"Sequence":60
+    }
+   ,"Help":{
+      "Help Text":"Determines the shape of the icon."
+    }
+   ,"Settings":{
+      "Null Text":"Circle"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2295924119453314"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Label Width"
+     ,"Identifier":"LABEL_WIDTH"
+     ,"Sequence":10
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2296319528453315"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Layout"
+     ,"Identifier":"LAYOUT"
+     ,"Sequence":30
+    }
+   ,"Help":{
+      "Help Text":"Determines the layout of Cards in the report."
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2296733074453315"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Pagination Display"
+     ,"Identifier":"PAGINATION_DISPLAY"
+     ,"Sequence":10
+    }
+   ,"Help":{
+      "Help Text":"Controls the display of pagination for this region."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":true
+    }
+  }
+ ,{
+    "id":"2297109773453315"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Report Border"
+     ,"Identifier":"REPORT_BORDER"
+     ,"Sequence":30
+    }
+   ,"Help":{
+      "Help Text":"Controls the display of the Report\u0027s borders."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2297589959453315"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Row Highlighting"
+     ,"Identifier":"ROW_HIGHLIGHTING"
+     ,"Sequence":20
+    }
+   ,"Help":{
+      "Help Text":"Determines whether you want the row to be highlighted on hover."
+    }
+   ,"Settings":{
+      "Advanced":false
+    }
+  }
+ ,{
+    "id":"2297970881453315"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Size"
+     ,"Identifier":"SIZE"
+     ,"Sequence":35
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+ ,{
+    "id":"2298345202453315"
+   ,"Identification":{
+      "Template Type":"Report"
+     ,"Name":"Style"
+     ,"Identifier":"STYLE"
+     ,"Sequence":10
+    }
+   ,"Help":{
+      "Help Text":"Determines the overall style for the component."
+    }
+   ,"Settings":{
+      "Null Text":"Default"
+     ,"Advanced":false
+    }
+  }
+]

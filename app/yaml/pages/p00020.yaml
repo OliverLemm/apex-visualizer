@@ -1699,6 +1699,8 @@ dynamic-actions:
 
   execution: 
     sequence: 10
+    event-scope: Static
+    type: Immediate
 
   when: 
     event: EVENT.EVENT.BROWSER.CHANGE
@@ -1707,10 +1709,6 @@ dynamic-actions:
     - P0_APP_ID
     - P0_PAGE_ID
     - P0_COMPONENT
-
-  execution: 
-    event-scope: Static
-    type: Immediate
 
   actions: 
   - # ====== Action: Refresh =====================================
