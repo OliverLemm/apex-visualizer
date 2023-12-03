@@ -707,9 +707,6 @@ regions:
       control-break/aggregate: true
       hide: true
 
-    help: 
-      help-text: test
-
   - # ====== Column: NORMAL_PAGES ================================
     id: 37288984433264631
     identification: 

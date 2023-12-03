@@ -33,7 +33,7 @@ prompt APPLICATION 347 - APEX Visualizer
 -- Application Export:
 --   Application:     347
 --   Name:            APEX Visualizer
---   Date and Time:   18:57 Sonntag Dezember 3, 2023
+--   Date and Time:   19:13 Sonntag Dezember 3, 2023
 --   Exported By:     APEX_VISUALIZER
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -125,7 +125,7 @@ wwv_imp_workspace.create_flow(
 ,p_tokenize_row_search=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20231203185623'
+,p_last_upd_yyyymmddhh24miss=>'20231203191314'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>14
 ,p_print_server_type=>'INSTANCE'
@@ -19818,7 +19818,7 @@ wwv_flow_imp_page.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'13'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20231203185623'
+,p_last_upd_yyyymmddhh24miss=>'20231203185839'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(293283138176929182)
@@ -20195,7 +20195,6 @@ wwv_flow_imp_page.create_region_column(
 ,p_is_primary_key=>false
 ,p_duplicate_value=>true
 ,p_include_in_export=>true
-,p_help_text=>'test'
 );
 wwv_flow_imp_page.create_region_column(
  p_id=>wwv_flow_imp.id(37288984433264631)
@@ -20659,7 +20658,7 @@ wwv_flow_imp_page.create_page(
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
-,p_page_component_map=>'21'
+,p_page_component_map=>'18'
 ,p_last_updated_by=>'OLEMM'
 ,p_last_upd_yyyymmddhh24miss=>'20231203172258'
 );
@@ -34458,7 +34457,7 @@ wwv_flow_imp_page.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
-,p_page_component_map=>'03'
+,p_page_component_map=>'11'
 ,p_last_updated_by=>'OLEMM'
 ,p_last_upd_yyyymmddhh24miss=>'20231203170902'
 );
@@ -34611,6 +34610,7 @@ wwv_flow_imp_shared.create_install(
 'drop view av_page_links_v;',
 'drop view av_plsql_v;',
 'drop view av_plugins_v;',
+'drop view av_page_complexity_v;',
 'drop view av_p0100_js_code_by_page_v;',
 'drop view av_p0200_css_code_by_page_v;',
 'drop view av_p0300_plsql_code_by_page_v;',

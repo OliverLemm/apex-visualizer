@@ -22,6 +22,7 @@ wwv_flow_imp_shared.create_install(
 'drop view av_page_links_v;',
 'drop view av_plsql_v;',
 'drop view av_plugins_v;',
+'drop view av_page_complexity_v;',
 'drop view av_p0100_js_code_by_page_v;',
 'drop view av_p0200_css_code_by_page_v;',
 'drop view av_p0300_plsql_code_by_page_v;',
