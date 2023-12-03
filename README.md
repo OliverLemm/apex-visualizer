@@ -4,6 +4,11 @@ https://raw.githubusercontent.com/OliverLemm/apex-visualizer/master/manifest.jso
 inside your internal APEX workspace. <br>
 Go Manage Instance => Instance Setting => Application Gallery and add a new line.
 
+## Release 23.1.2
+Migration checks for APEX 23.2 added.
+Dark Theme added.
+Page Applications reworked.
+
 ## Release 23.1.1
 Check for correct Universal Theme version fixed.<br>
 Check for unused plugins fixed.<br>
