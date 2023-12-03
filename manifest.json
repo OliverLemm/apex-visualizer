@@ -11,7 +11,7 @@
             "source": "https://raw.githubusercontent.com/OliverLemm/apex-visualizer/v22.1.2/app/apex_visualizer.sql",
             "zip": "https://raw.githubusercontent.com/OliverLemm/apex-visualizer/v22.1.2/app/apex_visualizer.zip"
         },{
-            "internalName": "APEX_VISUALIZER_22_2_1",
+            "internalName": "APEX_VISUALIZER_22_2",
             "name": "APEX Visualizer 22.2.1",
             "description": "An APEX Application, which can visualize many details of all applications in the same workspace. This version requires APEX 22.2 or higher.",
             "author": "Oliver Lemm",
@@ -22,14 +22,14 @@
             "zip": "https://raw.githubusercontent.com/OliverLemm/apex-visualizer/v22.2.1/app/apex_visualizer.zip"
         },{
             "internalName": "APEX_VISUALIZER_23_1",
-            "name": "APEX Visualizer 23.1.1",
+            "name": "APEX Visualizer 23.1.2",
             "description": "An APEX Application, which can visualize many details of all applications in the same workspace. This version requires APEX 23.1 or higher.",
             "author": "Oliver Lemm",
-            "version": "23.1.1",
+            "version": "23.1.2",
 			"icon" : "",
             "url": "https://github.com/OliverLemm/apex-visualizer",
-            "source": "https://raw.githubusercontent.com/OliverLemm/apex-visualizer/v23.1.1/app/apex_visualizer.sql",
-            "zip": "https://raw.githubusercontent.com/OliverLemm/apex-visualizer/v23.1.1/app/apex_visualizer.zip"
+            "source": "https://raw.githubusercontent.com/OliverLemm/apex-visualizer/v23.1.2/app/apex_visualizer.sql",
+            "zip": "https://raw.githubusercontent.com/OliverLemm/apex-visualizer/v23.1.2/app/apex_visualizer.zip"
         }
     ]
 }
