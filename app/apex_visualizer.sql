@@ -19,7 +19,7 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_imp.import_begin (
  p_version_yyyy_mm_dd=>'2023.10.31'
-,p_release=>'23.2.1'
+,p_release=>'23.2.2'
 ,p_default_workspace_id=>125633378786110814
 ,p_default_application_id=>347
 ,p_default_id_offset=>125634094441118325
@@ -33,7 +33,7 @@ prompt APPLICATION 347 - APEX Visualizer
 -- Application Export:
 --   Application:     347
 --   Name:            APEX Visualizer
---   Date and Time:   21:52 Sonntag Dezember 3, 2023
+--   Date and Time:   13:34 Montag Januar 1, 2024
 --   Exported By:     APEX_VISUALIZER
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -73,7 +73,7 @@ prompt APPLICATION 347 - APEX Visualizer
 --       E-Mail:
 --     Supporting Objects:  Included
 --       Install scripts:         17
---   Version:         23.2.1
+--   Version:         23.2.2
 --   Instance ID:     69411093447375
 --
 
@@ -34662,7 +34662,7 @@ wwv_flow_imp_page.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
-,p_page_component_map=>'11'
+,p_page_component_map=>'03'
 ,p_last_updated_by=>'OLEMM'
 ,p_last_upd_yyyymmddhh24miss=>'20231203214525'
 );
