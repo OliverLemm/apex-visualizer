@@ -4,7 +4,7 @@ id: 510
 identification: 
   name: Login Page
   alias: LOGIN
-  title: Apex Visualizer - Log In
+  title: APEX Visualizer - Log In
 
 appearance: 
   page-mode: Normal
@@ -38,10 +38,10 @@ server-cache:
   caching: Disabled
 
 regions: 
-- # ====== Region: Apex Visualizer =============================
+- # ====== Region: APEX Visualizer =============================
   id: 38870409361053521
   identification: 
-    title: Apex Visualizer
+    title: APEX Visualizer
     type: Static Content
 
   layout: 
@@ -100,7 +100,7 @@ page-items:
 
   layout: 
     sequence: 10
-    region: Apex Visualizer # 38870409361053521
+    region: APEX Visualizer # 38870409361053521
     position: BODY
     alignment: Left
     start-new-layout: false
@@ -155,7 +155,7 @@ page-items:
 
   layout: 
     sequence: 20
-    region: Apex Visualizer # 38870409361053521
+    region: APEX Visualizer # 38870409361053521
     position: BODY
     alignment: Left
     start-new-layout: false
@@ -207,7 +207,7 @@ page-items:
 
   layout: 
     sequence: 30
-    region: Apex Visualizer # 38870409361053521
+    region: APEX Visualizer # 38870409361053521
     position: BODY
     alignment: Left
     start-new-layout: false
@@ -273,7 +273,7 @@ buttons:
 
   layout: 
     sequence: 40
-    region: Apex Visualizer # 38870409361053521
+    region: APEX Visualizer # 38870409361053521
     position: NEXT
     start-new-layout: false
     start-new-row: true

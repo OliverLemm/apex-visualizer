@@ -22,7 +22,7 @@ wwv_flow_imp_page.create_page(
 ,p_protection_level=>'C'
 ,p_page_component_map=>'03'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20220805142524'
+,p_last_upd_yyyymmddhh24miss=>'20240101134514'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(45105580925952525)
@@ -1281,7 +1281,7 @@ wwv_flow_imp_page.create_report_columns(
 ,p_query_column_id=>1
 ,p_column_alias=>'APEX_REST_RESOURCE_HANDLERS_CNT'
 ,p_column_display_sequence=>10
-,p_column_heading=>'Apex Rest Resource Handlers Cnt'
+,p_column_heading=>'APEX Rest Resource Handlers Cnt'
 ,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -1292,7 +1292,7 @@ wwv_flow_imp_page.create_report_columns(
 ,p_query_column_id=>2
 ,p_column_alias=>'APEX_REST_RESOURCE_MODULES_CNT'
 ,p_column_display_sequence=>20
-,p_column_heading=>'Apex Rest Resource Modules Cnt'
+,p_column_heading=>'APEX Rest Resource Modules Cnt'
 ,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -1303,7 +1303,7 @@ wwv_flow_imp_page.create_report_columns(
 ,p_query_column_id=>3
 ,p_column_alias=>'APEX_REST_RESOURCE_PARAMETERS_CNT'
 ,p_column_display_sequence=>30
-,p_column_heading=>'Apex Rest Resource Parameters Cnt'
+,p_column_heading=>'APEX Rest Resource Parameters Cnt'
 ,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -1314,7 +1314,7 @@ wwv_flow_imp_page.create_report_columns(
 ,p_query_column_id=>4
 ,p_column_alias=>'APEX_REST_RESOURCE_TEMPLATES_CNT'
 ,p_column_display_sequence=>40
-,p_column_heading=>'Apex Rest Resource Templates Cnt'
+,p_column_heading=>'APEX Rest Resource Templates Cnt'
 ,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'

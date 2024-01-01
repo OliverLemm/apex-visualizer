@@ -3,7 +3,7 @@
  ,"Identification":{
     "Name":"Login Page"
    ,"Alias":"LOGIN"
-   ,"Title":"Apex Visualizer - Log In"
+   ,"Title":"APEX Visualizer - Log In"
   }
  ,"Appearance":{
     "Page Mode":"Normal"
@@ -41,7 +41,7 @@
     {
       "id":"38870409361053521"
      ,"Identification":{
-        "Title":"Apex Visualizer"
+        "Title":"APEX Visualizer"
        ,"Type":"Static Content"
       }
      ,"Layout":{
@@ -104,7 +104,7 @@
       }
      ,"Layout":{
         "Sequence":10
-       ,"Region":"Apex Visualizer (38870409361053521)"
+       ,"Region":"APEX Visualizer (38870409361053521)"
        ,"Position":"BODY"
        ,"Alignment":"Left"
        ,"Start New Layout":false
@@ -161,7 +161,7 @@
       }
      ,"Layout":{
         "Sequence":20
-       ,"Region":"Apex Visualizer (38870409361053521)"
+       ,"Region":"APEX Visualizer (38870409361053521)"
        ,"Position":"BODY"
        ,"Alignment":"Left"
        ,"Start New Layout":false
@@ -215,7 +215,7 @@
       }
      ,"Layout":{
         "Sequence":30
-       ,"Region":"Apex Visualizer (38870409361053521)"
+       ,"Region":"APEX Visualizer (38870409361053521)"
        ,"Position":"BODY"
        ,"Alignment":"Left"
        ,"Start New Layout":false
@@ -274,7 +274,7 @@
       }
      ,"Layout":{
         "Sequence":40
-       ,"Region":"Apex Visualizer (38870409361053521)"
+       ,"Region":"APEX Visualizer (38870409361053521)"
        ,"Position":"NEXT"
        ,"Start New Layout":false
        ,"Start New Row":true

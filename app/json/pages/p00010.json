@@ -148,14 +148,11 @@
    ,{
       "id":"294199481042781289"
      ,"Identification":{
-        "Title":"Code Complexity (characters)"
+        "Title":"Code Complexity (characters by app and type)"
        ,"Type":"Chart"
       }
      ,"Source":{
-        "Location":"Local Database"
-       ,"Type":"SQL Query"
-       ,"SQL Query":"select application_name, application_id, series_name, series_value from (\n    select j.application_name, j.application_id, \u0027JavaScript\u0027 series_name, sum(j.js_code_length) series_value \n    from av_javascript_v j group by application_id, application_name\n    union\n    select c.application_name, c.application_id, \u0027CSS\u0027 series_name, sum(c.css_code_length) series_value \n    from av_css_v c group by application_id, application_name\n    union\n    select p.application_name, p.application_id, \u0027PL\/SQL\u0027 series_name, sum(p.code_length) series_value \n    from av_plsql_v p group by application_id, application_name\n)\nwhere (application_id = :P0_APP_ID or :P0_APP_ID is null)\nand (lower(series_name) = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)\norder by series_value desc"
-       ,"Page Items to Submit":[
+        "Page Items to Submit":[
           "P0_APP_ID"
          ,"P10_COMPLEXITY_CATEGORY"
         ]
@@ -234,21 +231,83 @@
         }
        ,"Series":[
           {
-            "id":"294199615339781291"
+            "id":"10188311722098609"
            ,"Identification":{
-              "Name":"Applications"
+              "Name":"JavaScript"
+            }
+           ,"Execution":{
+              "Sequence":20
+            }
+           ,"Source":{
+              "Location":"Local Database"
+             ,"Type":"SQL Query"
+             ,"SQL Query":"select APPLICATION_ID,\n       APPLICATION_NAME,\n       sum(JS_CODE_LENGTH) code_length\n  from AV_JAVASCRIPT_V\n where (application_id = :P0_APP_ID or :P0_APP_ID is null)\nand (\u0027javascript\u0027 = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)\ngroup by application_id, application_name"
+             ,"Page Items to Submit":[
+                "P0_APP_ID"
+               ,"P10_COMPLEXITY_CATEGORY"
+              ]
+            }
+           ,"Column Mapping":{
+              "Label":"APPLICATION_NAME"
+             ,"Value":"CODE_LENGTH"
+            }
+           ,"Appearance":{
+              "Assigned To Y2 Axis":false
+            }
+           ,"Label":{
+              "Show":true
+             ,"Position":"Automatic"
+            }
+          }
+         ,{
+            "id":"10188491899098610"
+           ,"Identification":{
+              "Name":"CSS"
             }
            ,"Execution":{
               "Sequence":10
             }
            ,"Source":{
-              "Location":"Region Source"
+              "Location":"Local Database"
+             ,"Type":"SQL Query"
+             ,"SQL Query":"select APPLICATION_ID,\n       APPLICATION_NAME,\n       sum(CSS_CODE_LENGTH) code_length\n  from AV_CSS_V\n where (application_id = :P0_APP_ID or :P0_APP_ID is null)\nand (\u0027css\u0027 = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)\ngroup by application_id, application_name"
+             ,"Page Items to Submit":[
+                "P0_APP_ID"
+               ,"P10_COMPLEXITY_CATEGORY"
+              ]
             }
            ,"Column Mapping":{
-              "Series Name":"APPLICATION_NAME"
-             ,"Label":"SERIES_NAME"
-             ,"Value Aggregation":"No Aggregation"
-             ,"Value":"SERIES_VALUE"
+              "Label":"APPLICATION_NAME"
+             ,"Value":"CODE_LENGTH"
+            }
+           ,"Appearance":{
+              "Assigned To Y2 Axis":false
+            }
+           ,"Label":{
+              "Show":true
+             ,"Position":"Automatic"
+            }
+          }
+         ,{
+            "id":"10188563425098611"
+           ,"Identification":{
+              "Name":"PL\/SQL"
+            }
+           ,"Execution":{
+              "Sequence":40
+            }
+           ,"Source":{
+              "Location":"Local Database"
+             ,"Type":"SQL Query"
+             ,"SQL Query":"select APPLICATION_ID,\n       APPLICATION_NAME,\n       sum(CODE_LENGTH) code_length\n  from AV_PLSQL_V\n where (application_id = :P0_APP_ID or :P0_APP_ID is null)\nand (\u0027css\u0027 = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)\ngroup by application_id, application_name"
+             ,"Page Items to Submit":[
+                "P0_APP_ID"
+               ,"P10_COMPLEXITY_CATEGORY"
+              ]
+            }
+           ,"Column Mapping":{
+              "Label":"APPLICATION_NAME"
+             ,"Value":"CODE_LENGTH"
             }
            ,"Appearance":{
               "Assigned To Y2 Axis":false
@@ -487,7 +546,7 @@
       "id":"455561419078523493"
      ,"Identification":{
         "Title":"Applicatons"
-       ,"Type":"Interactive Grid"
+       ,"Type":"Interactive Report"
       }
      ,"Source":{
         "Location":"Local Database"
@@ -508,12 +567,9 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Collapsible (452454481275466240)"
+        "Template":"Interactive Report (452458457830466245)"
        ,"Template Options":[
           "#DEFAULT#"
-         ,"js-useLocalStorage"
-         ,"is-collapsed"
-         ,"t-Region--hiddenOverflow"
         ]
        ,"Render Components":"Above Content"
       }
@@ -533,40 +589,57 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Attributes":{
-        "id":"414315427523562246"
-       ,"Edit":{
-          "Enabled":false
+        "id":"37290759188264649"
+       ,"Link":{
+          "Link Column":"Exclude Link Column"
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y"
+         ,"Display Position":"Bottom - Right"
         }
        ,"Performance":{
           "Lazy Loading":false
+         ,"Maximum Rows to Process":1000000
         }
-       ,"Appearance":{
-          "Show Null Values as":"-"
-         ,"Select First Row":true
-         ,"Fixed Row Height":true
+       ,"Search Bar":{
+          "Include Search Bar":true
+         ,"Search Field":true
+         ,"Finder Drop Down":true
+         ,"Reports Select List":true
+         ,"Rows Per Page Selector":false
         }
-       ,"Pagination":{
-          "Type":"Scroll"
-         ,"Show Total Count":false
-        }
-       ,"Toolbar":{
-          "Show":true
-         ,"Controls":[
-            "Search Column Selection"
-           ,"Search Field"
-           ,"Actions Menu"
-           ,"Reset Button"
-           ,"Save Button"
-          ]
-        }
-       ,"Enable Users To":{
-          "Save Public Report":false
+       ,"Actions Menu":{
+          "Include Actions Menu":true
+         ,"Filter":true
+         ,"Select Columns":true
+         ,"Rows Per Page":true
+         ,"Sort":true
+         ,"Control Break":true
+         ,"Highlight":true
+         ,"Compute":true
+         ,"Aggregate":true
+         ,"Chart":true
+         ,"Group By":true
+         ,"Pivot":true
          ,"Flashback":true
-         ,"Define Chart View":true
-         ,"Download":false
+         ,"Save Report":true
+         ,"Save Public Report":false
+         ,"Reset":true
+         ,"Help":true
+         ,"Download":true
+         ,"Subscription":true
+        }
+       ,"Download":{
+          "Formats":[
+            "CSV"
+           ,"HTML"
+           ,"Excel"
+           ,"PDF"
+          ]
+         ,"Send as Email":true
         }
        ,"Heading":{
-          "Fixed To":"None"
+          "Fixed To":"Page"
         }
        ,"Icon View":{
           "Show":false
@@ -576,496 +649,437 @@
         }
        ,"Saved Reports":[
           {
-            "id":"449471134182698294"
+            "id":"10203699139099371"
            ,"Identification":{
               "Name":"Primary Report"
-             ,"Alias":"1256353"
+             ,"Alias":"102037"
             }
           }
         ]
+       ,"Columns":[
+          {
+            "id":"10187515473098601"
+           ,"Identification":{
+              "Column Name":"APP_NAME"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"App Name"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":20
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"10187656689098602"
+           ,"Identification":{
+              "Column Name":"ALIAS"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Alias"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":30
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"10187776426098603"
+           ,"Identification":{
+              "Column Name":"OWNER"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Owner"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":40
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"10187884589098604"
+           ,"Identification":{
+              "Column Name":"VERSION"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Version"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":50
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"10187979678098605"
+           ,"Identification":{
+              "Column Name":"PAGES_OVERALL"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Pages Overall"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":60
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"10188038199098606"
+           ,"Identification":{
+              "Column Name":"SIMPLE_PAGES"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Simple Pages (less than 15 objects)"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":70
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"10188125155098607"
+           ,"Identification":{
+              "Column Name":"NORMAL_PAGES"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Normal Pages"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":80
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"10188299446098608"
+           ,"Identification":{
+              "Column Name":"COMPLEX_PAGES"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Complex Pages (more than 50 objects)"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":90
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"37290800102264650"
+           ,"Identification":{
+              "Column Name":"APP_ID"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"App Id"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":10
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+        ]
+       ,"Printing":{
+          "Output":{
+            "View File As":"Attachment"
+          }
+         ,"Page":{
+            "Size":"Letter"
+           ,"Orientation":"Landscape"
+           ,"Units":"Inches"
+           ,"Width":11
+           ,"Height":8.5
+           ,"Border Width":0.5
+           ,"Border Color":"#666666"
+          }
+         ,"Page Header":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Normal"
+           ,"Font Size":12
+           ,"Font Color":"#000000"
+           ,"Alignment":"center"
+           ,"Page Header Text":"Applicatons"
+          }
+         ,"Column Headings":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Bold"
+           ,"Font Size":10
+           ,"Font Color":"#000000"
+           ,"Background Color":"#EEEEEE"
+          }
+         ,"Columns":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Normal"
+           ,"Font Size":10
+           ,"Font Color":"#000000"
+           ,"Background Color":"#FFFFFF"
+          }
+         ,"Page Footer":{
+            "Font":"Helvetica"
+           ,"Font Weight":"Normal"
+           ,"Font Size":12
+           ,"Font Color":"#000000"
+           ,"Alignment":"center"
+          }
+        }
       }
-     ,"Columns":[
-        {
-          "id":"37288733324264629"
-         ,"Identification":{
-            "Column Name":"PAGES_OVERALL"
-           ,"Type":"Number Field"
-          }
-         ,"Heading":{
-            "Heading":"Pages Overall"
-           ,"Alignment":"end"
-          }
-         ,"Settings":{
-            "Number Alignment":"Start"
-           ,"Virtual Keyboard":"Decimal"
-          }
-         ,"Layout":{
-            "Sequence":60
-           ,"Column Alignment":"end"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":false
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"PAGES_OVERALL"
-           ,"Data Type":"NUMBER"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"LOV Type":"None"
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":true
-           ,"Control Break\/Aggregate":true
-           ,"Hide":true
-          }
-        }
-       ,{
-          "id":"37288844448264630"
-         ,"Identification":{
-            "Column Name":"SIMPLE_PAGES"
-           ,"Type":"Number Field"
-          }
-         ,"Heading":{
-            "Heading":"Simple Pages"
-           ,"Alignment":"end"
-          }
-         ,"Settings":{
-            "Number Alignment":"Start"
-           ,"Virtual Keyboard":"Decimal"
-          }
-         ,"Layout":{
-            "Sequence":70
-           ,"Column Alignment":"end"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":false
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"SIMPLE_PAGES"
-           ,"Data Type":"NUMBER"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"LOV Type":"None"
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":true
-           ,"Control Break\/Aggregate":true
-           ,"Hide":true
-          }
-        }
-       ,{
-          "id":"37288984433264631"
-         ,"Identification":{
-            "Column Name":"NORMAL_PAGES"
-           ,"Type":"Number Field"
-          }
-         ,"Heading":{
-            "Heading":"Normal Pages"
-           ,"Alignment":"end"
-          }
-         ,"Settings":{
-            "Number Alignment":"Start"
-           ,"Virtual Keyboard":"Decimal"
-          }
-         ,"Layout":{
-            "Sequence":80
-           ,"Column Alignment":"end"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":false
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"NORMAL_PAGES"
-           ,"Data Type":"NUMBER"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"LOV Type":"None"
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":true
-           ,"Control Break\/Aggregate":true
-           ,"Hide":true
-          }
-        }
-       ,{
-          "id":"37289070470264632"
-         ,"Identification":{
-            "Column Name":"COMPLEX_PAGES"
-           ,"Type":"Number Field"
-          }
-         ,"Heading":{
-            "Heading":"Complex Pages"
-           ,"Alignment":"end"
-          }
-         ,"Settings":{
-            "Number Alignment":"Start"
-           ,"Virtual Keyboard":"Decimal"
-          }
-         ,"Layout":{
-            "Sequence":90
-           ,"Column Alignment":"end"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":false
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"COMPLEX_PAGES"
-           ,"Data Type":"NUMBER"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"LOV Type":"None"
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":true
-           ,"Control Break\/Aggregate":true
-           ,"Hide":true
-          }
-        }
-       ,{
-          "id":"293283805228929189"
-         ,"Identification":{
-            "Column Name":"APP_ID"
-           ,"Type":"Number Field"
-          }
-         ,"Heading":{
-            "Heading":"ID"
-           ,"Alignment":"end"
-          }
-         ,"Settings":{
-            "Number Alignment":"End"
-           ,"Virtual Keyboard":"Text"
-          }
-         ,"Layout":{
-            "Sequence":10
-           ,"Column Alignment":"end"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":true
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"APP_ID"
-           ,"Data Type":"NUMBER"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"LOV Type":"None"
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":true
-           ,"Control Break\/Aggregate":true
-           ,"Hide":true
-          }
-        }
-       ,{
-          "id":"293283927222929190"
-         ,"Identification":{
-            "Column Name":"APP_NAME"
-           ,"Type":"Textarea"
-          }
-         ,"Heading":{
-            "Heading":"Name"
-           ,"Alignment":"start"
-          }
-         ,"Settings":{
-            "Resizable":true
-           ,"Auto-Height":false
-           ,"Character Counter":false
-           ,"Trim Spaces":"Leading and Trailing"
-          }
-         ,"Layout":{
-            "Sequence":20
-           ,"Column Alignment":"start"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":true
-           ,"Maximum Length":255
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"APP_NAME"
-           ,"Data Type":"VARCHAR2"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Session State":{
-            "Data Type":"VARCHAR2"
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"Performance Impacting Operators":[
-              "Contains"
-             ,"Starts With"
-             ,"Case Insensitive"
-             ,"Regular Expression"
-            ]
-           ,"Text Case":"Mixed"
-           ,"LOV Type":"None"
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":false
-           ,"Hide":true
-          }
-        }
-       ,{
-          "id":"414315753475562250"
-         ,"Identification":{
-            "Column Name":"ALIAS"
-           ,"Type":"Textarea"
-          }
-         ,"Heading":{
-            "Heading":"Alias"
-           ,"Alignment":"start"
-          }
-         ,"Settings":{
-            "Resizable":true
-           ,"Auto-Height":false
-           ,"Character Counter":false
-           ,"Trim Spaces":"Leading and Trailing"
-          }
-         ,"Layout":{
-            "Sequence":30
-           ,"Column Alignment":"start"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":true
-           ,"Maximum Length":255
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"ALIAS"
-           ,"Data Type":"VARCHAR2"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Session State":{
-            "Data Type":"VARCHAR2"
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"Performance Impacting Operators":[
-              "Contains"
-             ,"Starts With"
-             ,"Case Insensitive"
-             ,"Regular Expression"
-            ]
-           ,"Text Case":"Mixed"
-           ,"LOV Type":"None"
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":false
-           ,"Hide":true
-          }
-        }
-       ,{
-          "id":"414315932370562251"
-         ,"Identification":{
-            "Column Name":"OWNER"
-           ,"Type":"Textarea"
-          }
-         ,"Heading":{
-            "Heading":"Owner"
-           ,"Alignment":"start"
-          }
-         ,"Settings":{
-            "Resizable":true
-           ,"Auto-Height":false
-           ,"Character Counter":false
-           ,"Trim Spaces":"Leading and Trailing"
-          }
-         ,"Layout":{
-            "Sequence":40
-           ,"Column Alignment":"start"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":true
-           ,"Maximum Length":128
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"OWNER"
-           ,"Data Type":"VARCHAR2"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Session State":{
-            "Data Type":"VARCHAR2"
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"Performance Impacting Operators":[
-              "Contains"
-             ,"Starts With"
-             ,"Case Insensitive"
-             ,"Regular Expression"
-            ]
-           ,"Text Case":"Mixed"
-           ,"LOV Type":"None"
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":false
-           ,"Hide":true
-          }
-        }
-       ,{
-          "id":"414316001397562252"
-         ,"Identification":{
-            "Column Name":"VERSION"
-           ,"Type":"Textarea"
-          }
-         ,"Heading":{
-            "Heading":"Version"
-           ,"Alignment":"start"
-          }
-         ,"Settings":{
-            "Resizable":true
-           ,"Auto-Height":false
-           ,"Character Counter":false
-           ,"Trim Spaces":"Leading and Trailing"
-          }
-         ,"Layout":{
-            "Sequence":50
-           ,"Column Alignment":"start"
-           ,"Stretch":"Use Report Setting"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Validation":{
-            "Value Required":false
-           ,"Maximum Length":255
-          }
-         ,"Source":{
-            "Type":"Database Column"
-           ,"Database Column":"VERSION"
-           ,"Data Type":"VARCHAR2"
-           ,"Query Only":false
-           ,"Primary Key":false
-          }
-         ,"Default":{
-            "Duplicate Copies Existing Value":true
-          }
-         ,"Session State":{
-            "Data Type":"VARCHAR2"
-          }
-         ,"Column Filter":{
-            "Enabled":true
-           ,"Performance Impacting Operators":[
-              "Contains"
-             ,"Starts With"
-             ,"Case Insensitive"
-             ,"Regular Expression"
-            ]
-           ,"Text Case":"Mixed"
-           ,"LOV Type":"None"
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Enable Users To":{
-            "Sort":false
-           ,"Hide":true
-          }
-        }
-      ]
     }
   ]
  ,"Page Items":[
@@ -1194,7 +1208,7 @@
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Code Complexity (characters) (294199481042781289)"
+           ,"Region":"Code Complexity (characters by app and type) (294199481042781289)"
           }
          ,"Execution":{
             "Sequence":10
@@ -1298,7 +1312,7 @@
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Code Complexity (characters) (294199481042781289)"
+           ,"Region":"Code Complexity (characters by app and type) (294199481042781289)"
           }
          ,"Execution":{
             "Sequence":30

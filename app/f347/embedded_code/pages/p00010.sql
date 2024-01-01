@@ -20,21 +20,37 @@ group by application_name , page_function
 order by count(page_id) desc;
 
 -- ----------------------------------------
--- Page: 10 - Applications > Region: Code Complexity (characters) > Source > SQL Query
+-- Page: 10 - Applications > Region: Code Complexity (characters by app and type) > Attributes:  > Series: PL/SQL > Source > SQL Query
 
-select application_name, application_id, series_name, series_value from (
-    select j.application_name, j.application_id, 'JavaScript' series_name, sum(j.js_code_length) series_value 
-    from av_javascript_v j group by application_id, application_name
-    union
-    select c.application_name, c.application_id, 'CSS' series_name, sum(c.css_code_length) series_value 
-    from av_css_v c group by application_id, application_name
-    union
-    select p.application_name, p.application_id, 'PL/SQL' series_name, sum(p.code_length) series_value 
-    from av_plsql_v p group by application_id, application_name
-)
-where (application_id = :P0_APP_ID or :P0_APP_ID is null)
-and (lower(series_name) = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
-order by series_value desc;
+select APPLICATION_ID,
+       APPLICATION_NAME,
+       sum(CODE_LENGTH) code_length
+  from AV_PLSQL_V
+ where (application_id = :P0_APP_ID or :P0_APP_ID is null)
+and ('css' = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
+group by application_id, application_name;
+
+-- ----------------------------------------
+-- Page: 10 - Applications > Region: Code Complexity (characters by app and type) > Attributes:  > Series: CSS > Source > SQL Query
+
+select APPLICATION_ID,
+       APPLICATION_NAME,
+       sum(CSS_CODE_LENGTH) code_length
+  from AV_CSS_V
+ where (application_id = :P0_APP_ID or :P0_APP_ID is null)
+and ('css' = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
+group by application_id, application_name;
+
+-- ----------------------------------------
+-- Page: 10 - Applications > Region: Code Complexity (characters by app and type) > Attributes:  > Series: JavaScript > Source > SQL Query
+
+select APPLICATION_ID,
+       APPLICATION_NAME,
+       sum(JS_CODE_LENGTH) code_length
+  from AV_JAVASCRIPT_V
+ where (application_id = :P0_APP_ID or :P0_APP_ID is null)
+and ('javascript' = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
+group by application_id, application_name;
 
 -- ----------------------------------------
 -- Page: 10 - Applications > Region: Shared Components > Source > SQL Query

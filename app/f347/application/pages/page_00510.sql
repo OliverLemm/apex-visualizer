@@ -15,7 +15,7 @@ wwv_flow_imp_page.create_page(
  p_id=>510
 ,p_name=>'Login Page'
 ,p_alias=>'LOGIN'
-,p_step_title=>'Apex Visualizer - Log In'
+,p_step_title=>'APEX Visualizer - Log In'
 ,p_warn_on_unsaved_changes=>'N'
 ,p_first_item=>'AUTO_FIRST_ITEM'
 ,p_autocomplete_on_off=>'OFF'
@@ -24,11 +24,11 @@ wwv_flow_imp_page.create_page(
 ,p_page_is_public_y_n=>'Y'
 ,p_page_component_map=>'12'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20210927122025'
+,p_last_upd_yyyymmddhh24miss=>'20240101134332'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(38870409361053521)
-,p_plug_name=>'Apex Visualizer'
+,p_plug_name=>'APEX Visualizer'
 ,p_icon_css_classes=>'fa-sign-in'
 ,p_region_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_imp.id(452458716490466246)

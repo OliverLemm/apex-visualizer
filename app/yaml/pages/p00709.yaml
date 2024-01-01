@@ -1965,7 +1965,7 @@ regions:
       type: Plain Text
 
     heading: 
-      heading: Apex Rest Resource Handlers Cnt
+      heading: APEX Rest Resource Handlers Cnt
       alignment: center
 
     layout: 
@@ -1997,7 +1997,7 @@ regions:
       type: Plain Text
 
     heading: 
-      heading: Apex Rest Resource Modules Cnt
+      heading: APEX Rest Resource Modules Cnt
       alignment: center
 
     layout: 
@@ -2029,7 +2029,7 @@ regions:
       type: Plain Text
 
     heading: 
-      heading: Apex Rest Resource Parameters Cnt
+      heading: APEX Rest Resource Parameters Cnt
       alignment: center
 
     layout: 
@@ -2061,7 +2061,7 @@ regions:
       type: Plain Text
 
     heading: 
-      heading: Apex Rest Resource Templates Cnt
+      heading: APEX Rest Resource Templates Cnt
       alignment: center
 
     layout: 

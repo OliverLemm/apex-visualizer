@@ -1963,7 +1963,7 @@
            ,"Type":"Plain Text"
           }
          ,"Heading":{
-            "Heading":"Apex Rest Resource Handlers Cnt"
+            "Heading":"APEX Rest Resource Handlers Cnt"
            ,"Alignment":"center"
           }
          ,"Layout":{
@@ -1996,7 +1996,7 @@
            ,"Type":"Plain Text"
           }
          ,"Heading":{
-            "Heading":"Apex Rest Resource Modules Cnt"
+            "Heading":"APEX Rest Resource Modules Cnt"
            ,"Alignment":"center"
           }
          ,"Layout":{
@@ -2029,7 +2029,7 @@
            ,"Type":"Plain Text"
           }
          ,"Heading":{
-            "Heading":"Apex Rest Resource Parameters Cnt"
+            "Heading":"APEX Rest Resource Parameters Cnt"
            ,"Alignment":"center"
           }
          ,"Layout":{
@@ -2062,7 +2062,7 @@
            ,"Type":"Plain Text"
           }
          ,"Heading":{
-            "Heading":"Apex Rest Resource Templates Cnt"
+            "Heading":"APEX Rest Resource Templates Cnt"
            ,"Alignment":"center"
           }
          ,"Layout":{

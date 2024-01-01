@@ -146,29 +146,13 @@ regions:
         position: Outside Slice
         display-as: Value
 
-- # ====== Region: Code Complexity (characters) ================
+- # ====== Region: Code Complexity (characters by app and type) 
   id: 294199481042781289
   identification: 
-    title: Code Complexity (characters)
+    title: Code Complexity (characters by app and type)
     type: Chart
 
   source: 
-    location: Local Database
-    type: SQL Query
-    sql-query: |
-      select application_name, application_id, series_name, series_value from (
-          select j.application_name, j.application_id, 'JavaScript' series_name, sum(j.js_code_length) series_value 
-          from av_javascript_v j group by application_id, application_name
-          union
-          select c.application_name, c.application_id, 'CSS' series_name, sum(c.css_code_length) series_value 
-          from av_css_v c group by application_id, application_name
-          union
-          select p.application_name, p.application_id, 'PL/SQL' series_name, sum(p.code_length) series_value 
-          from av_plsql_v p group by application_id, application_name
-      )
-      where (application_id = :P0_APP_ID or :P0_APP_ID is null)
-      and (lower(series_name) = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
-      order by series_value desc
     page-items-to-submit: 
     - P0_APP_ID
     - P10_COMPLEXITY_CATEGORY
@@ -245,22 +229,100 @@ regions:
       hide-and-show-behavior: Rescale
 
     series: 
-    - # ====== Series: Applications ================================
-      id: 294199615339781291
+    - # ====== Series: JavaScript ==================================
+      id: 10188311722098609
       identification: 
-        name: Applications
+        name: JavaScript
+
+      execution: 
+        sequence: 20
+
+      source: 
+        location: Local Database
+        type: SQL Query
+        sql-query: |
+          select APPLICATION_ID,
+                 APPLICATION_NAME,
+                 sum(JS_CODE_LENGTH) code_length
+            from AV_JAVASCRIPT_V
+           where (application_id = :P0_APP_ID or :P0_APP_ID is null)
+          and ('javascript' = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
+          group by application_id, application_name
+        page-items-to-submit: 
+        - P0_APP_ID
+        - P10_COMPLEXITY_CATEGORY
+
+      column-mapping: 
+        label: APPLICATION_NAME
+        value: CODE_LENGTH
+
+      appearance: 
+        assigned-to-y2-axis: false
+
+      label: 
+        show: true
+        position: Automatic
+
+    - # ====== Series: CSS =========================================
+      id: 10188491899098610
+      identification: 
+        name: CSS
 
       execution: 
         sequence: 10
 
       source: 
-        location: Region Source
+        location: Local Database
+        type: SQL Query
+        sql-query: |
+          select APPLICATION_ID,
+                 APPLICATION_NAME,
+                 sum(CSS_CODE_LENGTH) code_length
+            from AV_CSS_V
+           where (application_id = :P0_APP_ID or :P0_APP_ID is null)
+          and ('css' = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
+          group by application_id, application_name
+        page-items-to-submit: 
+        - P0_APP_ID
+        - P10_COMPLEXITY_CATEGORY
 
       column-mapping: 
-        series-name: APPLICATION_NAME
-        label: SERIES_NAME
-        value-aggregation: No Aggregation
-        value: SERIES_VALUE
+        label: APPLICATION_NAME
+        value: CODE_LENGTH
+
+      appearance: 
+        assigned-to-y2-axis: false
+
+      label: 
+        show: true
+        position: Automatic
+
+    - # ====== Series: PL/SQL ======================================
+      id: 10188563425098611
+      identification: 
+        name: PL/SQL
+
+      execution: 
+        sequence: 40
+
+      source: 
+        location: Local Database
+        type: SQL Query
+        sql-query: |
+          select APPLICATION_ID,
+                 APPLICATION_NAME,
+                 sum(CODE_LENGTH) code_length
+            from AV_PLSQL_V
+           where (application_id = :P0_APP_ID or :P0_APP_ID is null)
+          and ('css' = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
+          group by application_id, application_name
+        page-items-to-submit: 
+        - P0_APP_ID
+        - P10_COMPLEXITY_CATEGORY
+
+      column-mapping: 
+        label: APPLICATION_NAME
+        value: CODE_LENGTH
 
       appearance: 
         assigned-to-y2-axis: false
@@ -509,7 +571,7 @@ regions:
   id: 455561419078523493
   identification: 
     title: Applicatons
-    type: Interactive Grid
+    type: Interactive Report
 
   source: 
     location: Local Database
@@ -541,12 +603,9 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 452454481275466240
+    template: Interactive Report # 452458457830466245
     template-options: 
     - '#DEFAULT#'
-    - js-useLocalStorage
-    - is-collapsed
-    - t-Region--hiddenOverflow
     render-components: Above Content
 
   accessibility: 
@@ -565,39 +624,56 @@ regions:
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 414315427523562246
-    edit: 
-      enabled: false
+    id: 37290759188264649
+    link: 
+      link-column: Exclude Link Column
+
+    pagination: 
+      type: Row Ranges X to Y
+      display-position: Bottom - Right
 
     performance: 
       lazy-loading: false
+      maximum-rows-to-process: 1000000
 
-    appearance: 
-      show-null-values-as: '-'
-      select-first-row: true
-      fixed-row-height: true
+    search-bar: 
+      include-search-bar: true
+      search-field: true
+      finder-drop-down: true
+      reports-select-list: true
+      rows-per-page-selector: false
 
-    pagination: 
-      type: Scroll
-      show-total-count: false
-
-    toolbar: 
-      show: true
-      controls: 
-      - Search Column Selection
-      - Search Field
-      - Actions Menu
-      - Reset Button
-      - Save Button
-
-    enable-users-to: 
-      save-public-report: false
+    actions-menu: 
+      include-actions-menu: true
+      filter: true
+      select-columns: true
+      rows-per-page: true
+      sort: true
+      control-break: true
+      highlight: true
+      compute: true
+      aggregate: true
+      chart: true
+      group-by: true
+      pivot: true
       flashback: true
-      define-chart-view: true
-      download: false
+      save-report: true
+      save-public-report: false
+      reset: true
+      help: true
+      download: true
+      subscription: true
+
+    download: 
+      formats: 
+      - CSV
+      - HTML
+      - Excel
+      - PDF
+      send-as-email: true
 
     heading: 
-      fixed-to: None
+      fixed-to: Page
 
     icon-view: 
       show: false
@@ -607,478 +683,422 @@ regions:
 
     saved-reports: 
     - # ====== Saved Report: Primary Report ========================
-      id: 449471134182698294
+      id: 10203699139099371
       identification: 
         name: Primary Report
-        alias: 1256353
-
-  columns: 
-  - # ====== Column: PAGES_OVERALL ===============================
-    id: 37288733324264629
-    identification: 
-      column-name: PAGES_OVERALL
-      type: Number Field
-
-    heading: 
-      heading: Pages Overall
-      alignment: end
-
-    settings: 
-      number-alignment: Start
-      virtual-keyboard: Decimal
-
-    layout: 
-      sequence: 60
-      column-alignment: end
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: PAGES_OVERALL
-      data-type: NUMBER
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: SIMPLE_PAGES ================================
-    id: 37288844448264630
-    identification: 
-      column-name: SIMPLE_PAGES
-      type: Number Field
-
-    heading: 
-      heading: Simple Pages
-      alignment: end
-
-    settings: 
-      number-alignment: Start
-      virtual-keyboard: Decimal
-
-    layout: 
-      sequence: 70
-      column-alignment: end
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: SIMPLE_PAGES
-      data-type: NUMBER
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: NORMAL_PAGES ================================
-    id: 37288984433264631
-    identification: 
-      column-name: NORMAL_PAGES
-      type: Number Field
-
-    heading: 
-      heading: Normal Pages
-      alignment: end
-
-    settings: 
-      number-alignment: Start
-      virtual-keyboard: Decimal
-
-    layout: 
-      sequence: 80
-      column-alignment: end
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: NORMAL_PAGES
-      data-type: NUMBER
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: COMPLEX_PAGES ===============================
-    id: 37289070470264632
-    identification: 
-      column-name: COMPLEX_PAGES
-      type: Number Field
-
-    heading: 
-      heading: Complex Pages
-      alignment: end
-
-    settings: 
-      number-alignment: Start
-      virtual-keyboard: Decimal
-
-    layout: 
-      sequence: 90
-      column-alignment: end
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: COMPLEX_PAGES
-      data-type: NUMBER
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: APP_ID ======================================
-    id: 293283805228929189
-    identification: 
-      column-name: APP_ID
-      type: Number Field
-
-    heading: 
-      heading: ID
-      alignment: end
-
-    settings: 
-      number-alignment: End
-      virtual-keyboard: Text
-
-    layout: 
-      sequence: 10
-      column-alignment: end
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: true
-
-    source: 
-      type: Database Column
-      database-column: APP_ID
-      data-type: NUMBER
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: APP_NAME ====================================
-    id: 293283927222929190
-    identification: 
-      column-name: APP_NAME
-      type: Textarea
-
-    heading: 
-      heading: Name
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 20
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: true
-      maximum-length: 255
-
-    source: 
-      type: Database Column
-      database-column: APP_NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: ALIAS =======================================
-    id: 414315753475562250
-    identification: 
-      column-name: ALIAS
-      type: Textarea
-
-    heading: 
-      heading: Alias
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 30
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: true
-      maximum-length: 255
-
-    source: 
-      type: Database Column
-      database-column: ALIAS
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: OWNER =======================================
-    id: 414315932370562251
-    identification: 
-      column-name: OWNER
-      type: Textarea
-
-    heading: 
-      heading: Owner
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 40
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: true
-      maximum-length: 128
-
-    source: 
-      type: Database Column
-      database-column: OWNER
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: VERSION =====================================
-    id: 414316001397562252
-    identification: 
-      column-name: VERSION
-      type: Textarea
-
-    heading: 
-      heading: Version
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 50
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-      maximum-length: 255
-
-    source: 
-      type: Database Column
-      database-column: VERSION
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
+        alias: 102037
+
+    columns: 
+    - # ====== Column: APP_NAME ====================================
+      id: 10187515473098601
+      identification: 
+        column-name: APP_NAME
+        type: Plain Text
+
+      heading: 
+        heading: App Name
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 20
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: ALIAS =======================================
+      id: 10187656689098602
+      identification: 
+        column-name: ALIAS
+        type: Plain Text
+
+      heading: 
+        heading: Alias
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 30
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: OWNER =======================================
+      id: 10187776426098603
+      identification: 
+        column-name: OWNER
+        type: Plain Text
+
+      heading: 
+        heading: Owner
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 40
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: VERSION =====================================
+      id: 10187884589098604
+      identification: 
+        column-name: VERSION
+        type: Plain Text
+
+      heading: 
+        heading: Version
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 50
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: PAGES_OVERALL ===============================
+      id: 10187979678098605
+      identification: 
+        column-name: PAGES_OVERALL
+        type: Plain Text
+
+      heading: 
+        heading: Pages Overall
+        alignment: end
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 60
+        column-alignment: end
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: SIMPLE_PAGES ================================
+      id: 10188038199098606
+      identification: 
+        column-name: SIMPLE_PAGES
+        type: Plain Text
+
+      heading: 
+        heading: Simple Pages (less than 15 objects)
+        alignment: end
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 70
+        column-alignment: end
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: NORMAL_PAGES ================================
+      id: 10188125155098607
+      identification: 
+        column-name: NORMAL_PAGES
+        type: Plain Text
+
+      heading: 
+        heading: Normal Pages
+        alignment: end
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 80
+        column-alignment: end
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: COMPLEX_PAGES ===============================
+      id: 10188299446098608
+      identification: 
+        column-name: COMPLEX_PAGES
+        type: Plain Text
+
+      heading: 
+        heading: Complex Pages (more than 50 objects)
+        alignment: end
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 90
+        column-alignment: end
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: APP_ID ======================================
+      id: 37290800102264650
+      identification: 
+        column-name: APP_ID
+        type: Plain Text
+
+      heading: 
+        heading: App Id
+        alignment: end
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 10
+        column-alignment: end
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    printing: 
+      output: 
+        view-file-as: Attachment
+
+      page: 
+        size: Letter
+        orientation: Landscape
+        units: Inches
+        width: 11
+        height: 8.5
+        border-width: 0.5
+        border-color: '#666666'
+
+      page-header: 
+        font: Helvetica
+        font-weight: Normal
+        font-size: 12
+        font-color: '#000000'
+        alignment: center
+        page-header-text: Applicatons
+
+      column-headings: 
+        font: Helvetica
+        font-weight: Bold
+        font-size: 10
+        font-color: '#000000'
+        background-color: '#EEEEEE'
+
+      columns: 
+        font: Helvetica
+        font-weight: Normal
+        font-size: 10
+        font-color: '#000000'
+        background-color: '#FFFFFF'
+
+      page-footer: 
+        font: Helvetica
+        font-weight: Normal
+        font-size: 12
+        font-color: '#000000'
+        alignment: center
 
 page-items: 
 - # ====== Page Item: P10_COMPLEXITY_CATEGORY ==================
@@ -1198,7 +1218,7 @@ dynamic-actions:
 
     affected-elements: 
       selection-type: Region
-      region: Code Complexity (characters) # 294199481042781289
+      region: Code Complexity (characters by app and type) # 294199481042781289
 
     execution: 
       sequence: 10
@@ -1292,7 +1312,7 @@ dynamic-actions:
 
     affected-elements: 
       selection-type: Region
-      region: Code Complexity (characters) # 294199481042781289
+      region: Code Complexity (characters by app and type) # 294199481042781289
 
     execution: 
       sequence: 30
