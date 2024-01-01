@@ -4,6 +4,13 @@ https://raw.githubusercontent.com/OliverLemm/apex-visualizer/master/manifest.jso
 inside your internal APEX workspace. <br>
 Go Manage Instance => Instance Setting => Application Gallery and add a new line.
 
+## Release 23.2.1
+Page Applications (10) - Region Applications is by default expanded
+Page Applications (10) - Report Applications changed from Interactive Grid to Interactive Report
+Page Applications (10) - Report Applications headlines adjusted
+Page Applications (10) - Chartbug with Code Complexity solved
+Wording from Apex to APEX changed in several Pages.
+
 ## Release 23.2
 APEX Visualizer migrated to APEX 23.2<br>
 Check for correct Universal Theme version fixed.
