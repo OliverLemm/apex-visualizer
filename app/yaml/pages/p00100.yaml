@@ -750,6 +750,82 @@ page-items:
     restricted-characters: All characters can be saved.
 
 dynamic-actions: 
+- # ====== Dynamic Action: click refresh button - refresh region
+  id: 10188697440098612
+  identification: 
+    name: click refresh button - refresh regions
+
+  execution: 
+    sequence: 30
+    event-scope: Static
+    type: Immediate
+
+  when: 
+    event: EVENT.EVENT.BROWSER.CLICK
+    selection-type: Button
+    button: Refresh # 45068108221137631
+
+  actions: 
+  - # ====== Action: Refresh =====================================
+    id: 10188789871098613
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Characters of JavaScript Code per Page # 293281874355929169
+
+    execution: 
+      sequence: 10
+      event: click refresh button - refresh regions # 10188697440098612
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: Refresh =====================================
+    id: 10188809607098614
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Characters of JavaScript Code per Page # 293416813132888465
+
+    execution: 
+      sequence: 20
+      event: click refresh button - refresh regions # 10188697440098612
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: Refresh =====================================
+    id: 10188966711098615
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: JavaScript in Page # 293282571329929176
+
+    execution: 
+      sequence: 30
+      event: click refresh button - refresh regions # 10188697440098612
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: Refresh =====================================
+    id: 10189035942098616
+    identification: 
+      action: Refresh
+
+    affected-elements: 
+      selection-type: Region
+      region: Place of JavaScript # 293417040775888467
+
+    execution: 
+      sequence: 40
+      event: click refresh button - refresh regions # 10188697440098612
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
 - # ====== Dynamic Action: change P0_ITEMS =====================
   id: 293282369686929174
   identification: 

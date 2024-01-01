@@ -745,6 +745,88 @@
   ]
  ,"Dynamic Actions":[
     {
+      "id":"10188697440098612"
+     ,"Identification":{
+        "Name":"click refresh button - refresh regions"
+      }
+     ,"Execution":{
+        "Sequence":30
+       ,"Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"Button"
+       ,"Button":"Refresh (45068108221137631)"
+      }
+     ,"Actions":[
+        {
+          "id":"10188789871098613"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Characters of JavaScript Code per Page (293281874355929169)"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"click refresh button - refresh regions (10188697440098612)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"10188809607098614"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Characters of JavaScript Code per Page (293416813132888465)"
+          }
+         ,"Execution":{
+            "Sequence":20
+           ,"Event":"click refresh button - refresh regions (10188697440098612)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"10188966711098615"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"JavaScript in Page (293282571329929176)"
+          }
+         ,"Execution":{
+            "Sequence":30
+           ,"Event":"click refresh button - refresh regions (10188697440098612)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"10189035942098616"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Place of JavaScript (293417040775888467)"
+          }
+         ,"Execution":{
+            "Sequence":40
+           ,"Event":"click refresh button - refresh regions (10188697440098612)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
       "id":"293282369686929174"
      ,"Identification":{
         "Name":"change P0_ITEMS"
