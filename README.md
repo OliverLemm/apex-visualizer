@@ -5,10 +5,10 @@ inside your internal APEX workspace. <br>
 Go Manage Instance => Instance Setting => Application Gallery and add a new line.
 
 ## Release 23.2.1
-Page Applications (10) - Region Applications is by default expanded
-Page Applications (10) - Report Applications changed from Interactive Grid to Interactive Report
-Page Applications (10) - Report Applications headlines adjusted
-Page Applications (10) - Chartbug with Code Complexity solved
+Page Applications (10) - Region Applications is by default expanded<br>
+Page Applications (10) - Report Applications changed from Interactive Grid to Interactive Report<br>
+Page Applications (10) - Report Applications headlines adjusted<br>
+Page Applications (10) - Chartbug with Code Complexity solved<br>
 Wording from Apex to APEX changed in several Pages.
 
 ## Release 23.2
