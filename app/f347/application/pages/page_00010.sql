@@ -20,7 +20,7 @@ wwv_flow_imp_page.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'13'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20240101163153'
+,p_last_upd_yyyymmddhh24miss=>'20240101165548'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(293283138176929182)
@@ -360,8 +360,8 @@ wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(455561419078523493)
 ,p_plug_name=>'Applicatons'
 ,p_region_name=>'details'
-,p_region_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_imp.id(452458457830466245)
+,p_region_template_options=>'#DEFAULT#:js-useLocalStorage:is-expanded:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(452454481275466240)
 ,p_plug_display_sequence=>20
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_query_type=>'SQL'
@@ -415,6 +415,7 @@ wwv_flow_imp_page.create_worksheet(
 ,p_max_row_count=>'1000000'
 ,p_pagination_type=>'ROWS_X_TO_Y'
 ,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_show_display_row_count=>'Y'
 ,p_report_list_mode=>'TABS'
 ,p_lazy_loading=>false
 ,p_show_detail_link=>'N'
@@ -526,7 +527,10 @@ wwv_flow_imp_page.create_worksheet_rpt(
 ,p_report_alias=>'102037'
 ,p_status=>'PUBLIC'
 ,p_is_default=>'Y'
+,p_display_rows=>5
 ,p_report_columns=>'APP_ID:APP_NAME:ALIAS:OWNER:VERSION:PAGES_OVERALL:SIMPLE_PAGES:NORMAL_PAGES:COMPLEX_PAGES'
+,p_sort_column_1=>'APP_NAME'
+,p_sort_direction_1=>'ASC'
 );
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(294269251624521547)

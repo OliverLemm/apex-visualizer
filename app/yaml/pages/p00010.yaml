@@ -603,9 +603,12 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Interactive Report # 452458457830466245
+    template: Collapsible # 452454481275466240
     template-options: 
     - '#DEFAULT#'
+    - js-useLocalStorage
+    - is-expanded
+    - t-Region--scrollBody
     render-components: Above Content
 
   accessibility: 
@@ -641,7 +644,7 @@ regions:
       search-field: true
       finder-drop-down: true
       reports-select-list: true
-      rows-per-page-selector: false
+      rows-per-page-selector: true
 
     actions-menu: 
       include-actions-menu: true

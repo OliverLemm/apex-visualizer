@@ -567,9 +567,12 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Interactive Report (452458457830466245)"
+        "Template":"Collapsible (452454481275466240)"
        ,"Template Options":[
           "#DEFAULT#"
+         ,"js-useLocalStorage"
+         ,"is-expanded"
+         ,"t-Region--scrollBody"
         ]
        ,"Render Components":"Above Content"
       }
@@ -606,7 +609,7 @@
          ,"Search Field":true
          ,"Finder Drop Down":true
          ,"Reports Select List":true
-         ,"Rows Per Page Selector":false
+         ,"Rows Per Page Selector":true
         }
        ,"Actions Menu":{
           "Include Actions Menu":true
