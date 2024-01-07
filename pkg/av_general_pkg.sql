@@ -1,5 +1,8 @@
 create or replace package av_general_pkg is
 
+  c_migration_type_deprecated  constant varchar2(20 char) := 'deprecated';
+  c_migration_type_desupportet constant varchar2(20 char) := 'desupported';
+
   function f_get_page_designer_url
   (
     pi_app_id      in number
