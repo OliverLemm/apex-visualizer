@@ -1,17 +1,3 @@
-create or replace package av_migration_19_2_pkg is
-
-  -- Author  : Oliver Lemm
-  -- Created : 07.01.2024 20:40:30
-  -- Purpose : checks for apex version 19.2
-
-  function f_dep_6_1_1(i_app_id in number) return av_migrations_t
-    pipelined;
-
-  function f_dep_6_1_2(i_app_id in number) return av_migrations_t
-    pipelined;
-
-end av_migration_19_2_pkg;
-/
 create or replace package body av_migration_19_2_pkg is
 
   c_apex_version constant varchar2(10 char) := '19.2';
@@ -68,5 +54,20 @@ These apps will be removed in a future release.'
     return;
   end f_dep_6_1_2;
 
+  function f_all(i_app_id in number) return av_migrations_t
+    pipelined is
+    l_migrations av_migrations_t;
+  begin
+    select x
+    into l_migrations
+    from (select f_dep_6_1_1(i_app_id => i_app_id) x
+          from dual multiset
+          union all
+          select f_dep_6_1_2(i_app_id => i_app_id) x
+          from dual);
+    return;
+  end f_all;
+
 end av_migration_19_2_pkg;
 /
+select * from av_migration_19_2_pkg.f_all(i_app_id => :i_app_id)
