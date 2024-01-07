@@ -51,7 +51,7 @@ wwv_imp_workspace.create_flow(
 ,p_tokenize_row_search=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20240101165548'
+,p_last_upd_yyyymmddhh24miss=>'20240104171434'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>14
 ,p_print_server_type=>'INSTANCE'

@@ -21,7 +21,7 @@ wwv_flow_imp_page.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'21'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20231203214645'
+,p_last_upd_yyyymmddhh24miss=>'20240104171434'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(38837724345637017)
@@ -574,7 +574,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'These Compatibility Modes are equal<br>',
-'21.2 / 22.1 / 22.2<br>',
+'21.2 / 22.1 / 22.2 / 23.1 / 23.2<br>',
 '19.2 / 20.1 / 20.2 / 21.1<br>',
 '19.1<br>',
 '5.1 / 18.1 / 18.2<br>',
