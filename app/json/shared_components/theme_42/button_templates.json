@@ -1,6 +1,6 @@
 [
   {
-    "id":"452481568223466296"
+    "id":"472890142363347744"
    ,"Identification":{
       "Name":"Icon"
      ,"Identifier":"ICON"
@@ -20,11 +20,11 @@
     }
    ,"Template Options":[
       {
-        "id":"126148708958127393"
+        "id":"146557283098008841"
        ,"Identification":{
           "Name":"Spin"
          ,"Identifier":"SPIN"
-         ,"Group":"Icon Hover Animation (2253147514453301)"
+         ,"Group":"Icon Hover Animation (22661721654334749)"
          ,"Sequence":10
         }
        ,"Settings":{
@@ -40,11 +40,11 @@
         }
       }
      ,{
-        "id":"126149404713127393"
+        "id":"146557978853008841"
        ,"Identification":{
           "Name":"Push"
          ,"Identifier":"PUSH"
-         ,"Group":"Icon Hover Animation (2253147514453301)"
+         ,"Group":"Icon Hover Animation (22661721654334749)"
          ,"Sequence":20
         }
        ,"Settings":{
@@ -62,7 +62,7 @@
     ]
   }
  ,{
-    "id":"452481721190466298"
+    "id":"472890295330347746"
    ,"Identification":{
       "Name":"Text"
      ,"Identifier":"TEXT"
@@ -82,7 +82,7 @@
     }
   }
  ,{
-    "id":"452481802985466298"
+    "id":"472890377125347746"
    ,"Identification":{
       "Name":"Text with Icon"
      ,"Identifier":"TEXT_WITH_ICON"
@@ -107,7 +107,7 @@
     }
    ,"Template Options":[
       {
-        "id":"16401358665838776"
+        "id":"36809932805720224"
        ,"Identification":{
           "Name":"Hide Icon on Desktop"
          ,"Identifier":"HIDE_ICON_ON_DESKTOP"
@@ -126,7 +126,7 @@
         }
       }
      ,{
-        "id":"126151400911127395"
+        "id":"146559975051008843"
        ,"Identification":{
           "Name":"Hide Label on Mobile"
          ,"Identifier":"HIDE_LABEL_ON_MOBILE"
@@ -145,11 +145,11 @@
         }
       }
      ,{
-        "id":"126152190746127395"
+        "id":"146560764886008843"
        ,"Identification":{
           "Name":"Spin"
          ,"Identifier":"SPIN"
-         ,"Group":"Icon Hover Animation (2253147514453301)"
+         ,"Group":"Icon Hover Animation (22661721654334749)"
          ,"Sequence":10
         }
        ,"Settings":{
@@ -165,11 +165,11 @@
         }
       }
      ,{
-        "id":"126152899431127396"
+        "id":"146561473571008844"
        ,"Identification":{
           "Name":"Push"
          ,"Identifier":"PUSH"
-         ,"Group":"Icon Hover Animation (2253147514453301)"
+         ,"Group":"Icon Hover Animation (22661721654334749)"
          ,"Sequence":20
         }
        ,"Settings":{
@@ -185,11 +185,11 @@
         }
       }
      ,{
-        "id":"452482037738466298"
+        "id":"472890611878347746"
        ,"Identification":{
           "Name":"Left"
          ,"Identifier":"LEFTICON"
-         ,"Group":"Icon Position (2253510533453301)"
+         ,"Group":"Icon Position (22662084673334749)"
          ,"Sequence":10
         }
        ,"Settings":{
@@ -202,11 +202,11 @@
         }
       }
      ,{
-        "id":"452482063200466299"
+        "id":"472890637340347747"
        ,"Identification":{
           "Name":"Right"
          ,"Identifier":"RIGHTICON"
-         ,"Group":"Icon Position (2253510533453301)"
+         ,"Group":"Icon Position (22662084673334749)"
          ,"Sequence":20
         }
        ,"Settings":{

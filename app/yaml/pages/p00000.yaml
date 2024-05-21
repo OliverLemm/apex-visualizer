@@ -6,7 +6,7 @@ identification:
 
 regions: 
 - # ====== Region: Filter ======================================
-  id: 452496424516540365
+  id: 472904998656421813
   identification: 
     title: Filter
     type: Static Content
@@ -22,7 +22,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 452458863643466246
+    template: Standard # 472867437783347694
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -51,7 +51,7 @@ regions:
 
 page-items: 
 - # ====== Page Item: P0_PAGE_DESIGNER_LINK ====================
-  id: 32935929138378120
+  id: 53344503278259568
   identification: 
     name: P0_PAGE_DESIGNER_LINK
     type: Display Only
@@ -65,7 +65,7 @@ page-items:
 
   layout: 
     sequence: 80
-    region: Filter # 452496424516540365
+    region: Filter # 472904998656421813
     position: BODY
     alignment: Left
     start-new-layout: false
@@ -76,7 +76,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Hidden # 452481109555466292
+    template: Hidden # 472889683695347740
     template-options: 
     - '#DEFAULT#'
 
@@ -108,10 +108,10 @@ page-items:
     restricted-characters: All characters can be saved.
 
   configuration: 
-    build-option: deactivated # 291318289212148547
+    build-option: deactivated # 311726863352029995
 
 - # ====== Page Item: P0_LINK ==================================
-  id: 32937516050378136
+  id: 53346090190259584
   identification: 
     name: P0_LINK
     type: Display Only
@@ -128,7 +128,7 @@ page-items:
 
   layout: 
     sequence: 70
-    region: Filter # 452496424516540365
+    region: Filter # 472904998656421813
     position: BODY
     alignment: Left
     start-new-layout: false
@@ -139,7 +139,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Hidden # 452481109555466292
+    template: Hidden # 472889683695347740
     template-options: 
     - '#DEFAULT#'
 
@@ -160,10 +160,10 @@ page-items:
     restricted-characters: All characters can be saved.
 
   configuration: 
-    build-option: deactivated # 291318289212148547
+    build-option: deactivated # 311726863352029995
 
 - # ====== Page Item: P0_COMPONENT =============================
-  id: 290526755762486790
+  id: 310935329902368238
   identification: 
     name: P0_COMPONENT
     type: Select List
@@ -178,7 +178,7 @@ page-items:
 
   layout: 
     sequence: 60
-    region: Filter # 452496424516540365
+    region: Filter # 472904998656421813
     position: BODY
     alignment: Left
     start-new-layout: false
@@ -189,7 +189,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Optional # 452481165926466293
+    template: Optional # 472889740066347741
     template-options: 
     - '#DEFAULT#'
     height: 1
@@ -199,7 +199,7 @@ page-items:
 
   list-of-values: 
     type: Shared Component
-    list-of-values: COMPONENTS (CHART) # 291312490138046410
+    list-of-values: COMPONENTS (CHART) # 311721064277927858
     display-extra-values: false
     display-null-value: true
     null-display-value: all
@@ -229,7 +229,7 @@ page-items:
     restricted-characters: All characters can be saved.
 
 - # ====== Page Item: P0_BEST_PRACTICE =========================
-  id: 294476788366578348
+  id: 314885362506459796
   identification: 
     name: P0_BEST_PRACTICE
     type: Radio Group
@@ -244,7 +244,7 @@ page-items:
 
   layout: 
     sequence: 20
-    region: Filter # 452496424516540365
+    region: Filter # 472904998656421813
     position: BODY
     alignment: Left
     start-new-layout: false
@@ -255,7 +255,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Optional # 452481165926466293
+    template: Optional # 472889740066347741
     template-options: 
     - '#DEFAULT#'
 
@@ -304,7 +304,7 @@ page-items:
       When best practices is selected the components with correct data will be show.
 
 - # ====== Page Item: P0_PAGE_ID ===============================
-  id: 449531235326422723
+  id: 469939809466304171
   identification: 
     name: P0_PAGE_ID
     type: Select List
@@ -319,7 +319,7 @@ page-items:
 
   layout: 
     sequence: 50
-    region: Filter # 452496424516540365
+    region: Filter # 472904998656421813
     position: BODY
     alignment: Left
     start-new-layout: false
@@ -330,7 +330,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Optional # 452481165926466293
+    template: Optional # 472889740066347741
     template-options: 
     - '#DEFAULT#'
     height: 1
@@ -340,7 +340,7 @@ page-items:
 
   list-of-values: 
     type: Shared Component
-    list-of-values: PAGES # 449550200431517744
+    list-of-values: PAGES # 469958774571399192
     display-extra-values: false
     display-null-value: true
     null-display-value: all
@@ -382,7 +382,7 @@ page-items:
     restricted-characters: All characters can be saved.
 
 - # ====== Page Item: P0_APP_ID ================================
-  id: 452496506236540366
+  id: 472905080376421814
   identification: 
     name: P0_APP_ID
     type: Select List
@@ -397,7 +397,7 @@ page-items:
 
   layout: 
     sequence: 40
-    region: Filter # 452496424516540365
+    region: Filter # 472904998656421813
     position: BODY
     alignment: Left
     start-new-layout: false
@@ -408,7 +408,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Optional # 452481165926466293
+    template: Optional # 472889740066347741
     template-options: 
     - '#DEFAULT#'
     height: 1
@@ -418,7 +418,7 @@ page-items:
 
   list-of-values: 
     type: Shared Component
-    list-of-values: APPLICATIONS # 452494392205483479
+    list-of-values: APPLICATIONS # 472902966345364927
     display-extra-values: false
     display-null-value: true
     null-display-value: all
@@ -448,14 +448,14 @@ page-items:
 
 buttons: 
 - # ====== Button: Refresh =====================================
-  id: 45068108221137631
+  id: 65476682361019079
   identification: 
     button-name: Refresh
     label: Refresh
 
   layout: 
     sequence: 200
-    region: Filter # 452496424516540365
+    region: Filter # 472904998656421813
     position: HELP
     start-new-layout: false
     start-new-row: true
@@ -464,7 +464,7 @@ buttons:
     column-span: Automatic
 
   appearance: 
-    button-template: Text with Icon # 452481802985466298
+    button-template: Text with Icon # 472890377125347746
     hot: true
     template-options: 
     - '#DEFAULT#'
@@ -489,24 +489,24 @@ buttons:
       and le.parent_entry_text = 'Migration'
 
 - # ====== Button: SHOW_DETAILS ================================
-  id: 449531905217422730
+  id: 469940479357304178
   identification: 
     button-name: SHOW_DETAILS
     label: Show Details
 
   layout: 
     sequence: 10
-    region: Filter # 452496424516540365
+    region: Filter # 472904998656421813
     position: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
     new-column: true
     column-span: Automatic
-    alignment: Left center
+    alignment: Right
 
   appearance: 
-    button-template: Text with Icon # 452481802985466298
+    button-template: Text with Icon # 472890377125347746
     hot: false
     template-options: 
     - '#DEFAULT#'
@@ -523,7 +523,7 @@ buttons:
 
 dynamic-actions: 
 - # ====== Dynamic Action: change APP_ID,PAGE_ID - set P0_PAGE_D
-  id: 32936982364378130
+  id: 53345556504259578
   identification: 
     name: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK
 
@@ -544,11 +544,11 @@ dynamic-actions:
     item: P0_PAGE_ID
 
   configuration: 
-    build-option: deactivated # 291318289212148547
+    build-option: deactivated # 311726863352029995
 
   actions: 
   - # ====== Action: Set Value ===================================
-    id: 32937015388378131
+    id: 53345589528259579
     identification: 
       action: Set Value
 
@@ -573,14 +573,14 @@ dynamic-actions:
 
     execution: 
       sequence: 10
-      event: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK # 32936982364378130
+      event: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK # 53345556504259578
       fire-when-event-result-is: True
       fire-on-initialization: true
       stop-execution-on-error: true
       wait-for-result: true
 
   - # ====== Action: Hide ========================================
-    id: 32937155676378132
+    id: 53345729816259580
     identification: 
       action: Hide
 
@@ -591,12 +591,12 @@ dynamic-actions:
 
     execution: 
       sequence: 10
-      event: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK # 32936982364378130
+      event: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK # 53345556504259578
       fire-when-event-result-is: False
       fire-on-initialization: true
 
   - # ====== Action: Show ========================================
-    id: 32937249040378133
+    id: 53345823180259581
     identification: 
       action: Show
 
@@ -607,12 +607,12 @@ dynamic-actions:
 
     execution: 
       sequence: 30
-      event: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK # 32936982364378130
+      event: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK # 53345556504259578
       fire-when-event-result-is: True
       fire-on-initialization: true
 
   - # ====== Action: Execute JavaScript Code =====================
-    id: 32937796691378138
+    id: 53346370831259586
     identification: 
       action: Execute JavaScript Code
 
@@ -626,12 +626,12 @@ dynamic-actions:
 
     execution: 
       sequence: 40
-      event: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK # 32936982364378130
+      event: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK # 53345556504259578
       fire-when-event-result-is: True
       fire-on-initialization: false
 
 - # ====== Dynamic Action: Show Details ========================
-  id: 449532155105422733
+  id: 469940729245304181
   identification: 
     name: Show Details
 
@@ -643,7 +643,7 @@ dynamic-actions:
   when: 
     event: EVENT.EVENT.BROWSER.CLICK
     selection-type: Button
-    button: SHOW_DETAILS # 449531905217422730
+    button: SHOW_DETAILS # 469940479357304178
 
   client-side-condition: 
     type: JavaScript expression
@@ -651,7 +651,7 @@ dynamic-actions:
 
   actions: 
   - # ====== Action: Show ========================================
-    id: 449532263751422734
+    id: 469940837891304182
     identification: 
       action: Show
 
@@ -661,12 +661,12 @@ dynamic-actions:
 
     execution: 
       sequence: 10
-      event: Show Details # 449532155105422733
+      event: Show Details # 469940729245304181
       fire-when-event-result-is: True
       fire-on-initialization: false
 
   - # ====== Action: Hide ========================================
-    id: 449532619134422737
+    id: 469941193274304185
     identification: 
       action: Hide
 
@@ -676,7 +676,7 @@ dynamic-actions:
 
     execution: 
       sequence: 10
-      event: Show Details # 449532155105422733
+      event: Show Details # 469940729245304181
       fire-when-event-result-is: False
       fire-on-initialization: false
 

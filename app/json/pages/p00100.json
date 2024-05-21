@@ -37,7 +37,7 @@
   }
  ,"Regions":[
     {
-      "id":"293281874355929169"
+      "id":"313690448495810617"
      ,"Identification":{
         "Title":"Characters of JavaScript Code per Page"
        ,"Type":"Chart"
@@ -61,7 +61,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -86,10 +86,10 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Configuration":{
-        "Build Option":"deactivated (291318289212148547)"
+        "Build Option":"deactivated (311726863352029995)"
       }
      ,"Attributes":{
-        "id":"293281967558929170"
+        "id":"313690541698810618"
        ,"Chart":{
           "Type":"Bar"
         }
@@ -127,7 +127,7 @@
         }
        ,"Series":[
           {
-            "id":"293282008254929171"
+            "id":"313690582394810619"
            ,"Identification":{
               "Name":"JS Code Overall"
             }
@@ -154,7 +154,7 @@
         ]
        ,"Axes":[
           {
-            "id":"293282193825929172"
+            "id":"313690767965810620"
            ,"Identification":{
               "Name":"x"
              ,"Show Axis":true
@@ -177,7 +177,7 @@
             }
           }
          ,{
-            "id":"293282248369929173"
+            "id":"313690822509810621"
            ,"Identification":{
               "Name":"y"
              ,"Show Axis":true
@@ -204,7 +204,7 @@
       }
     }
    ,{
-      "id":"293282571329929176"
+      "id":"313691145469810624"
      ,"Identification":{
         "Title":"JavaScript in Page"
        ,"Type":"Chart"
@@ -231,7 +231,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -256,7 +256,7 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Attributes":{
-        "id":"293282657022929177"
+        "id":"313691231162810625"
        ,"Chart":{
           "Type":"Bar"
         }
@@ -297,7 +297,7 @@
         }
        ,"Series":[
           {
-            "id":"293282728107929178"
+            "id":"313691302247810626"
            ,"Identification":{
               "Name":"JavaScript Code"
             }
@@ -329,7 +329,7 @@
         ]
        ,"Axes":[
           {
-            "id":"293282893849929179"
+            "id":"313691467989810627"
            ,"Identification":{
               "Name":"x"
              ,"Show Axis":true
@@ -352,7 +352,7 @@
             }
           }
          ,{
-            "id":"293282980181929180"
+            "id":"313691554321810628"
            ,"Identification":{
               "Name":"y"
              ,"Show Axis":true
@@ -379,7 +379,7 @@
       }
     }
    ,{
-      "id":"293416813132888465"
+      "id":"313825387272769913"
      ,"Identification":{
         "Title":"Characters of JavaScript Code per Page"
        ,"Type":"Chart"
@@ -404,7 +404,7 @@
        ,"Column Span":"9"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -429,7 +429,7 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Attributes":{
-        "id":"141245744867649607"
+        "id":"161654319007531055"
        ,"Chart":{
           "Type":"Bubble"
         }
@@ -463,7 +463,7 @@
         }
        ,"Series":[
           {
-            "id":"141245870809649608"
+            "id":"161654444949531056"
            ,"Identification":{
               "Name":"Series 1"
             }
@@ -500,7 +500,7 @@
         ]
        ,"Axes":[
           {
-            "id":"141245904832649609"
+            "id":"161654478972531057"
            ,"Identification":{
               "Name":"x"
              ,"Show Axis":true
@@ -525,7 +525,7 @@
             }
           }
          ,{
-            "id":"141246004743649610"
+            "id":"161654578883531058"
            ,"Identification":{
               "Name":"y"
              ,"Show Axis":true
@@ -556,7 +556,7 @@
       }
     }
    ,{
-      "id":"293417040775888467"
+      "id":"313825614915769915"
      ,"Identification":{
         "Title":"Place of JavaScript"
        ,"Type":"Chart"
@@ -582,7 +582,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -607,7 +607,7 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Attributes":{
-        "id":"293417138617888468"
+        "id":"313825712757769916"
        ,"Chart":{
           "Type":"Donut"
         }
@@ -642,7 +642,7 @@
         }
        ,"Series":[
           {
-            "id":"293417237204888469"
+            "id":"313825811344769917"
            ,"Identification":{
               "Name":"New"
             }
@@ -670,7 +670,7 @@
   ]
  ,"Page Items":[
     {
-      "id":"293417532690888472"
+      "id":"313826106830769920"
      ,"Identification":{
         "Name":"P100_COMPONENT_TYPE"
        ,"Type":"Select List"
@@ -685,7 +685,7 @@
       }
      ,"Layout":{
         "Sequence":40
-       ,"Region":"Filter (452496424516540365)"
+       ,"Region":"Filter (472904998656421813)"
        ,"Position":"BODY"
        ,"Alignment":"Left"
        ,"Start New Layout":false
@@ -696,7 +696,7 @@
        ,"Label Column Span":"Page Template Default"
       }
      ,"Appearance":{
-        "Template":"Optional (452481165926466293)"
+        "Template":"Optional (472889740066347741)"
        ,"Template Options":[
           "#DEFAULT#"
         ]
@@ -745,7 +745,7 @@
   ]
  ,"Dynamic Actions":[
     {
-      "id":"10188697440098612"
+      "id":"30597271579980060"
      ,"Identification":{
         "Name":"click refresh button - refresh regions"
       }
@@ -757,69 +757,69 @@
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CLICK"
        ,"Selection Type":"Button"
-       ,"Button":"Refresh (45068108221137631)"
+       ,"Button":"Refresh (65476682361019079)"
       }
      ,"Actions":[
         {
-          "id":"10188789871098613"
+          "id":"30597364010980061"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Characters of JavaScript Code per Page (293281874355929169)"
+           ,"Region":"Characters of JavaScript Code per Page (313690448495810617)"
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"click refresh button - refresh regions (10188697440098612)"
+           ,"Event":"click refresh button - refresh regions (30597271579980060)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
         }
        ,{
-          "id":"10188809607098614"
+          "id":"30597383746980062"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Characters of JavaScript Code per Page (293416813132888465)"
+           ,"Region":"Characters of JavaScript Code per Page (313825387272769913)"
           }
          ,"Execution":{
             "Sequence":20
-           ,"Event":"click refresh button - refresh regions (10188697440098612)"
+           ,"Event":"click refresh button - refresh regions (30597271579980060)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
         }
        ,{
-          "id":"10188966711098615"
+          "id":"30597540850980063"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"JavaScript in Page (293282571329929176)"
+           ,"Region":"JavaScript in Page (313691145469810624)"
           }
          ,"Execution":{
             "Sequence":30
-           ,"Event":"click refresh button - refresh regions (10188697440098612)"
+           ,"Event":"click refresh button - refresh regions (30597271579980060)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
         }
        ,{
-          "id":"10189035942098616"
+          "id":"30597610081980064"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Place of JavaScript (293417040775888467)"
+           ,"Region":"Place of JavaScript (313825614915769915)"
           }
          ,"Execution":{
             "Sequence":40
-           ,"Event":"click refresh button - refresh regions (10188697440098612)"
+           ,"Event":"click refresh button - refresh regions (30597271579980060)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
@@ -827,7 +827,7 @@
       ]
     }
    ,{
-      "id":"293282369686929174"
+      "id":"313690943826810622"
      ,"Identification":{
         "Name":"change P0_ITEMS"
       }
@@ -847,49 +847,49 @@
       }
      ,"Actions":[
         {
-          "id":"293282500350929175"
+          "id":"313691074490810623"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Characters of JavaScript Code per Page (293416813132888465)"
+           ,"Region":"Characters of JavaScript Code per Page (313825387272769913)"
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"change P0_ITEMS (293282369686929174)"
+           ,"Event":"change P0_ITEMS (313690943826810622)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
         }
        ,{
-          "id":"293283041326929181"
+          "id":"313691615466810629"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Place of JavaScript (293417040775888467)"
+           ,"Region":"Place of JavaScript (313825614915769915)"
           }
          ,"Execution":{
             "Sequence":20
-           ,"Event":"change P0_ITEMS (293282369686929174)"
+           ,"Event":"change P0_ITEMS (313690943826810622)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
         }
        ,{
-          "id":"293416976852888466"
+          "id":"313825550992769914"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"JavaScript in Page (293282571329929176)"
+           ,"Region":"JavaScript in Page (313691145469810624)"
           }
          ,"Execution":{
             "Sequence":30
-           ,"Event":"change P0_ITEMS (293282369686929174)"
+           ,"Event":"change P0_ITEMS (313690943826810622)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
@@ -897,7 +897,7 @@
       ]
     }
    ,{
-      "id":"293417694705888473"
+      "id":"313826268845769921"
      ,"Identification":{
         "Name":"change Component Type"
       }
@@ -915,17 +915,17 @@
       }
      ,"Actions":[
         {
-          "id":"293417705428888474"
+          "id":"313826279568769922"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"JavaScript in Page (293282571329929176)"
+           ,"Region":"JavaScript in Page (313691145469810624)"
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"change Component Type (293417694705888473)"
+           ,"Event":"change Component Type (313826268845769921)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }

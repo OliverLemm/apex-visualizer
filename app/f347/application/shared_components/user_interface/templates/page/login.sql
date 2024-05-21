@@ -5,14 +5,14 @@ begin
 --   Manifest End
 wwv_flow_imp.component_begin (
  p_version_yyyy_mm_dd=>'2023.10.31'
-,p_release=>'23.2.2'
-,p_default_workspace_id=>125633378786110814
+,p_release=>'23.2.5'
+,p_default_workspace_id=>100001
 ,p_default_application_id=>347
-,p_default_id_offset=>125634094441118325
+,p_default_id_offset=>20408574139881448
 ,p_default_owner=>'APEX_VISUALIZER'
 );
 wwv_flow_imp_shared.create_template(
- p_id=>wwv_flow_imp.id(452443100862466212)
+ p_id=>wwv_flow_imp.id(472851675002347660)
 ,p_theme_id=>42
 ,p_name=>'Login'
 ,p_internal_name=>'LOGIN'
@@ -138,8 +138,8 @@ wwv_flow_imp_shared.create_template(
 ,p_reference_id=>2099711150063350616
 );
 wwv_flow_imp_shared.create_page_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2409701120453365)
-,p_page_template_id=>wwv_flow_imp.id(452443100862466212)
+ p_id=>wwv_flow_imp.id(22818275260334813)
+,p_page_template_id=>wwv_flow_imp.id(472851675002347660)
 ,p_name=>'Background Image'
 ,p_placeholder=>'BACKGROUND_IMAGE'
 ,p_has_grid_support=>false
@@ -150,8 +150,8 @@ wwv_flow_imp_shared.create_page_tmpl_display_point(
 ,p_max_fixed_grid_columns=>12
 );
 wwv_flow_imp_shared.create_page_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2410298476453367)
-,p_page_template_id=>wwv_flow_imp.id(452443100862466212)
+ p_id=>wwv_flow_imp.id(22818872616334815)
+,p_page_template_id=>wwv_flow_imp.id(472851675002347660)
 ,p_name=>'Content Body'
 ,p_placeholder=>'BODY'
 ,p_has_grid_support=>true
@@ -162,8 +162,8 @@ wwv_flow_imp_shared.create_page_tmpl_display_point(
 ,p_max_fixed_grid_columns=>12
 );
 wwv_flow_imp_shared.create_page_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2410742411453367)
-,p_page_template_id=>wwv_flow_imp.id(452443100862466212)
+ p_id=>wwv_flow_imp.id(22819316551334815)
+,p_page_template_id=>wwv_flow_imp.id(472851675002347660)
 ,p_name=>'Body Header'
 ,p_placeholder=>'REGION_POSITION_01'
 ,p_has_grid_support=>false
@@ -173,8 +173,8 @@ wwv_flow_imp_shared.create_page_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_page_tmpl_display_point(
- p_id=>wwv_flow_imp.id(2411278116453367)
-,p_page_template_id=>wwv_flow_imp.id(452443100862466212)
+ p_id=>wwv_flow_imp.id(22819852256334815)
+,p_page_template_id=>wwv_flow_imp.id(472851675002347660)
 ,p_name=>'Body Footer'
 ,p_placeholder=>'REGION_POSITION_02'
 ,p_has_grid_support=>false

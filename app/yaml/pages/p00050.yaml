@@ -37,7 +37,7 @@ server-cache:
 
 regions: 
 - # ====== Region: Application changes =========================
-  id: 293418366726888480
+  id: 313826940866769928
   identification: 
     title: Application changes
     type: Chart
@@ -71,7 +71,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 452458863643466246
+    template: Standard # 472867437783347694
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -95,7 +95,7 @@ regions:
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 293418624351888483
+    id: 313827198491769931
     chart: 
       type: Bar
 
@@ -133,7 +133,7 @@ regions:
 
     series: 
     - # ====== Series: Last Updates ================================
-      id: 293418741618888484
+      id: 313827315758769932
       identification: 
         name: Last Updates
 
@@ -157,7 +157,7 @@ regions:
 
     axes: 
     - # ====== Axis: x =============================================
-      id: 293418840172888485
+      id: 313827414312769933
       identification: 
         name: x
         show-axis: true
@@ -180,7 +180,7 @@ regions:
         position: Outside
 
     - # ====== Axis: y =============================================
-      id: 293418971881888486
+      id: 313827546021769934
       identification: 
         name: y
         show-axis: true
@@ -203,7 +203,7 @@ regions:
         show: true
 
 - # ====== Region: Changes on Components =======================
-  id: 293419197283888488
+  id: 313827771423769936
   identification: 
     title: Changes on Components
     type: Chart
@@ -253,7 +253,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 452458863643466246
+    template: Standard # 472867437783347694
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -277,7 +277,7 @@ regions:
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 293419210270888489
+    id: 313827784410769937
     chart: 
       type: Bar
 
@@ -315,7 +315,7 @@ regions:
 
     series: 
     - # ====== Series: New =========================================
-      id: 293419343269888490
+      id: 313827917409769938
       identification: 
         name: New
 
@@ -340,7 +340,7 @@ regions:
 
     axes: 
     - # ====== Axis: x =============================================
-      id: 293419491538888491
+      id: 313828065678769939
       identification: 
         name: x
         show-axis: true
@@ -362,7 +362,7 @@ regions:
         position: Outside
 
     - # ====== Axis: y =============================================
-      id: 293419557840888492
+      id: 313828131980769940
       identification: 
         name: y
         show-axis: true
@@ -386,7 +386,7 @@ regions:
 
 page-items: 
 - # ====== Page Item: P50_DATE =================================
-  id: 293419072716888487
+  id: 313827646856769935
   identification: 
     name: P50_DATE
     type: Select List
@@ -401,7 +401,7 @@ page-items:
 
   layout: 
     sequence: 40
-    region: Filter # 452496424516540365
+    region: Filter # 472904998656421813
     position: BODY
     alignment: Left
     start-new-layout: false
@@ -412,7 +412,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Optional # 452481165926466293
+    template: Optional # 472889740066347741
     template-options: 
     - '#DEFAULT#'
     height: 1
@@ -453,7 +453,7 @@ page-items:
 
 dynamic-actions: 
 - # ====== Dynamic Action: change P0_APP_ID ====================
-  id: 293418467306888481
+  id: 313827041446769929
   identification: 
     name: change P0_APP_ID
 
@@ -471,37 +471,37 @@ dynamic-actions:
 
   actions: 
   - # ====== Action: Refresh =====================================
-    id: 293418576669888482
+    id: 313827150809769930
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Application changes # 293418366726888480
+      region: Application changes # 313826940866769928
 
     execution: 
       sequence: 10
-      event: change P0_APP_ID # 293418467306888481
+      event: change P0_APP_ID # 313827041446769929
       fire-when-event-result-is: True
       fire-on-initialization: false
 
   - # ====== Action: Refresh =====================================
-    id: 293419812614888495
+    id: 313828386754769943
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Changes on Components # 293419197283888488
+      region: Changes on Components # 313827771423769936
 
     execution: 
       sequence: 20
-      event: change P0_APP_ID # 293418467306888481
+      event: change P0_APP_ID # 313827041446769929
       fire-when-event-result-is: True
       fire-on-initialization: false
 
 - # ====== Dynamic Action: change P50_DATE =====================
-  id: 293419650163888493
+  id: 313828224303769941
   identification: 
     name: change P50_DATE
 
@@ -518,17 +518,17 @@ dynamic-actions:
 
   actions: 
   - # ====== Action: Refresh =====================================
-    id: 293419706299888494
+    id: 313828280439769942
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Changes on Components # 293419197283888488
+      region: Changes on Components # 313827771423769936
 
     execution: 
       sequence: 10
-      event: change P50_DATE # 293419650163888493
+      event: change P50_DATE # 313828224303769941
       fire-when-event-result-is: True
       fire-on-initialization: false
 

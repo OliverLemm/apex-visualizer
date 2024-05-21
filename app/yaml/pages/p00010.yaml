@@ -37,7 +37,7 @@ server-cache:
 
 regions: 
 - # ====== Region: Page Functions ==============================
-  id: 293283138176929182
+  id: 313691712316810630
   identification: 
     title: Page Functions
     type: Chart
@@ -67,7 +67,7 @@ regions:
     column-span: 6
 
   appearance: 
-    template: Standard # 452458863643466246
+    template: Standard # 472867437783347694
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -91,7 +91,7 @@ regions:
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 293283206865929183
+    id: 313691781005810631
     chart: 
       type: Pie
 
@@ -125,7 +125,7 @@ regions:
 
     series: 
     - # ====== Series: Applications ================================
-      id: 293283368127929184
+      id: 313691942267810632
       identification: 
         name: Applications
 
@@ -147,7 +147,7 @@ regions:
         display-as: Value
 
 - # ====== Region: Code Complexity (characters by app and type) 
-  id: 294199481042781289
+  id: 314608055182662737
   identification: 
     title: Code Complexity (characters by app and type)
     type: Chart
@@ -168,7 +168,7 @@ regions:
     column-span: 6
 
   appearance: 
-    template: Standard # 452458863643466246
+    template: Standard # 472867437783347694
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -192,7 +192,7 @@ regions:
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 294199527605781290
+    id: 314608101745662738
     chart: 
       type: Bar
 
@@ -230,7 +230,7 @@ regions:
 
     series: 
     - # ====== Series: JavaScript ==================================
-      id: 10188311722098609
+      id: 30596885861980057
       identification: 
         name: JavaScript
 
@@ -264,7 +264,7 @@ regions:
         position: Automatic
 
     - # ====== Series: CSS =========================================
-      id: 10188491899098610
+      id: 30597066038980058
       identification: 
         name: CSS
 
@@ -298,7 +298,7 @@ regions:
         position: Automatic
 
     - # ====== Series: PL/SQL ======================================
-      id: 10188563425098611
+      id: 30597137564980059
       identification: 
         name: PL/SQL
 
@@ -333,7 +333,7 @@ regions:
 
     axes: 
     - # ====== Axis: x =============================================
-      id: 294199791543781292
+      id: 314608365683662740
       identification: 
         name: x
         show-axis: true
@@ -355,7 +355,7 @@ regions:
         position: Outside
 
     - # ====== Axis: y =============================================
-      id: 294199864183781293
+      id: 314608438323662741
       identification: 
         name: y
         show-axis: true
@@ -380,7 +380,7 @@ regions:
         show: true
 
 - # ====== Region: Shared Components ===========================
-  id: 449531401127422725
+  id: 469939975267304173
   identification: 
     title: Shared Components
     type: Chart
@@ -430,7 +430,7 @@ regions:
     column-span: 6
 
   appearance: 
-    template: Collapsible # 452454481275466240
+    template: Collapsible # 472863055415347688
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -455,7 +455,7 @@ regions:
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 449531518790422726
+    id: 469940092930304174
     chart: 
       type: Bar
 
@@ -496,7 +496,7 @@ regions:
 
     series: 
     - # ====== Series: Applications ================================
-      id: 449531604590422727
+      id: 469940178730304175
       identification: 
         name: Applications
 
@@ -521,7 +521,7 @@ regions:
 
     axes: 
     - # ====== Axis: x =============================================
-      id: 449531676107422728
+      id: 469940250247304176
       identification: 
         name: x
         show-axis: true
@@ -543,7 +543,7 @@ regions:
         position: Outside
 
     - # ====== Axis: y =============================================
-      id: 449531787774422729
+      id: 469940361914304177
       identification: 
         name: y
         show-axis: true
@@ -568,7 +568,7 @@ regions:
         show: true
 
 - # ====== Region: Applicatons =================================
-  id: 455561419078523493
+  id: 475969993218404941
   identification: 
     title: Applicatons
     type: Interactive Report
@@ -586,6 +586,7 @@ regions:
             ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'simple') simple_pages
             ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'normal') normal_pages
             ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'complex') complex_pages
+            ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'very complex') very_complex_pages
       from apex_applications aa
       where aa.application_id = :P0_APP_ID
       or :P0_APP_ID is null
@@ -603,7 +604,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 452454481275466240
+    template: Collapsible # 472863055415347688
     template-options: 
     - '#DEFAULT#'
     - js-useLocalStorage
@@ -627,7 +628,7 @@ regions:
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 37290759188264649
+    id: 57699333328146097
     link: 
       link-column: Exclude Link Column
 
@@ -686,14 +687,55 @@ regions:
 
     saved-reports: 
     - # ====== Saved Report: Primary Report ========================
-      id: 10203699139099371
+      id: 30612273278980819
       identification: 
         name: Primary Report
         alias: 102037
 
     columns: 
+    - # ====== Column: VERY_COMPLEX_PAGES ==========================
+      id: 3404131342174519
+      identification: 
+        column-name: VERY_COMPLEX_PAGES
+        type: Plain Text
+
+      heading: 
+        heading: Very Complex Pages<br>(100 and more objects)
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 100
+        column-alignment: end
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
     - # ====== Column: APP_NAME ====================================
-      id: 10187515473098601
+      id: 30596089612980049
       identification: 
         column-name: APP_NAME
         type: Plain Text
@@ -734,7 +776,7 @@ regions:
         escape-special-characters: true
 
     - # ====== Column: ALIAS =======================================
-      id: 10187656689098602
+      id: 30596230828980050
       identification: 
         column-name: ALIAS
         type: Plain Text
@@ -775,7 +817,7 @@ regions:
         escape-special-characters: true
 
     - # ====== Column: OWNER =======================================
-      id: 10187776426098603
+      id: 30596350565980051
       identification: 
         column-name: OWNER
         type: Plain Text
@@ -816,7 +858,7 @@ regions:
         escape-special-characters: true
 
     - # ====== Column: VERSION =====================================
-      id: 10187884589098604
+      id: 30596458728980052
       identification: 
         column-name: VERSION
         type: Plain Text
@@ -857,14 +899,14 @@ regions:
         escape-special-characters: true
 
     - # ====== Column: PAGES_OVERALL ===============================
-      id: 10187979678098605
+      id: 30596553817980053
       identification: 
         column-name: PAGES_OVERALL
         type: Plain Text
 
       heading: 
         heading: Pages Overall
-        alignment: end
+        alignment: start
 
       single-row-view: 
         use-column-heading: true
@@ -898,14 +940,14 @@ regions:
         escape-special-characters: true
 
     - # ====== Column: SIMPLE_PAGES ================================
-      id: 10188038199098606
+      id: 30596612338980054
       identification: 
         column-name: SIMPLE_PAGES
         type: Plain Text
 
       heading: 
-        heading: Simple Pages (less than 15 objects)
-        alignment: end
+        heading: Simple Pages<br>(less than 15 objects)
+        alignment: start
 
       single-row-view: 
         use-column-heading: true
@@ -939,14 +981,14 @@ regions:
         escape-special-characters: true
 
     - # ====== Column: NORMAL_PAGES ================================
-      id: 10188125155098607
+      id: 30596699294980055
       identification: 
         column-name: NORMAL_PAGES
         type: Plain Text
 
       heading: 
-        heading: Normal Pages
-        alignment: end
+        heading: Normal Pages<br>(15-50 objects)
+        alignment: start
 
       single-row-view: 
         use-column-heading: true
@@ -980,14 +1022,14 @@ regions:
         escape-special-characters: true
 
     - # ====== Column: COMPLEX_PAGES ===============================
-      id: 10188299446098608
+      id: 30596873585980056
       identification: 
         column-name: COMPLEX_PAGES
         type: Plain Text
 
       heading: 
-        heading: Complex Pages (more than 50 objects)
-        alignment: end
+        heading: Complex Pages<br>(50-100 objects)
+        alignment: start
 
       single-row-view: 
         use-column-heading: true
@@ -1021,7 +1063,7 @@ regions:
         escape-special-characters: true
 
     - # ====== Column: APP_ID ======================================
-      id: 37290800102264650
+      id: 57699374242146098
       identification: 
         column-name: APP_ID
         type: Plain Text
@@ -1105,7 +1147,7 @@ regions:
 
 page-items: 
 - # ====== Page Item: P10_COMPLEXITY_CATEGORY ==================
-  id: 294269251624521547
+  id: 314677825764402995
   identification: 
     name: P10_COMPLEXITY_CATEGORY
     type: Select List
@@ -1120,7 +1162,7 @@ page-items:
 
   layout: 
     sequence: 50
-    region: Filter # 452496424516540365
+    region: Filter # 472904998656421813
     position: BODY
     alignment: Left
     start-new-layout: false
@@ -1131,7 +1173,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Optional # 452481165926466293
+    template: Optional # 472889740066347741
     template-options: 
     - '#DEFAULT#'
     height: 1
@@ -1166,7 +1208,7 @@ page-items:
 
 dynamic-actions: 
 - # ====== Dynamic Action: change P0_COMPONENT - refresh shared 
-  id: 293284377367929194
+  id: 313692951507810642
   identification: 
     name: change P0_COMPONENT - refresh shared chart
 
@@ -1183,22 +1225,22 @@ dynamic-actions:
 
   actions: 
   - # ====== Action: Refresh =====================================
-    id: 293284433520929195
+    id: 313693007660810643
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Shared Components # 449531401127422725
+      region: Shared Components # 469939975267304173
 
     execution: 
       sequence: 10
-      event: change P0_COMPONENT - refresh shared chart # 293284377367929194
+      event: change P0_COMPONENT - refresh shared chart # 313692951507810642
       fire-when-event-result-is: True
       fire-on-initialization: false
 
 - # ====== Dynamic Action: change P10_COMPLEXITY_CATEGORY ======
-  id: 294269372701521548
+  id: 314677946841402996
   identification: 
     name: change P10_COMPLEXITY_CATEGORY
 
@@ -1215,22 +1257,22 @@ dynamic-actions:
 
   actions: 
   - # ====== Action: Refresh =====================================
-    id: 294269478248521549
+    id: 314678052388402997
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Code Complexity (characters by app and type) # 294199481042781289
+      region: Code Complexity (characters by app and type) # 314608055182662737
 
     execution: 
       sequence: 10
-      event: change P10_COMPLEXITY_CATEGORY # 294269372701521548
+      event: change P10_COMPLEXITY_CATEGORY # 314677946841402996
       fire-when-event-result-is: True
       fire-on-initialization: false
 
 - # ====== Dynamic Action: hide component ======================
-  id: 294476816186578349
+  id: 314885390326459797
   identification: 
     name: hide component
 
@@ -1243,7 +1285,7 @@ dynamic-actions:
 
   actions: 
   - # ====== Action: Hide ========================================
-    id: 294476954847578350
+    id: 314885528987459798
     identification: 
       action: Hide
 
@@ -1254,12 +1296,12 @@ dynamic-actions:
 
     execution: 
       sequence: 10
-      event: hide component # 294476816186578349
+      event: hide component # 314885390326459797
       fire-when-event-result-is: True
       fire-on-initialization: true
 
 - # ====== Dynamic Action: change P0_APP_ID - refresh charts ===
-  id: 449465803018677324
+  id: 469874377158558772
   identification: 
     name: change P0_APP_ID - refresh charts
 
@@ -1276,66 +1318,66 @@ dynamic-actions:
 
   actions: 
   - # ====== Action: Refresh Details =============================
-    id: 37288646583264628
+    id: 57697220723146076
     identification: 
       name: Refresh Details
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Applicatons # 455561419078523493
+      region: Applicatons # 475969993218404941
 
     execution: 
       sequence: 10
-      event: change P0_APP_ID - refresh charts # 449465803018677324
+      event: change P0_APP_ID - refresh charts # 469874377158558772
       fire-when-event-result-is: True
       fire-on-initialization: false
 
   - # ====== Action: Refresh Shared Components ===================
-    id: 294195118376781246
+    id: 314603692516662694
     identification: 
       name: Refresh Shared Components
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Shared Components # 449531401127422725
+      region: Shared Components # 469939975267304173
 
     execution: 
       sequence: 20
-      event: change P0_APP_ID - refresh charts # 449465803018677324
+      event: change P0_APP_ID - refresh charts # 469874377158558772
       fire-when-event-result-is: True
       fire-on-initialization: false
 
   - # ====== Action: Refresh Complexity ==========================
-    id: 294269154307521546
+    id: 314677728447402994
     identification: 
       name: Refresh Complexity
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Code Complexity (characters by app and type) # 294199481042781289
+      region: Code Complexity (characters by app and type) # 314608055182662737
 
     execution: 
       sequence: 30
-      event: change P0_APP_ID - refresh charts # 449465803018677324
+      event: change P0_APP_ID - refresh charts # 469874377158558772
       fire-when-event-result-is: True
       fire-on-initialization: false
 
   - # ====== Action: Refresh Page Functions ======================
-    id: 294476643654578347
+    id: 314885217794459795
     identification: 
       name: Refresh Page Functions
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Page Functions # 293283138176929182
+      region: Page Functions # 313691712316810630
 
     execution: 
       sequence: 40
-      event: change P0_APP_ID - refresh charts # 449465803018677324
+      event: change P0_APP_ID - refresh charts # 469874377158558772
       fire-when-event-result-is: True
       fire-on-initialization: false
 

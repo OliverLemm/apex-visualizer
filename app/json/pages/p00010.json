@@ -37,7 +37,7 @@
   }
  ,"Regions":[
     {
-      "id":"293283138176929182"
+      "id":"313691712316810630"
      ,"Identification":{
         "Title":"Page Functions"
        ,"Type":"Chart"
@@ -61,7 +61,7 @@
        ,"Column Span":"6"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -86,7 +86,7 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Attributes":{
-        "id":"293283206865929183"
+        "id":"313691781005810631"
        ,"Chart":{
           "Type":"Pie"
         }
@@ -120,7 +120,7 @@
         }
        ,"Series":[
           {
-            "id":"293283368127929184"
+            "id":"313691942267810632"
            ,"Identification":{
               "Name":"Applications"
             }
@@ -146,7 +146,7 @@
       }
     }
    ,{
-      "id":"294199481042781289"
+      "id":"314608055182662737"
      ,"Identification":{
         "Title":"Code Complexity (characters by app and type)"
        ,"Type":"Chart"
@@ -168,7 +168,7 @@
        ,"Column Span":"6"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -193,7 +193,7 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Attributes":{
-        "id":"294199527605781290"
+        "id":"314608101745662738"
        ,"Chart":{
           "Type":"Bar"
         }
@@ -231,7 +231,7 @@
         }
        ,"Series":[
           {
-            "id":"10188311722098609"
+            "id":"30596885861980057"
            ,"Identification":{
               "Name":"JavaScript"
             }
@@ -260,7 +260,7 @@
             }
           }
          ,{
-            "id":"10188491899098610"
+            "id":"30597066038980058"
            ,"Identification":{
               "Name":"CSS"
             }
@@ -289,7 +289,7 @@
             }
           }
          ,{
-            "id":"10188563425098611"
+            "id":"30597137564980059"
            ,"Identification":{
               "Name":"PL\/SQL"
             }
@@ -320,7 +320,7 @@
         ]
        ,"Axes":[
           {
-            "id":"294199791543781292"
+            "id":"314608365683662740"
            ,"Identification":{
               "Name":"x"
              ,"Show Axis":true
@@ -343,7 +343,7 @@
             }
           }
          ,{
-            "id":"294199864183781293"
+            "id":"314608438323662741"
            ,"Identification":{
               "Name":"y"
              ,"Show Axis":true
@@ -372,7 +372,7 @@
       }
     }
    ,{
-      "id":"449531401127422725"
+      "id":"469939975267304173"
      ,"Identification":{
         "Title":"Shared Components"
        ,"Type":"Chart"
@@ -397,7 +397,7 @@
        ,"Column Span":"6"
       }
      ,"Appearance":{
-        "Template":"Collapsible (452454481275466240)"
+        "Template":"Collapsible (472863055415347688)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"is-expanded"
@@ -423,7 +423,7 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Attributes":{
-        "id":"449531518790422726"
+        "id":"469940092930304174"
        ,"Chart":{
           "Type":"Bar"
         }
@@ -464,7 +464,7 @@
         }
        ,"Series":[
           {
-            "id":"449531604590422727"
+            "id":"469940178730304175"
            ,"Identification":{
               "Name":"Applications"
             }
@@ -491,7 +491,7 @@
         ]
        ,"Axes":[
           {
-            "id":"449531676107422728"
+            "id":"469940250247304176"
            ,"Identification":{
               "Name":"x"
              ,"Show Axis":true
@@ -514,7 +514,7 @@
             }
           }
          ,{
-            "id":"449531787774422729"
+            "id":"469940361914304177"
            ,"Identification":{
               "Name":"y"
              ,"Show Axis":true
@@ -543,7 +543,7 @@
       }
     }
    ,{
-      "id":"455561419078523493"
+      "id":"475969993218404941"
      ,"Identification":{
         "Title":"Applicatons"
        ,"Type":"Interactive Report"
@@ -551,7 +551,7 @@
      ,"Source":{
         "Location":"Local Database"
        ,"Type":"SQL Query"
-       ,"SQL Query":"select aa.application_id app_id\n      ,aa.application_name app_name\n      ,aa.alias\n      ,aa.owner\n      ,aa.version\n      ,(select count(1) from apex_application_pages p1 where p1.application_id = aa.application_id) pages_overall\n      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = \u0027simple\u0027) simple_pages\n      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = \u0027normal\u0027) normal_pages\n      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = \u0027complex\u0027) complex_pages\nfrom apex_applications aa\nwhere aa.application_id = :P0_APP_ID\nor :P0_APP_ID is null"
+       ,"SQL Query":"select aa.application_id app_id\n      ,aa.application_name app_name\n      ,aa.alias\n      ,aa.owner\n      ,aa.version\n      ,(select count(1) from apex_application_pages p1 where p1.application_id = aa.application_id) pages_overall\n      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = \u0027simple\u0027) simple_pages\n      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = \u0027normal\u0027) normal_pages\n      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = \u0027complex\u0027) complex_pages\n      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = \u0027very complex\u0027) very_complex_pages\nfrom apex_applications aa\nwhere aa.application_id = :P0_APP_ID\nor :P0_APP_ID is null"
        ,"Page Items to Submit":[
           "P0_APP_ID"
         ]
@@ -567,7 +567,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Collapsible (452454481275466240)"
+        "Template":"Collapsible (472863055415347688)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"js-useLocalStorage"
@@ -592,7 +592,7 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Attributes":{
-        "id":"37290759188264649"
+        "id":"57699333328146097"
        ,"Link":{
           "Link Column":"Exclude Link Column"
         }
@@ -652,7 +652,7 @@
         }
        ,"Saved Reports":[
           {
-            "id":"10203699139099371"
+            "id":"30612273278980819"
            ,"Identification":{
               "Name":"Primary Report"
              ,"Alias":"102037"
@@ -661,7 +661,49 @@
         ]
        ,"Columns":[
           {
-            "id":"10187515473098601"
+            "id":"3404131342174519"
+           ,"Identification":{
+              "Column Name":"VERY_COMPLEX_PAGES"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Very Complex Pages\u003Cbr\u003E(100 and more objects)"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":100
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"30596089612980049"
            ,"Identification":{
               "Column Name":"APP_NAME"
              ,"Type":"Plain Text"
@@ -703,7 +745,7 @@
             }
           }
          ,{
-            "id":"10187656689098602"
+            "id":"30596230828980050"
            ,"Identification":{
               "Column Name":"ALIAS"
              ,"Type":"Plain Text"
@@ -745,7 +787,7 @@
             }
           }
          ,{
-            "id":"10187776426098603"
+            "id":"30596350565980051"
            ,"Identification":{
               "Column Name":"OWNER"
              ,"Type":"Plain Text"
@@ -787,7 +829,7 @@
             }
           }
          ,{
-            "id":"10187884589098604"
+            "id":"30596458728980052"
            ,"Identification":{
               "Column Name":"VERSION"
              ,"Type":"Plain Text"
@@ -829,14 +871,14 @@
             }
           }
          ,{
-            "id":"10187979678098605"
+            "id":"30596553817980053"
            ,"Identification":{
               "Column Name":"PAGES_OVERALL"
              ,"Type":"Plain Text"
             }
            ,"Heading":{
               "Heading":"Pages Overall"
-             ,"Alignment":"end"
+             ,"Alignment":"start"
             }
            ,"Single Row View":{
               "Use Column Heading":true
@@ -871,14 +913,14 @@
             }
           }
          ,{
-            "id":"10188038199098606"
+            "id":"30596612338980054"
            ,"Identification":{
               "Column Name":"SIMPLE_PAGES"
              ,"Type":"Plain Text"
             }
            ,"Heading":{
-              "Heading":"Simple Pages (less than 15 objects)"
-             ,"Alignment":"end"
+              "Heading":"Simple Pages\u003Cbr\u003E(less than 15 objects)"
+             ,"Alignment":"start"
             }
            ,"Single Row View":{
               "Use Column Heading":true
@@ -913,14 +955,14 @@
             }
           }
          ,{
-            "id":"10188125155098607"
+            "id":"30596699294980055"
            ,"Identification":{
               "Column Name":"NORMAL_PAGES"
              ,"Type":"Plain Text"
             }
            ,"Heading":{
-              "Heading":"Normal Pages"
-             ,"Alignment":"end"
+              "Heading":"Normal Pages\u003Cbr\u003E(15-50 objects)"
+             ,"Alignment":"start"
             }
            ,"Single Row View":{
               "Use Column Heading":true
@@ -955,14 +997,14 @@
             }
           }
          ,{
-            "id":"10188299446098608"
+            "id":"30596873585980056"
            ,"Identification":{
               "Column Name":"COMPLEX_PAGES"
              ,"Type":"Plain Text"
             }
            ,"Heading":{
-              "Heading":"Complex Pages (more than 50 objects)"
-             ,"Alignment":"end"
+              "Heading":"Complex Pages\u003Cbr\u003E(50-100 objects)"
+             ,"Alignment":"start"
             }
            ,"Single Row View":{
               "Use Column Heading":true
@@ -997,7 +1039,7 @@
             }
           }
          ,{
-            "id":"37290800102264650"
+            "id":"57699374242146098"
            ,"Identification":{
               "Column Name":"APP_ID"
              ,"Type":"Plain Text"
@@ -1087,7 +1129,7 @@
   ]
  ,"Page Items":[
     {
-      "id":"294269251624521547"
+      "id":"314677825764402995"
      ,"Identification":{
         "Name":"P10_COMPLEXITY_CATEGORY"
        ,"Type":"Select List"
@@ -1102,7 +1144,7 @@
       }
      ,"Layout":{
         "Sequence":50
-       ,"Region":"Filter (452496424516540365)"
+       ,"Region":"Filter (472904998656421813)"
        ,"Position":"BODY"
        ,"Alignment":"Left"
        ,"Start New Layout":false
@@ -1113,7 +1155,7 @@
        ,"Label Column Span":"Page Template Default"
       }
      ,"Appearance":{
-        "Template":"Optional (452481165926466293)"
+        "Template":"Optional (472889740066347741)"
        ,"Template Options":[
           "#DEFAULT#"
         ]
@@ -1151,7 +1193,7 @@
   ]
  ,"Dynamic Actions":[
     {
-      "id":"293284377367929194"
+      "id":"313692951507810642"
      ,"Identification":{
         "Name":"change P0_COMPONENT - refresh shared chart"
       }
@@ -1169,17 +1211,17 @@
       }
      ,"Actions":[
         {
-          "id":"293284433520929195"
+          "id":"313693007660810643"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Shared Components (449531401127422725)"
+           ,"Region":"Shared Components (469939975267304173)"
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"change P0_COMPONENT - refresh shared chart (293284377367929194)"
+           ,"Event":"change P0_COMPONENT - refresh shared chart (313692951507810642)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
@@ -1187,7 +1229,7 @@
       ]
     }
    ,{
-      "id":"294269372701521548"
+      "id":"314677946841402996"
      ,"Identification":{
         "Name":"change P10_COMPLEXITY_CATEGORY"
       }
@@ -1205,17 +1247,17 @@
       }
      ,"Actions":[
         {
-          "id":"294269478248521549"
+          "id":"314678052388402997"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Code Complexity (characters by app and type) (294199481042781289)"
+           ,"Region":"Code Complexity (characters by app and type) (314608055182662737)"
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"change P10_COMPLEXITY_CATEGORY (294269372701521548)"
+           ,"Event":"change P10_COMPLEXITY_CATEGORY (314677946841402996)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
@@ -1223,7 +1265,7 @@
       ]
     }
    ,{
-      "id":"294476816186578349"
+      "id":"314885390326459797"
      ,"Identification":{
         "Name":"hide component"
       }
@@ -1236,7 +1278,7 @@
       }
      ,"Actions":[
         {
-          "id":"294476954847578350"
+          "id":"314885528987459798"
          ,"Identification":{
             "Action":"Hide"
           }
@@ -1248,7 +1290,7 @@
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"hide component (294476816186578349)"
+           ,"Event":"hide component (314885390326459797)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":true
           }
@@ -1256,7 +1298,7 @@
       ]
     }
    ,{
-      "id":"449465803018677324"
+      "id":"469874377158558772"
      ,"Identification":{
         "Name":"change P0_APP_ID - refresh charts"
       }
@@ -1274,69 +1316,69 @@
       }
      ,"Actions":[
         {
-          "id":"37288646583264628"
+          "id":"57697220723146076"
          ,"Identification":{
             "Name":"Refresh Details"
            ,"Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Applicatons (455561419078523493)"
+           ,"Region":"Applicatons (475969993218404941)"
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"change P0_APP_ID - refresh charts (449465803018677324)"
+           ,"Event":"change P0_APP_ID - refresh charts (469874377158558772)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
         }
        ,{
-          "id":"294195118376781246"
+          "id":"314603692516662694"
          ,"Identification":{
             "Name":"Refresh Shared Components"
            ,"Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Shared Components (449531401127422725)"
+           ,"Region":"Shared Components (469939975267304173)"
           }
          ,"Execution":{
             "Sequence":20
-           ,"Event":"change P0_APP_ID - refresh charts (449465803018677324)"
+           ,"Event":"change P0_APP_ID - refresh charts (469874377158558772)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
         }
        ,{
-          "id":"294269154307521546"
+          "id":"314677728447402994"
          ,"Identification":{
             "Name":"Refresh Complexity"
            ,"Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Code Complexity (characters by app and type) (294199481042781289)"
+           ,"Region":"Code Complexity (characters by app and type) (314608055182662737)"
           }
          ,"Execution":{
             "Sequence":30
-           ,"Event":"change P0_APP_ID - refresh charts (449465803018677324)"
+           ,"Event":"change P0_APP_ID - refresh charts (469874377158558772)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
         }
        ,{
-          "id":"294476643654578347"
+          "id":"314885217794459795"
          ,"Identification":{
             "Name":"Refresh Page Functions"
            ,"Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Page Functions (293283138176929182)"
+           ,"Region":"Page Functions (313691712316810630)"
           }
          ,"Execution":{
             "Sequence":40
-           ,"Event":"change P0_APP_ID - refresh charts (449465803018677324)"
+           ,"Event":"change P0_APP_ID - refresh charts (469874377158558772)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }

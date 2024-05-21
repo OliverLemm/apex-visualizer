@@ -37,7 +37,7 @@
   }
  ,"Regions":[
     {
-      "id":"293418366726888480"
+      "id":"313826940866769928"
      ,"Identification":{
         "Title":"Application changes"
        ,"Type":"Chart"
@@ -62,7 +62,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -87,7 +87,7 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Attributes":{
-        "id":"293418624351888483"
+        "id":"313827198491769931"
        ,"Chart":{
           "Type":"Bar"
         }
@@ -125,7 +125,7 @@
         }
        ,"Series":[
           {
-            "id":"293418741618888484"
+            "id":"313827315758769932"
            ,"Identification":{
               "Name":"Last Updates"
             }
@@ -151,7 +151,7 @@
         ]
        ,"Axes":[
           {
-            "id":"293418840172888485"
+            "id":"313827414312769933"
            ,"Identification":{
               "Name":"x"
              ,"Show Axis":true
@@ -175,7 +175,7 @@
             }
           }
          ,{
-            "id":"293418971881888486"
+            "id":"313827546021769934"
            ,"Identification":{
               "Name":"y"
              ,"Show Axis":true
@@ -202,7 +202,7 @@
       }
     }
    ,{
-      "id":"293419197283888488"
+      "id":"313827771423769936"
      ,"Identification":{
         "Title":"Changes on Components"
        ,"Type":"Chart"
@@ -228,7 +228,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -253,7 +253,7 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Attributes":{
-        "id":"293419210270888489"
+        "id":"313827784410769937"
        ,"Chart":{
           "Type":"Bar"
         }
@@ -291,7 +291,7 @@
         }
        ,"Series":[
           {
-            "id":"293419343269888490"
+            "id":"313827917409769938"
            ,"Identification":{
               "Name":"New"
             }
@@ -318,7 +318,7 @@
         ]
        ,"Axes":[
           {
-            "id":"293419491538888491"
+            "id":"313828065678769939"
            ,"Identification":{
               "Name":"x"
              ,"Show Axis":true
@@ -341,7 +341,7 @@
             }
           }
          ,{
-            "id":"293419557840888492"
+            "id":"313828131980769940"
            ,"Identification":{
               "Name":"y"
              ,"Show Axis":true
@@ -370,7 +370,7 @@
   ]
  ,"Page Items":[
     {
-      "id":"293419072716888487"
+      "id":"313827646856769935"
      ,"Identification":{
         "Name":"P50_DATE"
        ,"Type":"Select List"
@@ -385,7 +385,7 @@
       }
      ,"Layout":{
         "Sequence":40
-       ,"Region":"Filter (452496424516540365)"
+       ,"Region":"Filter (472904998656421813)"
        ,"Position":"BODY"
        ,"Alignment":"Left"
        ,"Start New Layout":false
@@ -396,7 +396,7 @@
        ,"Label Column Span":"Page Template Default"
       }
      ,"Appearance":{
-        "Template":"Optional (452481165926466293)"
+        "Template":"Optional (472889740066347741)"
        ,"Template Options":[
           "#DEFAULT#"
         ]
@@ -434,7 +434,7 @@
   ]
  ,"Dynamic Actions":[
     {
-      "id":"293418467306888481"
+      "id":"313827041446769929"
      ,"Identification":{
         "Name":"change P0_APP_ID"
       }
@@ -453,33 +453,33 @@
       }
      ,"Actions":[
         {
-          "id":"293418576669888482"
+          "id":"313827150809769930"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Application changes (293418366726888480)"
+           ,"Region":"Application changes (313826940866769928)"
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"change P0_APP_ID (293418467306888481)"
+           ,"Event":"change P0_APP_ID (313827041446769929)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
         }
        ,{
-          "id":"293419812614888495"
+          "id":"313828386754769943"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Changes on Components (293419197283888488)"
+           ,"Region":"Changes on Components (313827771423769936)"
           }
          ,"Execution":{
             "Sequence":20
-           ,"Event":"change P0_APP_ID (293418467306888481)"
+           ,"Event":"change P0_APP_ID (313827041446769929)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
@@ -487,7 +487,7 @@
       ]
     }
    ,{
-      "id":"293419650163888493"
+      "id":"313828224303769941"
      ,"Identification":{
         "Name":"change P50_DATE"
       }
@@ -505,17 +505,17 @@
       }
      ,"Actions":[
         {
-          "id":"293419706299888494"
+          "id":"313828280439769942"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Changes on Components (293419197283888488)"
+           ,"Region":"Changes on Components (313827771423769936)"
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"change P50_DATE (293419650163888493)"
+           ,"Event":"change P50_DATE (313828224303769941)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }

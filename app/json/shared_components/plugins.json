@@ -1,6 +1,6 @@
 [
   {
-    "id":"2749827815530232"
+    "id":"23158401955411680"
    ,"Identification":{
       "Name":"Media List"
      ,"Internal Name":"THEME_42$MEDIA_LIST"
@@ -39,14 +39,14 @@
     }
    ,"Attribute Groups":[
       {
-        "id":"1802929689421337299"
+        "id":"1823338263561218747"
        ,"Identification":{
           "Name":"Badge"
          ,"Sequence":20
         }
       }
      ,{
-        "id":"1802930244433337300"
+        "id":"1823338818573218748"
        ,"Identification":{
           "Name":"Avatar"
          ,"Sequence":10
@@ -55,7 +55,7 @@
     ]
    ,"Custom Attributes":[
       {
-        "id":"2912938205453651"
+        "id":"23321512345335099"
        ,"Identification":{
           "Static ID":"TITLE"
          ,"Attribute":1
@@ -84,7 +84,7 @@
         }
       }
      ,{
-        "id":"2913460224453651"
+        "id":"23322034364335099"
        ,"Identification":{
           "Static ID":"DESCRIPTION"
          ,"Attribute":2
@@ -113,7 +113,7 @@
         }
       }
      ,{
-        "id":"2913982041453653"
+        "id":"23322556181335101"
        ,"Identification":{
           "Static ID":"DISPLAY_AVATAR"
          ,"Attribute":3
@@ -139,7 +139,7 @@
         }
       }
      ,{
-        "id":"2914457791453653"
+        "id":"23323031931335101"
        ,"Identification":{
           "Static ID":"DISPLAY_BADGE"
          ,"Attribute":4
@@ -165,7 +165,7 @@
         }
       }
      ,{
-        "id":"2914989876453653"
+        "id":"23323564016335101"
        ,"Identification":{
           "Static ID":"AVATAR_TYPE"
          ,"Attribute":5
@@ -173,7 +173,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1802930244433337300)"
+          "Attribute Group":"Avatar (1823338818573218748)"
          ,"Sequence":50
         }
        ,"Settings":{
@@ -189,7 +189,7 @@
           "Value":"icon"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Avatar (2913982041453653)"
+          "Depending on Custom Attribute":"Display Avatar (23322556181335101)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -202,7 +202,7 @@
         }
        ,"Entries":[
           {
-            "id":"2915455144453653"
+            "id":"23324029284335101"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Image"
@@ -213,7 +213,7 @@
             }
           }
          ,{
-            "id":"2916016871453653"
+            "id":"23324591011335101"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Initials"
@@ -224,7 +224,7 @@
             }
           }
          ,{
-            "id":"2916681043453654"
+            "id":"23325255183335102"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Icon"
@@ -237,7 +237,7 @@
         ]
       }
      ,{
-        "id":"2917230807453654"
+        "id":"23325804947335102"
        ,"Identification":{
           "Static ID":"AVATAR_IMAGE"
          ,"Attribute":6
@@ -245,7 +245,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1802930244433337300)"
+          "Attribute Group":"Avatar (1823338818573218748)"
          ,"Sequence":60
         }
        ,"Settings":{
@@ -257,7 +257,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2914989876453653)"
+          "Depending on Custom Attribute":"Type (23323564016335101)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"image"
          ,"Always Evaluate":true
@@ -267,7 +267,7 @@
         }
       }
      ,{
-        "id":"2917785158453654"
+        "id":"23326359298335102"
        ,"Identification":{
           "Static ID":"AVATAR_DESCRIPTION"
          ,"Attribute":7
@@ -275,7 +275,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1802930244433337300)"
+          "Attribute Group":"Avatar (1823338818573218748)"
          ,"Sequence":95
         }
        ,"Settings":{
@@ -287,7 +287,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Avatar (2913982041453653)"
+          "Depending on Custom Attribute":"Display Avatar (23322556181335101)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -297,7 +297,7 @@
         }
       }
      ,{
-        "id":"2918280535453654"
+        "id":"23326854675335102"
        ,"Identification":{
           "Static ID":"AVATAR_INITIALS"
          ,"Attribute":8
@@ -305,7 +305,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1802930244433337300)"
+          "Attribute Group":"Avatar (1823338818573218748)"
          ,"Sequence":80
         }
        ,"Settings":{
@@ -320,7 +320,7 @@
          ,"Escape Mode":"Strip HTML"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2914989876453653)"
+          "Depending on Custom Attribute":"Type (23323564016335101)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"initials"
          ,"Always Evaluate":true
@@ -330,7 +330,7 @@
         }
       }
      ,{
-        "id":"2918766087453654"
+        "id":"23327340227335102"
        ,"Identification":{
           "Static ID":"AVATAR_ICON"
          ,"Attribute":9
@@ -338,7 +338,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1802930244433337300)"
+          "Attribute Group":"Avatar (1823338818573218748)"
          ,"Sequence":90
         }
        ,"Settings":{
@@ -353,7 +353,7 @@
           "Value":"fa-user"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2914989876453653)"
+          "Depending on Custom Attribute":"Type (23323564016335101)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"icon"
          ,"Always Evaluate":true
@@ -363,7 +363,7 @@
         }
       }
      ,{
-        "id":"2919218320453656"
+        "id":"23327792460335104"
        ,"Identification":{
           "Static ID":"AVATAR_SHAPE"
          ,"Attribute":10
@@ -371,7 +371,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1802930244433337300)"
+          "Attribute Group":"Avatar (1823338818573218748)"
          ,"Sequence":100
         }
        ,"Settings":{
@@ -387,7 +387,7 @@
           "Value":"t-Avatar--rounded"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Avatar (2913982041453653)"
+          "Depending on Custom Attribute":"Display Avatar (23322556181335101)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -397,7 +397,7 @@
         }
        ,"Entries":[
           {
-            "id":"2919720349453656"
+            "id":"23328294489335104"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Rounded"
@@ -411,7 +411,7 @@
             }
           }
          ,{
-            "id":"2920388615453656"
+            "id":"23328962755335104"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Circular"
@@ -425,7 +425,7 @@
             }
           }
          ,{
-            "id":"2920932160453656"
+            "id":"23329506300335104"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Square"
@@ -439,7 +439,7 @@
             }
           }
          ,{
-            "id":"2921504310453656"
+            "id":"23330078450335104"
            ,"Entry":{
               "Sequence":40
              ,"Display":"No Shape"
@@ -455,7 +455,7 @@
         ]
       }
      ,{
-        "id":"2922142652453657"
+        "id":"23330716792335105"
        ,"Identification":{
           "Static ID":"BADGE_LABEL"
          ,"Attribute":11
@@ -463,7 +463,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1802929689421337299)"
+          "Attribute Group":"Badge (1823338263561218747)"
          ,"Sequence":110
         }
        ,"Settings":{
@@ -475,7 +475,7 @@
          ,"Escape Mode":"HTML"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2914457791453653)"
+          "Depending on Custom Attribute":"Display Badge (23323031931335101)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -485,7 +485,7 @@
         }
       }
      ,{
-        "id":"2922615751453657"
+        "id":"23331189891335105"
        ,"Identification":{
           "Static ID":"BADGE_VALUE"
          ,"Attribute":12
@@ -493,7 +493,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1802929689421337299)"
+          "Attribute Group":"Badge (1823338263561218747)"
          ,"Sequence":120
         }
        ,"Settings":{
@@ -512,7 +512,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2914457791453653)"
+          "Depending on Custom Attribute":"Display Badge (23323031931335101)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -522,7 +522,7 @@
         }
       }
      ,{
-        "id":"2923145568453659"
+        "id":"23331719708335107"
        ,"Identification":{
           "Static ID":"BADGE_STATE"
          ,"Attribute":13
@@ -530,7 +530,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1802929689421337299)"
+          "Attribute Group":"Badge (1823338263561218747)"
          ,"Sequence":130
         }
        ,"Settings":{
@@ -545,7 +545,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2914457791453653)"
+          "Depending on Custom Attribute":"Display Badge (23323031931335101)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -555,7 +555,7 @@
         }
       }
      ,{
-        "id":"2923692927453659"
+        "id":"23332267067335107"
        ,"Identification":{
           "Static ID":"BADGE_ICON"
          ,"Attribute":14
@@ -563,7 +563,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1802929689421337299)"
+          "Attribute Group":"Badge (1823338263561218747)"
          ,"Sequence":140
         }
        ,"Settings":{
@@ -575,7 +575,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2914457791453653)"
+          "Depending on Custom Attribute":"Display Badge (23323031931335101)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -585,7 +585,7 @@
         }
       }
      ,{
-        "id":"2924146306453659"
+        "id":"23332720446335107"
        ,"Identification":{
           "Static ID":"BADGE_LABEL_DISPLAY"
          ,"Attribute":15
@@ -593,7 +593,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1802929689421337299)"
+          "Attribute Group":"Badge (1823338263561218747)"
          ,"Sequence":150
         }
        ,"Settings":{
@@ -608,7 +608,7 @@
           "Value":"N"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2914457791453653)"
+          "Depending on Custom Attribute":"Display Badge (23323031931335101)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -618,7 +618,7 @@
         }
       }
      ,{
-        "id":"2924642216453659"
+        "id":"23333216356335107"
        ,"Identification":{
           "Static ID":"BADGE_STYLE"
          ,"Attribute":16
@@ -626,7 +626,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1802929689421337299)"
+          "Attribute Group":"Badge (1823338263561218747)"
          ,"Sequence":160
         }
        ,"Settings":{
@@ -640,7 +640,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2914457791453653)"
+          "Depending on Custom Attribute":"Display Badge (23323031931335101)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -650,7 +650,7 @@
         }
        ,"Entries":[
           {
-            "id":"2925183327453659"
+            "id":"23333757467335107"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Subtle"
@@ -661,7 +661,7 @@
             }
           }
          ,{
-            "id":"2925754290453660"
+            "id":"23334328430335108"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Outline"
@@ -674,7 +674,7 @@
         ]
       }
      ,{
-        "id":"2926398186453660"
+        "id":"23334972326335108"
        ,"Identification":{
           "Static ID":"BADGE_SHAPE"
          ,"Attribute":17
@@ -682,7 +682,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1802929689421337299)"
+          "Attribute Group":"Badge (1823338263561218747)"
          ,"Sequence":170
         }
        ,"Settings":{
@@ -696,7 +696,7 @@
          ,"Escape Mode":"HTML"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2914457791453653)"
+          "Depending on Custom Attribute":"Display Badge (23323031931335101)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -706,7 +706,7 @@
         }
        ,"Entries":[
           {
-            "id":"2926815517453660"
+            "id":"23335389657335108"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Rounded"
@@ -720,7 +720,7 @@
             }
           }
          ,{
-            "id":"2927440037453660"
+            "id":"23336014177335108"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Circular"
@@ -734,7 +734,7 @@
             }
           }
          ,{
-            "id":"2928060767453660"
+            "id":"23336634907335108"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Square"
@@ -750,7 +750,7 @@
         ]
       }
      ,{
-        "id":"2928612839453662"
+        "id":"23337186979335110"
        ,"Identification":{
           "Static ID":"LAYOUT"
          ,"Attribute":18
@@ -775,7 +775,7 @@
         }
        ,"Entries":[
           {
-            "id":"2929188372453662"
+            "id":"23337762512335110"
            ,"Entry":{
               "Sequence":10
              ,"Display":"2 Column Grid"
@@ -786,7 +786,7 @@
             }
           }
          ,{
-            "id":"2929725268453662"
+            "id":"23338299408335110"
            ,"Entry":{
               "Sequence":20
              ,"Display":"3 Column Grid"
@@ -797,7 +797,7 @@
             }
           }
          ,{
-            "id":"2930357211453662"
+            "id":"23338931351335110"
            ,"Entry":{
               "Sequence":30
              ,"Display":"4 Column Grid"
@@ -808,7 +808,7 @@
             }
           }
          ,{
-            "id":"2930968801453662"
+            "id":"23339542941335110"
            ,"Entry":{
               "Sequence":40
              ,"Display":"5 Column Grid"
@@ -819,7 +819,7 @@
             }
           }
          ,{
-            "id":"2931536223453664"
+            "id":"23340110363335112"
            ,"Entry":{
               "Sequence":50
              ,"Display":"Horizontal Span"
@@ -832,7 +832,7 @@
         ]
       }
      ,{
-        "id":"2932152401453664"
+        "id":"23340726541335112"
        ,"Identification":{
           "Static ID":"SIZE"
          ,"Attribute":19
@@ -857,7 +857,7 @@
         }
        ,"Entries":[
           {
-            "id":"2932670165453664"
+            "id":"23341244305335112"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Large"
@@ -870,7 +870,7 @@
         ]
       }
      ,{
-        "id":"2933230483453664"
+        "id":"23341804623335112"
        ,"Identification":{
           "Static ID":"APPLY_THEME_COLORS"
          ,"Attribute":20
@@ -898,7 +898,7 @@
     ]
    ,"Action Positions":[
       {
-        "id":"1802971488117560509"
+        "id":"1823380062257441957"
        ,"Identification":{
           "Name":"Link"
          ,"Static ID":"LINK"
@@ -914,7 +914,7 @@
     ]
   }
  ,{
-    "id":"2777488032530254"
+    "id":"23186062172411702"
    ,"Identification":{
       "Name":"Button"
      ,"Internal Name":"THEME_42$BUTTON"
@@ -943,7 +943,7 @@
     }
    ,"Custom Attributes":[
       {
-        "id":"2846060302453598"
+        "id":"23254634442335046"
        ,"Identification":{
           "Static ID":"LABEL"
          ,"Attribute":1
@@ -963,7 +963,7 @@
         }
       }
      ,{
-        "id":"2846595755453598"
+        "id":"23255169895335046"
        ,"Identification":{
           "Static ID":"LINK_URL"
          ,"Attribute":2
@@ -983,7 +983,7 @@
         }
       }
      ,{
-        "id":"2847071577453600"
+        "id":"23255645717335048"
        ,"Identification":{
           "Static ID":"LINK_ATTR"
          ,"Attribute":3
@@ -1003,7 +1003,7 @@
         }
       }
      ,{
-        "id":"2847521132453600"
+        "id":"23256095272335048"
        ,"Identification":{
           "Static ID":"ICON_CLASSES"
          ,"Attribute":4
@@ -1023,7 +1023,7 @@
         }
       }
      ,{
-        "id":"2848070945453600"
+        "id":"23256645085335048"
        ,"Identification":{
           "Static ID":"CSS_CLASSES"
          ,"Attribute":5
@@ -1043,7 +1043,7 @@
         }
       }
      ,{
-        "id":"2848564444453600"
+        "id":"23257138584335048"
        ,"Identification":{
           "Static ID":"IS_DISABLED"
          ,"Attribute":6
@@ -1066,7 +1066,7 @@
         }
       }
      ,{
-        "id":"2849050479453600"
+        "id":"23257624619335048"
        ,"Identification":{
           "Static ID":"IS_HOT"
          ,"Attribute":7
@@ -1089,7 +1089,7 @@
         }
       }
      ,{
-        "id":"2849569194453601"
+        "id":"23258143334335049"
        ,"Identification":{
           "Static ID":"IS_ICON_ONLY"
          ,"Attribute":8
@@ -1114,7 +1114,7 @@
     ]
   }
  ,{
-    "id":"2781970810530257"
+    "id":"23190544950411705"
    ,"Identification":{
       "Name":"Timeline"
      ,"Internal Name":"THEME_42$TIMELINE"
@@ -1153,14 +1153,14 @@
     }
    ,"Attribute Groups":[
       {
-        "id":"2150022288154560621"
+        "id":"2170430862294442069"
        ,"Identification":{
           "Name":"Badge"
          ,"Sequence":20
         }
       }
      ,{
-        "id":"2150022843166560622"
+        "id":"2170431417306442070"
        ,"Identification":{
           "Name":"Avatar"
          ,"Sequence":10
@@ -1169,7 +1169,7 @@
     ]
    ,"Custom Attributes":[
       {
-        "id":"2940431972453671"
+        "id":"23349006112335119"
        ,"Identification":{
           "Static ID":"USER_NAME"
          ,"Attribute":1
@@ -1198,7 +1198,7 @@
         }
       }
      ,{
-        "id":"2940994301453671"
+        "id":"23349568441335119"
        ,"Identification":{
           "Static ID":"DATE"
          ,"Attribute":2
@@ -1231,7 +1231,7 @@
         }
       }
      ,{
-        "id":"2941464156453671"
+        "id":"23350038296335119"
        ,"Identification":{
           "Static ID":"TITLE"
          ,"Attribute":3
@@ -1260,7 +1260,7 @@
         }
       }
      ,{
-        "id":"2941973443453671"
+        "id":"23350547583335119"
        ,"Identification":{
           "Static ID":"DESCRIPTION"
          ,"Attribute":4
@@ -1289,7 +1289,7 @@
         }
       }
      ,{
-        "id":"2942418121453673"
+        "id":"23350992261335121"
        ,"Identification":{
           "Static ID":"DISPLAY_AVATAR"
          ,"Attribute":5
@@ -1318,7 +1318,7 @@
         }
       }
      ,{
-        "id":"2942929290453673"
+        "id":"23351503430335121"
        ,"Identification":{
           "Static ID":"DISPLAY_BADGE"
          ,"Attribute":6
@@ -1347,7 +1347,7 @@
         }
       }
      ,{
-        "id":"2943460660453673"
+        "id":"23352034800335121"
        ,"Identification":{
           "Static ID":"AVATAR_TYPE"
          ,"Attribute":7
@@ -1355,7 +1355,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (2150022843166560622)"
+          "Attribute Group":"Avatar (2170431417306442070)"
          ,"Sequence":70
         }
        ,"Settings":{
@@ -1371,7 +1371,7 @@
           "Value":"icon"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Avatar (2942418121453673)"
+          "Depending on Custom Attribute":"Display Avatar (23350992261335121)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -1384,7 +1384,7 @@
         }
        ,"Entries":[
           {
-            "id":"2943978143453673"
+            "id":"23352552283335121"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Image"
@@ -1395,7 +1395,7 @@
             }
           }
          ,{
-            "id":"2944503663453675"
+            "id":"23353077803335123"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Initials"
@@ -1406,7 +1406,7 @@
             }
           }
          ,{
-            "id":"2945168432453675"
+            "id":"23353742572335123"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Icon"
@@ -1419,7 +1419,7 @@
         ]
       }
      ,{
-        "id":"2945757468453675"
+        "id":"23354331608335123"
        ,"Identification":{
           "Static ID":"AVATAR_IMAGE"
          ,"Attribute":8
@@ -1427,7 +1427,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (2150022843166560622)"
+          "Attribute Group":"Avatar (2170431417306442070)"
          ,"Sequence":80
         }
        ,"Settings":{
@@ -1439,7 +1439,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2943460660453673)"
+          "Depending on Custom Attribute":"Type (23352034800335121)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"image"
          ,"Always Evaluate":true
@@ -1449,7 +1449,7 @@
         }
       }
      ,{
-        "id":"2946555266453675"
+        "id":"23355129406335123"
        ,"Identification":{
           "Static ID":"AVATAR_DESCRIPTION"
          ,"Attribute":9
@@ -1457,7 +1457,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (2150022843166560622)"
+          "Attribute Group":"Avatar (2170431417306442070)"
          ,"Sequence":115
         }
        ,"Settings":{
@@ -1469,7 +1469,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Avatar (2942418121453673)"
+          "Depending on Custom Attribute":"Display Avatar (23350992261335121)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -1479,7 +1479,7 @@
         }
       }
      ,{
-        "id":"2947075721453676"
+        "id":"23355649861335124"
        ,"Identification":{
           "Static ID":"AVATAR_INITIALS"
          ,"Attribute":10
@@ -1487,7 +1487,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (2150022843166560622)"
+          "Attribute Group":"Avatar (2170431417306442070)"
          ,"Sequence":100
         }
        ,"Settings":{
@@ -1502,7 +1502,7 @@
          ,"Escape Mode":"Strip HTML"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2943460660453673)"
+          "Depending on Custom Attribute":"Type (23352034800335121)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"initials"
          ,"Always Evaluate":true
@@ -1512,7 +1512,7 @@
         }
       }
      ,{
-        "id":"2947599483453676"
+        "id":"23356173623335124"
        ,"Identification":{
           "Static ID":"AVATAR_ICON"
          ,"Attribute":11
@@ -1520,7 +1520,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (2150022843166560622)"
+          "Attribute Group":"Avatar (2170431417306442070)"
          ,"Sequence":110
         }
        ,"Settings":{
@@ -1535,7 +1535,7 @@
           "Value":"fa-user"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2943460660453673)"
+          "Depending on Custom Attribute":"Type (23352034800335121)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"icon"
          ,"Always Evaluate":true
@@ -1545,7 +1545,7 @@
         }
       }
      ,{
-        "id":"2948014731453676"
+        "id":"23356588871335124"
        ,"Identification":{
           "Static ID":"AVATAR_SHAPE"
          ,"Attribute":12
@@ -1553,7 +1553,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (2150022843166560622)"
+          "Attribute Group":"Avatar (2170431417306442070)"
          ,"Sequence":120
         }
        ,"Settings":{
@@ -1569,7 +1569,7 @@
           "Value":"t-Avatar--circle"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Avatar (2942418121453673)"
+          "Depending on Custom Attribute":"Display Avatar (23350992261335121)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -1579,7 +1579,7 @@
         }
        ,"Entries":[
           {
-            "id":"2948548528453676"
+            "id":"23357122668335124"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Rounded"
@@ -1593,7 +1593,7 @@
             }
           }
          ,{
-            "id":"2949184299453676"
+            "id":"23357758439335124"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Circular"
@@ -1607,7 +1607,7 @@
             }
           }
          ,{
-            "id":"2949776834453678"
+            "id":"23358350974335126"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Square"
@@ -1621,7 +1621,7 @@
             }
           }
          ,{
-            "id":"2950301254453678"
+            "id":"23358875394335126"
            ,"Entry":{
               "Sequence":40
              ,"Display":"No Shape"
@@ -1637,7 +1637,7 @@
         ]
       }
      ,{
-        "id":"2950991407453678"
+        "id":"23359565547335126"
        ,"Identification":{
           "Static ID":"BADGE_LABEL"
          ,"Attribute":13
@@ -1645,7 +1645,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (2150022288154560621)"
+          "Attribute Group":"Badge (2170430862294442069)"
          ,"Sequence":130
         }
        ,"Settings":{
@@ -1657,7 +1657,7 @@
          ,"Escape Mode":"HTML"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2942929290453673)"
+          "Depending on Custom Attribute":"Display Badge (23351503430335121)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -1667,7 +1667,7 @@
         }
       }
      ,{
-        "id":"2951413227453678"
+        "id":"23359987367335126"
        ,"Identification":{
           "Static ID":"BADGE_VALUE"
          ,"Attribute":14
@@ -1675,7 +1675,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (2150022288154560621)"
+          "Attribute Group":"Badge (2170430862294442069)"
          ,"Sequence":140
         }
        ,"Settings":{
@@ -1694,7 +1694,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2942929290453673)"
+          "Depending on Custom Attribute":"Display Badge (23351503430335121)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -1707,7 +1707,7 @@
         }
       }
      ,{
-        "id":"2951994515453678"
+        "id":"23360568655335126"
        ,"Identification":{
           "Static ID":"BADGE_STATE"
          ,"Attribute":15
@@ -1715,7 +1715,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (2150022288154560621)"
+          "Attribute Group":"Badge (2170430862294442069)"
          ,"Sequence":150
         }
        ,"Settings":{
@@ -1730,7 +1730,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2942929290453673)"
+          "Depending on Custom Attribute":"Display Badge (23351503430335121)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -1743,7 +1743,7 @@
         }
       }
      ,{
-        "id":"2952404027453678"
+        "id":"23360978167335126"
        ,"Identification":{
           "Static ID":"BADGE_ICON"
          ,"Attribute":16
@@ -1751,7 +1751,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (2150022288154560621)"
+          "Attribute Group":"Badge (2170430862294442069)"
          ,"Sequence":160
         }
        ,"Settings":{
@@ -1763,7 +1763,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2942929290453673)"
+          "Depending on Custom Attribute":"Display Badge (23351503430335121)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -1776,7 +1776,7 @@
         }
       }
      ,{
-        "id":"2952939691453678"
+        "id":"23361513831335126"
        ,"Identification":{
           "Static ID":"BADGE_LABEL_DISPLAY"
          ,"Attribute":17
@@ -1784,7 +1784,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (2150022288154560621)"
+          "Attribute Group":"Badge (2170430862294442069)"
          ,"Sequence":170
         }
        ,"Settings":{
@@ -1799,7 +1799,7 @@
           "Value":"N"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2942929290453673)"
+          "Depending on Custom Attribute":"Display Badge (23351503430335121)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -1809,7 +1809,7 @@
         }
       }
      ,{
-        "id":"2953451724453679"
+        "id":"23362025864335127"
        ,"Identification":{
           "Static ID":"BADGE_STYLE"
          ,"Attribute":18
@@ -1817,7 +1817,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (2150022288154560621)"
+          "Attribute Group":"Badge (2170430862294442069)"
          ,"Sequence":180
         }
        ,"Settings":{
@@ -1831,7 +1831,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2942929290453673)"
+          "Depending on Custom Attribute":"Display Badge (23351503430335121)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -1841,7 +1841,7 @@
         }
        ,"Entries":[
           {
-            "id":"2953982473453679"
+            "id":"23362556613335127"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Subtle"
@@ -1852,7 +1852,7 @@
             }
           }
          ,{
-            "id":"2954574842453679"
+            "id":"23363148982335127"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Outline"
@@ -1865,7 +1865,7 @@
         ]
       }
      ,{
-        "id":"2955194396453679"
+        "id":"23363768536335127"
        ,"Identification":{
           "Static ID":"BADGE_SHAPE"
          ,"Attribute":19
@@ -1873,7 +1873,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (2150022288154560621)"
+          "Attribute Group":"Badge (2170430862294442069)"
          ,"Sequence":190
         }
        ,"Settings":{
@@ -1887,7 +1887,7 @@
          ,"Escape Mode":"HTML"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2942929290453673)"
+          "Depending on Custom Attribute":"Display Badge (23351503430335121)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -1897,7 +1897,7 @@
         }
        ,"Entries":[
           {
-            "id":"2955654308453679"
+            "id":"23364228448335127"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Rounded"
@@ -1911,7 +1911,7 @@
             }
           }
          ,{
-            "id":"2956256989453681"
+            "id":"23364831129335129"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Circular"
@@ -1925,7 +1925,7 @@
             }
           }
          ,{
-            "id":"2956800463453681"
+            "id":"23365374603335129"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Square"
@@ -1941,7 +1941,7 @@
         ]
       }
      ,{
-        "id":"2957400136453681"
+        "id":"23365974276335129"
        ,"Identification":{
           "Static ID":"STYLE"
          ,"Attribute":20
@@ -1966,7 +1966,7 @@
         }
        ,"Entries":[
           {
-            "id":"2957933006453681"
+            "id":"23366507146335129"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Compact"
@@ -1979,7 +1979,7 @@
         ]
       }
      ,{
-        "id":"2958576730453681"
+        "id":"23367150870335129"
        ,"Identification":{
           "Static ID":"APPLY_THEME_COLORS"
          ,"Attribute":21
@@ -2010,7 +2010,7 @@
     ]
    ,"Action Positions":[
       {
-        "id":"1797635004092845795"
+        "id":"1818043578232727243"
        ,"Identification":{
           "Name":"Title Link"
          ,"Static ID":"TITLE_LINK"
@@ -2024,7 +2024,7 @@
         }
       }
      ,{
-        "id":"1912046367081109396"
+        "id":"1932454941220990844"
        ,"Identification":{
           "Name":"User Name Link"
          ,"Static ID":"USER_NAME_LINK"
@@ -2038,7 +2038,7 @@
         }
       }
      ,{
-        "id":"2031077614055413837"
+        "id":"2051486188195295285"
        ,"Identification":{
           "Name":"Avatar Link"
          ,"Static ID":"AVATAR_LINK"
@@ -2054,7 +2054,7 @@
     ]
   }
  ,{
-    "id":"2807930696530268"
+    "id":"23216504836411716"
    ,"Identification":{
       "Name":"Avatar"
      ,"Internal Name":"THEME_42$AVATAR"
@@ -2090,7 +2090,7 @@
     }
    ,"Custom Attributes":[
       {
-        "id":"2822012769453576"
+        "id":"23230586909335024"
        ,"Identification":{
           "Static ID":"TYPE"
          ,"Attribute":1
@@ -2120,7 +2120,7 @@
         }
        ,"Entries":[
           {
-            "id":"2822534499453576"
+            "id":"23231108639335024"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Image"
@@ -2131,7 +2131,7 @@
             }
           }
          ,{
-            "id":"2823148429453578"
+            "id":"23231722569335026"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Initials"
@@ -2142,7 +2142,7 @@
             }
           }
          ,{
-            "id":"2823705073453578"
+            "id":"23232279213335026"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Icon"
@@ -2155,7 +2155,7 @@
         ]
       }
      ,{
-        "id":"2824399025453578"
+        "id":"23232973165335026"
        ,"Identification":{
           "Static ID":"IMAGE"
          ,"Attribute":2
@@ -2174,7 +2174,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2822012769453576)"
+          "Depending on Custom Attribute":"Type (23230586909335024)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"IMAGE"
          ,"Always Evaluate":true
@@ -2187,7 +2187,7 @@
         }
       }
      ,{
-        "id":"2824819582453578"
+        "id":"23233393722335026"
        ,"Identification":{
           "Static ID":"DESCRIPTION"
          ,"Attribute":3
@@ -2210,7 +2210,7 @@
         }
       }
      ,{
-        "id":"2825304328453578"
+        "id":"23233878468335026"
        ,"Identification":{
           "Static ID":"INITIALS"
          ,"Attribute":4
@@ -2232,7 +2232,7 @@
          ,"Escape Mode":"HTML"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2822012769453576)"
+          "Depending on Custom Attribute":"Type (23230586909335024)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"INITIALS"
          ,"Always Evaluate":true
@@ -2242,7 +2242,7 @@
         }
       }
      ,{
-        "id":"2825820772453578"
+        "id":"23234394912335026"
        ,"Identification":{
           "Static ID":"ICON"
          ,"Attribute":5
@@ -2261,7 +2261,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2822012769453576)"
+          "Depending on Custom Attribute":"Type (23230586909335024)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"ICON"
          ,"Always Evaluate":true
@@ -2271,7 +2271,7 @@
         }
       }
      ,{
-        "id":"2826371277453578"
+        "id":"23234945417335026"
        ,"Identification":{
           "Static ID":"SHAPE"
          ,"Attribute":6
@@ -2296,7 +2296,7 @@
         }
        ,"Entries":[
           {
-            "id":"2826871786453579"
+            "id":"23235445926335027"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Rounded"
@@ -2310,7 +2310,7 @@
             }
           }
          ,{
-            "id":"2827437183453579"
+            "id":"23236011323335027"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Circular"
@@ -2324,7 +2324,7 @@
             }
           }
          ,{
-            "id":"2828059727453579"
+            "id":"23236633867335027"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Square"
@@ -2338,7 +2338,7 @@
             }
           }
          ,{
-            "id":"2828627998453579"
+            "id":"23237202138335027"
            ,"Entry":{
               "Sequence":40
              ,"Display":"No Shape"
@@ -2354,7 +2354,7 @@
         ]
       }
      ,{
-        "id":"2829221907453579"
+        "id":"23237796047335027"
        ,"Identification":{
           "Static ID":"SIZE"
          ,"Attribute":7
@@ -2379,7 +2379,7 @@
         }
        ,"Entries":[
           {
-            "id":"2829790103453581"
+            "id":"23238364243335029"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Extra Extra Small"
@@ -2390,7 +2390,7 @@
             }
           }
          ,{
-            "id":"2830373459453581"
+            "id":"23238947599335029"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Extra Small"
@@ -2401,7 +2401,7 @@
             }
           }
          ,{
-            "id":"2830909748453581"
+            "id":"23239483888335029"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Small"
@@ -2412,7 +2412,7 @@
             }
           }
          ,{
-            "id":"2831589687453581"
+            "id":"23240163827335029"
            ,"Entry":{
               "Sequence":40
              ,"Display":"Medium"
@@ -2423,7 +2423,7 @@
             }
           }
          ,{
-            "id":"2832180264453581"
+            "id":"23240754404335029"
            ,"Entry":{
               "Sequence":50
              ,"Display":"Large"
@@ -2434,7 +2434,7 @@
             }
           }
          ,{
-            "id":"2832788181453582"
+            "id":"23241362321335030"
            ,"Entry":{
               "Sequence":60
              ,"Display":"Extra Large"
@@ -2445,7 +2445,7 @@
             }
           }
          ,{
-            "id":"2833344658453582"
+            "id":"23241918798335030"
            ,"Entry":{
               "Sequence":70
              ,"Display":"Extra Extra Large"
@@ -2458,7 +2458,7 @@
         ]
       }
      ,{
-        "id":"2833995903453582"
+        "id":"23242570043335030"
        ,"Identification":{
           "Static ID":"CSS_CLASSES"
          ,"Attribute":8
@@ -2483,7 +2483,7 @@
     ]
    ,"Action Positions":[
       {
-        "id":"1802859041194644020"
+        "id":"1823267615334525468"
        ,"Identification":{
           "Name":"Link"
          ,"Static ID":"LINK"
@@ -2499,7 +2499,7 @@
     ]
   }
  ,{
-    "id":"2822235817530275"
+    "id":"23230809957411723"
    ,"Identification":{
       "Name":"Badge"
      ,"Internal Name":"THEME_42$BADGE"
@@ -2539,7 +2539,7 @@
     }
    ,"Custom Attributes":[
       {
-        "id":"2836402404453590"
+        "id":"23244976544335038"
        ,"Identification":{
           "Static ID":"LABEL"
          ,"Attribute":1
@@ -2562,7 +2562,7 @@
         }
       }
      ,{
-        "id":"2836946737453592"
+        "id":"23245520877335040"
        ,"Identification":{
           "Static ID":"VALUE"
          ,"Attribute":2
@@ -2592,7 +2592,7 @@
         }
       }
      ,{
-        "id":"2837491390453592"
+        "id":"23246065530335040"
        ,"Identification":{
           "Static ID":"STATE"
          ,"Attribute":3
@@ -2618,7 +2618,7 @@
         }
       }
      ,{
-        "id":"2837909843453592"
+        "id":"23246483983335040"
        ,"Identification":{
           "Static ID":"ICON"
          ,"Attribute":4
@@ -2641,7 +2641,7 @@
         }
       }
      ,{
-        "id":"2838442615453592"
+        "id":"23247016755335040"
        ,"Identification":{
           "Static ID":"LABEL_DISPLAY"
          ,"Attribute":5
@@ -2667,7 +2667,7 @@
         }
       }
      ,{
-        "id":"2838925722453592"
+        "id":"23247499862335040"
        ,"Identification":{
           "Static ID":"STYLE"
          ,"Attribute":6
@@ -2692,7 +2692,7 @@
         }
        ,"Entries":[
           {
-            "id":"2839412018453593"
+            "id":"23247986158335041"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Subtle"
@@ -2703,7 +2703,7 @@
             }
           }
          ,{
-            "id":"2840075499453593"
+            "id":"23248649639335041"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Outline"
@@ -2716,7 +2716,7 @@
         ]
       }
      ,{
-        "id":"2840605047453593"
+        "id":"23249179187335041"
        ,"Identification":{
           "Static ID":"SHAPE"
          ,"Attribute":7
@@ -2741,7 +2741,7 @@
         }
        ,"Entries":[
           {
-            "id":"2841155908453593"
+            "id":"23249730048335041"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Rounded"
@@ -2755,7 +2755,7 @@
             }
           }
          ,{
-            "id":"2841731970453593"
+            "id":"23250306110335041"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Circular"
@@ -2769,7 +2769,7 @@
             }
           }
          ,{
-            "id":"2842311200453593"
+            "id":"23250885340335041"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Square"
@@ -2785,7 +2785,7 @@
         ]
       }
      ,{
-        "id":"2842937268453595"
+        "id":"23251511408335043"
        ,"Identification":{
           "Static ID":"SIZE"
          ,"Attribute":8
@@ -2810,7 +2810,7 @@
         }
        ,"Entries":[
           {
-            "id":"2843473308453595"
+            "id":"23252047448335043"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Small"
@@ -2821,7 +2821,7 @@
             }
           }
          ,{
-            "id":"2844037100453595"
+            "id":"23252611240335043"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Medium"
@@ -2832,7 +2832,7 @@
             }
           }
          ,{
-            "id":"2844642643453595"
+            "id":"23253216783335043"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Large"
@@ -2847,7 +2847,7 @@
     ]
    ,"Action Positions":[
       {
-        "id":"1514318384238555779"
+        "id":"1534726958378437227"
        ,"Identification":{
           "Name":"Link"
          ,"Static ID":"LINK"
@@ -2863,7 +2863,7 @@
     ]
   }
  ,{
-    "id":"2831519122530279"
+    "id":"23240093262411727"
    ,"Identification":{
       "Name":"Comments"
      ,"Internal Name":"THEME_42$COMMENTS"
@@ -2902,7 +2902,7 @@
     }
    ,"Attribute Groups":[
       {
-        "id":"1802735650616485319"
+        "id":"1823144224756366767"
        ,"Identification":{
           "Name":"Avatar"
          ,"Sequence":20
@@ -2911,7 +2911,7 @@
     ]
    ,"Custom Attributes":[
       {
-        "id":"2850896993453604"
+        "id":"23259471133335052"
        ,"Identification":{
           "Static ID":"COMMENT_TEXT"
          ,"Attribute":1
@@ -2940,7 +2940,7 @@
         }
       }
      ,{
-        "id":"2851393532453604"
+        "id":"23259967672335052"
        ,"Identification":{
           "Static ID":"USER_NAME"
          ,"Attribute":2
@@ -2969,7 +2969,7 @@
         }
       }
      ,{
-        "id":"2851897988453604"
+        "id":"23260472128335052"
        ,"Identification":{
           "Static ID":"COMMENT_DATE"
          ,"Attribute":3
@@ -2999,7 +2999,7 @@
         }
       }
      ,{
-        "id":"2852365869453604"
+        "id":"23260940009335052"
        ,"Identification":{
           "Static ID":"ATTRIBUTES"
          ,"Attribute":4
@@ -3022,7 +3022,7 @@
         }
       }
      ,{
-        "id":"2852809013453606"
+        "id":"23261383153335054"
        ,"Identification":{
           "Static ID":"AVATAR_TYPE"
          ,"Attribute":5
@@ -3030,7 +3030,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1802735650616485319)"
+          "Attribute Group":"Avatar (1823144224756366767)"
          ,"Sequence":50
         }
        ,"Settings":{
@@ -3046,7 +3046,7 @@
           "Value":"icon"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Avatar (2860003842453610)"
+          "Depending on Custom Attribute":"Display Avatar (23268577982335058)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -3059,7 +3059,7 @@
         }
        ,"Entries":[
           {
-            "id":"2853305904453606"
+            "id":"23261880044335054"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Image"
@@ -3070,7 +3070,7 @@
             }
           }
          ,{
-            "id":"2853989531453606"
+            "id":"23262563671335054"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Initials"
@@ -3081,7 +3081,7 @@
             }
           }
          ,{
-            "id":"2854584714453606"
+            "id":"23263158854335054"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Icon"
@@ -3094,7 +3094,7 @@
         ]
       }
      ,{
-        "id":"2855161206453606"
+        "id":"23263735346335054"
        ,"Identification":{
           "Static ID":"AVATAR_IMAGE"
          ,"Attribute":6
@@ -3102,7 +3102,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1802735650616485319)"
+          "Attribute Group":"Avatar (1823144224756366767)"
          ,"Sequence":60
         }
        ,"Settings":{
@@ -3114,7 +3114,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2852809013453606)"
+          "Depending on Custom Attribute":"Type (23261383153335054)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"image"
          ,"Always Evaluate":true
@@ -3124,7 +3124,7 @@
         }
       }
      ,{
-        "id":"2855667187453607"
+        "id":"23264241327335055"
        ,"Identification":{
           "Static ID":"AVATAR_DESCRIPTION"
          ,"Attribute":7
@@ -3132,7 +3132,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1802735650616485319)"
+          "Attribute Group":"Avatar (1823144224756366767)"
          ,"Sequence":95
         }
        ,"Settings":{
@@ -3144,7 +3144,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Avatar (2860003842453610)"
+          "Depending on Custom Attribute":"Display Avatar (23268577982335058)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -3154,7 +3154,7 @@
         }
       }
      ,{
-        "id":"2856105683453607"
+        "id":"23264679823335055"
        ,"Identification":{
           "Static ID":"AVATAR_INITIALS"
          ,"Attribute":8
@@ -3162,7 +3162,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1802735650616485319)"
+          "Attribute Group":"Avatar (1823144224756366767)"
          ,"Sequence":80
         }
        ,"Settings":{
@@ -3177,7 +3177,7 @@
          ,"Escape Mode":"Strip HTML"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2852809013453606)"
+          "Depending on Custom Attribute":"Type (23261383153335054)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"initials"
          ,"Always Evaluate":true
@@ -3190,7 +3190,7 @@
         }
       }
      ,{
-        "id":"2856677515453609"
+        "id":"23265251655335057"
        ,"Identification":{
           "Static ID":"AVATAR_ICON"
          ,"Attribute":9
@@ -3198,7 +3198,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1802735650616485319)"
+          "Attribute Group":"Avatar (1823144224756366767)"
          ,"Sequence":90
         }
        ,"Settings":{
@@ -3213,7 +3213,7 @@
           "Value":"fa-user"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2852809013453606)"
+          "Depending on Custom Attribute":"Type (23261383153335054)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"icon"
          ,"Always Evaluate":true
@@ -3223,7 +3223,7 @@
         }
       }
      ,{
-        "id":"2857195699453609"
+        "id":"23265769839335057"
        ,"Identification":{
           "Static ID":"AVATAR_SHAPE"
          ,"Attribute":10
@@ -3231,7 +3231,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1802735650616485319)"
+          "Attribute Group":"Avatar (1823144224756366767)"
          ,"Sequence":100
         }
        ,"Settings":{
@@ -3247,7 +3247,7 @@
           "Value":"t-Avatar--rounded"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Avatar (2860003842453610)"
+          "Depending on Custom Attribute":"Display Avatar (23268577982335058)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -3257,7 +3257,7 @@
         }
        ,"Entries":[
           {
-            "id":"2857674147453609"
+            "id":"23266248287335057"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Rounded"
@@ -3271,7 +3271,7 @@
             }
           }
          ,{
-            "id":"2858229098453609"
+            "id":"23266803238335057"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Circular"
@@ -3285,7 +3285,7 @@
             }
           }
          ,{
-            "id":"2858816990453609"
+            "id":"23267391130335057"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Square"
@@ -3299,7 +3299,7 @@
             }
           }
          ,{
-            "id":"2859480661453610"
+            "id":"23268054801335058"
            ,"Entry":{
               "Sequence":40
              ,"Display":"No Shape"
@@ -3315,7 +3315,7 @@
         ]
       }
      ,{
-        "id":"2860003842453610"
+        "id":"23268577982335058"
        ,"Identification":{
           "Static ID":"DISPLAY_AVATAR"
          ,"Attribute":11
@@ -3344,7 +3344,7 @@
         }
       }
      ,{
-        "id":"2860549225453610"
+        "id":"23269123365335058"
        ,"Identification":{
           "Static ID":"COMMENT_CLASS"
          ,"Attribute":14
@@ -3367,7 +3367,7 @@
         }
       }
      ,{
-        "id":"2861097798453610"
+        "id":"23269671938335058"
        ,"Identification":{
           "Static ID":"STYLE"
          ,"Attribute":12
@@ -3397,7 +3397,7 @@
         }
        ,"Entries":[
           {
-            "id":"2861570714453610"
+            "id":"23270144854335058"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Basic"
@@ -3408,7 +3408,7 @@
             }
           }
          ,{
-            "id":"2862172639453610"
+            "id":"23270746779335058"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Chat (Speech Bubbles)"
@@ -3421,7 +3421,7 @@
         ]
       }
      ,{
-        "id":"2862712157453612"
+        "id":"23271286297335060"
        ,"Identification":{
           "Static ID":"APPLY_THEME_COLORS"
          ,"Attribute":13
@@ -3449,7 +3449,7 @@
     ]
    ,"Action Positions":[
       {
-        "id":"1802849288986656041"
+        "id":"1823257863126537489"
        ,"Identification":{
           "Name":"Actions"
          ,"Static ID":"ACTIONS"
@@ -3463,7 +3463,7 @@
         }
       }
      ,{
-        "id":"1802904912656637920"
+        "id":"1823313486796519368"
        ,"Identification":{
           "Name":"Avatar Link"
          ,"Static ID":"AVATAR_LINK"
@@ -3477,7 +3477,7 @@
         }
       }
      ,{
-        "id":"1803057130369508691"
+        "id":"1823465704509390139"
        ,"Identification":{
           "Name":"User Name Link"
          ,"Static ID":"USER_NAME_LINK"
@@ -3493,7 +3493,7 @@
     ]
    ,"Action Templates":[
       {
-        "id":"1802849880491663498"
+        "id":"1823258454631544946"
        ,"Identification":{
           "Name":"Link"
          ,"Type":"Button"
@@ -3508,7 +3508,7 @@
     ]
   }
  ,{
-    "id":"2848331721530287"
+    "id":"23256905861411735"
    ,"Identification":{
       "Name":"Content Row"
      ,"Internal Name":"THEME_42$CONTENT_ROW"
@@ -3547,21 +3547,21 @@
     }
    ,"Attribute Groups":[
       {
-        "id":"1673212566519251801"
+        "id":"1693621140659133249"
        ,"Identification":{
           "Name":"Appearance"
          ,"Sequence":30
         }
       }
      ,{
-        "id":"1930104630249525314"
+        "id":"1950513204389406762"
        ,"Identification":{
           "Name":"Badge"
          ,"Sequence":20
         }
       }
      ,{
-        "id":"1930105185261525315"
+        "id":"1950513759401406763"
        ,"Identification":{
           "Name":"Avatar"
          ,"Sequence":10
@@ -3570,7 +3570,7 @@
     ]
    ,"Custom Attributes":[
       {
-        "id":"2868890966453621"
+        "id":"23277465106335069"
        ,"Identification":{
           "Static ID":"OVERLINE"
          ,"Attribute":1
@@ -3596,7 +3596,7 @@
         }
       }
      ,{
-        "id":"2869371253453621"
+        "id":"23277945393335069"
        ,"Identification":{
           "Static ID":"TITLE"
          ,"Attribute":2
@@ -3622,7 +3622,7 @@
         }
       }
      ,{
-        "id":"2869872059453621"
+        "id":"23278446199335069"
        ,"Identification":{
           "Static ID":"DESCRIPTION"
          ,"Attribute":3
@@ -3648,7 +3648,7 @@
         }
       }
      ,{
-        "id":"2870368396453621"
+        "id":"23278942536335069"
        ,"Identification":{
           "Static ID":"MISC"
          ,"Attribute":4
@@ -3671,7 +3671,7 @@
         }
       }
      ,{
-        "id":"2870891413453621"
+        "id":"23279465553335069"
        ,"Identification":{
           "Static ID":"DISPLAY_AVATAR"
          ,"Attribute":5
@@ -3697,7 +3697,7 @@
         }
       }
      ,{
-        "id":"2871351216453621"
+        "id":"23279925356335069"
        ,"Identification":{
           "Static ID":"DISPLAY_BADGE"
          ,"Attribute":6
@@ -3723,7 +3723,7 @@
         }
       }
      ,{
-        "id":"2871868814453623"
+        "id":"23280442954335071"
        ,"Identification":{
           "Static ID":"AVATAR_TYPE"
          ,"Attribute":7
@@ -3731,7 +3731,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1930105185261525315)"
+          "Attribute Group":"Avatar (1950513759401406763)"
          ,"Sequence":70
         }
        ,"Settings":{
@@ -3747,7 +3747,7 @@
           "Value":"icon"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Avatar (2870891413453621)"
+          "Depending on Custom Attribute":"Display Avatar (23279465553335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -3760,7 +3760,7 @@
         }
        ,"Entries":[
           {
-            "id":"2872359552453623"
+            "id":"23280933692335071"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Image"
@@ -3771,7 +3771,7 @@
             }
           }
          ,{
-            "id":"2872951250453623"
+            "id":"23281525390335071"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Initials"
@@ -3782,7 +3782,7 @@
             }
           }
          ,{
-            "id":"2873582463453623"
+            "id":"23282156603335071"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Icon"
@@ -3795,7 +3795,7 @@
         ]
       }
      ,{
-        "id":"2874139416453623"
+        "id":"23282713556335071"
        ,"Identification":{
           "Static ID":"AVATAR_IMAGE"
          ,"Attribute":8
@@ -3803,7 +3803,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1930105185261525315)"
+          "Attribute Group":"Avatar (1950513759401406763)"
          ,"Sequence":80
         }
        ,"Settings":{
@@ -3815,7 +3815,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2871868814453623)"
+          "Depending on Custom Attribute":"Type (23280442954335071)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"image"
          ,"Always Evaluate":true
@@ -3825,7 +3825,7 @@
         }
       }
      ,{
-        "id":"2874670573453625"
+        "id":"23283244713335073"
        ,"Identification":{
           "Static ID":"AVATAR_DESCRIPTION"
          ,"Attribute":9
@@ -3833,7 +3833,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1930105185261525315)"
+          "Attribute Group":"Avatar (1950513759401406763)"
          ,"Sequence":115
         }
        ,"Settings":{
@@ -3845,7 +3845,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Avatar (2870891413453621)"
+          "Depending on Custom Attribute":"Display Avatar (23279465553335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -3855,7 +3855,7 @@
         }
       }
      ,{
-        "id":"2875124558453625"
+        "id":"23283698698335073"
        ,"Identification":{
           "Static ID":"AVATAR_INITIALS"
          ,"Attribute":10
@@ -3863,7 +3863,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1930105185261525315)"
+          "Attribute Group":"Avatar (1950513759401406763)"
          ,"Sequence":100
         }
        ,"Settings":{
@@ -3878,7 +3878,7 @@
          ,"Escape Mode":"Strip HTML"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2871868814453623)"
+          "Depending on Custom Attribute":"Type (23280442954335071)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"initials"
          ,"Always Evaluate":true
@@ -3888,7 +3888,7 @@
         }
       }
      ,{
-        "id":"2875641908453625"
+        "id":"23284216048335073"
        ,"Identification":{
           "Static ID":"AVATAR_ICON"
          ,"Attribute":11
@@ -3896,7 +3896,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1930105185261525315)"
+          "Attribute Group":"Avatar (1950513759401406763)"
          ,"Sequence":110
         }
        ,"Settings":{
@@ -3911,7 +3911,7 @@
           "Value":"fa-user"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Type (2871868814453623)"
+          "Depending on Custom Attribute":"Type (23280442954335071)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"icon"
          ,"Always Evaluate":true
@@ -3921,7 +3921,7 @@
         }
       }
      ,{
-        "id":"2876196533453625"
+        "id":"23284770673335073"
        ,"Identification":{
           "Static ID":"AVATAR_SHAPE"
          ,"Attribute":12
@@ -3929,7 +3929,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1930105185261525315)"
+          "Attribute Group":"Avatar (1950513759401406763)"
          ,"Sequence":120
         }
        ,"Settings":{
@@ -3945,7 +3945,7 @@
           "Value":"t-Avatar--rounded"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Avatar (2870891413453621)"
+          "Depending on Custom Attribute":"Display Avatar (23279465553335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -3955,7 +3955,7 @@
         }
        ,"Entries":[
           {
-            "id":"2876659272453625"
+            "id":"23285233412335073"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Rounded"
@@ -3969,7 +3969,7 @@
             }
           }
          ,{
-            "id":"2877259344453626"
+            "id":"23285833484335074"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Circular"
@@ -3983,7 +3983,7 @@
             }
           }
          ,{
-            "id":"2877824192453626"
+            "id":"23286398332335074"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Square"
@@ -3997,7 +3997,7 @@
             }
           }
          ,{
-            "id":"2878474000453626"
+            "id":"23287048140335074"
            ,"Entry":{
               "Sequence":40
              ,"Display":"No Shape"
@@ -4013,7 +4013,7 @@
         ]
       }
      ,{
-        "id":"2879068216453626"
+        "id":"23287642356335074"
        ,"Identification":{
           "Static ID":"BADGE_LABEL"
          ,"Attribute":13
@@ -4021,7 +4021,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1930104630249525314)"
+          "Attribute Group":"Badge (1950513204389406762)"
          ,"Sequence":130
         }
        ,"Settings":{
@@ -4033,7 +4033,7 @@
          ,"Escape Mode":"HTML"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2871351216453621)"
+          "Depending on Custom Attribute":"Display Badge (23279925356335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -4043,7 +4043,7 @@
         }
       }
      ,{
-        "id":"2879563561453628"
+        "id":"23288137701335076"
        ,"Identification":{
           "Static ID":"BADGE_VALUE"
          ,"Attribute":14
@@ -4051,7 +4051,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1930104630249525314)"
+          "Attribute Group":"Badge (1950513204389406762)"
          ,"Sequence":140
         }
        ,"Settings":{
@@ -4070,7 +4070,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2871351216453621)"
+          "Depending on Custom Attribute":"Display Badge (23279925356335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -4080,7 +4080,7 @@
         }
       }
      ,{
-        "id":"2880037732453628"
+        "id":"23288611872335076"
        ,"Identification":{
           "Static ID":"BADGE_STATE"
          ,"Attribute":15
@@ -4088,7 +4088,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1930104630249525314)"
+          "Attribute Group":"Badge (1950513204389406762)"
          ,"Sequence":150
         }
        ,"Settings":{
@@ -4103,7 +4103,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2871351216453621)"
+          "Depending on Custom Attribute":"Display Badge (23279925356335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -4113,7 +4113,7 @@
         }
       }
      ,{
-        "id":"2880503631453628"
+        "id":"23289077771335076"
        ,"Identification":{
           "Static ID":"BADGE_ICON"
          ,"Attribute":16
@@ -4121,7 +4121,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1930104630249525314)"
+          "Attribute Group":"Badge (1950513204389406762)"
          ,"Sequence":160
         }
        ,"Settings":{
@@ -4133,7 +4133,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2871351216453621)"
+          "Depending on Custom Attribute":"Display Badge (23279925356335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -4143,7 +4143,7 @@
         }
       }
      ,{
-        "id":"2881080531453628"
+        "id":"23289654671335076"
        ,"Identification":{
           "Static ID":"BADGE_LABEL_DISPLAY"
          ,"Attribute":17
@@ -4151,7 +4151,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1930104630249525314)"
+          "Attribute Group":"Badge (1950513204389406762)"
          ,"Sequence":170
         }
        ,"Settings":{
@@ -4166,7 +4166,7 @@
           "Value":"N"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2871351216453621)"
+          "Depending on Custom Attribute":"Display Badge (23279925356335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -4176,7 +4176,7 @@
         }
       }
      ,{
-        "id":"2881561469453628"
+        "id":"23290135609335076"
        ,"Identification":{
           "Static ID":"BADGE_STYLE"
          ,"Attribute":18
@@ -4184,7 +4184,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1930104630249525314)"
+          "Attribute Group":"Badge (1950513204389406762)"
          ,"Sequence":180
         }
        ,"Settings":{
@@ -4198,7 +4198,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2871351216453621)"
+          "Depending on Custom Attribute":"Display Badge (23279925356335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -4208,7 +4208,7 @@
         }
        ,"Entries":[
           {
-            "id":"2882082424453628"
+            "id":"23290656564335076"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Subtle"
@@ -4219,7 +4219,7 @@
             }
           }
          ,{
-            "id":"2882648685453628"
+            "id":"23291222825335076"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Outline"
@@ -4232,7 +4232,7 @@
         ]
       }
      ,{
-        "id":"2883239346453628"
+        "id":"23291813486335076"
        ,"Identification":{
           "Static ID":"BADGE_SHAPE"
          ,"Attribute":19
@@ -4240,7 +4240,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1930104630249525314)"
+          "Attribute Group":"Badge (1950513204389406762)"
          ,"Sequence":190
         }
        ,"Settings":{
@@ -4254,7 +4254,7 @@
          ,"Escape Mode":"HTML"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2871351216453621)"
+          "Depending on Custom Attribute":"Display Badge (23279925356335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -4264,7 +4264,7 @@
         }
        ,"Entries":[
           {
-            "id":"2883764235453629"
+            "id":"23292338375335077"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Rounded"
@@ -4278,7 +4278,7 @@
             }
           }
          ,{
-            "id":"2884340151453629"
+            "id":"23292914291335077"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Circular"
@@ -4292,7 +4292,7 @@
             }
           }
          ,{
-            "id":"2884919807453629"
+            "id":"23293493947335077"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Square"
@@ -4306,7 +4306,7 @@
             }
           }
          ,{
-            "id":"2885532538453629"
+            "id":"23294106678335077"
            ,"Entry":{
               "Sequence":40
              ,"Display":"No Shape"
@@ -4322,7 +4322,7 @@
         ]
       }
      ,{
-        "id":"2886176940453629"
+        "id":"23294751080335077"
        ,"Identification":{
           "Static ID":"AVATAR_SIZE"
          ,"Attribute":20
@@ -4330,7 +4330,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Avatar (1930105185261525315)"
+          "Attribute Group":"Avatar (1950513759401406763)"
          ,"Sequence":200
         }
        ,"Settings":{
@@ -4344,7 +4344,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Avatar (2870891413453621)"
+          "Depending on Custom Attribute":"Display Avatar (23279465553335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -4354,7 +4354,7 @@
         }
        ,"Entries":[
           {
-            "id":"2886620672453631"
+            "id":"23295194812335079"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Extra Extra Small"
@@ -4365,7 +4365,7 @@
             }
           }
          ,{
-            "id":"2887518612453631"
+            "id":"23296092752335079"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Extra Small"
@@ -4376,7 +4376,7 @@
             }
           }
          ,{
-            "id":"2888165445453631"
+            "id":"23296739585335079"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Small"
@@ -4387,7 +4387,7 @@
             }
           }
          ,{
-            "id":"2888753315453631"
+            "id":"23297327455335079"
            ,"Entry":{
               "Sequence":40
              ,"Display":"Medium"
@@ -4398,7 +4398,7 @@
             }
           }
          ,{
-            "id":"2889377475453632"
+            "id":"23297951615335080"
            ,"Entry":{
               "Sequence":50
              ,"Display":"Large"
@@ -4409,7 +4409,7 @@
             }
           }
          ,{
-            "id":"2889953123453632"
+            "id":"23298527263335080"
            ,"Entry":{
               "Sequence":60
              ,"Display":"Extra Large"
@@ -4420,7 +4420,7 @@
             }
           }
          ,{
-            "id":"2890504547453632"
+            "id":"23299078687335080"
            ,"Entry":{
               "Sequence":70
              ,"Display":"Extra Extra Large"
@@ -4433,7 +4433,7 @@
         ]
       }
      ,{
-        "id":"2891120060453632"
+        "id":"23299694200335080"
        ,"Identification":{
           "Static ID":"BADGE_SIZE"
          ,"Attribute":21
@@ -4441,7 +4441,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1930104630249525314)"
+          "Attribute Group":"Badge (1950513204389406762)"
          ,"Sequence":210
         }
        ,"Settings":{
@@ -4455,7 +4455,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2871351216453621)"
+          "Depending on Custom Attribute":"Display Badge (23279925356335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -4465,7 +4465,7 @@
         }
        ,"Entries":[
           {
-            "id":"2891616563453632"
+            "id":"23300190703335080"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Small"
@@ -4476,7 +4476,7 @@
             }
           }
          ,{
-            "id":"2892242747453634"
+            "id":"23300816887335082"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Medium"
@@ -4487,7 +4487,7 @@
             }
           }
          ,{
-            "id":"2892824351453634"
+            "id":"23301398491335082"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Large"
@@ -4500,7 +4500,7 @@
         ]
       }
      ,{
-        "id":"2893498567453634"
+        "id":"23302072707335082"
        ,"Identification":{
           "Static ID":"BADGE_COL_WIDTH"
          ,"Attribute":22
@@ -4508,7 +4508,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1930104630249525314)"
+          "Attribute Group":"Badge (1950513204389406762)"
          ,"Sequence":220
         }
        ,"Settings":{
@@ -4525,7 +4525,7 @@
           "Value":"t-ContentRow-badge--md"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2871351216453621)"
+          "Depending on Custom Attribute":"Display Badge (23279925356335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -4535,7 +4535,7 @@
         }
        ,"Entries":[
           {
-            "id":"2893927499453634"
+            "id":"23302501639335082"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Small"
@@ -4546,7 +4546,7 @@
             }
           }
          ,{
-            "id":"2894587866453635"
+            "id":"23303162006335083"
            ,"Entry":{
               "Sequence":20
              ,"Display":"Medium"
@@ -4557,7 +4557,7 @@
             }
           }
          ,{
-            "id":"2895173310453635"
+            "id":"23303747450335083"
            ,"Entry":{
               "Sequence":30
              ,"Display":"Large"
@@ -4568,7 +4568,7 @@
             }
           }
          ,{
-            "id":"2895716993453635"
+            "id":"23304291133335083"
            ,"Entry":{
               "Sequence":40
              ,"Display":"Auto"
@@ -4581,7 +4581,7 @@
         ]
       }
      ,{
-        "id":"2896347102453635"
+        "id":"23304921242335083"
        ,"Identification":{
           "Static ID":"BADGE_POS"
          ,"Attribute":24
@@ -4589,7 +4589,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1930104630249525314)"
+          "Attribute Group":"Badge (1950513204389406762)"
          ,"Sequence":240
         }
        ,"Settings":{
@@ -4603,7 +4603,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2871351216453621)"
+          "Depending on Custom Attribute":"Display Badge (23279925356335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -4613,7 +4613,7 @@
         }
        ,"Entries":[
           {
-            "id":"2896872501453635"
+            "id":"23305446641335083"
            ,"Entry":{
               "Sequence":10
              ,"Display":"End"
@@ -4629,7 +4629,7 @@
         ]
       }
      ,{
-        "id":"2897469700453637"
+        "id":"23306043840335085"
        ,"Identification":{
           "Static ID":"BADGE_ALIGNMENT"
          ,"Attribute":25
@@ -4637,7 +4637,7 @@
          ,"Scope":"Component"
         }
        ,"Layout":{
-          "Attribute Group":"Badge (1930104630249525314)"
+          "Attribute Group":"Badge (1950513204389406762)"
          ,"Sequence":250
         }
        ,"Settings":{
@@ -4651,7 +4651,7 @@
          ,"Escape Mode":"HTML Attribute"
         }
        ,"Condition":{
-          "Depending on Custom Attribute":"Display Badge (2871351216453621)"
+          "Depending on Custom Attribute":"Display Badge (23279925356335069)"
          ,"Depending on Condition Type":"equal to"
          ,"Expression":"Y"
          ,"Always Evaluate":true
@@ -4661,7 +4661,7 @@
         }
        ,"Entries":[
           {
-            "id":"2897977623453637"
+            "id":"23306551763335085"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Center"
@@ -4675,7 +4675,7 @@
             }
           }
          ,{
-            "id":"2898569876453637"
+            "id":"23307144016335085"
            ,"Entry":{
               "Sequence":20
              ,"Display":"End"
@@ -4691,7 +4691,7 @@
         ]
       }
      ,{
-        "id":"2899173940453639"
+        "id":"23307748080335087"
        ,"Identification":{
           "Static ID":"APPLY_THEME_COLORS"
          ,"Attribute":23
@@ -4699,7 +4699,7 @@
          ,"Scope":"Report"
         }
        ,"Layout":{
-          "Attribute Group":"Appearance (1673212566519251801)"
+          "Attribute Group":"Appearance (1693621140659133249)"
          ,"Sequence":230
         }
        ,"Settings":{
@@ -4718,7 +4718,7 @@
         }
       }
      ,{
-        "id":"2899620629453639"
+        "id":"23308194769335087"
        ,"Identification":{
           "Static ID":"STYLE"
          ,"Attribute":27
@@ -4726,7 +4726,7 @@
          ,"Scope":"Report"
         }
        ,"Layout":{
-          "Attribute Group":"Appearance (1673212566519251801)"
+          "Attribute Group":"Appearance (1693621140659133249)"
          ,"Sequence":270
         }
        ,"Settings":{
@@ -4741,7 +4741,7 @@
         }
        ,"Entries":[
           {
-            "id":"2900162364453639"
+            "id":"23308736504335087"
            ,"Entry":{
               "Sequence":10
              ,"Display":"Compact"
@@ -4754,7 +4754,7 @@
         ]
       }
      ,{
-        "id":"2900777903453639"
+        "id":"23309352043335087"
        ,"Identification":{
           "Static ID":"HIDE_BORDERS"
          ,"Attribute":28
@@ -4762,7 +4762,7 @@
          ,"Scope":"Report"
         }
        ,"Layout":{
-          "Attribute Group":"Appearance (1673212566519251801)"
+          "Attribute Group":"Appearance (1693621140659133249)"
          ,"Sequence":280
         }
        ,"Settings":{
@@ -4778,7 +4778,7 @@
         }
       }
      ,{
-        "id":"2901245785453640"
+        "id":"23309819925335088"
        ,"Identification":{
           "Static ID":"REMOVE_PADDING"
          ,"Attribute":30
@@ -4786,7 +4786,7 @@
          ,"Scope":"Report"
         }
        ,"Layout":{
-          "Attribute Group":"Appearance (1673212566519251801)"
+          "Attribute Group":"Appearance (1693621140659133249)"
          ,"Sequence":300
         }
        ,"Settings":{
@@ -4804,7 +4804,7 @@
     ]
    ,"Action Positions":[
       {
-        "id":"1514367560581588499"
+        "id":"1534776134721469947"
        ,"Identification":{
           "Name":"Badge Link"
          ,"Static ID":"BADGE_LINK"
@@ -4818,7 +4818,7 @@
         }
       }
      ,{
-        "id":"1797706609145016863"
+        "id":"1818115183284898311"
        ,"Identification":{
           "Name":"Title Link"
          ,"Static ID":"TITLE_LINK"
@@ -4832,7 +4832,7 @@
         }
       }
      ,{
-        "id":"1798385909875099967"
+        "id":"1818794484014981415"
        ,"Identification":{
           "Name":"Full Row Link"
          ,"Static ID":"FULL_ROW_LINK"
@@ -4846,7 +4846,7 @@
         }
       }
      ,{
-        "id":"1811298302752378610"
+        "id":"1831706876892260058"
        ,"Identification":{
           "Name":"Avatar Link"
          ,"Static ID":"AVATAR_LINK"
@@ -4860,7 +4860,7 @@
         }
       }
      ,{
-        "id":"1811299636142392467"
+        "id":"1831708210282273915"
        ,"Identification":{
           "Name":"Primary Actions"
          ,"Static ID":"PRIMARY_ACTIONS"
@@ -4876,7 +4876,7 @@
     ]
    ,"Action Templates":[
       {
-        "id":"1811300237819423596"
+        "id":"1831708811959305044"
        ,"Identification":{
           "Name":"Button"
          ,"Type":"Button"
@@ -4889,7 +4889,7 @@
         }
       }
      ,{
-        "id":"1811301497339427744"
+        "id":"1831710071479309192"
        ,"Identification":{
           "Name":"Menu"
          ,"Type":"Menu"

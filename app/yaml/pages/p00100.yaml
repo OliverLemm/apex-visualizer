@@ -37,7 +37,7 @@ server-cache:
 
 regions: 
 - # ====== Region: Characters of JavaScript Code per Page ======
-  id: 293281874355929169
+  id: 313690448495810617
   identification: 
     title: Characters of JavaScript Code per Page
     type: Chart
@@ -65,7 +65,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 452458863643466246
+    template: Standard # 472867437783347694
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -89,10 +89,10 @@ regions:
     customizable: Not Customizable By End Users
 
   configuration: 
-    build-option: deactivated # 291318289212148547
+    build-option: deactivated # 311726863352029995
 
   attributes: 
-    id: 293281967558929170
+    id: 313690541698810618
     chart: 
       type: Bar
 
@@ -130,7 +130,7 @@ regions:
 
     series: 
     - # ====== Series: JS Code Overall =============================
-      id: 293282008254929171
+      id: 313690582394810619
       identification: 
         name: JS Code Overall
 
@@ -155,7 +155,7 @@ regions:
 
     axes: 
     - # ====== Axis: x =============================================
-      id: 293282193825929172
+      id: 313690767965810620
       identification: 
         name: x
         show-axis: true
@@ -177,7 +177,7 @@ regions:
         position: Outside
 
     - # ====== Axis: y =============================================
-      id: 293282248369929173
+      id: 313690822509810621
       identification: 
         name: y
         show-axis: true
@@ -200,7 +200,7 @@ regions:
         show: true
 
 - # ====== Region: JavaScript in Page ==========================
-  id: 293282571329929176
+  id: 313691145469810624
   identification: 
     title: JavaScript in Page
     type: Chart
@@ -239,7 +239,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 452458863643466246
+    template: Standard # 472867437783347694
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -263,7 +263,7 @@ regions:
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 293282657022929177
+    id: 313691231162810625
     chart: 
       type: Bar
 
@@ -304,7 +304,7 @@ regions:
 
     series: 
     - # ====== Series: JavaScript Code =============================
-      id: 293282728107929178
+      id: 313691302247810626
       identification: 
         name: JavaScript Code
 
@@ -334,7 +334,7 @@ regions:
 
     axes: 
     - # ====== Axis: x =============================================
-      id: 293282893849929179
+      id: 313691467989810627
       identification: 
         name: x
         show-axis: true
@@ -356,7 +356,7 @@ regions:
         position: Outside
 
     - # ====== Axis: y =============================================
-      id: 293282980181929180
+      id: 313691554321810628
       identification: 
         name: y
         show-axis: true
@@ -379,7 +379,7 @@ regions:
         show: true
 
 - # ====== Region: Characters of JavaScript Code per Page ======
-  id: 293416813132888465
+  id: 313825387272769913
   identification: 
     title: Characters of JavaScript Code per Page
     type: Chart
@@ -415,7 +415,7 @@ regions:
     column-span: 9
 
   appearance: 
-    template: Standard # 452458863643466246
+    template: Standard # 472867437783347694
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -439,7 +439,7 @@ regions:
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 141245744867649607
+    id: 161654319007531055
     chart: 
       type: Bubble
 
@@ -473,7 +473,7 @@ regions:
 
     series: 
     - # ====== Series: Series 1 ====================================
-      id: 141245870809649608
+      id: 161654444949531056
       identification: 
         name: Series 1
 
@@ -508,7 +508,7 @@ regions:
 
     axes: 
     - # ====== Axis: x =============================================
-      id: 141245904832649609
+      id: 161654478972531057
       identification: 
         name: x
         show-axis: true
@@ -532,7 +532,7 @@ regions:
         position: Outside
 
     - # ====== Axis: y =============================================
-      id: 141246004743649610
+      id: 161654578883531058
       identification: 
         name: y
         show-axis: true
@@ -559,7 +559,7 @@ regions:
         show: true
 
 - # ====== Region: Place of JavaScript =========================
-  id: 293417040775888467
+  id: 313825614915769915
   identification: 
     title: Place of JavaScript
     type: Chart
@@ -594,7 +594,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 452458863643466246
+    template: Standard # 472867437783347694
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -618,7 +618,7 @@ regions:
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 293417138617888468
+    id: 313825712757769916
     chart: 
       type: Donut
 
@@ -653,7 +653,7 @@ regions:
 
     series: 
     - # ====== Series: New =========================================
-      id: 293417237204888469
+      id: 313825811344769917
       identification: 
         name: New
 
@@ -676,7 +676,7 @@ regions:
 
 page-items: 
 - # ====== Page Item: P100_COMPONENT_TYPE ======================
-  id: 293417532690888472
+  id: 313826106830769920
   identification: 
     name: P100_COMPONENT_TYPE
     type: Select List
@@ -691,7 +691,7 @@ page-items:
 
   layout: 
     sequence: 40
-    region: Filter # 452496424516540365
+    region: Filter # 472904998656421813
     position: BODY
     alignment: Left
     start-new-layout: false
@@ -702,7 +702,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Optional # 452481165926466293
+    template: Optional # 472889740066347741
     template-options: 
     - '#DEFAULT#'
     height: 1
@@ -751,7 +751,7 @@ page-items:
 
 dynamic-actions: 
 - # ====== Dynamic Action: click refresh button - refresh region
-  id: 10188697440098612
+  id: 30597271579980060
   identification: 
     name: click refresh button - refresh regions
 
@@ -763,71 +763,71 @@ dynamic-actions:
   when: 
     event: EVENT.EVENT.BROWSER.CLICK
     selection-type: Button
-    button: Refresh # 45068108221137631
+    button: Refresh # 65476682361019079
 
   actions: 
   - # ====== Action: Refresh =====================================
-    id: 10188789871098613
+    id: 30597364010980061
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Characters of JavaScript Code per Page # 293281874355929169
+      region: Characters of JavaScript Code per Page # 313690448495810617
 
     execution: 
       sequence: 10
-      event: click refresh button - refresh regions # 10188697440098612
+      event: click refresh button - refresh regions # 30597271579980060
       fire-when-event-result-is: True
       fire-on-initialization: false
 
   - # ====== Action: Refresh =====================================
-    id: 10188809607098614
+    id: 30597383746980062
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Characters of JavaScript Code per Page # 293416813132888465
+      region: Characters of JavaScript Code per Page # 313825387272769913
 
     execution: 
       sequence: 20
-      event: click refresh button - refresh regions # 10188697440098612
+      event: click refresh button - refresh regions # 30597271579980060
       fire-when-event-result-is: True
       fire-on-initialization: false
 
   - # ====== Action: Refresh =====================================
-    id: 10188966711098615
+    id: 30597540850980063
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: JavaScript in Page # 293282571329929176
+      region: JavaScript in Page # 313691145469810624
 
     execution: 
       sequence: 30
-      event: click refresh button - refresh regions # 10188697440098612
+      event: click refresh button - refresh regions # 30597271579980060
       fire-when-event-result-is: True
       fire-on-initialization: false
 
   - # ====== Action: Refresh =====================================
-    id: 10189035942098616
+    id: 30597610081980064
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Place of JavaScript # 293417040775888467
+      region: Place of JavaScript # 313825614915769915
 
     execution: 
       sequence: 40
-      event: click refresh button - refresh regions # 10188697440098612
+      event: click refresh button - refresh regions # 30597271579980060
       fire-when-event-result-is: True
       fire-on-initialization: false
 
 - # ====== Dynamic Action: change P0_ITEMS =====================
-  id: 293282369686929174
+  id: 313690943826810622
   identification: 
     name: change P0_ITEMS
 
@@ -846,52 +846,52 @@ dynamic-actions:
 
   actions: 
   - # ====== Action: Refresh =====================================
-    id: 293282500350929175
+    id: 313691074490810623
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Characters of JavaScript Code per Page # 293416813132888465
+      region: Characters of JavaScript Code per Page # 313825387272769913
 
     execution: 
       sequence: 10
-      event: change P0_ITEMS # 293282369686929174
+      event: change P0_ITEMS # 313690943826810622
       fire-when-event-result-is: True
       fire-on-initialization: false
 
   - # ====== Action: Refresh =====================================
-    id: 293283041326929181
+    id: 313691615466810629
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: Place of JavaScript # 293417040775888467
+      region: Place of JavaScript # 313825614915769915
 
     execution: 
       sequence: 20
-      event: change P0_ITEMS # 293282369686929174
+      event: change P0_ITEMS # 313690943826810622
       fire-when-event-result-is: True
       fire-on-initialization: false
 
   - # ====== Action: Refresh =====================================
-    id: 293416976852888466
+    id: 313825550992769914
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: JavaScript in Page # 293282571329929176
+      region: JavaScript in Page # 313691145469810624
 
     execution: 
       sequence: 30
-      event: change P0_ITEMS # 293282369686929174
+      event: change P0_ITEMS # 313690943826810622
       fire-when-event-result-is: True
       fire-on-initialization: false
 
 - # ====== Dynamic Action: change Component Type ===============
-  id: 293417694705888473
+  id: 313826268845769921
   identification: 
     name: change Component Type
 
@@ -908,17 +908,17 @@ dynamic-actions:
 
   actions: 
   - # ====== Action: Refresh =====================================
-    id: 293417705428888474
+    id: 313826279568769922
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: JavaScript in Page # 293282571329929176
+      region: JavaScript in Page # 313691145469810624
 
     execution: 
       sequence: 10
-      event: change Component Type # 293417694705888473
+      event: change Component Type # 313826268845769921
       fire-when-event-result-is: True
       fire-on-initialization: false
 

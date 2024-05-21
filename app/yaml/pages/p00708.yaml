@@ -38,14 +38,14 @@ server-cache:
 
 regions: 
 - # ====== Region: 5.1.3 Custom Page Region Templates with Dupli
-  id: 16423627135017307
+  id: 36832201274898755
   identification: 
     title: 5.1.3 Custom Page Region Templates with Duplicated Positions Deprecated
     type: Static Content
 
   layout: 
     sequence: 40
-    parent-region: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 46162457107404034
+    parent-region: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 66571031247285482
     position: BODY
     start-new-layout: false
     start-new-row: true
@@ -54,7 +54,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 452454481275466240
+    template: Collapsible # 472863055415347688
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -87,7 +87,7 @@ regions:
       expand-shortcuts: false
 
 - # ====== Region: 5.1.4 Legacy Substitution Strings Deprecated 
-  id: 16423715186017308
+  id: 36832289325898756
   identification: 
     title: '5.1.4 Legacy Substitution Strings Deprecated '
     type: Classic Report
@@ -108,7 +108,7 @@ regions:
 
   layout: 
     sequence: 50
-    parent-region: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 46162457107404034
+    parent-region: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 66571031247285482
     position: BODY
     start-new-layout: false
     start-new-row: true
@@ -117,7 +117,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 452454481275466240
+    template: Collapsible # 472863055415347688
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -157,7 +157,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 452468948793466267
+      template: Standard # 472877522933347715
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -192,7 +192,7 @@ regions:
 
   columns: 
   - # ====== Column: PAGE_ID =====================================
-    id: 16424655191017317
+    id: 36833229330898765
     identification: 
       column-name: PAGE_ID
       type: Plain Text
@@ -226,7 +226,7 @@ regions:
       escape-special-characters: true
 
   - # ====== Column: PAGE_NAME ===================================
-    id: 16424793872017318
+    id: 36833368011898766
     identification: 
       column-name: PAGE_NAME
       type: Plain Text
@@ -260,7 +260,7 @@ regions:
       escape-special-characters: true
 
   - # ====== Column: COMPONENT_NAME ==============================
-    id: 16424814835017319
+    id: 36833388974898767
     identification: 
       column-name: COMPONENT_NAME
       type: Plain Text
@@ -294,7 +294,7 @@ regions:
       escape-special-characters: true
 
   - # ====== Column: COMPONENT_TYPE ==============================
-    id: 16424961799017320
+    id: 36833535938898768
     identification: 
       column-name: COMPONENT_TYPE
       type: Plain Text
@@ -326,7 +326,7 @@ regions:
       escape-special-characters: true
 
   - # ====== Column: CODE_VC2 ====================================
-    id: 16425062571017321
+    id: 36833636710898769
     identification: 
       column-name: CODE_VC2
       type: Plain Text
@@ -361,14 +361,14 @@ regions:
       escape-special-characters: true
 
 - # ====== Region: 7.1.1 Component View Tab Desupported ========
-  id: 16426232176017333
+  id: 36834806315898781
   identification: 
     title: 7.1.1 Component View Tab Desupported
     type: Static Content
 
   layout: 
     sequence: 40
-    parent-region: '7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/21.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 46162163500404031
+    parent-region: '7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/21.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 66570737640285479
     position: BODY
     start-new-layout: false
     start-new-row: true
@@ -377,7 +377,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 452458863643466246
+    template: Standard # 472867437783347694
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -408,13 +408,13 @@ regions:
       expand-shortcuts: false
 
 - # ====== Region: APEX 21.2 ===================================
-  id: 43370459331782525
+  id: 63779033471663973
   identification: 
     title: APEX 21.2
     type: Breadcrumb
 
   source: 
-    breadcrumb: ' Breadcrumb' # 452492814882466360
+    breadcrumb: ' Breadcrumb' # 472901389022347808
 
   layout: 
     sequence: 30
@@ -427,7 +427,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Hero # 452456691272466243
+    template: Hero # 472865265412347691
     template-options: 
     - '#DEFAULT#'
     icon: fa-wrench
@@ -449,12 +449,12 @@ regions:
 
   attributes: 
     appearance: 
-      breadcrumb-template: Breadcrumb # 452482206618466299
+      breadcrumb-template: Breadcrumb # 472890780758347747
       template-options: 
       - '#DEFAULT#'
 
 - # ====== Region: 7.1 Desupported Features -  <a href="https://
-  id: 46162163500404031
+  id: 66570737640285479
   identification: 
     title: '7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/21.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
     type: Static Content
@@ -470,7 +470,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 452458863643466246
+    template: Standard # 472867437783347694
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -496,7 +496,7 @@ regions:
       expand-shortcuts: false
 
 - # ====== Region: 5.1 Deprecated Features - <a href="https://do
-  id: 46162457107404034
+  id: 66571031247285482
   identification: 
     title: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>'
     type: Static Content
@@ -512,7 +512,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 452458863643466246
+    template: Standard # 472867437783347694
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -538,7 +538,7 @@ regions:
       expand-shortcuts: false
 
 - # ====== Region: 5.1.1 Deprecated Page Positions  ============
-  id: 46162660437404036
+  id: 66571234577285484
   identification: 
     title: '5.1.1 Deprecated Page Positions '
     type: Classic Report
@@ -556,7 +556,7 @@ regions:
 
   layout: 
     sequence: 20
-    parent-region: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 46162457107404034
+    parent-region: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 66571031247285482
     position: BODY
     start-new-layout: false
     start-new-row: true
@@ -565,7 +565,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 452454481275466240
+    template: Collapsible # 472863055415347688
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -596,7 +596,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 452468948793466267
+      template: Standard # 472877522933347715
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -631,7 +631,7 @@ regions:
 
   columns: 
   - # ====== Column: PAGE_ID =====================================
-    id: 16425222427017323
+    id: 36833796566898771
     identification: 
       column-name: PAGE_ID
       type: Plain Text
@@ -665,7 +665,7 @@ regions:
       escape-special-characters: true
 
   - # ====== Column: PAGE_NAME ===================================
-    id: 16425302756017324
+    id: 36833876895898772
     identification: 
       column-name: PAGE_NAME
       type: Plain Text
@@ -697,7 +697,7 @@ regions:
       escape-special-characters: true
 
   - # ====== Column: REGION_NAME =================================
-    id: 16425401994017325
+    id: 36833976133898773
     identification: 
       column-name: REGION_NAME
       type: Plain Text
@@ -731,7 +731,7 @@ regions:
       escape-special-characters: true
 
   - # ====== Column: DISPLAY_POSITION_CODE =======================
-    id: 16425591413017326
+    id: 36834165552898774
     identification: 
       column-name: DISPLAY_POSITION_CODE
       type: Plain Text
@@ -763,7 +763,7 @@ regions:
       escape-special-characters: true
 
 - # ====== Region: 5.1.2 Deprecated Region Positions ===========
-  id: 46163652145404046
+  id: 66572226285285494
   identification: 
     title: 5.1.2 Deprecated Region Positions
     type: Classic Report
@@ -789,7 +789,7 @@ regions:
 
   layout: 
     sequence: 30
-    parent-region: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 46162457107404034
+    parent-region: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 66571031247285482
     position: BODY
     start-new-layout: false
     start-new-row: true
@@ -798,7 +798,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 452454481275466240
+    template: Collapsible # 472863055415347688
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -832,7 +832,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 452468948793466267
+      template: Standard # 472877522933347715
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -867,7 +867,7 @@ regions:
 
   columns: 
   - # ====== Column: PAGE_ID =====================================
-    id: 16425739686017328
+    id: 36834313825898776
     identification: 
       column-name: PAGE_ID
       type: Plain Text
@@ -901,7 +901,7 @@ regions:
       escape-special-characters: true
 
   - # ====== Column: PAGE_NAME ===================================
-    id: 16425859825017329
+    id: 36834433964898777
     identification: 
       column-name: PAGE_NAME
       type: Plain Text
@@ -933,7 +933,7 @@ regions:
       escape-special-characters: true
 
   - # ====== Column: REGION ======================================
-    id: 16425915905017330
+    id: 36834490044898778
     identification: 
       column-name: REGION
       type: Plain Text
@@ -967,7 +967,7 @@ regions:
       escape-special-characters: true
 
   - # ====== Column: BUTTON_NAME =================================
-    id: 16426089598017331
+    id: 36834663737898779
     identification: 
       column-name: BUTTON_NAME
       type: Plain Text
@@ -1001,7 +1001,7 @@ regions:
       escape-special-characters: true
 
   - # ====== Column: LABEL =======================================
-    id: 16426102305017332
+    id: 36834676444898780
     identification: 
       column-name: LABEL
       type: Plain Text
@@ -1033,7 +1033,7 @@ regions:
       escape-special-characters: true
 
   - # ====== Column: DISPLAY_POSITION ============================
-    id: 22469907806353905
+    id: 42878481946235353
     identification: 
       column-name: DISPLAY_POSITION
       type: Plain Text
@@ -1066,7 +1066,7 @@ regions:
 
 dynamic-actions: 
 - # ====== Dynamic Action: click refresh - refresh regions =====
-  id: 22469509205353901
+  id: 42878083345235349
   identification: 
     name: click refresh - refresh regions
 
@@ -1078,56 +1078,56 @@ dynamic-actions:
   when: 
     event: EVENT.EVENT.BROWSER.CLICK
     selection-type: Button
-    button: Refresh # 45068108221137631
+    button: Refresh # 65476682361019079
 
   actions: 
   - # ====== Action: Refresh =====================================
-    id: 22469678000353902
+    id: 42878252140235350
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: '5.1.1 Deprecated Page Positions ' # 46162660437404036
+      region: '5.1.1 Deprecated Page Positions ' # 66571234577285484
 
     execution: 
       sequence: 10
-      event: click refresh - refresh regions # 22469509205353901
+      event: click refresh - refresh regions # 42878083345235349
       fire-when-event-result-is: True
       fire-on-initialization: false
 
   - # ====== Action: Refresh =====================================
-    id: 22469767185353903
+    id: 42878341325235351
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: 5.1.2 Deprecated Region Positions # 46163652145404046
+      region: 5.1.2 Deprecated Region Positions # 66572226285285494
 
     execution: 
       sequence: 20
-      event: click refresh - refresh regions # 22469509205353901
+      event: click refresh - refresh regions # 42878083345235349
       fire-when-event-result-is: True
       fire-on-initialization: false
 
   - # ====== Action: Refresh =====================================
-    id: 22469886537353904
+    id: 42878460677235352
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: '5.1.4 Legacy Substitution Strings Deprecated ' # 16423715186017308
+      region: '5.1.4 Legacy Substitution Strings Deprecated ' # 36832289325898756
 
     execution: 
       sequence: 30
-      event: click refresh - refresh regions # 22469509205353901
+      event: click refresh - refresh regions # 42878083345235349
       fire-when-event-result-is: True
       fire-on-initialization: false
 
 - # ====== Dynamic Action: change P0_APP_ID - refresh regions ==
-  id: 46163222869404042
+  id: 66571797009285490
   identification: 
     name: change P0_APP_ID - refresh regions
 
@@ -1144,47 +1144,47 @@ dynamic-actions:
 
   actions: 
   - # ====== Action: Refresh =====================================
-    id: 16423508812017306
+    id: 36832082951898754
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: 5.1.2 Deprecated Region Positions # 46163652145404046
+      region: 5.1.2 Deprecated Region Positions # 66572226285285494
 
     execution: 
       sequence: 20
-      event: change P0_APP_ID - refresh regions # 46163222869404042
+      event: change P0_APP_ID - refresh regions # 66571797009285490
       fire-when-event-result-is: True
       fire-on-initialization: false
 
   - # ====== Action: Refresh =====================================
-    id: 16424581325017316
+    id: 36833155464898764
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: '5.1.4 Legacy Substitution Strings Deprecated ' # 16423715186017308
+      region: '5.1.4 Legacy Substitution Strings Deprecated ' # 36832289325898756
 
     execution: 
       sequence: 30
-      event: change P0_APP_ID - refresh regions # 46163222869404042
+      event: change P0_APP_ID - refresh regions # 66571797009285490
       fire-when-event-result-is: True
       fire-on-initialization: false
 
   - # ====== Action: Refresh =====================================
-    id: 46163327810404043
+    id: 66571901950285491
     identification: 
       action: Refresh
 
     affected-elements: 
       selection-type: Region
-      region: '5.1.1 Deprecated Page Positions ' # 46162660437404036
+      region: '5.1.1 Deprecated Page Positions ' # 66571234577285484
 
     execution: 
       sequence: 10
-      event: change P0_APP_ID - refresh regions # 46163222869404042
+      event: change P0_APP_ID - refresh regions # 66571797009285490
       fire-when-event-result-is: True
       fire-on-initialization: false
 

@@ -38,7 +38,7 @@
   }
  ,"Regions":[
     {
-      "id":"38826465420719741"
+      "id":"59235039560601189"
      ,"Identification":{
         "Title":"7.1.11 apex.navigation.dialog.fireCloseHandler function is Desupported"
        ,"Type":"Classic Report"
@@ -53,7 +53,7 @@
       }
      ,"Layout":{
         "Sequence":50
-       ,"Parent Region":"7.1 Desupported Features -  \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/21.1\/htmrn\/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ERelease Notes\u003C\/a\u003E (87704971292745113)"
+       ,"Parent Region":"7.1 Desupported Features -  \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/21.1\/htmrn\/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ERelease Notes\u003C\/a\u003E (108113545432626561)"
        ,"Position":"BODY"
        ,"Start New Layout":false
        ,"Start New Row":true
@@ -62,7 +62,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Collapsible (452454481275466240)"
+        "Template":"Collapsible (472863055415347688)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"is-expanded"
@@ -91,7 +91,7 @@
         }
        ,"Appearance":{
           "Template Type":"Theme"
-         ,"Template":"Standard (452468948793466267)"
+         ,"Template":"Standard (472877522933347715)"
          ,"Template Options":[
             "#DEFAULT#"
            ,"t-Report--altRowsDefault"
@@ -128,7 +128,7 @@
       }
      ,"Columns":[
         {
-          "id":"38826525553719742"
+          "id":"59235099693601190"
          ,"Identification":{
             "Column Name":"PAGE_ID"
            ,"Type":"Plain Text"
@@ -161,7 +161,7 @@
           }
         }
        ,{
-          "id":"38826621397719743"
+          "id":"59235195537601191"
          ,"Identification":{
             "Column Name":"PAGE_NAME"
            ,"Type":"Plain Text"
@@ -194,7 +194,7 @@
           }
         }
        ,{
-          "id":"38826793953719744"
+          "id":"59235368093601192"
          ,"Identification":{
             "Column Name":"COMPONENT_NAME"
            ,"Type":"Plain Text"
@@ -227,7 +227,7 @@
           }
         }
        ,{
-          "id":"38826871715719745"
+          "id":"59235445855601193"
          ,"Identification":{
             "Column Name":"COMPONENT_TYPE"
            ,"Type":"Plain Text"
@@ -260,7 +260,7 @@
           }
         }
        ,{
-          "id":"38826956611719746"
+          "id":"59235530751601194"
          ,"Identification":{
             "Column Name":"JS_CODE_VC2"
            ,"Type":"Plain Text"
@@ -295,7 +295,7 @@
       ]
     }
    ,{
-      "id":"38827190612719748"
+      "id":"59235764752601196"
      ,"Identification":{
         "Title":"5.1 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/21.1\/htmrn\/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_blank\"\u003ERelease Notes\u003C\/a\u003E"
        ,"Type":"Static Content"
@@ -311,7 +311,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -340,7 +340,7 @@
       }
     }
    ,{
-      "id":"38827326218719750"
+      "id":"59235900358601198"
      ,"Identification":{
         "Title":"5.1.3 Date Picker (jQuery) Deprecated"
        ,"Type":"Classic Report"
@@ -355,7 +355,7 @@
       }
      ,"Layout":{
         "Sequence":10
-       ,"Parent Region":"5.1 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/21.1\/htmrn\/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_blank\"\u003ERelease Notes\u003C\/a\u003E (38827190612719748)"
+       ,"Parent Region":"5.1 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/21.1\/htmrn\/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_blank\"\u003ERelease Notes\u003C\/a\u003E (59235764752601196)"
        ,"Position":"SUB_REGIONS"
        ,"Start New Layout":false
        ,"Start New Row":true
@@ -364,7 +364,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Collapsible (452454481275466240)"
+        "Template":"Collapsible (472863055415347688)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"is-expanded"
@@ -393,7 +393,7 @@
         }
        ,"Appearance":{
           "Template Type":"Theme"
-         ,"Template":"Standard (452468948793466267)"
+         ,"Template":"Standard (472877522933347715)"
          ,"Template Options":[
             "#DEFAULT#"
            ,"t-Report--altRowsDefault"
@@ -430,7 +430,7 @@
       }
      ,"Columns":[
         {
-          "id":"41551207573456901"
+          "id":"61959781713338349"
          ,"Identification":{
             "Column Name":"PAGE_ID"
            ,"Type":"Plain Text"
@@ -463,7 +463,7 @@
           }
         }
        ,{
-          "id":"41551395204456902"
+          "id":"61959969344338350"
          ,"Identification":{
             "Column Name":"PAGE_NAME"
            ,"Type":"Plain Text"
@@ -496,7 +496,7 @@
           }
         }
        ,{
-          "id":"41551434569456903"
+          "id":"61960008709338351"
          ,"Identification":{
             "Column Name":"ITEM_NAME"
            ,"Type":"Plain Text"
@@ -529,7 +529,7 @@
           }
         }
        ,{
-          "id":"41551500885456904"
+          "id":"61960075025338352"
          ,"Identification":{
             "Column Name":"LABEL"
            ,"Type":"Plain Text"
@@ -564,13 +564,13 @@
       ]
     }
    ,{
-      "id":"43370307523782524"
+      "id":"63778881663663972"
      ,"Identification":{
         "Title":"APEX 21.1"
        ,"Type":"Breadcrumb"
       }
      ,"Source":{
-        "Breadcrumb":" Breadcrumb (452492814882466360)"
+        "Breadcrumb":" Breadcrumb (472901389022347808)"
       }
      ,"Layout":{
         "Sequence":30
@@ -583,7 +583,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Hero (452456691272466243)"
+        "Template":"Hero (472865265412347691)"
        ,"Template Options":[
           "#DEFAULT#"
         ]
@@ -606,7 +606,7 @@
       }
      ,"Attributes":{
         "Appearance":{
-          "Breadcrumb Template":"Breadcrumb (452482206618466299)"
+          "Breadcrumb Template":"Breadcrumb (472890780758347747)"
          ,"Template Options":[
             "#DEFAULT#"
           ]
@@ -614,7 +614,7 @@
       }
     }
    ,{
-      "id":"43370559179782526"
+      "id":"63779133319663974"
      ,"Identification":{
         "Title":"5.1.4 Based On - Output of PL\/SQL Code attribute Deprecated "
        ,"Type":"Static Content"
@@ -624,7 +624,7 @@
       }
      ,"Layout":{
         "Sequence":20
-       ,"Parent Region":"5.1 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/21.1\/htmrn\/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_blank\"\u003ERelease Notes\u003C\/a\u003E (38827190612719748)"
+       ,"Parent Region":"5.1 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/21.1\/htmrn\/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_blank\"\u003ERelease Notes\u003C\/a\u003E (59235764752601196)"
        ,"Position":"SUB_REGIONS"
        ,"Start New Layout":false
        ,"Start New Row":true
@@ -633,7 +633,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Collapsible (452454481275466240)"
+        "Template":"Collapsible (472863055415347688)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"is-expanded"
@@ -663,7 +663,7 @@
       }
     }
    ,{
-      "id":"57969039968358415"
+      "id":"78377614108239863"
      ,"Identification":{
         "Title":"7.1.9 afterModify is Desupported"
        ,"Type":"Classic Report"
@@ -678,7 +678,7 @@
       }
      ,"Layout":{
         "Sequence":40
-       ,"Parent Region":"7.1 Desupported Features -  \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/21.1\/htmrn\/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ERelease Notes\u003C\/a\u003E (87704971292745113)"
+       ,"Parent Region":"7.1 Desupported Features -  \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/21.1\/htmrn\/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ERelease Notes\u003C\/a\u003E (108113545432626561)"
        ,"Position":"BODY"
        ,"Start New Layout":false
        ,"Start New Row":true
@@ -687,7 +687,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Collapsible (452454481275466240)"
+        "Template":"Collapsible (472863055415347688)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"is-expanded"
@@ -716,7 +716,7 @@
         }
        ,"Appearance":{
           "Template Type":"Theme"
-         ,"Template":"Standard (452468948793466267)"
+         ,"Template":"Standard (472877522933347715)"
          ,"Template Options":[
             "#DEFAULT#"
            ,"t-Report--altRowsDefault"
@@ -753,7 +753,7 @@
       }
      ,"Columns":[
         {
-          "id":"38825709571719734"
+          "id":"59234283711601182"
          ,"Identification":{
             "Column Name":"PAGE_ID"
            ,"Type":"Plain Text"
@@ -786,7 +786,7 @@
           }
         }
        ,{
-          "id":"38825875193719735"
+          "id":"59234449333601183"
          ,"Identification":{
             "Column Name":"PAGE_NAME"
            ,"Type":"Plain Text"
@@ -819,7 +819,7 @@
           }
         }
        ,{
-          "id":"38825996962719736"
+          "id":"59234571102601184"
          ,"Identification":{
             "Column Name":"COMPONENT_NAME"
            ,"Type":"Plain Text"
@@ -852,7 +852,7 @@
           }
         }
        ,{
-          "id":"38826012760719737"
+          "id":"59234586900601185"
          ,"Identification":{
             "Column Name":"COMPONENT_TYPE"
            ,"Type":"Plain Text"
@@ -885,7 +885,7 @@
           }
         }
        ,{
-          "id":"38826184608719738"
+          "id":"59234758748601186"
          ,"Identification":{
             "Column Name":"JS_CODE_VC2"
            ,"Type":"Plain Text"
@@ -920,7 +920,7 @@
       ]
     }
    ,{
-      "id":"87704971292745113"
+      "id":"108113545432626561"
      ,"Identification":{
         "Title":"7.1 Desupported Features -  \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/application-express\/21.1\/htmrn\/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ERelease Notes\u003C\/a\u003E"
        ,"Type":"Static Content"
@@ -936,7 +936,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -967,7 +967,7 @@
   ]
  ,"Dynamic Actions":[
     {
-      "id":"38826291025719739"
+      "id":"59234865165601187"
      ,"Identification":{
         "Name":"change P0_APP_ID - refresh regions"
       }
@@ -985,49 +985,49 @@
       }
      ,"Actions":[
         {
-          "id":"38826372938719740"
+          "id":"59234947078601188"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"7.1.9 afterModify is Desupported (57969039968358415)"
+           ,"Region":"7.1.9 afterModify is Desupported (78377614108239863)"
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"change P0_APP_ID - refresh regions (38826291025719739)"
+           ,"Event":"change P0_APP_ID - refresh regions (59234865165601187)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
         }
        ,{
-          "id":"38827053490719747"
+          "id":"59235627630601195"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"7.1.11 apex.navigation.dialog.fireCloseHandler function is Desupported (38826465420719741)"
+           ,"Region":"7.1.11 apex.navigation.dialog.fireCloseHandler function is Desupported (59235039560601189)"
           }
          ,"Execution":{
             "Sequence":20
-           ,"Event":"change P0_APP_ID - refresh regions (38826291025719739)"
+           ,"Event":"change P0_APP_ID - refresh regions (59234865165601187)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
         }
        ,{
-          "id":"41551631471456905"
+          "id":"61960205611338353"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"5.1.3 Date Picker (jQuery) Deprecated (38827326218719750)"
+           ,"Region":"5.1.3 Date Picker (jQuery) Deprecated (59235900358601198)"
           }
          ,"Execution":{
             "Sequence":30
-           ,"Event":"change P0_APP_ID - refresh regions (38826291025719739)"
+           ,"Event":"change P0_APP_ID - refresh regions (59234865165601187)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }

@@ -1,6 +1,6 @@
 [
   {
-    "id":"126147128904127387"
+    "id":"146555703044008835"
    ,"Identification":{
       "Name":"Optional - Floating"
      ,"Identifier":"OPTIONAL_FLOATING"
@@ -37,7 +37,7 @@
     }
   }
  ,{
-    "id":"126147414462127387"
+    "id":"146555988602008835"
    ,"Identification":{
       "Name":"Required - Floating"
      ,"Identifier":"REQUIRED_FLOATING"
@@ -74,11 +74,11 @@
     }
    ,"Template Options":[
       {
-        "id":"36414005142462609"
+        "id":"56822579282344057"
        ,"Identification":{
           "Name":"Asterisk"
          ,"Identifier":"INDICATOR_ASTERISK"
-         ,"Group":"Required Indicator (2259956792453304)"
+         ,"Group":"Required Indicator (22668530932334752)"
          ,"Sequence":10
         }
        ,"Settings":{
@@ -94,11 +94,11 @@
         }
       }
      ,{
-        "id":"36414725764462609"
+        "id":"56823299904344057"
        ,"Identification":{
           "Name":"Inline Label"
          ,"Identifier":"INDICATOR_LABEL"
-         ,"Group":"Required Indicator (2259956792453304)"
+         ,"Group":"Required Indicator (22668530932334752)"
          ,"Sequence":20
         }
        ,"Settings":{
@@ -116,7 +116,7 @@
     ]
   }
  ,{
-    "id":"452481109555466292"
+    "id":"472889683695347740"
    ,"Identification":{
       "Name":"Hidden"
      ,"Identifier":"HIDDEN"
@@ -153,7 +153,7 @@
     }
   }
  ,{
-    "id":"452481165926466293"
+    "id":"472889740066347741"
    ,"Identification":{
       "Name":"Optional"
      ,"Identifier":"OPTIONAL"
@@ -190,7 +190,7 @@
     }
   }
  ,{
-    "id":"452481358651466293"
+    "id":"472889932791347741"
    ,"Identification":{
       "Name":"Optional - Above"
      ,"Identifier":"OPTIONAL_ABOVE"
@@ -227,7 +227,7 @@
     }
   }
  ,{
-    "id":"452481384205466295"
+    "id":"472889958345347743"
    ,"Identification":{
       "Name":"Required"
      ,"Identifier":"REQUIRED"
@@ -264,11 +264,11 @@
     }
    ,"Template Options":[
       {
-        "id":"36408571783462604"
+        "id":"56817145923344052"
        ,"Identification":{
           "Name":"Asterisk"
          ,"Identifier":"INDICATOR_ASTERISK"
-         ,"Group":"Required Indicator (2259956792453304)"
+         ,"Group":"Required Indicator (22668530932334752)"
          ,"Sequence":10
         }
        ,"Settings":{
@@ -284,11 +284,11 @@
         }
       }
      ,{
-        "id":"36409258743462604"
+        "id":"56817832883344052"
        ,"Identification":{
           "Name":"Inline Label"
          ,"Identifier":"INDICATOR_LABEL"
-         ,"Group":"Required Indicator (2259956792453304)"
+         ,"Group":"Required Indicator (22668530932334752)"
          ,"Sequence":20
         }
        ,"Settings":{
@@ -306,7 +306,7 @@
     ]
   }
  ,{
-    "id":"452481498976466295"
+    "id":"472890073116347743"
    ,"Identification":{
       "Name":"Required - Above"
      ,"Identifier":"REQUIRED_ABOVE"
@@ -343,11 +343,11 @@
     }
    ,"Template Options":[
       {
-        "id":"36411382608462607"
+        "id":"56819956748344055"
        ,"Identification":{
           "Name":"Asterisk"
          ,"Identifier":"INDICATOR_ASTERISK"
-         ,"Group":"Required Indicator (2259956792453304)"
+         ,"Group":"Required Indicator (22668530932334752)"
          ,"Sequence":10
         }
        ,"Settings":{
@@ -363,11 +363,11 @@
         }
       }
      ,{
-        "id":"36412033710462607"
+        "id":"56820607850344055"
        ,"Identification":{
           "Name":"Inline Label"
          ,"Identifier":"INDICATOR_LABEL"
-         ,"Group":"Required Indicator (2259956792453304)"
+         ,"Group":"Required Indicator (22668530932334752)"
          ,"Sequence":20
         }
        ,"Settings":{

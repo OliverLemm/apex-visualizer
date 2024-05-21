@@ -20,37 +20,37 @@ css:
   - '#THEME_FILES#css/Core#MIN#.css?v=#APEX_VERSION#'
 
 component-defaults: 
-  page: Right Side Column # 452446252138466218
-  navigation-bar-list: Navigation Bar # 452478069261466285
+  page: Right Side Column # 472854826278347666
+  navigation-bar-list: Navigation Bar # 472886643401347733
   navigation-menu-list-position: Side
-  navigation-menu-list-(top): Top Navigation Menu # 452479077726466289
-  navigation-menu-list-(side): Side Navigation Menu # 452478253231466285
-  login-page: Login # 452443100862466212
-  error-page: Login # 452443100862466212
-  printer-friendly-page: Standard # 452442331454466209
-  breadcrumb: 452482206618466299
-  button: Text # 452481721190466298
-  legacy-calendar: Calendar # 452482344230466301
-  default-label: Optional # 452481165926466293
-  optional-label: Optional # 452481165926466293
-  required-label: Required # 452481384205466295
-  list: Links List # 452480217536466290
-  region: Standard # 452458863643466246
-  classic-report: Standard # 452468948793466267
+  navigation-menu-list-(top): Top Navigation Menu # 472887651866347737
+  navigation-menu-list-(side): Side Navigation Menu # 472886827371347733
+  login-page: Login # 472851675002347660
+  error-page: Login # 472851675002347660
+  printer-friendly-page: Standard # 472850905594347657
+  breadcrumb: 472890780758347747
+  button: Text # 472890295330347746
+  legacy-calendar: Calendar # 472890918370347749
+  default-label: Optional # 472889740066347741
+  optional-label: Optional # 472889740066347741
+  required-label: Required # 472889958345347743
+  list: Links List # 472888791676347738
+  region: Standard # 472867437783347694
+  classic-report: Standard # 472877522933347715
 
 region-defaults: 
-  breadcrumbs: Title Bar # 452463263462466253
-  charts: Standard # 452458863643466246
-  forms: Standard # 452458863643466246
-  lists: Standard # 452458863643466246
-  reports: Standard # 452458863643466246
-  wizards: Standard # 452458863643466246
-  interactive-reports: Interactive Report # 452458457830466245
+  breadcrumbs: Title Bar # 472871837602347701
+  charts: Standard # 472867437783347694
+  forms: Standard # 472867437783347694
+  lists: Standard # 472867437783347694
+  reports: Standard # 472867437783347694
+  wizards: Standard # 472867437783347694
+  interactive-reports: Interactive Report # 472867031970347693
 
 dialog-defaults: 
-  dialog-content-region: Blank with Attributes # 452448893974466229
-  dialog-button-region: Buttons Container # 452449028418466229
-  dialog-page: Modal Dialog # 452444891709466217
+  dialog-content-region: Blank with Attributes # 472857468114347677
+  dialog-button-region: Buttons Container # 472857602558347677
+  dialog-page: Modal Dialog # 472853465849347665
 
 icons: 
   library: Font APEX
@@ -60,7 +60,7 @@ files:
 
 styles: 
 - # ====== Style: Redwood Light ================================
-  id: 2088850075453237
+  id: 22497424215334685
   identification: 
     name: Redwood Light
 
@@ -80,7 +80,7 @@ styles:
     output-css-file-url: '#THEME_FILES#css/Redwood-Theme#MIN#.css?v=#APEX_VERSION#'
 
 - # ====== Style: Vita =========================================
-  id: 2089271848453237
+  id: 22497845988334685
   identification: 
     name: Vita
 
@@ -95,7 +95,7 @@ styles:
     output-css-file-url: '#THEME_FILES#css/Vita#MIN#.css?v=#APEX_VERSION#'
 
 - # ====== Style: Vita - Dark ==================================
-  id: 2089655020453237
+  id: 22498229160334685
   identification: 
     name: Vita - Dark
 
@@ -110,7 +110,7 @@ styles:
     output-css-file-url: '#THEME_FILES#css/Vita-Dark#MIN#.css?v=#APEX_VERSION#'
 
 - # ====== Style: Vita - Red ===================================
-  id: 2090048269453237
+  id: 22498622409334685
   identification: 
     name: Vita - Red
 
@@ -125,7 +125,7 @@ styles:
     output-css-file-url: '#THEME_FILES#css/Vita-Red#MIN#.css?v=#APEX_VERSION#'
 
 - # ====== Style: Vita - Slate =================================
-  id: 2090461114453237
+  id: 22499035254334685
   identification: 
     name: Vita - Slate
 
@@ -140,7 +140,7 @@ styles:
     output-css-file-url: '#THEME_FILES#css/Vita-Slate#MIN#.css?v=#APEX_VERSION#'
 
 - # ====== Style: AV - Dark ====================================
-  id: 20659859344322223
+  id: 41068433484203671
   identification: 
     name: AV - Dark
 
@@ -156,7 +156,7 @@ styles:
     json-configuration: '{"classes":[],"vars":{"@Nav-Exp":"160px"},"customCSS":"","useCustomLess":"N"}'
 
 - # ====== Style: APEX Visualizer ==============================
-  id: 37653172407708309
+  id: 58061746547589757
   identification: 
     name: APEX Visualizer
 
@@ -173,7 +173,7 @@ styles:
 
 files: 
 - # ====== File: 20659859344322223.css =========================
-  id: 20660245561322228
+  id: 41068819701203676
   identification: 
     file-name: 20659859344322223.css
 
@@ -182,7 +182,7 @@ files:
     file-character-set: Unicode UTF-8
 
 - # ====== File: 37653172407708309.css =========================
-  id: 37653569939708310
+  id: 58062144079589758
   identification: 
     file-name: 37653172407708309.css
 

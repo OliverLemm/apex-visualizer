@@ -29,22 +29,6 @@ where th.application_id = :P0_APP_ID or :P0_APP_ID is null;
 select distinct template_type d, template_type r from apex_application_templates where reference_count > 0 and application_id = :P0_APP_ID;
 
 -- ----------------------------------------
--- Page: 60 - Templates > Region: Templates Reference (customized) > Source > SQL Query
-
-select t.template_type || ' - ' || t.template_name template
-      ,case t.is_subscribed when 'No' then 'New defined Template' else 'Original Template' end new_or_original
-      ,t.reference_count
-      ,'Default=' || t.is_default || '<br>Last Updated =' || t.last_updated_by || ' - ' || t.last_updated_on tooltip
-from apex_application_templates t
-join apex_application_themes th on th.theme_number = t.theme_number
-                            and th.application_id = t.application_id
-where t.is_subscribed = 'No'
-and th.application_id = :P0_APP_ID
-and t.reference_count > 0
-and (:P60_TEMPLATE_TYPE is null or :P60_TEMPLATE_TYPE = template_type)
-order by template_type, reference_count desc;
-
--- ----------------------------------------
 -- Page: 60 - Templates > Region: Templates Reference (overall) > Source > SQL Query
 
 select t.template_type || ' - ' || t.template_name template
@@ -57,6 +41,22 @@ join apex_application_themes th on th.theme_number = t.theme_number
 where th.is_current = 'Yes'
 and t.reference_count > 0
 and th.application_id = :P0_APP_ID
+and (:P60_TEMPLATE_TYPE is null or :P60_TEMPLATE_TYPE = template_type)
+order by template_type, reference_count desc;
+
+-- ----------------------------------------
+-- Page: 60 - Templates > Region: Templates Reference (customized) > Source > SQL Query
+
+select t.template_type || ' - ' || t.template_name template
+      ,case t.is_subscribed when 'No' then 'New defined Template' else 'Original Template' end new_or_original
+      ,t.reference_count
+      ,'Default=' || t.is_default || '<br>Last Updated =' || t.last_updated_by || ' - ' || t.last_updated_on tooltip
+from apex_application_templates t
+join apex_application_themes th on th.theme_number = t.theme_number
+                            and th.application_id = t.application_id
+where t.is_subscribed = 'No'
+and th.application_id = :P0_APP_ID
+and t.reference_count > 0
 and (:P60_TEMPLATE_TYPE is null or :P60_TEMPLATE_TYPE = template_type)
 order by template_type, reference_count desc;
 

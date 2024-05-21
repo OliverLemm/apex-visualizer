@@ -5,15 +5,15 @@ begin
 --   Manifest End
 wwv_flow_imp.component_begin (
  p_version_yyyy_mm_dd=>'2023.10.31'
-,p_release=>'23.2.2'
-,p_default_workspace_id=>125633378786110814
+,p_release=>'23.2.5'
+,p_default_workspace_id=>100001
 ,p_default_application_id=>347
-,p_default_id_offset=>125634094441118325
+,p_default_id_offset=>20408574139881448
 ,p_default_owner=>'APEX_VISUALIZER'
 );
 wwv_flow_imp_shared.create_install_script(
- p_id=>wwv_flow_imp.id(23141675338119207)
-,p_install_id=>wwv_flow_imp.id(294519018125278192)
+ p_id=>wwv_flow_imp.id(43550249478000655)
+,p_install_id=>wwv_flow_imp.id(314927592265159640)
 ,p_name=>'av_p0708_legacy_subst_strings_v'
 ,p_sequence=>160
 ,p_script_type=>'INSTALL'
@@ -199,8 +199,8 @@ wwv_flow_imp_shared.create_install_script(
 ';'))
 );
 wwv_flow_imp_shared.create_install_object(
- p_id=>wwv_flow_imp.id(23141780501119210)
-,p_script_id=>wwv_flow_imp.id(23141675338119207)
+ p_id=>wwv_flow_imp.id(43550354641000658)
+,p_script_id=>wwv_flow_imp.id(43550249478000655)
 ,p_object_owner=>'#OWNER#'
 ,p_object_type=>'VIEW'
 ,p_object_name=>'AV_P0708_LEGACY_SUBST_STRINGS_V'

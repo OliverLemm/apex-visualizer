@@ -14,13 +14,13 @@
 av_refresh_hide_show_regions()
 
 // ----------------------------------------
-// Page: 720 - APEX 23.2 > Dynamic Action: click refresh - refresh regions > Action: Execute JavaScript Code > Settings > Code
-
-av_refresh_hide_show_regions()
-
-// ----------------------------------------
 // Page: 720 - APEX 23.2 > Dynamic Action: page load - add icons by class > Action: Execute JavaScript Code > Settings > Code
 
 console.log('running DA')
 console.log(this.affectedElements);
+
+// ----------------------------------------
+// Page: 720 - APEX 23.2 > Dynamic Action: click refresh - refresh regions > Action: Execute JavaScript Code > Settings > Code
+
+av_refresh_hide_show_regions()
 

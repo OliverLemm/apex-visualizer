@@ -37,7 +37,7 @@
   }
  ,"Regions":[
     {
-      "id":"455982233047916696"
+      "id":"476390807187798144"
      ,"Identification":{
         "Title":"CSS in Page"
        ,"Type":"Chart"
@@ -64,7 +64,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -89,7 +89,7 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Attributes":{
-        "id":"294254323259372766"
+        "id":"314662897399254214"
        ,"Chart":{
           "Type":"Bar"
         }
@@ -130,7 +130,7 @@
         }
        ,"Series":[
           {
-            "id":"294256079663372767"
+            "id":"314664653803254215"
            ,"Identification":{
               "Name":"CSS in Page"
             }
@@ -162,7 +162,7 @@
         ]
        ,"Axes":[
           {
-            "id":"294254842038372766"
+            "id":"314663416178254214"
            ,"Identification":{
               "Name":"x"
              ,"Show Axis":true
@@ -185,7 +185,7 @@
             }
           }
          ,{
-            "id":"294255421067372767"
+            "id":"314663995207254215"
            ,"Identification":{
               "Name":"y"
              ,"Show Axis":true
@@ -212,7 +212,7 @@
       }
     }
    ,{
-      "id":"456042766579392916"
+      "id":"476451340719274364"
      ,"Identification":{
         "Title":"Characters of CSS Code per Page"
        ,"Type":"Chart"
@@ -237,7 +237,7 @@
        ,"Column Span":"9"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -262,7 +262,7 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Attributes":{
-        "id":"141245331057649603"
+        "id":"161653905197531051"
        ,"Chart":{
           "Type":"Bubble"
         }
@@ -298,7 +298,7 @@
         }
        ,"Series":[
           {
-            "id":"141245472210649604"
+            "id":"161654046350531052"
            ,"Identification":{
               "Name":"Series 1"
             }
@@ -335,7 +335,7 @@
         ]
        ,"Axes":[
           {
-            "id":"141245524155649605"
+            "id":"161654098295531053"
            ,"Identification":{
               "Name":"x"
              ,"Show Axis":true
@@ -360,7 +360,7 @@
             }
           }
          ,{
-            "id":"141245634514649606"
+            "id":"161654208654531054"
            ,"Identification":{
               "Name":"y"
              ,"Show Axis":true
@@ -391,7 +391,7 @@
       }
     }
    ,{
-      "id":"456113854637855984"
+      "id":"476522428777737432"
      ,"Identification":{
         "Title":"Place of CSS"
        ,"Type":"Chart"
@@ -417,7 +417,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -442,7 +442,7 @@
         "Customizable":"Not Customizable By End Users"
       }
      ,"Attributes":{
-        "id":"294251580990352765"
+        "id":"314660155130234213"
        ,"Chart":{
           "Type":"Donut"
         }
@@ -477,7 +477,7 @@
         }
        ,"Series":[
           {
-            "id":"294252036312352766"
+            "id":"314660610452234214"
            ,"Identification":{
               "Name":"Place of CSS"
             }
@@ -505,7 +505,7 @@
   ]
  ,"Page Items":[
     {
-      "id":"294256717003379495"
+      "id":"314665291143260943"
      ,"Identification":{
         "Name":"P200_COMPONENT_TYPE"
        ,"Type":"Select List"
@@ -520,7 +520,7 @@
       }
      ,"Layout":{
         "Sequence":200
-       ,"Region":"Filter (452496424516540365)"
+       ,"Region":"Filter (472904998656421813)"
        ,"Position":"BODY"
        ,"Alignment":"Left"
        ,"Start New Layout":false
@@ -531,7 +531,7 @@
        ,"Label Column Span":"Page Template Default"
       }
      ,"Appearance":{
-        "Template":"Optional (452481165926466293)"
+        "Template":"Optional (472889740066347741)"
        ,"Template Options":[
           "#DEFAULT#"
         ]
@@ -580,7 +580,7 @@
   ]
  ,"Dynamic Actions":[
     {
-      "id":"294195801218781252"
+      "id":"314604375358662700"
      ,"Identification":{
         "Name":"Change P0_APP_ID"
       }
@@ -600,49 +600,49 @@
       }
      ,"Actions":[
         {
-          "id":"294195822760781253"
+          "id":"314604396900662701"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Characters of CSS Code per Page (456042766579392916)"
+           ,"Region":"Characters of CSS Code per Page (476451340719274364)"
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"Change P0_APP_ID (294195801218781252)"
+           ,"Event":"Change P0_APP_ID (314604375358662700)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
         }
        ,{
-          "id":"294199041704781285"
+          "id":"314607615844662733"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"Place of CSS (456113854637855984)"
+           ,"Region":"Place of CSS (476522428777737432)"
           }
          ,"Execution":{
             "Sequence":20
-           ,"Event":"Change P0_APP_ID (294195801218781252)"
+           ,"Event":"Change P0_APP_ID (314604375358662700)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
         }
        ,{
-          "id":"294269594869521550"
+          "id":"314678169009402998"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"CSS in Page (455982233047916696)"
+           ,"Region":"CSS in Page (476390807187798144)"
           }
          ,"Execution":{
             "Sequence":30
-           ,"Event":"Change P0_APP_ID (294195801218781252)"
+           ,"Event":"Change P0_APP_ID (314604375358662700)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
@@ -650,7 +650,7 @@
       ]
     }
    ,{
-      "id":"294199135885781286"
+      "id":"314607710025662734"
      ,"Identification":{
         "Name":"Change P200_COMPONENT_TYPE"
       }
@@ -668,17 +668,17 @@
       }
      ,"Actions":[
         {
-          "id":"294199210454781287"
+          "id":"314607784594662735"
          ,"Identification":{
             "Action":"Refresh"
           }
          ,"Affected Elements":{
             "Selection Type":"Region"
-           ,"Region":"CSS in Page (455982233047916696)"
+           ,"Region":"CSS in Page (476390807187798144)"
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"Change P200_COMPONENT_TYPE (294199135885781286)"
+           ,"Event":"Change P200_COMPONENT_TYPE (314607710025662734)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }

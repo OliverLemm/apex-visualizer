@@ -29,7 +29,7 @@ advanced:
 
 authentication: 
   public-user: APEX_PUBLIC_USER
-  authentication-scheme: APEX # 38869726273053514
+  authentication-scheme: APEX # 59278300412934962
 
 authorization: 
   source-for-role-or-group-schemes: Authentication Scheme
@@ -77,19 +77,19 @@ navigation:
     page: LOGIN
 
 navigation-menu: 
-  list-template: Side Navigation Menu # 452478253231466285
+  list-template: Side Navigation Menu # 472886827371347733
   template-options: 
   - '#DEFAULT#'
   - js-defaultCollapsed
   - js-navCollapsed--hidden
   - t-TreeNav--classic
   list-position: Side
-  list: Desktop Navigation Menu # 452440279475466179
+  list: Desktop Navigation Menu # 472848853615347627
 
 navigation-bar: 
   implementation: List
-  list: Desktop Navigation Bar # 452492439461466348
-  list-template: Navigation Bar # 452478069261466285
+  list: Desktop Navigation Bar # 472901013601347796
+  list-template: Navigation Bar # 472886643401347733
   template-options: 
   - '#DEFAULT#'
 
@@ -110,7 +110,7 @@ attributes:
 
 component-settings: 
 - # ====== Component Setting: NATIVE_MAP_REGION ================
-  id: 749327167872204
+  id: 21157901307753652
   identification: 
     name: NATIVE_MAP_REGION
     type: Region
@@ -122,7 +122,7 @@ component-settings:
     version-number: 1
 
 - # ====== Component Setting: NATIVE_ADFBC =====================
-  id: 1423689913401021
+  id: 21832264053282469
   identification: 
     name: NATIVE_ADFBC
     type: REST Data Source
@@ -131,7 +131,7 @@ component-settings:
     version-number: 63780166
 
 - # ====== Component Setting: NATIVE_DATE_PICKER_APEX ==========
-  id: 1470406920886125
+  id: 21878981060767573
   identification: 
     name: NATIVE_DATE_PICKER_APEX
     type: Item
@@ -146,7 +146,7 @@ component-settings:
     version-number: 1
 
 - # ====== Component Setting: NATIVE_GEOCODED_ADDRESS ==========
-  id: 6674292391672879
+  id: 27082866531554327
   identification: 
     name: NATIVE_GEOCODED_ADDRESS
     type: Item
@@ -162,7 +162,7 @@ component-settings:
     version-number: 1
 
 - # ====== Component Setting: NATIVE_SINGLE_CHECKBOX ===========
-  id: 125634287171118390
+  id: 146042861310999838
   identification: 
     name: NATIVE_SINGLE_CHECKBOX
     type: Item
@@ -175,7 +175,7 @@ component-settings:
     version-number: 1
 
 - # ====== Component Setting: NATIVE_STAR_RATING ===============
-  id: 125634625873118390
+  id: 146043200012999838
   identification: 
     name: NATIVE_STAR_RATING
     type: Item
@@ -188,7 +188,7 @@ component-settings:
     version-number: 1
 
 - # ====== Component Setting: NATIVE_IR ========================
-  id: 452439741163466178
+  id: 472848315303347626
   identification: 
     name: NATIVE_IR
     type: Region
@@ -200,7 +200,7 @@ component-settings:
     version-number: 1
 
 - # ====== Component Setting: NATIVE_DISPLAY_SELECTOR ==========
-  id: 452439786945466178
+  id: 472848361085347626
   identification: 
     name: NATIVE_DISPLAY_SELECTOR
     type: Region
@@ -212,7 +212,7 @@ component-settings:
     version-number: 1
 
 - # ====== Component Setting: NATIVE_YES_NO ====================
-  id: 452439931379466178
+  id: 472848505519347626
   identification: 
     name: NATIVE_YES_NO
     type: Item
@@ -226,7 +226,7 @@ component-settings:
     version-number: 1
 
 - # ====== Component Setting: NATIVE_COLOR_PICKER ==============
-  id: 452440133844466179
+  id: 472848707984347627
   identification: 
     name: NATIVE_COLOR_PICKER
     type: Item

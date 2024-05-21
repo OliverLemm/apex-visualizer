@@ -38,14 +38,14 @@
   }
  ,"Regions":[
     {
-      "id":"54091584663833680"
+      "id":"74500158803715128"
      ,"Identification":{
         "Title":"5.1 Quick SQL Deprecated Functionality"
        ,"Type":"Static Content"
       }
      ,"Layout":{
         "Sequence":10
-       ,"Parent Region":"5 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E (72910675567934407)"
+       ,"Parent Region":"5 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E (93319249707815855)"
        ,"Position":"SUB_REGIONS"
        ,"Start New Layout":false
        ,"Start New Row":true
@@ -54,7 +54,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Collapsible (452454481275466240)"
+        "Template":"Collapsible (472863055415347688)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"is-expanded"
@@ -87,7 +87,7 @@
       }
     }
    ,{
-      "id":"72910675567934407"
+      "id":"93319249707815855"
      ,"Identification":{
         "Title":"5 Deprecated Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E"
        ,"Type":"Static Content"
@@ -103,7 +103,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -132,7 +132,7 @@
       }
     }
    ,{
-      "id":"72911772336934418"
+      "id":"93320346476815866"
      ,"Identification":{
         "Title":"7 Desupported Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E"
        ,"Type":"Static Content"
@@ -148,7 +148,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -177,14 +177,14 @@
       }
     }
    ,{
-      "id":"132589046205580385"
+      "id":"152997620345461833"
      ,"Identification":{
         "Title":"7.1 Desupported Utilities "
        ,"Type":"Static Content"
       }
      ,"Layout":{
         "Sequence":10
-       ,"Parent Region":"7 Desupported Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E (72911772336934418)"
+       ,"Parent Region":"7 Desupported Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E (93320346476815866)"
        ,"Position":"SUB_REGIONS"
        ,"Start New Layout":false
        ,"Start New Row":true
@@ -193,7 +193,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Collapsible (452454481275466240)"
+        "Template":"Collapsible (472863055415347688)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"is-collapsed"
@@ -231,7 +231,7 @@
       }
     }
    ,{
-      "id":"132592428687613229"
+      "id":"153001002827494677"
      ,"Identification":{
         "Title":"7.2 Querying Template Component Metadata"
        ,"Type":"Classic Report"
@@ -246,7 +246,7 @@
       }
      ,"Layout":{
         "Sequence":20
-       ,"Parent Region":"7 Desupported Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E (72911772336934418)"
+       ,"Parent Region":"7 Desupported Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E (93320346476815866)"
        ,"Position":"SUB_REGIONS"
        ,"Start New Layout":false
        ,"Start New Row":true
@@ -255,7 +255,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Collapsible (452454481275466240)"
+        "Template":"Collapsible (472863055415347688)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"is-expanded"
@@ -288,7 +288,7 @@
         }
        ,"Appearance":{
           "Template Type":"Theme"
-         ,"Template":"Standard (452468948793466267)"
+         ,"Template":"Standard (472877522933347715)"
          ,"Template Options":[
             "#DEFAULT#"
            ,"t-Report--altRowsDefault"
@@ -325,7 +325,7 @@
       }
      ,"Columns":[
         {
-          "id":"37290400113264646"
+          "id":"57698974253146094"
          ,"Identification":{
             "Column Name":"PAGE_ID"
            ,"Type":"Plain Text"
@@ -358,7 +358,7 @@
           }
         }
        ,{
-          "id":"37290544268264647"
+          "id":"57699118408146095"
          ,"Identification":{
             "Column Name":"PAGE_NAME"
            ,"Type":"Plain Text"
@@ -391,7 +391,7 @@
           }
         }
        ,{
-          "id":"37290657322264648"
+          "id":"57699231462146096"
          ,"Identification":{
             "Column Name":"REGION_NAME"
            ,"Type":"Plain Text"
@@ -428,7 +428,7 @@
   ]
  ,"Dynamic Actions":[
     {
-      "id":"20639674970063631"
+      "id":"41048249109945079"
      ,"Identification":{
         "Name":"change P0_APP_ID - refresh regions"
       }
@@ -446,7 +446,7 @@
       }
      ,"Actions":[
         {
-          "id":"20640128089063632"
+          "id":"41048702228945080"
          ,"Identification":{
             "Action":"Execute JavaScript Code"
           }
@@ -455,7 +455,7 @@
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"change P0_APP_ID - refresh regions (20639674970063631)"
+           ,"Event":"change P0_APP_ID - refresh regions (41048249109945079)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
@@ -463,7 +463,7 @@
       ]
     }
    ,{
-      "id":"20640522029063634"
+      "id":"41049096168945082"
      ,"Identification":{
         "Name":"page load - add icons by class"
       }
@@ -476,7 +476,7 @@
       }
      ,"Actions":[
         {
-          "id":"20641035999063634"
+          "id":"41049610138945082"
          ,"Identification":{
             "Action":"Execute JavaScript Code"
           }
@@ -489,7 +489,7 @@
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"page load - add icons by class (20640522029063634)"
+           ,"Event":"page load - add icons by class (41049096168945082)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
@@ -497,7 +497,7 @@
       ]
     }
    ,{
-      "id":"20641461359063634"
+      "id":"41050035498945082"
      ,"Identification":{
         "Name":"click refresh - refresh regions"
       }
@@ -509,11 +509,11 @@
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CLICK"
        ,"Selection Type":"Button"
-       ,"Button":"Refresh (45068108221137631)"
+       ,"Button":"Refresh (65476682361019079)"
       }
      ,"Actions":[
         {
-          "id":"20641974120063634"
+          "id":"41050548259945082"
          ,"Identification":{
             "Action":"Execute JavaScript Code"
           }
@@ -522,7 +522,7 @@
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"click refresh - refresh regions (20641461359063634)"
+           ,"Event":"click refresh - refresh regions (41050035498945082)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }

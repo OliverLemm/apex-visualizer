@@ -5,7 +5,7 @@
   }
  ,"Regions":[
     {
-      "id":"452496424516540365"
+      "id":"472904998656421813"
      ,"Identification":{
         "Title":"Filter"
        ,"Type":"Static Content"
@@ -21,7 +21,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Standard (452458863643466246)"
+        "Template":"Standard (472867437783347694)"
        ,"Template Options":[
           "#DEFAULT#"
          ,"t-Region--scrollBody"
@@ -54,7 +54,7 @@
   ]
  ,"Page Items":[
     {
-      "id":"32935929138378120"
+      "id":"53344503278259568"
      ,"Identification":{
         "Name":"P0_PAGE_DESIGNER_LINK"
        ,"Type":"Display Only"
@@ -68,7 +68,7 @@
       }
      ,"Layout":{
         "Sequence":80
-       ,"Region":"Filter (452496424516540365)"
+       ,"Region":"Filter (472904998656421813)"
        ,"Position":"BODY"
        ,"Alignment":"Left"
        ,"Start New Layout":false
@@ -79,7 +79,7 @@
        ,"Label Column Span":"Page Template Default"
       }
      ,"Appearance":{
-        "Template":"Hidden (452481109555466292)"
+        "Template":"Hidden (472889683695347740)"
        ,"Template Options":[
           "#DEFAULT#"
         ]
@@ -113,11 +113,11 @@
        ,"Restricted Characters":"All characters can be saved."
       }
      ,"Configuration":{
-        "Build Option":"deactivated (291318289212148547)"
+        "Build Option":"deactivated (311726863352029995)"
       }
     }
    ,{
-      "id":"32937516050378136"
+      "id":"53346090190259584"
      ,"Identification":{
         "Name":"P0_LINK"
        ,"Type":"Display Only"
@@ -134,7 +134,7 @@
       }
      ,"Layout":{
         "Sequence":70
-       ,"Region":"Filter (452496424516540365)"
+       ,"Region":"Filter (472904998656421813)"
        ,"Position":"BODY"
        ,"Alignment":"Left"
        ,"Start New Layout":false
@@ -145,7 +145,7 @@
        ,"Label Column Span":"Page Template Default"
       }
      ,"Appearance":{
-        "Template":"Hidden (452481109555466292)"
+        "Template":"Hidden (472889683695347740)"
        ,"Template Options":[
           "#DEFAULT#"
         ]
@@ -167,11 +167,11 @@
        ,"Restricted Characters":"All characters can be saved."
       }
      ,"Configuration":{
-        "Build Option":"deactivated (291318289212148547)"
+        "Build Option":"deactivated (311726863352029995)"
       }
     }
    ,{
-      "id":"290526755762486790"
+      "id":"310935329902368238"
      ,"Identification":{
         "Name":"P0_COMPONENT"
        ,"Type":"Select List"
@@ -186,7 +186,7 @@
       }
      ,"Layout":{
         "Sequence":60
-       ,"Region":"Filter (452496424516540365)"
+       ,"Region":"Filter (472904998656421813)"
        ,"Position":"BODY"
        ,"Alignment":"Left"
        ,"Start New Layout":false
@@ -197,7 +197,7 @@
        ,"Label Column Span":"Page Template Default"
       }
      ,"Appearance":{
-        "Template":"Optional (452481165926466293)"
+        "Template":"Optional (472889740066347741)"
        ,"Template Options":[
           "#DEFAULT#"
         ]
@@ -208,7 +208,7 @@
       }
      ,"List of Values":{
         "Type":"Shared Component"
-       ,"List of Values":"COMPONENTS (CHART) (291312490138046410)"
+       ,"List of Values":"COMPONENTS (CHART) (311721064277927858)"
        ,"Display Extra Values":false
        ,"Display Null Value":true
        ,"Null Display Value":"all"
@@ -240,7 +240,7 @@
       }
     }
    ,{
-      "id":"294476788366578348"
+      "id":"314885362506459796"
      ,"Identification":{
         "Name":"P0_BEST_PRACTICE"
        ,"Type":"Radio Group"
@@ -255,7 +255,7 @@
       }
      ,"Layout":{
         "Sequence":20
-       ,"Region":"Filter (452496424516540365)"
+       ,"Region":"Filter (472904998656421813)"
        ,"Position":"BODY"
        ,"Alignment":"Left"
        ,"Start New Layout":false
@@ -266,7 +266,7 @@
        ,"Label Column Span":"Page Template Default"
       }
      ,"Appearance":{
-        "Template":"Optional (452481165926466293)"
+        "Template":"Optional (472889740066347741)"
        ,"Template Options":[
           "#DEFAULT#"
         ]
@@ -315,7 +315,7 @@
       }
     }
    ,{
-      "id":"449531235326422723"
+      "id":"469939809466304171"
      ,"Identification":{
         "Name":"P0_PAGE_ID"
        ,"Type":"Select List"
@@ -330,7 +330,7 @@
       }
      ,"Layout":{
         "Sequence":50
-       ,"Region":"Filter (452496424516540365)"
+       ,"Region":"Filter (472904998656421813)"
        ,"Position":"BODY"
        ,"Alignment":"Left"
        ,"Start New Layout":false
@@ -341,7 +341,7 @@
        ,"Label Column Span":"Page Template Default"
       }
      ,"Appearance":{
-        "Template":"Optional (452481165926466293)"
+        "Template":"Optional (472889740066347741)"
        ,"Template Options":[
           "#DEFAULT#"
         ]
@@ -352,7 +352,7 @@
       }
      ,"List of Values":{
         "Type":"Shared Component"
-       ,"List of Values":"PAGES (449550200431517744)"
+       ,"List of Values":"PAGES (469958774571399192)"
        ,"Display Extra Values":false
        ,"Display Null Value":true
        ,"Null Display Value":"all"
@@ -398,7 +398,7 @@
       }
     }
    ,{
-      "id":"452496506236540366"
+      "id":"472905080376421814"
      ,"Identification":{
         "Name":"P0_APP_ID"
        ,"Type":"Select List"
@@ -413,7 +413,7 @@
       }
      ,"Layout":{
         "Sequence":40
-       ,"Region":"Filter (452496424516540365)"
+       ,"Region":"Filter (472904998656421813)"
        ,"Position":"BODY"
        ,"Alignment":"Left"
        ,"Start New Layout":false
@@ -424,7 +424,7 @@
        ,"Label Column Span":"Page Template Default"
       }
      ,"Appearance":{
-        "Template":"Optional (452481165926466293)"
+        "Template":"Optional (472889740066347741)"
        ,"Template Options":[
           "#DEFAULT#"
         ]
@@ -435,7 +435,7 @@
       }
      ,"List of Values":{
         "Type":"Shared Component"
-       ,"List of Values":"APPLICATIONS (452494392205483479)"
+       ,"List of Values":"APPLICATIONS (472902966345364927)"
        ,"Display Extra Values":false
        ,"Display Null Value":true
        ,"Null Display Value":"all"
@@ -467,14 +467,14 @@
   ]
  ,"Buttons":[
     {
-      "id":"45068108221137631"
+      "id":"65476682361019079"
      ,"Identification":{
         "Button Name":"Refresh"
        ,"Label":"Refresh"
       }
      ,"Layout":{
         "Sequence":200
-       ,"Region":"Filter (452496424516540365)"
+       ,"Region":"Filter (472904998656421813)"
        ,"Position":"HELP"
        ,"Start New Layout":false
        ,"Start New Row":true
@@ -483,7 +483,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Button Template":"Text with Icon (452481802985466298)"
+        "Button Template":"Text with Icon (472890377125347746)"
        ,"Hot":true
        ,"Template Options":[
           "#DEFAULT#"
@@ -505,24 +505,24 @@
       }
     }
    ,{
-      "id":"449531905217422730"
+      "id":"469940479357304178"
      ,"Identification":{
         "Button Name":"SHOW_DETAILS"
        ,"Label":"Show Details"
       }
      ,"Layout":{
         "Sequence":10
-       ,"Region":"Filter (452496424516540365)"
+       ,"Region":"Filter (472904998656421813)"
        ,"Position":"BODY"
        ,"Start New Layout":false
        ,"Start New Row":true
        ,"Column":"Automatic"
        ,"New Column":true
        ,"Column Span":"Automatic"
-       ,"Alignment":"Left center"
+       ,"Alignment":"Right"
       }
      ,"Appearance":{
-        "Button Template":"Text with Icon (452481802985466298)"
+        "Button Template":"Text with Icon (472890377125347746)"
        ,"Hot":false
        ,"Template Options":[
           "#DEFAULT#"
@@ -542,7 +542,7 @@
   ]
  ,"Dynamic Actions":[
     {
-      "id":"32936982364378130"
+      "id":"53345556504259578"
      ,"Identification":{
         "Name":"change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK"
       }
@@ -564,11 +564,11 @@
        ,"Item":"P0_PAGE_ID"
       }
      ,"Configuration":{
-        "Build Option":"deactivated (291318289212148547)"
+        "Build Option":"deactivated (311726863352029995)"
       }
      ,"Actions":[
         {
-          "id":"32937015388378131"
+          "id":"53345589528259579"
          ,"Identification":{
             "Action":"Set Value"
           }
@@ -590,7 +590,7 @@
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK (32936982364378130)"
+           ,"Event":"change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK (53345556504259578)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":true
            ,"Stop Execution On Error":true
@@ -598,7 +598,7 @@
           }
         }
        ,{
-          "id":"32937155676378132"
+          "id":"53345729816259580"
          ,"Identification":{
             "Action":"Hide"
           }
@@ -610,13 +610,13 @@
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK (32936982364378130)"
+           ,"Event":"change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK (53345556504259578)"
            ,"Fire When Event Result Is":"False"
            ,"Fire on Initialization":true
           }
         }
        ,{
-          "id":"32937249040378133"
+          "id":"53345823180259581"
          ,"Identification":{
             "Action":"Show"
           }
@@ -628,13 +628,13 @@
           }
          ,"Execution":{
             "Sequence":30
-           ,"Event":"change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK (32936982364378130)"
+           ,"Event":"change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK (53345556504259578)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":true
           }
         }
        ,{
-          "id":"32937796691378138"
+          "id":"53346370831259586"
          ,"Identification":{
             "Action":"Execute JavaScript Code"
           }
@@ -649,7 +649,7 @@
           }
          ,"Execution":{
             "Sequence":40
-           ,"Event":"change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK (32936982364378130)"
+           ,"Event":"change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK (53345556504259578)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
@@ -657,7 +657,7 @@
       ]
     }
    ,{
-      "id":"449532155105422733"
+      "id":"469940729245304181"
      ,"Identification":{
         "Name":"Show Details"
       }
@@ -669,7 +669,7 @@
      ,"When":{
         "Event":"EVENT.EVENT.BROWSER.CLICK"
        ,"Selection Type":"Button"
-       ,"Button":"SHOW_DETAILS (449531905217422730)"
+       ,"Button":"SHOW_DETAILS (469940479357304178)"
       }
      ,"Client-side Condition":{
         "Type":"JavaScript expression"
@@ -677,7 +677,7 @@
       }
      ,"Actions":[
         {
-          "id":"449532263751422734"
+          "id":"469940837891304182"
          ,"Identification":{
             "Action":"Show"
           }
@@ -687,13 +687,13 @@
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"Show Details (449532155105422733)"
+           ,"Event":"Show Details (469940729245304181)"
            ,"Fire When Event Result Is":"True"
            ,"Fire on Initialization":false
           }
         }
        ,{
-          "id":"449532619134422737"
+          "id":"469941193274304185"
          ,"Identification":{
             "Action":"Hide"
           }
@@ -703,7 +703,7 @@
           }
          ,"Execution":{
             "Sequence":10
-           ,"Event":"Show Details (449532155105422733)"
+           ,"Event":"Show Details (469940729245304181)"
            ,"Fire When Event Result Is":"False"
            ,"Fire on Initialization":false
           }

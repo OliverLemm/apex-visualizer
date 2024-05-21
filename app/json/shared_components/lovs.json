@@ -1,6 +1,6 @@
 [
   {
-    "id":"38871578433053523"
+    "id":"59280152572934971"
    ,"Identification":{
       "Name":"LOGIN_REMEMBER_USERNAME"
     }
@@ -9,7 +9,7 @@
     }
    ,"Entries":[
       {
-        "id":"38871903627053523"
+        "id":"59280477766934971"
        ,"Entry":{
           "Sequence":10
          ,"Display":"Remember username"
@@ -19,7 +19,7 @@
     ]
   }
  ,{
-    "id":"291312490138046410"
+    "id":"311721064277927858"
    ,"Identification":{
       "Name":"COMPONENTS (CHART)"
     }
@@ -30,7 +30,7 @@
     }
   }
  ,{
-    "id":"449550200431517744"
+    "id":"469958774571399192"
    ,"Identification":{
       "Name":"PAGES"
     }
@@ -41,7 +41,7 @@
     }
   }
  ,{
-    "id":"452494392205483479"
+    "id":"472902966345364927"
    ,"Identification":{
       "Name":"APPLICATIONS"
     }

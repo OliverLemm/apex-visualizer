@@ -5,10 +5,10 @@ begin
 --   Manifest End
 wwv_flow_imp.component_begin (
  p_version_yyyy_mm_dd=>'2023.10.31'
-,p_release=>'23.2.2'
-,p_default_workspace_id=>125633378786110814
+,p_release=>'23.2.5'
+,p_default_workspace_id=>100001
 ,p_default_application_id=>347
-,p_default_id_offset=>125634094441118325
+,p_default_id_offset=>20408574139881448
 ,p_default_owner=>'APEX_VISUALIZER'
 );
 wwv_flow_imp_page.create_page(
@@ -25,21 +25,21 @@ wwv_flow_imp_page.create_page(
 ,p_last_upd_yyyymmddhh24miss=>'20231203214525'
 );
 wwv_flow_imp_page.create_page_plug(
- p_id=>wwv_flow_imp.id(72910675567934407)
+ p_id=>wwv_flow_imp.id(93319249707815855)
 ,p_plug_name=>'5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>wwv_flow_imp.id(452458863643466246)
+,p_plug_template=>wwv_flow_imp.id(472867437783347694)
 ,p_plug_display_sequence=>20
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
 wwv_flow_imp_page.create_page_plug(
- p_id=>wwv_flow_imp.id(54091584663833680)
+ p_id=>wwv_flow_imp.id(74500158803715128)
 ,p_plug_name=>'5.1 Quick SQL Deprecated Functionality'
-,p_parent_plug_id=>wwv_flow_imp.id(72910675567934407)
+,p_parent_plug_id=>wwv_flow_imp.id(93319249707815855)
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
-,p_plug_template=>wwv_flow_imp.id(452454481275466240)
+,p_plug_template=>wwv_flow_imp.id(472863055415347688)
 ,p_plug_display_sequence=>10
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -59,23 +59,23 @@ wwv_flow_imp_page.create_page_plug(
 ,p_attribute_02=>'HTML'
 );
 wwv_flow_imp_page.create_page_plug(
- p_id=>wwv_flow_imp.id(72911772336934418)
+ p_id=>wwv_flow_imp.id(93320346476815866)
 ,p_plug_name=>'7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>wwv_flow_imp.id(452458863643466246)
+,p_plug_template=>wwv_flow_imp.id(472867437783347694)
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
 wwv_flow_imp_page.create_page_plug(
- p_id=>wwv_flow_imp.id(132589046205580385)
+ p_id=>wwv_flow_imp.id(152997620345461833)
 ,p_plug_name=>'7.1 Desupported Utilities '
 ,p_region_name=>'av-region-desupported-71'
-,p_parent_plug_id=>wwv_flow_imp.id(72911772336934418)
+,p_parent_plug_id=>wwv_flow_imp.id(93320346476815866)
 ,p_region_css_classes=>'av-no-check-needed av-developer-functionality'
 ,p_region_template_options=>'#DEFAULT#:is-collapsed:t-Region--scrollBody'
-,p_plug_template=>wwv_flow_imp.id(452454481275466240)
+,p_plug_template=>wwv_flow_imp.id(472863055415347688)
 ,p_plug_display_sequence=>10
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -85,11 +85,11 @@ wwv_flow_imp_page.create_page_plug(
 ,p_attribute_02=>'HTML'
 );
 wwv_flow_imp_page.create_report_region(
- p_id=>wwv_flow_imp.id(132592428687613229)
+ p_id=>wwv_flow_imp.id(153001002827494677)
 ,p_name=>'7.2 Querying Template Component Metadata'
 ,p_region_name=>'av-232-desup-72'
-,p_parent_plug_id=>wwv_flow_imp.id(72911772336934418)
-,p_template=>wwv_flow_imp.id(452454481275466240)
+,p_parent_plug_id=>wwv_flow_imp.id(93320346476815866)
+,p_template=>wwv_flow_imp.id(472863055415347688)
 ,p_display_sequence=>20
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -134,7 +134,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>false
-,p_query_row_template=>wwv_flow_imp.id(452468948793466267)
+,p_query_row_template=>wwv_flow_imp.id(472877522933347715)
 ,p_query_num_rows=>15
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Template Component with old Metadata used</b>'
@@ -146,7 +146,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_plug_query_strip_html=>'N'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(37290400113264646)
+ p_id=>wwv_flow_imp.id(57698974253146094)
 ,p_query_column_id=>1
 ,p_column_alias=>'PAGE_ID'
 ,p_column_display_sequence=>10
@@ -159,7 +159,7 @@ wwv_flow_imp_page.create_report_columns(
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(37290544268264647)
+ p_id=>wwv_flow_imp.id(57699118408146095)
 ,p_query_column_id=>2
 ,p_column_alias=>'PAGE_NAME'
 ,p_column_display_sequence=>20
@@ -171,7 +171,7 @@ wwv_flow_imp_page.create_report_columns(
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(37290657322264648)
+ p_id=>wwv_flow_imp.id(57699231462146096)
 ,p_query_column_id=>3
 ,p_column_alias=>'REGION_NAME'
 ,p_column_display_sequence=>30
@@ -183,7 +183,7 @@ wwv_flow_imp_page.create_report_columns(
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_page_da_event(
- p_id=>wwv_flow_imp.id(20639674970063631)
+ p_id=>wwv_flow_imp.id(41048249109945079)
 ,p_name=>'change P0_APP_ID - refresh regions'
 ,p_event_sequence=>10
 ,p_triggering_element_type=>'ITEM'
@@ -193,8 +193,8 @@ wwv_flow_imp_page.create_page_da_event(
 ,p_bind_event_type=>'change'
 );
 wwv_flow_imp_page.create_page_da_action(
- p_id=>wwv_flow_imp.id(20640128089063632)
-,p_event_id=>wwv_flow_imp.id(20639674970063631)
+ p_id=>wwv_flow_imp.id(41048702228945080)
+,p_event_id=>wwv_flow_imp.id(41048249109945079)
 ,p_event_result=>'TRUE'
 ,p_action_sequence=>10
 ,p_execute_on_page_init=>'N'
@@ -202,18 +202,18 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_attribute_01=>'av_refresh_hide_show_regions()'
 );
 wwv_flow_imp_page.create_page_da_event(
- p_id=>wwv_flow_imp.id(20641461359063634)
+ p_id=>wwv_flow_imp.id(41050035498945082)
 ,p_name=>'click refresh - refresh regions'
 ,p_event_sequence=>20
 ,p_triggering_element_type=>'BUTTON'
-,p_triggering_button_id=>wwv_flow_imp.id(45068108221137631)
+,p_triggering_button_id=>wwv_flow_imp.id(65476682361019079)
 ,p_bind_type=>'bind'
 ,p_execution_type=>'IMMEDIATE'
 ,p_bind_event_type=>'click'
 );
 wwv_flow_imp_page.create_page_da_action(
- p_id=>wwv_flow_imp.id(20641974120063634)
-,p_event_id=>wwv_flow_imp.id(20641461359063634)
+ p_id=>wwv_flow_imp.id(41050548259945082)
+,p_event_id=>wwv_flow_imp.id(41050035498945082)
 ,p_event_result=>'TRUE'
 ,p_action_sequence=>10
 ,p_execute_on_page_init=>'N'
@@ -221,7 +221,7 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_attribute_01=>'av_refresh_hide_show_regions()'
 );
 wwv_flow_imp_page.create_page_da_event(
- p_id=>wwv_flow_imp.id(20640522029063634)
+ p_id=>wwv_flow_imp.id(41049096168945082)
 ,p_name=>'page load - add icons by class'
 ,p_event_sequence=>30
 ,p_bind_type=>'bind'
@@ -229,8 +229,8 @@ wwv_flow_imp_page.create_page_da_event(
 ,p_bind_event_type=>'ready'
 );
 wwv_flow_imp_page.create_page_da_action(
- p_id=>wwv_flow_imp.id(20641035999063634)
-,p_event_id=>wwv_flow_imp.id(20640522029063634)
+ p_id=>wwv_flow_imp.id(41049610138945082)
+,p_event_id=>wwv_flow_imp.id(41049096168945082)
 ,p_event_result=>'TRUE'
 ,p_action_sequence=>10
 ,p_execute_on_page_init=>'N'

@@ -26,18 +26,21 @@ where (:P0_APP_ID is null or application_id = :P0_APP_ID)
 and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID);
 
 -- ----------------------------------------
--- Page: 100 - JavaScript > Region: Place of JavaScript > Source > SQL Query
+-- Page: 100 - JavaScript > Region: JavaScript in Page > Source > SQL Query
 
-select application_name
-      ,application_id
-      ,component_type || ' - ' || js_code_type js_component
-      ,count(1) amount
-from av_javascript_v
-where (:P0_APP_ID is null or application_id = :P0_APP_ID)
-and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID)
-and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = best_practice)
-group by application_name,application_id,component_type || ' - ' || js_code_type
-order by count(1) desc;
+select page_name || ' (' || v.page_id || ') - ' || v.component_name series_name, 
+       v.component_type, 
+       v.js_code, 
+       v.js_code_length, 
+       v.js_code_type, 
+       v.tooltip, 
+       v.page_designer_url
+from av_javascript_v v
+where v.application_id = :P0_APP_ID 
+and (v.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
+and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = v.best_practice)
+and (v.component_type = :P100_COMPONENT_TYPE or :P100_COMPONENT_TYPE is null)
+order by js_code_length desc;
 
 -- ----------------------------------------
 -- Page: 100 - JavaScript > Region: Characters of JavaScript Code per Page > Source > SQL Query
@@ -56,19 +59,16 @@ and t.page_id is not null
 and (:p0_best_practice = -1 or :p0_best_practice = t.best_practice);
 
 -- ----------------------------------------
--- Page: 100 - JavaScript > Region: JavaScript in Page > Source > SQL Query
+-- Page: 100 - JavaScript > Region: Place of JavaScript > Source > SQL Query
 
-select page_name || ' (' || v.page_id || ') - ' || v.component_name series_name, 
-       v.component_type, 
-       v.js_code, 
-       v.js_code_length, 
-       v.js_code_type, 
-       v.tooltip, 
-       v.page_designer_url
-from av_javascript_v v
-where v.application_id = :P0_APP_ID 
-and (v.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
-and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = v.best_practice)
-and (v.component_type = :P100_COMPONENT_TYPE or :P100_COMPONENT_TYPE is null)
-order by js_code_length desc;
+select application_name
+      ,application_id
+      ,component_type || ' - ' || js_code_type js_component
+      ,count(1) amount
+from av_javascript_v
+where (:P0_APP_ID is null or application_id = :P0_APP_ID)
+and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID)
+and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = best_practice)
+group by application_name,application_id,component_type || ' - ' || js_code_type
+order by count(1) desc;
 

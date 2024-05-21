@@ -1,6 +1,6 @@
 ---
 - # ====== List of Values: LOGIN_REMEMBER_USERNAME =============
-  id: 38871578433053523
+  id: 59280152572934971
   identification: 
     name: LOGIN_REMEMBER_USERNAME
 
@@ -9,14 +9,14 @@
 
   entries: 
   - # ====== Entry: Remember username ============================
-    id: 38871903627053523
+    id: 59280477766934971
     entry: 
       sequence: 10
       display: Remember username
       return: Y
 
 - # ====== List of Values: COMPONENTS (CHART) ==================
-  id: 291312490138046410
+  id: 311721064277927858
   identification: 
     name: COMPONENTS (CHART)
 
@@ -31,7 +31,7 @@
       order by 1
 
 - # ====== List of Values: PAGES ===============================
-  id: 449550200431517744
+  id: 469958774571399192
   identification: 
     name: PAGES
 
@@ -46,7 +46,7 @@
        order by 1
 
 - # ====== List of Values: APPLICATIONS ========================
-  id: 452494392205483479
+  id: 472902966345364927
   identification: 
     name: APPLICATIONS
 

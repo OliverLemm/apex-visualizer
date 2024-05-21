@@ -38,14 +38,14 @@ server-cache:
 
 regions: 
 - # ====== Region: 5.1 Quick SQL Deprecated Functionality ======
-  id: 54091584663833680
+  id: 74500158803715128
   identification: 
     title: 5.1 Quick SQL Deprecated Functionality
     type: Static Content
 
   layout: 
     sequence: 10
-    parent-region: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 72910675567934407
+    parent-region: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 93319249707815855
     position: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -54,7 +54,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 452454481275466240
+    template: Collapsible # 472863055415347688
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -96,7 +96,7 @@ regions:
       expand-shortcuts: false
 
 - # ====== Region: 5 Deprecated Features - <a href="https://docs
-  id: 72910675567934407
+  id: 93319249707815855
   identification: 
     title: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>'
     type: Static Content
@@ -112,7 +112,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 452458863643466246
+    template: Standard # 472867437783347694
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -138,7 +138,7 @@ regions:
       expand-shortcuts: false
 
 - # ====== Region: 7 Desupported Features - <a href="https://doc
-  id: 72911772336934418
+  id: 93320346476815866
   identification: 
     title: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
     type: Static Content
@@ -154,7 +154,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 452458863643466246
+    template: Standard # 472867437783347694
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -180,14 +180,14 @@ regions:
       expand-shortcuts: false
 
 - # ====== Region: 7.1 Desupported Utilities  ==================
-  id: 132589046205580385
+  id: 152997620345461833
   identification: 
     title: '7.1 Desupported Utilities '
     type: Static Content
 
   layout: 
     sequence: 10
-    parent-region: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 72911772336934418
+    parent-region: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 93320346476815866
     position: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -196,7 +196,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 452454481275466240
+    template: Collapsible # 472863055415347688
     template-options: 
     - '#DEFAULT#'
     - is-collapsed
@@ -232,7 +232,7 @@ regions:
       expand-shortcuts: false
 
 - # ====== Region: 7.2 Querying Template Component Metadata ====
-  id: 132592428687613229
+  id: 153001002827494677
   identification: 
     title: 7.2 Querying Template Component Metadata
     type: Classic Report
@@ -277,7 +277,7 @@ regions:
 
   layout: 
     sequence: 20
-    parent-region: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 72911772336934418
+    parent-region: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 93320346476815866
     position: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -286,7 +286,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 452454481275466240
+    template: Collapsible # 472863055415347688
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -320,7 +320,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 452468948793466267
+      template: Standard # 472877522933347715
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -355,7 +355,7 @@ regions:
 
   columns: 
   - # ====== Column: PAGE_ID =====================================
-    id: 37290400113264646
+    id: 57698974253146094
     identification: 
       column-name: PAGE_ID
       type: Plain Text
@@ -387,7 +387,7 @@ regions:
       escape-special-characters: true
 
   - # ====== Column: PAGE_NAME ===================================
-    id: 37290544268264647
+    id: 57699118408146095
     identification: 
       column-name: PAGE_NAME
       type: Plain Text
@@ -419,7 +419,7 @@ regions:
       escape-special-characters: true
 
   - # ====== Column: REGION_NAME =================================
-    id: 37290657322264648
+    id: 57699231462146096
     identification: 
       column-name: REGION_NAME
       type: Plain Text
@@ -452,7 +452,7 @@ regions:
 
 dynamic-actions: 
 - # ====== Dynamic Action: change P0_APP_ID - refresh regions ==
-  id: 20639674970063631
+  id: 41048249109945079
   identification: 
     name: change P0_APP_ID - refresh regions
 
@@ -469,7 +469,7 @@ dynamic-actions:
 
   actions: 
   - # ====== Action: Execute JavaScript Code =====================
-    id: 20640128089063632
+    id: 41048702228945080
     identification: 
       action: Execute JavaScript Code
 
@@ -478,12 +478,12 @@ dynamic-actions:
 
     execution: 
       sequence: 10
-      event: change P0_APP_ID - refresh regions # 20639674970063631
+      event: change P0_APP_ID - refresh regions # 41048249109945079
       fire-when-event-result-is: True
       fire-on-initialization: false
 
 - # ====== Dynamic Action: page load - add icons by class ======
-  id: 20640522029063634
+  id: 41049096168945082
   identification: 
     name: page load - add icons by class
 
@@ -496,7 +496,7 @@ dynamic-actions:
 
   actions: 
   - # ====== Action: Execute JavaScript Code =====================
-    id: 20641035999063634
+    id: 41049610138945082
     identification: 
       action: Execute JavaScript Code
 
@@ -511,12 +511,12 @@ dynamic-actions:
 
     execution: 
       sequence: 10
-      event: page load - add icons by class # 20640522029063634
+      event: page load - add icons by class # 41049096168945082
       fire-when-event-result-is: True
       fire-on-initialization: false
 
 - # ====== Dynamic Action: click refresh - refresh regions =====
-  id: 20641461359063634
+  id: 41050035498945082
   identification: 
     name: click refresh - refresh regions
 
@@ -528,11 +528,11 @@ dynamic-actions:
   when: 
     event: EVENT.EVENT.BROWSER.CLICK
     selection-type: Button
-    button: Refresh # 45068108221137631
+    button: Refresh # 65476682361019079
 
   actions: 
   - # ====== Action: Execute JavaScript Code =====================
-    id: 20641974120063634
+    id: 41050548259945082
     identification: 
       action: Execute JavaScript Code
 
@@ -541,7 +541,7 @@ dynamic-actions:
 
     execution: 
       sequence: 10
-      event: click refresh - refresh regions # 20641461359063634
+      event: click refresh - refresh regions # 41050035498945082
       fire-when-event-result-is: True
       fire-on-initialization: false
 
