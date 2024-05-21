@@ -1,9 +1,14 @@
 create or replace force view av_page_complexity_v as
-select p.application_id, 
-       p.page_id, 
-       sum(nvl(c.counts,0)) count_objects, 
-       case when sum(nvl(c.counts,0)) < 15 then 'simple' when sum(nvl(c.counts,0)) < 50 then 'normal' else 'complex' end complexity
-from apex_application_pages p 
+select p.application_id,
+       p.page_id,
+       sum(nvl(c.counts,0)) count_objects,
+       case 
+         when sum(nvl(c.counts,0)) < 15 then 'simple' 
+         when sum(nvl(c.counts,0)) < 50 then 'normal' 
+         when sum(nvl(c.counts,0)) < 100 then 'complex' 
+         else 'very complex'
+       end complexity
+from apex_application_pages p
 left join (select i1.application_id, i1.page_id, count(1) counts from apex_application_page_items i1 group by i1.application_id, i1.page_id
            union all
            select r1.application_id, r1.page_id, count(1) counts from apex_application_page_regions r1 group by r1.application_id, r1.page_id
