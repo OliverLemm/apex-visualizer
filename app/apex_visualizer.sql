@@ -33,7 +33,7 @@ prompt APPLICATION 347 - APEX Visualizer
 -- Application Export:
 --   Application:     347
 --   Name:            APEX Visualizer
---   Date and Time:   16:46 Dienstag Mai 21, 2024
+--   Date and Time:   16:49 Dienstag Mai 21, 2024
 --   Exported By:     APEX_VISUALIZER
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -124,7 +124,7 @@ wwv_imp_workspace.create_flow(
 ,p_tokenize_row_search=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20240521164631'
+,p_last_upd_yyyymmddhh24miss=>'20240521164936'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>14
 ,p_print_server_type=>'INSTANCE'
@@ -35107,13 +35107,11 @@ wwv_flow_imp_shared.create_install_script(
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'create or replace package av_general_pkg is',
-'',
 '  function f_get_page_designer_url',
 '  (',
 '    pi_app_id      in number',
 '   ,pi_app_page_id in number',
 '  ) return varchar2;',
-'',
 '  function f_get_page_designer_link',
 '  (',
 '    pi_app_id           in number',
@@ -35121,17 +35119,14 @@ wwv_flow_imp_shared.create_install_script(
 '   ,pi_link_label       in varchar2 default ''edit''',
 '   ,pi_open_in_new_page in number default 1',
 '  ) return varchar2;',
-'',
 '  function f_get_page_id_from_target_link',
 '  (',
 '    pi_target_link                 in varchar2',
 '   ,pi_page_id_when_target_is_null in number default null',
 '  ) return number;',
-'',
 'end av_general_pkg;',
 '/',
 'create or replace package body av_general_pkg is',
-'',
 '  -- Example url for editing page 100 in application 347',
 '  -- f?p=4000:4500:5354232430661:::1,4150:FB_FLOW_ID,FB_FLOW_PAGE_ID,F4000_P1_FLOW,F4000_P4150_GOTO_PAGE,F4000_P1_PAGE:347,100,347,100,100',
 '  function f_get_page_designer_url',
@@ -35143,8 +35138,6 @@ wwv_flow_imp_shared.create_install_script(
 '  begin',
 '    return ''f?p=4000:4500:'' || nv(''APP_BUILDER_SESSION'') || ''::::FB_FLOW_ID,FB_FLOW_PAGE_ID:'' || pi_app_id || '','' || pi_app_page_id;',
 '  end f_get_page_designer_url;',
-'',
-'',
 '  function f_get_page_designer_link',
 '  (',
 '    pi_app_id           in number',
@@ -35157,7 +35150,6 @@ wwv_flow_imp_shared.create_install_script(
 '    return ''<a href="'' || f_get_page_designer_url(pi_app_id      => pi_app_id',
 '                                                 ,pi_app_page_id => pi_app_page_id) || ''" '' || case when pi_open_in_new_page = 1 then ''target="blank"'' else '''' end || ''>'' || pi_link_label || ''</a>'';',
 '  end f_get_page_designer_link;',
-'',
 '  -- %param pi_target_link f?p= APP_ID.:578: SESSION.:: DEBUG.:::',
 '  -- %param pi_page_id ',
 '  function f_get_page_id_from_target_link',
@@ -35184,7 +35176,6 @@ wwv_flow_imp_shared.create_install_script(
 '                              ,pi_page_id_when_target_is_null));',
 '    end if;',
 '  end f_get_page_id_from_target_link;',
-'',
 'end av_general_pkg;',
 '/'))
 );
@@ -36802,7 +36793,6 @@ wwv_flow_imp_shared.create_install_script(
 '             ,p.javascript_file_urls code_vc2',
 '      from apex_application_pages p',
 '      where p.javascript_file_urls is not null',
-'',
 '      union all',
 '      -- javascript file urls in app',
 '      select a.application_id',
@@ -36948,11 +36938,17 @@ wwv_flow_imp_shared.create_install_script(
 ,p_sequence=>170
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'',
 '  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PAGE_COMPLEXITY_V" ("APPLICATION_ID", "PAGE_ID", "COUNT_OBJECTS", "COMPLEXITY") AS ',
 '  select p.application_id,',
 '       p.page_id,',
 '       sum(nvl(c.counts,0)) count_objects,',
-'       case when sum(nvl(c.counts,0)) < 15 then ''simple'' when sum(nvl(c.counts,0)) < 50 then ''normal'' else ''complex'' end complexity',
+'       case',
+'         when sum(nvl(c.counts,0)) < 15 then ''simple''',
+'         when sum(nvl(c.counts,0)) < 50 then ''normal''',
+'         when sum(nvl(c.counts,0)) < 100 then ''complex''',
+'         else ''very complex''',
+'       end complexity',
 'from apex_application_pages p',
 'left join (select i1.application_id, i1.page_id, count(1) counts from apex_application_page_items i1 group by i1.application_id, i1.page_id',
 '           union all',
@@ -36969,7 +36965,7 @@ wwv_flow_imp_shared.create_install_script(
 '           select br1.application_id, br1.page_id, count(1) counts from apex_application_page_branches br1 group by br1.application_id, br1.page_id',
 '           ) c on c.application_id = p.application_id and c.page_id = p.page_id',
 'group by p.application_id, p.page_id',
-'; '))
+';'))
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(41113460691744263)

@@ -54,7 +54,6 @@ from ( -- javascript Code
              ,p.javascript_file_urls code_vc2
       from apex_application_pages p
       where p.javascript_file_urls is not null
-
       union all
       -- javascript file urls in app
       select a.application_id

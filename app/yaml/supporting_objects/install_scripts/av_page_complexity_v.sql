@@ -1,8 +1,14 @@
+
   CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PAGE_COMPLEXITY_V" ("APPLICATION_ID", "PAGE_ID", "COUNT_OBJECTS", "COMPLEXITY") AS 
   select p.application_id,
        p.page_id,
        sum(nvl(c.counts,0)) count_objects,
-       case when sum(nvl(c.counts,0)) < 15 then 'simple' when sum(nvl(c.counts,0)) < 50 then 'normal' else 'complex' end complexity
+       case
+         when sum(nvl(c.counts,0)) < 15 then 'simple'
+         when sum(nvl(c.counts,0)) < 50 then 'normal'
+         when sum(nvl(c.counts,0)) < 100 then 'complex'
+         else 'very complex'
+       end complexity
 from apex_application_pages p
 left join (select i1.application_id, i1.page_id, count(1) counts from apex_application_page_items i1 group by i1.application_id, i1.page_id
            union all
@@ -19,4 +25,4 @@ left join (select i1.application_id, i1.page_id, count(1) counts from apex_appli
            select br1.application_id, br1.page_id, count(1) counts from apex_application_page_branches br1 group by br1.application_id, br1.page_id
            ) c on c.application_id = p.application_id and c.page_id = p.page_id
 group by p.application_id, p.page_id
-; 
+;
