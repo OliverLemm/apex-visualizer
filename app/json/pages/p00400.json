@@ -328,8 +328,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"End"
-           ,"Virtual Keyboard":"Text"
+            "Number Alignment":"Start"
+           ,"Virtual Keyboard":"Decimal"
           }
          ,"Layout":{
             "Sequence":70

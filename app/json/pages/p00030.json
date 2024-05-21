@@ -142,8 +142,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"End"
-           ,"Virtual Keyboard":"Text"
+            "Number Alignment":"Start"
+           ,"Virtual Keyboard":"Decimal"
           }
          ,"Layout":{
             "Sequence":10
@@ -250,8 +250,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"End"
-           ,"Virtual Keyboard":"Text"
+            "Number Alignment":"Start"
+           ,"Virtual Keyboard":"Decimal"
           }
          ,"Layout":{
             "Sequence":30
@@ -705,16 +705,19 @@
           "id":"313689973115810612"
          ,"Identification":{
             "Column Name":"CREATED_ON"
-           ,"Type":"Date Picker (jQuery) [Deprecated]"
+           ,"Type":"Date Picker"
           }
          ,"Heading":{
             "Heading":"Created on"
            ,"Alignment":"center"
           }
          ,"Settings":{
-            "Show":"On icon click"
-           ,"Show other Months":false
-           ,"Navigation List for":"None"
+            "Show Time":false
+           ,"Display As":"Popup"
+           ,"Minimum Date":"None"
+           ,"Maximum Date":"None"
+           ,"Multiple Months":"No"
+           ,"Use Defaults":true
           }
          ,"Layout":{
             "Sequence":110
@@ -815,16 +818,19 @@
           "id":"313690146822810614"
          ,"Identification":{
             "Column Name":"LAST_UPDATED_ON"
-           ,"Type":"Date Picker (jQuery) [Deprecated]"
+           ,"Type":"Date Picker"
           }
          ,"Heading":{
             "Heading":"Last updated on"
            ,"Alignment":"center"
           }
          ,"Settings":{
-            "Show":"On icon click"
-           ,"Show other Months":false
-           ,"Navigation List for":"None"
+            "Show Time":false
+           ,"Display As":"Popup"
+           ,"Minimum Date":"None"
+           ,"Maximum Date":"None"
+           ,"Multiple Months":"No"
+           ,"Use Defaults":true
           }
          ,"Layout":{
             "Sequence":130

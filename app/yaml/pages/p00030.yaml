@@ -155,8 +155,8 @@ regions:
       alignment: end
 
     settings: 
-      number-alignment: End
-      virtual-keyboard: Text
+      number-alignment: Start
+      virtual-keyboard: Decimal
 
     layout: 
       sequence: 10
@@ -260,8 +260,8 @@ regions:
       alignment: end
 
     settings: 
-      number-alignment: End
-      virtual-keyboard: Text
+      number-alignment: Start
+      virtual-keyboard: Decimal
 
     layout: 
       sequence: 30
@@ -700,16 +700,19 @@ regions:
     id: 313689973115810612
     identification: 
       column-name: CREATED_ON
-      type: Date Picker (jQuery) [Deprecated]
+      type: Date Picker
 
     heading: 
       heading: Created on
       alignment: center
 
     settings: 
-      show: On icon click
-      show-other-months: false
-      navigation-list-for: None
+      show-time: false
+      display-as: Popup
+      minimum-date: None
+      maximum-date: None
+      multiple-months: No
+      use-defaults: true
 
     layout: 
       sequence: 110
@@ -807,16 +810,19 @@ regions:
     id: 313690146822810614
     identification: 
       column-name: LAST_UPDATED_ON
-      type: Date Picker (jQuery) [Deprecated]
+      type: Date Picker
 
     heading: 
       heading: Last updated on
       alignment: center
 
     settings: 
-      show: On icon click
-      show-other-months: false
-      navigation-list-for: None
+      show-time: false
+      display-as: Popup
+      minimum-date: None
+      maximum-date: None
+      multiple-months: No
+      use-defaults: true
 
     layout: 
       sequence: 130

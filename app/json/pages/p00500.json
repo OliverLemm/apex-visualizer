@@ -156,8 +156,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"End"
-           ,"Virtual Keyboard":"Text"
+            "Number Alignment":"Start"
+           ,"Virtual Keyboard":"Decimal"
           }
          ,"Layout":{
             "Sequence":20
@@ -505,8 +505,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"End"
-           ,"Virtual Keyboard":"Text"
+            "Number Alignment":"Start"
+           ,"Virtual Keyboard":"Decimal"
           }
          ,"Layout":{
             "Sequence":30
@@ -798,8 +798,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"End"
-           ,"Virtual Keyboard":"Text"
+            "Number Alignment":"Start"
+           ,"Virtual Keyboard":"Decimal"
           }
          ,"Layout":{
             "Sequence":20
@@ -850,8 +850,8 @@
            ,"Alignment":"end"
           }
          ,"Settings":{
-            "Number Alignment":"End"
-           ,"Virtual Keyboard":"Text"
+            "Number Alignment":"Start"
+           ,"Virtual Keyboard":"Decimal"
           }
          ,"Layout":{
             "Sequence":30

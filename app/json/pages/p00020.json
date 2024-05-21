@@ -625,7 +625,7 @@
          ,"Pivot":true
          ,"Flashback":true
          ,"Save Report":true
-         ,"Save Public Report":false
+         ,"Save Public Report":true
          ,"Reset":true
          ,"Help":true
          ,"Download":true

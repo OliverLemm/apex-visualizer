@@ -654,8 +654,8 @@ regions:
       alignment: end
 
     settings: 
-      number-alignment: End
-      virtual-keyboard: Text
+      number-alignment: Start
+      virtual-keyboard: Decimal
 
     layout: 
       sequence: 20
