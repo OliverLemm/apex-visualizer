@@ -4,6 +4,9 @@ https://raw.githubusercontent.com/OliverLemm/apex-visualizer/master/manifest.jso
 inside your internal APEX workspace. <br>
 Go Manage Instance => Instance Setting => Application Gallery and add a new line.
 
+## Release 23.2.2
+Migration checks for APEX 24.1 added.
+
 ## Release 23.2.1
 Page Applications (10) - Region Applications is by default expanded<br>
 Page Applications (10) - Report Applications changed from Interactive Grid to Interactive Report<br>
