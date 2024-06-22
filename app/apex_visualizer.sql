@@ -33,14 +33,14 @@ prompt APPLICATION 347 - APEX Visualizer
 -- Application Export:
 --   Application:     347
 --   Name:            APEX Visualizer
---   Date and Time:   15:30 Samstag Juni 22, 2024
+--   Date and Time:   16:23 Samstag Juni 22, 2024
 --   Exported By:     APEX_VISUALIZER
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                     28
 --       Items:                   23
 --       Processes:                4
---       Regions:                143
+--       Regions:                145
 --       Buttons:                  3
 --       Dynamic Actions:         50
 --     Shared Components:
@@ -124,7 +124,7 @@ wwv_imp_workspace.create_flow(
 ,p_tokenize_row_search=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20240622152723'
+,p_last_upd_yyyymmddhh24miss=>'20240622162245'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>14
 ,p_print_server_type=>'INSTANCE'
@@ -35094,7 +35094,7 @@ wwv_flow_imp_page.create_page(
 ,p_protection_level=>'C'
 ,p_page_component_map=>'03'
 ,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20240622152723'
+,p_last_upd_yyyymmddhh24miss=>'20240622162245'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(120322220144860378)
@@ -35133,7 +35133,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_query_row_template=>wwv_flow_imp.id(472877522933347715)
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated API calls found.</b>'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No Page Unload found.</b>'
 ,p_query_num_rows_type=>'ROWS_X_TO_Y'
 ,p_pagination_display_position=>'BOTTOM_RIGHT'
 ,p_csv_output=>'N'
@@ -35194,6 +35194,193 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_heading=>'When Event Name'
 ,p_use_as_row_header=>'N'
 ,p_column_hit_highlight=>'Page Unload'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_region(
+ p_id=>wwv_flow_imp.id(22533786060388028)
+,p_name=>'5.3 Deprecated Plugin Attribute'
+,p_parent_plug_id=>wwv_flow_imp.id(120322220144860378)
+,p_template=>wwv_flow_imp.id(472863055415347688)
+,p_display_sequence=>30
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_display_point=>'SUB_REGIONS'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select p.plugin_type, p.display_name, p.substitute_attributes',
+'from apex_appl_plugins p',
+'where p.plugin_type = ''Region Type''',
+'and p.application_id = :P0_APP_ID',
+'and p.substitute_attributes = ''Y'''))
+,p_header=>'When editing a region plug-in, the Substitute Attribute Values switch is now deprecated. When you move to the Procedure interface, this switch disappears. To perform substitutions on the attribute value, use apex_plugin_util.replace_substitutions.'
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>true
+,p_query_row_template=>wwv_flow_imp.id(472877522933347715)
+,p_query_num_rows=>99999
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated Plugin Attribute found.</b>'
+,p_query_num_rows_type=>'ROWS_X_TO_Y'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(22534370307388034)
+,p_query_column_id=>1
+,p_column_alias=>'PLUGIN_TYPE'
+,p_column_display_sequence=>10
+,p_column_heading=>'Plugin Type'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(22534466449388035)
+,p_query_column_id=>2
+,p_column_alias=>'DISPLAY_NAME'
+,p_column_display_sequence=>20
+,p_column_heading=>'Display Name'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(22534518875388036)
+,p_query_column_id=>3
+,p_column_alias=>'SUBSTITUTE_ATTRIBUTES'
+,p_column_display_sequence=>30
+,p_column_heading=>'Substitute Attributes'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_region(
+ p_id=>wwv_flow_imp.id(22534780879388038)
+,p_name=>'5.4 Number Field Substitutions'
+,p_parent_plug_id=>wwv_flow_imp.id(120322220144860378)
+,p_template=>wwv_flow_imp.id(472863055415347688)
+,p_display_sequence=>40
+,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_display_point=>'SUB_REGIONS'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select p.page_id, p.page_name, p.display_as, p.item_name, p.label, p.attribute_01 item_min, p.attribute_02 item_max',
+'from apex_application_page_items p',
+'where display_as_code = ''NATIVE_NUMBER_FIELD''',
+'and p.application_id = :P0_APP_ID',
+'and (instr(p.attribute_01,''&'') > 0 or instr(p.attribute_02,''&'') > 0)'))
+,p_header=>'Dynamic substitutions for Min/Max Value attributes for the Number field page item, including &P1_MIN., are deprecated. This will be fixed in a future release by allowing developers to declaratively pick an item to use for Min/Max Value attributes.'
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_lazy_loading=>true
+,p_query_row_template=>wwv_flow_imp.id(472877522933347715)
+,p_query_num_rows=>99999
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated Field Substitution in Number Fields found.</b>'
+,p_query_num_rows_type=>'ROWS_X_TO_Y'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(22535187653388042)
+,p_query_column_id=>1
+,p_column_alias=>'PAGE_ID'
+,p_column_display_sequence=>10
+,p_column_heading=>'Page Id'
+,p_use_as_row_header=>'N'
+,p_column_alignment=>'RIGHT'
+,p_heading_alignment=>'RIGHT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(22535285490388043)
+,p_query_column_id=>2
+,p_column_alias=>'PAGE_NAME'
+,p_column_display_sequence=>20
+,p_column_heading=>'Page Name'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(22535391567388044)
+,p_query_column_id=>3
+,p_column_alias=>'DISPLAY_AS'
+,p_column_display_sequence=>30
+,p_column_heading=>'Display As'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(22535463116388045)
+,p_query_column_id=>4
+,p_column_alias=>'ITEM_NAME'
+,p_column_display_sequence=>40
+,p_column_heading=>'Item Name'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(22535580252388046)
+,p_query_column_id=>5
+,p_column_alias=>'LABEL'
+,p_column_display_sequence=>50
+,p_column_heading=>'Label'
+,p_use_as_row_header=>'N'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(22535686178388047)
+,p_query_column_id=>6
+,p_column_alias=>'ITEM_MIN'
+,p_column_display_sequence=>60
+,p_column_heading=>'Item Min'
+,p_use_as_row_header=>'N'
+,p_column_hit_highlight=>'&'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(22535761681388048)
+,p_query_column_id=>7
+,p_column_alias=>'ITEM_MAX'
+,p_column_display_sequence=>70
+,p_column_heading=>'Item Max'
+,p_use_as_row_header=>'N'
+,p_column_hit_highlight=>'&'
 ,p_heading_alignment=>'LEFT'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
