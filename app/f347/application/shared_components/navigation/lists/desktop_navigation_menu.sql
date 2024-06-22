@@ -252,6 +252,15 @@ wwv_flow_imp_shared.create_list_item(
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'720'
 );
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(27003232840044532)
+,p_list_item_display_sequence=>470
+,p_list_item_link_text=>'APEX 24.1'
+,p_list_item_link_target=>'f?p=&APP_ID.:730:&APP_SESSION.::&DEBUG.:::'
+,p_parent_list_item_id=>wwv_flow_imp.id(36813609309735876)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'730'
+);
 wwv_flow_imp.component_end;
 end;
 /

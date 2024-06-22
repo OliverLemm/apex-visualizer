@@ -8,6 +8,31 @@
     type: Static Values
 
   entries: 
+  - # ====== Entry: APEX 24.1 ====================================
+    id: 27003232840044532
+    label: 
+      label: APEX 24.1
+
+    layout: 
+      sequence: 470
+      parent-entry: Migration # 36813609309735876
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 730
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:730:&APP_SESSION.::&DEBUG.:::'
+        page: 730 # APEX 24.1
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
   - # ====== Entry: Migration ====================================
     id: 36813609309735876
     label: 
