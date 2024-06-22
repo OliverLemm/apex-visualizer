@@ -874,7 +874,7 @@
    ,{
       "id":"120323316913860389"
      ,"Identification":{
-        "Title":"7 Desupported Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E"
+        "Title":"7 Desupported Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/24.1\/htmrn\/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E"
        ,"Type":"Static Content"
       }
      ,"Layout":{
@@ -919,12 +919,12 @@
    ,{
       "id":"180000590782506356"
      ,"Identification":{
-        "Title":"7.1 Desupported Utilities "
+        "Title":"7.1 Removed JSON Application Export"
        ,"Type":"Static Content"
       }
      ,"Layout":{
         "Sequence":10
-       ,"Parent Region":"7 Desupported Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E (120323316913860389)"
+       ,"Parent Region":"7 Desupported Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/24.1\/htmrn\/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E (120323316913860389)"
        ,"Position":"SUB_REGIONS"
        ,"Start New Layout":false
        ,"Start New Row":true
@@ -955,7 +955,7 @@
        ,"Exclude Title from Translation":false
       }
      ,"Header and Footer":{
-        "Header Text":"The APEXExport utility is desupported and is no longer included with Oracle APEX. Oracle recommends using SQLcl to perform export operations.\u003Cbr\u003E\n\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-check-circle u-success-text\"\u003E\u003C\/span\u003E nothing to change \/ no check needed\u003C\/b\u003E"
+        "Header Text":"The JSON application export option is removed. The Export Readable Format option is now a switch. If off, the application exports in SQL form. If on, the export file contains a human-readable YAML version of the application metadata.\u003Cbr\u003E\n\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-check-circle u-success-text\"\u003E\u003C\/span\u003E nothing to change \/ no check needed\u003C\/b\u003E"
       }
      ,"Server Cache":{
         "Caching":"Disabled"
@@ -969,201 +969,6 @@
          ,"Expand Shortcuts":false
         }
       }
-    }
-   ,{
-      "id":"180003973264539200"
-     ,"Identification":{
-        "Title":"7.2 Querying Template Component Metadata"
-       ,"Type":"Classic Report"
-      }
-     ,"Source":{
-        "Location":"Local Database"
-       ,"Type":"SQL Query"
-       ,"SQL Query":"select r.page_id\n      ,r.page_name\n      ,r.region_name\nfrom apex_application_page_regions r\nwhere r.application_id = :P0_APP_ID\nand r.template_component_type_code is not null\nand (r.attribute_01 is not null or --\n      r.attribute_02 is not null or --\n      r.attribute_03 is not null or --\n      r.attribute_04 is not null or --\n      r.attribute_05 is not null or --\n      r.attribute_06 is not null or --\n      r.attribute_07 is not null or --  \n      r.attribute_08 is not null or --\n      r.attribute_09 is not null or --  \n      r.attribute_10 is not null or --\n      r.attribute_11 is not null or --\n      r.attribute_12 is not null or --\n      r.attribute_13 is not null or --\n      r.attribute_14 is not null or --\n      r.attribute_15 is not null or --\n      r.attribute_16 is not null or --\n      r.attribute_17 is not null or --  \n      r.attribute_18 is not null or --\n      r.attribute_19 is not null or --  \n      r.attribute_20 is not null or --\n      r.attribute_21 is not null or --\n      r.attribute_22 is not null or --\n      r.attribute_23 is not null or --\n      r.attribute_24 is not null or --\n      r.attribute_25 is not null)"
-       ,"Page Items to Submit":[
-          "P0_APP_ID"
-        ]
-      }
-     ,"Layout":{
-        "Sequence":20
-       ,"Parent Region":"7 Desupported Features - \u003Ca href=\"https:\/\/docs.oracle.com\/en\/database\/oracle\/apex\/23.2\/htmrn\/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD\" target=\"_blank\"\u003ELink to Release Notes\u003C\/a\u003E (120323316913860389)"
-       ,"Position":"SUB_REGIONS"
-       ,"Start New Layout":false
-       ,"Start New Row":true
-       ,"Column":"Automatic"
-       ,"New Column":true
-       ,"Column Span":"Automatic"
-      }
-     ,"Appearance":{
-        "Template":"Collapsible (472863055415347688)"
-       ,"Template Options":[
-          "#DEFAULT#"
-         ,"is-expanded"
-         ,"t-Region--scrollBody"
-        ]
-       ,"Render Components":"Above Content"
-      }
-     ,"Accessibility":{
-        "Use Landmark":true
-       ,"Landmark Type":"Template Default"
-      }
-     ,"Advanced":{
-        "Static ID":"av-232-desup-72"
-       ,"Region Display Selector":false
-       ,"Exclude Title from Translation":false
-      }
-     ,"Header and Footer":{
-        "Header Text":"For template components only, the ATTRIBUTE_01...ATTRIBUTE_25 columns of APEX_APPLICATION_PAGE_REGIONS and APEX_APPLICATION_PAGE_IR_COL public views now return null.\u003Cbr \/\u003E\nInstead, use the new ATTRIBUTES column that stores a JSON object of all attribute values. Use the attribute\u0027s Static ID as the object key. Note that a table alias is always needed when using the JSON dot notation."
-      }
-     ,"Server Cache":{
-        "Caching":"Disabled"
-      }
-     ,"Customization":{
-        "Customizable":"Not Customizable By End Users"
-      }
-     ,"Attributes":{
-        "Layout":{
-          "Number of Rows Type":"Static Value"
-         ,"Number of Rows":15
-        }
-       ,"Appearance":{
-          "Template Type":"Theme"
-         ,"Template":"Standard (472877522933347715)"
-         ,"Template Options":[
-            "#DEFAULT#"
-           ,"t-Report--altRowsDefault"
-           ,"t-Report--rowHighlight"
-          ]
-        }
-       ,"Pagination":{
-          "Type":"Row Ranges X to Y (with next and previous links)"
-         ,"Display Position":"Bottom - Right"
-         ,"Partial Page Refresh":true
-        }
-       ,"Performance":{
-          "Lazy Loading":false
-        }
-       ,"Messages":{
-          "When No Data Found":"\u003Cb\u003E\u003Cspan aria-hidden=\"true\" class=\"fa fa-check-circle u-success-text\"\u003E\u003C\/span\u003E no Template Component with old Metadata used\u003C\/b\u003E"
-        }
-       ,"Break Formatting":{
-          "Break Columns":"No Break"
-        }
-       ,"Advanced":{
-          "Strip HTML":false
-         ,"Sort Nulls":"Last"
-        }
-       ,"Heading":{
-          "Type":"Custom Headings"
-        }
-       ,"Download":{
-          "CSV Export Enabled":false
-        }
-       ,"Printing":{
-          "Enabled":false
-        }
-      }
-     ,"Columns":[
-        {
-          "id":"27005532494044543"
-         ,"Identification":{
-            "Column Name":"PAGE_ID"
-           ,"Type":"Plain Text"
-          }
-         ,"Heading":{
-            "Heading":"Page Id"
-           ,"Alignment":"end"
-          }
-         ,"Layout":{
-            "Sequence":10
-           ,"Column Alignment":"end"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Sorting":{
-            "Sortable":true
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Advanced":{
-            "Compute Sum":false
-          }
-         ,"UI Defaults Reference":{
-            "Table Owner":"Parsing Schema"
-          }
-         ,"Security":{
-            "Escape special characters":true
-          }
-        }
-       ,{
-          "id":"27005903316044545"
-         ,"Identification":{
-            "Column Name":"PAGE_NAME"
-           ,"Type":"Plain Text"
-          }
-         ,"Heading":{
-            "Heading":"Page Name"
-           ,"Alignment":"start"
-          }
-         ,"Layout":{
-            "Sequence":20
-           ,"Column Alignment":"start"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Sorting":{
-            "Sortable":true
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Advanced":{
-            "Compute Sum":false
-          }
-         ,"UI Defaults Reference":{
-            "Table Owner":"Parsing Schema"
-          }
-         ,"Security":{
-            "Escape special characters":true
-          }
-        }
-       ,{
-          "id":"27006360720044545"
-         ,"Identification":{
-            "Column Name":"REGION_NAME"
-           ,"Type":"Plain Text"
-          }
-         ,"Heading":{
-            "Heading":"Region Name"
-           ,"Alignment":"start"
-          }
-         ,"Layout":{
-            "Sequence":30
-           ,"Column Alignment":"start"
-          }
-         ,"Accessibility":{
-            "Value Identifies Row":false
-          }
-         ,"Sorting":{
-            "Sortable":true
-          }
-         ,"Export \/ Printing":{
-            "Include In Export \/ Print":true
-          }
-         ,"Advanced":{
-            "Compute Sum":false
-          }
-         ,"UI Defaults Reference":{
-            "Table Owner":"Parsing Schema"
-          }
-         ,"Security":{
-            "Escape special characters":true
-          }
-        }
-      ]
     }
    ,{
       "id":"216850614825287391"
