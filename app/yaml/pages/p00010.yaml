@@ -39,7 +39,7 @@ regions:
 - # ====== Region: Page Functions ==============================
   id: 313691712316810630
   identification: 
-    title: Page Functions
+    name: Page Functions
     type: Chart
 
   source: 
@@ -59,7 +59,7 @@ regions:
   layout: 
     sequence: 50
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: false
     column: 7
@@ -67,7 +67,7 @@ regions:
     column-span: 6
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -83,9 +83,6 @@ regions:
 
   security: 
     escape-special-characters: true
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -149,10 +146,11 @@ regions:
 - # ====== Region: Code Complexity (characters by app and type) 
   id: 314608055182662737
   identification: 
-    title: Code Complexity (characters by app and type)
+    name: Code Complexity (characters by app and type)
     type: Chart
 
   source: 
+    location: None
     page-items-to-submit: 
     - P0_APP_ID
     - P10_COMPLEXITY_CATEGORY
@@ -160,7 +158,7 @@ regions:
   layout: 
     sequence: 40
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: false
     column: 7
@@ -168,7 +166,7 @@ regions:
     column-span: 6
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -184,9 +182,6 @@ regions:
 
   security: 
     escape-special-characters: true
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -382,7 +377,7 @@ regions:
 - # ====== Region: Shared Components ===========================
   id: 469939975267304173
   identification: 
-    title: Shared Components
+    name: Shared Components
     type: Chart
 
   source: 
@@ -422,7 +417,7 @@ regions:
   layout: 
     sequence: 30
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: 1
@@ -430,7 +425,7 @@ regions:
     column-span: 6
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -447,9 +442,6 @@ regions:
 
   security: 
     escape-special-characters: true
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -570,7 +562,7 @@ regions:
 - # ====== Region: Applicatons =================================
   id: 475969993218404941
   identification: 
-    title: Applicatons
+    name: Applicatons
     type: Interactive Report
 
   source: 
@@ -596,7 +588,7 @@ regions:
   layout: 
     sequence: 20
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -604,7 +596,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - js-useLocalStorage
@@ -1105,6 +1097,7 @@ regions:
 
     printing: 
       output: 
+        layout: Default Report Layout
         view-file-as: Attachment
 
       page: 
@@ -1158,12 +1151,14 @@ page-items:
 
   settings: 
     page-action-on-selection: None
-    allow-multi-selection: false
+
+  multiple-values: 
+    type: No
 
   layout: 
     sequence: 50
     region: Filter # 472904998656421813
-    position: BODY
+    slot: BODY
     alignment: Left
     start-new-layout: false
     start-new-row: true
@@ -1173,7 +1168,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Optional # 472889740066347741
+    template: Optional
     template-options: 
     - '#DEFAULT#'
     height: 1
@@ -1218,7 +1213,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P0_COMPONENT
@@ -1250,7 +1245,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P10_COMPLEXITY_CATEGORY
@@ -1281,7 +1276,7 @@ dynamic-actions:
     event-scope: Static
 
   when: 
-    event: EVENT.EVENT.BROWSER.READY
+    event: Page Load
 
   actions: 
   - # ====== Action: Hide ========================================
@@ -1311,7 +1306,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P0_APP_ID

@@ -14,8 +14,8 @@
     translatable: false
 
   templates: 
-    normal: '<button class="t-Button t-Button--noLabel  t-Button--icon #BUTTON_CSS_CLASSES#" #BUTTON_ATTRIBUTES# onclick="#JAVASCRIPT#" type="button" id="#BUTTON_ID#" title="#LABEL!ATTR#" aria-label="#LABEL!ATTR#"><span class="t-Icon #ICON_CSS_CLASSES#" aria-hidden="true"></span></button>'
-    hot: '<button class="t-Button t-Button--noLabel t-Button--icon #BUTTON_CSS_CLASSES# t-Button--hot" #BUTTON_ATTRIBUTES# onclick="#JAVASCRIPT#" type="button" id="#BUTTON_ID#" title="#LABEL!ATTR#" aria-label="#LABEL!ATTR#"><span class="t-Icon #ICON_CSS_CLASSES#" aria-hidden="true"></span></button>'
+    normal: '<button class="t-Button t-Button--noLabel  t-Button--icon #BUTTON_CSS_CLASSES#" #BUTTON_ATTRIBUTES# #ONCLICK# type="button" id="#BUTTON_ID#" title="#LABEL!ATTR#" aria-label="#LABEL!ATTR#"><span class="t-Icon #ICON_CSS_CLASSES#" aria-hidden="true"></span></button>'
+    hot: '<button class="t-Button t-Button--noLabel t-Button--icon #BUTTON_CSS_CLASSES# t-Button--hot" #BUTTON_ATTRIBUTES# #ONCLICK# type="button" id="#BUTTON_ID#" title="#LABEL!ATTR#" aria-label="#LABEL!ATTR#"><span class="t-Icon #ICON_CSS_CLASSES#" aria-hidden="true"></span></button>'
 
   template-options: 
   - # ====== Template Option: Spin ===============================
@@ -23,7 +23,7 @@
     identification: 
       name: Spin
       identifier: SPIN
-      group: Icon Hover Animation # 22661721654334749
+      group: Icon Hover Animation
       sequence: 10
 
     settings: 
@@ -41,7 +41,7 @@
     identification: 
       name: Push
       identifier: PUSH
-      group: Icon Hover Animation # 22661721654334749
+      group: Icon Hover Animation
       sequence: 20
 
     settings: 
@@ -69,8 +69,8 @@
     translatable: false
 
   templates: 
-    normal: '<button onclick="#JAVASCRIPT#" class="t-Button #BUTTON_CSS_CLASSES#" type="button" #BUTTON_ATTRIBUTES# id="#BUTTON_ID#"><span class="t-Button-label">#LABEL#</span></button>'
-    hot: '<button onclick="#JAVASCRIPT#" class="t-Button t-Button--hot #BUTTON_CSS_CLASSES#" type="button" #BUTTON_ATTRIBUTES# id="#BUTTON_ID#"><span class="t-Button-label">#LABEL#</span></button>'
+    normal: '<button class="t-Button #BUTTON_CSS_CLASSES#" type="button" #BUTTON_ATTRIBUTES# #ONCLICK# id="#BUTTON_ID#"><span class="t-Button-label">#LABEL#</span></button>'
+    hot: '<button class="t-Button t-Button--hot #BUTTON_CSS_CLASSES#" type="button" #BUTTON_ATTRIBUTES# #ONCLICK# id="#BUTTON_ID#"><span class="t-Button-label">#LABEL#</span></button>'
 
 - # ====== Button Template: Text with Icon =====================
   id: 472890377125347746
@@ -91,8 +91,8 @@
     - t-Button--iconLeft
 
   templates: 
-    normal: '<button class="t-Button t-Button--icon #BUTTON_CSS_CLASSES#" #BUTTON_ATTRIBUTES# onclick="#JAVASCRIPT#" type="button" id="#BUTTON_ID#"><span class="t-Icon t-Icon--left #ICON_CSS_CLASSES#" aria-hidden="true"></span><span class="t-Button-label">#LABEL#</span><span class="t-Icon t-Icon--right #ICON_CSS_CLASSES#" aria-hidden="true"></span></button>'
-    hot: '<button class="t-Button t-Button--icon #BUTTON_CSS_CLASSES# t-Button--hot" #BUTTON_ATTRIBUTES# onclick="#JAVASCRIPT#" type="button" id="#BUTTON_ID#"><span class="t-Icon t-Icon--left #ICON_CSS_CLASSES#" aria-hidden="true"></span><span class="t-Button-label">#LABEL#</span><span class="t-Icon t-Icon--right #ICON_CSS_CLASSES#" aria-hidden="true"></span></button>'
+    normal: '<button class="t-Button t-Button--icon #BUTTON_CSS_CLASSES#" #BUTTON_ATTRIBUTES# #ONCLICK# type="button" id="#BUTTON_ID#"><span class="t-Icon t-Icon--left #ICON_CSS_CLASSES#" aria-hidden="true"></span><span class="t-Button-label">#LABEL#</span><span class="t-Icon t-Icon--right #ICON_CSS_CLASSES#" aria-hidden="true"></span></button>'
+    hot: '<button class="t-Button t-Button--icon #BUTTON_CSS_CLASSES# t-Button--hot" #BUTTON_ATTRIBUTES# #ONCLICK# type="button" id="#BUTTON_ID#"><span class="t-Icon t-Icon--left #ICON_CSS_CLASSES#" aria-hidden="true"></span><span class="t-Button-label">#LABEL#</span><span class="t-Icon t-Icon--right #ICON_CSS_CLASSES#" aria-hidden="true"></span></button>'
 
   template-options: 
   - # ====== Template Option: Hide Icon on Desktop ===============
@@ -134,7 +134,7 @@
     identification: 
       name: Spin
       identifier: SPIN
-      group: Icon Hover Animation # 22661721654334749
+      group: Icon Hover Animation
       sequence: 10
 
     settings: 
@@ -152,7 +152,7 @@
     identification: 
       name: Push
       identifier: PUSH
-      group: Icon Hover Animation # 22661721654334749
+      group: Icon Hover Animation
       sequence: 20
 
     settings: 
@@ -170,7 +170,7 @@
     identification: 
       name: Left
       identifier: LEFTICON
-      group: Icon Position # 22662084673334749
+      group: Icon Position
       sequence: 10
 
     settings: 
@@ -185,7 +185,7 @@
     identification: 
       name: Right
       identifier: RIGHTICON
-      group: Icon Position # 22662084673334749
+      group: Icon Position
       sequence: 20
 
     settings: 

@@ -42,7 +42,7 @@ regions:
 - # ====== Region: Page ========================================
   id: 631594905978089993
   identification: 
-    title: Page
+    name: Page
     type: Interactive Grid
 
   source: 
@@ -74,7 +74,7 @@ regions:
   layout: 
     sequence: 10
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -82,7 +82,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Interactive Report # 472867031970347693
+    template: Interactive Report
     template-options: 
     - '#DEFAULT#'
     render-components: Above Content
@@ -94,9 +94,6 @@ regions:
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -980,7 +977,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P0_APP_ID

@@ -40,13 +40,13 @@ regions:
 - # ====== Region: 5.1 Quick SQL Deprecated Functionality ======
   id: 74500158803715128
   identification: 
-    title: 5.1 Quick SQL Deprecated Functionality
+    name: 5.1 Quick SQL Deprecated Functionality
     type: Static Content
 
   layout: 
     sequence: 10
     parent-region: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 93319249707815855
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -54,7 +54,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -84,9 +84,6 @@ regions:
       <i>/select</i>: No longer generates a SQL SELECT statement after generating data for each table.<br/>
       <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -98,13 +95,13 @@ regions:
 - # ====== Region: 5 Deprecated Features - <a href="https://docs
   id: 93319249707815855
   identification: 
-    title: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>'
+    name: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>'
     type: Static Content
 
   layout: 
     sequence: 20
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -112,7 +109,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -125,9 +122,6 @@ regions:
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -140,13 +134,13 @@ regions:
 - # ====== Region: 7 Desupported Features - <a href="https://doc
   id: 93320346476815866
   identification: 
-    title: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
+    name: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
     type: Static Content
 
   layout: 
     sequence: 10
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -154,7 +148,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -168,9 +162,6 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -182,13 +173,13 @@ regions:
 - # ====== Region: 7.1 Desupported Utilities  ==================
   id: 152997620345461833
   identification: 
-    title: '7.1 Desupported Utilities '
+    name: '7.1 Desupported Utilities '
     type: Static Content
 
   layout: 
     sequence: 10
     parent-region: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 93320346476815866
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -196,7 +187,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-collapsed
@@ -220,9 +211,6 @@ regions:
       The APEXExport utility is desupported and is no longer included with Oracle APEX. Oracle recommends using SQLcl to perform export operations.<br>
       <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> nothing to change / no check needed</b>
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -234,7 +222,7 @@ regions:
 - # ====== Region: 7.2 Querying Template Component Metadata ====
   id: 153001002827494677
   identification: 
-    title: 7.2 Querying Template Component Metadata
+    name: 7.2 Querying Template Component Metadata
     type: Classic Report
 
   source: 
@@ -278,7 +266,7 @@ regions:
   layout: 
     sequence: 20
     parent-region: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 93320346476815866
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -286,7 +274,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -320,7 +308,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -462,7 +450,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P0_APP_ID
@@ -492,7 +480,7 @@ dynamic-actions:
     event-scope: Static
 
   when: 
-    event: EVENT.EVENT.BROWSER.READY
+    event: Page Load
 
   actions: 
   - # ====== Action: Execute JavaScript Code =====================
@@ -526,7 +514,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CLICK
+    event: Click
     selection-type: Button
     button: Refresh # 65476682361019079
 

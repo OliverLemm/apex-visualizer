@@ -40,7 +40,7 @@ regions:
 - # ====== Region: Migration ===================================
   id: 63778751383663970
   identification: 
-    title: Migration
+    name: Migration
     type: Breadcrumb
 
   source: 
@@ -49,7 +49,7 @@ regions:
   layout: 
     sequence: 20
     parent-region: No Parent
-    position: REGION_POSITION_01
+    slot: REGION_POSITION_01
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -57,7 +57,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Hero # 472865265412347691
+    template: Hero
     template-options: 
     - '#DEFAULT#'
     icon: fa-wrench
@@ -71,22 +71,19 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
   attributes: 
     appearance: 
-      breadcrumb-template: Breadcrumb # 472890780758347747
+      breadcrumb-template: Breadcrumb
       template-options: 
       - '#DEFAULT#'
 
 - # ====== Region: What Migration contains =====================
   id: 66570596026285478
   identification: 
-    title: What Migration contains
+    name: What Migration contains
     type: Static Content
 
   source: 
@@ -95,7 +92,7 @@ regions:
   layout: 
     sequence: 10
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -103,7 +100,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -116,9 +113,6 @@ regions:
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users

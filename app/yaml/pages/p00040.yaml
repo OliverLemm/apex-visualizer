@@ -39,7 +39,7 @@ regions:
 - # ====== Region: Objects conditioned =========================
   id: 313823520444769894
   identification: 
-    title: Objects conditioned
+    name: Objects conditioned
     type: Chart
 
   source: 
@@ -59,7 +59,7 @@ regions:
   layout: 
     sequence: 10
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -67,7 +67,7 @@ regions:
     column-span: 4
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -83,9 +83,6 @@ regions:
 
   security: 
     escape-special-characters: true
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -149,7 +146,7 @@ regions:
 - # ====== Region: Conditioned by ==============================
   id: 313824270863769901
   identification: 
-    title: Conditioned by
+    name: Conditioned by
     type: Chart
 
   source: 
@@ -168,7 +165,7 @@ regions:
   layout: 
     sequence: 20
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: false
     column: Automatic
@@ -176,7 +173,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -192,9 +189,6 @@ regions:
 
   security: 
     escape-special-characters: true
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -256,7 +250,7 @@ regions:
 - # ====== Region: Condition Details ===========================
   id: 313824861931769907
   identification: 
-    title: Condition Details
+    name: Condition Details
     type: Chart
 
   source: 
@@ -285,7 +279,7 @@ regions:
   layout: 
     sequence: 30
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -293,7 +287,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -309,9 +303,6 @@ regions:
 
   security: 
     escape-special-characters: true
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -436,7 +427,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P0_APP_ID

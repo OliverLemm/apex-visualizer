@@ -8,7 +8,7 @@ identification:
 
 appearance: 
   page-mode: Normal
-  page-template: Login # 472851675002347660
+  page-template: Login
   template-options: 
   - '#DEFAULT#'
 
@@ -41,13 +41,13 @@ regions:
 - # ====== Region: APEX Visualizer =============================
   id: 59278983500934969
   identification: 
-    title: APEX Visualizer
+    name: APEX Visualizer
     type: Static Content
 
   layout: 
     sequence: 10
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -55,7 +55,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Login # 472867290630347694
+    template: Login
     template-options: 
     - '#DEFAULT#'
     icon: fa-sign-in
@@ -68,9 +68,6 @@ regions:
   advanced: 
     region-display-selector: false
     exclude-title-from-translation: false
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -101,7 +98,7 @@ page-items:
   layout: 
     sequence: 10
     region: APEX Visualizer # 59278983500934969
-    position: BODY
+    slot: BODY
     alignment: Left
     start-new-layout: false
     start-new-row: true
@@ -111,7 +108,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Hidden # 472889683695347740
+    template: Hidden
     template-options: 
     - '#DEFAULT#'
     icon: fa-user
@@ -156,7 +153,7 @@ page-items:
   layout: 
     sequence: 20
     region: APEX Visualizer # 59278983500934969
-    position: BODY
+    slot: BODY
     alignment: Left
     start-new-layout: false
     start-new-row: true
@@ -166,7 +163,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Hidden # 472889683695347740
+    template: Hidden
     template-options: 
     - '#DEFAULT#'
     icon: fa-key
@@ -205,10 +202,14 @@ page-items:
   settings: 
     number-of-columns: 1
 
+  multiple-values: 
+    type: Delimited List
+    separator: ':'
+
   layout: 
     sequence: 30
     region: APEX Visualizer # 59278983500934969
-    position: BODY
+    slot: BODY
     alignment: Left
     start-new-layout: false
     start-new-row: true
@@ -218,7 +219,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Hidden # 472889683695347740
+    template: Hidden
     template-options: 
     - '#DEFAULT#'
 
@@ -274,7 +275,7 @@ buttons:
   layout: 
     sequence: 40
     region: APEX Visualizer # 59278983500934969
-    position: NEXT
+    slot: NEXT
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -282,7 +283,7 @@ buttons:
     column-span: Automatic
 
   appearance: 
-    button-template: Text # 472890295330347746
+    button-template: Text
     hot: true
     template-options: 
     - '#DEFAULT#'
@@ -290,6 +291,7 @@ buttons:
   behavior: 
     action: Submit Page
     execute-validations: true
+    show-processing: false
     warn-on-unsaved-changes: Do Not Check
 
 processes: 

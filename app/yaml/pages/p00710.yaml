@@ -40,13 +40,13 @@ regions:
 - # ====== Region: 6.1 Deprecated Features - <a href="https://do
   id: 36658381493372480
   identification: 
-    title: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>'
+    name: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>'
     type: Static Content
 
   layout: 
     sequence: 20
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -54,7 +54,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -68,9 +68,6 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -82,7 +79,7 @@ regions:
 - # ====== Region: 6.1.3 Deprecated APIs and Parameters (PL/SQL 
   id: 36658488305372481
   identification: 
-    title: 6.1.3 Deprecated APIs and Parameters (PL/SQL API)
+    name: 6.1.3 Deprecated APIs and Parameters (PL/SQL API)
     type: Classic Report
 
   source: 
@@ -110,7 +107,7 @@ regions:
   layout: 
     sequence: 30
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 36658381493372480
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -118,7 +115,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -157,7 +154,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -389,13 +386,13 @@ regions:
 - # ====== Region: 8.1 Desupported Features - <a href="https://d
   id: 36659478262372491
   identification: 
-    title: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
+    name: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
     type: Static Content
 
   layout: 
     sequence: 10
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -403,7 +400,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -417,9 +414,6 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -431,13 +425,13 @@ regions:
 - # ====== Region: 8.1.5 App Builder Defaults Desupported ======
   id: 36659596577372492
   identification: 
-    title: 8.1.5 App Builder Defaults Desupported
+    name: 8.1.5 App Builder Defaults Desupported
     type: Static Content
 
   layout: 
     sequence: 50
     parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -445,7 +439,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-collapsed
@@ -465,9 +459,6 @@ regions:
       Developers can no longer define App Builder Defaults from Workspace Utilities, App Builder Defaults. The Create Application Wizard no longer uses the defined attributes.<br> 
       <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -479,13 +470,13 @@ regions:
 - # ====== Region: 8.1.6 Copying Legacy Themes Desupported =====
   id: 36659770024372493
   identification: 
-    title: 8.1.6 Copying Legacy Themes Desupported
+    name: 8.1.6 Copying Legacy Themes Desupported
     type: Static Content
 
   layout: 
     sequence: 60
     parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -493,7 +484,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-collapsed
@@ -513,9 +504,6 @@ regions:
       The Copy Theme Wizard no longer supports copying legacy themes. This includes Themes 1 - 26, and the jQuery Mobile theme.<br>
       <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -527,13 +515,13 @@ regions:
 - # ====== Region: 8.1.7 CKEditor4 Desupported =================
   id: 36659842541372494
   identification: 
-    title: 8.1.7 CKEditor4 Desupported
+    name: 8.1.7 CKEditor4 Desupported
     type: Static Content
 
   layout: 
     sequence: 70
     parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -541,7 +529,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-collapsed
@@ -572,9 +560,6 @@ regions:
       Oracle recommends manually checking the functioning of each Rich Text Editor item.<br>
       <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -586,7 +571,7 @@ regions:
 - # ====== Region: 8.1.8 Desupported Public Package APIs =======
   id: 36659955304372495
   identification: 
-    title: 8.1.8 Desupported Public Package APIs
+    name: 8.1.8 Desupported Public Package APIs
     type: Classic Report
 
   source: 
@@ -612,7 +597,7 @@ regions:
   layout: 
     sequence: 80
     parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -620,7 +605,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -651,7 +636,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -883,7 +868,7 @@ regions:
 - # ====== Region: Breadcrumb ==================================
   id: 38242096714976860
   identification: 
-    title: Breadcrumb
+    name: Breadcrumb
     type: Breadcrumb
 
   source: 
@@ -892,7 +877,7 @@ regions:
   layout: 
     sequence: 10
     parent-region: No Parent
-    position: REGION_POSITION_01
+    slot: REGION_POSITION_01
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -900,7 +885,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Title Bar # 472871837602347701
+    template: Title Bar
     template-options: 
     - '#DEFAULT#'
     - t-BreadcrumbRegion--useBreadcrumbTitle
@@ -914,22 +899,19 @@ regions:
     region-display-selector: false
     exclude-title-from-translation: false
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
   attributes: 
     appearance: 
-      breadcrumb-template: Breadcrumb # 472890780758347747
+      breadcrumb-template: Breadcrumb
       template-options: 
       - '#DEFAULT#'
 
 - # ====== Region: 6.1.4 Deprecated jQuery/JET Date Pickers ====
   id: 95832256919494913
   identification: 
-    title: 6.1.4 Deprecated jQuery/JET Date Pickers
+    name: 6.1.4 Deprecated jQuery/JET Date Pickers
     type: Classic Report
 
   source: 
@@ -951,7 +933,7 @@ regions:
   layout: 
     sequence: 60
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 36658381493372480
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -959,7 +941,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -995,7 +977,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -1233,7 +1215,7 @@ regions:
 - # ====== Region: 6.1.2 Deprecated User Interfaces Removed ====
   id: 96308720702795989
   identification: 
-    title: 6.1.2 Deprecated User Interfaces Removed
+    name: 6.1.2 Deprecated User Interfaces Removed
     type: Classic Report
 
   source: 
@@ -1281,7 +1263,7 @@ regions:
   layout: 
     sequence: 20
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 36658381493372480
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -1289,7 +1271,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -1323,7 +1305,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -1555,7 +1537,7 @@ regions:
 - # ====== Region: 8.1.1 Desupported Attributes in App Builder =
   id: 96336752131018458
   identification: 
-    title: 8.1.1 Desupported Attributes in App Builder
+    name: 8.1.1 Desupported Attributes in App Builder
     type: Classic Report
 
   source: 
@@ -1574,7 +1556,7 @@ regions:
   layout: 
     sequence: 10
     parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -1582,7 +1564,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -1615,7 +1597,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -1748,7 +1730,7 @@ regions:
 - # ====== Region: 8.1.2 Desupported Properties ================
   id: 96340134613051302
   identification: 
-    title: 8.1.2 Desupported Properties
+    name: 8.1.2 Desupported Properties
     type: Classic Report
 
   source: 
@@ -1774,7 +1756,7 @@ regions:
   layout: 
     sequence: 20
     parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -1782,7 +1764,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -1815,7 +1797,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -2080,13 +2062,13 @@ regions:
 - # ====== Region: 8.1.4 FullCalendar 3 Desupported ============
   id: 96345495180089304
   identification: 
-    title: 8.1.4 FullCalendar 3 Desupported
+    name: 8.1.4 FullCalendar 3 Desupported
     type: Static Content
 
   layout: 
     sequence: 40
     parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -2094,7 +2076,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-collapsed
@@ -2119,9 +2101,6 @@ regions:
       The used library version is now FullCalendar 5.11.2. APEX upgrades the library automatically.<br> 
       <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -2133,7 +2112,7 @@ regions:
 - # ====== Region: 8.1.3 Desupported View Columns ==============
   id: 96379832103830608
   identification: 
-    title: 8.1.3 Desupported View Columns
+    name: 8.1.3 Desupported View Columns
     type: Classic Report
 
   source: 
@@ -2152,7 +2131,7 @@ regions:
   layout: 
     sequence: 30
     parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -2160,7 +2139,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -2193,7 +2172,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -2326,7 +2305,7 @@ regions:
 - # ====== Region: 6.1.1 Deprecated APEX Item Markup ===========
   id: 112225118395306621
   identification: 
-    title: 6.1.1 Deprecated APEX Item Markup
+    name: 6.1.1 Deprecated APEX Item Markup
     type: Static Content
 
   source: 
@@ -2351,7 +2330,7 @@ regions:
   layout: 
     sequence: 10
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 36658381493372480
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -2359,7 +2338,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-collapsed
@@ -2379,9 +2358,6 @@ regions:
       Custom page template and custom region templates with duplicated positions are considered deprecated. For example, a region template referencing position #CHANGE# twice is not recommended because that duplicate position causes duplicate DOM IDs.<br>
       <br>
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -2393,7 +2369,7 @@ regions:
 - # ====== Region: 6.1.3 Deprecated APIs and Parameters (JavaScr
   id: 153799588483834963
   identification: 
-    title: '6.1.3 Deprecated APIs and Parameters (JavaScript API) '
+    name: '6.1.3 Deprecated APIs and Parameters (JavaScript API) '
     type: Classic Report
 
   source: 
@@ -2415,7 +2391,7 @@ regions:
   layout: 
     sequence: 50
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 36658381493372480
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -2423,7 +2399,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -2454,7 +2430,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -2660,7 +2636,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P0_APP_ID
@@ -2691,7 +2667,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CLICK
+    event: Click
     selection-type: Button
     button: Refresh # 65476682361019079
 

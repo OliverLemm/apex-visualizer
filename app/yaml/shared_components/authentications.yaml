@@ -4,6 +4,9 @@
   identification: 
     name: APEX
 
+  subscription: 
+    version-number: 1
+
   settings: 
     type: Oracle APEX Accounts
 
@@ -20,6 +23,9 @@
   id: 472901281969347805
   identification: 
     name: No Authentication
+
+  subscription: 
+    version-number: 1
 
   settings: 
     type: No Authentication

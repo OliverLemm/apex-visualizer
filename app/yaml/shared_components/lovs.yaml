@@ -4,6 +4,9 @@
   identification: 
     name: LOGIN_REMEMBER_USERNAME
 
+  subscription: 
+    version-number: 1
+
   source: 
     location: Static Values
 
@@ -20,6 +23,9 @@
   identification: 
     name: COMPONENTS (CHART)
 
+  subscription: 
+    version-number: 1
+
   source: 
     location: Local Database
     type: Legacy SQL Query
@@ -35,6 +41,9 @@
   identification: 
     name: PAGES
 
+  subscription: 
+    version-number: 1
+
   source: 
     location: Local Database
     type: Legacy SQL Query
@@ -49,6 +58,9 @@
   id: 472902966345364927
   identification: 
     name: APPLICATIONS
+
+  subscription: 
+    version-number: 1
 
   source: 
     location: Local Database

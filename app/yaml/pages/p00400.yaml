@@ -40,7 +40,7 @@ regions:
 - # ====== Region: Plugins =====================================
   id: 53346413506259587
   identification: 
-    title: Plugins
+    name: Plugins
     type: Interactive Grid
 
   source: 
@@ -64,7 +64,7 @@ regions:
   layout: 
     sequence: 10
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -72,7 +72,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Interactive Report # 472867031970347693
+    template: Interactive Report
     template-options: 
     - '#DEFAULT#'
     render-components: Above Content
@@ -84,9 +84,6 @@ regions:
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -633,7 +630,7 @@ regions:
 - # ====== Region: Plugin Overview =============================
   id: 58064936372606056
   identification: 
-    title: Plugin Overview
+    name: Plugin Overview
     type: Chart
 
   source: 
@@ -652,7 +649,7 @@ regions:
   layout: 
     sequence: 20
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -660,7 +657,7 @@ regions:
     column-span: 4
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -676,9 +673,6 @@ regions:
 
   security: 
     escape-special-characters: true
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -744,7 +738,7 @@ regions:
 - # ====== Region: Plugin Usage ================================
   id: 58065489828606062
   identification: 
-    title: Plugin Usage
+    name: Plugin Usage
     type: Interactive Grid
 
   source: 
@@ -764,7 +758,7 @@ regions:
   layout: 
     sequence: 30
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: false
     column: Automatic
@@ -772,7 +766,7 @@ regions:
     column-span: 8
 
   appearance: 
-    template: Interactive Report # 472867031970347693
+    template: Interactive Report
     template-options: 
     - '#DEFAULT#'
     render-components: Above Content
@@ -784,9 +778,6 @@ regions:
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -1609,12 +1600,14 @@ page-items:
 
   settings: 
     page-action-on-selection: None
-    allow-multi-selection: false
+
+  multiple-values: 
+    type: No
 
   layout: 
     sequence: 40
     region: Filter # 472904998656421813
-    position: BODY
+    slot: BODY
     alignment: Left
     start-new-layout: false
     start-new-row: true
@@ -1624,7 +1617,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Optional # 472889740066347741
+    template: Optional
     template-options: 
     - '#DEFAULT#'
     height: 1
@@ -1681,7 +1674,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P0_APP_ID

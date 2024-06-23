@@ -4,8 +4,8 @@ begin
 --     PAGE: 00600
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2023.10.31'
-,p_release=>'23.2.5'
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
 ,p_default_workspace_id=>100001
 ,p_default_application_id=>347
 ,p_default_id_offset=>20408574139881448
@@ -20,8 +20,6 @@ wwv_flow_imp_page.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'21'
-,p_last_updated_by=>'OLEMM'
-,p_last_upd_yyyymmddhh24miss=>'20240521164631'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(59246298485518465)
@@ -560,8 +558,9 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_template=>wwv_flow_imp.id(472867437783347694)
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
-,p_attribute_01=>'N'
-,p_attribute_02=>'HTML'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'expand_shortcuts', 'N',
+  'output_as', 'HTML')).to_clob
 );
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(59548661591320151)
@@ -712,6 +711,8 @@ wwv_flow_imp_page.create_page_item(
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'If using Universal Theme, this information shows the version compared to the APEX version<br>',
+'UT 24.1 = APEX 24.1<br>',
+'UT 23.2 = APEX 23.2<br>',
 'UT 23.1 = APEX 23.1<br>',
 'UT 22.2 = APEX 22.2<br>',
 'UT 22.1 = APEX 22.1<br>',
@@ -998,18 +999,6 @@ wwv_flow_imp_page.create_page_da_event(
 ,p_execution_type=>'IMMEDIATE'
 ,p_bind_event_type=>'change'
 );
-wwv_flow_imp.component_end;
-end;
-/
-begin
-wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2023.10.31'
-,p_release=>'23.2.5'
-,p_default_workspace_id=>100001
-,p_default_application_id=>347
-,p_default_id_offset=>20408574139881448
-,p_default_owner=>'APEX_VISUALIZER'
-);
 wwv_flow_imp_page.create_page_da_action(
  p_id=>wwv_flow_imp.id(59551796504320183)
 ,p_event_id=>wwv_flow_imp.id(59551765652320182)
@@ -1081,7 +1070,7 @@ wwv_flow_imp_page.create_page_da_action(
 'var val = $trigger.val();',
 '',
 '// success - up-to-date',
-'if (val == ''23.2'') {    ',
+'if (val == ''24.1'') {    ',
 '    $trigger.addClass("u-success");',
 '    $trigger.removeClass("u-warning");',
 '    $trigger.removeClass("u-danger");',

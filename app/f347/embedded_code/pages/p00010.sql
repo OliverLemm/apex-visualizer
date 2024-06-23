@@ -20,12 +20,12 @@ group by application_name , page_function
 order by count(page_id) desc;
 
 -- ----------------------------------------
--- Page: 10 - Applications > Region: Code Complexity (characters by app and type) > Attributes:  > Series: PL/SQL > Source > SQL Query
+-- Page: 10 - Applications > Region: Code Complexity (characters by app and type) > Attributes:  > Series: CSS > Source > SQL Query
 
 select APPLICATION_ID,
        APPLICATION_NAME,
-       sum(CODE_LENGTH) code_length
-  from AV_PLSQL_V
+       sum(CSS_CODE_LENGTH) code_length
+  from AV_CSS_V
  where (application_id = :P0_APP_ID or :P0_APP_ID is null)
 and ('css' = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
 group by application_id, application_name;
@@ -42,32 +42,15 @@ and ('javascript' = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY 
 group by application_id, application_name;
 
 -- ----------------------------------------
--- Page: 10 - Applications > Region: Code Complexity (characters by app and type) > Attributes:  > Series: CSS > Source > SQL Query
+-- Page: 10 - Applications > Region: Code Complexity (characters by app and type) > Attributes:  > Series: PL/SQL > Source > SQL Query
 
 select APPLICATION_ID,
        APPLICATION_NAME,
-       sum(CSS_CODE_LENGTH) code_length
-  from AV_CSS_V
+       sum(CODE_LENGTH) code_length
+  from AV_PLSQL_V
  where (application_id = :P0_APP_ID or :P0_APP_ID is null)
 and ('css' = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
 group by application_id, application_name;
-
--- ----------------------------------------
--- Page: 10 - Applications > Region: Applicatons > Source > SQL Query
-
-select aa.application_id app_id
-      ,aa.application_name app_name
-      ,aa.alias
-      ,aa.owner
-      ,aa.version
-      ,(select count(1) from apex_application_pages p1 where p1.application_id = aa.application_id) pages_overall
-      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'simple') simple_pages
-      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'normal') normal_pages
-      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'complex') complex_pages
-      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'very complex') very_complex_pages
-from apex_applications aa
-where aa.application_id = :P0_APP_ID
-or :P0_APP_ID is null;
 
 -- ----------------------------------------
 -- Page: 10 - Applications > Region: Shared Components > Source > SQL Query
@@ -98,4 +81,21 @@ select * from (
     select aa.application_name, aa.application_id, 'List of Values' series_name ,aa.lists_of_values series_value from apex_applications aa)
 where (application_id = :P0_APP_ID or :P0_APP_ID is null)
 and (lower(series_name) = :P0_COMPONENT or :P0_COMPONENT is null);
+
+-- ----------------------------------------
+-- Page: 10 - Applications > Region: Applicatons > Source > SQL Query
+
+select aa.application_id app_id
+      ,aa.application_name app_name
+      ,aa.alias
+      ,aa.owner
+      ,aa.version
+      ,(select count(1) from apex_application_pages p1 where p1.application_id = aa.application_id) pages_overall
+      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'simple') simple_pages
+      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'normal') normal_pages
+      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'complex') complex_pages
+      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'very complex') very_complex_pages
+from apex_applications aa
+where aa.application_id = :P0_APP_ID
+or :P0_APP_ID is null;
 

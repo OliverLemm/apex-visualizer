@@ -20,7 +20,7 @@
     after-field: </div>
     width: 20
     maximum-width: 100
-    filter-text-attributes: class="apex-item-text"
+    filter-text-attributes: class="apex-item-text" autofocus
 
   find-button: 
     text: Search
@@ -65,5 +65,5 @@
       #THEME_JAVASCRIPT#
       <meta name="viewport" content="width=device-width,initial-scale=1.0" />
       </head>
-    body-attributes: onload="first_field()" class="t-Page t-Page--popupLOV"
+    body-attributes: class="t-Page t-Page--popupLOV"
 

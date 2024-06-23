@@ -4,10 +4,11 @@ id: 347
 identification: 
   name: APEX Visualizer
   alias: AV
-  version: 23.2.2
+  version: 24.1.0
 
 row-search: 
   tokenize: false
+  text-query-function: None
 
 availability: 
   status: Available with Developer Toolbar
@@ -24,7 +25,8 @@ advanced:
   allow-feedback: false
   logging: true
   debugging: true
-  compatibility-mode: 21.2 / 22.1 / 22.2
+  compatibility-mode: 21.2 to 24.1
+  accessible-read-only-items: false
   pass-ecid: N
 
 authentication: 
@@ -77,7 +79,7 @@ navigation:
     page: LOGIN
 
 navigation-menu: 
-  list-template: Side Navigation Menu # 472886827371347733
+  list-template: Side Navigation Menu
   template-options: 
   - '#DEFAULT#'
   - js-defaultCollapsed
@@ -89,7 +91,7 @@ navigation-menu:
 navigation-bar: 
   implementation: List
   list: Desktop Navigation Bar # 472901013601347796
-  list-template: Navigation Bar # 472886643401347733
+  list-template: Navigation Bar
   template-options: 
   - '#DEFAULT#'
 
@@ -107,16 +109,47 @@ attributes:
   global-page: 0
   enable-end-users-to-choose-theme-style: false
   add-"built-with-apex"-to-footer: true
+  auto-dismiss-success-messages: false
 
 component-settings: 
+- # ====== Component Setting: NATIVE_SELECT_MANY ===============
+  id: 1421619849198550
+  identification: 
+    name: NATIVE_SELECT_MANY
+    type: Item
+
+  settings: 
+    attribute-1: separated
+
+  subscription: 
+    version-number: 18550129
+
+- # ====== Component Setting: NATIVE_GEOCODING =================
+  id: 1421760467198550
+  identification: 
+    name: NATIVE_GEOCODING
+    type: Process
+
+  settings: 
+    attribute-1: RELAX_HOUSE_NUMBER
+
+  subscription: 
+    version-number: 18550129
+
+- # ====== Component Setting: NATIVE_OPEN_AI_ASSISTANT =========
+  id: 1421887290198550
+  identification: 
+    name: NATIVE_OPEN_AI_ASSISTANT
+    type: Dynamic Action
+
+  subscription: 
+    version-number: 18550129
+
 - # ====== Component Setting: NATIVE_MAP_REGION ================
   id: 21157901307753652
   identification: 
     name: NATIVE_MAP_REGION
     type: Region
-
-  settings: 
-    attribute-1: Y
 
   subscription: 
     version-number: 1
@@ -193,9 +226,6 @@ component-settings:
     name: NATIVE_IR
     type: Region
 
-  settings: 
-    attribute-1: IG
-
   subscription: 
     version-number: 1
 
@@ -204,9 +234,6 @@ component-settings:
   identification: 
     name: NATIVE_DISPLAY_SELECTOR
     type: Region
-
-  settings: 
-    attribute-1: Y
 
   subscription: 
     version-number: 1

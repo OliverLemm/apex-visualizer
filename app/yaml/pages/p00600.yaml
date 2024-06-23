@@ -40,7 +40,7 @@ regions:
 - # ====== Region: unused plugins ==============================
   id: 59246298485518465
   identification: 
-    title: unused plugins
+    name: unused plugins
     type: Interactive Grid
 
   source: 
@@ -58,7 +58,7 @@ regions:
   layout: 
     sequence: 30
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -66,7 +66,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -79,9 +79,6 @@ regions:
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -290,7 +287,7 @@ regions:
 - # ====== Region: unused authorization schemes ================
   id: 59248532126518487
   identification: 
-    title: unused authorization schemes
+    name: unused authorization schemes
     type: Interactive Grid
 
   source: 
@@ -306,7 +303,7 @@ regions:
   layout: 
     sequence: 40
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: false
     column: Automatic
@@ -314,7 +311,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -327,9 +324,6 @@ regions:
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -480,7 +474,7 @@ regions:
 - # ====== Region: never condition used ========================
   id: 59248874548518491
   identification: 
-    title: never condition used
+    name: never condition used
     type: Interactive Grid
 
   source: 
@@ -501,7 +495,7 @@ regions:
   layout: 
     sequence: 50
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -509,7 +503,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -522,9 +516,6 @@ regions:
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -845,13 +836,13 @@ regions:
 - # ====== Region: general application settings ================
   id: 59549424781320159
   identification: 
-    title: general application settings
+    name: general application settings
     type: Static Content
 
   layout: 
     sequence: 10
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -859,7 +850,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -872,9 +863,6 @@ regions:
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -905,7 +893,7 @@ page-items:
   layout: 
     sequence: 20
     region: general application settings # 59549424781320159
-    position: BODY
+    slot: BODY
     alignment: Left
     start-new-layout: false
     start-new-row: true
@@ -915,7 +903,7 @@ page-items:
     label-column-span: 2
 
   appearance: 
-    template: Optional # 472889740066347741
+    template: Optional
     template-options: 
     - '#DEFAULT#'
     width: 30
@@ -974,7 +962,7 @@ page-items:
   layout: 
     sequence: 30
     region: general application settings # 59549424781320159
-    position: BODY
+    slot: BODY
     alignment: Left
     start-new-layout: false
     start-new-row: false
@@ -984,7 +972,7 @@ page-items:
     label-column-span: 2
 
   appearance: 
-    template: Optional # 472889740066347741
+    template: Optional
     template-options: 
     - '#DEFAULT#'
     width: 10
@@ -1033,7 +1021,7 @@ page-items:
   layout: 
     sequence: 40
     region: general application settings # 59549424781320159
-    position: BODY
+    slot: BODY
     alignment: Left
     start-new-layout: false
     start-new-row: false
@@ -1043,7 +1031,7 @@ page-items:
     label-column-span: 2
 
   appearance: 
-    template: Optional # 472889740066347741
+    template: Optional
     template-options: 
     - '#DEFAULT#'
     width: 20
@@ -1095,7 +1083,7 @@ page-items:
   layout: 
     sequence: 70
     region: general application settings # 59549424781320159
-    position: BODY
+    slot: BODY
     alignment: Left
     start-new-layout: false
     start-new-row: true
@@ -1105,7 +1093,7 @@ page-items:
     label-column-span: 2
 
   appearance: 
-    template: Optional # 472889740066347741
+    template: Optional
     template-options: 
     - '#DEFAULT#'
     width: 30
@@ -1157,7 +1145,7 @@ page-items:
   layout: 
     sequence: 80
     region: general application settings # 59549424781320159
-    position: BODY
+    slot: BODY
     alignment: Left
     start-new-layout: false
     start-new-row: false
@@ -1167,7 +1155,7 @@ page-items:
     label-column-span: 2
 
   appearance: 
-    template: Optional # 472889740066347741
+    template: Optional
     template-options: 
     - '#DEFAULT#'
     width: 10
@@ -1216,7 +1204,7 @@ page-items:
   layout: 
     sequence: 50
     region: general application settings # 59549424781320159
-    position: BODY
+    slot: BODY
     alignment: Left
     start-new-layout: false
     start-new-row: true
@@ -1226,7 +1214,7 @@ page-items:
     label-column-span: 2
 
   appearance: 
-    template: Optional # 472889740066347741
+    template: Optional
     template-options: 
     - '#DEFAULT#'
     width: 30
@@ -1275,7 +1263,7 @@ page-items:
   layout: 
     sequence: 60
     region: general application settings # 59549424781320159
-    position: BODY
+    slot: BODY
     alignment: Left
     start-new-layout: false
     start-new-row: false
@@ -1285,7 +1273,7 @@ page-items:
     label-column-span: 2
 
   appearance: 
-    template: Optional # 472889740066347741
+    template: Optional
     template-options: 
     - '#DEFAULT#'
     width: 10
@@ -1314,6 +1302,8 @@ page-items:
   help: 
     help-text: |
       If using Universal Theme, this information shows the version compared to the APEX version<br>
+      UT 24.1 = APEX 24.1<br>
+      UT 23.2 = APEX 23.2<br>
       UT 23.1 = APEX 23.1<br>
       UT 22.2 = APEX 22.2<br>
       UT 22.1 = APEX 22.1<br>
@@ -1339,7 +1329,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P0_APP_ID
@@ -1467,7 +1457,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P600_COMPATIBILITY_MODE
@@ -1525,7 +1515,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P600_SESSION_STATE_PROTECTION
@@ -1571,7 +1561,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P600_RUNTIME_API_USAGE
@@ -1623,7 +1613,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P600_INCLUDE_LEGACY_JAVASCRIPT
@@ -1669,7 +1659,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P600_INCLUDE_JQUERY_MIGRATE
@@ -1715,7 +1705,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P600_THEME_NAME
@@ -1803,7 +1793,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P600_UT_VERSION
@@ -1820,7 +1810,7 @@ dynamic-actions:
         var val = $trigger.val();
         
         // success - up-to-date
-        if (val == '23.2') {    
+        if (val == '24.1') {    
             $trigger.addClass("u-success");
             $trigger.removeClass("u-warning");
             $trigger.removeClass("u-danger");

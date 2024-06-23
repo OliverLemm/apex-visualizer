@@ -4,6 +4,9 @@
   identification: 
     name: DELETE_CONFIRM_MSG
 
+  subscription: 
+    version-number: 1
+
   source: 
     type: Text with JavaScript Escaped Single Quotes
     text: Would you like to perform this delete action?

@@ -39,7 +39,7 @@ regions:
 - # ====== Region: PLSQL in Page ===============================
   id: 639334989212406147
   identification: 
-    title: PLSQL in Page
+    name: PLSQL in Page
     type: Chart
 
   source: 
@@ -62,7 +62,7 @@ regions:
   layout: 
     sequence: 30
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -70,7 +70,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -86,9 +86,6 @@ regions:
 
   security: 
     escape-special-characters: true
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -212,7 +209,7 @@ regions:
 - # ====== Region: Characters of PLSQL Code per Page ===========
   id: 639395522743882367
   identification: 
-    title: Characters of PLSQL Code per Page
+    name: Characters of PLSQL Code per Page
     type: Chart
 
   source: 
@@ -238,7 +235,7 @@ regions:
   layout: 
     sequence: 10
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -246,7 +243,7 @@ regions:
     column-span: 9
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -262,9 +259,6 @@ regions:
 
   security: 
     escape-special-characters: true
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -392,7 +386,7 @@ regions:
 - # ====== Region: Place of PLSQL ==============================
   id: 639466610802345435
   identification: 
-    title: Place of PLSQL
+    name: Place of PLSQL
     type: Chart
 
   source: 
@@ -417,7 +411,7 @@ regions:
   layout: 
     sequence: 20
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: false
     column: Automatic
@@ -425,7 +419,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -441,9 +435,6 @@ regions:
 
   security: 
     escape-special-characters: true
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -518,12 +509,14 @@ page-items:
 
   settings: 
     page-action-on-selection: None
-    allow-multi-selection: false
+
+  multiple-values: 
+    type: No
 
   layout: 
     sequence: 200
     region: Filter # 472904998656421813
-    position: BODY
+    slot: BODY
     alignment: Left
     start-new-layout: false
     start-new-row: true
@@ -533,7 +526,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Optional # 472889740066347741
+    template: Optional
     template-options: 
     - '#DEFAULT#'
     height: 1
@@ -592,7 +585,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P0_APP_ID
@@ -656,7 +649,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P300_COMPONENT_TYPE

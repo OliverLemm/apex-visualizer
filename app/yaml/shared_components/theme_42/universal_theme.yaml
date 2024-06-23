@@ -5,6 +5,7 @@ identification:
   theme-number: 42
   name: Universal Theme
   identifier: UNIVERSAL_THEME
+  version: 24.1
 
 navigation: 
   type: List
@@ -20,47 +21,47 @@ css:
   - '#THEME_FILES#css/Core#MIN#.css?v=#APEX_VERSION#'
 
 component-defaults: 
-  page: Right Side Column # 472854826278347666
-  navigation-bar-list: Navigation Bar # 472886643401347733
+  page: Right Side Column
+  navigation-bar-list: Navigation Bar
   navigation-menu-list-position: Side
-  navigation-menu-list-(top): Top Navigation Menu # 472887651866347737
-  navigation-menu-list-(side): Side Navigation Menu # 472886827371347733
-  login-page: Login # 472851675002347660
-  error-page: Login # 472851675002347660
-  printer-friendly-page: Standard # 472850905594347657
+  navigation-menu-list-(top): Top Navigation Menu
+  navigation-menu-list-(side): Side Navigation Menu
+  login-page: Login
+  error-page: Login
+  printer-friendly-page: Standard
   breadcrumb: 472890780758347747
-  button: Text # 472890295330347746
-  legacy-calendar: Calendar # 472890918370347749
-  default-label: Optional # 472889740066347741
-  optional-label: Optional # 472889740066347741
-  required-label: Required # 472889958345347743
-  list: Links List # 472888791676347738
-  region: Standard # 472867437783347694
-  classic-report: Standard # 472877522933347715
+  button: Text
+  legacy-calendar: Calendar
+  default-label: Optional
+  optional-label: Optional
+  required-label: Required
+  list: Links List
+  region: Standard
+  classic-report: Standard
 
 region-defaults: 
-  breadcrumbs: Title Bar # 472871837602347701
-  charts: Standard # 472867437783347694
-  forms: Standard # 472867437783347694
-  lists: Standard # 472867437783347694
-  reports: Standard # 472867437783347694
-  wizards: Standard # 472867437783347694
-  interactive-reports: Interactive Report # 472867031970347693
+  breadcrumbs: Title Bar
+  charts: Standard
+  forms: Standard
+  lists: Standard
+  reports: Standard
+  wizards: Standard
+  interactive-reports: Interactive Report
 
 dialog-defaults: 
-  dialog-content-region: Blank with Attributes # 472857468114347677
-  dialog-button-region: Buttons Container # 472857602558347677
-  dialog-page: Modal Dialog # 472853465849347665
+  dialog-content-region: Blank with Attributes
+  dialog-button-region: Buttons Container
+  dialog-page: Modal Dialog
 
 icons: 
   library: Font APEX
 
 files: 
-  file-prefix: '#APEX_FILES#themes/theme_42/23.2/'
+  file-prefix: '#APEX_FILES#themes/theme_42/24.1/'
 
 styles: 
 - # ====== Style: Redwood Light ================================
-  id: 22497424215334685
+  id: 2107172135286953
   identification: 
     name: Redwood Light
 
@@ -80,7 +81,7 @@ styles:
     output-css-file-url: '#THEME_FILES#css/Redwood-Theme#MIN#.css?v=#APEX_VERSION#'
 
 - # ====== Style: Vita =========================================
-  id: 22497845988334685
+  id: 2107566368286953
   identification: 
     name: Vita
 
@@ -95,7 +96,7 @@ styles:
     output-css-file-url: '#THEME_FILES#css/Vita#MIN#.css?v=#APEX_VERSION#'
 
 - # ====== Style: Vita - Dark ==================================
-  id: 22498229160334685
+  id: 2107900768286953
   identification: 
     name: Vita - Dark
 
@@ -110,7 +111,7 @@ styles:
     output-css-file-url: '#THEME_FILES#css/Vita-Dark#MIN#.css?v=#APEX_VERSION#'
 
 - # ====== Style: Vita - Red ===================================
-  id: 22498622409334685
+  id: 2108361196286953
   identification: 
     name: Vita - Red
 
@@ -125,7 +126,7 @@ styles:
     output-css-file-url: '#THEME_FILES#css/Vita-Red#MIN#.css?v=#APEX_VERSION#'
 
 - # ====== Style: Vita - Slate =================================
-  id: 22499035254334685
+  id: 2108765480286953
   identification: 
     name: Vita - Slate
 
@@ -152,7 +153,7 @@ styles:
   theme-roller-attributes: 
     read-only: false
     input-parameter-file-urls: '#THEME_FILES#less/theme/Vita-Dark.less'
-    output-css-file-url: '#THEME_DB_FILES#20659859344322223.css'
+    output-css-file-url: '#THEME_DB_FILES#41068433484203671.css'
     json-configuration: '{"classes":[],"vars":{"@Nav-Exp":"160px"},"customCSS":"","useCustomLess":"N"}'
 
 - # ====== Style: APEX Visualizer ==============================
@@ -168,10 +169,28 @@ styles:
   theme-roller-attributes: 
     read-only: false
     input-parameter-file-urls: '#THEME_FILES#less/theme/Vita.less'
-    output-css-file-url: '#THEME_DB_FILES#37653172407708309.css'
+    output-css-file-url: '#THEME_DB_FILES#58061746547589757.css'
     json-configuration: '{"classes":[],"vars":{"@Actions-Exp":"210px","@Nav-Exp":"160px"},"customCSS":"","useCustomLess":"N"}'
 
 files: 
+- # ====== File: 58061746547589757.css =========================
+  id: 2985468972289676
+  identification: 
+    file-name: 58061746547589757.css
+
+  attributes: 
+    mime-type: text/css
+    file-character-set: Unicode UTF-8
+
+- # ====== File: 41068433484203671.css =========================
+  id: 2986605625291460
+  identification: 
+    file-name: 41068433484203671.css
+
+  attributes: 
+    mime-type: text/css
+    file-character-set: Unicode UTF-8
+
 - # ====== File: 20659859344322223.css =========================
   id: 41068819701203676
   identification: 

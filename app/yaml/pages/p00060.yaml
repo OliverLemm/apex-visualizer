@@ -39,7 +39,7 @@ regions:
 - # ====== Region: Details =====================================
   id: 314604596573662703
   identification: 
-    title: Details
+    name: Details
     type: Interactive Grid
 
   source: 
@@ -63,7 +63,7 @@ regions:
   layout: 
     sequence: 10
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -71,7 +71,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Interactive Report # 472867031970347693
+    template: Interactive Report
     template-options: 
     - '#DEFAULT#'
     render-components: Above Content
@@ -84,9 +84,6 @@ regions:
     static-id: details
     region-display-selector: true
     exclude-title-from-translation: false
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -700,7 +697,7 @@ regions:
 - # ====== Region: Templates Reference (overall) ===============
   id: 314605975356662716
   identification: 
-    title: Templates Reference (overall)
+    name: Templates Reference (overall)
     type: Chart
 
   source: 
@@ -726,7 +723,7 @@ regions:
   layout: 
     sequence: 20
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -734,7 +731,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -750,9 +747,6 @@ regions:
 
   security: 
     escape-special-characters: true
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -872,7 +866,7 @@ regions:
 - # ====== Region: Templates Reference (customized) ============
   id: 314606866532662725
   identification: 
-    title: Templates Reference (customized)
+    name: Templates Reference (customized)
     type: Chart
 
   source: 
@@ -898,7 +892,7 @@ regions:
   layout: 
     sequence: 30
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: false
     column: Automatic
@@ -906,7 +900,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -922,9 +916,6 @@ regions:
 
   security: 
     escape-special-characters: true
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -1054,12 +1045,14 @@ page-items:
 
   settings: 
     page-action-on-selection: None
-    allow-multi-selection: false
+
+  multiple-values: 
+    type: No
 
   layout: 
     sequence: 40
     region: Filter # 472904998656421813
-    position: BODY
+    slot: BODY
     alignment: Left
     start-new-layout: false
     start-new-row: true
@@ -1069,7 +1062,7 @@ page-items:
     label-column-span: Page Template Default
 
   appearance: 
-    template: Optional # 472889740066347741
+    template: Optional
     template-options: 
     - '#DEFAULT#'
     height: 1
@@ -1119,7 +1112,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P0_APP_ID
@@ -1181,7 +1174,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P60_TEMPLATE_TYPE

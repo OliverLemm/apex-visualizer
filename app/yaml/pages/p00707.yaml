@@ -40,7 +40,7 @@ regions:
 - # ====== Region: 7.1.11 apex.navigation.dialog.fireCloseHandle
   id: 59235039560601189
   identification: 
-    title: 7.1.11 apex.navigation.dialog.fireCloseHandler function is Desupported
+    name: 7.1.11 apex.navigation.dialog.fireCloseHandler function is Desupported
     type: Classic Report
 
   source: 
@@ -62,7 +62,7 @@ regions:
   layout: 
     sequence: 50
     parent-region: '7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/21.1/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Release Notes</a>' # 108113545432626561
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -70,7 +70,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -98,7 +98,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -295,13 +295,13 @@ regions:
 - # ====== Region: 5.1 Deprecated Features - <a href="https://do
   id: 59235764752601196
   identification: 
-    title: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Release Notes</a>'
+    name: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Release Notes</a>'
     type: Static Content
 
   layout: 
     sequence: 20
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -309,7 +309,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -323,9 +323,6 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -337,7 +334,7 @@ regions:
 - # ====== Region: 5.1.3 Date Picker (jQuery) Deprecated =======
   id: 59235900358601198
   identification: 
-    title: 5.1.3 Date Picker (jQuery) Deprecated
+    name: 5.1.3 Date Picker (jQuery) Deprecated
     type: Classic Report
 
   source: 
@@ -358,7 +355,7 @@ regions:
   layout: 
     sequence: 10
     parent-region: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Release Notes</a>' # 59235764752601196
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -366,7 +363,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -394,7 +391,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -559,7 +556,7 @@ regions:
 - # ====== Region: APEX 21.1 ===================================
   id: 63778881663663972
   identification: 
-    title: APEX 21.1
+    name: APEX 21.1
     type: Breadcrumb
 
   source: 
@@ -568,7 +565,7 @@ regions:
   layout: 
     sequence: 30
     parent-region: No Parent
-    position: REGION_POSITION_01
+    slot: REGION_POSITION_01
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -576,7 +573,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Hero # 472865265412347691
+    template: Hero
     template-options: 
     - '#DEFAULT#'
     icon: fa-wrench
@@ -590,22 +587,19 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
   attributes: 
     appearance: 
-      breadcrumb-template: Breadcrumb # 472890780758347747
+      breadcrumb-template: Breadcrumb
       template-options: 
       - '#DEFAULT#'
 
 - # ====== Region: 5.1.4 Based On - Output of PL/SQL Code attrib
   id: 63779133319663974
   identification: 
-    title: '5.1.4 Based On - Output of PL/SQL Code attribute Deprecated '
+    name: '5.1.4 Based On - Output of PL/SQL Code attribute Deprecated '
     type: Static Content
 
   source: 
@@ -616,7 +610,7 @@ regions:
   layout: 
     sequence: 20
     parent-region: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Release Notes</a>' # 59235764752601196
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -624,7 +618,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -639,9 +633,6 @@ regions:
     region-display-selector: false
     exclude-title-from-translation: false
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -653,7 +644,7 @@ regions:
 - # ====== Region: 7.1.9 afterModify is Desupported ============
   id: 78377614108239863
   identification: 
-    title: 7.1.9 afterModify is Desupported
+    name: 7.1.9 afterModify is Desupported
     type: Classic Report
 
   source: 
@@ -675,7 +666,7 @@ regions:
   layout: 
     sequence: 40
     parent-region: '7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/21.1/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Release Notes</a>' # 108113545432626561
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -683,7 +674,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -711,7 +702,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -908,13 +899,13 @@ regions:
 - # ====== Region: 7.1 Desupported Features -  <a href="https://
   id: 108113545432626561
   identification: 
-    title: '7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/21.1/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Release Notes</a>'
+    name: '7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/21.1/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Release Notes</a>'
     type: Static Content
 
   layout: 
     sequence: 10
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -922,7 +913,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -935,9 +926,6 @@ regions:
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -959,7 +947,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P0_APP_ID

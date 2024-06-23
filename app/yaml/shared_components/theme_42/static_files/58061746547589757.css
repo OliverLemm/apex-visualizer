@@ -1,3 +1,6 @@
+/*!
+ Copyright (c) 2014, 2023, Oracle and/or its affiliates.
+ */
 :root {
   --a-base-font-weight-semibold: 600;
   --a-icon-size: 1rem;
@@ -46,8 +49,39 @@
   --a-checkbox-label-spacing-x: 0.375rem;
   --a-combo-box-padding-y: 0.25rem;
   --a-combo-box-padding-x: 0.5rem;
+  --a-combobox-chip-line-height: 0.75rem;
   --a-dev-toolbar-background-color: #666;
   --a-dev-toolbar-backdrop-filter: none;
+  --a-datepicker-background-color: var(--ut-component-toolbar-background-color);
+  --a-datepicker-border-radius: var(--ut-border-radius);
+  --a-datepicker-header-background-color: #f9f9f9;
+  --a-datepicker-header-border-color: transparent;
+  --a-datepicker-monthpicker-select-background-color: transparent;
+  --a-datepicker-monthpicker-select-border-color: transparent;
+  --a-datepicker-monthpicker-select-font-size: 1rem;
+  --a-datepicker-monthpicker-select-font-weight: var(--a-base-font-weight-semibold, 500);
+  --a-datepicker-calendars-spacing: 0px;
+  --a-datepicker-calendar-background-color: var(--ut-component-background-color);
+  --a-datepicker-calendar-title-padding-x: 0.5rem;
+  --a-datepicker-calendar-title-padding-y: 0.5rem;
+  --a-datepicker-calendar-title-background-color: #f9f9f9;
+  --a-datepicker-calendar-header-padding-x: var(--a-datepicker-calendar-day-spacing);
+  --a-datepicker-calendar-header-background-color: #f9f9f9;
+  --a-datepicker-calendar-header-text-color: var(--ut-component-text-muted-color);
+  --a-datepicker-calendar-day-spacing: 0.5rem;
+  --a-datepicker-calendar-day-font-size: 0.875rem;
+  --a-datepicker-calendar-day-border-width: 1px;
+  --a-datepicker-calendar-day-border-radius: 50%;
+  --a-datepicker-calendar-day-hover-background-color: var(--ut-component-border-color);
+  --a-datepicker-calendar-day-selected-background-color: var(--a-palette-primary);
+  --a-datepicker-calendar-day-selected-text-color: var(--a-palette-primary-contrast);
+  --a-datepicker-calendar-day-selected-border-color: var(--a-palette-primary);
+  --a-datepicker-calendar-week-background-color: var(--ut-component-toolbar-background-color);
+  --a-datepicker-calendar-week-text-color: var(--ut-component-text-muted-color);
+  --a-datepicker-footer-background-color: var(--ut-component-background-color);
+  --a-datepicker-timepicker-select-background-color: transparent;
+  --a-datepicker-timepicker-select-border-color: transparent;
+  --a-datepicker-timepicker-select-font-size: 0.875rem;
   --a-fs-control-seperator-border-width: var(--ut-component-border-width, 1px);
   --a-fs-control-seperator-border-color: var(--ut-component-border-color);
   --a-fs-control-header-padding-y: 0.75rem;
@@ -78,9 +112,12 @@
   --a-filedrop-focus-border-color: var(--a-field-input-focus-border-color);
   --a-filedrop-item-spacing: 0.25rem;
   --a-filedrop-icon-size: 2rem;
+  --a-filedrop-icon-spacing: 0.25rem;
   --a-filedrop-heading-font-size: 1.25rem;
   --a-filedrop-heading-line-height: 1.75rem;
   --a-filedrop-heading-text-color: var(--ut-component-text-title-color);
+  --a-filedrop-count-badge-font-size: 0.625rem;
+  --a-filedrop-count-badge-line-height: 0.875rem;
   --a-filedrop-font-size: 0.875rem;
   --a-filedrop-line-height: 1rem;
   --a-filedrop-progress-width: 15rem;
@@ -88,6 +125,7 @@
   --a-filedrop-progress-border-radius: 0.375rem;
   --a-filedrop-progress-bar-width: 3rem;
   --a-field-input-border-radius: 0.125rem;
+  --a-field-input-border-style: dashed;
   --a-field-select-background-size: 2rem 1rem;
   --a-field-select-arrow-padding: 2rem;
   --a-gv-font-size: 0.75rem;
@@ -133,6 +171,7 @@
   --a-menu-font-size: 0.75rem;
   --a-menu-line-height: 1rem;
   --a-menu-border-radius: 0.25rem;
+  --a-menu-border-color: rgba(0, 0, 0, 0.1);
   --a-menu-sep-border-color: var(--ut-component-border-color);
   --a-menu-sep-spacing-y: 0.25rem;
   --a-menu-icon-size: 1rem;
@@ -141,10 +180,20 @@
   --a-menu-item-generic-padding-y: 0.5rem;
   --a-menu-item-generic-padding-x: 0.5rem;
   --a-menu-callout-size: 0.75rem;
+  --a-menu-callout-background-color: var(--a-menu-background-color);
   --a-menu-callout-border-radius: 0rem;
-  --a-menu-callout-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.1);
+  --a-menu-callout-border-color: var(--a-menu-border-color);
+  --a-menu-callout-shadow: var(--ut-shadow-sm);
+  --a-menu-callout-background-clip: content-box;
   --a-popuplov-search-bar-padding-y: 0.5rem;
   --a-popuplov-search-bar-padding-x: var(--a-popuplov-search-bar-padding-y);
+  --a-popuplov-chip-padding-x: 0.25rem;
+  --a-popuplov-chip-font-weight: var(--a-chip-value-font-weight, var(--a-base-font-weight-semibold, 500));
+  --a-popuplov-chip-line-height: 0.75rem;
+  --a-popuplov-chip-remove-font-size: 0.75rem;
+  --a-popuplov-chip-background-color: rgba(0, 0, 0, 0.075);
+  --a-popuplov-chip-border-width: 1px;
+  --a-popuplov-chip-border-color: var(--a-chip-state-border-color, var(--a-chip-type-border-color, var(--a-chip-border-color, var(--a-field-input-border-color, rgba(0, 0, 0, 0.075)))));
   --a-rv-font-size: 0.75rem;
   --a-rv-line-height: 1rem;
   --a-rv-body-padding-y: 0.25rem;
@@ -210,7 +259,7 @@
   --a-treeview-node-placeholder-border-radius: 0.125rem;
   --a-treeview-drag-helper-border-radius: 0.125rem;
   --a-chip-padding-y: 0.125rem;
-  --a-chip-padding-x: 0.125rem;
+  --a-chip-padding-x: 0.25rem;
   --a-chip-spacing: 0.25rem;
   --a-chip-font-size: 0.75rem;
   --a-chip-line-height: 1rem;
@@ -229,6 +278,44 @@
   --a-chip-input-font-size: 0.75rem;
   --a-chip-input-line-height: 1rem;
   --a-combo-select-icon-size: 1rem;
+  --a-searchresults-gap: 1rem;
+  --a-resultsitem-item-gap: 1rem;
+  --a-resultsitem-padding-x: 1rem;
+  --a-resultsitem-padding-y: 1rem;
+  --a-resultsitem-background-color: #fff;
+  --a-resultsitem-border-width: 1px;
+  --a-resultsitem-border-color: var(--ut-component-border-color);
+  --a-resultsitem-border-radius: 0.25rem;
+  --a-resultsitem-content-gap: 0.25rem;
+  --a-resultsitem-font-size: 0.875rem;
+  --a-resultsitem-line-height: 1.25rem;
+  --a-resultsitem-header-gap: 0.5rem;
+  --a-resultsitem-header-spacing: 0.25rem;
+  --a-resultsitem-title-font-size: 1rem;
+  --a-resultsitem-title-line-height: 1.25rem;
+  --a-resultsitem-subtitle-font-size: 0.9375rem;
+  --a-resultsitem-subtitle-line-height: 1.25rem;
+  --a-resultsitem-subtitle-spacing: var(--a-resultsitem-header-spacing, 0.25rem);
+  --a-resultsitem-description-font-size: 0.875rem;
+  --a-resultsitem-description-line-height: 1.25rem;
+  --a-resultsitem-attributes-font-size: 0.8125rem;
+  --a-resultsitem-attributes-line-height: 1rem;
+  --a-resultsitem-attributes-gap: 1rem;
+  --a-resultsitem-misc-font-size: 0.8125rem;
+  --a-resultsitem-misc-line-height: 1rem;
+  --a-resultsitem-misc-text-color: var(--ut-component-text-muted-color);
+  --a-resultsitem-icon-padding: 0.5rem;
+  --a-resultsitem-initials-size: 2rem;
+  --a-resultsitem-initials-font-size: 0.875rem;
+  --a-resultsitem-badge-font-size: 0.75rem;
+  --a-resultsitem-badge-background-color: rgba(0, 0, 0, 0.1);
+  --a-resultsitem-badge-border-radius: 0.25rem;
+  --a-resultsitem-badge-padding: 0.25rem;
+  --a-searchresults-pagination-spacing: 1rem;
+  --a-searchresults-pagination-gap: 1rem;
+  --a-searchresults-pagination-color: var(--ut-component-text-muted-color);
+  --a-searchresults-pagination-font-sizez: 0.875rem;
+  --a-searchresults-pagination-line-height: 1.25rem;
   --a-tooltip-font-size: 0.6875rem;
   --a-spinner-size: 2rem;
   --a-spinner-border-width: 0.25rem;
@@ -274,6 +361,9 @@
   --ojet-medium-font-size: 1rem;
   --ojet-large-font-size: 1.125rem;
   --ojet-larger-font-size: 1.25rem;
+  --ojet-tooltip-primary-text-color: #000000;
+  --ojet-tooltip-secondary-text-color: rgba(0, 0, 0, 0.65);
+  --ojet-tooltip-disabled-text-color: rgba(0, 0, 0, 0.4);
 }
 :root {
   --ut-color-scheme: light;
@@ -340,12 +430,66 @@
   --ut-tabs-item-hint-highlight-color: rgba(0, 0, 0, 0.2);
   --ut-tabs-item-active-font-weight: var(--a-base-font-weight-bold, 700);
   --ut-comment-chat-background-color: rgba(0, 0, 0, 0.05);
+  --ut-comment-chat-active-background-color: rgba(0, 0, 0, 0.1);
+  --ut-resultsregion-background-color: #fff;
+  --ut-resultsregion-border-color: var(--ut-region-border-color);
+  --ut-resultsregion-search-border-color: rgba(0, 0, 0, 0.1);
+  --ut-resultsregion-search-background-color: rgba(0, 0, 0, 0.025);
   --ut-wp-marker-color: #d9d9d9;
   --ut-wp-track-color: #d9d9d9;
+  --a-qrcode-size: 8rem;
+  --a-qrcode-size-sm: 8rem;
+  --a-qrcode-size-md: 16rem;
+  --a-qrcode-size-lg: 32rem;
+  --a-chat-background: var(--ut-body-background-color);
+  --a-chat-title-background: var(--ut-body-background-color);
+  --a-chat-title-color: var(--ut-component-text-title-color);
+  --a-chat-body-background-color: var(--ut-body-background-color);
+  --a-chat-user-primary-icon-background-color: var(--ut-palette-primary);
+  --a-chat-user-primary-icon-text-color: var(--ut-palette-primary-contrast);
+  --a-chat-user-primary-message-background-color: rgba(0, 0, 0, 0.15);
+  --a-chat-user-primary-text-color: var(--ut-body-text-color);
+  --a-chat-user-secondary-icon-background-color: var(--ut-palette-danger);
+  --a-chat-user-secondary-icon-text-color: var(--ut-palette-danger-contrast);
+  --a-chat-user-secondary-message-background-color: rgba(0, 0, 0, 0.05);
+  --a-chat-user-secondary-text-color: var(--ut-body-text-color);
+  --a-chat-message-border-color: var(--ut-component-border-color);
+  --a-chat-send-button-hover-background-color: var(--a-button-state-background-color);
+  --a-chat-message-action-button-background-color: #fff;
+  --a-chat-message-action-button-state-background-color: #f8f8f8;
+  --a-chat-message-error-icon-color: var(--ut-palette-danger);
+  --a-chat-transcript-outline-color: var(--ut-focus-outline-color, -webkit-focus-ring-color);
   --fc-neutral-bg-color: rgba(0, 0, 0, 0.2);
   --fc-neutral-text-color: #000;
   --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.2);
   --fc-non-business-color: rgba(0, 0, 0, 0.2);
+  --a-diagram-background: var(--ut-region-background-color, var(--ut-component-background-color));
+  --a-diagram-element-background-color: var(--ut-body-background-color);
+  --a-diagram-element-text-color: var(--ut-body-text-color);
+  --a-diagram-element-shadow: rgba(0, 0, 0, 0.3) 0 6px 12px;
+  --a-diagram-element-icon-color: #fff;
+  --a-diagram-element-icon-background-color: #cccccc;
+  --a-diagram-element-diamond-text-color: var(--u-color-38-contrast);
+  --a-diagram-element-diamond-background-color: var(--u-color-38);
+  --a-diagram-element-rect-background-color: var(--u-color-31);
+  --a-diagram-element-rect-text-color: var(--u-color-31-contrast);
+  --a-diagram-element-terminator-text-color: #fff;
+  --a-diagram-element-terminator-background-color: rgba(0, 0, 0, 0.95);
+  --a-diagram-label-background-color: var(--u-color-45);
+  --a-diagram-label-text-color: var(--u-color-45-contrast);
+  --a-diagram-link-border-color: var(--u-color-44);
+  --a-diagram-navigator-border-color: var(--ut-palette-primary);
+  --a-diagram-navigator-background-color: var(--a-diagram-background);
+  --a-diagram-cell-highlight: var(--ut-palette-success);
+  --a-diagram-route-terminated: var(--ut-palette-warning);
+  --a-diagram-route-faulted: var(--ut-palette-danger);
+  --a-diagram-route-active: var(--ut-palette-primary);
+  --a-diagram-route-completed: var(--ut-palette-success);
+  --a-diagram-route-default: var(--a-diagram-route-completed);
+  --a-diagram-route-waiting: var(--ut-palette-info);
+  --a-diagram-route-suspended: var(--ut-palette-warning-shade);
+  --a-cr-checkbox-background-color: #f9f9f9;
+  --a-cr-checkbox-text-color: var(--a-palette-primary-contrast);
   --ut-alternate-heading-font-family: var(--a-base-font-family-serif);
   --ut-alternate-heading-font-weight: var(--a-base-font-weight-normal);
   --ut-component-border-color: rgba(0, 0, 0, 0.1);
@@ -671,7 +815,7 @@
 }
 .t-Button--simple {
   --a-button-type-background-color: transparent;
-  --a-button-type-box-shadow: none;
+  --a-button-type-shadow: none;
 }
 .t-Button--link {
   border-color: transparent;
@@ -862,7 +1006,7 @@
   --a-button-padding-x: 0.25rem;
   --a-button-type-background-color: transparent;
   --a-button-type-border-color: transparent;
-  --a-button-type-box-shadow: none;
+  --a-button-type-shadow: none;
   --a-button-text-color: var(--ut-component-text-muted-color);
   --a-button-hover-text-color: var(--ut-component-text-default-color);
 }
@@ -1216,6 +1360,9 @@
     grid-template-columns: minmax(1.25rem, 5rem) minmax(0, var(--a-cv-icon-spacer, 2.75rem)) 1fr minmax(0, auto);
   }
 }
+a-combobox {
+  --a-chip-remove-padding: 0.0625rem;
+}
 .t-Form--large,
 .t-Form-fieldContainer--large {
   --ut-field-label-font-size: 0.875rem;
@@ -1276,8 +1423,6 @@
 }
 .t-Form--large .t-Form-itemWrapper .a-Button,
 .t-Form-fieldContainer--large .t-Form-itemWrapper .a-Button,
-.t-Form--large .t-Form-itemWrapper .oj-inputdatetime-input-trigger,
-.t-Form-fieldContainer--large .t-Form-itemWrapper .oj-inputdatetime-input-trigger,
 .t-Form--large .t-Form-itemWrapper .t-Form-helpButton,
 .t-Form-fieldContainer--large .t-Form-itemWrapper .t-Form-helpButton,
 .t-Form--large .apex-item-file--native::-webkit-file-upload-button,
@@ -1348,8 +1493,6 @@
 }
 .t-Form--xlarge .t-Form-itemWrapper .a-Button,
 .t-Form-fieldContainer--xlarge .t-Form-itemWrapper .a-Button,
-.t-Form--xlarge .t-Form-itemWrapper .oj-inputdatetime-input-trigger,
-.t-Form-fieldContainer--xlarge .t-Form-itemWrapper .oj-inputdatetime-input-trigger,
 .t-Form--xlarge .t-Form-itemWrapper .t-Form-helpButton,
 .t-Form-fieldContainer--xlarge .t-Form-itemWrapper .t-Form-helpButton,
 .t-Form--xlarge .apex-item-file--native::-webkit-file-upload-button,
@@ -1411,6 +1554,86 @@ input:checked + .u-checkbox:after,
 input:checked + .u-radio:after {
   transform: scale(1);
 }
+.a-DatePicker--multiple .a-DatePicker-calendarTitle {
+  border-block-start-width: var(--a-datepicker-calendar-header-border-width, 1px);
+  border-block-start-style: solid;
+  border-block-start-color: var(--a-datepicker-calendar-header-border-color, var(--a-gv-header-cell-border-color));
+}
+.a-DatePicker-calendar td > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: calc(var(--a-datepicker-calendar-day-font-size, 1rem) * 2);
+  inline-size: calc(var(--a-datepicker-calendar-day-font-size, 1rem) * 2);
+}
+.a-DatePicker-month,
+.a-DatePicker-year,
+.a-DatePicker-timeHours,
+.a-DatePicker-timeMinutes,
+.a-DatePicker-timeAmPm {
+  position: relative;
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+}
+.a-DatePicker-month select,
+.a-DatePicker-year select,
+.a-DatePicker-timeHours select,
+.a-DatePicker-timeMinutes select,
+.a-DatePicker-timeAmPm select {
+  order: none;
+  appearance: none;
+  padding-inline-end: 1.25rem;
+  grid-area: select;
+}
+.a-DatePicker-month:after,
+.a-DatePicker-year:after,
+.a-DatePicker-timeHours:after,
+.a-DatePicker-timeMinutes:after,
+.a-DatePicker-timeAmPm:after {
+  content: "\f0dc";
+  font-family: "Font APEX Small";
+  grid-area: select;
+  display: flex;
+  justify-content: flex-end;
+  right: var(--a-datepicker-monthpicker-select-padding-x, 0.25rem);
+  pointer-events: none;
+  position: relative;
+}
+.a-DatePicker-month select,
+.a-DatePicker-year select {
+  line-height: calc(var(--a-datepicker-monthpicker-select-font-size, 0.75rem) * 1.125);
+}
+.a-DatePicker-timeHours select,
+.a-DatePicker-timeMinutes select,
+.a-DatePicker-timeAmPm select {
+  line-height: calc(var(--a-datepicker-timepicker-select-font-size, 0.75rem) * 1.125);
+}
+.a-DatePicker-nav {
+  --a-button-background-color: transparent;
+  --a-button-text-color: var(--ut-component-text-default-color);
+  --a-button-border-color: transparent;
+  --a-button-shadow: none;
+  --a-icon-size: 1.25rem;
+}
+.a-DatePicker-nav:hover {
+  --a-button-state-background-color: var(--a-button-hover-background-color);
+  --a-button-state-text-color: var(--a-button-hover-text-color);
+  --a-button-state-border-color: var(--a-button-hover-border-color);
+  --a-button-state-shadow: var(--a-button-hover-shadow);
+}
+.a-DatePicker-nav:active {
+  --a-button-state-background-color: var(--a-button-active-background-color, var(--a-button-hover-background-color));
+  --a-button-state-text-color: var(--a-button-active-text-color, var(--a-button-hover-text-color));
+  --a-button-state-border-color: var(--a-button-active-border-color, var(--a-button-hover-border-color));
+  --a-button-state-shadow: var(--a-button-active-shadow, var(--a-button-hover-shadow));
+}
+.a-DatePicker--today {
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  --a-button-text-color: #4275a4;
+}
 .t-MegaMenu {
   --a-menu-focused-background-color: transparent;
   --a-menu-focused-text-color: initial;
@@ -1450,6 +1673,13 @@ input:checked + .u-radio:after {
 .t-Header-nav .a-MenuBar-item.is-focused {
   --a-menubar-item-background-color: var(--a-menubar-item-focused-background-color);
   --a-menubar-item-text-color: var(--a-menubar-item-focused-text-color);
+}
+a-select {
+  --a-chip-remove-padding: 0.0625rem;
+}
+:root {
+  --tm-color-button-default-hover-background: #f2f2f2;
+  --tm-color-button-on-background: #f2f2f2;
 }
 .t-TreeNav .a-TreeView-node--topLevel .a-TreeView-row.is-current,
 .t-TreeNav .a-TreeView-node--topLevel .a-TreeView-row.is-selected,
@@ -1745,6 +1975,56 @@ input:checked + .u-radio:after {
 .a-Chip-remove {
   margin-inline-end: calc(var(--a-chip-label-spacing, 4px) / 2);
 }
+a-workflow-diagram .a-Toolbar {
+  block-size: var(--ut-diagram-toolbar-block-size, 3rem);
+}
+a-workflow-diagram text[joint-selector="glyph"] {
+  font-weight: var(--ut-diagram-icon-font-weight, 600);
+}
+a-workflow-diagram .a-Toolbar--simple .a-Toolbar-group .a-Button {
+  --a-button-border-width: unset;
+  --a-button-border-color: transparent;
+  --a-button-state-background-color: transparent;
+}
+a-workflow-diagram .a-Toolbar--simple .a-Toolbar-group .a-Button:hover {
+  border-color: var(--a-button-state-border-color, var(--a-button-type-border-color, var(--a-button-border-color)));
+}
+.t-Region--noPadding .a-Toolbar-group {
+  margin-block-start: var(--a-toolbar-item-spacing, 0.5rem);
+}
+.t-Region--noPadding .a-Toolbar-group:last-child .a-Toolbar-item:last-child {
+  margin-inline-end: var(--a-toolbar-item-spacing, 0.5rem);
+}
+.t-Region-body .a-WorkflowApp {
+  max-block-size: 40rem;
+}
+.i-h240.t-Region--noPadding .t-Region-body .a-WorkflowApp {
+  block-size: calc(240px - var(--ut-diagram-toolbar-block-size, 3rem));
+}
+.i-h320.t-Region--noPadding .t-Region-body .a-WorkflowApp {
+  block-size: calc(320px - var(--ut-diagram-toolbar-block-size, 3rem));
+}
+.i-h480.t-Region--noPadding .t-Region-body .a-WorkflowApp {
+  block-size: calc(480px - var(--ut-diagram-toolbar-block-size, 3rem));
+}
+.i-h640.t-Region--noPadding .t-Region-body .a-WorkflowApp {
+  block-size: calc(640px - var(--ut-diagram-toolbar-block-size, 3rem));
+}
+.i-h240 .t-Region-body .a-WorkflowApp {
+  block-size: calc(240px - var(--ut-diagram-toolbar-block-size, 3rem) - (var(--ut-region-body-padding-y, 1rem) * 2));
+}
+.i-h320 .t-Region-body .a-WorkflowApp {
+  block-size: calc(320px - var(--ut-diagram-toolbar-block-size, 3rem) - (var(--ut-region-body-padding-y, 1rem) * 2));
+}
+.i-h480 .t-Region-body .a-WorkflowApp {
+  block-size: calc(480px - var(--ut-diagram-toolbar-block-size, 3rem) - (var(--ut-region-body-padding-y, 1rem) * 2));
+}
+.i-h640 .t-Region-body .a-WorkflowApp {
+  block-size: calc(640px - var(--ut-diagram-toolbar-block-size, 3rem) - (var(--ut-region-body-padding-y, 1rem) * 2));
+}
+.t-Region-body .joint-paper-scroller .joint-paper {
+  inset-block-start: 2.5rem !important;
+}
 :root {
   --oj-core-text-color-primary: var(--ut-component-text-default-color);
   --oj-core-text-color-secondary: var(--ut-component-text-muted-color);
@@ -1778,70 +2058,4 @@ input:checked + .u-radio:after {
   --oj-button-borderless-chrome-bg-color-hover: var(--ut-palette-primary);
   --oj-button-borderless-chrome-text-color-hover: var(--ut-palette-primary-contrast);
   --oj-heading-text-color: var(--ut-component-text-title-color);
-}
-.oj-listbox-drop:not(.oj-listbox-hide-hover) .oj-listbox-results .oj-hover {
-  background-color: var(--a-menu-focused-background-color);
-  color: var(--a-menu-focused-text-color);
-}
-.oj-listbox-results,
-.oj-listbox-results-base,
-.oj-select-results {
-  margin: 0;
-}
-.oj-listbox-drop {
-  padding-block-start: calc(var(--a-menu-padding-y, 0.5rem) - var(--a-menu-border-width, 1px));
-  padding-block-end: calc(var(--a-menu-padding-y, 0.5rem) - var(--a-menu-border-width, 1px));
-  padding-inline-start: calc(var(--a-menu-padding-x, 0rem) - var(--a-menu-border-width, 1px));
-  padding-inline-end: calc(var(--a-menu-padding-x, 0rem) - var(--a-menu-border-width, 1px));
-  border-radius: var(--a-menu-border-radius, 0.25rem);
-  border-color: var(--a-menu-border-color);
-  border-width: var(--a-menu-border-width, 1px);
-  border-style: solid;
-  box-shadow: var(--a-menu-shadow);
-  min-height: calc(var(--a-menu-line-height, 1rem) + (var(--a-menu-padding-y, 0.5rem) * 2));
-  color: var(--a-menu-text-color);
-  background-color: var(--a-menu-background-color);
-}
-.oj-datepicker-calendar {
-  font-size: var(--jui-datepicker-font-size, 0.6875rem);
-}
-.oj-datepicker-calendar th {
-  color: var(--jui-datepicker-header, #666);
-  border-bottom-style: solid;
-  border-bottom-width: var(--jui-datepicker-border-width, 1px);
-  border-bottom-color: var(--ut-datepicker-border-color, rgba(0, 0, 0, 0.1));
-  padding-block-start: var(--jui-datepicker-padding-y, 0.5rem);
-  padding-inline-end: var(--jui-datepicker-padding-x, 0.5rem);
-  padding-block-end: var(--jui-datepicker-padding-y, 0.5rem);
-  padding-inline-start: var(--jui-datepicker-padding-x, 0.5rem);
-}
-.oj-datepicker-calendar td {
-  width: var(--jui-datepicker-date-size, 3rem);
-  height: var(--jui-datepicker-date-size, 3rem);
-  margin: var(--jui-datepicker-date-margin, 0.125rem);
-  line-height: var(--jui-datepicker-date-size, 3rem);
-  border-radius: var(--jui-datepicker-date-border-radius, 100%);
-  background-color: var(--jui-datepicker-date-background-color, transparent);
-  color: var(--jui-datepicker-date-color, var(--ut-component-text-default-color));
-  transition: var(--jui-datepicker-date-transition, background-color 0.1s, color 0.1s);
-}
-.oj-datepicker-calendar td:focus {
-  outline: 0;
-  box-shadow: var(--jui-datepicker-date-focus-box-shadow, 35 0 0 1px #0076df inset, 0 0 1px 2px rgba(0, 118, 223, 0.25)) !important;
-}
-.oj-datepicker-calendar td a.oj-selected,
-.oj-datepicker-calendar td.oj-datepicker-today a.oj-selected {
-  --jui-datepicker-date-background-color: var(--ut-palette-primary);
-  --jui-datepicker-date-color: var(--ut-palette-primary-contrast);
-  font-weight: var(--jui-datepicker-selected-font-weight, 700);
-  font-size: var(--jui-datepicker-active-font-size, 0.875rem);
-}
-.oj-datepicker-calendar .oj-enabled.oj-hover {
-  background-color: var(--jui-datepicker-hover-background-color, #e8e8e8);
-  color: var(--jui-datepicker-hover-color, black);
-}
-.oj-datepicker-calendar .oj-datepicker-next-icon:not(.oj-disabled).oj-hover,
-.oj-datepicker-calendar .oj-datepicker-prev-icon:not(.oj-disabled).oj-hover {
-  background-color: var(--jui-datepicker-hover-background-color, #e8e8e8);
-  color: var(--jui-datepicker-hover-color, black);
 }

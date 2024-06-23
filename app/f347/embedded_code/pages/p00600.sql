@@ -53,13 +53,6 @@ and t.ui_type_name = 'DESKTOP'
 and t.is_current = 'Yes';
 
 -- ----------------------------------------
--- Page: 600 - QA > Region: unused authorization schemes > Source > SQL Query
-
-select a.authorization_scheme_name
-from av_p0600_not_used_auth_schemes_v a
-where a.application_id = :P0_APP_ID;
-
--- ----------------------------------------
 -- Page: 600 - QA > Region: never condition used > Source > SQL Query
 
 select v.page_name
@@ -70,4 +63,11 @@ from av_visibility_v v
 where v.visibility_category = 'CONDITION'
 and upper(v.visibility_type) = 'NEVER'
 and v.application_id = :P0_APP_ID;
+
+-- ----------------------------------------
+-- Page: 600 - QA > Region: unused authorization schemes > Source > SQL Query
+
+select a.authorization_scheme_name
+from av_p0600_not_used_auth_schemes_v a
+where a.application_id = :P0_APP_ID;
 

@@ -40,7 +40,7 @@ regions:
 - # ====== Region: 7.1.2 Desupported JavaScript Functions ======
   id: 42878578531235354
   identification: 
-    title: 7.1.2 Desupported JavaScript Functions
+    name: 7.1.2 Desupported JavaScript Functions
     type: Classic Report
 
   source: 
@@ -64,7 +64,7 @@ regions:
   layout: 
     sequence: 10
     parent-region: '7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 42879199816235360
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -72,7 +72,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -107,7 +107,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -307,13 +307,13 @@ regions:
 - # ====== Region: 7.1 Desupported Features -  <a href="https://
   id: 42879199816235360
   identification: 
-    title: '7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
+    name: '7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
     type: Static Content
 
   layout: 
     sequence: 20
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -321,7 +321,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -335,9 +335,6 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -349,7 +346,7 @@ regions:
 - # ====== Region: 6.1.1 Deprecated JavaScript Functions =======
   id: 42879506711235363
   identification: 
-    title: 6.1.1 Deprecated JavaScript Functions
+    name: 6.1.1 Deprecated JavaScript Functions
     type: Classic Report
 
   source: 
@@ -371,7 +368,7 @@ regions:
   layout: 
     sequence: 10
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 42880102302235369
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -379,7 +376,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -410,7 +407,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -610,13 +607,13 @@ regions:
 - # ====== Region: 6.1 Deprecated Features - <a href="https://do
   id: 42880102302235369
   identification: 
-    title: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>'
+    name: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>'
     type: Static Content
 
   layout: 
     sequence: 30
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -624,7 +621,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -638,9 +635,6 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -652,7 +646,7 @@ regions:
 - # ====== Region: 6.1.10 apexrefresh Event is Deprecated ======
   id: 42880287778235371
   identification: 
-    title: 6.1.10 apexrefresh Event is Deprecated
+    name: 6.1.10 apexrefresh Event is Deprecated
     type: Classic Report
 
   source: 
@@ -675,7 +669,7 @@ regions:
   layout: 
     sequence: 60
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 42880102302235369
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -683,7 +677,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -714,7 +708,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -914,7 +908,7 @@ regions:
 - # ====== Region: 6.1.5 Tabular Forms Deprecated  =============
   id: 42881000028235378
   identification: 
-    title: '6.1.5 Tabular Forms Deprecated '
+    name: '6.1.5 Tabular Forms Deprecated '
     type: Classic Report
 
   source: 
@@ -934,7 +928,7 @@ regions:
   layout: 
     sequence: 30
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 42880102302235369
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -942,7 +936,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -970,7 +964,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -1107,7 +1101,7 @@ regions:
 - # ====== Region: 6.1.7 Theme Style "Vista" Deprecated in Unive
   id: 42881557248235383
   identification: 
-    title: 6.1.7 Theme Style "Vista" Deprecated in Universal Theme
+    name: 6.1.7 Theme Style "Vista" Deprecated in Universal Theme
     type: Classic Report
 
   source: 
@@ -1125,7 +1119,7 @@ regions:
   layout: 
     sequence: 40
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 42880102302235369
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -1133,7 +1127,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -1161,7 +1155,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -1229,7 +1223,7 @@ regions:
 - # ====== Region: 6.1.8 Post Calculation for Page Items Depreca
   id: 42882173810235389
   identification: 
-    title: '6.1.8 Post Calculation for Page Items Deprecated '
+    name: '6.1.8 Post Calculation for Page Items Deprecated '
     type: Classic Report
 
   source: 
@@ -1249,7 +1243,7 @@ regions:
   layout: 
     sequence: 50
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 42880102302235369
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -1257,7 +1251,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -1285,7 +1279,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -1456,7 +1450,7 @@ regions:
 - # ====== Region: 6.1.9 Show / Hide All Page Items On Same Line
   id: 43954873197817258
   identification: 
-    title: 6.1.9 Show / Hide All Page Items On Same Line attributes deprecated
+    name: 6.1.9 Show / Hide All Page Items On Same Line attributes deprecated
     type: Classic Report
 
   source: 
@@ -1478,7 +1472,7 @@ regions:
   layout: 
     sequence: 70
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 42880102302235369
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -1486,7 +1480,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -1513,7 +1507,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -1682,7 +1676,7 @@ regions:
 - # ====== Region: 6.1.14 apex.widget.initPageItem Function Depr
   id: 43955670321817266
   identification: 
-    title: '6.1.14 apex.widget.initPageItem Function Deprecated '
+    name: '6.1.14 apex.widget.initPageItem Function Deprecated '
     type: Classic Report
 
   source: 
@@ -1704,7 +1698,7 @@ regions:
   layout: 
     sequence: 140
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 42880102302235369
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -1712,7 +1706,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -1743,7 +1737,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -1943,7 +1937,7 @@ regions:
 - # ====== Region: APEX 20.1 ===================================
   id: 63778600273663969
   identification: 
-    title: APEX 20.1
+    name: APEX 20.1
     type: Breadcrumb
 
   source: 
@@ -1952,7 +1946,7 @@ regions:
   layout: 
     sequence: 40
     parent-region: No Parent
-    position: REGION_POSITION_01
+    slot: REGION_POSITION_01
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -1960,7 +1954,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Hero # 472865265412347691
+    template: Hero
     template-options: 
     - '#DEFAULT#'
     icon: fa-wrench
@@ -1974,15 +1968,12 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
   attributes: 
     appearance: 
-      breadcrumb-template: Breadcrumb # 472890780758347747
+      breadcrumb-template: Breadcrumb
       template-options: 
       - '#DEFAULT#'
 
@@ -1998,7 +1989,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P0_APP_ID
@@ -2135,7 +2126,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CLICK
+    event: Click
     selection-type: Button
     button: Refresh # 65476682361019079
 

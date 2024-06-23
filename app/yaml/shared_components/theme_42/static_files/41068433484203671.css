@@ -1,3 +1,9 @@
+/*!
+ Copyright (c) 2014, 2023, Oracle and/or its affiliates.
+ */
+/*!
+ Copyright (c) 2014, 2023, Oracle and/or its affiliates.
+ */
 :root {
   --a-base-font-weight-semibold: 600;
   --a-icon-size: 1rem;
@@ -46,6 +52,7 @@
   --a-checkbox-label-spacing-x: 0.375rem;
   --a-combo-box-padding-y: 0.25rem;
   --a-combo-box-padding-x: 0.5rem;
+  --a-combobox-chip-line-height: 0.75rem;
   --a-dev-toolbar-background-color: #666;
   --a-dev-toolbar-backdrop-filter: none;
   --a-datepicker-background-color: var(--ut-component-toolbar-background-color);
@@ -121,6 +128,7 @@
   --a-filedrop-progress-border-radius: 0.375rem;
   --a-filedrop-progress-bar-width: 3rem;
   --a-field-input-border-radius: 0.125rem;
+  --a-field-input-border-style: dashed;
   --a-field-select-background-size: 2rem 1rem;
   --a-field-select-arrow-padding: 2rem;
   --a-gv-font-size: 0.75rem;
@@ -182,6 +190,13 @@
   --a-menu-callout-background-clip: content-box;
   --a-popuplov-search-bar-padding-y: 0.5rem;
   --a-popuplov-search-bar-padding-x: var(--a-popuplov-search-bar-padding-y);
+  --a-popuplov-chip-padding-x: 0.25rem;
+  --a-popuplov-chip-font-weight: var(--a-chip-value-font-weight, var(--a-base-font-weight-semibold, 500));
+  --a-popuplov-chip-line-height: 0.75rem;
+  --a-popuplov-chip-remove-font-size: 0.75rem;
+  --a-popuplov-chip-background-color: rgba(255, 255, 255, 0.075);
+  --a-popuplov-chip-border-width: 1px;
+  --a-popuplov-chip-border-color: var(--a-chip-state-border-color, var(--a-chip-type-border-color, var(--a-chip-border-color, var(--a-field-input-border-color, rgba(0, 0, 0, 0.075)))));
   --a-rv-font-size: 0.75rem;
   --a-rv-line-height: 1rem;
   --a-rv-body-padding-y: 0.25rem;
@@ -247,7 +262,7 @@
   --a-treeview-node-placeholder-border-radius: 0.125rem;
   --a-treeview-drag-helper-border-radius: 0.125rem;
   --a-chip-padding-y: 0.125rem;
-  --a-chip-padding-x: 0.125rem;
+  --a-chip-padding-x: 0.25rem;
   --a-chip-spacing: 0.25rem;
   --a-chip-font-size: 0.75rem;
   --a-chip-line-height: 1rem;
@@ -429,10 +444,55 @@
   --a-qrcode-size-sm: 8rem;
   --a-qrcode-size-md: 16rem;
   --a-qrcode-size-lg: 32rem;
+  --a-chat-background: var(--ut-body-background-color);
+  --a-chat-title-background: var(--ut-body-background-color);
+  --a-chat-title-color: var(--ut-component-text-title-color);
+  --a-chat-body-background-color: var(--ut-body-background-color);
+  --a-chat-user-primary-icon-background-color: var(--ut-palette-primary);
+  --a-chat-user-primary-icon-text-color: var(--ut-palette-primary-contrast);
+  --a-chat-user-primary-message-background-color: rgba(0, 0, 0, 0.15);
+  --a-chat-user-primary-text-color: var(--ut-body-text-color);
+  --a-chat-user-secondary-icon-background-color: var(--ut-palette-danger);
+  --a-chat-user-secondary-icon-text-color: var(--ut-palette-danger-contrast);
+  --a-chat-user-secondary-message-background-color: rgba(0, 0, 0, 0.05);
+  --a-chat-user-secondary-text-color: var(--ut-body-text-color);
+  --a-chat-message-border-color: var(--ut-component-border-color);
+  --a-chat-send-button-hover-background-color: var(--a-button-state-background-color);
+  --a-chat-message-action-button-background-color: #fff;
+  --a-chat-message-action-button-state-background-color: #f8f8f8;
+  --a-chat-message-error-icon-color: var(--ut-palette-danger);
+  --a-chat-transcript-outline-color: var(--ut-focus-outline-color, -webkit-focus-ring-color);
   --fc-neutral-bg-color: rgba(255, 255, 255, 0.2);
   --fc-neutral-text-color: #fff;
   --fc-event-selected-overlay-color: rgba(255, 255, 255, 0.2);
   --fc-non-business-color: rgba(255, 255, 255, 0.2);
+  --a-diagram-background: var(--ut-region-background-color, var(--ut-component-background-color));
+  --a-diagram-element-background-color: var(--ut-body-background-color);
+  --a-diagram-element-text-color: var(--ut-body-text-color);
+  --a-diagram-element-shadow: rgba(0, 0, 0, 0.3) 0 6px 12px;
+  --a-diagram-element-icon-color: #000;
+  --a-diagram-element-icon-background-color: #333333;
+  --a-diagram-element-diamond-text-color: var(--u-color-38-contrast);
+  --a-diagram-element-diamond-background-color: var(--u-color-38);
+  --a-diagram-element-rect-background-color: var(--u-color-31);
+  --a-diagram-element-rect-text-color: var(--u-color-31-contrast);
+  --a-diagram-element-terminator-text-color: #000;
+  --a-diagram-element-terminator-background-color: rgba(255, 255, 255, 0.95);
+  --a-diagram-label-background-color: var(--u-color-45);
+  --a-diagram-label-text-color: var(--u-color-45-contrast);
+  --a-diagram-link-border-color: var(--u-color-44);
+  --a-diagram-navigator-border-color: var(--ut-palette-primary);
+  --a-diagram-navigator-background-color: var(--a-diagram-background);
+  --a-diagram-cell-highlight: var(--ut-palette-success);
+  --a-diagram-route-terminated: var(--ut-palette-warning);
+  --a-diagram-route-faulted: var(--ut-palette-danger);
+  --a-diagram-route-active: var(--ut-palette-primary);
+  --a-diagram-route-completed: var(--ut-palette-success);
+  --a-diagram-route-default: var(--a-diagram-route-completed);
+  --a-diagram-route-waiting: var(--ut-palette-info);
+  --a-diagram-route-suspended: var(--ut-palette-warning-shade);
+  --a-cr-checkbox-background-color: #f9f9f9;
+  --a-cr-checkbox-text-color: var(--a-palette-primary-contrast);
   --ut-alternate-heading-font-family: var(--a-base-font-family-serif);
   --ut-alternate-heading-font-weight: var(--a-base-font-weight-normal);
   --ut-component-border-color: rgba(255, 255, 255, 0.15);
@@ -1303,6 +1363,9 @@
     grid-template-columns: minmax(1.25rem, 5rem) minmax(0, var(--a-cv-icon-spacer, 2.75rem)) 1fr minmax(0, auto);
   }
 }
+a-combobox {
+  --a-chip-remove-padding: 0.0625rem;
+}
 .t-Form--large,
 .t-Form-fieldContainer--large {
   --ut-field-label-font-size: 0.875rem;
@@ -1614,6 +1677,9 @@ input:checked + .u-radio:after {
   --a-menubar-item-background-color: var(--a-menubar-item-focused-background-color);
   --a-menubar-item-text-color: var(--a-menubar-item-focused-text-color);
 }
+a-select {
+  --a-chip-remove-padding: 0.0625rem;
+}
 :root {
   --tm-color-button-default-hover-background: #0d0d0d;
   --tm-color-button-on-background: #0d0d0d;
@@ -1912,6 +1978,56 @@ input:checked + .u-radio:after {
 .a-Chip-remove {
   margin-inline-end: calc(var(--a-chip-label-spacing, 4px) / 2);
 }
+a-workflow-diagram .a-Toolbar {
+  block-size: var(--ut-diagram-toolbar-block-size, 3rem);
+}
+a-workflow-diagram text[joint-selector="glyph"] {
+  font-weight: var(--ut-diagram-icon-font-weight, 600);
+}
+a-workflow-diagram .a-Toolbar--simple .a-Toolbar-group .a-Button {
+  --a-button-border-width: unset;
+  --a-button-border-color: transparent;
+  --a-button-state-background-color: transparent;
+}
+a-workflow-diagram .a-Toolbar--simple .a-Toolbar-group .a-Button:hover {
+  border-color: var(--a-button-state-border-color, var(--a-button-type-border-color, var(--a-button-border-color)));
+}
+.t-Region--noPadding .a-Toolbar-group {
+  margin-block-start: var(--a-toolbar-item-spacing, 0.5rem);
+}
+.t-Region--noPadding .a-Toolbar-group:last-child .a-Toolbar-item:last-child {
+  margin-inline-end: var(--a-toolbar-item-spacing, 0.5rem);
+}
+.t-Region-body .a-WorkflowApp {
+  max-block-size: 40rem;
+}
+.i-h240.t-Region--noPadding .t-Region-body .a-WorkflowApp {
+  block-size: calc(240px - var(--ut-diagram-toolbar-block-size, 3rem));
+}
+.i-h320.t-Region--noPadding .t-Region-body .a-WorkflowApp {
+  block-size: calc(320px - var(--ut-diagram-toolbar-block-size, 3rem));
+}
+.i-h480.t-Region--noPadding .t-Region-body .a-WorkflowApp {
+  block-size: calc(480px - var(--ut-diagram-toolbar-block-size, 3rem));
+}
+.i-h640.t-Region--noPadding .t-Region-body .a-WorkflowApp {
+  block-size: calc(640px - var(--ut-diagram-toolbar-block-size, 3rem));
+}
+.i-h240 .t-Region-body .a-WorkflowApp {
+  block-size: calc(240px - var(--ut-diagram-toolbar-block-size, 3rem) - (var(--ut-region-body-padding-y, 1rem) * 2));
+}
+.i-h320 .t-Region-body .a-WorkflowApp {
+  block-size: calc(320px - var(--ut-diagram-toolbar-block-size, 3rem) - (var(--ut-region-body-padding-y, 1rem) * 2));
+}
+.i-h480 .t-Region-body .a-WorkflowApp {
+  block-size: calc(480px - var(--ut-diagram-toolbar-block-size, 3rem) - (var(--ut-region-body-padding-y, 1rem) * 2));
+}
+.i-h640 .t-Region-body .a-WorkflowApp {
+  block-size: calc(640px - var(--ut-diagram-toolbar-block-size, 3rem) - (var(--ut-region-body-padding-y, 1rem) * 2));
+}
+.t-Region-body .joint-paper-scroller .joint-paper {
+  inset-block-start: 2.5rem !important;
+}
 :root {
   --oj-core-text-color-primary: var(--ut-component-text-default-color);
   --oj-core-text-color-secondary: var(--ut-component-text-muted-color);
@@ -1952,6 +2068,22 @@ input:checked + .u-radio:after {
   --a-datepicker-calendar-day-current-text-color: var(--a-palette-primary-contrast);
   --a-datepicker-calendar-day-current-border-color: rgba(255, 255, 255, 0.2);
   --a-filedrop-icon-action-background-color: #000000;
+  --a-chat-user-primary-message-background-color: rgba(255, 255, 255, 0.25);
+  --a-chat-user-secondary-message-background-color: rgba(255, 255, 255, 0.08);
+  --a-chat-send-button-hover-background-color: var(--a-button-hover-background-color);
+  --a-chat-send-button-color: #ffffff;
+  --a-chat-message-action-button-background-color: #626364;
+  --a-chat-message-action-button-state-background-color: #494a4b;
+  --a-chat-message-pre-border-color: rgba(255, 255, 255, 0.2);
+  --a-chat-actions-state-background-color: #494a4b;
+  --a-diagram-element-icon-color: #fff;
+  --a-diagram-element-terminator-text-color: var(--ut-body-text-color);
+  --a-diagram-element-terminator-background-color: rgba(255, 255, 255, 0.2);
+  --a-diagram-element-background-color: rgba(255, 255, 255, 0.2);
+  --a-diagram-label-background-color: #bcb6b1;
+  --a-diagram-label-text-color: #000;
+  --a-diagram-navigator-border-color: #bcb6b1;
+  --a-cr-checkbox-background-color: #212325;
   --prism-comment: #6A9955;
   --prism-string: #CE9178;
   --prism-literal: #9CDCFE;

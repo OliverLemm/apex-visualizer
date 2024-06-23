@@ -28,6 +28,20 @@ where (:P0_APP_ID is null or application_id = :P0_APP_ID)
 and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID);
 
 -- ----------------------------------------
+-- Page: 200 - CSS > Region: Place of CSS > Source > SQL Query
+
+select application_name
+      ,application_id
+      ,component_type || ' - ' || css_code_type js_component
+      ,sum(css_code_length) amount
+from av_css_v
+where (:P0_APP_ID is null or application_id = :P0_APP_ID)
+and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID)
+and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = best_practice)
+group by application_name,application_id,component_type || ' - ' || css_code_type
+order by sum(css_code_length) desc;
+
+-- ----------------------------------------
 -- Page: 200 - CSS > Region: Characters of CSS Code per Page > Source > SQL Query
 
 select page_id,
@@ -42,18 +56,4 @@ from av_p0200_css_code_by_page_v t
 where (t.application_id = :P0_APP_ID or :P0_APP_ID is null)
 and t.page_id is not null
 and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = t.best_practice);
-
--- ----------------------------------------
--- Page: 200 - CSS > Region: Place of CSS > Source > SQL Query
-
-select application_name
-      ,application_id
-      ,component_type || ' - ' || css_code_type js_component
-      ,sum(css_code_length) amount
-from av_css_v
-where (:P0_APP_ID is null or application_id = :P0_APP_ID)
-and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID)
-and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = best_practice)
-group by application_name,application_id,component_type || ' - ' || css_code_type
-order by sum(css_code_length) desc;
 

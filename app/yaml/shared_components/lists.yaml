@@ -4,6 +4,9 @@
   identification: 
     name: Desktop Navigation Menu
 
+  subscription: 
+    version-number: 1
+
   source: 
     type: Static Values
 
@@ -726,6 +729,9 @@
   id: 472901013601347796
   identification: 
     name: Desktop Navigation Bar
+
+  subscription: 
+    version-number: 1
 
   source: 
     type: Static Values

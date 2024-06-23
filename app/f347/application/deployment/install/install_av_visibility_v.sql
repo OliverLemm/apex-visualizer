@@ -4,8 +4,8 @@ begin
 --     INSTALL: INSTALL-av_visibility_v
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2023.10.31'
-,p_release=>'23.2.5'
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
 ,p_default_workspace_id=>100001
 ,p_default_application_id=>347
 ,p_default_id_offset=>20408574139881448
@@ -262,10 +262,6 @@ wwv_flow_imp_shared.create_install_object(
 ,p_object_owner=>'#OWNER#'
 ,p_object_type=>'VIEW'
 ,p_object_name=>'AV_VISIBILITY_V'
-,p_last_updated_by=>'OLEMM'
-,p_last_updated_on=>to_date('20210125213000','YYYYMMDDHH24MISS')
-,p_created_by=>'OLEMM'
-,p_created_on=>to_date('20210125213000','YYYYMMDDHH24MISS')
 );
 wwv_flow_imp.component_end;
 end;

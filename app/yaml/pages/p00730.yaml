@@ -40,7 +40,7 @@ regions:
 - # ====== Region: 5.2 Deprecated Dynamic Action Event =========
   id: 22532874009388019
   identification: 
-    title: 5.2 Deprecated Dynamic Action Event
+    name: 5.2 Deprecated Dynamic Action Event
     type: Classic Report
 
   source: 
@@ -61,7 +61,7 @@ regions:
   layout: 
     sequence: 20
     parent-region: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.1/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 120322220144860378
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -69,7 +69,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -100,7 +100,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -300,7 +300,7 @@ regions:
 - # ====== Region: 5.3 Deprecated Plugin Attribute =============
   id: 22533786060388028
   identification: 
-    title: 5.3 Deprecated Plugin Attribute
+    name: 5.3 Deprecated Plugin Attribute
     type: Classic Report
 
   source: 
@@ -318,7 +318,7 @@ regions:
   layout: 
     sequence: 30
     parent-region: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.1/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 120322220144860378
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -326,7 +326,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -357,7 +357,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -490,7 +490,7 @@ regions:
 - # ====== Region: 5.4 Number Field Substitutions ==============
   id: 22534780879388038
   identification: 
-    title: 5.4 Number Field Substitutions
+    name: 5.4 Number Field Substitutions
     type: Classic Report
 
   source: 
@@ -508,7 +508,7 @@ regions:
   layout: 
     sequence: 40
     parent-region: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.1/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 120322220144860378
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -516,7 +516,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -547,7 +547,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -814,13 +814,13 @@ regions:
 - # ====== Region: 5 Deprecated Features - <a href="https://docs
   id: 120322220144860378
   identification: 
-    title: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.1/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>'
+    name: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.1/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>'
     type: Static Content
 
   layout: 
     sequence: 20
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -828,7 +828,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -841,9 +841,6 @@ regions:
   advanced: 
     region-display-selector: true
     exclude-title-from-translation: false
-
-  server-cache: 
-    caching: Disabled
 
   customization: 
     customizable: Not Customizable By End Users
@@ -856,13 +853,13 @@ regions:
 - # ====== Region: 7 Desupported Features - <a href="https://doc
   id: 120323316913860389
   identification: 
-    title: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.1/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
+    name: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.1/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
     type: Static Content
 
   layout: 
     sequence: 10
     parent-region: No Parent
-    position: BODY
+    slot: BODY
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -870,7 +867,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Standard # 472867437783347694
+    template: Standard
     template-options: 
     - '#DEFAULT#'
     - t-Region--scrollBody
@@ -884,9 +881,6 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -898,13 +892,13 @@ regions:
 - # ====== Region: 7.1 Removed JSON Application Export =========
   id: 180000590782506356
   identification: 
-    title: 7.1 Removed JSON Application Export
+    name: 7.1 Removed JSON Application Export
     type: Static Content
 
   layout: 
     sequence: 10
     parent-region: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.1/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 120323316913860389
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -912,7 +906,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-collapsed
@@ -936,9 +930,6 @@ regions:
       The JSON application export option is removed. The Export Readable Format option is now a switch. If off, the application exports in SQL form. If on, the export file contains a human-readable YAML version of the application metadata.<br>
       <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> nothing to change / no check needed</b>
 
-  server-cache: 
-    caching: Disabled
-
   customization: 
     customizable: Not Customizable By End Users
 
@@ -950,7 +941,7 @@ regions:
 - # ====== Region: 5.1 Deprecated APIs =========================
   id: 216850614825287391
   identification: 
-    title: 5.1 Deprecated APIs
+    name: 5.1 Deprecated APIs
     type: Classic Report
 
   source: 
@@ -984,7 +975,7 @@ regions:
   layout: 
     sequence: 10
     parent-region: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.1/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 120322220144860378
-    position: SUB_REGIONS
+    slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
     column: Automatic
@@ -992,7 +983,7 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Collapsible # 472863055415347688
+    template: Collapsible
     template-options: 
     - '#DEFAULT#'
     - is-expanded
@@ -1029,7 +1020,7 @@ regions:
 
     appearance: 
       template-type: Theme
-      template: Standard # 472877522933347715
+      template: Standard
       template-options: 
       - '#DEFAULT#'
       - t-Report--altRowsDefault
@@ -1267,7 +1258,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CHANGE
+    event: Change
     selection-type: Item(s)
     item(s): 
     - P0_APP_ID
@@ -1298,7 +1289,7 @@ dynamic-actions:
     type: Immediate
 
   when: 
-    event: EVENT.EVENT.BROWSER.CLICK
+    event: Click
     selection-type: Button
     button: Refresh # 65476682361019079
 
@@ -1327,7 +1318,7 @@ dynamic-actions:
     event-scope: Static
 
   when: 
-    event: EVENT.EVENT.BROWSER.READY
+    event: Page Load
 
   actions: 
   - # ====== Action: Execute JavaScript Code =====================

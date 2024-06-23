@@ -4,8 +4,8 @@ begin
 --     REGION TEMPLATE: ITEM_CONTAINER
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2023.10.31'
-,p_release=>'23.2.5'
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
 ,p_default_workspace_id=>100001
 ,p_default_application_id=>347
 ,p_default_id_offset=>20408574139881448
@@ -30,7 +30,7 @@ wwv_flow_imp_shared.create_plug_template(
 ,p_translate_this_template=>'N'
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(23036372670334908)
+ p_id=>wwv_flow_imp.id(2646589300287079)
 ,p_plug_template_id=>wwv_flow_imp.id(22494107937816746)
 ,p_name=>'Item'
 ,p_placeholder=>'BODY'
@@ -41,7 +41,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(23036841234334908)
+ p_id=>wwv_flow_imp.id(2647030082287079)
 ,p_plug_template_id=>wwv_flow_imp.id(22494107937816746)
 ,p_name=>'Button End'
 ,p_placeholder=>'BUTTON_END'
@@ -52,7 +52,7 @@ wwv_flow_imp_shared.create_plug_tmpl_display_point(
 ,p_glv_new_row=>true
 );
 wwv_flow_imp_shared.create_plug_tmpl_display_point(
- p_id=>wwv_flow_imp.id(23037328087334908)
+ p_id=>wwv_flow_imp.id(2647525753287079)
 ,p_plug_template_id=>wwv_flow_imp.id(22494107937816746)
 ,p_name=>'Button Start'
 ,p_placeholder=>'BUTTON_START'
