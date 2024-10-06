@@ -19,7 +19,7 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_imp.import_begin (
  p_version_yyyy_mm_dd=>'2024.05.31'
-,p_release=>'24.1.2'
+,p_release=>'24.1.4'
 ,p_default_workspace_id=>100001
 ,p_default_application_id=>347
 ,p_default_id_offset=>20408574139881448
@@ -72,7 +72,7 @@ prompt APPLICATION 347 - APEX Visualizer
 --       E-Mail:
 --     Supporting Objects:  Included
 --       Install scripts:         17
---   Version:         24.1.2
+--   Version:         24.1.4
 --   Instance ID:     709418135251450
 --
 
@@ -109,7 +109,7 @@ wwv_imp_workspace.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'24.1.0'
+,p_flow_version=>'24.1.1'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -29814,7 +29814,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'These Compatibility Modes are equal<br>',
-'21.2 / 22.1 / 22.2 / 23.1 / 23.2<br>',
+'21.2 / 22.1 / 22.2 / 23.1 / 23.2 / 24.1<br>',
 '19.2 / 20.1 / 20.2 / 21.1<br>',
 '19.1<br>',
 '5.1 / 18.1 / 18.2<br>',
