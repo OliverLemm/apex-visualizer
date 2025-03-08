@@ -4,8 +4,8 @@ begin
 --     PAGE: 00708
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2024.05.31'
-,p_release=>'24.1.6'
+ p_version_yyyy_mm_dd=>'2024.11.30'
+,p_release=>'24.2.3'
 ,p_default_workspace_id=>100001
 ,p_default_application_id=>347
 ,p_default_id_offset=>20408574139881448
@@ -28,19 +28,19 @@ wwv_flow_imp_page.create_page_plug(
 ,p_icon_css_classes=>'fa-wrench'
 ,p_region_template_options=>'#DEFAULT#'
 ,p_component_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_imp.id(472865265412347691)
+,p_plug_template=>2674017834225413037
 ,p_plug_display_sequence=>30
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_display_point=>'REGION_POSITION_01'
 ,p_menu_id=>wwv_flow_imp.id(472901389022347808)
 ,p_plug_source_type=>'NATIVE_BREADCRUMB'
-,p_menu_template_id=>wwv_flow_imp.id(472890780758347747)
+,p_menu_template_id=>4072363345357175094
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(66570737640285479)
 ,p_plug_name=>'7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/21.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>wwv_flow_imp.id(472867437783347694)
+,p_plug_template=>4072358936313175081
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
@@ -52,7 +52,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'7.1.1 Component View Tab Desupported'
 ,p_parent_plug_id=>wwv_flow_imp.id(66570737640285479)
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>wwv_flow_imp.id(472867437783347694)
+,p_plug_template=>4072358936313175081
 ,p_plug_display_sequence=>40
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'The Component View tab in Page Designer is desupported and removed from Application Express as of this release.<br><br>',
@@ -65,7 +65,7 @@ wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(66571031247285482)
 ,p_plug_name=>'5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/21.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>wwv_flow_imp.id(472867437783347694)
+,p_plug_template=>4072358936313175081
 ,p_plug_display_sequence=>20
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
@@ -77,7 +77,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'5.1.3 Custom Page Region Templates with Duplicated Positions Deprecated'
 ,p_parent_plug_id=>wwv_flow_imp.id(66571031247285482)
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
-,p_plug_template=>wwv_flow_imp.id(472863055415347688)
+,p_plug_template=>2664334895415463485
 ,p_plug_display_sequence=>40
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'Custom page template and custom region templates with duplicated positions are considered deprecated. For example, a region template referencing position #CHANGE# twice is not recommended because that duplicate position causes duplicate DOM IDs.<br>',
@@ -91,7 +91,7 @@ wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(36832289325898756)
 ,p_name=>'5.1.4 Legacy Substitution Strings Deprecated '
 ,p_parent_plug_id=>wwv_flow_imp.id(66571031247285482)
-,p_template=>wwv_flow_imp.id(472863055415347688)
+,p_template=>2664334895415463485
 ,p_display_sequence=>50
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -118,7 +118,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>true
-,p_query_row_template=>wwv_flow_imp.id(472877522933347715)
+,p_query_row_template=>2538654340625403440
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Legacy Substitution Strings Deprecated used</b>'
@@ -163,7 +163,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'PAGE_ID'
 ,p_column_display_sequence=>10
 ,p_column_heading=>'Page Id'
-,p_use_as_row_header=>'N'
 ,p_default_sort_column_sequence=>1
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -175,7 +174,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'PAGE_NAME'
 ,p_column_display_sequence=>20
 ,p_column_heading=>'Page Name'
-,p_use_as_row_header=>'N'
 ,p_default_sort_column_sequence=>2
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -187,7 +185,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'COMPONENT_NAME'
 ,p_column_display_sequence=>30
 ,p_column_heading=>'Component Name'
-,p_use_as_row_header=>'N'
 ,p_default_sort_column_sequence=>3
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -199,7 +196,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'COMPONENT_TYPE'
 ,p_column_display_sequence=>40
 ,p_column_heading=>'Component Type'
-,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
@@ -210,7 +206,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'CODE_VC2'
 ,p_column_display_sequence=>50
 ,p_column_heading=>'Code Vc2'
-,p_use_as_row_header=>'N'
 ,p_column_hit_highlight=>'IMAGE_PREFIX,WORKSPACE_IMAGES,APP_IMAGES,THEME_IMAGES,THEME_DB_IMAGES'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -220,7 +215,7 @@ wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(66571234577285484)
 ,p_name=>'5.1.1 Deprecated Page Positions '
 ,p_parent_plug_id=>wwv_flow_imp.id(66571031247285482)
-,p_template=>wwv_flow_imp.id(472863055415347688)
+,p_template=>2664334895415463485
 ,p_display_sequence=>20
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -235,7 +230,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>true
-,p_query_row_template=>wwv_flow_imp.id(472877522933347715)
+,p_query_row_template=>2538654340625403440
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Deprecated Page Positions used</b>'
@@ -252,7 +247,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'PAGE_ID'
 ,p_column_display_sequence=>10
 ,p_column_heading=>'Page Id'
-,p_use_as_row_header=>'N'
 ,p_default_sort_column_sequence=>1
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -264,7 +258,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'PAGE_NAME'
 ,p_column_display_sequence=>20
 ,p_column_heading=>'Page Name'
-,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
@@ -275,7 +268,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'REGION_NAME'
 ,p_column_display_sequence=>30
 ,p_column_heading=>'Region Name'
-,p_use_as_row_header=>'N'
 ,p_default_sort_column_sequence=>2
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -287,7 +279,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'DISPLAY_POSITION_CODE'
 ,p_column_display_sequence=>40
 ,p_column_heading=>'Display Position Code'
-,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
@@ -296,7 +287,7 @@ wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(66572226285285494)
 ,p_name=>'5.1.2 Deprecated Region Positions'
 ,p_parent_plug_id=>wwv_flow_imp.id(66571031247285482)
-,p_template=>wwv_flow_imp.id(472863055415347688)
+,p_template=>2664334895415463485
 ,p_display_sequence=>30
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -322,7 +313,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>true
-,p_query_row_template=>wwv_flow_imp.id(472877522933347715)
+,p_query_row_template=>2538654340625403440
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Deprecated Region Positions used</b>'
@@ -339,7 +330,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'PAGE_ID'
 ,p_column_display_sequence=>10
 ,p_column_heading=>'Page Id'
-,p_use_as_row_header=>'N'
 ,p_default_sort_column_sequence=>1
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -351,7 +341,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'PAGE_NAME'
 ,p_column_display_sequence=>20
 ,p_column_heading=>'Page Name'
-,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
@@ -362,7 +351,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'REGION'
 ,p_column_display_sequence=>30
 ,p_column_heading=>'Region'
-,p_use_as_row_header=>'N'
 ,p_default_sort_column_sequence=>2
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -374,7 +362,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'BUTTON_NAME'
 ,p_column_display_sequence=>40
 ,p_column_heading=>'Button Name'
-,p_use_as_row_header=>'N'
 ,p_default_sort_column_sequence=>3
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
@@ -386,7 +373,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'LABEL'
 ,p_column_display_sequence=>50
 ,p_column_heading=>'Label'
-,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
@@ -397,7 +383,6 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'DISPLAY_POSITION'
 ,p_column_display_sequence=>60
 ,p_column_heading=>'Display Position'
-,p_use_as_row_header=>'N'
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
@@ -421,6 +406,7 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_imp.id(66571234577285484)
+,p_attribute_01=>'N'
 );
 wwv_flow_imp_page.create_page_da_action(
  p_id=>wwv_flow_imp.id(36832082951898754)
@@ -431,6 +417,7 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_imp.id(66572226285285494)
+,p_attribute_01=>'N'
 );
 wwv_flow_imp_page.create_page_da_action(
  p_id=>wwv_flow_imp.id(36833155464898764)
@@ -441,6 +428,7 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_imp.id(36832289325898756)
+,p_attribute_01=>'N'
 );
 wwv_flow_imp_page.create_page_da_event(
  p_id=>wwv_flow_imp.id(42878083345235349)
@@ -461,6 +449,7 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_imp.id(66571234577285484)
+,p_attribute_01=>'N'
 );
 wwv_flow_imp_page.create_page_da_action(
  p_id=>wwv_flow_imp.id(42878341325235351)
@@ -471,6 +460,7 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_imp.id(66572226285285494)
+,p_attribute_01=>'N'
 );
 wwv_flow_imp_page.create_page_da_action(
  p_id=>wwv_flow_imp.id(42878460677235352)
@@ -481,6 +471,7 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_imp.id(36832289325898756)
+,p_attribute_01=>'N'
 );
 wwv_flow_imp.component_end;
 end;

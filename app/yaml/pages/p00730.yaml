@@ -58,6 +58,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 20
     parent-region: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.1/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 120322220144860378
@@ -315,6 +318,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 30
     parent-region: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.1/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 120322220144860378
@@ -504,6 +510,9 @@ regions:
       and (instr(p.attribute_01,'&') > 0 or instr(p.attribute_02,'&') > 0)
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 40
@@ -971,6 +980,9 @@ regions:
           )
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 10

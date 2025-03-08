@@ -117,6 +117,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 20
     parent-region: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>' # 161128425948234567
@@ -411,6 +414,9 @@ regions:
       and application_id = :P0_APP_ID
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 30
@@ -757,6 +763,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 10
     parent-region: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>' # 161128425948234567
@@ -1071,6 +1080,9 @@ regions:
           )
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 10

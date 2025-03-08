@@ -59,6 +59,9 @@ regions:
     - P0_BEST_PRACTICE
     - P200_COMPONENT_TYPE
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 30
     parent-region: No Parent
@@ -231,6 +234,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
     - P0_BEST_PRACTICE
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 10
@@ -409,6 +415,9 @@ regions:
     - P0_APP_ID
     - P0_PAGE_ID
     - P0_BEST_PRACTICE
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 20
@@ -600,6 +609,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: Characters of CSS Code per Page # 476451340719274364
@@ -615,6 +627,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: Place of CSS # 476522428777737432
@@ -629,6 +644,9 @@ dynamic-actions:
     id: 314678169009402998
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -661,6 +679,9 @@ dynamic-actions:
     id: 314607784594662735
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region

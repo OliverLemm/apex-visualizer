@@ -9,15 +9,34 @@
 -- --------------------------------------------------------------------------------
 
 -- ----------------------------------------
--- Page: 10 - Applications > Region: Page Functions > Source > SQL Query
+-- Page: 10 - Applications > Region: Shared Components > Source > SQL Query
 
-select application_name app
-      ,page_function
-      ,count(page_id) amount
-from av_applications_v
-where application_id = :P0_APP_ID or :P0_APP_ID is null
-group by application_name , page_function
-order by count(page_id) desc;
+select * from (
+    select aa.application_name, aa.application_id, 'Tabs' series_name ,aa.tabs series_value from apex_applications aa
+    union
+    select aa.application_name, aa.application_id, 'Application Items' series_name ,aa.application_items series_value from apex_applications aa
+    union
+    select aa.application_name, aa.application_id, 'Application Processes' series_name ,aa.application_processes series_value from apex_applications aa
+    union
+    select aa.application_name, aa.application_id, 'Application Computations' series_name ,aa.application_computations series_value from apex_applications aa
+    union
+    select aa.application_name, aa.application_id, 'Shortcuts' series_name ,aa.shortcuts series_value from apex_applications aa
+    union
+    select aa.application_name, aa.application_id, 'Web Services' series_name ,aa.web_services series_value from apex_applications aa
+    union
+    select aa.application_name, aa.application_id, 'Trees' series_name ,aa.trees series_value from apex_applications aa
+    union
+    select aa.application_name, aa.application_id, 'Build Options' series_name ,aa.build_options series_value from apex_applications aa
+    union
+    select aa.application_name, aa.application_id, 'Breadcrumbs' series_name ,aa.Breadcrumbs series_value from apex_applications aa
+    union
+    select aa.application_name, aa.application_id, 'Navbar Entries' series_name ,aa.nav_bar_entries series_value from apex_applications aa
+    union
+    select aa.application_name, aa.application_id, 'Lists' series_name ,aa.lists series_value from apex_applications aa
+    union
+    select aa.application_name, aa.application_id, 'List of Values' series_name ,aa.lists_of_values series_value from apex_applications aa)
+where (application_id = :P0_APP_ID or :P0_APP_ID is null)
+and (lower(series_name) = :P0_COMPONENT or :P0_COMPONENT is null);
 
 -- ----------------------------------------
 -- Page: 10 - Applications > Region: Code Complexity (characters by app and type) > Attributes:  > Series: CSS > Source > SQL Query
@@ -53,34 +72,15 @@ and ('css' = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null
 group by application_id, application_name;
 
 -- ----------------------------------------
--- Page: 10 - Applications > Region: Shared Components > Source > SQL Query
+-- Page: 10 - Applications > Region: Page Functions > Source > SQL Query
 
-select * from (
-    select aa.application_name, aa.application_id, 'Tabs' series_name ,aa.tabs series_value from apex_applications aa
-    union
-    select aa.application_name, aa.application_id, 'Application Items' series_name ,aa.application_items series_value from apex_applications aa
-    union
-    select aa.application_name, aa.application_id, 'Application Processes' series_name ,aa.application_processes series_value from apex_applications aa
-    union
-    select aa.application_name, aa.application_id, 'Application Computations' series_name ,aa.application_computations series_value from apex_applications aa
-    union
-    select aa.application_name, aa.application_id, 'Shortcuts' series_name ,aa.shortcuts series_value from apex_applications aa
-    union
-    select aa.application_name, aa.application_id, 'Web Services' series_name ,aa.web_services series_value from apex_applications aa
-    union
-    select aa.application_name, aa.application_id, 'Trees' series_name ,aa.trees series_value from apex_applications aa
-    union
-    select aa.application_name, aa.application_id, 'Build Options' series_name ,aa.build_options series_value from apex_applications aa
-    union
-    select aa.application_name, aa.application_id, 'Breadcrumbs' series_name ,aa.Breadcrumbs series_value from apex_applications aa
-    union
-    select aa.application_name, aa.application_id, 'Navbar Entries' series_name ,aa.nav_bar_entries series_value from apex_applications aa
-    union
-    select aa.application_name, aa.application_id, 'Lists' series_name ,aa.lists series_value from apex_applications aa
-    union
-    select aa.application_name, aa.application_id, 'List of Values' series_name ,aa.lists_of_values series_value from apex_applications aa)
-where (application_id = :P0_APP_ID or :P0_APP_ID is null)
-and (lower(series_name) = :P0_COMPONENT or :P0_COMPONENT is null);
+select application_name app
+      ,page_function
+      ,count(page_id) amount
+from av_applications_v
+where application_id = :P0_APP_ID or :P0_APP_ID is null
+group by application_name , page_function
+order by count(page_id) desc;
 
 -- ----------------------------------------
 -- Page: 10 - Applications > Region: Applicatons > Source > SQL Query

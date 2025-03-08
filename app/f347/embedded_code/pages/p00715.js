@@ -9,7 +9,7 @@
 // --------------------------------------------------------------------------------
 
 // ----------------------------------------
-// Page: 715 - APEX 23.1 > Dynamic Action: change P0_APP_ID - refresh regions > Action: Execute JavaScript Code > Settings > Code
+// Page: 715 - APEX 23.1 > Dynamic Action: click refresh - refresh regions > Action: Execute JavaScript Code > Settings > Code
 
 av_refresh_hide_show_regions()
 
@@ -20,7 +20,7 @@ console.log('running DA')
 console.log(this.affectedElements);
 
 // ----------------------------------------
-// Page: 715 - APEX 23.1 > Dynamic Action: click refresh - refresh regions > Action: Execute JavaScript Code > Settings > Code
+// Page: 715 - APEX 23.1 > Dynamic Action: change P0_APP_ID - refresh regions > Action: Execute JavaScript Code > Settings > Code
 
 av_refresh_hide_show_regions()
 

@@ -59,6 +59,9 @@ regions:
     - P0_PAGE_ID
     - P0_COMPONENT
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 50
     parent-region: No Parent
@@ -192,6 +195,9 @@ regions:
         - P0_APP_ID
         - P0_COMPONENT
 
+      order-by: 
+        type: None
+
       column-mapping: 
         label: COMPONENT
         value: AMOUNT
@@ -275,6 +281,9 @@ regions:
       group by application_name, t.component
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 40
@@ -434,6 +443,9 @@ regions:
       order by 2 desc
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 30
@@ -1419,6 +1431,9 @@ regions:
         - P0_APP_ID
         - P0_PAGE_ID
 
+      order-by: 
+        type: None
+
       column-mapping: 
         label: PAGE_NAME
         value: VALIDATIONS
@@ -1447,6 +1462,9 @@ regions:
         page-items-to-submit: 
         - P0_APP_ID
         - P0_PAGE_ID
+
+      order-by: 
+        type: None
 
       column-mapping: 
         label: PAGE_NAME
@@ -1477,6 +1495,9 @@ regions:
         - P0_APP_ID
         - P0_PAGE_ID
 
+      order-by: 
+        type: None
+
       column-mapping: 
         label: PAGE_NAME
 
@@ -1505,6 +1526,9 @@ regions:
         page-items-to-submit: 
         - P0_APP_ID
         - P0_PAGE_ID
+
+      order-by: 
+        type: None
 
       column-mapping: 
         label: PAGE_NAME
@@ -1535,6 +1559,9 @@ regions:
         page-items-to-submit: 
         - P0_APP_ID
         - P0_PAGE_ID
+
+      order-by: 
+        type: None
 
       column-mapping: 
         label: PAGE_NAME
@@ -1568,6 +1595,9 @@ regions:
         - P0_APP_ID
         - P0_PAGE_ID
 
+      order-by: 
+        type: None
+
       column-mapping: 
         label: PAGE_NAME
         value: ITEMS
@@ -1600,6 +1630,9 @@ regions:
         - P0_APP_ID
         - P0_PAGE_ID
 
+      order-by: 
+        type: None
+
       column-mapping: 
         label: PAGE_NAME
         value: BUTTONS
@@ -1628,6 +1661,9 @@ regions:
         page-items-to-submit: 
         - P0_APP_ID
         - P0_PAGE_ID
+
+      order-by: 
+        type: None
 
       column-mapping: 
         label: PAGE_NAME
@@ -1707,6 +1743,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: Pages # 469876626146558794
@@ -1721,6 +1760,9 @@ dynamic-actions:
     id: 311740501360082304
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -1737,6 +1779,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: Components per Page # 310934322992368228
@@ -1751,6 +1796,9 @@ dynamic-actions:
     id: 311741538476082314
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region

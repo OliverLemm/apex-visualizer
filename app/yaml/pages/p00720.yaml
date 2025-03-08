@@ -263,6 +263,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 20
     parent-region: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 93320346476815866

@@ -59,6 +59,9 @@ regions:
     - P0_BEST_PRACTICE
     - P300_COMPONENT_TYPE
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 30
     parent-region: No Parent
@@ -231,6 +234,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
     - P0_BEST_PRACTICE
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 10
@@ -407,6 +413,9 @@ regions:
     - P0_APP_ID
     - P0_PAGE_ID
     - P0_BEST_PRACTICE
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 20
@@ -598,6 +607,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: Characters of PLSQL Code per Page # 639395522743882367
@@ -613,6 +625,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: Place of PLSQL # 639466610802345435
@@ -627,6 +642,9 @@ dynamic-actions:
     id: 314914095024874735
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -659,6 +677,9 @@ dynamic-actions:
     id: 314915079102874735
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region

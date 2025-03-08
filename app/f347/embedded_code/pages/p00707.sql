@@ -21,19 +21,6 @@ where pi.display_as_code = 'NATIVE_DATE_PICKER'
 and pi.application_id = :P0_APP_ID;
 
 -- ----------------------------------------
--- Page: 707 - APEX 21.1 > Region: 7.1.9 afterModify is Desupported > Source > SQL Query
-
-select j.page_id
-      ,j.page_name
-      ,j.component_name
-      ,j.component_type
-      ,j.js_code_vc2
-from av_javascript_v j
-where instr(j.js_code_clob
-           ,'.afterModify') > 0
-and j.application_id = :P0_APP_ID;
-
--- ----------------------------------------
 -- Page: 707 - APEX 21.1 > Region: 7.1.11 apex.navigation.dialog.fireCloseHandler function is Desupported > Source > SQL Query
 
 select j.page_id
@@ -44,5 +31,18 @@ select j.page_id
 from av_javascript_v j
 where instr(j.js_code_clob
            ,'apex.navigation.dialog.fireCloseHandler') > 0
+and j.application_id = :P0_APP_ID;
+
+-- ----------------------------------------
+-- Page: 707 - APEX 21.1 > Region: 7.1.9 afterModify is Desupported > Source > SQL Query
+
+select j.page_id
+      ,j.page_name
+      ,j.component_name
+      ,j.component_type
+      ,j.js_code_vc2
+from av_javascript_v j
+where instr(j.js_code_clob
+           ,'.afterModify') > 0
 and j.application_id = :P0_APP_ID;
 

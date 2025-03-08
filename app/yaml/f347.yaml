@@ -4,7 +4,7 @@ id: 347
 identification: 
   name: APEX Visualizer
   alias: AV
-  version: 24.1.1
+  version: 24.2.0
 
 row-search: 
   tokenize: false
@@ -25,7 +25,7 @@ advanced:
   allow-feedback: false
   logging: true
   debugging: true
-  compatibility-mode: 21.2 to 24.1
+  compatibility-mode: 24.2
   accessible-read-only-items: false
   pass-ecid: N
 
@@ -111,15 +111,15 @@ attributes:
   add-"built-with-apex"-to-footer: true
   auto-dismiss-success-messages: false
 
+subscription: 
+  version-number: 58809948
+
 component-settings: 
 - # ====== Component Setting: NATIVE_SELECT_MANY ===============
   id: 1421619849198550
   identification: 
     name: NATIVE_SELECT_MANY
     type: Item
-
-  settings: 
-    attribute-1: separated
 
   subscription: 
     version-number: 18550129
@@ -145,6 +145,15 @@ component-settings:
   subscription: 
     version-number: 18550129
 
+- # ====== Component Setting: NATIVE_BOSS ======================
+  id: 1460179636535710
+  identification: 
+    name: NATIVE_BOSS
+    type: REST Data Source
+
+  subscription: 
+    version-number: 58747987
+
 - # ====== Component Setting: NATIVE_MAP_REGION ================
   id: 21157901307753652
   identification: 
@@ -169,12 +178,6 @@ component-settings:
     name: NATIVE_DATE_PICKER_APEX
     type: Item
 
-  settings: 
-    attribute-1: 'MONTH-PICKER:YEAR-PICKER'
-    attribute-2: VISIBLE
-    attribute-3: 15
-    attribute-4: FOCUS
-
   subscription: 
     version-number: 1
 
@@ -183,13 +186,6 @@ component-settings:
   identification: 
     name: NATIVE_GEOCODED_ADDRESS
     type: Item
-
-  settings: 
-    attribute-1: RELAX_HOUSE_NUMBER
-    attribute-2: N
-    attribute-3: 'POPUP:ITEM'
-    attribute-4: default
-    attribute-6: LIST
 
   subscription: 
     version-number: 1
@@ -200,10 +196,6 @@ component-settings:
     name: NATIVE_SINGLE_CHECKBOX
     type: Item
 
-  settings: 
-    attribute-1: Y
-    attribute-2: N
-
   subscription: 
     version-number: 1
 
@@ -212,10 +204,6 @@ component-settings:
   identification: 
     name: NATIVE_STAR_RATING
     type: Item
-
-  settings: 
-    attribute-1: fa-star
-    attribute-4: '#VALUE#'
 
   subscription: 
     version-number: 1
@@ -244,11 +232,6 @@ component-settings:
     name: NATIVE_YES_NO
     type: Item
 
-  settings: 
-    attribute-1: Y
-    attribute-3: N
-    attribute-5: SWITCH
-
   subscription: 
     version-number: 1
 
@@ -257,10 +240,6 @@ component-settings:
   identification: 
     name: NATIVE_COLOR_PICKER
     type: Item
-
-  settings: 
-    attribute-1: FULL
-    attribute-2: POPUP
 
   subscription: 
     version-number: 1

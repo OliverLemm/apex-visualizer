@@ -4,8 +4,8 @@ begin
 --     PAGE: 00600
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2024.05.31'
-,p_release=>'24.1.6'
+ p_version_yyyy_mm_dd=>'2024.11.30'
+,p_release=>'24.2.3'
 ,p_default_workspace_id=>100001
 ,p_default_application_id=>347
 ,p_default_id_offset=>20408574139881448
@@ -26,7 +26,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'unused plugins'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_imp.id(472867437783347694)
+,p_plug_template=>4072358936313175081
 ,p_plug_display_sequence=>30
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_query_type=>'SQL'
@@ -81,7 +81,8 @@ wwv_flow_imp_page.create_region_column(
 ,p_heading_alignment=>'LEFT'
 ,p_display_sequence=>20
 ,p_value_alignment=>'LEFT'
-,p_attribute_05=>'BOTH'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'trim_spaces', 'BOTH')).to_clob
 ,p_is_required=>true
 ,p_max_length=>45
 ,p_enable_filter=>true
@@ -111,7 +112,8 @@ wwv_flow_imp_page.create_region_column(
 ,p_heading_alignment=>'LEFT'
 ,p_display_sequence=>10
 ,p_value_alignment=>'LEFT'
-,p_attribute_05=>'BOTH'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'trim_spaces', 'BOTH')).to_clob
 ,p_is_required=>true
 ,p_max_length=>100
 ,p_enable_filter=>true
@@ -193,7 +195,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'unused authorization schemes'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_imp.id(472867437783347694)
+,p_plug_template=>4072358936313175081
 ,p_plug_display_sequence=>40
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_new_grid_row=>false
@@ -247,7 +249,8 @@ wwv_flow_imp_page.create_region_column(
 ,p_heading_alignment=>'LEFT'
 ,p_display_sequence=>10
 ,p_value_alignment=>'LEFT'
-,p_attribute_05=>'BOTH'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'trim_spaces', 'BOTH')).to_clob
 ,p_is_required=>true
 ,p_max_length=>255
 ,p_enable_filter=>true
@@ -316,7 +319,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'never condition used'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_imp.id(472867437783347694)
+,p_plug_template=>4072358936313175081
 ,p_plug_display_sequence=>50
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_query_type=>'SQL'
@@ -374,10 +377,11 @@ wwv_flow_imp_page.create_region_column(
 ,p_heading_alignment=>'LEFT'
 ,p_display_sequence=>10
 ,p_value_alignment=>'LEFT'
-,p_attribute_01=>'Y'
-,p_attribute_02=>'N'
-,p_attribute_03=>'N'
-,p_attribute_04=>'BOTH'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'auto_height', 'N',
+  'character_counter', 'N',
+  'resizable', 'Y',
+  'trim_spaces', 'BOTH')).to_clob
 ,p_is_required=>true
 ,p_max_length=>255
 ,p_enable_filter=>true
@@ -405,8 +409,9 @@ wwv_flow_imp_page.create_region_column(
 ,p_heading_alignment=>'RIGHT'
 ,p_display_sequence=>20
 ,p_value_alignment=>'RIGHT'
-,p_attribute_03=>'left'
-,p_attribute_04=>'decimal'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'number_alignment', 'left',
+  'virtual_keyboard', 'decimal')).to_clob
 ,p_is_required=>false
 ,p_enable_filter=>true
 ,p_filter_is_required=>false
@@ -432,7 +437,8 @@ wwv_flow_imp_page.create_region_column(
 ,p_heading_alignment=>'LEFT'
 ,p_display_sequence=>30
 ,p_value_alignment=>'LEFT'
-,p_attribute_05=>'BOTH'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'trim_spaces', 'BOTH')).to_clob
 ,p_is_required=>false
 ,p_max_length=>14
 ,p_enable_filter=>true
@@ -462,10 +468,11 @@ wwv_flow_imp_page.create_region_column(
 ,p_heading_alignment=>'LEFT'
 ,p_display_sequence=>40
 ,p_value_alignment=>'LEFT'
-,p_attribute_01=>'Y'
-,p_attribute_02=>'N'
-,p_attribute_03=>'N'
-,p_attribute_04=>'BOTH'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'auto_height', 'N',
+  'character_counter', 'N',
+  'resizable', 'Y',
+  'trim_spaces', 'BOTH')).to_clob
 ,p_is_required=>false
 ,p_max_length=>4000
 ,p_enable_filter=>true
@@ -555,7 +562,7 @@ wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(59549424781320159)
 ,p_plug_name=>'general application settings'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>wwv_flow_imp.id(472867437783347694)
+,p_plug_template=>4072358936313175081
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
@@ -574,10 +581,11 @@ wwv_flow_imp_page.create_page_item(
 ,p_cMaxlength=>4
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
-,p_field_template=>wwv_flow_imp.id(472889740066347741)
+,p_field_template=>2318601014859922299
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'These Compatibility Modes are equal<br>',
+'24.2<br>',
 '21.2 / 22.1 / 22.2 / 23.1 / 23.2 / 24.1<br>',
 '19.2 / 20.1 / 20.2 / 21.1<br>',
 '19.1<br>',
@@ -587,10 +595,11 @@ wwv_flow_imp_page.create_page_item(
 '4.1<br>',
 'Pre 4.1'))
 ,p_encrypt_session_state_yn=>'N'
-,p_attribute_01=>'N'
-,p_attribute_02=>'N'
-,p_attribute_04=>'TEXT'
-,p_attribute_05=>'BOTH'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'disabled', 'N',
+  'submit_when_enter_pressed', 'N',
+  'subtype', 'TEXT',
+  'trim_spaces', 'BOTH')).to_clob
 );
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(59549503313320160)
@@ -603,14 +612,15 @@ wwv_flow_imp_page.create_page_item(
 ,p_begin_on_new_line=>'N'
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
-,p_field_template=>wwv_flow_imp.id(472889740066347741)
+,p_field_template=>2318601014859922299
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>'To ensure the safety in your application, activate the Session State protection in your application. Keep in mind if you secure your items they cannot be changed inside JavaScript (Dynamic Actions).'
 ,p_encrypt_session_state_yn=>'N'
-,p_attribute_01=>'N'
-,p_attribute_02=>'N'
-,p_attribute_04=>'TEXT'
-,p_attribute_05=>'BOTH'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'disabled', 'N',
+  'submit_when_enter_pressed', 'N',
+  'subtype', 'TEXT',
+  'trim_spaces', 'BOTH')).to_clob
 );
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(59549772042320162)
@@ -623,17 +633,18 @@ wwv_flow_imp_page.create_page_item(
 ,p_begin_on_new_line=>'N'
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
-,p_field_template=>wwv_flow_imp.id(472889740066347741)
+,p_field_template=>2318601014859922299
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'Runtime API Usage should be restricted as much as possible. If you have a standard Application with no custom API calls it should be completely disabled.<br>',
 'The setting can be found in the shared components => Security in the section Database session. All Checkboxes should be uncheckd.<br>',
 'If you are using API-Calls try to only check the "Modify This Application" Checkbox. '))
 ,p_encrypt_session_state_yn=>'N'
-,p_attribute_01=>'N'
-,p_attribute_02=>'N'
-,p_attribute_04=>'TEXT'
-,p_attribute_05=>'BOTH'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'disabled', 'N',
+  'submit_when_enter_pressed', 'N',
+  'subtype', 'TEXT',
+  'trim_spaces', 'BOTH')).to_clob
 );
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(59550986941320175)
@@ -645,17 +656,18 @@ wwv_flow_imp_page.create_page_item(
 ,p_cSize=>30
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
-,p_field_template=>wwv_flow_imp.id(472889740066347741)
+,p_field_template=>2318601014859922299
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'Supporting legacy JavaScript means always to load more JavaScript as necessary.<br> ',
 'This attribute can be found inside your application in the shared components => user interface page in the section "JavaScript". If one of the Checkboxes "Include Deprecated or Desupported Javascript Functions" is switched on it will return Yes.<br>',
 'For best performance and up-to-date JS calls switch "Pre 18.1" and "18.x" off.'))
 ,p_encrypt_session_state_yn=>'N'
-,p_attribute_01=>'N'
-,p_attribute_02=>'N'
-,p_attribute_04=>'TEXT'
-,p_attribute_05=>'BOTH'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'disabled', 'N',
+  'submit_when_enter_pressed', 'N',
+  'subtype', 'TEXT',
+  'trim_spaces', 'BOTH')).to_clob
 );
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(59551169267320176)
@@ -668,14 +680,15 @@ wwv_flow_imp_page.create_page_item(
 ,p_begin_on_new_line=>'N'
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
-,p_field_template=>wwv_flow_imp.id(472889740066347741)
+,p_field_template=>2318601014859922299
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>'Using jQuery Migrate means, to support old deprecated JavaScript Code.'
 ,p_encrypt_session_state_yn=>'N'
-,p_attribute_01=>'N'
-,p_attribute_02=>'N'
-,p_attribute_04=>'TEXT'
-,p_attribute_05=>'BOTH'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'disabled', 'N',
+  'submit_when_enter_pressed', 'N',
+  'subtype', 'TEXT',
+  'trim_spaces', 'BOTH')).to_clob
 );
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(59551609248320181)
@@ -687,14 +700,15 @@ wwv_flow_imp_page.create_page_item(
 ,p_cSize=>30
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
-,p_field_template=>wwv_flow_imp.id(472889740066347741)
+,p_field_template=>2318601014859922299
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>'If you don''t select Universal Theme for your application, not the full functionality is supported.'
 ,p_encrypt_session_state_yn=>'N'
-,p_attribute_01=>'N'
-,p_attribute_02=>'N'
-,p_attribute_04=>'TEXT'
-,p_attribute_05=>'BOTH'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'disabled', 'N',
+  'submit_when_enter_pressed', 'N',
+  'subtype', 'TEXT',
+  'trim_spaces', 'BOTH')).to_clob
 );
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(59551927538320184)
@@ -707,10 +721,11 @@ wwv_flow_imp_page.create_page_item(
 ,p_begin_on_new_line=>'N'
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
-,p_field_template=>wwv_flow_imp.id(472889740066347741)
+,p_field_template=>2318601014859922299
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'If using Universal Theme, this information shows the version compared to the APEX version<br>',
+'UT 24.2 = APEX 24.2<br>',
 'UT 24.1 = APEX 24.1<br>',
 'UT 23.2 = APEX 23.2<br>',
 'UT 23.1 = APEX 23.1<br>',
@@ -726,10 +741,11 @@ wwv_flow_imp_page.create_page_item(
 'UT  1.1 = APEX 5.1 (not supported any more)<br>',
 'UT  1.0 = APEX 5.0 (not supported any more)'))
 ,p_encrypt_session_state_yn=>'N'
-,p_attribute_01=>'N'
-,p_attribute_02=>'N'
-,p_attribute_04=>'TEXT'
-,p_attribute_05=>'BOTH'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'disabled', 'N',
+  'submit_when_enter_pressed', 'N',
+  'subtype', 'TEXT',
+  'trim_spaces', 'BOTH')).to_clob
 );
 wwv_flow_imp_page.create_page_da_event(
  p_id=>wwv_flow_imp.id(59248189470518484)
@@ -750,6 +766,7 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_imp.id(59246298485518465)
+,p_attribute_01=>'N'
 );
 wwv_flow_imp_page.create_page_da_action(
  p_id=>wwv_flow_imp.id(59248816681518490)
@@ -760,6 +777,7 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_imp.id(59248532126518487)
+,p_attribute_01=>'N'
 );
 wwv_flow_imp_page.create_page_da_action(
  p_id=>wwv_flow_imp.id(59249500261518497)
@@ -770,6 +788,7 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_action=>'NATIVE_REFRESH'
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_imp.id(59248874548518491)
+,p_attribute_01=>'N'
 );
 wwv_flow_imp_page.create_page_da_action(
  p_id=>wwv_flow_imp.id(59550901680320174)
@@ -841,13 +860,13 @@ wwv_flow_imp_page.create_page_da_action(
 'console.log("P600_COMPATIBILITY_MODE=" + val);',
 '',
 '// success - up-to-date => 21.2 / 22.1 / 22.2',
-'if (val == ''21.2'') {',
+'if (val == ''24.2'') {',
 '    $trigger.removeClass("u-danger");',
 '    $trigger.addClass("u-success");',
 '    $trigger.removeClass("u-warning");',
 '',
-'// warning - not up-to-date => only one version before 19.2 / 20.1 / 20.2 / 21.1',
-'} else if (val == ''19.2'') {',
+'// warning - not up-to-date => only one version before 21.2-24.1',
+'} else if (val == ''21.2'') {',
 '    $trigger.removeClass("u-danger");',
 '    $trigger.removeClass("u-success");',
 '    $trigger.addClass("u-warning");',
@@ -1070,7 +1089,7 @@ wwv_flow_imp_page.create_page_da_action(
 'var val = $trigger.val();',
 '',
 '// success - up-to-date',
-'if (val == ''24.1'') {    ',
+'if (val == ''24.2'') {    ',
 '    $trigger.addClass("u-success");',
 '    $trigger.removeClass("u-warning");',
 '    $trigger.removeClass("u-danger");',

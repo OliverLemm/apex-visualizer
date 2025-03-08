@@ -97,6 +97,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 60
     parent-region: '7.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Release Notes</a>' # 153197968168416311
@@ -321,6 +324,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 70
     parent-region: '7.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Release Notes</a>' # 153197968168416311
@@ -544,6 +550,9 @@ regions:
       and p.application_id = :P0_APP_ID
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 80
@@ -815,6 +824,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 90
     parent-region: '7.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Release Notes</a>' # 153197968168416311
@@ -1077,6 +1089,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 100
     parent-region: '7.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Release Notes</a>' # 153197968168416311
@@ -1278,6 +1293,9 @@ regions:
       and j.application_id = :P0_APP_ID
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 50
@@ -1536,6 +1554,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 40
     parent-region: '7.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Release Notes</a>' # 153197968168416311
@@ -1694,6 +1715,9 @@ regions:
       and j.application_id = :P0_APP_ID
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 120
@@ -1993,6 +2017,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: 7.1.1 Theme Style "Vista" Desupported in Universal Theme # 123462036844029613
@@ -2007,6 +2034,9 @@ dynamic-actions:
     id: 63780161218663984
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -2023,6 +2053,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: '7.1.4 APEX_UTIL.STRING_TO_TABLE Function Desupported ' # 63780561235663988
@@ -2037,6 +2070,9 @@ dynamic-actions:
     id: 65512000680833952
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -2053,6 +2089,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: 7.1.6 APEX_PAGE.IS_JQM_SMARTPHONE_UI is Desupported # 65512174655833954
@@ -2067,6 +2106,9 @@ dynamic-actions:
     id: 65512898011833961
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -2083,6 +2125,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: 7.1.8 Tabular Forms Desupported # 87998753585272296
@@ -2097,6 +2142,9 @@ dynamic-actions:
     id: 65513457379833966
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -2129,6 +2177,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: 7.1.1 Theme Style "Vista" Desupported in Universal Theme # 123462036844029613
@@ -2143,6 +2194,9 @@ dynamic-actions:
     id: 63780423498663987
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -2159,6 +2213,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: '7.1.4 APEX_UTIL.STRING_TO_TABLE Function Desupported ' # 63780561235663988
@@ -2173,6 +2230,9 @@ dynamic-actions:
     id: 65512108975833953
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -2189,6 +2249,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: 7.1.6 APEX_PAGE.IS_JQM_SMARTPHONE_UI is Desupported # 65512174655833954
@@ -2203,6 +2266,9 @@ dynamic-actions:
     id: 65513022488833962
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -2219,6 +2285,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: 7.1.8 Tabular Forms Desupported # 87998753585272296
@@ -2233,6 +2302,9 @@ dynamic-actions:
     id: 65513505732833967
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region

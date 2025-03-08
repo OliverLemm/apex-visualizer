@@ -9,25 +9,6 @@
 -- --------------------------------------------------------------------------------
 
 -- ----------------------------------------
--- Page: 200 - CSS > Region: CSS in Page > Source > SQL Query
-
-select page_name || ' (' || v.page_id || ') - ' || v.component_name series_name, v.component_type, v.css_code, v.css_code_length, v.css_code_type, v.tooltip, v.page_designer_url
-from av_css_v v
-where v.application_id = :P0_APP_ID 
-and (v.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
-and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = best_practice)
-and (v.component_type = :P200_COMPONENT_TYPE or :P200_COMPONENT_TYPE is null)
-order by css_code_length desc;
-
--- ----------------------------------------
--- Page: 200 - CSS > Page Item: P200_COMPONENT_TYPE > List of Values > SQL Query
-
-select distinct component_type d, component_type r
-from av_javascript_v
-where (:P0_APP_ID is null or application_id = :P0_APP_ID)
-and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID);
-
--- ----------------------------------------
 -- Page: 200 - CSS > Region: Place of CSS > Source > SQL Query
 
 select application_name
@@ -40,6 +21,25 @@ and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID)
 and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = best_practice)
 group by application_name,application_id,component_type || ' - ' || css_code_type
 order by sum(css_code_length) desc;
+
+-- ----------------------------------------
+-- Page: 200 - CSS > Page Item: P200_COMPONENT_TYPE > List of Values > SQL Query
+
+select distinct component_type d, component_type r
+from av_javascript_v
+where (:P0_APP_ID is null or application_id = :P0_APP_ID)
+and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID);
+
+-- ----------------------------------------
+-- Page: 200 - CSS > Region: CSS in Page > Source > SQL Query
+
+select page_name || ' (' || v.page_id || ') - ' || v.component_name series_name, v.component_type, v.css_code, v.css_code_length, v.css_code_type, v.tooltip, v.page_designer_url
+from av_css_v v
+where v.application_id = :P0_APP_ID 
+and (v.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
+and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = best_practice)
+and (v.component_type = :P200_COMPONENT_TYPE or :P200_COMPONENT_TYPE is null)
+order by css_code_length desc;
 
 -- ----------------------------------------
 -- Page: 200 - CSS > Region: Characters of CSS Code per Page > Source > SQL Query

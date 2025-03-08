@@ -56,6 +56,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 40
     parent-region: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.1/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 72700251592752312
@@ -253,6 +256,9 @@ regions:
       and p.application_id = :P0_APP_ID
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 10
@@ -556,6 +562,9 @@ regions:
       and p.application_id = :P0_APP_ID
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 40
@@ -872,6 +881,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 30
     parent-region: '5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.1/htmrn/deprecated-features.html#GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 72699154823752301
@@ -1175,6 +1187,9 @@ regions:
           )
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 20
@@ -1531,6 +1546,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 30
     parent-region: '7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.1/htmrn/desupported-features.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 72700251592752312
@@ -1882,6 +1900,9 @@ regions:
           )
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 50

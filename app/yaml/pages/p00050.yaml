@@ -60,6 +60,9 @@ regions:
     - P0_APP_ID
     - P0_PAGE_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 10
     parent-region: No Parent
@@ -238,6 +241,9 @@ regions:
     - P0_APP_ID
     - P0_PAGE_ID
     - P50_DATE
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 20
@@ -471,6 +477,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: Application changes # 313826940866769928
@@ -485,6 +494,9 @@ dynamic-actions:
     id: 313828386754769943
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -517,6 +529,9 @@ dynamic-actions:
     id: 313828280439769942
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region

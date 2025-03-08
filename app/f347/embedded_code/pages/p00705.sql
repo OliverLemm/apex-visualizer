@@ -22,6 +22,47 @@ and a.attribute_01 = 'Y'
 and a.application_id = :P0_APP_ID;
 
 -- ----------------------------------------
+-- Page: 705 - APEX 20.1 > Region: 6.1.14 apex.widget.initPageItem Function Deprecated  > Source > SQL Query
+
+select j.page_id
+      ,j.page_name
+      ,j.component_name
+      ,j.component_type
+      ,j.js_code_vc2
+from av_javascript_v j
+where instr(lower(j.js_code_vc2)
+           ,'apex.widget.initPageItem') > 0
+and application_id = :P0_APP_ID;
+
+-- ----------------------------------------
+-- Page: 705 - APEX 20.1 > Region: 7.1.2 Desupported JavaScript Functions > Source > SQL Query
+
+select j.page_id
+      ,j.page_name
+      ,j.component_name
+      ,j.component_type
+      ,j.js_code_vc2
+from av_javascript_v j
+where (instr(lower(j.js_code_vc2)
+           ,'openmodal') > 0
+or instr(lower(j.js_code_vc2)
+       ,'closemodal') > 0)
+and application_id = :P0_APP_ID;
+
+-- ----------------------------------------
+-- Page: 705 - APEX 20.1 > Region: 6.1.1 Deprecated JavaScript Functions > Source > SQL Query
+
+select j.page_id
+      ,j.page_name
+      ,j.component_name
+      ,j.component_type
+      ,j.js_code_vc2
+from av_javascript_v j
+where instr(lower(j.js_code_vc2)
+           ,'apex.theme42.util.mq') > 0
+and application_id = :P0_APP_ID;
+
+-- ----------------------------------------
 -- Page: 705 - APEX 20.1 > Region: 6.1.8 Post Calculation for Page Items Deprecated  > Source > SQL Query
 
 select p.page_id
@@ -65,45 +106,4 @@ where regexp_like(j.js_code_vc2
                  ,'apex.event.trigger.*apexrefresh'
                  ,'i')
 and j.application_id = :P0_APP_ID;
-
--- ----------------------------------------
--- Page: 705 - APEX 20.1 > Region: 6.1.1 Deprecated JavaScript Functions > Source > SQL Query
-
-select j.page_id
-      ,j.page_name
-      ,j.component_name
-      ,j.component_type
-      ,j.js_code_vc2
-from av_javascript_v j
-where instr(lower(j.js_code_vc2)
-           ,'apex.theme42.util.mq') > 0
-and application_id = :P0_APP_ID;
-
--- ----------------------------------------
--- Page: 705 - APEX 20.1 > Region: 7.1.2 Desupported JavaScript Functions > Source > SQL Query
-
-select j.page_id
-      ,j.page_name
-      ,j.component_name
-      ,j.component_type
-      ,j.js_code_vc2
-from av_javascript_v j
-where (instr(lower(j.js_code_vc2)
-           ,'openmodal') > 0
-or instr(lower(j.js_code_vc2)
-       ,'closemodal') > 0)
-and application_id = :P0_APP_ID;
-
--- ----------------------------------------
--- Page: 705 - APEX 20.1 > Region: 6.1.14 apex.widget.initPageItem Function Deprecated  > Source > SQL Query
-
-select j.page_id
-      ,j.page_name
-      ,j.component_name
-      ,j.component_type
-      ,j.js_code_vc2
-from av_javascript_v j
-where instr(lower(j.js_code_vc2)
-           ,'apex.widget.initPageItem') > 0
-and application_id = :P0_APP_ID;
 

@@ -30,6 +30,21 @@ order by template_type, reference_count desc;
 select distinct template_type d, template_type r from apex_application_templates where reference_count > 0 and application_id = :P0_APP_ID;
 
 -- ----------------------------------------
+-- Page: 60 - Templates > Region: Details > Source > SQL Query
+
+select th.application_id
+      ,th.application_name
+      ,th.theme_name
+      ,th.default_nav_list_position nav_pos
+      ,th.default_page_template page_temp
+      ,th.default_region_template region_temp
+      ,th.default_report_region_template rep_region_temp
+      ,th.default_button_template button_temp
+      ,th.icon_library      
+from apex_application_themes th
+where th.application_id = :P0_APP_ID or :P0_APP_ID is null;
+
+-- ----------------------------------------
 -- Page: 60 - Templates > Region: Templates Reference (overall) > Source > SQL Query
 
 select t.template_type || ' - ' || t.template_name template
@@ -44,19 +59,4 @@ and t.reference_count > 0
 and th.application_id = :P0_APP_ID
 and (:P60_TEMPLATE_TYPE is null or :P60_TEMPLATE_TYPE = template_type)
 order by template_type, reference_count desc;
-
--- ----------------------------------------
--- Page: 60 - Templates > Region: Details > Source > SQL Query
-
-select th.application_id
-      ,th.application_name
-      ,th.theme_name
-      ,th.default_nav_list_position nav_pos
-      ,th.default_page_template page_temp
-      ,th.default_region_template region_temp
-      ,th.default_report_region_template rep_region_temp
-      ,th.default_button_template button_temp
-      ,th.icon_library      
-from apex_application_themes th
-where th.application_id = :P0_APP_ID or :P0_APP_ID is null;
 

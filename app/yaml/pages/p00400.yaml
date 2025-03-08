@@ -1686,6 +1686,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: Plugins # 53346413506259587
@@ -1701,6 +1704,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: Plugin Overview # 58064936372606056
@@ -1715,6 +1721,9 @@ dynamic-actions:
     id: 58067633332606083
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region

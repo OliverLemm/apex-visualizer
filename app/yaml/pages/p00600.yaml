@@ -933,6 +933,7 @@ page-items:
   help: 
     help-text: |
       These Compatibility Modes are equal<br>
+      24.2<br>
       21.2 / 22.1 / 22.2 / 23.1 / 23.2 / 24.1<br>
       19.2 / 20.1 / 20.2 / 21.1<br>
       19.1<br>
@@ -1302,6 +1303,7 @@ page-items:
   help: 
     help-text: |
       If using Universal Theme, this information shows the version compared to the APEX version<br>
+      UT 24.2 = APEX 24.2<br>
       UT 24.1 = APEX 24.1<br>
       UT 23.2 = APEX 23.2<br>
       UT 23.1 = APEX 23.1<br>
@@ -1340,6 +1342,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: unused plugins # 59246298485518465
@@ -1355,6 +1360,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: unused authorization schemes # 59248532126518487
@@ -1369,6 +1377,9 @@ dynamic-actions:
     id: 59249500261518497
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -1475,13 +1486,13 @@ dynamic-actions:
         console.log("P600_COMPATIBILITY_MODE=" + val);
         
         // success - up-to-date => 21.2 / 22.1 / 22.2
-        if (val == '21.2') {
+        if (val == '24.2') {
             $trigger.removeClass("u-danger");
             $trigger.addClass("u-success");
             $trigger.removeClass("u-warning");
         
-        // warning - not up-to-date => only one version before 19.2 / 20.1 / 20.2 / 21.1
-        } else if (val == '19.2') {
+        // warning - not up-to-date => only one version before 21.2-24.1
+        } else if (val == '21.2') {
             $trigger.removeClass("u-danger");
             $trigger.removeClass("u-success");
             $trigger.addClass("u-warning");
@@ -1810,7 +1821,7 @@ dynamic-actions:
         var val = $trigger.val();
         
         // success - up-to-date
-        if (val == '24.1') {    
+        if (val == '24.2') {    
             $trigger.addClass("u-success");
             $trigger.removeClass("u-warning");
             $trigger.removeClass("u-danger");

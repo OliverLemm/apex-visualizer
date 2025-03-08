@@ -54,6 +54,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 30
     parent-region: No Parent
@@ -224,6 +227,9 @@ regions:
     - P0_PAGE_ID
     - P0_BEST_PRACTICE
     - P100_COMPONENT_TYPE
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 40
@@ -397,6 +403,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
     - P0_BEST_PRACTICE
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 10
@@ -573,6 +582,9 @@ regions:
     - P0_APP_ID
     - P0_PAGE_ID
     - P0_BEST_PRACTICE
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 20
@@ -761,6 +773,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: Characters of JavaScript Code per Page # 313690448495810617
@@ -775,6 +790,9 @@ dynamic-actions:
     id: 30597383746980062
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -791,6 +809,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: JavaScript in Page # 313691145469810624
@@ -805,6 +826,9 @@ dynamic-actions:
     id: 30597610081980064
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -840,6 +864,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: Characters of JavaScript Code per Page # 313825387272769913
@@ -855,6 +882,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: Place of JavaScript # 313825614915769915
@@ -869,6 +899,9 @@ dynamic-actions:
     id: 313825550992769914
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -901,6 +934,9 @@ dynamic-actions:
     id: 313826279568769922
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region

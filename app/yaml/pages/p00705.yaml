@@ -61,6 +61,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 10
     parent-region: '7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 42879199816235360
@@ -365,6 +368,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 10
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 42880102302235369
@@ -666,6 +672,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 60
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 42880102302235369
@@ -925,6 +934,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 30
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 42880102302235369
@@ -1116,6 +1128,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 40
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 42880102302235369
@@ -1239,6 +1254,9 @@ regions:
       and p.application_id = :P0_APP_ID
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 50
@@ -1469,6 +1487,9 @@ regions:
     page-items-to-submit: 
     - P0_APP_ID
 
+  order-by: 
+    type: None
+
   layout: 
     sequence: 70
     parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>' # 42880102302235369
@@ -1694,6 +1715,9 @@ regions:
       and application_id = :P0_APP_ID
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 140
@@ -2000,6 +2024,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: 7.1.2 Desupported JavaScript Functions # 42878578531235354
@@ -2014,6 +2041,9 @@ dynamic-actions:
     id: 42880206260235370
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -2030,6 +2060,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: 6.1.10 apexrefresh Event is Deprecated # 42880287778235371
@@ -2044,6 +2077,9 @@ dynamic-actions:
     id: 42881456484235382
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -2060,6 +2096,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: 6.1.7 Theme Style "Vista" Deprecated in Universal Theme # 42881557248235383
@@ -2074,6 +2113,9 @@ dynamic-actions:
     id: 43954271556817252
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -2090,6 +2132,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: 6.1.9 Show / Hide All Page Items On Same Line attributes deprecated # 43954873197817258
@@ -2104,6 +2149,9 @@ dynamic-actions:
     id: 43956267171817272
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -2136,6 +2184,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: 6.1.1 Deprecated JavaScript Functions # 42879506711235363
@@ -2150,6 +2201,9 @@ dynamic-actions:
     id: 42882940816235397
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -2166,6 +2220,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: '6.1.5 Tabular Forms Deprecated ' # 42881000028235378
@@ -2180,6 +2237,9 @@ dynamic-actions:
     id: 43953927785817249
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -2196,6 +2256,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: '6.1.8 Post Calculation for Page Items Deprecated ' # 42882173810235389
@@ -2210,6 +2273,9 @@ dynamic-actions:
     id: 43954167439817251
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
@@ -2226,6 +2292,9 @@ dynamic-actions:
     identification: 
       action: Refresh
 
+    settings: 
+      maintain-pagination: false
+
     affected-elements: 
       selection-type: Region
       region: 6.1.9 Show / Hide All Page Items On Same Line attributes deprecated # 43954873197817258
@@ -2240,6 +2309,9 @@ dynamic-actions:
     id: 43956358123817273
     identification: 
       action: Refresh
+
+    settings: 
+      maintain-pagination: false
 
     affected-elements: 
       selection-type: Region
