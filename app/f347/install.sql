@@ -143,6 +143,7 @@ prompt --install
 @@application/pages/page_00715.sql
 @@application/pages/page_00720.sql
 @@application/pages/page_00730.sql
+@@application/pages/page_00740.sql
 @@application/deployment/definition.sql
 @@application/deployment/install/install_av_general_pkg.sql
 @@application/deployment/install/install_av_applications_v.sql

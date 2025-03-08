@@ -5,7 +5,7 @@ begin
 --   Manifest End
 wwv_flow_imp.component_begin (
  p_version_yyyy_mm_dd=>'2024.05.31'
-,p_release=>'24.1.4'
+,p_release=>'24.1.6'
 ,p_default_workspace_id=>100001
 ,p_default_application_id=>347
 ,p_default_id_offset=>20408574139881448
@@ -15,7 +15,7 @@ wwv_flow_imp_shared.create_list(
  p_id=>wwv_flow_imp.id(472848853615347627)
 ,p_name=>'Desktop Navigation Menu'
 ,p_list_status=>'PUBLIC'
-,p_version_scn=>1
+,p_version_scn=>54926981
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(472913516436311096)
@@ -261,6 +261,15 @@ wwv_flow_imp_shared.create_list_item(
 ,p_parent_list_item_id=>wwv_flow_imp.id(36813609309735876)
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'730'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(40805445163374198)
+,p_list_item_display_sequence=>480
+,p_list_item_link_text=>'APEX 24.2'
+,p_list_item_link_target=>'f?p=&APP_ID.:740:&APP_SESSION.::&DEBUG.:::'
+,p_parent_list_item_id=>wwv_flow_imp.id(36813609309735876)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'740'
 );
 wwv_flow_imp.component_end;
 end;
