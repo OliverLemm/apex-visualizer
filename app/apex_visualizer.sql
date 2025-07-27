@@ -116,7 +116,7 @@ wwv_imp_workspace.create_flow(
 ,p_friendly_url=>'N'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>14
-,p_version_scn=>58809948
+,p_version_scn=>83004280
 ,p_print_server_type=>'INSTANCE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'N'
@@ -21015,7 +21015,13 @@ wwv_flow_imp_shared.create_install_script(
 '                              ,''&'' || ''APP_PAGE_ID.''',
 '                              ,pi_page_id_when_target_is_null));',
 '    end if;',
+'  ',
+'  exception',
+'    when others then',
+'      -- issue 13 - when javascript is in target link, return page_id',
+'      return pi_page_id_when_target_is_null;',
 '  end f_get_page_id_from_target_link;',
+'',
 'end av_general_pkg;',
 '/'))
 );

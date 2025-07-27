@@ -67,6 +67,12 @@ create or replace package body av_general_pkg is
                               ,'&' || 'APP_PAGE_ID.'
                               ,pi_page_id_when_target_is_null));
     end if;
+  
+  exception
+    when others then
+      -- issue 13 - when javascript is in target link, return page_id
+      return pi_page_id_when_target_is_null;
   end f_get_page_id_from_target_link;
+
 end av_general_pkg;
 /
