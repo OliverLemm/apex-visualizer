@@ -932,16 +932,17 @@ page-items:
 
   help: 
     help-text: |
-      These Compatibility Modes are equal<br>
-      24.2<br>
-      21.2 / 22.1 / 22.2 / 23.1 / 23.2 / 24.1<br>
-      19.2 / 20.1 / 20.2 / 21.1<br>
-      19.1<br>
-      5.1 / 18.1 / 18.2<br>
-      5.0<br>
-      4.2<br>
-      4.1<br>
-      Pre 4.1
+      Compatibility Mode <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/htmrn/changed-behavior.html#GUID-712BE54F-08CD-43A3-A645-87B9360ED516" target="_blank">Releasenotes 24.2</a><br><br>
+      24.2 - APEX supports an extended substitution syntax for text messages.<br>
+      21.2 / 22.1 / 22.2 / 23.1 / 23.2 / 24.1 - all processes ... regardless of errors<br>
+      19.2 / 20.1 / 20.2 / 21.1 - Classic Reports render empty column values ...<br>
+      19.1 - Rich Text editor ... Max Length item<br>
+      5.1 / 18.1 / 18.2 - Ajax-based Dynamic Actions work asynchronous<br>
+      5.0 - WORKSPACE_IMAGES and API logout calls desupported<br>
+      4.2 - Grid Layout, Textarea Max Length, JavaScript<br>
+      4.1 - DML Error Handling<br>
+      Pre 4.1<br>
+      
 
 - # ====== Page Item: P600_SESSION_STATE_PROTECTION ============
   id: 59549503313320160
