@@ -4,7 +4,7 @@ id: 347
 identification: 
   name: APEX Visualizer
   alias: AV
-  version: 24.2.0
+  version: 24.2.1
 
 row-search: 
   tokenize: false
@@ -112,7 +112,7 @@ attributes:
   auto-dismiss-success-messages: false
 
 subscription: 
-  version-number: 107659581
+  version-number: 107683275
 
 component-settings: 
 - # ====== Component Setting: NATIVE_SELECT_MANY ===============

@@ -100,7 +100,7 @@ regions:
   attributes: 
     layout: 
       number-of-rows-type: Static Value
-      number-of-rows: 15
+      number-of-rows: 99999
 
     appearance: 
       template-type: Theme
@@ -111,12 +111,12 @@ regions:
       - t-Report--rowHighlight
 
     pagination: 
-      type: Row Ranges X to Y (with next and previous links)
-      display-position: Bottom - Right
+      type: Row Ranges X to Y (no pagination)
+      display-position: Top and Bottom - Right
       partial-page-refresh: true
 
     performance: 
-      lazy-loading: false
+      lazy-loading: true
 
     messages: 
       when-no-data-found: <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> check needs to be implemented</b>
@@ -310,7 +310,7 @@ regions:
 
     pagination: 
       type: Row Ranges X to Y (no pagination)
-      display-position: Bottom - Right
+      display-position: Top and Bottom - Right
       partial-page-refresh: true
 
     performance: 
@@ -609,7 +609,7 @@ regions:
   attributes: 
     layout: 
       number-of-rows-type: Static Value
-      number-of-rows: 15
+      number-of-rows: 99999
 
     appearance: 
       template-type: Theme
@@ -620,12 +620,12 @@ regions:
       - t-Report--rowHighlight
 
     pagination: 
-      type: Row Ranges X to Y (with next and previous links)
-      display-position: Bottom - Right
+      type: Row Ranges X to Y (no pagination)
+      display-position: Top and Bottom - Right
       partial-page-refresh: true
 
     performance: 
-      lazy-loading: false
+      lazy-loading: true
 
     messages: 
       when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Display Only with HTML used</b>
@@ -925,7 +925,7 @@ regions:
   attributes: 
     layout: 
       number-of-rows-type: Static Value
-      number-of-rows: 1000
+      number-of-rows: 99999
 
     appearance: 
       template-type: Theme
@@ -936,12 +936,12 @@ regions:
       - t-Report--rowHighlight
 
     pagination: 
-      type: Row Ranges X to Y (with next and previous links)
-      display-position: Bottom - Right
+      type: Row Ranges X to Y (no pagination)
+      display-position: Top and Bottom - Right
       partial-page-refresh: true
 
     performance: 
-      lazy-loading: false
+      lazy-loading: true
 
     messages: 
       when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Double Escapes used</b>
@@ -1246,12 +1246,12 @@ regions:
       - t-Report--rowHighlight
 
     pagination: 
-      type: Row Ranges X to Y (with next and previous links)
-      display-position: Bottom - Right
+      type: Row Ranges X to Y (no pagination)
+      display-position: Top and Bottom - Right
       partial-page-refresh: true
 
     performance: 
-      lazy-loading: false
+      lazy-loading: true
 
     messages: 
       when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no APEX Views or columns which are removed are used</b>
@@ -1589,7 +1589,7 @@ regions:
   attributes: 
     layout: 
       number-of-rows-type: Static Value
-      number-of-rows: 15
+      number-of-rows: 99999
 
     appearance: 
       template-type: Theme
@@ -1600,12 +1600,12 @@ regions:
       - t-Report--rowHighlight
 
     pagination: 
-      type: Row Ranges X to Y (with next and previous links)
-      display-position: Bottom - Right
+      type: Row Ranges X to Y (no pagination)
+      display-position: Top and Bottom - Right
       partial-page-refresh: true
 
     performance: 
-      lazy-loading: false
+      lazy-loading: true
 
     messages: 
       when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no JET or old Datepicker are used</b>
@@ -1962,7 +1962,7 @@ regions:
 
     pagination: 
       type: Row Ranges X to Y (no pagination)
-      display-position: Bottom - Right
+      display-position: Top and Bottom - Right
       partial-page-refresh: true
 
     performance: 

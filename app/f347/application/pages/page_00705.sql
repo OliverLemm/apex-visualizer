@@ -65,9 +65,9 @@ wwv_flow_imp_page.create_report_region(
 '</ul>'))
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
-,p_lazy_loading=>false
+,p_lazy_loading=>true
 ,p_query_row_template=>2538654340625403440
-,p_query_num_rows=>99999999
+,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no openModal or closeModal used</b>'
 ,p_query_num_rows_type=>'ROWS_X_TO_Y'
@@ -163,9 +163,9 @@ wwv_flow_imp_page.create_report_region(
 ,p_header=>'<b>apex.theme42.util.mq => use apex.theme.mq</b> <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/aexjs/apex.theme.html#.mq" target="_blank">APEX 20.1 JS API apex.theme.mq</a>'
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
-,p_lazy_loading=>false
+,p_lazy_loading=>true
 ,p_query_row_template=>2538654340625403440
-,p_query_num_rows=>99999999
+,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no apex.theme42.util.mq used</b>'
 ,p_query_num_rows_type=>'ROWS_X_TO_Y'
@@ -252,9 +252,9 @@ wwv_flow_imp_page.create_report_region(
 ||'ex.region</a>'
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
-,p_lazy_loading=>false
+,p_lazy_loading=>true
 ,p_query_row_template=>2538654340625403440
-,p_query_num_rows=>99999999
+,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no apex.theme42.util.mq used</b>'
 ,p_query_num_rows_type=>'ROWS_X_TO_Y'
@@ -336,9 +336,9 @@ wwv_flow_imp_page.create_report_region(
 'and r.application_id = :P0_APP_ID'))
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
-,p_lazy_loading=>false
+,p_lazy_loading=>true
 ,p_query_row_template=>2538654340625403440
-,p_query_num_rows=>9999999
+,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Tabular Forms used</b>'
 ,p_query_num_rows_type=>'ROWS_X_TO_Y'
@@ -399,11 +399,13 @@ wwv_flow_imp_page.create_report_region(
 'and ty.application_id = :P0_APP_ID'))
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
-,p_lazy_loading=>false
+,p_lazy_loading=>true
 ,p_query_row_template=>2538654340625403440
-,p_query_num_rows=>15
+,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Vista Theme Style is used</b>'
+,p_query_num_rows_type=>'ROWS_X_TO_Y'
+,p_pagination_display_position=>'TOP_AND_BOTTOM_RIGHT'
 ,p_csv_output=>'N'
 ,p_prn_output=>'N'
 ,p_sort_null=>'L'
@@ -440,9 +442,9 @@ wwv_flow_imp_page.create_report_region(
 'and p.application_id = :P0_APP_ID'))
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
-,p_lazy_loading=>false
+,p_lazy_loading=>true
 ,p_query_row_template=>2538654340625403440
-,p_query_num_rows=>9999999
+,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Post Calculation for Page Items used</b>'
 ,p_query_num_rows_type=>'ROWS_X_TO_Y'
@@ -518,9 +520,9 @@ wwv_flow_imp_page.create_report_region(
 'and a.application_id = :P0_APP_ID'))
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
-,p_lazy_loading=>false
+,p_lazy_loading=>true
 ,p_query_row_template=>2538654340625403440
-,p_query_num_rows=>9999999
+,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Show / Hide All Page Items On Same Line attributes used</b>'
 ,p_query_num_rows_type=>'ROWS_X_TO_Y'
@@ -596,9 +598,9 @@ wwv_flow_imp_page.create_report_region(
 ,p_header=>'<b>apex.widget.initPageItem => apex.item.create</b> <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/aexjs/apex.item.html#.create" target="_blank">APEX 20.1 JS API apex.item.create</a>'
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
-,p_lazy_loading=>false
+,p_lazy_loading=>true
 ,p_query_row_template=>2538654340625403440
-,p_query_num_rows=>99999999
+,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no apex.widget.initPageItem used</b>'
 ,p_query_num_rows_type=>'ROWS_X_TO_Y'

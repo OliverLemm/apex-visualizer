@@ -307,7 +307,7 @@ regions:
   attributes: 
     layout: 
       number-of-rows-type: Static Value
-      number-of-rows: 15
+      number-of-rows: 99999
 
     appearance: 
       template-type: Theme
@@ -318,12 +318,12 @@ regions:
       - t-Report--rowHighlight
 
     pagination: 
-      type: Row Ranges X to Y (with next and previous links)
-      display-position: Bottom - Right
+      type: Row Ranges X to Y (no pagination)
+      display-position: Top and Bottom - Right
       partial-page-refresh: true
 
     performance: 
-      lazy-loading: false
+      lazy-loading: true
 
     messages: 
       when-no-data-found: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Template Component with old Metadata used</b>

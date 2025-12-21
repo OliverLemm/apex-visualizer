@@ -111,7 +111,7 @@ regions:
 
     pagination: 
       type: Row Ranges X to Y (no pagination)
-      display-position: Bottom - Right
+      display-position: Top and Bottom - Right
       partial-page-refresh: true
 
     performance: 
@@ -371,7 +371,7 @@ regions:
 
     pagination: 
       type: Row Ranges X to Y (no pagination)
-      display-position: Bottom - Right
+      display-position: Top and Bottom - Right
       partial-page-refresh: true
 
     performance: 
@@ -564,7 +564,7 @@ regions:
 
     pagination: 
       type: Row Ranges X to Y (no pagination)
-      display-position: Bottom - Right
+      display-position: Top and Bottom - Right
       partial-page-refresh: true
 
     performance: 
@@ -1040,7 +1040,7 @@ regions:
 
     pagination: 
       type: Row Ranges X to Y (no pagination)
-      display-position: Bottom - Right
+      display-position: Top and Bottom - Right
       partial-page-refresh: true
 
     performance: 
