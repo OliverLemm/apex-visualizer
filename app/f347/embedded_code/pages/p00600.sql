@@ -20,79 +20,30 @@ page_name is null;
 -- ----------------------------------------
 -- Page: 600 - QA > Dynamic Action: click - button - Refresh - refresh regions > Action: Execute Server-side Code > Settings > PL/SQL Code
 
-select
- a.compatibility_mode
-,a.Session_State_Protection
-,nvl2(a.runtime_api_usage, replace(replace(replace(a.runtime_api_usage,'T','This'),'O','Other'),'W','Workspace'),'None')
-into
- :P600_COMPATIBILITY_MODE
-,:P600_SESSION_STATE_PROTECTION
-,:P600_RUNTIME_API_USAGE
-from apex_applications a
-where a.application_id = :P0_APP_ID;
-
-select 
- ui.include_legacy_javascript 
-,ui.include_jquery_migrate
-into
- :P600_INCLUDE_LEGACY_JAVASCRIPT
-,:P600_INCLUDE_JQUERY_MIGRATE
-from apex_appl_user_interfaces ui 
-where ui.application_id = :P0_APP_ID
-and ui.ui_type_name = 'DESKTOP';
-
-select 
- t.theme_name 
-,replace(substr(t.file_prefix,instr(t.file_prefix,'theme_42') + 9),'/')
-into 
- :P600_THEME_NAME
-,:P600_UT_VERSION
-from apex_application_themes t
-where t.application_id = :P0_APP_ID
-and t.ui_type_name = 'DESKTOP'
-and t.is_current = 'Yes';
+av_general_pkg.p_qa_app_settings(
+  pi_application_id            => :P0_APP_ID
+ ,po_compatibility_mode        => :P600_COMPATIBILITY_MODE
+ ,po_session_state_protection  => :P600_SESSION_STATE_PROTECTION
+ ,po_runtime_api_usage         => :P600_RUNTIME_API_USAGE
+ ,po_include_legacy_javascript => :P600_INCLUDE_LEGACY_JAVASCRIPT
+ ,po_include_jquery_migrate    => :P600_INCLUDE_JQUERY_MIGRATE
+ ,po_theme_name                => :P600_THEME_NAME
+ ,po_theme_version             => :P600_THEME_VERSION
+);
 
 -- ----------------------------------------
 -- Page: 600 - QA > Dynamic Action: change P0_APP_ID - refresh regions > Action: Execute Server-side Code > Settings > PL/SQL Code
 
-select
- a.compatibility_mode
-,a.Session_State_Protection
-,nvl2(a.runtime_api_usage, replace(replace(replace(a.runtime_api_usage,'T','This'),'O','Other'),'W','Workspace'),'None')
-into
- :P600_COMPATIBILITY_MODE
-,:P600_SESSION_STATE_PROTECTION
-,:P600_RUNTIME_API_USAGE
-from apex_applications a
-where a.application_id = :P0_APP_ID;
-
-select 
- ui.include_legacy_javascript 
-,ui.include_jquery_migrate
-into
- :P600_INCLUDE_LEGACY_JAVASCRIPT
-,:P600_INCLUDE_JQUERY_MIGRATE
-from apex_appl_user_interfaces ui 
-where ui.application_id = :P0_APP_ID
-and ui.ui_type_name = 'DESKTOP';
-
-select 
- t.theme_name 
-,replace(substr(t.file_prefix,instr(t.file_prefix,'theme_42') + 9),'/')
-into 
- :P600_THEME_NAME
-,:P600_UT_VERSION
-from apex_application_themes t
-where t.application_id = :P0_APP_ID
-and t.ui_type_name = 'DESKTOP'
-and t.is_current = 'Yes';
-
--- ----------------------------------------
--- Page: 600 - QA > Region: unused authorization schemes > Source > SQL Query
-
-select a.authorization_scheme_name,scheme_type
-from av_p0600_not_used_auth_schemes_v a
-where a.application_id = :P0_APP_ID;
+av_general_pkg.p_qa_app_settings(
+  pi_application_id            => :P0_APP_ID
+ ,po_compatibility_mode        => :P600_COMPATIBILITY_MODE
+ ,po_session_state_protection  => :P600_SESSION_STATE_PROTECTION
+ ,po_runtime_api_usage         => :P600_RUNTIME_API_USAGE
+ ,po_include_legacy_javascript => :P600_INCLUDE_LEGACY_JAVASCRIPT
+ ,po_include_jquery_migrate    => :P600_INCLUDE_JQUERY_MIGRATE
+ ,po_theme_name                => :P600_THEME_NAME
+ ,po_theme_version             => :P600_THEME_VERSION
+);
 
 -- ----------------------------------------
 -- Page: 600 - QA > Region: never condition used > Source > SQL Query

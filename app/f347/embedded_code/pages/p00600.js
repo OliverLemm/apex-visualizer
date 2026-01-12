@@ -9,7 +9,7 @@
 // --------------------------------------------------------------------------------
 
 // ----------------------------------------
-// Page: 600 - QA > Dynamic Action: change P600_UT_VERSION - setColor > Action: Execute JavaScript Code > Settings > Code
+// Page: 600 - QA > Dynamic Action: change P600_THEME_VERSION - setColor > Action: Execute JavaScript Code > Settings > Code
 
 var $trigger = $(this.triggeringElement);
 var val = $trigger.val();

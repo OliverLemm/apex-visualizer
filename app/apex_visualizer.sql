@@ -45,7 +45,7 @@ prompt APPLICATION 347 - APEX Visualizer
 --     Shared Components:
 --       Logic:
 --         Processes:              1
---         Build Options:          1
+--         Build Options:          2
 --       Navigation:
 --         Lists:                  2
 --         Breadcrumbs:            1
@@ -116,7 +116,7 @@ wwv_imp_workspace.create_flow(
 ,p_friendly_url=>'N'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>14
-,p_version_scn=>110169995
+,p_version_scn=>110213663
 ,p_print_server_type=>'INSTANCE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'N'
@@ -4524,6 +4524,13 @@ end;
 /
 prompt --application/shared_components/logic/build_options
 begin
+wwv_flow_imp_shared.create_build_option(
+ p_id=>wwv_flow_imp.id(50068568250634028)
+,p_build_option_name=>'hide'
+,p_build_option_status=>'EXCLUDE'
+,p_version_scn=>110212890
+,p_default_on_export=>'EXCLUDE'
+);
 wwv_flow_imp_shared.create_build_option(
  p_id=>wwv_flow_imp.id(311726863352029995)
 ,p_build_option_name=>'deactivated'
@@ -12437,8 +12444,8 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_alias=>'APPLICATION_ID'
 ,p_column_display_sequence=>80
 ,p_hidden_column=>'Y'
-,p_display_when_cond_type=>'NEVER'
 ,p_derived_column=>'N'
+,p_required_patch=>wwv_flow_imp.id(50068568250634028)
 );
 wwv_flow_imp_page.create_report_columns(
  p_id=>wwv_flow_imp.id(24445960812508422)
@@ -12534,6 +12541,7 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_display_sequence=>10
 ,p_column_heading=>'Name'
 ,p_heading_alignment=>'LEFT'
+,p_default_sort_column_sequence=>1
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
@@ -12559,11 +12567,10 @@ wwv_flow_imp_page.create_report_region(
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
 ,p_new_grid_row=>false
 ,p_source_type=>'NATIVE_SQL_REPORT'
-,p_query_type=>'SQL'
-,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select a.authorization_scheme_name,scheme_type',
-'from av_p0600_not_used_auth_schemes_v a',
-'where a.application_id = :P0_APP_ID'))
+,p_query_type=>'TABLE'
+,p_query_table=>'AV_P0600_NOT_USED_AUTH_SCHEMES_V'
+,p_query_where=>'application_id = :P0_APP_ID'
+,p_include_rowid_column=>false
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>false
@@ -12584,13 +12591,23 @@ wwv_flow_imp_page.create_report_columns(
 ,p_column_display_sequence=>10
 ,p_column_heading=>'Authorization Scheme Name'
 ,p_heading_alignment=>'LEFT'
+,p_default_sort_column_sequence=>1
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
 wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(24445649254508419)
+ p_id=>wwv_flow_imp.id(24447216023508435)
 ,p_query_column_id=>2
+,p_column_alias=>'APPLICATION_ID'
+,p_column_display_sequence=>30
+,p_hidden_column=>'Y'
+,p_derived_column=>'N'
+,p_required_patch=>wwv_flow_imp.id(50068568250634028)
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(24445649254508419)
+,p_query_column_id=>3
 ,p_column_alias=>'SCHEME_TYPE'
 ,p_column_display_sequence=>20
 ,p_column_heading=>'Scheme Type'
@@ -12635,7 +12652,7 @@ wwv_flow_imp_page.create_report_columns(
  p_id=>wwv_flow_imp.id(24445123397508414)
 ,p_query_column_id=>1
 ,p_column_alias=>'PAGE_NAME'
-,p_column_display_sequence=>10
+,p_column_display_sequence=>20
 ,p_column_heading=>'Page Name'
 ,p_heading_alignment=>'LEFT'
 ,p_disable_sort_column=>'N'
@@ -12646,10 +12663,11 @@ wwv_flow_imp_page.create_report_columns(
  p_id=>wwv_flow_imp.id(24445203822508415)
 ,p_query_column_id=>2
 ,p_column_alias=>'PAGE_ID'
-,p_column_display_sequence=>20
+,p_column_display_sequence=>10
 ,p_column_heading=>'Page Id'
 ,p_column_alignment=>'RIGHT'
 ,p_heading_alignment=>'RIGHT'
+,p_default_sort_column_sequence=>1
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
@@ -12658,7 +12676,7 @@ wwv_flow_imp_page.create_report_columns(
  p_id=>wwv_flow_imp.id(24445393037508416)
 ,p_query_column_id=>3
 ,p_column_alias=>'COMPONENT_TYPE'
-,p_column_display_sequence=>30
+,p_column_display_sequence=>40
 ,p_column_heading=>'Component Type'
 ,p_heading_alignment=>'LEFT'
 ,p_disable_sort_column=>'N'
@@ -12669,9 +12687,10 @@ wwv_flow_imp_page.create_report_columns(
  p_id=>wwv_flow_imp.id(24445465876508417)
 ,p_query_column_id=>4
 ,p_column_alias=>'COMPONENT_NAME'
-,p_column_display_sequence=>40
+,p_column_display_sequence=>30
 ,p_column_heading=>'Component Name'
 ,p_heading_alignment=>'LEFT'
+,p_default_sort_column_sequence=>2
 ,p_disable_sort_column=>'N'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
@@ -12831,10 +12850,10 @@ wwv_flow_imp_page.create_page_item(
 );
 wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(59551927538320184)
-,p_name=>'P600_UT_VERSION'
+,p_name=>'P600_THEME_VERSION'
 ,p_item_sequence=>60
 ,p_item_plug_id=>wwv_flow_imp.id(59549424781320159)
-,p_prompt=>'UT Version'
+,p_prompt=>'Theme Version'
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>10
 ,p_begin_on_new_line=>'N'
@@ -12930,39 +12949,18 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_execute_on_page_init=>'Y'
 ,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
 ,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select',
-' a.compatibility_mode',
-',a.Session_State_Protection',
-',nvl2(a.runtime_api_usage, replace(replace(replace(a.runtime_api_usage,''T'',''This''),''O'',''Other''),''W'',''Workspace''),''None'')',
-'into',
-' :P600_COMPATIBILITY_MODE',
-',:P600_SESSION_STATE_PROTECTION',
-',:P600_RUNTIME_API_USAGE',
-'from apex_applications a',
-'where a.application_id = :P0_APP_ID;',
-'',
-'select ',
-' ui.include_legacy_javascript ',
-',ui.include_jquery_migrate',
-'into',
-' :P600_INCLUDE_LEGACY_JAVASCRIPT',
-',:P600_INCLUDE_JQUERY_MIGRATE',
-'from apex_appl_user_interfaces ui ',
-'where ui.application_id = :P0_APP_ID',
-'and ui.ui_type_name = ''DESKTOP'';',
-'',
-'select ',
-' t.theme_name ',
-',replace(substr(t.file_prefix,instr(t.file_prefix,''theme_42'') + 9),''/'')',
-'into ',
-' :P600_THEME_NAME',
-',:P600_UT_VERSION',
-'from apex_application_themes t',
-'where t.application_id = :P0_APP_ID',
-'and t.ui_type_name = ''DESKTOP''',
-'and t.is_current = ''Yes'';'))
-,p_attribute_02=>'P600_COMPATIBILITY_MODE,P600_SESSION_STATE_PROTECTION,P600_RUNTIME_API_USAGE,P0_APP_ID,P600_INCLUDE_LEGACY_JAVASCRIPT,P600_INCLUDE_JQUERY_MIGRATE,P600_THEME_NAME,P600_UT_VERSION'
-,p_attribute_03=>'P600_COMPATIBILITY_MODE,P600_SESSION_STATE_PROTECTION,P600_RUNTIME_API_USAGE,P600_INCLUDE_LEGACY_JAVASCRIPT,P600_INCLUDE_JQUERY_MIGRATE,P600_THEME_NAME,P600_UT_VERSION'
+'av_general_pkg.p_qa_app_settings(',
+'  pi_application_id            => :P0_APP_ID',
+' ,po_compatibility_mode        => :P600_COMPATIBILITY_MODE',
+' ,po_session_state_protection  => :P600_SESSION_STATE_PROTECTION',
+' ,po_runtime_api_usage         => :P600_RUNTIME_API_USAGE',
+' ,po_include_legacy_javascript => :P600_INCLUDE_LEGACY_JAVASCRIPT',
+' ,po_include_jquery_migrate    => :P600_INCLUDE_JQUERY_MIGRATE',
+' ,po_theme_name                => :P600_THEME_NAME',
+' ,po_theme_version             => :P600_THEME_VERSION',
+');'))
+,p_attribute_02=>'P0_APP_ID,P600_COMPATIBILITY_MODE,P600_SESSION_STATE_PROTECTION,P600_RUNTIME_API_USAGE,P0_APP_ID,P600_INCLUDE_LEGACY_JAVASCRIPT,P600_INCLUDE_JQUERY_MIGRATE,P600_THEME_NAME,P600_THEME_VERSION'
+,p_attribute_03=>'P600_COMPATIBILITY_MODE,P600_SESSION_STATE_PROTECTION,P600_RUNTIME_API_USAGE,P600_INCLUDE_LEGACY_JAVASCRIPT,P600_INCLUDE_JQUERY_MIGRATE,P600_THEME_NAME,P600_THEME_VERSION'
 ,p_attribute_04=>'N'
 ,p_attribute_05=>'PLSQL'
 ,p_wait_for_result=>'Y'
@@ -13030,42 +13028,21 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_event_id=>wwv_flow_imp.id(24446603788508429)
 ,p_event_result=>'TRUE'
 ,p_action_sequence=>50
-,p_execute_on_page_init=>'Y'
+,p_execute_on_page_init=>'N'
 ,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
 ,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select',
-' a.compatibility_mode',
-',a.Session_State_Protection',
-',nvl2(a.runtime_api_usage, replace(replace(replace(a.runtime_api_usage,''T'',''This''),''O'',''Other''),''W'',''Workspace''),''None'')',
-'into',
-' :P600_COMPATIBILITY_MODE',
-',:P600_SESSION_STATE_PROTECTION',
-',:P600_RUNTIME_API_USAGE',
-'from apex_applications a',
-'where a.application_id = :P0_APP_ID;',
-'',
-'select ',
-' ui.include_legacy_javascript ',
-',ui.include_jquery_migrate',
-'into',
-' :P600_INCLUDE_LEGACY_JAVASCRIPT',
-',:P600_INCLUDE_JQUERY_MIGRATE',
-'from apex_appl_user_interfaces ui ',
-'where ui.application_id = :P0_APP_ID',
-'and ui.ui_type_name = ''DESKTOP'';',
-'',
-'select ',
-' t.theme_name ',
-',replace(substr(t.file_prefix,instr(t.file_prefix,''theme_42'') + 9),''/'')',
-'into ',
-' :P600_THEME_NAME',
-',:P600_UT_VERSION',
-'from apex_application_themes t',
-'where t.application_id = :P0_APP_ID',
-'and t.ui_type_name = ''DESKTOP''',
-'and t.is_current = ''Yes'';'))
-,p_attribute_02=>'P600_COMPATIBILITY_MODE,P600_SESSION_STATE_PROTECTION,P600_RUNTIME_API_USAGE,P0_APP_ID,P600_INCLUDE_LEGACY_JAVASCRIPT,P600_INCLUDE_JQUERY_MIGRATE,P600_THEME_NAME,P600_UT_VERSION'
-,p_attribute_03=>'P600_COMPATIBILITY_MODE,P600_SESSION_STATE_PROTECTION,P600_RUNTIME_API_USAGE,P600_INCLUDE_LEGACY_JAVASCRIPT,P600_INCLUDE_JQUERY_MIGRATE,P600_THEME_NAME,P600_UT_VERSION'
+'av_general_pkg.p_qa_app_settings(',
+'  pi_application_id            => :P0_APP_ID',
+' ,po_compatibility_mode        => :P600_COMPATIBILITY_MODE',
+' ,po_session_state_protection  => :P600_SESSION_STATE_PROTECTION',
+' ,po_runtime_api_usage         => :P600_RUNTIME_API_USAGE',
+' ,po_include_legacy_javascript => :P600_INCLUDE_LEGACY_JAVASCRIPT',
+' ,po_include_jquery_migrate    => :P600_INCLUDE_JQUERY_MIGRATE',
+' ,po_theme_name                => :P600_THEME_NAME',
+' ,po_theme_version             => :P600_THEME_VERSION',
+');'))
+,p_attribute_02=>'P0_APP_ID,P600_COMPATIBILITY_MODE,P600_SESSION_STATE_PROTECTION,P600_RUNTIME_API_USAGE,P0_APP_ID,P600_INCLUDE_LEGACY_JAVASCRIPT,P600_INCLUDE_JQUERY_MIGRATE,P600_THEME_NAME,P600_THEME_VERSION'
+,p_attribute_03=>'P600_COMPATIBILITY_MODE,P600_SESSION_STATE_PROTECTION,P600_RUNTIME_API_USAGE,P600_INCLUDE_LEGACY_JAVASCRIPT,P600_INCLUDE_JQUERY_MIGRATE,P600_THEME_NAME,P600_THEME_VERSION'
 ,p_attribute_04=>'N'
 ,p_attribute_05=>'PLSQL'
 ,p_wait_for_result=>'Y'
@@ -13281,7 +13258,7 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_execute_on_page_init=>'Y'
 ,p_action=>'NATIVE_HIDE'
 ,p_affected_elements_type=>'ITEM'
-,p_affected_elements=>'P600_UT_VERSION'
+,p_affected_elements=>'P600_THEME_VERSION'
 ,p_client_condition_type=>'NOT_EQUALS'
 ,p_client_condition_element=>'P600_THEME_NAME'
 ,p_client_condition_expression=>'Universal Theme'
@@ -13294,17 +13271,17 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_execute_on_page_init=>'Y'
 ,p_action=>'NATIVE_SHOW'
 ,p_affected_elements_type=>'ITEM'
-,p_affected_elements=>'P600_UT_VERSION'
+,p_affected_elements=>'P600_THEME_VERSION'
 ,p_client_condition_type=>'EQUALS'
 ,p_client_condition_element=>'P600_THEME_NAME'
 ,p_client_condition_expression=>'Universal Theme'
 );
 wwv_flow_imp_page.create_page_da_event(
  p_id=>wwv_flow_imp.id(59552206358320187)
-,p_name=>'change P600_UT_VERSION - setColor'
+,p_name=>'change P600_THEME_VERSION - setColor'
 ,p_event_sequence=>90
 ,p_triggering_element_type=>'ITEM'
-,p_triggering_element=>'P600_UT_VERSION'
+,p_triggering_element=>'P600_THEME_VERSION'
 ,p_bind_type=>'bind'
 ,p_execution_type=>'IMMEDIATE'
 ,p_bind_event_type=>'change'
@@ -13317,7 +13294,7 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_execute_on_page_init=>'Y'
 ,p_action=>'NATIVE_JAVASCRIPT_CODE'
 ,p_affected_elements_type=>'ITEM'
-,p_affected_elements=>'P600_UT_VERSION'
+,p_affected_elements=>'P600_THEME_VERSION'
 ,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'var $trigger = $(this.triggeringElement);',
 'var val = $trigger.val();',
@@ -20807,11 +20784,13 @@ wwv_flow_imp_shared.create_install_script(
 ,p_script_type=>'INSTALL'
 ,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'create or replace package av_general_pkg is',
+'',
 '  function f_get_page_designer_url',
 '  (',
 '    pi_app_id      in number',
 '   ,pi_app_page_id in number',
 '  ) return varchar2;',
+'',
 '  function f_get_page_designer_link',
 '  (',
 '    pi_app_id           in number',
@@ -20819,11 +20798,25 @@ wwv_flow_imp_shared.create_install_script(
 '   ,pi_link_label       in varchar2 default ''edit''',
 '   ,pi_open_in_new_page in number default 1',
 '  ) return varchar2;',
+'',
 '  function f_get_page_id_from_target_link',
 '  (',
 '    pi_target_link                 in varchar2',
 '   ,pi_page_id_when_target_is_null in number default null',
 '  ) return number;',
+'',
+'  procedure p_qa_app_settings',
+'  (',
+'    pi_application_id            in apex_applications.application_id%type',
+'   ,po_compatibility_mode        out apex_applications.compatibility_mode%type',
+'   ,po_session_state_protection  out apex_applications.session_state_protection%type',
+'   ,po_runtime_api_usage         out varchar2',
+'   ,po_include_legacy_javascript out apex_appl_user_interfaces.include_legacy_javascript%type',
+'   ,po_include_jquery_migrate    out apex_appl_user_interfaces.include_jquery_migrate%type',
+'   ,po_theme_name                out apex_application_themes.theme_name%type',
+'   ,po_theme_version             out apex_application_themes.version%type',
+'  );',
+'',
 'end av_general_pkg;',
 '/',
 'create or replace package body av_general_pkg is',
@@ -20881,6 +20874,72 @@ wwv_flow_imp_shared.create_install_script(
 '      -- issue 13 - when javascript is in target link, return page_id',
 '      return pi_page_id_when_target_is_null;',
 '  end f_get_page_id_from_target_link;',
+'',
+'  procedure p_qa_app_settings',
+'  (',
+'    pi_application_id            in apex_applications.application_id%type',
+'   ,po_compatibility_mode        out apex_applications.compatibility_mode%type',
+'   ,po_session_state_protection  out apex_applications.session_state_protection%type',
+'   ,po_runtime_api_usage         out varchar2',
+'   ,po_include_legacy_javascript out apex_appl_user_interfaces.include_legacy_javascript%type',
+'   ,po_include_jquery_migrate    out apex_appl_user_interfaces.include_jquery_migrate%type',
+'   ,po_theme_name                out apex_application_themes.theme_name%type',
+'   ,po_theme_version             out apex_application_themes.version%type',
+'  ) is',
+'  begin',
+'    begin',
+'      select a.compatibility_mode',
+'            ,a.session_state_protection',
+'            ,case a.runtime_api_usage',
+'               when ''T'' then',
+'                ''This''',
+'               when ''O'' then',
+'                ''Other''',
+'               when ''W'' then',
+'                ''Workspace''',
+'               else',
+'                ''None''',
+'             end',
+'      into po_compatibility_mode',
+'          ,po_session_state_protection',
+'          ,po_runtime_api_usage',
+'      from apex_applications a',
+'      where a.application_id = pi_application_id;',
+'    exception',
+'      when no_data_found then',
+'        po_compatibility_mode       := ''NA'';',
+'        po_session_state_protection := ''NA'';',
+'        po_runtime_api_usage        := ''NA'';',
+'    end;',
+'  ',
+'    begin',
+'      select ui.include_legacy_javascript',
+'            ,ui.include_jquery_migrate',
+'      into po_include_legacy_javascript',
+'          ,po_include_jquery_migrate',
+'      from apex_appl_user_interfaces ui',
+'      where ui.application_id = pi_application_id;',
+'    exception',
+'      when no_data_found then',
+'        po_include_legacy_javascript := ''NA'';',
+'        po_include_jquery_migrate    := ''NA'';',
+'    end;',
+'  ',
+'    begin',
+'      select t.theme_name',
+'            ,t.version',
+'      into po_theme_name',
+'          ,po_theme_version',
+'      from apex_application_themes t',
+'      where t.application_id = pi_application_id',
+'      and t.is_current = ''Yes'';',
+'    exception',
+'      when no_data_found then',
+'        po_theme_name    := ''NA'';',
+'        po_theme_version := ''NA'';',
+'    end;',
+'  ',
+'  end p_qa_app_settings;',
 '',
 'end av_general_pkg;',
 '/'))

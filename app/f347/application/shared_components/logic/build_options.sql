@@ -12,6 +12,13 @@ wwv_flow_imp.component_begin (
 ,p_default_owner=>'APEX_VISUALIZER'
 );
 wwv_flow_imp_shared.create_build_option(
+ p_id=>wwv_flow_imp.id(50068568250634028)
+,p_build_option_name=>'hide'
+,p_build_option_status=>'EXCLUDE'
+,p_version_scn=>110212890
+,p_default_on_export=>'EXCLUDE'
+);
+wwv_flow_imp_shared.create_build_option(
  p_id=>wwv_flow_imp.id(311726863352029995)
 ,p_build_option_name=>'deactivated'
 ,p_build_option_status=>'EXCLUDE'

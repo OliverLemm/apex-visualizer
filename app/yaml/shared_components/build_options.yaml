@@ -1,4 +1,17 @@
 ---
+- # ====== Build Option: hide ==================================
+  id: 50068568250634028
+  identification: 
+    name: hide
+
+  status: 
+    status: Exclude
+    default-on-export: Exclude
+    on-upgrade-keep-status: false
+
+  subscription: 
+    version-number: 110212890
+
 - # ====== Build Option: deactivated ===========================
   id: 311726863352029995
   identification: 

@@ -299,11 +299,11 @@ regions:
     ui-defaults-reference: 
       table-owner: Parsing Schema
 
-    server-side-condition: 
-      type: Never
-
     security: 
       escape-special-characters: true
+
+    configuration: 
+      build-option: hide # 50068568250634028
 
 - # ====== Region: unused plugins ==============================
   id: 59246298485518465
@@ -413,6 +413,8 @@ regions:
       value-identifies-row: false
 
     sorting: 
+      default-sequence: 1
+      direction: Ascending
       sortable: true
 
     export-/-printing: 
@@ -467,11 +469,11 @@ regions:
 
   source: 
     location: Local Database
-    type: SQL Query
-    sql-query: |
-      select a.authorization_scheme_name,scheme_type
-      from av_p0600_not_used_auth_schemes_v a
-      where a.application_id = :P0_APP_ID
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: AV_P0600_NOT_USED_AUTH_SCHEMES_V
+    include-rowid-column: false
+    where-clause: 'application_id = :P0_APP_ID'
     page-items-to-submit: 
     - P0_APP_ID
 
@@ -565,6 +567,8 @@ regions:
       value-identifies-row: false
 
     sorting: 
+      default-sequence: 1
+      direction: Ascending
       sortable: true
 
     export-/-printing: 
@@ -610,6 +614,24 @@ regions:
 
     security: 
       escape-special-characters: true
+
+  - # ====== Column: APPLICATION_ID ==============================
+    id: 24447216023508435
+    identification: 
+      column-name: APPLICATION_ID
+      type: Hidden
+
+    layout: 
+      sequence: 30
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+    configuration: 
+      build-option: hide # 50068568250634028
 
 - # ====== Region: never condition used ========================
   id: 59248874548518491
@@ -715,7 +737,7 @@ regions:
       alignment: start
 
     layout: 
-      sequence: 10
+      sequence: 20
       column-alignment: start
 
     accessibility: 
@@ -747,13 +769,15 @@ regions:
       alignment: end
 
     layout: 
-      sequence: 20
+      sequence: 10
       column-alignment: end
 
     accessibility: 
       value-identifies-row: false
 
     sorting: 
+      default-sequence: 1
+      direction: Ascending
       sortable: true
 
     export-/-printing: 
@@ -779,7 +803,7 @@ regions:
       alignment: start
 
     layout: 
-      sequence: 30
+      sequence: 40
       column-alignment: start
 
     accessibility: 
@@ -811,13 +835,15 @@ regions:
       alignment: start
 
     layout: 
-      sequence: 40
+      sequence: 30
       column-alignment: start
 
     accessibility: 
       value-identifies-row: false
 
     sorting: 
+      default-sequence: 2
+      direction: Ascending
       sortable: true
 
     export-/-printing: 
@@ -1244,14 +1270,14 @@ page-items:
   help: 
     help-text: If you don't select Universal Theme for your application, not the full functionality is supported.
 
-- # ====== Page Item: P600_UT_VERSION ==========================
+- # ====== Page Item: P600_THEME_VERSION =======================
   id: 59551927538320184
   identification: 
-    name: P600_UT_VERSION
+    name: P600_THEME_VERSION
     type: Text Field
 
   label: 
-    label: UT Version
+    label: Theme Version
     alignment: Left
 
   settings: 
@@ -1420,38 +1446,18 @@ dynamic-actions:
     settings: 
       language: PE.PROPERTY.SOURCE_SNIPPET_LANG.LOV.PLSQL.D
       pl/sql-code: |
-        select
-         a.compatibility_mode
-        ,a.Session_State_Protection
-        ,nvl2(a.runtime_api_usage, replace(replace(replace(a.runtime_api_usage,'T','This'),'O','Other'),'W','Workspace'),'None')
-        into
-         :P600_COMPATIBILITY_MODE
-        ,:P600_SESSION_STATE_PROTECTION
-        ,:P600_RUNTIME_API_USAGE
-        from apex_applications a
-        where a.application_id = :P0_APP_ID;
-        
-        select 
-         ui.include_legacy_javascript 
-        ,ui.include_jquery_migrate
-        into
-         :P600_INCLUDE_LEGACY_JAVASCRIPT
-        ,:P600_INCLUDE_JQUERY_MIGRATE
-        from apex_appl_user_interfaces ui 
-        where ui.application_id = :P0_APP_ID
-        and ui.ui_type_name = 'DESKTOP';
-        
-        select 
-         t.theme_name 
-        ,replace(substr(t.file_prefix,instr(t.file_prefix,'theme_42') + 9),'/')
-        into 
-         :P600_THEME_NAME
-        ,:P600_UT_VERSION
-        from apex_application_themes t
-        where t.application_id = :P0_APP_ID
-        and t.ui_type_name = 'DESKTOP'
-        and t.is_current = 'Yes';
+        av_general_pkg.p_qa_app_settings(
+          pi_application_id            => :P0_APP_ID
+         ,po_compatibility_mode        => :P600_COMPATIBILITY_MODE
+         ,po_session_state_protection  => :P600_SESSION_STATE_PROTECTION
+         ,po_runtime_api_usage         => :P600_RUNTIME_API_USAGE
+         ,po_include_legacy_javascript => :P600_INCLUDE_LEGACY_JAVASCRIPT
+         ,po_include_jquery_migrate    => :P600_INCLUDE_JQUERY_MIGRATE
+         ,po_theme_name                => :P600_THEME_NAME
+         ,po_theme_version             => :P600_THEME_VERSION
+        );
       items-to-submit: 
+      - P0_APP_ID
       - P600_COMPATIBILITY_MODE
       - P600_SESSION_STATE_PROTECTION
       - P600_RUNTIME_API_USAGE
@@ -1459,7 +1465,7 @@ dynamic-actions:
       - P600_INCLUDE_LEGACY_JAVASCRIPT
       - P600_INCLUDE_JQUERY_MIGRATE
       - P600_THEME_NAME
-      - P600_UT_VERSION
+      - P600_THEME_VERSION
       items-to-return: 
       - P600_COMPATIBILITY_MODE
       - P600_SESSION_STATE_PROTECTION
@@ -1467,14 +1473,14 @@ dynamic-actions:
       - P600_INCLUDE_LEGACY_JAVASCRIPT
       - P600_INCLUDE_JQUERY_MIGRATE
       - P600_THEME_NAME
-      - P600_UT_VERSION
+      - P600_THEME_VERSION
       suppress-change-event: false
 
     execution: 
       sequence: 50
       event: click - button - Refresh - refresh regions # 24446603788508429
       fire-when-event-result-is: True
-      fire-on-initialization: true
+      fire-on-initialization: false
       stop-execution-on-error: true
       wait-for-result: true
 
@@ -1577,38 +1583,18 @@ dynamic-actions:
     settings: 
       language: PE.PROPERTY.SOURCE_SNIPPET_LANG.LOV.PLSQL.D
       pl/sql-code: |
-        select
-         a.compatibility_mode
-        ,a.Session_State_Protection
-        ,nvl2(a.runtime_api_usage, replace(replace(replace(a.runtime_api_usage,'T','This'),'O','Other'),'W','Workspace'),'None')
-        into
-         :P600_COMPATIBILITY_MODE
-        ,:P600_SESSION_STATE_PROTECTION
-        ,:P600_RUNTIME_API_USAGE
-        from apex_applications a
-        where a.application_id = :P0_APP_ID;
-        
-        select 
-         ui.include_legacy_javascript 
-        ,ui.include_jquery_migrate
-        into
-         :P600_INCLUDE_LEGACY_JAVASCRIPT
-        ,:P600_INCLUDE_JQUERY_MIGRATE
-        from apex_appl_user_interfaces ui 
-        where ui.application_id = :P0_APP_ID
-        and ui.ui_type_name = 'DESKTOP';
-        
-        select 
-         t.theme_name 
-        ,replace(substr(t.file_prefix,instr(t.file_prefix,'theme_42') + 9),'/')
-        into 
-         :P600_THEME_NAME
-        ,:P600_UT_VERSION
-        from apex_application_themes t
-        where t.application_id = :P0_APP_ID
-        and t.ui_type_name = 'DESKTOP'
-        and t.is_current = 'Yes';
+        av_general_pkg.p_qa_app_settings(
+          pi_application_id            => :P0_APP_ID
+         ,po_compatibility_mode        => :P600_COMPATIBILITY_MODE
+         ,po_session_state_protection  => :P600_SESSION_STATE_PROTECTION
+         ,po_runtime_api_usage         => :P600_RUNTIME_API_USAGE
+         ,po_include_legacy_javascript => :P600_INCLUDE_LEGACY_JAVASCRIPT
+         ,po_include_jquery_migrate    => :P600_INCLUDE_JQUERY_MIGRATE
+         ,po_theme_name                => :P600_THEME_NAME
+         ,po_theme_version             => :P600_THEME_VERSION
+        );
       items-to-submit: 
+      - P0_APP_ID
       - P600_COMPATIBILITY_MODE
       - P600_SESSION_STATE_PROTECTION
       - P600_RUNTIME_API_USAGE
@@ -1616,7 +1602,7 @@ dynamic-actions:
       - P600_INCLUDE_LEGACY_JAVASCRIPT
       - P600_INCLUDE_JQUERY_MIGRATE
       - P600_THEME_NAME
-      - P600_UT_VERSION
+      - P600_THEME_VERSION
       items-to-return: 
       - P600_COMPATIBILITY_MODE
       - P600_SESSION_STATE_PROTECTION
@@ -1624,7 +1610,7 @@ dynamic-actions:
       - P600_INCLUDE_LEGACY_JAVASCRIPT
       - P600_INCLUDE_JQUERY_MIGRATE
       - P600_THEME_NAME
-      - P600_UT_VERSION
+      - P600_THEME_VERSION
       suppress-change-event: false
 
     execution: 
@@ -1936,7 +1922,7 @@ dynamic-actions:
     affected-elements: 
       selection-type: Item(s)
       item(s): 
-      - P600_UT_VERSION
+      - P600_THEME_VERSION
 
     execution: 
       sequence: 20
@@ -1957,7 +1943,7 @@ dynamic-actions:
     affected-elements: 
       selection-type: Item(s)
       item(s): 
-      - P600_UT_VERSION
+      - P600_THEME_VERSION
 
     execution: 
       sequence: 10
@@ -1970,10 +1956,10 @@ dynamic-actions:
       item: P600_THEME_NAME
       value: Universal Theme
 
-- # ====== Dynamic Action: change P600_UT_VERSION - setColor ===
+- # ====== Dynamic Action: change P600_THEME_VERSION - setColor 
   id: 59552206358320187
   identification: 
-    name: change P600_UT_VERSION - setColor
+    name: change P600_THEME_VERSION - setColor
 
   execution: 
     sequence: 90
@@ -1984,7 +1970,7 @@ dynamic-actions:
     event: Change
     selection-type: Item(s)
     item(s): 
-    - P600_UT_VERSION
+    - P600_THEME_VERSION
 
   actions: 
   - # ====== Action: Execute JavaScript Code =====================
@@ -2019,11 +2005,11 @@ dynamic-actions:
     affected-elements: 
       selection-type: Item(s)
       item(s): 
-      - P600_UT_VERSION
+      - P600_THEME_VERSION
 
     execution: 
       sequence: 10
-      event: change P600_UT_VERSION - setColor # 59552206358320187
+      event: change P600_THEME_VERSION - setColor # 59552206358320187
       fire-when-event-result-is: True
       fire-on-initialization: true
 
