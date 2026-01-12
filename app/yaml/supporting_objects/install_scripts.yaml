@@ -15,6 +15,14 @@
   execution: 
     sequence: 160
 
+- # ====== Install Script: av_p0600_tabs_v =====================
+  id: 50059082577434550
+  identification: 
+    name: av_p0600_tabs_v
+
+  execution: 
+    sequence: 180
+
 - # ====== Install Script: av_general_pkg ======================
   id: 57044097373982258
   identification: 

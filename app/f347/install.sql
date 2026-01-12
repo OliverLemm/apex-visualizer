@@ -87,6 +87,7 @@ prompt --install
 @@application/deployment/install/install_av_p0600_not_used_auth_schemes_v.sql
 @@application/deployment/install/install_av_p0708_legacy_subst_strings_v.sql
 @@application/deployment/install/install_av_page_complexity_v.sql
+@@application/deployment/install/install_av_p0600_tabs_v.sql
 @@application/deployment/checks.sql
 @@application/deployment/buildoptions.sql
 @@application/end_environment.sql

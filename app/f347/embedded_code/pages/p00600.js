@@ -38,7 +38,6 @@ if (val == '24.2') {
 
 var $trigger = $(this.triggeringElement);
 var val = apex.item("P600_COMPATIBILITY_MODE").getValue();
-console.log("P600_COMPATIBILITY_MODE=" + val);
 
 // success - up-to-date => 21.2 / 22.1 / 22.2
 if (val == '24.2') {

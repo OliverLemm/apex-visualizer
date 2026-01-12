@@ -37,11 +37,279 @@ server-cache:
   caching: Disabled
 
 regions: 
+- # ====== Region: legacy tabs =================================
+  id: 24445762168508420
+  identification: 
+    name: legacy tabs
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: AV_P0600_TABS_V
+    include-rowid-column: false
+    where-clause: 'application_id = :P0_APP_ID'
+    page-items-to-submit: 
+    - P0_APP_ID
+
+  order-by: 
+    type: None
+
+  layout: 
+    sequence: 60
+    parent-region: No Parent
+    slot: BODY
+    start-new-layout: false
+    start-new-row: false
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
+
+    appearance: 
+      template-type: Theme
+      template: Standard
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Top and Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: TAB_NAME ====================================
+    id: 24445960812508422
+    identification: 
+      column-name: TAB_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Tab Name
+      alignment: start
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      default-sequence: 1
+      direction: Ascending
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: TAB_LABEL ===================================
+    id: 24446039542508423
+    identification: 
+      column-name: TAB_LABEL
+      type: Plain Text
+
+    heading: 
+      heading: Tab Label
+      alignment: start
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: TAB_PAGE ====================================
+    id: 24446132676508424
+    identification: 
+      column-name: TAB_PAGE
+      type: Plain Text
+
+    heading: 
+      heading: Tab Page
+      alignment: end
+
+    layout: 
+      sequence: 50
+      column-alignment: end
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: TAB_ALSO_CURRENT_FOR_PAGES ==================
+    id: 24446227180508425
+    identification: 
+      column-name: TAB_ALSO_CURRENT_FOR_PAGES
+      type: Plain Text
+
+    heading: 
+      heading: Tab Also Current For Pages
+      alignment: start
+
+    layout: 
+      sequence: 60
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PAGES_COUNT =================================
+    id: 24446312318508426
+    identification: 
+      column-name: PAGES_COUNT
+      type: Plain Text
+
+    heading: 
+      heading: Pages Count
+      alignment: end
+
+    layout: 
+      sequence: 40
+      column-alignment: end
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: APPLICATION_ID ==============================
+    id: 24446533566508428
+    identification: 
+      column-name: APPLICATION_ID
+      type: Hidden
+
+    layout: 
+      sequence: 80
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    server-side-condition: 
+      type: Never
+
+    security: 
+      escape-special-characters: true
+
 - # ====== Region: unused plugins ==============================
   id: 59246298485518465
   identification: 
     name: unused plugins
-    type: Interactive Grid
+    type: Classic Report
 
   source: 
     location: Local Database
@@ -54,6 +322,9 @@ regions:
       page_name is null
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 30
@@ -80,225 +351,132 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
+  server-cache: 
+    caching: Disabled
+
   customization: 
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 59246444166518466
-    edit: 
-      enabled: false
-
-    performance: 
-      lazy-loading: true
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
 
     appearance: 
-      select-first-row: true
-      fixed-row-height: true
+      template-type: Theme
+      template: Standard
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
 
     pagination: 
-      type: Scroll
-      show-total-count: true
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Top and Bottom - Right
+      partial-page-refresh: true
 
-    messages: 
-      when-no-data-found: no unused plugins found
+    performance: 
+      lazy-loading: false
 
-    toolbar: 
-      show: false
+    break-formatting: 
+      break-columns: No Break
 
-    enable-users-to: 
-      save-public-report: false
-      flashback: false
-      define-chart-view: false
-      download: true
-
-    download: 
-      formats: 
-      - CSV
-      - HTML
-      - Excel
-      - PDF
-      send-as-email: true
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
 
     heading: 
-      fixed-to: Page
+      type: Custom Headings
 
-    icon-view: 
-      show: false
+    download: 
+      csv-export-enabled: false
 
-    detail-view: 
-      show: false
-
-    saved-reports: 
-    - # ====== Saved Report: Primary Report ========================
-      id: 59307700469563071
-      identification: 
-        name: Primary Report
-        alias: 388992
+    printing: 
+      enabled: false
 
   columns: 
   - # ====== Column: NAME ========================================
-    id: 59246889446518471
+    id: 24444920195508412
     identification: 
       column-name: NAME
-      type: Text Field
+      type: Plain Text
 
     heading: 
       heading: Name
       alignment: start
 
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
     layout: 
-      sequence: 20
+      sequence: 10
       column-alignment: start
-      stretch: Use Report Setting
 
     accessibility: 
       value-identifies-row: false
 
-    validation: 
-      value-required: true
-      maximum-length: 45
-
-    source: 
-      type: Database Column
-      database-column: NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: Distinct Column
-      exact-match: true
+    sorting: 
+      sortable: true
 
     export-/-printing: 
       include-in-export-/-print: true
 
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
 
   - # ====== Column: DISPLAY_NAME ================================
-    id: 59247061367518472
+    id: 24445013302508413
     identification: 
       column-name: DISPLAY_NAME
-      type: Text Field
+      type: Plain Text
 
     heading: 
       heading: Display Name
       alignment: start
 
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
     layout: 
-      sequence: 10
+      sequence: 20
       column-alignment: start
-      stretch: Use Report Setting
 
     accessibility: 
       value-identifies-row: false
 
-    validation: 
-      value-required: true
-      maximum-length: 100
-
-    source: 
-      type: Database Column
-      database-column: DISPLAY_NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
+    sorting: 
+      sortable: true
 
     export-/-printing: 
       include-in-export-/-print: true
 
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
+    advanced: 
+      compute-sum: false
 
-  printing: 
-    page: 
-      size: Letter
-      orientation: Landscape
-      units: Inches
-      width: 11
-      height: 8.5
-      border-width: 0.5
-      border-color: '#666666'
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
 
-    page-header: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 12
-      font-color: '#000000'
-      alignment: center
-      page-header-text: unused plugins
-
-    column-headings: 
-      font: Helvetica
-      font-weight: Bold
-      font-size: 10
-      font-color: '#000000'
-      background-color: '#EEEEEE'
-
-    columns: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 10
-      font-color: '#000000'
-      background-color: '#FFFFFF'
-
-    page-footer: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 12
-      font-color: '#000000'
-      alignment: center
+    security: 
+      escape-special-characters: true
 
 - # ====== Region: unused authorization schemes ================
   id: 59248532126518487
   identification: 
     name: unused authorization schemes
-    type: Interactive Grid
+    type: Classic Report
 
   source: 
     location: Local Database
     type: SQL Query
     sql-query: |
-      select a.authorization_scheme_name
+      select a.authorization_scheme_name,scheme_type
       from av_p0600_not_used_auth_schemes_v a
       where a.application_id = :P0_APP_ID
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 40
@@ -325,157 +503,119 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
+  server-cache: 
+    caching: Disabled
+
   customization: 
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 59248575277518488
-    edit: 
-      enabled: false
-
-    performance: 
-      lazy-loading: true
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
 
     appearance: 
-      select-first-row: true
-      fixed-row-height: true
+      template-type: Theme
+      template: Standard
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
 
     pagination: 
-      type: Scroll
-      show-total-count: true
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Top and Bottom - Right
+      partial-page-refresh: true
 
-    toolbar: 
-      show: false
+    performance: 
+      lazy-loading: false
 
-    enable-users-to: 
-      save-public-report: false
-      flashback: true
-      define-chart-view: true
-      download: true
+    break-formatting: 
+      break-columns: No Break
 
-    download: 
-      formats: 
-      - CSV
-      - HTML
-      - Excel
-      - PDF
-      send-as-email: true
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
 
     heading: 
-      fixed-to: Page
+      type: Custom Headings
 
-    icon-view: 
-      show: false
+    download: 
+      csv-export-enabled: false
 
-    detail-view: 
-      show: false
-
-    saved-reports: 
-    - # ====== Saved Report: Primary Report ========================
-      id: 59352442233657287
-      identification: 
-        name: Primary Report
-        alias: 389439
+    printing: 
+      enabled: false
 
   columns: 
   - # ====== Column: AUTHORIZATION_SCHEME_NAME ===================
-    id: 59248749021518489
+    id: 24445576687508418
     identification: 
       column-name: AUTHORIZATION_SCHEME_NAME
-      type: Text Field
+      type: Plain Text
 
     heading: 
       heading: Authorization Scheme Name
       alignment: start
 
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
     layout: 
       sequence: 10
       column-alignment: start
-      stretch: Use Report Setting
 
     accessibility: 
       value-identifies-row: false
 
-    validation: 
-      value-required: true
-      maximum-length: 255
-
-    source: 
-      type: Database Column
-      database-column: AUTHORIZATION_SCHEME_NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
+    sorting: 
+      sortable: true
 
     export-/-printing: 
       include-in-export-/-print: true
 
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
+    advanced: 
+      compute-sum: false
 
-  printing: 
-    page: 
-      size: Letter
-      orientation: Landscape
-      units: Inches
-      width: 11
-      height: 8.5
-      border-width: 0.5
-      border-color: '#666666'
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
 
-    page-header: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 12
-      font-color: '#000000'
-      alignment: center
-      page-header-text: unused authorization schemes
+    security: 
+      escape-special-characters: true
 
-    column-headings: 
-      font: Helvetica
-      font-weight: Bold
-      font-size: 10
-      font-color: '#000000'
-      background-color: '#EEEEEE'
+  - # ====== Column: SCHEME_TYPE =================================
+    id: 24445649254508419
+    identification: 
+      column-name: SCHEME_TYPE
+      type: Plain Text
 
-    columns: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 10
-      font-color: '#000000'
-      background-color: '#FFFFFF'
+    heading: 
+      heading: Scheme Type
+      alignment: start
 
-    page-footer: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 12
-      font-color: '#000000'
-      alignment: center
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
 
 - # ====== Region: never condition used ========================
   id: 59248874548518491
   identification: 
     name: never condition used
-    type: Interactive Grid
+    type: Classic Report
 
   source: 
     location: Local Database
@@ -491,6 +631,9 @@ regions:
       and v.application_id = :P0_APP_ID
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 50
@@ -517,321 +660,177 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
+  server-cache: 
+    caching: Disabled
+
   customization: 
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 59248976035518492
-    edit: 
-      enabled: false
-
-    performance: 
-      lazy-loading: true
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
 
     appearance: 
-      select-first-row: true
-      fixed-row-height: true
+      template-type: Theme
+      template: Standard
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
 
     pagination: 
-      type: Scroll
-      show-total-count: true
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Top and Bottom - Right
+      partial-page-refresh: true
 
-    toolbar: 
-      show: true
-      controls: 
-      - Search Column Selection
-      - Search Field
-      - Actions Menu
-      - Reset Button
-      - Save Button
+    performance: 
+      lazy-loading: false
 
-    enable-users-to: 
-      save-public-report: false
-      flashback: true
-      define-chart-view: true
-      download: true
+    break-formatting: 
+      break-columns: No Break
 
-    download: 
-      formats: 
-      - CSV
-      - HTML
-      - Excel
-      - PDF
-      send-as-email: true
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
 
     heading: 
-      fixed-to: Page
+      type: Custom Headings
 
-    icon-view: 
-      show: false
+    download: 
+      csv-export-enabled: false
 
-    detail-view: 
-      show: false
-
-    saved-reports: 
-    - # ====== Saved Report: Primary Report ========================
-      id: 59530764938199454
-      identification: 
-        name: Primary Report
-        alias: 391222
+    printing: 
+      enabled: false
 
   columns: 
   - # ====== Column: PAGE_NAME ===================================
-    id: 59249154051518493
+    id: 24445123397508414
     identification: 
       column-name: PAGE_NAME
-      type: Textarea
+      type: Plain Text
 
     heading: 
       heading: Page Name
       alignment: start
 
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
     layout: 
       sequence: 10
       column-alignment: start
-      stretch: Use Report Setting
 
     accessibility: 
       value-identifies-row: false
 
-    validation: 
-      value-required: true
-      maximum-length: 255
-
-    source: 
-      type: Database Column
-      database-column: PAGE_NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
+    sorting: 
+      sortable: true
 
     export-/-printing: 
       include-in-export-/-print: true
 
-    enable-users-to: 
-      sort: false
-      hide: true
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
 
   - # ====== Column: PAGE_ID =====================================
-    id: 59249235908518494
+    id: 24445203822508415
     identification: 
       column-name: PAGE_ID
-      type: Number Field
+      type: Plain Text
 
     heading: 
       heading: Page Id
       alignment: end
 
-    settings: 
-      number-alignment: Start
-      virtual-keyboard: Decimal
-
     layout: 
       sequence: 20
       column-alignment: end
-      stretch: Use Report Setting
 
     accessibility: 
       value-identifies-row: false
 
-    validation: 
-      value-required: false
-
-    source: 
-      type: Database Column
-      database-column: PAGE_ID
-      data-type: NUMBER
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      lov-type: None
+    sorting: 
+      sortable: true
 
     export-/-printing: 
       include-in-export-/-print: true
 
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
 
   - # ====== Column: COMPONENT_TYPE ==============================
-    id: 59249292447518495
+    id: 24445393037508416
     identification: 
       column-name: COMPONENT_TYPE
-      type: Text Field
+      type: Plain Text
 
     heading: 
       heading: Component Type
       alignment: start
 
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
     layout: 
       sequence: 30
       column-alignment: start
-      stretch: Use Report Setting
 
     accessibility: 
       value-identifies-row: false
 
-    validation: 
-      value-required: false
-      maximum-length: 14
-
-    source: 
-      type: Database Column
-      database-column: COMPONENT_TYPE
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: Distinct Column
-      exact-match: true
+    sorting: 
+      sortable: true
 
     export-/-printing: 
       include-in-export-/-print: true
 
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
 
   - # ====== Column: COMPONENT_NAME ==============================
-    id: 59249389957518496
+    id: 24445465876508417
     identification: 
       column-name: COMPONENT_NAME
-      type: Textarea
+      type: Plain Text
 
     heading: 
       heading: Component Name
       alignment: start
 
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
     layout: 
       sequence: 40
       column-alignment: start
-      stretch: Use Report Setting
 
     accessibility: 
       value-identifies-row: false
 
-    validation: 
-      value-required: false
-      maximum-length: 4000
-
-    source: 
-      type: Database Column
-      database-column: COMPONENT_NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
+    sorting: 
+      sortable: true
 
     export-/-printing: 
       include-in-export-/-print: true
 
-    enable-users-to: 
-      sort: false
-      hide: true
+    advanced: 
+      compute-sum: false
 
-  printing: 
-    page: 
-      size: Letter
-      orientation: Landscape
-      units: Inches
-      width: 11
-      height: 8.5
-      border-width: 0.5
-      border-color: '#666666'
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
 
-    page-header: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 12
-      font-color: '#000000'
-      alignment: center
-      page-header-text: never condition used
-
-    column-headings: 
-      font: Helvetica
-      font-weight: Bold
-      font-size: 10
-      font-color: '#000000'
-      background-color: '#EEEEEE'
-
-    columns: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 10
-      font-color: '#000000'
-      background-color: '#FFFFFF'
-
-    page-footer: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 12
-      font-color: '#000000'
-      alignment: center
+    security: 
+      escape-special-characters: true
 
 - # ====== Region: general application settings ================
   id: 59549424781320159
@@ -1321,6 +1320,164 @@ page-items:
       UT  1.0 = APEX 5.0 (not supported any more)
 
 dynamic-actions: 
+- # ====== Dynamic Action: click - button - Refresh - refresh re
+  id: 24446603788508429
+  identification: 
+    name: click - button - Refresh - refresh regions
+
+  execution: 
+    sequence: 20
+    event-scope: Static
+    type: Immediate
+
+  when: 
+    event: Click
+    selection-type: Button
+    button: Refresh # 65476682361019079
+
+  actions: 
+  - # ====== Action: refresh - region - unused plugins ===========
+    id: 24446745990508430
+    identification: 
+      name: refresh - region - unused plugins
+      action: Refresh
+
+    settings: 
+      maintain-pagination: false
+
+    affected-elements: 
+      selection-type: Region
+      region: unused plugins # 59246298485518465
+
+    execution: 
+      sequence: 10
+      event: click - button - Refresh - refresh regions # 24446603788508429
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: refresh - region - unused authorization schem
+    id: 24446812380508431
+    identification: 
+      name: refresh - region - unused authorization schemes
+      action: Refresh
+
+    settings: 
+      maintain-pagination: false
+
+    affected-elements: 
+      selection-type: Region
+      region: unused authorization schemes # 59248532126518487
+
+    execution: 
+      sequence: 20
+      event: click - button - Refresh - refresh regions # 24446603788508429
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: refresh - region - never condition used =====
+    id: 24446983554508432
+    identification: 
+      name: refresh - region - never condition used
+      action: Refresh
+
+    settings: 
+      maintain-pagination: false
+
+    affected-elements: 
+      selection-type: Region
+      region: never condition used # 59248874548518491
+
+    execution: 
+      sequence: 30
+      event: click - button - Refresh - refresh regions # 24446603788508429
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: refresh - region - legacy tabs ==============
+    id: 24447016418508433
+    identification: 
+      name: refresh - region - legacy tabs
+      action: Refresh
+
+    settings: 
+      maintain-pagination: false
+
+    affected-elements: 
+      selection-type: Region
+      region: legacy tabs # 24445762168508420
+
+    execution: 
+      sequence: 40
+      event: click - button - Refresh - refresh regions # 24446603788508429
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: Execute Server-side Code ====================
+    id: 24447199312508434
+    identification: 
+      action: Execute Server-side Code
+
+    settings: 
+      language: PE.PROPERTY.SOURCE_SNIPPET_LANG.LOV.PLSQL.D
+      pl/sql-code: |
+        select
+         a.compatibility_mode
+        ,a.Session_State_Protection
+        ,nvl2(a.runtime_api_usage, replace(replace(replace(a.runtime_api_usage,'T','This'),'O','Other'),'W','Workspace'),'None')
+        into
+         :P600_COMPATIBILITY_MODE
+        ,:P600_SESSION_STATE_PROTECTION
+        ,:P600_RUNTIME_API_USAGE
+        from apex_applications a
+        where a.application_id = :P0_APP_ID;
+        
+        select 
+         ui.include_legacy_javascript 
+        ,ui.include_jquery_migrate
+        into
+         :P600_INCLUDE_LEGACY_JAVASCRIPT
+        ,:P600_INCLUDE_JQUERY_MIGRATE
+        from apex_appl_user_interfaces ui 
+        where ui.application_id = :P0_APP_ID
+        and ui.ui_type_name = 'DESKTOP';
+        
+        select 
+         t.theme_name 
+        ,replace(substr(t.file_prefix,instr(t.file_prefix,'theme_42') + 9),'/')
+        into 
+         :P600_THEME_NAME
+        ,:P600_UT_VERSION
+        from apex_application_themes t
+        where t.application_id = :P0_APP_ID
+        and t.ui_type_name = 'DESKTOP'
+        and t.is_current = 'Yes';
+      items-to-submit: 
+      - P600_COMPATIBILITY_MODE
+      - P600_SESSION_STATE_PROTECTION
+      - P600_RUNTIME_API_USAGE
+      - P0_APP_ID
+      - P600_INCLUDE_LEGACY_JAVASCRIPT
+      - P600_INCLUDE_JQUERY_MIGRATE
+      - P600_THEME_NAME
+      - P600_UT_VERSION
+      items-to-return: 
+      - P600_COMPATIBILITY_MODE
+      - P600_SESSION_STATE_PROTECTION
+      - P600_RUNTIME_API_USAGE
+      - P600_INCLUDE_LEGACY_JAVASCRIPT
+      - P600_INCLUDE_JQUERY_MIGRATE
+      - P600_THEME_NAME
+      - P600_UT_VERSION
+      suppress-change-event: false
+
+    execution: 
+      sequence: 50
+      event: click - button - Refresh - refresh regions # 24446603788508429
+      fire-when-event-result-is: True
+      fire-on-initialization: true
+      stop-execution-on-error: true
+      wait-for-result: true
+
 - # ====== Dynamic Action: change P0_APP_ID - refresh regions ==
   id: 59248189470518484
   identification: 
@@ -1338,6 +1495,25 @@ dynamic-actions:
     - P0_APP_ID
 
   actions: 
+  - # ====== Action: refresh - region - legacy tabs ==============
+    id: 24446423033508427
+    identification: 
+      name: refresh - region - legacy tabs
+      action: Refresh
+
+    settings: 
+      maintain-pagination: false
+
+    affected-elements: 
+      selection-type: Region
+      region: legacy tabs # 24445762168508420
+
+    execution: 
+      sequence: 60
+      event: change P0_APP_ID - refresh regions # 59248189470518484
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
   - # ====== Action: Refresh =====================================
     id: 59248281111518485
     identification: 
@@ -1374,9 +1550,10 @@ dynamic-actions:
       fire-when-event-result-is: True
       fire-on-initialization: false
 
-  - # ====== Action: Refresh =====================================
+  - # ====== Action: refresh - region - never condition used =====
     id: 59249500261518497
     identification: 
+      name: refresh - region - never condition used
       action: Refresh
 
     settings: 
@@ -1451,7 +1628,7 @@ dynamic-actions:
       suppress-change-event: false
 
     execution: 
-      sequence: 90
+      sequence: 70
       event: change P0_APP_ID - refresh regions # 59248189470518484
       fire-when-event-result-is: True
       fire-on-initialization: true
@@ -1464,7 +1641,7 @@ dynamic-actions:
     name: change P600_COMPATIBILITY_MODE - setColor
 
   execution: 
-    sequence: 20
+    sequence: 30
     event-scope: Static
     type: Immediate
 
@@ -1484,7 +1661,6 @@ dynamic-actions:
       code: |
         var $trigger = $(this.triggeringElement);
         var val = apex.item("P600_COMPATIBILITY_MODE").getValue();
-        console.log("P600_COMPATIBILITY_MODE=" + val);
         
         // success - up-to-date => 21.2 / 22.1 / 22.2
         if (val == '24.2') {
@@ -1522,7 +1698,7 @@ dynamic-actions:
     name: change P600_SESSION_STATE_PROTECTION - setColor
 
   execution: 
-    sequence: 30
+    sequence: 40
     event-scope: Static
     type: Immediate
 
@@ -1568,7 +1744,7 @@ dynamic-actions:
     name: change P600_RUNTIME_API_USAGE - setColor
 
   execution: 
-    sequence: 40
+    sequence: 50
     event-scope: Static
     type: Immediate
 
@@ -1620,7 +1796,7 @@ dynamic-actions:
     name: change P600_INCLUDE_LEGACY_JAVASCRIPT - setColorl
 
   execution: 
-    sequence: 50
+    sequence: 60
     event-scope: Static
     type: Immediate
 
@@ -1666,7 +1842,7 @@ dynamic-actions:
     name: change P600_INCLUDE_JQUERY_MIGRATE - setColorl
 
   execution: 
-    sequence: 60
+    sequence: 70
     event-scope: Static
     type: Immediate
 

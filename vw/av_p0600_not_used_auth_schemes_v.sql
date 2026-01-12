@@ -7,6 +7,7 @@ with auth as
   and v1.visibility_name is not null)
 select a.authorization_scheme_name
       ,a.application_id
+      ,a.scheme_type
 from apex_application_authorization a
 where to_char(a.authorization_scheme_id) not in (select a1.visibility_id
                                                  from auth a1
