@@ -17,7 +17,7 @@ navigation-menu:
 
 navigation: 
   cursor-focus: Do not focus cursor
-  warn-on-unsaved-changes: true
+  warn-on-unsaved-changes: false
 
 security: 
   authentication: Page Requires Authentication
@@ -41,25 +41,33 @@ regions:
   id: 53346413506259587
   identification: 
     name: Plugins
-    type: Interactive Grid
+    type: Classic Report
 
   source: 
     location: Local Database
     type: SQL Query
     sql-query: |
-      select distinct 
-      DISPLAY_NAME,
-      PLUGIN_TYPE,
-      NAME,       
-      API_VERSION,
-      RENDER_FUNCTION,
-      HELP_TEXT,
-      VERSION_IDENTIFIER,
-      ABOUT_URL
-      from AV_PLUGINS_V
-      where application_id = :P0_APP_ID
+      select name
+            ,display_name
+            ,plugin_type
+            ,(select count(1)
+              from av_plugins_v p1
+              where p1.page_id is not null
+              and p1.name = p.name
+              and p1.application_id = p.application_id) plugin_references
+            ,render_function
+            ,api_version
+            ,help_text
+            ,version_identifier
+            ,about_url
+      from apex_appl_plugins p
+      where p.application_id = :P0_APP_ID
+      and p.plugin_type <> 'Template Component'
     page-items-to-submit: 
     - P0_APP_ID
+
+  order-by: 
+    type: None
 
   layout: 
     sequence: 10
@@ -72,9 +80,10 @@ regions:
     column-span: Automatic
 
   appearance: 
-    template: Interactive Report
+    template: Standard
     template-options: 
     - '#DEFAULT#'
+    - t-Region--scrollBody
     render-components: Above Content
 
   accessibility: 
@@ -85,547 +94,345 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
+  server-cache: 
+    caching: Disabled
+
   customization: 
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 53346522664259588
-    edit: 
-      enabled: false
-
-    performance: 
-      lazy-loading: false
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 99999
 
     appearance: 
-      select-first-row: true
-      fixed-row-height: true
+      template-type: Theme
+      template: Standard
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
 
     pagination: 
-      type: Scroll
-      show-total-count: true
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Top and Bottom - Right
+      partial-page-refresh: true
 
-    toolbar: 
-      show: true
-      controls: 
-      - Search Column Selection
-      - Search Field
-      - Actions Menu
-      - Reset Button
-      - Save Button
+    performance: 
+      lazy-loading: true
 
-    enable-users-to: 
-      save-public-report: false
-      flashback: true
-      define-chart-view: true
-      download: true
+    messages: 
+      when-no-data-found: No data to display
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
 
     download: 
-      formats: 
-      - CSV
-      - HTML
-      - Excel
-      - PDF
-      send-as-email: true
+      csv-export-enabled: false
 
-    heading: 
-      fixed-to: Page
-
-    icon-view: 
-      show: false
-
-    detail-view: 
-      show: false
-
-    saved-reports: 
-    - # ====== Saved Report: Primary Report ========================
-      id: 58069785492606477
-      identification: 
-        name: Primary Report
-        alias: 376613
+    printing: 
+      enabled: false
 
   columns: 
-  - # ====== Column: PLUGIN_TYPE =================================
-    id: 53346863948259591
-    identification: 
-      column-name: PLUGIN_TYPE
-      type: Text Field
-
-    heading: 
-      heading: Plugin Type
-      alignment: start
-
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
-    layout: 
-      sequence: 30
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-      maximum-length: 30
-
-    source: 
-      type: Database Column
-      database-column: PLUGIN_TYPE
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: Distinct Column
-      exact-match: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: NAME ========================================
-    id: 53346890229259592
-    identification: 
-      column-name: NAME
-      type: Text Field
-
-    heading: 
-      heading: Name
-      alignment: start
-
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
-    layout: 
-      sequence: 40
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: true
-      maximum-length: 45
-
-    source: 
-      type: Database Column
-      database-column: NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: Distinct Column
-      exact-match: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
   - # ====== Column: DISPLAY_NAME ================================
-    id: 53347073288259593
+    id: 24447404897508437
     identification: 
       column-name: DISPLAY_NAME
-      type: Textarea
+      type: Plain Text
 
     heading: 
       heading: Display Name
       alignment: start
 
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
     layout: 
-      sequence: 50
+      sequence: 10
       column-alignment: start
-      stretch: Use Report Setting
 
     accessibility: 
       value-identifies-row: false
 
-    validation: 
-      value-required: true
-      maximum-length: 100
-
-    source: 
-      type: Database Column
-      database-column: DISPLAY_NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
+    sorting: 
+      default-sequence: 1
+      direction: Ascending
+      sortable: true
 
     export-/-printing: 
       include-in-export-/-print: true
 
-    enable-users-to: 
-      sort: false
-      hide: true
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PLUGIN_TYPE =================================
+    id: 24447500176508438
+    identification: 
+      column-name: PLUGIN_TYPE
+      type: Plain Text
+
+    heading: 
+      heading: Plugin Type
+      alignment: start
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: NAME ========================================
+    id: 24447602021508439
+    identification: 
+      column-name: NAME
+      type: Plain Text
+
+    heading: 
+      heading: Name
+      alignment: start
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: PLUGIN_REFERENCES ===========================
+    id: 24447716754508440
+    identification: 
+      column-name: PLUGIN_REFERENCES
+      type: Plain Text
+
+    heading: 
+      heading: Plugin References
+      alignment: end
+
+    layout: 
+      sequence: 50
+      column-alignment: end
+
+    accessibility: 
+      value-identifies-row: false
+
+    column-formatting: 
+      highlight-words: 0
+
+    sorting: 
+      sortable: true
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
 
   - # ====== Column: API_VERSION =================================
-    id: 53347187332259595
+    id: 24447891729508441
     identification: 
       column-name: API_VERSION
-      type: Number Field
+      type: Plain Text
 
     heading: 
       heading: Api Version
       alignment: end
 
-    settings: 
-      number-alignment: Start
-      virtual-keyboard: Decimal
-
     layout: 
       sequence: 70
       column-alignment: end
-      stretch: Use Report Setting
 
     accessibility: 
       value-identifies-row: false
 
-    validation: 
-      value-required: true
-
-    source: 
-      type: Database Column
-      database-column: API_VERSION
-      data-type: NUMBER
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      lov-type: None
+    sorting: 
+      sortable: true
 
     export-/-printing: 
       include-in-export-/-print: true
 
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
 
   - # ====== Column: RENDER_FUNCTION =============================
-    id: 53347357783259596
+    id: 24447922372508442
     identification: 
       column-name: RENDER_FUNCTION
-      type: Textarea
+      type: Plain Text
 
     heading: 
       heading: Render Function
       alignment: start
 
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
     layout: 
-      sequence: 80
+      sequence: 60
       column-alignment: start
-      stretch: Use Report Setting
 
     accessibility: 
       value-identifies-row: false
 
-    validation: 
-      value-required: false
-      maximum-length: 255
-
-    source: 
-      type: Database Column
-      database-column: RENDER_FUNCTION
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
+    sorting: 
+      sortable: true
 
     export-/-printing: 
       include-in-export-/-print: true
 
-    enable-users-to: 
-      sort: false
-      hide: true
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
 
   - # ====== Column: HELP_TEXT ===================================
-    id: 53347445405259597
+    id: 24448047942508443
     identification: 
       column-name: HELP_TEXT
-      type: Textarea
+      type: Plain Text
 
     heading: 
       heading: Help Text
       alignment: start
 
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
     layout: 
       sequence: 90
       column-alignment: start
-      stretch: Use Report Setting
 
     accessibility: 
       value-identifies-row: false
 
-    validation: 
-      value-required: false
-      maximum-length: 4000
-
-    source: 
-      type: Database Column
-      database-column: HELP_TEXT
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
+    sorting: 
+      sortable: true
 
     export-/-printing: 
       include-in-export-/-print: true
 
-    enable-users-to: 
-      sort: false
-      hide: true
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
 
   - # ====== Column: VERSION_IDENTIFIER ==========================
-    id: 53347522425259598
+    id: 24448194429508444
     identification: 
       column-name: VERSION_IDENTIFIER
-      type: Text Field
+      type: Plain Text
 
     heading: 
       heading: Version Identifier
       alignment: start
 
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
     layout: 
       sequence: 100
       column-alignment: start
-      stretch: Use Report Setting
 
     accessibility: 
       value-identifies-row: false
 
-    validation: 
-      value-required: false
-      maximum-length: 30
-
-    source: 
-      type: Database Column
-      database-column: VERSION_IDENTIFIER
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: Distinct Column
-      exact-match: true
+    sorting: 
+      sortable: true
 
     export-/-printing: 
       include-in-export-/-print: true
 
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
 
   - # ====== Column: ABOUT_URL ===================================
-    id: 58064184853606049
+    id: 24448246782508445
     identification: 
       column-name: ABOUT_URL
-      type: Textarea
+      type: Plain Text
 
     heading: 
       heading: About Url
       alignment: start
 
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
     layout: 
       sequence: 110
       column-alignment: start
-      stretch: Use Report Setting
 
     accessibility: 
       value-identifies-row: false
 
-    validation: 
-      value-required: false
-      maximum-length: 512
-
-    source: 
-      type: Database Column
-      database-column: ABOUT_URL
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
+    sorting: 
+      sortable: true
 
     export-/-printing: 
       include-in-export-/-print: true
 
-    enable-users-to: 
-      sort: false
-      hide: true
+    advanced: 
+      compute-sum: false
 
-  printing: 
-    page: 
-      size: Letter
-      orientation: Landscape
-      units: Inches
-      width: 11
-      height: 8.5
-      border-width: 0.5
-      border-color: '#666666'
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
 
-    page-header: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 12
-      font-color: '#000000'
-      alignment: center
-      page-header-text: Plugins
-
-    column-headings: 
-      font: Helvetica
-      font-weight: Bold
-      font-size: 10
-      font-color: '#000000'
-      background-color: '#EEEEEE'
-
-    columns: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 10
-      font-color: '#000000'
-      background-color: '#FFFFFF'
-
-    page-footer: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 12
-      font-color: '#000000'
-      alignment: center
+    security: 
+      escape-special-characters: true
 
 - # ====== Region: Plugin Overview =============================
   id: 58064936372606056
@@ -733,13 +540,13 @@ regions:
       label: 
         show: true
         position: Automatic
-        display-as: Label
+        display-as: Label - Value
 
 - # ====== Region: Plugin Usage ================================
   id: 58065489828606062
   identification: 
     name: Plugin Usage
-    type: Interactive Grid
+    type: Interactive Report
 
   source: 
     location: Local Database
@@ -769,6 +576,7 @@ regions:
     template: Interactive Report
     template-options: 
     - '#DEFAULT#'
+    - t-IRR-region--hideHeader js-addHiddenHeadingRoleDesc
     render-components: Above Content
 
   accessibility: 
@@ -779,39 +587,52 @@ regions:
     region-display-selector: true
     exclude-title-from-translation: false
 
+  server-cache: 
+    caching: Disabled
+
   customization: 
     customizable: Not Customizable By End Users
 
   attributes: 
-    id: 58065981139606067
-    edit: 
-      enabled: false
-
-    performance: 
-      lazy-loading: false
-
-    appearance: 
-      select-first-row: true
-      fixed-row-height: true
+    id: 24448340247508446
+    link: 
+      link-column: Exclude Link Column
 
     pagination: 
-      type: Scroll
-      show-total-count: true
+      type: Row Ranges X to Y
+      display-position: Top and Bottom - Right
 
-    toolbar: 
-      show: true
-      controls: 
-      - Search Column Selection
-      - Search Field
-      - Actions Menu
-      - Reset Button
-      - Save Button
+    performance: 
+      lazy-loading: true
+      maximum-rows-to-process: 100
 
-    enable-users-to: 
-      save-public-report: false
+    search-bar: 
+      include-search-bar: true
+      search-field: true
+      finder-drop-down: true
+      reports-select-list: true
+      rows-per-page-selector: true
+
+    actions-menu: 
+      include-actions-menu: true
+      filter: true
+      select-columns: true
+      rows-per-page: true
+      sort: true
+      control-break: true
+      highlight: true
+      compute: true
+      aggregate: true
+      chart: true
+      group-by: true
+      pivot: true
       flashback: true
-      define-chart-view: true
+      save-report: true
+      save-public-report: false
+      reset: true
+      help: true
       download: true
+      subscription: true
 
     download: 
       formats: 
@@ -832,760 +653,750 @@ regions:
 
     saved-reports: 
     - # ====== Saved Report: Primary Report ========================
-      id: 59196695740759774
+      id: 50116789255881439
       identification: 
         name: Primary Report
-        alias: 387882
-
-  columns: 
-  - # ====== Column: APPLICATION_ID ==============================
-    id: 58066170824606068
-    identification: 
-      column-name: APPLICATION_ID
-      type: Hidden
-
-    settings: 
-      value-protected: true
-
-    layout: 
-      sequence: 140
-
-    accessibility: 
-      value-identifies-row: false
-
-    source: 
-      type: Database Column
-      database-column: APPLICATION_ID
-      data-type: NUMBER
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    export-/-printing: 
-      include-in-export-/-print: false
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-
-  - # ====== Column: APPLICATION_NAME ============================
-    id: 58066220501606069
-    identification: 
-      column-name: APPLICATION_NAME
-      type: Hidden
-
-    settings: 
-      value-protected: true
-
-    layout: 
-      sequence: 150
-
-    accessibility: 
-      value-identifies-row: false
-
-    source: 
-      type: Database Column
-      database-column: APPLICATION_NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    export-/-printing: 
-      include-in-export-/-print: false
-
-    enable-users-to: 
-      sort: false
-
-  - # ====== Column: PLUGIN_TYPE =================================
-    id: 58066303010606070
-    identification: 
-      column-name: PLUGIN_TYPE
-      type: Text Field
-
-    heading: 
-      heading: Plugin Type
-      alignment: start
-
-    settings: 
-      trim-spaces: Leading and Trailing
-      text-case: NO CHANGE
-
-    layout: 
-      sequence: 30
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-      maximum-length: 30
-
-    source: 
-      type: Database Column
-      database-column: PLUGIN_TYPE
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: Distinct Column
-      exact-match: true
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-  - # ====== Column: NAME ========================================
-    id: 58066433516606071
-    identification: 
-      column-name: NAME
-      type: Hidden
-
-    settings: 
-      value-protected: true
-
-    layout: 
-      sequence: 40
-
-    accessibility: 
-      value-identifies-row: false
-
-    source: 
-      type: Database Column
-      database-column: NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    export-/-printing: 
-      include-in-export-/-print: false
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-
-  - # ====== Column: DISPLAY_NAME ================================
-    id: 58066540674606072
-    identification: 
-      column-name: DISPLAY_NAME
-      type: Textarea
-
-    heading: 
-      heading: Display Name
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 50
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: true
-      maximum-length: 100
-
-    source: 
-      type: Database Column
-      database-column: DISPLAY_NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: PLSQL_CODE ==================================
-    id: 58066650483606073
-    identification: 
-      column-name: PLSQL_CODE
-      type: Hidden
-
-    settings: 
-      value-protected: true
-
-    layout: 
-      sequence: 60
-
-    accessibility: 
-      value-identifies-row: false
-
-    source: 
-      type: Database Column
-      database-column: PLSQL_CODE
-      data-type: CLOB
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    export-/-printing: 
-      include-in-export-/-print: false
-
-  - # ====== Column: API_VERSION =================================
-    id: 58066757128606074
-    identification: 
-      column-name: API_VERSION
-      type: Hidden
-
-    settings: 
-      value-protected: true
-
-    layout: 
-      sequence: 70
-
-    accessibility: 
-      value-identifies-row: false
-
-    source: 
-      type: Database Column
-      database-column: API_VERSION
-      data-type: NUMBER
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    export-/-printing: 
-      include-in-export-/-print: false
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-
-  - # ====== Column: RENDER_FUNCTION =============================
-    id: 58066868567606075
-    identification: 
-      column-name: RENDER_FUNCTION
-      type: Hidden
-
-    settings: 
-      value-protected: true
-
-    layout: 
-      sequence: 80
-
-    accessibility: 
-      value-identifies-row: false
-
-    source: 
-      type: Database Column
-      database-column: RENDER_FUNCTION
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    export-/-printing: 
-      include-in-export-/-print: false
-
-    enable-users-to: 
-      sort: false
-
-  - # ====== Column: HELP_TEXT ===================================
-    id: 58066933829606076
-    identification: 
-      column-name: HELP_TEXT
-      type: Hidden
-
-    settings: 
-      value-protected: true
-
-    layout: 
-      sequence: 90
-
-    accessibility: 
-      value-identifies-row: false
-
-    source: 
-      type: Database Column
-      database-column: HELP_TEXT
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    export-/-printing: 
-      include-in-export-/-print: false
-
-    enable-users-to: 
-      sort: false
-
-  - # ====== Column: VERSION_IDENTIFIER ==========================
-    id: 58067024962606077
-    identification: 
-      column-name: VERSION_IDENTIFIER
-      type: Hidden
-
-    settings: 
-      value-protected: true
-
-    layout: 
-      sequence: 100
-
-    accessibility: 
-      value-identifies-row: false
-
-    source: 
-      type: Database Column
-      database-column: VERSION_IDENTIFIER
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    export-/-printing: 
-      include-in-export-/-print: false
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-
-  - # ====== Column: ABOUT_URL ===================================
-    id: 58067135801606078
-    identification: 
-      column-name: ABOUT_URL
-      type: Hidden
-
-    settings: 
-      value-protected: true
-
-    layout: 
-      sequence: 110
-
-    accessibility: 
-      value-identifies-row: false
-
-    source: 
-      type: Database Column
-      database-column: ABOUT_URL
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    export-/-printing: 
-      include-in-export-/-print: false
-
-    enable-users-to: 
-      sort: false
-
-  - # ====== Column: PAGE_ID =====================================
-    id: 58067233999606079
-    identification: 
-      column-name: PAGE_ID
-      type: Link
-
-    heading: 
-      heading: Page Id
-      alignment: end
-
-    layout: 
-      sequence: 10
-      column-alignment: end
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    link: 
-      target: '&PAGE_DESIGNER_URL.'
-      link-text: '&PAGE_ID.'
-
-    source: 
-      type: Database Column
-      database-column: PAGE_ID
-      data-type: NUMBER
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    column-filter: 
-      enabled: true
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-      hide: true
-
-    security: 
-      escape-special-characters: true
-
-  - # ====== Column: PAGE_NAME ===================================
-    id: 58067315790606080
-    identification: 
-      column-name: PAGE_NAME
-      type: Textarea
-
-    heading: 
-      heading: Page Name
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 20
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-      maximum-length: 255
-
-    source: 
-      type: Database Column
-      database-column: PAGE_NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: OBJECT_NAME =================================
-    id: 58067424428606081
-    identification: 
-      column-name: OBJECT_NAME
-      type: Textarea
-
-    heading: 
-      heading: Object Name
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 120
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-      maximum-length: 255
-
-    source: 
-      type: Database Column
-      database-column: OBJECT_NAME
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: OBJECT_LABEL ================================
-    id: 58067572174606082
-    identification: 
-      column-name: OBJECT_LABEL
-      type: Textarea
-
-    heading: 
-      heading: Object Label
-      alignment: start
-
-    settings: 
-      resizable: true
-      auto-height: false
-      character-counter: false
-      trim-spaces: Leading and Trailing
-
-    layout: 
-      sequence: 130
-      column-alignment: start
-      stretch: Use Report Setting
-
-    accessibility: 
-      value-identifies-row: false
-
-    validation: 
-      value-required: false
-      maximum-length: 4000
-
-    source: 
-      type: Database Column
-      database-column: OBJECT_LABEL
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    column-filter: 
-      enabled: true
-      performance-impacting-operators: 
-      - Contains
-      - Starts With
-      - Case Insensitive
-      - Regular Expression
-      text-case: Mixed
-      lov-type: None
-
-    export-/-printing: 
-      include-in-export-/-print: true
-
-    enable-users-to: 
-      sort: false
-      hide: true
-
-  - # ====== Column: PLUGIN_ID ===================================
-    id: 58068010439606087
-    identification: 
-      column-name: PLUGIN_ID
-      type: Hidden
-
-    settings: 
-      value-protected: true
-
-    layout: 
-      sequence: 160
-
-    accessibility: 
-      value-identifies-row: false
-
-    source: 
-      type: Database Column
-      database-column: PLUGIN_ID
-      data-type: NUMBER
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    export-/-printing: 
-      include-in-export-/-print: false
-
-    enable-users-to: 
-      sort: true
-      control-break/aggregate: true
-
-  - # ====== Column: PAGE_DESIGNER_URL ===========================
-    id: 58068078706606088
-    identification: 
-      column-name: PAGE_DESIGNER_URL
-      type: Hidden
-
-    settings: 
-      value-protected: true
-
-    layout: 
-      sequence: 170
-
-    accessibility: 
-      value-identifies-row: false
-
-    source: 
-      type: Database Column
-      database-column: PAGE_DESIGNER_URL
-      data-type: VARCHAR2
-      query-only: false
-      primary-key: false
-
-    default: 
-      duplicate-copies-existing-value: true
-
-    session-state: 
-      data-type: VARCHAR2
-
-    export-/-printing: 
-      include-in-export-/-print: false
-
-    enable-users-to: 
-      sort: false
-
-  printing: 
-    page: 
-      size: Letter
-      orientation: Landscape
-      units: Inches
-      width: 11
-      height: 8.5
-      border-width: 0.5
-      border-color: '#666666'
-
-    page-header: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 12
-      font-color: '#000000'
-      alignment: center
-      page-header-text: Plugin Usage
-
-    column-headings: 
-      font: Helvetica
-      font-weight: Bold
-      font-size: 10
-      font-color: '#000000'
-      background-color: '#EEEEEE'
+        alias: 501168
 
     columns: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 10
-      font-color: '#000000'
-      background-color: '#FFFFFF'
+    - # ====== Column: APPLICATION_ID ==============================
+      id: 24448408407508447
+      identification: 
+        column-name: APPLICATION_ID
+        type: Plain Text
 
-    page-footer: 
-      font: Helvetica
-      font-weight: Normal
-      font-size: 12
-      font-color: '#000000'
-      alignment: center
+      heading: 
+        heading: Application Id
+        alignment: end
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 10
+        column-alignment: end
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: APPLICATION_NAME ============================
+      id: 24448590807508448
+      identification: 
+        column-name: APPLICATION_NAME
+        type: Plain Text
+
+      heading: 
+        heading: Application Name
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 20
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: PLUGIN_ID ===================================
+      id: 24448662011508449
+      identification: 
+        column-name: PLUGIN_ID
+        type: Plain Text
+
+      heading: 
+        heading: Plugin Id
+        alignment: end
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 30
+        column-alignment: end
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: PLUGIN_TYPE =================================
+      id: 24448711338508450
+      identification: 
+        column-name: PLUGIN_TYPE
+        type: Plain Text
+
+      heading: 
+        heading: Plugin Type
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 40
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: NAME ========================================
+      id: 50090855313869101
+      identification: 
+        column-name: NAME
+        type: Plain Text
+
+      heading: 
+        heading: Name
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 50
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: DISPLAY_NAME ================================
+      id: 50090971640869102
+      identification: 
+        column-name: DISPLAY_NAME
+        type: Plain Text
+
+      heading: 
+        heading: Display Name
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 60
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: PLSQL_CODE ==================================
+      id: 50091041202869103
+      identification: 
+        column-name: PLSQL_CODE
+        type: Plain Text
+
+      heading: 
+        heading: Plsql Code
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 70
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: None
+
+      enable-users-to: 
+        hide: true
+        sort: false
+        filter: true
+        highlight: true
+        control-break: false
+        aggregate: false
+        compute: false
+        chart: false
+        group-by: false
+        pivot: false
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: API_VERSION =================================
+      id: 50091140325869104
+      identification: 
+        column-name: API_VERSION
+        type: Plain Text
+
+      heading: 
+        heading: Api Version
+        alignment: end
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 80
+        column-alignment: end
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: RENDER_FUNCTION =============================
+      id: 50091236813869105
+      identification: 
+        column-name: RENDER_FUNCTION
+        type: Plain Text
+
+      heading: 
+        heading: Render Function
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 90
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: HELP_TEXT ===================================
+      id: 50091369199869106
+      identification: 
+        column-name: HELP_TEXT
+        type: Plain Text
+
+      heading: 
+        heading: Help Text
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 100
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: VERSION_IDENTIFIER ==========================
+      id: 50091479099869107
+      identification: 
+        column-name: VERSION_IDENTIFIER
+        type: Plain Text
+
+      heading: 
+        heading: Version Identifier
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 110
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: ABOUT_URL ===================================
+      id: 50091549519869108
+      identification: 
+        column-name: ABOUT_URL
+        type: Plain Text
+
+      heading: 
+        heading: About Url
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 120
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: PAGE_ID =====================================
+      id: 50091664457869109
+      identification: 
+        column-name: PAGE_ID
+        type: Plain Text
+
+      heading: 
+        heading: Page Id
+        alignment: end
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 130
+        column-alignment: end
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: PAGE_NAME ===================================
+      id: 50091737083869110
+      identification: 
+        column-name: PAGE_NAME
+        type: Plain Text
+
+      heading: 
+        heading: Page Name
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 140
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: OBJECT_NAME =================================
+      id: 50091822334869111
+      identification: 
+        column-name: OBJECT_NAME
+        type: Plain Text
+
+      heading: 
+        heading: Object Name
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 150
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: OBJECT_LABEL ================================
+      id: 50091914706869112
+      identification: 
+        column-name: OBJECT_LABEL
+        type: Plain Text
+
+      heading: 
+        heading: Object Label
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 160
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    - # ====== Column: PAGE_DESIGNER_URL ===========================
+      id: 50092068347869113
+      identification: 
+        column-name: PAGE_DESIGNER_URL
+        type: Plain Text
+
+      heading: 
+        heading: Page Designer Url
+        alignment: start
+
+      single-row-view: 
+        use-column-heading: true
+
+      layout: 
+        sequence: 170
+        column-alignment: start
+
+      accessibility: 
+        value-identifies-row: false
+
+      source: 
+        primary-key: false
+
+      column-filter: 
+        type: Default Based on Column Type
+
+      enable-users-to: 
+        hide: true
+        sort: true
+        filter: true
+        highlight: true
+        control-break: true
+        aggregate: true
+        compute: true
+        chart: true
+        group-by: true
+        pivot: true
+
+      security: 
+        escape-special-characters: true
+
+    printing: 
+      output: 
+        layout: Default Report Layout
+        view-file-as: Attachment
+
+      page: 
+        size: Letter
+        orientation: Landscape
+        units: Inches
+        width: 11
+        height: 8.5
+        border-width: 0.5
+        border-color: '#666666'
+
+      page-header: 
+        font: Helvetica
+        font-weight: Normal
+        font-size: 12
+        font-color: '#000000'
+        alignment: center
+
+      column-headings: 
+        font: Helvetica
+        font-weight: Bold
+        font-size: 10
+        font-color: '#000000'
+        background-color: '#EEEEEE'
+
+      columns: 
+        font: Helvetica
+        font-weight: Normal
+        font-size: 10
+        font-color: '#000000'
+        background-color: '#FFFFFF'
+
+      page-footer: 
+        font: Helvetica
+        font-weight: Normal
+        font-size: 12
+        font-color: '#000000'
+        alignment: center
 
 page-items: 
 - # ====== Page Item: P400_PLUGIN_ID ===========================
@@ -1663,6 +1474,76 @@ page-items:
     restricted-characters: All characters can be saved.
 
 dynamic-actions: 
+- # ====== Dynamic Action: click - button - Refresh - refresh Re
+  id: 50092161268869114
+  identification: 
+    name: click - button - Refresh - refresh Regions
+
+  execution: 
+    sequence: 20
+    event-scope: Static
+    type: Immediate
+
+  when: 
+    event: Click
+    selection-type: Button
+    button: Refresh # 65476682361019079
+
+  actions: 
+  - # ====== Action: Refresh =====================================
+    id: 50092226459869115
+    identification: 
+      action: Refresh
+
+    settings: 
+      maintain-pagination: false
+
+    affected-elements: 
+      selection-type: Region
+      region: Plugins # 53346413506259587
+
+    execution: 
+      sequence: 10
+      event: click - button - Refresh - refresh Regions # 50092161268869114
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: Refresh =====================================
+    id: 50092372435869116
+    identification: 
+      action: Refresh
+
+    settings: 
+      maintain-pagination: false
+
+    affected-elements: 
+      selection-type: Region
+      region: Plugin Overview # 58064936372606056
+
+    execution: 
+      sequence: 20
+      event: click - button - Refresh - refresh Regions # 50092161268869114
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
+  - # ====== Action: Refresh =====================================
+    id: 50092421848869117
+    identification: 
+      action: Refresh
+
+    settings: 
+      maintain-pagination: false
+
+    affected-elements: 
+      selection-type: Region
+      region: Plugin Usage # 58065489828606062
+
+    execution: 
+      sequence: 30
+      event: click - button - Refresh - refresh Regions # 50092161268869114
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+
 - # ====== Dynamic Action: change P0_APP_ID - refresh Regions ==
   id: 58064736451606054
   identification: 
@@ -1697,7 +1578,7 @@ dynamic-actions:
       sequence: 10
       event: change P0_APP_ID - refresh Regions # 58064736451606054
       fire-when-event-result-is: True
-      fire-on-initialization: true
+      fire-on-initialization: false
 
   - # ====== Action: Refresh =====================================
     id: 58065385772606061
@@ -1715,7 +1596,7 @@ dynamic-actions:
       sequence: 20
       event: change P0_APP_ID - refresh Regions # 58064736451606054
       fire-when-event-result-is: True
-      fire-on-initialization: true
+      fire-on-initialization: false
 
   - # ====== Action: Refresh =====================================
     id: 58067633332606083
@@ -1733,5 +1614,5 @@ dynamic-actions:
       sequence: 30
       event: change P0_APP_ID - refresh Regions # 58064736451606054
       fire-when-event-result-is: True
-      fire-on-initialization: true
+      fire-on-initialization: false
 

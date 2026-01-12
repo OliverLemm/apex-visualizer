@@ -11,17 +11,22 @@
 -- ----------------------------------------
 -- Page: 400 - Plugins > Region: Plugins > Source > SQL Query
 
-select distinct 
-DISPLAY_NAME,
-PLUGIN_TYPE,
-NAME,       
-API_VERSION,
-RENDER_FUNCTION,
-HELP_TEXT,
-VERSION_IDENTIFIER,
-ABOUT_URL
-from AV_PLUGINS_V
-where application_id = :P0_APP_ID;
+select name
+      ,display_name
+      ,plugin_type
+      ,(select count(1)
+        from av_plugins_v p1
+        where p1.page_id is not null
+        and p1.name = p.name
+        and p1.application_id = p.application_id) plugin_references
+      ,render_function
+      ,api_version
+      ,help_text
+      ,version_identifier
+      ,about_url
+from apex_appl_plugins p
+where p.application_id = :P0_APP_ID
+and p.plugin_type <> 'Template Component';
 
 -- ----------------------------------------
 -- Page: 400 - Plugins > Page Item: P400_PLUGIN_ID > List of Values > SQL Query
