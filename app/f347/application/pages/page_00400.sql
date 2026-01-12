@@ -19,7 +19,7 @@ wwv_flow_imp_page.create_page(
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
-,p_page_component_map=>'21'
+,p_page_component_map=>'18'
 );
 wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(53346413506259587)

@@ -116,7 +116,7 @@ wwv_imp_workspace.create_flow(
 ,p_friendly_url=>'N'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>14
-,p_version_scn=>110241357
+,p_version_scn=>110242397
 ,p_print_server_type=>'INSTANCE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'N'
@@ -10232,7 +10232,7 @@ wwv_flow_imp_page.create_page(
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
-,p_page_component_map=>'21'
+,p_page_component_map=>'18'
 );
 wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(53346413506259587)
@@ -20197,6 +20197,7 @@ wwv_flow_imp_shared.create_install(
 'drop view av_p0200_css_code_by_page_v;',
 'drop view av_p0300_plsql_code_by_page_v;',
 'drop view av_p0600_not_used_auth_schemes_v;',
+'drop view av_p0600_tabs_v;',
 'drop view av_p0708_legacy_subst_strings_v;',
 'drop view av_visibility_overview_v;',
 'drop view av_visibility_v;',

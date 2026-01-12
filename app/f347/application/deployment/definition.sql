@@ -27,6 +27,7 @@ wwv_flow_imp_shared.create_install(
 'drop view av_p0200_css_code_by_page_v;',
 'drop view av_p0300_plsql_code_by_page_v;',
 'drop view av_p0600_not_used_auth_schemes_v;',
+'drop view av_p0600_tabs_v;',
 'drop view av_p0708_legacy_subst_strings_v;',
 'drop view av_visibility_overview_v;',
 'drop view av_visibility_v;',
