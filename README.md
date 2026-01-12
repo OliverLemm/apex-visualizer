@@ -4,6 +4,16 @@ https://raw.githubusercontent.com/OliverLemm/apex-visualizer/master/manifest.jso
 inside your internal APEX workspace. <br>
 Go Manage Instance => Instance Setting => Application Gallery and add a new line.
 
+## Release 24.2.1
+12th of january 2026<br>
+Count of plugin references added #8<br>
+Added listing for deprecated tab usage #10<br>
+Pagination for Migration Information to 23.1 deactivated #16<br>
+Link to compatibility mode added #17<br>
+Link to APEX 22.2 Release notes fixed #18<br>
+Page Plugins (400) reworked<br>
+Page QA (600) reworked
+
 ## Release 24.2.0
 8th of march 2025<br>
 APEX Visualizer migrated to APEX 24.2.
