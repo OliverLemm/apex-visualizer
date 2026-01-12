@@ -6,109 +6,109 @@ Go Manage Instance => Instance Setting => Application Gallery and add a new line
 
 ## Release 24.2.1
 12th of january 2026<br>
-Count of plugin references added #8<br>
-Added listing for deprecated tab usage #10<br>
-Pagination for Migration Information to 23.1 deactivated #16<br>
-Link to compatibility mode added #17<br>
-Link to APEX 22.2 Release notes fixed #18<br>
-Page Plugins (400) reworked<br>
-Page QA (600) reworked
+- Count of plugin references added #8<br>
+- Added listing for deprecated tab usage #10<br>
+- Pagination for Migration Information to 23.1 deactivated #16<br>
+- Link to compatibility mode added #17<br>
+- Link to APEX 22.2 Release notes fixed #18<br>
+- Page Plugins (400) reworked<br>
+- Page QA (600) reworked
 
 ## Release 24.2.0
 8th of march 2025<br>
-APEX Visualizer migrated to APEX 24.2.
+- APEX Visualizer migrated to APEX 24.2.
 
 ## Release 24.1.1
 8th of march 2025<br>
-Migration checks for APEX 24.2 added.
+- Migration checks for APEX 24.2 added.
 
 ## Release 24.1.0
 23rd of june 2024<br>
-APEX Visualizer migrated to APEX 24.1.
+- APEX Visualizer migrated to APEX 24.1.
 
 ## Release 23.2.2
 22nd of june 2024<br>
-Migration checks for APEX 24.1 added.
+- Migration checks for APEX 24.1 added.
 
 ## Release 23.2.1
-Page Applications (10) - Region Applications is by default expanded<br>
-Page Applications (10) - Report Applications changed from Interactive Grid to Interactive Report<br>
-Page Applications (10) - Report Applications headlines adjusted<br>
-Page Applications (10) - Chartbug with Code Complexity solved<br>
-Wording from Apex to APEX changed in several Pages.
+- Page Applications (10) - Region Applications is by default expanded<br>
+- Page Applications (10) - Report Applications changed from Interactive Grid to Interactive Report<br>
+- Page Applications (10) - Report Applications headlines adjusted<br>
+- Page Applications (10) - Chartbug with Code Complexity solved<br>
+- Wording from Apex to APEX changed in several Pages.
 
 ## Release 23.2
-APEX Visualizer migrated to APEX 23.2<br>
-Check for correct Universal Theme version fixed.
+- APEX Visualizer migrated to APEX 23.2<br>
+- Check for correct Universal Theme version fixed.
 
 ## Release 23.1.2
-Migration checks for APEX 23.2 added.<br>
-Dark Theme added.<br>
-Page Applications reworked.
+- Migration checks for APEX 23.2 added.<br>
+- Dark Theme added.<br>
+- Page Applications reworked.
 
 ## Release 23.1.1
-Check for correct Universal Theme version fixed.<br>
-Check for unused plugins fixed.<br>
-Migrated to APEX 23.1.5.
+- Check for correct Universal Theme version fixed.<br>
+- Check for unused plugins fixed.<br>
+- Migrated to APEX 23.1.5.
 
 ## Release 23.1
-APEX Visualizer itself migrated to APEX 23.1.
+- APEX Visualizer itself migrated to APEX 23.1.
 
 ## Release 22.2.1
-Migration checks for APEX 23.1 have been added.
+- Migration checks for APEX 23.1 have been added.
 
 ## Release 22.2
-Migrated to APEX 22.2.<br>
-Solved a bug on the QA page when multiple themes are related to one application.
+- Migrated to APEX 22.2.<br>
+- Solved a bug on the QA page when multiple themes are related to one application.
 
 ## Release 22.1.2
-Migrated to APEX 22.1.7.<br>
-Added checks for desupported and deprecated features for APEX 22.2.
+- Migrated to APEX 22.1.7.<br>
+- Added checks for desupported and deprecated features for APEX 22.2.
 
 ## Release 22.1.1
-Solving some Bugs for Pages CSS and JavaScript regarding charts and grouping issues.
+- Solving some Bugs for Pages CSS and JavaScript regarding charts and grouping issues.
 
 ## Release 22.1
-APEX Visualizer has been migrated to APEX 22.1. ZIP, yaml and json exports have also been added to the repository.
+- APEX Visualizer has been migrated to APEX 22.1. ZIP, yaml and json exports have also been added to the repository.
 
 ## Release 21.2.5
-The APEX 22.1 Migration Page with major Deprecated and Desupported Checks has been added. This version is the last version of APEX Visualizer for APEX 21.2. Next versions will need APEX 22.1 or higher.
+- The APEX 22.1 Migration Page with major Deprecated and Desupported Checks has been added. This version is the last version of APEX Visualizer for APEX 21.2. Next versions will need APEX 22.1 or higher.
 
 ## Release 21.2.4
-The APEX 20.1 Migration Page with major Deprecated and Desupported Checks has been added.
+- The APEX 20.1 Migration Page with major Deprecated and Desupported Checks has been added.
 
 ## Release 21.2.3
-On the new APEX 21.2 Migration Page Region Positions Above and Below added for the Check "5.1.2 Deprecated Region Positions". 
+- On the new APEX 21.2 Migration Page Region Positions Above and Below added for the Check "5.1.2 Deprecated Region Positions". 
 
 ## Release 21.2.2
-On the new APEX 21.2 Migration Page more sources to find Legacy Substitution Strings added and minor tweaks regarding clob strings.
+- On the new APEX 21.2 Migration Page more sources to find Legacy Substitution Strings added and minor tweaks regarding clob strings.
 
 ## Release 21.2.1
-On the new APEX 21.2 Migration Page more sources to find Legacy Substitution Strings and a Refresh Button has been added.
-Deinstallation Script added.
+- On the new APEX 21.2 Migration Page more sources to find Legacy Substitution Strings and a Refresh Button has been added.
+- Deinstallation Script added.
 
 ## Release 21.2
-The Application is migrated to APEX 21.2.
-The new Page Migration with Subpage APEX 21.2 has been added for migration support.
+- The Application is migrated to APEX 21.2.
+- The new Page Migration with Subpage APEX 21.2 has been added for migration support.
 
 ## Release 2.0
-The Application is migrated to APEX 21.1.
-Plugins, Links and QA are added as new Features.
-Page Designer Links are added to JavaScript, CSS and PL/SQL.
+- The Application is migrated to APEX 21.1.
+- Plugins, Links and QA are added as new Features.
+- Page Designer Links are added to JavaScript, CSS and PL/SQL.
 
 ## Release 1.3
-All views are using now union all if possible.
+- All views are using now union all if possible.
 
 ## Release 1.2
-Page views are renamed. Every view must start with av_
+- Page views are renamed. Every view must start with av_
 
 ## Release 1.1
-The Application is migrated to APEX 20.2.  
-D3 Bubble Charts are removed because of incompatibility. The integrated Bubble Charts are used now.  
-The main views are reworked to use union all instead of union. All views now contain columns which support clob or varchar2 for the code.
+- The Application is migrated to APEX 20.2.  
+- D3 Bubble Charts are removed because of incompatibility. The integrated Bubble Charts are used now.  
+- The main views are reworked to use union all instead of union. All views now contain columns which support clob or varchar2 for the code.
 
 ## Release 1.0  
-An APEX application based on version 5.1 which can visualize all applications in the same workspace.
+- An APEX application based on version 5.1 which can visualize all applications in the same workspace.
 
 The approach is to make complex applications visible in an easy and fancy way by using oracleJet Charts.
 
