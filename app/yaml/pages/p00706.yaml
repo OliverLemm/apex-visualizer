@@ -761,7 +761,7 @@ regions:
 - # ====== Region: 5.1 Deprecated Features - <a href="https://do
   id: 65514025835833972
   identification: 
-    name: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084">Release Notes</a>'
+    name: '5.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Release Notes</a>'
     type: Static Content
 
   source: 

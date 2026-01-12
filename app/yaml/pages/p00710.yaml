@@ -40,7 +40,7 @@ regions:
 - # ====== Region: 6.1 Deprecated Features - <a href="https://do
   id: 36658381493372480
   identification: 
-    name: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>'
+    name: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/deprecated-features.html" target="_blank">Link to Release Notes</a>'
     type: Static Content
 
   layout: 
@@ -109,7 +109,7 @@ regions:
 
   layout: 
     sequence: 30
-    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 36658381493372480
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/deprecated-features.html" target="_blank">Link to Release Notes</a>' # 36658381493372480
     slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -389,7 +389,7 @@ regions:
 - # ====== Region: 8.1 Desupported Features - <a href="https://d
   id: 36659478262372491
   identification: 
-    name: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>'
+    name: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>'
     type: Static Content
 
   layout: 
@@ -433,7 +433,7 @@ regions:
 
   layout: 
     sequence: 50
-    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>' # 36659478262372491
     slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -478,7 +478,7 @@ regions:
 
   layout: 
     sequence: 60
-    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>' # 36659478262372491
     slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -523,7 +523,7 @@ regions:
 
   layout: 
     sequence: 70
-    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>' # 36659478262372491
     slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -602,7 +602,7 @@ regions:
 
   layout: 
     sequence: 80
-    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>' # 36659478262372491
     slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -941,7 +941,7 @@ regions:
 
   layout: 
     sequence: 60
-    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 36658381493372480
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/deprecated-features.html" target="_blank">Link to Release Notes</a>' # 36658381493372480
     slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -1274,7 +1274,7 @@ regions:
 
   layout: 
     sequence: 20
-    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 36658381493372480
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/deprecated-features.html" target="_blank">Link to Release Notes</a>' # 36658381493372480
     slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -1570,7 +1570,7 @@ regions:
 
   layout: 
     sequence: 10
-    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>' # 36659478262372491
     slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -1773,7 +1773,7 @@ regions:
 
   layout: 
     sequence: 20
-    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>' # 36659478262372491
     slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -2085,7 +2085,7 @@ regions:
 
   layout: 
     sequence: 40
-    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>' # 36659478262372491
     slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -2151,7 +2151,7 @@ regions:
 
   layout: 
     sequence: 30
-    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>' # 36659478262372491
+    parent-region: '8.1 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>' # 36659478262372491
     slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -2350,7 +2350,7 @@ regions:
 
   layout: 
     sequence: 10
-    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 36658381493372480
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/deprecated-features.html" target="_blank">Link to Release Notes</a>' # 36658381493372480
     slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true
@@ -2414,7 +2414,7 @@ regions:
 
   layout: 
     sequence: 50
-    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_blank">Link to Release Notes</a>' # 36658381493372480
+    parent-region: '6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/htmrn/deprecated-features.html" target="_blank">Link to Release Notes</a>' # 36658381493372480
     slot: SUB_REGIONS
     start-new-layout: false
     start-new-row: true

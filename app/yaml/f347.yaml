@@ -112,7 +112,7 @@ attributes:
   auto-dismiss-success-messages: false
 
 subscription: 
-  version-number: 107683275
+  version-number: 110139950
 
 component-settings: 
 - # ====== Component Setting: NATIVE_SELECT_MANY ===============
