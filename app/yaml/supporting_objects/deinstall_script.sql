@@ -4,6 +4,7 @@ drop view av_css_v;
 drop view av_javascript_v;
 drop view av_pages_v;
 drop view av_page_links_v;
+drop view av_page_links_nav_static_v;
 drop view av_plsql_v;
 drop view av_plugins_v;
 drop view av_page_complexity_v;

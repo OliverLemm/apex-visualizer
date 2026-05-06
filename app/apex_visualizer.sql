@@ -117,7 +117,7 @@ wwv_imp_workspace.create_flow(
 ,p_friendly_url=>'N'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>14
-,p_version_scn=>129127222
+,p_version_scn=>129127729
 ,p_print_server_type=>'INSTANCE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'N'
@@ -29657,6 +29657,7 @@ wwv_flow_imp_shared.create_install(
 'drop view av_javascript_v;',
 'drop view av_pages_v;',
 'drop view av_page_links_v;',
+'drop view av_page_links_nav_static_v;',
 'drop view av_plsql_v;',
 'drop view av_plugins_v;',
 'drop view av_page_complexity_v;',
