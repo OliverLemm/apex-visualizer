@@ -1,0 +1,1051 @@
+---
+- # ====== Plugin: D3 - Force Layout ===========================
+  id: 130387098841209874726
+  identification: 
+    name: D3 - Force Layout
+    internal-name: NET.GOBRECHTS.D3.FORCE
+    type: Region
+
+  advanced: 
+    quick-pick: false
+
+  subscription: 
+    version-number: 129102954
+
+  source: 
+    pl/sql-code: |
+      FUNCTION d3_force__render( p_region              IN apex_plugin.t_region
+                               , p_plugin              IN apex_plugin.t_plugin
+                               , p_is_printer_friendly IN BOOLEAN )
+         RETURN apex_plugin.t_region_render_result
+      IS
+         v_configuration_object apex_application_page_regions.attribute_02%TYPE := p_region.attribute_02;
+         v_custom_styles        apex_application_page_regions.attribute_03%TYPE := p_region.attribute_03;
+         v_region_static_id     VARCHAR2( 100 );
+      BEGIN
+         v_region_static_id := apex_plugin_util.escape( p_region.static_id, TRUE );
+      
+         apex_css.add_file( p_name      => 'd3-force-'
+                          , p_directory => p_plugin.file_prefix
+                          , p_version   => '3.1.2' );
+      
+         apex_javascript.add_library( p_name                  => 'ResizeObserver-'
+                                    , p_directory             => p_plugin.file_prefix
+                                    , p_version               => '1.5.0'
+                                    , p_check_to_add_minified => TRUE );
+      
+         apex_javascript.add_library( p_name                  => 'd3-'
+                                    , p_directory             => p_plugin.file_prefix
+                                    , p_version               => '3.5.6'
+                                    , p_check_to_add_minified => TRUE );
+      
+         apex_javascript.add_library( p_name                  => 'd3-force-'
+                                    , p_directory             => p_plugin.file_prefix
+                                    , p_version               => '3.1.2'
+                                    , p_check_to_add_minified => TRUE );
+      
+         HTP.p(    CASE
+                      WHEN v_custom_styles IS NOT NULL THEN
+                         '<style>' || v_custom_styles || '</style>' || CHR( 10 )
+                   END
+                || '<svg></svg>'
+                || CHR( 10 ) );
+      
+         apex_javascript.add_onload_code( --> initialize chart function
+                                         'd3_force_'
+                                          || v_region_static_id --> we need to use a global var - that is the reason to NOT use the var keyword
+                                          || ' = netGobrechtsD3Force('
+                                          --> domContainerId:
+                                          || apex_javascript.add_value( v_region_static_id, TRUE )
+                                          --> options:
+                                          || CASE
+                                                WHEN v_configuration_object IS NOT NULL THEN
+                                                   v_configuration_object
+                                                ELSE
+                                                   'null'
+                                             END
+                                          || ', '
+                                          --> apexPluginId:
+                                          || apex_javascript.add_value( apex_plugin.get_ajax_identifier
+                                                                      , TRUE )
+                                          --> apexPageItemsToSubmit:
+                                          || apex_javascript.add_value( p_region.ajax_items_to_submit
+                                                                      , FALSE )
+                                          || ')'
+                                          || CASE WHEN v( 'DEBUG' ) = 'YES' THEN '.debug(true)' END
+                                          || CASE
+                                                WHEN p_region.attribute_09 IS NOT NULL THEN
+                                                   '.positions(' || p_region.attribute_09 || ')'
+                                             END
+                                          || CASE
+                                                WHEN p_region.attribute_04 IS NOT NULL THEN
+                                                      '.onNodeClickFunction('
+                                                   || p_region.attribute_04
+                                                   || ')'
+                                             END
+                                          || CASE
+                                                WHEN p_region.attribute_05 IS NOT NULL THEN
+                                                      '.onNodeDblclickFunction('
+                                                   || p_region.attribute_05
+                                                   || ')'
+                                             END
+                                          || CASE
+                                                WHEN p_region.attribute_06 IS NOT NULL THEN
+                                                      '.onNodeContextmenuFunction('
+                                                   || p_region.attribute_06
+                                                   || ')'
+                                             END
+                                          || CASE
+                                                WHEN p_region.attribute_12 IS NOT NULL THEN
+                                                      '.onLinkClickFunction('
+                                                   || p_region.attribute_12
+                                                   || ')'
+                                             END
+                                          || CASE
+                                                WHEN p_region.attribute_07 IS NOT NULL THEN
+                                                      '.onNodeMouseenterFunction('
+                                                   || p_region.attribute_07
+                                                   || ')'
+                                             END
+                                          || CASE
+                                                WHEN p_region.attribute_08 IS NOT NULL THEN
+                                                      '.onNodeMouseleaveFunction('
+                                                   || p_region.attribute_08
+                                                   || ')'
+                                             END
+                                          || CASE
+                                                WHEN p_region.attribute_10 IS NOT NULL THEN
+                                                      '.onLassoStartFunction('
+                                                   || p_region.attribute_10
+                                                   || ')'
+                                             END
+                                          || CASE
+                                                WHEN p_region.attribute_11 IS NOT NULL THEN
+                                                      '.onLassoEndFunction(' 
+                                                   || p_region.attribute_11
+                                                   || ')'
+                                             END
+                                          || CASE
+                                                WHEN p_region.attribute_13 IS NOT NULL THEN
+                                                      '.onForceStartFunction(' 
+                                                   || p_region.attribute_13
+                                                   || ')'
+                                             END
+                                          || CASE
+                                                WHEN p_region.attribute_14 IS NOT NULL THEN
+                                                      '.onForceEndFunction(' 
+                                                   || p_region.attribute_14
+                                                   || ')'
+                                             END
+                                          || CASE
+                                                WHEN p_region.attribute_15 IS NOT NULL THEN
+                                                      '.onRenderEndFunction(' 
+                                                   || p_region.attribute_15
+                                                   || ')'
+                                             END
+                                          || CASE
+                                                WHEN p_region.attribute_16 IS NOT NULL THEN
+                                                      '.onResizeFunction(' 
+                                                   || p_region.attribute_16
+                                                   || ')'
+                                             END
+                                          --> start the visualization
+                                          || '.start();' );
+         RETURN NULL;
+      END d3_force__render;
+      
+      FUNCTION d3_force__ajax( p_region IN apex_plugin.t_region, p_plugin IN apex_plugin.t_plugin )
+         RETURN apex_plugin.t_region_ajax_result
+      IS
+         v_clob  CLOB;
+         v_binds DBMS_SQL.varchar2_table;
+         v_cur   INTEGER;
+         v_ret   INTEGER;
+      BEGIN
+         IF p_region.source IS NOT NULL THEN
+            v_binds := wwv_flow_utilities.get_binds( p_region.source );
+            v_cur   := DBMS_SQL.open_cursor;
+            DBMS_SQL.parse( c => v_cur, statement => REGEXP_REPLACE(p_region.source,';\s*$',''), language_flag => DBMS_SQL.native );
+      
+            IF v_binds.COUNT > 0 THEN
+               FOR i IN v_binds.FIRST .. v_binds.LAST LOOP
+                  DBMS_SQL.bind_variable( v_cur
+                                        , v_binds( i )
+                                        , APEX_UTIL.get_session_state( SUBSTR( v_binds( i ), 2 ) ) );
+               END LOOP;
+            END IF;
+      
+            DBMS_SQL.define_column( c => v_cur, position => 1, column => v_clob );
+            v_ret   := DBMS_SQL.execute( c => v_cur );
+      
+            WHILE DBMS_SQL.fetch_rows( v_cur ) > 0 LOOP
+               DBMS_SQL.COLUMN_VALUE( v_cur, 1, v_clob );
+            END LOOP;
+      
+            DBMS_SQL.close_cursor( v_cur );
+      
+            IF sys.DBMS_LOB.getlength( v_clob ) > 0 THEN
+               DECLARE
+                  v_len PLS_INTEGER;
+                  v_pos PLS_INTEGER := 1;
+                  v_amo PLS_INTEGER := 4000;
+                  v_chu VARCHAR2( 32767 );
+               BEGIN
+                  v_len := DBMS_LOB.getlength( v_clob );
+      
+                  WHILE v_pos <= v_len LOOP
+                     v_amo := LEAST( v_amo, v_len - ( v_pos - 1 ) );
+                     v_chu := DBMS_LOB.SUBSTR( v_clob, v_amo, v_pos );
+                     v_pos := v_pos + v_amo;
+                     HTP.prn( v_chu );
+                  END LOOP;
+               END;
+            ELSE
+               HTP.prn( 'query_returned_no_data' ); --> prn prints without newline
+            END IF;
+         ELSE
+            HTP.prn( 'no_query_defined' );
+         END IF;
+      
+         --> Free the temp LOB, if necessary
+         BEGIN
+            DBMS_LOB.freetemporary( v_clob );
+         EXCEPTION
+            WHEN OTHERS THEN
+               NULL;
+         END;
+      
+         RETURN NULL;
+      EXCEPTION
+         WHEN OTHERS THEN
+            --> Close the cursor, if open
+            BEGIN
+               IF     v_cur IS NOT NULL
+                  AND DBMS_SQL.is_open( v_cur ) THEN
+                  DBMS_SQL.close_cursor( v_cur );
+               END IF;
+            EXCEPTION
+               WHEN OTHERS THEN
+                  NULL;
+            END;
+      
+            apex_debug.MESSAGE( SQLERRM );
+            --> Write error back to the Browser
+            HTP.prn( SQLERRM );
+            RETURN NULL;
+      END d3_force__ajax;
+      
+
+  callbacks: 
+    api-interface: Function
+    render-procedure/function-name: d3_force__render
+    ajax-procedure/function-name: d3_force__ajax
+
+  standard-attributes: 
+    attributes: 
+    - Region Source is SQL Statement [Deprecated]
+    - Has "Page Items to Submit" Attribute
+
+  custom-attributes: 
+    substitute-attribute-values: true
+
+  information: 
+    version: 3.1.2
+    about-url: 'https://github.com/ogobrecht/d3-force-apex-plugin'
+    help-text: |
+      <p>
+      	See <a href="https://ogobrecht.github.io/d3-force-apex-plugin/">docs &amp; API reference</a>.</p>
+
+  standard-attributes: 
+  - # ====== Standard Attribute: SOURCE_SQL ======================
+    id: 71103982830149165
+    identification: 
+      name: SOURCE_SQL
+
+    value: 
+      required: false
+
+    settings: 
+      minimum-columns: 1
+      maximum-columns: 1
+
+    examples: 
+      examples: |
+        <p>Your query should result one column single row containing XML or JSON. This can be reached by using serialized XML
+        or JSON. It depends on your system environment - the important thing is: One column, one row of data and NO semicolon
+        to terminate the query.</p>
+        
+        <p>If you provide no query here, you get sample data from the plugin to play around with ;-)</p>
+        
+        <p>Your result should look like this examples - in case of XML you can use the short form with attributes instead of
+        elements. The data is converted in the right way afterwards in JavaScript - therefore the first character of your result
+        is used to identify JSON or XML and must be "{" or "<". You can copy the following example query in your preferred SQL
+        tool and play around - I think, you know the example data :-)</p>
+        
+        <pre>
+        {"data":
+          {"nodes":[
+            {"ID":"7839","LABEL":"KING","COLORVALUE":"10","SIZEVALUE":"5000"},
+            {"ID":"7934","LABEL":"MILLER","COLORVALUE":"10","SIZEVALUE":"1300"}],
+           "links":[
+            {"FROMID":"7839","TOID":"7839","STYLE":"solid"},
+            {"FROMID":"7934","TOID":"7782","STYLE":"dashed"}]
+          }
+        }
+        
+        Sorry, XML example two times, because of different rendering of pre area in APEX4 and APEX5 :-(
+        
+        <data>
+          <nodes ID="7839" LABEL="KING" COLORVALUE="10" SIZEVALUE="5000"/>
+          <nodes ID="7934" LABEL="MILLER" COLORVALUE="10" SIZEVALUE="1300"/>
+          <links FROMID="7839" TOID="7839" STYLE="solid"/>
+          <links FROMID="7934" TOID="7782" STYLE="dashed"/>
+        </data>
+        
+        &lt;data&gt;
+          &lt;nodes ID="7839" LABEL="KING" COLORVALUE="10" SIZEVALUE="5000"/&gt;
+          &lt;nodes ID="7934" LABEL="MILLER" COLORVALUE="10" SIZEVALUE="1300"/&gt;
+          &lt;links FROMID="7839" TOID="7839" STYLE="solid"/&gt;
+          &lt;links FROMID="7934" TOID="7782" STYLE="dashed"/&gt;
+        &lt;/data&gt;
+        </pre>
+        
+        <p>If you look in detail to this example query, you will see, that you have only to provide two simple queries - it is
+        enough to change the column and table names. If you need more complex data for your graph, you are free to find other
+        solutions - depending on your database version and existing libs you can use whatever you want and fit in a SQL query
+        resulting a single clob containing XML or JSON.</p>
+        
+        <pre>
+        WITH
+        nodes AS ( --> START YOUR NODES QUERY HERE
+          SELECT XMLELEMENT( "nodes", xmlattributes(
+                 empno        AS id
+               , ename        AS label
+               , sal          AS sizevalue
+               , d.deptno     AS colorvalue
+             --, d.dname      AS colorlabel    -- optional, used for the graph legend
+             --, 'http://...' AS link          -- optional
+             --, 'some text'  AS infostring    -- optional, rendered as tooltip
+             --, 'false'      AS labelcircular -- optional, overwrites the global labelsCircular
+             --, 'http://...' AS image         -- optional, background image for a node instead of a fill color
+             --, 'true'       AS "fixed"       -- optional | fixed, x and y are native D3 attributes
+             --, 100          AS "x"           -- optional | they must be lowercase
+             --, 100          AS "y"           -- optional | you can predefine a layout with these attributes
+                 ) ) AS xml_nodes
+            FROM emp e join dept d on e.deptno = d.deptno --< STOP YOUR NODES QUERY HERE
+        ),
+        links AS ( --> START YOUR LINKS QUERY HERE
+          SELECT XMLELEMENT( "links", xmlattributes(
+                 empno          AS fromid
+               , NVL(mgr,empno) AS toid
+             --, 'dashed'       AS style       -- optional, can be solid (default), dotted or dashed
+             --, 'red'          AS color       -- optional, must be a HTML color code like green or #00ff00
+             --, 'some text'    AS infostring  -- optional, rendered as tooltip
+                 ) ) AS xml_links
+            FROM emp --< STOP YOUR LINKS QUERY HERE
+        )
+        SELECT XMLSERIALIZE( DOCUMENT( XMLELEMENT( "data",
+                ( SELECT XMLAGG( xml_nodes ) FROM nodes ),
+                ( SELECT XMLAGG( xml_links ) FROM links ) ) ) INDENT ) AS single_clob_result
+          FROM DUAL
+        </pre>
+        
+
+  custom-attributes: 
+  - # ====== Custom Attribute: On Force Start Function ===========
+    id: 73377175210154687
+    identification: 
+      static-id: attribute_13
+      attribute: 13
+      name: On Force Start Function
+      scope: Component
+
+    layout: 
+      sequence: 120
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>You can provide here a function for the force start event. No data is provided because this is a very generic event:</p>
+        
+        <pre>
+        function(event){
+          // your logic here.
+        }
+        </pre>
+        
+        <p>You can also create an APEX dynamic action on the component event "Force Start [D3 - Force Layout]" on your graph region.</p>
+
+  - # ====== Custom Attribute: On Force End Function =============
+    id: 73380290078162960
+    identification: 
+      static-id: attribute_14
+      attribute: 14
+      name: On Force End Function
+      scope: Component
+
+    layout: 
+      sequence: 130
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>You can provide here a function for the force end event. No data is provided because this is a very generic event:</p>
+        
+        <pre>
+        function(event){
+          // your logic here.
+        }
+        </pre>
+        
+        <p>You can also create an APEX dynamic action on the component event "Force End [D3 - Force Layout]" on your graph region.</p>
+
+  - # ====== Custom Attribute: On Render End Function ============
+    id: 73381583392166053
+    identification: 
+      static-id: attribute_15
+      attribute: 15
+      name: On Render End Function
+      scope: Component
+
+    layout: 
+      sequence: 140
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>You can provide here a function for the render end event. No data is provided because this is a very generic event:</p>
+        
+        <pre>
+        function(event){
+          // your logic here.
+        }
+        </pre>
+        
+        <p>You can also create an APEX dynamic action on the component event "Render End [D3 - Force Layout]" on your graph region.</p>
+
+  - # ====== Custom Attribute: On Resize Function ================
+    id: 73405073976199289
+    identification: 
+      static-id: attribute_16
+      attribute: 16
+      name: On Resize Function
+      scope: Component
+
+    layout: 
+      sequence: 150
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>You can provide here a function for the resize event. No data is provided because this is a very generic event:</p>
+        
+        <pre>
+        function(event){
+          // your logic here.
+        }
+        </pre>
+        
+        <p>You can also create an APEX dynamic action on the component event "Resize [D3 - Force Layout]" on your graph region.</p>
+
+  - # ====== Custom Attribute: On Link Click Function ============
+    id: 75684811021845969
+    identification: 
+      static-id: attribute_12
+      attribute: 12
+      name: On Link Click Function
+      scope: Component
+
+    layout: 
+      sequence: 90
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>You can provide here a function for the link click event.</p>
+        
+        <p>In the first two parameters you get the event and the d3 node data, inside your function you have access to the DOM node with the this keyword.</p>
+        
+        <pre>
+        function(event, data){
+          console.log("Link click - event:", event);
+          console.log("Link click - data:", data);
+          console.log("Link click - this:", this);
+        }
+        </pre>
+        
+        <p>You can also create an APEX dynamic action on the component event "Link Click [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+        
+        <pre>
+        console.log("Link click - event:", this.browserEvent);
+        console.log("Link click - data:", this.data);
+        </pre>
+            
+        <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+
+  - # ====== Custom Attribute: On Lasso Start Function ===========
+    id: 172035947935025544
+    identification: 
+      static-id: attribute_10
+      attribute: 10
+      name: On Lasso Start Function
+      scope: Component
+
+    layout: 
+      sequence: 100
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>You can provide here a function for the lasso start event.</p>
+        
+        <p>In the first two parameters you get the event and the d3 lasso data, inside your function you have access to the DOM node with the this keyword. In case of the lasso this is refering the svg container element, because the lasso itself is not interesting.</p>
+        
+        <pre>
+        function(event, data){
+          console.log("Lasso start - event:", event);
+          console.log("Lasso start - data:", data);
+          console.log("Lasso start - this:", this);
+        }
+        </pre>
+        
+        <p>You can also create an APEX dynamic action on the component event "Lasso Start [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+        
+        <pre>
+        console.log("Lasso start - event:", this.browserEvent);
+        console.log("Lasso start - data:", this.data);
+        </pre>
+            
+        <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+
+  - # ====== Custom Attribute: On Lasso End Function =============
+    id: 172036340375044250
+    identification: 
+      static-id: attribute_11
+      attribute: 11
+      name: On Lasso End Function
+      scope: Component
+
+    layout: 
+      sequence: 110
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>You can provide here a function for the lasso end event.</p>
+        
+        <p>In the first two parameters you get the event and the d3 lasso data, inside your function you have access to the DOM node with the this keyword. In case of the lasso this is refering the svg container element, because the lasso itself is not interesting.</p>
+        
+        <pre>
+        function(event, data){
+          console.log("Lasso end - event:", event);
+          console.log("Lasso end - data:", data);
+          console.log("Lasso end - this:", this);
+        }
+        </pre>
+        
+        <p>You can also create an APEX dynamic action on the component event "Lasso End [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+        
+        <pre>
+        console.log("Lasso end - event:", this.browserEvent);
+        console.log("Lasso end - data:", this.data);
+        </pre>
+            
+        <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+
+  - # ====== Custom Attribute: On Node Click Function ============
+    id: 66962494813288122338
+    identification: 
+      static-id: attribute_04
+      attribute: 4
+      name: On Node Click Function
+      scope: Component
+
+    layout: 
+      sequence: 60
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>You can provide here a function for the node click event.</p>
+        
+        <p>In the first two parameters you get the event and the d3 node data, inside your function you have access to the DOM node with the this keyword.</p>
+        
+        <pre>
+        function(event, data){
+          console.log("Node click - event:", event);
+          console.log("Node click - data:", data);
+          console.log("Node click - this:", this);
+        }
+        </pre>
+        
+        <p>You can also create an APEX dynamic action on the component event "Node Click [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+        
+        <pre>
+        console.log("Node click - event:", this.browserEvent);
+        console.log("Node click - data:", this.data);
+        </pre>
+            
+        <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+
+  - # ====== Custom Attribute: On Node Double Click Function =====
+    id: 66962499897976129384
+    identification: 
+      static-id: attribute_05
+      attribute: 5
+      name: On Node Double Click Function
+      scope: Component
+
+    layout: 
+      sequence: 70
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>You can provide here a function for the node double click event.</p>
+        
+        <p>In the first two parameters you get the event and the d3 node data, inside your function you have access to the DOM node with the this keyword.</p>
+        
+        <pre>
+        function(event, data){
+          console.log("Node double click - event:", event);
+          console.log("Node double click - data:", data);
+          console.log("Node double click - this:", this);
+        }
+        </pre>
+        
+        <p>You can also create an APEX dynamic action on the component event "Node Double Click [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+        
+        <pre>
+        console.log("Node double click - event:", this.browserEvent);
+        console.log("Node double click - data:", this.data);
+        </pre>
+            
+        <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+
+  - # ====== Custom Attribute: On Node Mouse Enter Function ======
+    id: 66962500783958135912
+    identification: 
+      static-id: attribute_07
+      attribute: 7
+      name: On Node Mouse Enter Function
+      scope: Component
+
+    layout: 
+      sequence: 40
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>You can provide here a function for the node mouse enter event.</p>
+        
+        <p>In the first two parameters you get the event and the d3 node data, inside your function you have access to the DOM node with the this keyword.</p>
+        
+        <pre>
+        function(event, data){
+          console.log("Node mouse enter - event:", event);
+          console.log("Node mouse enter - data:", data);
+          console.log("Node mouse enter - this:", this);
+        }
+        </pre>
+        
+        <p>You can also create an APEX dynamic action on the component event "Node Mouse Enter [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+        
+        <pre>
+        console.log("Node mouse enter - event:", this.browserEvent);
+        console.log("Node mouse enter - data:", this.data);
+        </pre>
+            
+        <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+
+  - # ====== Custom Attribute: On Node Mouse Leave Function ======
+    id: 66962501213276137518
+    identification: 
+      static-id: attribute_08
+      attribute: 8
+      name: On Node Mouse Leave Function
+      scope: Component
+
+    layout: 
+      sequence: 50
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>You can provide here a function for the node mouse leave event.</p>
+        
+        <p>In the first two parameters you get the event and the d3 node data, inside your function you have access to the DOM node with the this keyword.</p>
+        
+        <pre>
+        function(event, data){
+          console.log("Node mouse leave - event:", event);
+          console.log("Node mouse leave - data:", data);
+          console.log("Node mouse leave - this:", this);
+        }
+        </pre>
+        
+        <p>You can also create an APEX dynamic action on the component event "Node Mouse Leave [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+        
+        <pre>
+        console.log("Node mouse leave - event:", this.browserEvent);
+        console.log("Node mouse leave - data:", this.data);
+        </pre>
+            
+        <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+
+  - # ====== Custom Attribute: On Node Contextmenu Function ======
+    id: 66962518802493142502
+    identification: 
+      static-id: attribute_06
+      attribute: 6
+      name: On Node Contextmenu Function
+      scope: Component
+
+    layout: 
+      sequence: 80
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>You can provide here a function for the node contextmenu event.</p>
+        
+        <p>In the first two parameters you get the event and the d3 node data, inside your function you have access to the DOM node with the this keyword.</p>
+        
+        <pre>
+        function(event, data){
+          console.log("Node contextmenu - event:", event);
+          console.log("Node contextmenu - data:", data);
+          console.log("Node contextmenu - this:", this);
+        }
+        </pre>
+        
+        <p>You can also create an APEX dynamic action on the component event "Node Contextmenu [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+        
+        <pre>
+        console.log("Node contextmenu - event:", this.browserEvent);
+        console.log("Node contextmenu - data:", this.data);
+        </pre>
+            
+        <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+
+  - # ====== Custom Attribute: Predefined Node Positions =========
+    id: 67075667293376584237
+    identification: 
+      static-id: attribute_09
+      attribute: 9
+      name: Predefined Node Positions
+      scope: Component
+
+    layout: 
+      sequence: 30
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>Copy in here your node positions from the customize wizard.</p>
+            
+        <p>You can start the customize wizard by clicking the link "Customize me" in the rendered page region. The link is shown when the developer toolbar is visible or when the page is in debug mode.</p>
+
+  - # ====== Custom Attribute: Configuration Object ==============
+    id: 130382226012991665380
+    identification: 
+      static-id: attribute_02
+      attribute: 2
+      name: Configuration Object
+      scope: Component
+
+    layout: 
+      sequence: 10
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>Copy in here your customizing object from the interactive configuration.</p>
+        <p>You can start the interactive configuration by clicking the link "Customize me" in the rendered page region. The link is shown when the developer toolbar is visible or when the page is in debug mode.</p>
+
+  - # ====== Custom Attribute: Custom Styles =====================
+    id: 130382226724372720886
+    identification: 
+      static-id: attribute_03
+      attribute: 3
+      name: Custom Styles
+      scope: Component
+
+    layout: 
+      sequence: 20
+
+    settings: 
+      type: Textarea
+      common: true
+      show-in-wizard: true
+      required: false
+      translatable: false
+
+    help: 
+      help-text: |
+        <p>You can define custom styles. If you want to have custom styles only for one specific chart on a page with multiple charts, then you have to prefix the CSS with your region static ID. Here an example:</p>
+        
+        <pre>
+        #your_region_static_id .net_gobrechts_d3_force.border {
+          border: 1px solid red;
+          border-radius: 5px;
+        }
+        </pre>
+
+  events: 
+  - # ====== Event: net_gobrechts_d3_force_forcestart ============
+    id: 73375779560107085
+    identification: 
+      name: Force Start
+      internal-name: net_gobrechts_d3_force_forcestart
+
+  - # ====== Event: net_gobrechts_d3_force_forceend ==============
+    id: 73376070671107086
+    identification: 
+      name: Force End
+      internal-name: net_gobrechts_d3_force_forceend
+
+  - # ====== Event: net_gobrechts_d3_force_renderend =============
+    id: 73376476912107086
+    identification: 
+      name: Render End
+      internal-name: net_gobrechts_d3_force_renderend
+
+  - # ====== Event: net_gobrechts_d3_force_resize ================
+    id: 73402977223182517
+    identification: 
+      name: Resize
+      internal-name: net_gobrechts_d3_force_resize
+
+  - # ====== Event: net_gobrechts_d3_force_linkclick =============
+    id: 75608296583698738
+    identification: 
+      name: Link Click
+      internal-name: net_gobrechts_d3_force_linkclick
+
+  - # ====== Event: net_gobrechts_d3_force_lassostart ============
+    id: 172035258538975095
+    identification: 
+      name: Lasso Start
+      internal-name: net_gobrechts_d3_force_lassostart
+
+  - # ====== Event: net_gobrechts_d3_force_lassoend ==============
+    id: 172035549570975099
+    identification: 
+      name: Lasso End
+      internal-name: net_gobrechts_d3_force_lassoend
+
+  - # ====== Event: net_gobrechts_d3_force_mouseleave ============
+    id: 65404509394259863553
+    identification: 
+      name: Node Mouse Leave
+      internal-name: net_gobrechts_d3_force_mouseleave
+
+  - # ====== Event: net_gobrechts_d3_force_mouseenter ============
+    id: 65404509689778863556
+    identification: 
+      name: Node Mouse Enter
+      internal-name: net_gobrechts_d3_force_mouseenter
+
+  - # ====== Event: net_gobrechts_d3_force_click =================
+    id: 65404510092784863556
+    identification: 
+      name: Node Click
+      internal-name: net_gobrechts_d3_force_click
+
+  - # ====== Event: net_gobrechts_d3_force_dblclick ==============
+    id: 65404510484062863556
+    identification: 
+      name: Node Double Click
+      internal-name: net_gobrechts_d3_force_dblclick
+
+  - # ====== Event: net_gobrechts_d3_force_contextmenu ===========
+    id: 66964973399298254044
+    identification: 
+      name: Node Contextmenu
+      internal-name: net_gobrechts_d3_force_contextmenu
+
+  files: 
+  - # ====== File: d3-force-3.1.2.css ============================
+    id: 71141314496188879
+    identification: 
+      file-name: d3-force-3.1.2.css
+
+    attributes: 
+      mime-type: text/css
+      file-character-set: Unicode UTF-8
+
+  - # ====== File: d3-force-3.1.2.js =============================
+    id: 71141569304188888
+    identification: 
+      file-name: d3-force-3.1.2.js
+
+    attributes: 
+      mime-type: application/javascript
+      file-character-set: Unicode UTF-8
+
+  - # ====== File: d3-force-3.1.2.min.js =========================
+    id: 71141964806188891
+    identification: 
+      file-name: d3-force-3.1.2.min.js
+
+    attributes: 
+      mime-type: application/javascript
+      file-character-set: Unicode UTF-8
+
+  - # ====== File: ResizeObserver-1.5.0.js =======================
+    id: 73391194354338841
+    identification: 
+      file-name: ResizeObserver-1.5.0.js
+
+    attributes: 
+      mime-type: application/javascript
+
+  - # ====== File: ResizeObserver-1.5.0.min.js ===================
+    id: 73391893717340351
+    identification: 
+      file-name: ResizeObserver-1.5.0.min.js
+
+    attributes: 
+      mime-type: application/javascript
+
+  - # ====== File: ResizeObserver-LICENSE.txt ====================
+    id: 73392566067348421
+    identification: 
+      file-name: ResizeObserver-LICENSE.txt
+
+    attributes: 
+      mime-type: text/plain
+
+  - # ====== File: d3-3.5.6.min.js ===============================
+    id: 75735700965389017
+    identification: 
+      file-name: d3-3.5.6.min.js
+
+    attributes: 
+      mime-type: text/javascript
+
+  - # ====== File: d3-3.5.6.js ===================================
+    id: 75736389264390367
+    identification: 
+      file-name: d3-3.5.6.js
+
+    attributes: 
+      mime-type: text/javascript
+
+  - # ====== File: d3-force-LICENSE.txt ==========================
+    id: 77438287048545411
+    identification: 
+      file-name: d3-force-LICENSE.txt
+
+    attributes: 
+      mime-type: text/plain
+
+  - # ====== File: d3-plugin-lasso-LICENSE.txt ===================
+    id: 77439183650550295
+    identification: 
+      file-name: d3-plugin-lasso-LICENSE.txt
+
+    attributes: 
+      mime-type: text/plain
+
+  - # ====== File: d3-plugin-labeler-LICENSE.txt =================
+    id: 77439883013551163
+    identification: 
+      file-name: d3-plugin-labeler-LICENSE.txt
+
+    attributes: 
+      mime-type: text/plain
+
+  - # ====== File: d3-LICENSE.txt ================================
+    id: 67722274801691883014
+    identification: 
+      file-name: d3-LICENSE.txt
+
+    attributes: 
+      mime-type: text/plain
+

@@ -112,7 +112,7 @@ attributes:
   auto-dismiss-success-messages: false
 
 subscription: 
-  version-number: 110242397
+  version-number: 129112973
 
 component-settings: 
 - # ====== Component Setting: NATIVE_SELECT_MANY ===============
@@ -159,6 +159,9 @@ component-settings:
   identification: 
     name: NATIVE_MAP_REGION
     type: Region
+
+  settings: 
+    attribute-1: Y
 
   subscription: 
     version-number: 1
