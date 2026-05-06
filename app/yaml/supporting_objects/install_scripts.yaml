@@ -55,6 +55,14 @@
   execution: 
     sequence: 150
 
+- # ====== Install Script: av_page_links_nav_static_v ==========
+  id: 69265981124117500
+  identification: 
+    name: av_page_links_nav_static_v
+
+  execution: 
+    sequence: 190
+
 - # ====== Install Script: av_applications_v ===================
   id: 164062689573034752
   identification: 

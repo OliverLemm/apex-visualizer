@@ -10,8 +10,8 @@
       ,l.link_name
       ,l.link_label
       ,l.link_page_id
-      ,av_general_pkg.f_get_page_designer_url(pi_app_id      => page.application_id
-                                             ,pi_app_page_id => page.page_id) page_designer_url
+      ,null /*av_general_pkg.f_get_page_designer_url(pi_app_id      => page.application_id
+                                             ,pi_app_page_id => page.page_id)*/ page_designer_url
 from apex_application_pages page
 left join ( -- Branches
            select 'Branch' link_type
@@ -88,17 +88,17 @@ left join ( -- Branches
            union all
            select 'Navigation Menu' link_type
                   ,ui1.application_id
-                  ,page1.page_id
-                  ,lie1.entry_text link_label
-                  ,lie1.entry_text link_name
-                  ,av_general_pkg.f_get_page_id_from_target_link(pi_target_link => lie1.entry_target) link_page_id
-           from apex_application_pages page1
-           join apex_appl_user_interfaces ui1 on ui1.application_id = page1.application_id
-           join apex_application_list_entries lie1 on lie1.application_id = ui1.application_id
-                                               and lie1.list_id = ui1.navigation_list_id
-           where page1.page_function not in ('Global Page'
-                                            ,'Login')) l on l.application_id = page.application_id
-                                                     and l.page_id = page.page_id
+                  ,to_number(lns1_parent.page_id) page_id
+                  ,lns1.entry_text link_label
+                  ,lns1.entry_text link_name
+                  ,to_number(lns1.page_id) link_page_id
+           from apex_appl_user_interfaces ui1
+           join av_page_links_nav_static_v lns1 on lns1.application_id = ui1.application_id
+                                            and lns1.list_id = ui1.navigation_list_id
+           join av_page_links_nav_static_v lns1_parent on lns1_parent.list_entry_id = lns1.list_entry_parent_id
+                                                   and lns1_parent.list_id = lns1.list_id
+                                                   and lns1_parent.application_id = lns1.application_id) l on l.application_id = page.application_id
+                                                                                                       and l.page_id = page.page_id
 -- Global Page must be excluded it cannot be run alone
 where page.page_id not in (select page_id
                            from apex_application_pages p
