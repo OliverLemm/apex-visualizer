@@ -28,7 +28,8 @@ from av_migration_pkg.ptf_effort_calculation(i_app_id               => :P0_APP_I
           ,rn_chapter_no
           ,rn_chapter_name
           ,migration_priority
-  order by rn_type
-          ,apex_version
-          ,rn_chapter_no;
+  order by migration_priority
+          ,replace(rn_chapter_no,',','')
+          ,rn_type
+          ,apex_version;
 

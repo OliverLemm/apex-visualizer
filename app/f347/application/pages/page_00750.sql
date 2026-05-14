@@ -16,9 +16,11 @@ wwv_flow_imp_page.create_page(
 ,p_name=>'Migration Details'
 ,p_alias=>'MIGRATION-DETAILS'
 ,p_step_title=>'Migration Details'
+,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
+,p_page_component_map=>'11'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(71034002800095987)

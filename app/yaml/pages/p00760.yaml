@@ -107,9 +107,11 @@ regions:
                 ,rn_chapter_no
                 ,rn_chapter_name
                 ,migration_priority
-        order by rn_type
+        order by migration_priority
+                ,replace(rn_chapter_no,',','')
+                ,rn_type
                 ,apex_version
-                ,rn_chapter_no 
+                
     page-items-to-submit: 
     - P0_APP_ID
     - P760_APEX_VERSIONS
@@ -171,7 +173,8 @@ regions:
       lazy-loading: false
 
     break-formatting: 
-      break-columns: No Break
+      break-columns: First Column
+      style: Default Break Formatting
 
     advanced: 
       strip-html: false
@@ -198,7 +201,7 @@ regions:
       alignment: start
 
     layout: 
-      sequence: 10
+      sequence: 30
       column-alignment: start
 
     accessibility: 
@@ -230,7 +233,7 @@ regions:
       alignment: start
 
     layout: 
-      sequence: 30
+      sequence: 40
       column-alignment: start
 
     accessibility: 
@@ -262,7 +265,7 @@ regions:
       alignment: start
 
     layout: 
-      sequence: 40
+      sequence: 50
       column-alignment: start
 
     accessibility: 
@@ -294,7 +297,7 @@ regions:
       alignment: end
 
     layout: 
-      sequence: 70
+      sequence: 80
       column-alignment: end
 
     accessibility: 
@@ -325,11 +328,11 @@ regions:
       type: Plain Text (based on List of Values)
 
     heading: 
-      heading: Migration Priority
+      heading: Priority
       alignment: end
 
     layout: 
-      sequence: 50
+      sequence: 10
       column-alignment: end
 
     accessibility: 
@@ -397,7 +400,7 @@ regions:
       alignment: end
 
     layout: 
-      sequence: 60
+      sequence: 70
       column-alignment: end
 
     accessibility: 

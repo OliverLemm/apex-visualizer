@@ -116,7 +116,7 @@ wwv_imp_workspace.create_flow(
 ,p_tokenize_row_search=>'N'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>14
-,p_version_scn=>130676150
+,p_version_scn=>130730395
 ,p_print_server_type=>'INSTANCE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'N'
@@ -29721,9 +29721,11 @@ wwv_flow_imp_page.create_page(
 ,p_name=>'Migration Details'
 ,p_alias=>'MIGRATION-DETAILS'
 ,p_step_title=>'Migration Details'
+,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
+,p_page_component_map=>'11'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(71034002800095987)
@@ -29750,7 +29752,7 @@ wwv_flow_imp_page.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
-,p_page_component_map=>'11'
+,p_page_component_map=>'03'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(71032515836091654)
@@ -29791,17 +29793,21 @@ wwv_flow_imp_page.create_report_region(
 '          ,rn_chapter_no',
 '          ,rn_chapter_name',
 '          ,migration_priority',
-'  order by rn_type',
+'  order by migration_priority',
+'          ,replace(rn_chapter_no,'','','''')',
+'          ,rn_type',
 '          ,apex_version',
-'          ,rn_chapter_no '))
+'          '))
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID,P760_APEX_VERSIONS,P760_MIGRATION_PRIORITIES'
 ,p_lazy_loading=>false
 ,p_query_row_template=>2538654340625403440
 ,p_query_num_rows=>15
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_break_cols=>'1'
 ,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
 ,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_break_type_flag=>'DEFAULT_BREAK_FORMATTING'
 ,p_csv_output=>'N'
 ,p_prn_output=>'N'
 ,p_sort_null=>'L'
@@ -29811,7 +29817,7 @@ wwv_flow_imp_page.create_report_columns(
  p_id=>wwv_flow_imp.id(71036205802110904)
 ,p_query_column_id=>1
 ,p_column_alias=>'APEX_VERSION'
-,p_column_display_sequence=>10
+,p_column_display_sequence=>30
 ,p_column_heading=>'APEX Version'
 ,p_heading_alignment=>'LEFT'
 ,p_derived_column=>'N'
@@ -29831,7 +29837,7 @@ wwv_flow_imp_page.create_report_columns(
  p_id=>wwv_flow_imp.id(71036330701110905)
 ,p_query_column_id=>3
 ,p_column_alias=>'RN_CHAPTER_NO'
-,p_column_display_sequence=>30
+,p_column_display_sequence=>40
 ,p_column_heading=>'Chapter No'
 ,p_heading_alignment=>'LEFT'
 ,p_derived_column=>'N'
@@ -29841,7 +29847,7 @@ wwv_flow_imp_page.create_report_columns(
  p_id=>wwv_flow_imp.id(71036455609110906)
 ,p_query_column_id=>4
 ,p_column_alias=>'RN_CHAPTER_NAME'
-,p_column_display_sequence=>40
+,p_column_display_sequence=>50
 ,p_column_heading=>'Chapter Name'
 ,p_heading_alignment=>'LEFT'
 ,p_derived_column=>'N'
@@ -29851,8 +29857,8 @@ wwv_flow_imp_page.create_report_columns(
  p_id=>wwv_flow_imp.id(71036981630110911)
 ,p_query_column_id=>5
 ,p_column_alias=>'MIGRATION_PRIORITY'
-,p_column_display_sequence=>50
-,p_column_heading=>'Migration Priority'
+,p_column_display_sequence=>10
+,p_column_heading=>'Priority'
 ,p_column_alignment=>'RIGHT'
 ,p_heading_alignment=>'RIGHT'
 ,p_display_as=>'TEXT_FROM_LOV_ESC'
@@ -29864,7 +29870,7 @@ wwv_flow_imp_page.create_report_columns(
  p_id=>wwv_flow_imp.id(71037101912110913)
 ,p_query_column_id=>6
 ,p_column_alias=>'AMOUNT_OF_OBJECTS'
-,p_column_display_sequence=>60
+,p_column_display_sequence=>70
 ,p_column_heading=>'# Objects'
 ,p_column_alignment=>'RIGHT'
 ,p_heading_alignment=>'RIGHT'
@@ -29875,7 +29881,7 @@ wwv_flow_imp_page.create_report_columns(
  p_id=>wwv_flow_imp.id(71036873470110910)
 ,p_query_column_id=>7
 ,p_column_alias=>'MIGRATION_EFFORT_IN_DAYS'
-,p_column_display_sequence=>70
+,p_column_display_sequence=>80
 ,p_column_heading=>'Effort In Days'
 ,p_column_format=>'999G999G999G999G990D00'
 ,p_column_alignment=>'RIGHT'
