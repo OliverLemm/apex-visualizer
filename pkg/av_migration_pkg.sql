@@ -37,7 +37,9 @@ create or replace package av_migration_pkg is
   c_comp_mode_latest            constant varchar2(20 char) := c_apex_version_latest;
   c_comp_mode_one_before_latest constant varchar2(20 char) := '21.2';
 
+  c_effort_in_days_4_hours    constant number := 0.5;
   c_effort_in_days_1_hour     constant number := 0.125;
+  c_effort_in_days_15_minutes constant number := c_effort_in_days_1_hour / 4;
   c_effort_in_days_10_minutes constant number := c_effort_in_days_1_hour / 6;
   c_effort_in_days_3_minutes  constant number := c_effort_in_days_1_hour / 20;
 
@@ -46,18 +48,26 @@ create or replace package av_migration_pkg is
   -- Purpose : central function for migration
 
   /* Query Aggretated Effort in Days
-  select apex_version
-        ,rn_chapter_no
-        ,rn_chapter_name
-        ,round(sum(migration_effort_in_days)
-              ,3)
-  from av_migration_pkg.ptf_effort_calculation(i_app_id       => :i_app_id
-                                              ,i_apex_version => :i_apex_version)
-  group by apex_version
-          ,rn_chapter_no
-          ,rn_chapter_name
-  order by apex_version
-          ,rn_chapter_no 
+  select 
+   apex_version
+  ,rn_type
+  ,rn_chapter_no
+  ,rn_chapter_name
+  ,migration_priority
+  ,count(1) amount_of_objects
+  ,round(sum(migration_effort_in_days)
+        ,3) migration_effort_in_days
+  from av_migration_pkg.ptf_effort_calculation(i_app_id               => :P0_APP_ID
+                                              ,i_apex_versions        => :P760_APEX_VERSIONS
+                                              ,i_migration_priorities => :P760_MIGRATION_PRIORITIES)
+    group by apex_version
+            ,rn_type
+            ,rn_chapter_no
+            ,rn_chapter_name
+            ,migration_priority
+    order by rn_type
+            ,apex_version
+            ,rn_chapter_no 
   */
 
   function tf_apex_versions return av_varchar2s_t;
@@ -70,6 +80,28 @@ create or replace package av_migration_pkg is
     pipelined;
 
   function ptf_effort_page_complexity
+  (
+    i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
+    pipelined;
+
+  function ptf_upgrade_allplication
+  (
+    i_workspace_id         in number
+   ,i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
+    pipelined;
+
+  function ptf_effort_javascript
+  (
+    i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
+    pipelined;
+
+  function ptf_effort_plsql
   (
     i_app_id               in number
    ,i_migration_priorities in varchar2
@@ -181,7 +213,7 @@ create or replace package body av_migration_pkg is
     l_migration av_migration_t;
   begin
     if instr(i_migration_priorities
-            ,'2') > 0
+            ,av_migration_pkg.c_migration_priority_2_should) > 0
     then
       av_general_pkg.p_qa_app_settings(pi_application_id            => i_app_id
                                       ,po_compatibility_mode        => l_compatibility_mode
@@ -211,7 +243,7 @@ create or replace package body av_migration_pkg is
                                                                     else
                                                                      0.5 -- more effort but hard to calculate
                                                                   end
-                                   ,i_migration_priority       => 2
+                                   ,i_migration_priority       => av_migration_pkg.c_migration_priority_2_should
                                    ,i_app_id                   => i_app_id);
       pipe row(l_migration);
     end if;
@@ -295,6 +327,176 @@ create or replace package body av_migration_pkg is
     return;
   end ptf_effort_page_complexity;
 
+  function ptf_effort_javascript
+  (
+    i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
+    pipelined is
+    l_compatibility_mode          apex_applications.compatibility_mode%type;
+    l_po_session_state_protection apex_applications.session_state_protection%type;
+    l_po_runtime_api_usage        varchar2(100 char);
+    l_include_legacy_javascript   apex_appl_user_interfaces.include_legacy_javascript%type;
+    l_include_jquery_migrate      apex_appl_user_interfaces.include_jquery_migrate%type;
+    l_theme_name                  apex_application_themes.theme_name%type;
+    l_theme_version               apex_application_themes.version%type;
+  
+    l_migration av_migration_t;
+  begin
+    -- migrate to standard JavaScript
+    if instr(i_migration_priorities
+            ,c_migration_priority_3_recommed) > 0
+    then
+      for m in (select j.application_id
+                      ,j.page_id
+                      ,j.page_name
+                      ,j.component_name
+                      ,j.component_type
+                      ,j.js_code_vc2
+                from av_javascript_v j
+                where j.application_id = i_app_id
+                and instr(j.js_code_vc2
+                        ,'htmldb_delete_message') > 0)
+      loop
+        pipe row(av_migration_t(i_apex_version             => av_migration_pkg.c_apex_version_latest
+                               ,i_rn_type                  => av_migration_pkg.c_migration_type_generally
+                               ,i_rn_chapter_no            => '0.4.1'
+                               ,i_rn_chapter_name          => 'Migrate JavaScript to declarative funcionality'
+                               ,i_rn_chapter_text          => 'Migrate Delete Confirm Messages to declarative Message functionality.'
+                               ,i_rn_chapter_link          => null
+                               ,i_check_integrated         => 1
+                               ,i_check_needed             => 1
+                               ,i_attribute_value          => m.js_code_vc2
+                               ,i_migration_effort_in_days => c_effort_in_days_15_minutes
+                               ,i_migration_priority       => c_migration_priority_3_recommed
+                               ,i_app_id                   => m.application_id
+                               ,i_page_id                  => m.page_id
+                               ,i_page_name                => m.page_name
+                               ,i_component_name           => m.component_name
+                               ,i_component_type           => m.component_type
+                               ,i_region_name              => null
+                               ,i_item_name                => null
+                               ,i_item_label               => null
+                               ,i_js_code_vc2              => m.js_code_vc2
+                               ,i_plsql_code_vc2           => null
+                               ,i_css_code_vc2             => null));
+      end loop;
+    end if;
+  
+    --
+    if instr(i_migration_priorities
+            ,c_migration_priority_4_best_practices) > 0
+    then
+      for m in (select j.application_id
+                      ,j.page_id
+                      ,j.page_name
+                      ,j.component_name
+                      ,j.component_type
+                      ,j.js_code_vc2
+                from av_javascript_v j
+                where j.application_id = i_app_id
+                and length(j.js_code_vc2) > 1000)
+      loop
+        pipe row(av_migration_t(i_apex_version             => av_migration_pkg.c_apex_version_latest
+                               ,i_rn_type                  => av_migration_pkg.c_migration_type_generally
+                               ,i_rn_chapter_no            => '0.4.2'
+                               ,i_rn_chapter_name          => 'Migrate complex JavaScript to static files'
+                               ,i_rn_chapter_text          => 'Migrate complex JavaScript (more than 1000 Characters) to static files.'
+                               ,i_rn_chapter_link          => null
+                               ,i_check_integrated         => 1
+                               ,i_check_needed             => 1
+                               ,i_attribute_value          => m.js_code_vc2
+                               ,i_migration_effort_in_days => c_effort_in_days_4_hours
+                               ,i_migration_priority       => c_migration_priority_4_best_practices
+                               ,i_app_id                   => m.application_id
+                               ,i_page_id                  => m.page_id
+                               ,i_page_name                => m.page_name
+                               ,i_component_name           => m.component_name
+                               ,i_component_type           => m.component_type
+                               ,i_region_name              => null
+                               ,i_item_name                => null
+                               ,i_item_label               => null
+                               ,i_js_code_vc2              => m.js_code_vc2
+                               ,i_plsql_code_vc2           => null
+                               ,i_css_code_vc2             => null));
+      end loop;
+    end if;
+  
+    return;
+  end ptf_effort_javascript;
+
+
+  function ptf_effort_plsql
+  (
+    i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
+    pipelined is
+    l_compatibility_mode          apex_applications.compatibility_mode%type;
+    l_po_session_state_protection apex_applications.session_state_protection%type;
+    l_po_runtime_api_usage        varchar2(100 char);
+    l_include_legacy_javascript   apex_appl_user_interfaces.include_legacy_javascript%type;
+    l_include_jquery_migrate      apex_appl_user_interfaces.include_jquery_migrate%type;
+    l_theme_name                  apex_application_themes.theme_name%type;
+    l_theme_version               apex_application_themes.version%type;
+  
+    l_migration av_migration_t;
+  begin
+    if instr(i_migration_priorities
+            ,c_migration_priority_4_best_practices) > 0
+    then
+      for m in (select p.application_id
+                      ,p.page_id
+                      ,p.page_name
+                      ,p.component_name
+                      ,p.component_type
+                      ,p.plsql_code_vc2
+                from av_plsql_v p
+                where p.application_id = i_app_id
+                and length(p.plsql_code_vc2) > 1000)
+      loop
+        pipe row(av_migration_t(i_apex_version             => av_migration_pkg.c_apex_version_latest
+                               ,i_rn_type                  => av_migration_pkg.c_migration_type_generally
+                               ,i_rn_chapter_no            => '0.5.1'
+                               ,i_rn_chapter_name          => 'Migrate complex PL/SQL to database objects'
+                               ,i_rn_chapter_text          => 'Migrate complex PL/SQL to Packages for easier testing and ensure that their is no compile issue.'
+                               ,i_rn_chapter_link          => null
+                               ,i_check_integrated         => 1
+                               ,i_check_needed             => 1
+                               ,i_attribute_value          => m.plsql_code_vc2
+                               ,i_migration_effort_in_days => c_effort_in_days_1_hour
+                               ,i_migration_priority       => c_migration_priority_4_best_practices
+                               ,i_app_id                   => m.application_id
+                               ,i_page_id                  => m.page_id
+                               ,i_page_name                => m.page_name
+                               ,i_component_name           => m.component_name
+                               ,i_component_type           => m.component_type
+                               ,i_region_name              => null
+                               ,i_item_name                => null
+                               ,i_item_label               => null
+                               ,i_js_code_vc2              => null
+                               ,i_plsql_code_vc2           => m.plsql_code_vc2
+                               ,i_css_code_vc2             => null));
+      end loop;
+    end if;
+  
+    return;
+  end ptf_effort_plsql;
+
+
+  function ptf_upgrade_allplication
+  (
+    i_workspace_id         in number
+   ,i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
+    pipelined is
+  begin
+    --todo - f4000 - page 89 - region Upgrade Summary has to be reworked
+    return;
+  end ptf_upgrade_allplication;
+
+
   function ptf_effort_calculation
   (
     i_app_id               in number
@@ -302,8 +504,11 @@ create or replace package body av_migration_pkg is
    ,i_migration_priorities in varchar2 default null
   ) return av_migrations_t
     pipelined is
+    l_workspace_id number;
   begin
-    -- General
+    l_workspace_id := apex_application_install.get_workspace_id;
+  
+    -- General settings
     for p in (select *
               from av_migration_pkg.ptf_effort_general_app_settings(i_app_id               => i_app_id
                                                                    ,i_migration_priorities => i_migration_priorities))
@@ -332,6 +537,7 @@ create or replace package body av_migration_pkg is
                              ,i_css_code_vc2             => p.css_code_vc2));
     end loop;
   
+    -- Page Complexity
     for p in (select *
               from av_migration_pkg.ptf_effort_page_complexity(i_app_id               => i_app_id
                                                               ,i_migration_priorities => i_migration_priorities))
@@ -359,6 +565,212 @@ create or replace package body av_migration_pkg is
                              ,i_plsql_code_vc2           => p.plsql_code_vc2
                              ,i_css_code_vc2             => p.css_code_vc2));
     end loop;
+  
+    -- JavaScript
+    for p in (select *
+              from av_migration_pkg.ptf_effort_javascript(i_app_id               => i_app_id
+                                                         ,i_migration_priorities => i_migration_priorities))
+    loop
+      pipe row(av_migration_t(i_apex_version             => p.apex_version
+                             ,i_rn_type                  => p.rn_type
+                             ,i_rn_chapter_no            => p.rn_chapter_no
+                             ,i_rn_chapter_name          => p.rn_chapter_name
+                             ,i_rn_chapter_text          => p.rn_chapter_text
+                             ,i_rn_chapter_link          => p.rn_chapter_link
+                             ,i_check_integrated         => p.check_integrated
+                             ,i_check_needed             => p.check_needed
+                             ,i_attribute_value          => p.attribute_value
+                             ,i_migration_effort_in_days => p.migration_effort_in_days
+                             ,i_migration_priority       => p.migration_priority
+                             ,i_app_id                   => p.app_id
+                             ,i_page_id                  => p.page_id
+                             ,i_page_name                => p.page_name
+                             ,i_component_name           => p.component_name
+                             ,i_component_type           => p.component_type
+                             ,i_region_name              => p.region_name
+                             ,i_item_name                => p.item_name
+                             ,i_item_label               => p.item_label
+                             ,i_js_code_vc2              => p.js_code_vc2
+                             ,i_plsql_code_vc2           => p.plsql_code_vc2
+                             ,i_css_code_vc2             => p.css_code_vc2));
+    end loop;
+  
+    -- PL/SQL
+    for p in (select *
+              from av_migration_pkg.ptf_effort_plsql(i_app_id               => i_app_id
+                                                    ,i_migration_priorities => i_migration_priorities))
+    loop
+      pipe row(av_migration_t(i_apex_version             => p.apex_version
+                             ,i_rn_type                  => p.rn_type
+                             ,i_rn_chapter_no            => p.rn_chapter_no
+                             ,i_rn_chapter_name          => p.rn_chapter_name
+                             ,i_rn_chapter_text          => p.rn_chapter_text
+                             ,i_rn_chapter_link          => p.rn_chapter_link
+                             ,i_check_integrated         => p.check_integrated
+                             ,i_check_needed             => p.check_needed
+                             ,i_attribute_value          => p.attribute_value
+                             ,i_migration_effort_in_days => p.migration_effort_in_days
+                             ,i_migration_priority       => p.migration_priority
+                             ,i_app_id                   => p.app_id
+                             ,i_page_id                  => p.page_id
+                             ,i_page_name                => p.page_name
+                             ,i_component_name           => p.component_name
+                             ,i_component_type           => p.component_type
+                             ,i_region_name              => p.region_name
+                             ,i_item_name                => p.item_name
+                             ,i_item_label               => p.item_label
+                             ,i_js_code_vc2              => p.js_code_vc2
+                             ,i_plsql_code_vc2           => p.plsql_code_vc2
+                             ,i_css_code_vc2             => p.css_code_vc2));
+    end loop;
+  
+    -- Upgrade Application Findings
+    for p in (select *
+              from av_migration_pkg.ptf_upgrade_allplication(i_workspace_id         => l_workspace_id
+                                                            ,i_app_id               => i_app_id
+                                                            ,i_migration_priorities => i_migration_priorities))
+    loop
+      pipe row(av_migration_t(i_apex_version             => p.apex_version
+                             ,i_rn_type                  => p.rn_type
+                             ,i_rn_chapter_no            => p.rn_chapter_no
+                             ,i_rn_chapter_name          => p.rn_chapter_name
+                             ,i_rn_chapter_text          => p.rn_chapter_text
+                             ,i_rn_chapter_link          => p.rn_chapter_link
+                             ,i_check_integrated         => p.check_integrated
+                             ,i_check_needed             => p.check_needed
+                             ,i_attribute_value          => p.attribute_value
+                             ,i_migration_effort_in_days => p.migration_effort_in_days
+                             ,i_migration_priority       => p.migration_priority
+                             ,i_app_id                   => p.app_id
+                             ,i_page_id                  => p.page_id
+                             ,i_page_name                => p.page_name
+                             ,i_component_name           => p.component_name
+                             ,i_component_type           => p.component_type
+                             ,i_region_name              => p.region_name
+                             ,i_item_name                => p.item_name
+                             ,i_item_label               => p.item_label
+                             ,i_js_code_vc2              => p.js_code_vc2
+                             ,i_plsql_code_vc2           => p.plsql_code_vc2
+                             ,i_css_code_vc2             => p.css_code_vc2));
+    end loop;
+  
+    -- APEX 22.1
+    if i_apex_versions is null or
+       instr(i_apex_versions
+            ,av_migration_20_2_pkg.c_apex_version) > 0
+    then
+      for p in (select *
+                from av_migration_20_2_pkg.ptf_des_7_1_4(i_app_id               => i_app_id
+                                                        ,i_migration_priorities => i_migration_priorities))
+      loop
+        pipe row(av_migration_t(i_apex_version             => p.apex_version
+                               ,i_rn_type                  => p.rn_type
+                               ,i_rn_chapter_no            => p.rn_chapter_no
+                               ,i_rn_chapter_name          => p.rn_chapter_name
+                               ,i_rn_chapter_text          => p.rn_chapter_text
+                               ,i_rn_chapter_link          => p.rn_chapter_link
+                               ,i_check_integrated         => p.check_integrated
+                               ,i_check_needed             => p.check_needed
+                               ,i_attribute_value          => p.attribute_value
+                               ,i_migration_effort_in_days => p.migration_effort_in_days
+                               ,i_migration_priority       => p.migration_priority
+                               ,i_app_id                   => p.app_id
+                               ,i_page_id                  => p.page_id
+                               ,i_page_name                => p.page_name
+                               ,i_component_name           => p.component_name
+                               ,i_component_type           => p.component_type
+                               ,i_region_name              => p.region_name
+                               ,i_item_name                => p.item_name
+                               ,i_item_label               => p.item_label
+                               ,i_js_code_vc2              => p.js_code_vc2
+                               ,i_plsql_code_vc2           => p.plsql_code_vc2
+                               ,i_css_code_vc2             => p.css_code_vc2));
+      end loop;
+    
+      for p in (select *
+                from av_migration_20_2_pkg.ptf_des_7_1_5(i_app_id               => i_app_id
+                                                        ,i_migration_priorities => i_migration_priorities))
+      loop
+        pipe row(av_migration_t(i_apex_version             => p.apex_version
+                               ,i_rn_type                  => p.rn_type
+                               ,i_rn_chapter_no            => p.rn_chapter_no
+                               ,i_rn_chapter_name          => p.rn_chapter_name
+                               ,i_rn_chapter_text          => p.rn_chapter_text
+                               ,i_rn_chapter_link          => p.rn_chapter_link
+                               ,i_check_integrated         => p.check_integrated
+                               ,i_check_needed             => p.check_needed
+                               ,i_attribute_value          => p.attribute_value
+                               ,i_migration_effort_in_days => p.migration_effort_in_days
+                               ,i_migration_priority       => p.migration_priority
+                               ,i_app_id                   => p.app_id
+                               ,i_page_id                  => p.page_id
+                               ,i_page_name                => p.page_name
+                               ,i_component_name           => p.component_name
+                               ,i_component_type           => p.component_type
+                               ,i_region_name              => p.region_name
+                               ,i_item_name                => p.item_name
+                               ,i_item_label               => p.item_label
+                               ,i_js_code_vc2              => p.js_code_vc2
+                               ,i_plsql_code_vc2           => p.plsql_code_vc2
+                               ,i_css_code_vc2             => p.css_code_vc2));
+      end loop;
+    
+      for p in (select *
+                from av_migration_20_2_pkg.ptf_des_7_1_7(i_app_id               => i_app_id
+                                                        ,i_migration_priorities => i_migration_priorities))
+      loop
+        pipe row(av_migration_t(i_apex_version             => p.apex_version
+                               ,i_rn_type                  => p.rn_type
+                               ,i_rn_chapter_no            => p.rn_chapter_no
+                               ,i_rn_chapter_name          => p.rn_chapter_name
+                               ,i_rn_chapter_text          => p.rn_chapter_text
+                               ,i_rn_chapter_link          => p.rn_chapter_link
+                               ,i_check_integrated         => p.check_integrated
+                               ,i_check_needed             => p.check_needed
+                               ,i_attribute_value          => p.attribute_value
+                               ,i_migration_effort_in_days => p.migration_effort_in_days
+                               ,i_migration_priority       => p.migration_priority
+                               ,i_app_id                   => p.app_id
+                               ,i_page_id                  => p.page_id
+                               ,i_page_name                => p.page_name
+                               ,i_component_name           => p.component_name
+                               ,i_component_type           => p.component_type
+                               ,i_region_name              => p.region_name
+                               ,i_item_name                => p.item_name
+                               ,i_item_label               => p.item_label
+                               ,i_js_code_vc2              => p.js_code_vc2
+                               ,i_plsql_code_vc2           => p.plsql_code_vc2
+                               ,i_css_code_vc2             => p.css_code_vc2));
+      end loop;
+    
+      for p in (select *
+                from av_migration_20_2_pkg.ptf_des_7_1_8(i_app_id               => i_app_id
+                                                        ,i_migration_priorities => i_migration_priorities))
+      loop
+        pipe row(av_migration_t(i_apex_version             => p.apex_version
+                               ,i_rn_type                  => p.rn_type
+                               ,i_rn_chapter_no            => p.rn_chapter_no
+                               ,i_rn_chapter_name          => p.rn_chapter_name
+                               ,i_rn_chapter_text          => p.rn_chapter_text
+                               ,i_rn_chapter_link          => p.rn_chapter_link
+                               ,i_check_integrated         => p.check_integrated
+                               ,i_check_needed             => p.check_needed
+                               ,i_attribute_value          => p.attribute_value
+                               ,i_migration_effort_in_days => p.migration_effort_in_days
+                               ,i_migration_priority       => p.migration_priority
+                               ,i_app_id                   => p.app_id
+                               ,i_page_id                  => p.page_id
+                               ,i_page_name                => p.page_name
+                               ,i_component_name           => p.component_name
+                               ,i_component_type           => p.component_type
+                               ,i_region_name              => p.region_name
+                               ,i_item_name                => p.item_name
+                               ,i_item_label               => p.item_label
+                               ,i_js_code_vc2              => p.js_code_vc2
+                               ,i_plsql_code_vc2           => p.plsql_code_vc2
+                               ,i_css_code_vc2             => p.css_code_vc2));
+      end loop;
+    end if;
   
     -- APEX 22.1
     if i_apex_versions is null or
