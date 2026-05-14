@@ -20,7 +20,6 @@ create or replace package av_migration_pkg is
   c_component_type_button         constant varchar2(20 char) := 'Button';
   c_component_type_dynamic_action constant varchar2(20 char) := 'Dynamic Action';
 
-
   c_apex_version_20_1   constant varchar2(20 char) := '20.1';
   c_apex_version_20_2   constant varchar2(20 char) := '20.2';
   c_apex_version_21_1   constant varchar2(20 char) := '21.1';
@@ -37,10 +36,12 @@ create or replace package av_migration_pkg is
   c_comp_mode_latest            constant varchar2(20 char) := c_apex_version_latest;
   c_comp_mode_one_before_latest constant varchar2(20 char) := '21.2';
 
+  c_effort_in_days_1_day      constant number := 1;
   c_effort_in_days_4_hours    constant number := 0.5;
   c_effort_in_days_1_hour     constant number := 0.125;
   c_effort_in_days_15_minutes constant number := c_effort_in_days_1_hour / 4;
   c_effort_in_days_10_minutes constant number := c_effort_in_days_1_hour / 6;
+  c_effort_in_days_5_minutes  constant number := c_effort_in_days_1_hour / 12;
   c_effort_in_days_3_minutes  constant number := c_effort_in_days_1_hour / 20;
 
   -- Author  : Oliver Lemm
@@ -86,14 +87,6 @@ create or replace package av_migration_pkg is
   ) return av_migrations_t
     pipelined;
 
-  function ptf_upgrade_allplication
-  (
-    i_workspace_id         in number
-   ,i_app_id               in number
-   ,i_migration_priorities in varchar2
-  ) return av_migrations_t
-    pipelined;
-
   function ptf_effort_javascript
   (
     i_app_id               in number
@@ -104,6 +97,35 @@ create or replace package av_migration_pkg is
   function ptf_effort_plsql
   (
     i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
+    pipelined;
+
+  function ptf_effort_plugins
+  (
+    i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
+    pipelined;
+
+  function ptf_effort_never_conditions
+  (
+    i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
+    pipelined;
+
+  function ptf_effort_unused_auth_schemes
+  (
+    i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
+    pipelined;
+
+  function ptf_upgrade_application
+  (
+    i_workspace_id         in number
+   ,i_app_id               in number
    ,i_migration_priorities in varchar2
   ) return av_migrations_t
     pipelined;
@@ -202,32 +224,31 @@ create or replace package body av_migration_pkg is
    ,i_migration_priorities in varchar2
   ) return av_migrations_t
     pipelined is
-    l_compatibility_mode          apex_applications.compatibility_mode%type;
-    l_po_session_state_protection apex_applications.session_state_protection%type;
-    l_po_runtime_api_usage        varchar2(100 char);
-    l_include_legacy_javascript   apex_appl_user_interfaces.include_legacy_javascript%type;
-    l_include_jquery_migrate      apex_appl_user_interfaces.include_jquery_migrate%type;
-    l_theme_name                  apex_application_themes.theme_name%type;
-    l_theme_version               apex_application_themes.version%type;
+    l_compatibility_mode        apex_applications.compatibility_mode%type;
+    l_session_state_protection  apex_applications.session_state_protection%type;
+    l_runtime_api_usage         varchar2(100 char);
+    l_include_legacy_javascript apex_appl_user_interfaces.include_legacy_javascript%type;
+    l_include_jquery_migrate    apex_appl_user_interfaces.include_jquery_migrate%type;
+    l_theme_name                apex_application_themes.theme_name%type;
+    l_theme_version             apex_application_themes.version%type;
   
     l_migration av_migration_t;
   begin
+    av_general_pkg.p_qa_app_settings(pi_application_id            => i_app_id
+                                    ,po_compatibility_mode        => l_compatibility_mode
+                                    ,po_session_state_protection  => l_session_state_protection
+                                    ,po_runtime_api_usage         => l_runtime_api_usage
+                                    ,po_include_legacy_javascript => l_include_legacy_javascript
+                                    ,po_include_jquery_migrate    => l_include_jquery_migrate
+                                    ,po_theme_name                => l_theme_name
+                                    ,po_theme_version             => l_theme_version);
+  
     if instr(i_migration_priorities
-            ,av_migration_pkg.c_migration_priority_2_should) > 0
+            ,c_migration_priority_2_should) > 0
     then
-      av_general_pkg.p_qa_app_settings(pi_application_id            => i_app_id
-                                      ,po_compatibility_mode        => l_compatibility_mode
-                                      ,po_session_state_protection  => l_po_session_state_protection
-                                      ,po_runtime_api_usage         => l_po_runtime_api_usage
-                                      ,po_include_legacy_javascript => l_include_legacy_javascript
-                                      ,po_include_jquery_migrate    => l_include_jquery_migrate
-                                      ,po_theme_name                => l_theme_name
-                                      ,po_theme_version             => l_theme_version);
-    
-    
-    
+      -- Compatibility Mode
       l_migration := av_migration_t(i_apex_version             => c_apex_version_latest
-                                   ,i_rn_type                  => av_migration_pkg.c_migration_type_generally
+                                   ,i_rn_type                  => c_migration_type_generally
                                    ,i_rn_chapter_no            => '3.18'
                                    ,i_rn_chapter_name          => 'Compatibility Mode'
                                    ,i_rn_chapter_text          => l_compatibility_mode
@@ -243,7 +264,134 @@ create or replace package body av_migration_pkg is
                                                                     else
                                                                      0.5 -- more effort but hard to calculate
                                                                   end
-                                   ,i_migration_priority       => av_migration_pkg.c_migration_priority_2_should
+                                   ,i_migration_priority       => c_migration_priority_2_should
+                                   ,i_app_id                   => i_app_id);
+      pipe row(l_migration);
+    
+      -- Universal Theme
+      if l_theme_name <> 'Universal Theme'
+      then
+        l_migration := av_migration_t(i_apex_version             => c_apex_version_latest
+                                     ,i_rn_type                  => c_migration_type_generally
+                                     ,i_rn_chapter_no            => '0.3.1'
+                                     ,i_rn_chapter_name          => 'Universal Theme usage'
+                                     ,i_rn_chapter_text          => 'Universal Theme should be used in APEX Apps, try to map your theme to Universal Theme.'
+                                     ,i_rn_chapter_link          => null
+                                     ,i_check_integrated         => 1
+                                     ,i_check_needed             => 1
+                                     ,i_attribute_value          => l_theme_name
+                                     ,i_migration_effort_in_days => c_effort_in_days_1_day
+                                     ,i_migration_priority       => c_migration_priority_2_should
+                                     ,i_app_id                   => i_app_id);
+        pipe row(l_migration);
+      
+      elsif l_theme_version <> c_apex_version_latest
+      then
+        l_migration := av_migration_t(i_apex_version             => c_apex_version_latest
+                                     ,i_rn_type                  => c_migration_type_generally
+                                     ,i_rn_chapter_no            => '0.3.2'
+                                     ,i_rn_chapter_name          => 'Universal Theme refresh'
+                                     ,i_rn_chapter_text          => 'Universal Theme should always be refreshed to the latest version of the theme.'
+                                     ,i_rn_chapter_link          => null
+                                     ,i_check_integrated         => 1
+                                     ,i_check_needed             => 1
+                                     ,i_attribute_value          => l_theme_version
+                                     ,i_migration_effort_in_days => c_effort_in_days_1_hour
+                                     ,i_migration_priority       => c_migration_priority_2_should
+                                     ,i_app_id                   => i_app_id);
+        pipe row(l_migration);
+      end if;
+    
+    
+    
+    end if;
+  
+    if instr(i_migration_priorities
+            ,c_migration_priority_3_recommed) > 0
+    then
+      -- JavaScript
+      if l_include_legacy_javascript = 'No'
+      then
+        l_migration := av_migration_t(i_apex_version             => c_apex_version_latest
+                                     ,i_rn_type                  => c_migration_type_generally
+                                     ,i_rn_chapter_no            => '0.3.3'
+                                     ,i_rn_chapter_name          => 'Deactivate Legacy Javascript'
+                                     ,i_rn_chapter_text          => 'Switch off the support for legacy JavaScript for faster and more stable JavaScript.'
+                                     ,i_rn_chapter_link          => null
+                                     ,i_check_integrated         => 1
+                                     ,i_check_needed             => 1
+                                     ,i_attribute_value          => l_include_legacy_javascript
+                                     ,i_migration_effort_in_days => c_effort_in_days_1_hour
+                                     ,i_migration_priority       => c_migration_priority_3_recommed
+                                     ,i_app_id                   => i_app_id);
+        pipe row(l_migration);
+      end if;
+    
+      -- jQuery Migrate
+      if l_include_jquery_migrate = 'No'
+      then
+        l_migration := av_migration_t(i_apex_version             => c_apex_version_latest
+                                     ,i_rn_type                  => c_migration_type_generally
+                                     ,i_rn_chapter_no            => '0.3.4'
+                                     ,i_rn_chapter_name          => 'Deactivate jQuery Migrate'
+                                     ,i_rn_chapter_text          => 'Switch off the support for jQuery Migrate for faster and more stable JavaScript.'
+                                     ,i_rn_chapter_link          => null
+                                     ,i_check_integrated         => 1
+                                     ,i_check_needed             => 1
+                                     ,i_attribute_value          => l_include_jquery_migrate
+                                     ,i_migration_effort_in_days => c_effort_in_days_1_hour
+                                     ,i_migration_priority       => c_migration_priority_3_recommed
+                                     ,i_app_id                   => i_app_id);
+        pipe row(l_migration);
+      end if;
+    end if;
+  
+    if instr(i_migration_priorities
+            ,c_migration_priority_4_best_practices) > 0
+    then
+      for m in (select *
+                from apex_application_page_items i
+                where i.encrypt_session_state = 'No'
+                and i.application_id = i_app_id)
+      loop
+        -- Session State Protection
+        l_migration := av_migration_t(i_apex_version             => c_apex_version_latest
+                                     ,i_rn_type                  => av_migration_pkg.c_migration_type_generally
+                                     ,i_rn_chapter_no            => '0.3.5'
+                                     ,i_rn_chapter_name          => 'Session State Protection'
+                                     ,i_rn_chapter_text          => l_session_state_protection
+                                     ,i_rn_chapter_link          => null
+                                     ,i_check_integrated         => 1
+                                     ,i_check_needed             => 1
+                                     ,i_attribute_value          => m.encrypt_session_state
+                                     ,i_migration_effort_in_days => c_effort_in_days_15_minutes
+                                     ,i_migration_priority       => c_migration_priority_4_best_practices
+                                     ,i_app_id                   => m.application_id
+                                     ,i_page_id                  => m.page_id
+                                     ,i_page_name                => m.page_name
+                                     ,i_component_name           => m.item_name
+                                     ,i_component_type           => c_component_type_item
+                                     ,i_region_name              => m.region
+                                     ,i_item_name                => m.item_name
+                                     ,i_item_label               => m.label
+                                     ,i_js_code_vc2              => null
+                                     ,i_plsql_code_vc2           => null
+                                     ,i_css_code_vc2             => null);
+        pipe row(l_migration);
+      end loop;
+    
+      -- Runtime API Usage
+      l_migration := av_migration_t(i_apex_version             => c_apex_version_latest
+                                   ,i_rn_type                  => av_migration_pkg.c_migration_type_generally
+                                   ,i_rn_chapter_no            => '0.3.6'
+                                   ,i_rn_chapter_name          => 'Runtime API Usage'
+                                   ,i_rn_chapter_text          => 'Try to restrict the API usage to only your App or deactive it.'
+                                   ,i_rn_chapter_link          => null
+                                   ,i_check_integrated         => 1
+                                   ,i_check_needed             => 1
+                                   ,i_attribute_value          => l_runtime_api_usage
+                                   ,i_migration_effort_in_days => c_effort_in_days_3_minutes
+                                   ,i_migration_priority       => c_migration_priority_4_best_practices
                                    ,i_app_id                   => i_app_id);
       pipe row(l_migration);
     end if;
@@ -333,15 +481,6 @@ create or replace package body av_migration_pkg is
    ,i_migration_priorities in varchar2
   ) return av_migrations_t
     pipelined is
-    l_compatibility_mode          apex_applications.compatibility_mode%type;
-    l_po_session_state_protection apex_applications.session_state_protection%type;
-    l_po_runtime_api_usage        varchar2(100 char);
-    l_include_legacy_javascript   apex_appl_user_interfaces.include_legacy_javascript%type;
-    l_include_jquery_migrate      apex_appl_user_interfaces.include_jquery_migrate%type;
-    l_theme_name                  apex_application_themes.theme_name%type;
-    l_theme_version               apex_application_themes.version%type;
-  
-    l_migration av_migration_t;
   begin
     -- migrate to standard JavaScript
     if instr(i_migration_priorities
@@ -432,15 +571,6 @@ create or replace package body av_migration_pkg is
    ,i_migration_priorities in varchar2
   ) return av_migrations_t
     pipelined is
-    l_compatibility_mode          apex_applications.compatibility_mode%type;
-    l_po_session_state_protection apex_applications.session_state_protection%type;
-    l_po_runtime_api_usage        varchar2(100 char);
-    l_include_legacy_javascript   apex_appl_user_interfaces.include_legacy_javascript%type;
-    l_include_jquery_migrate      apex_appl_user_interfaces.include_jquery_migrate%type;
-    l_theme_name                  apex_application_themes.theme_name%type;
-    l_theme_version               apex_application_themes.version%type;
-  
-    l_migration av_migration_t;
   begin
     if instr(i_migration_priorities
             ,c_migration_priority_4_best_practices) > 0
@@ -484,7 +614,159 @@ create or replace package body av_migration_pkg is
   end ptf_effort_plsql;
 
 
-  function ptf_upgrade_allplication
+  function ptf_effort_plugins
+  (
+    i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
+    pipelined is
+  begin
+    if instr(i_migration_priorities
+            ,c_migration_priority_2_should) > 0
+    then
+      for m in (select name
+                      ,display_name
+                      ,plugin_type
+                      ,(select count(1)
+                        from av_plugins_v p1
+                        where p1.page_id is not null
+                        and p1.name = p.name
+                        and p1.application_id = p.application_id) plugin_references
+                      ,render_function
+                      ,api_version
+                      ,help_text
+                      ,version_identifier
+                      ,about_url
+                      ,p.application_id
+                from apex_appl_plugins p
+                where p.application_id = i_app_id
+                and p.plugin_type <> 'Template Component')
+      loop
+        pipe row(av_migration_t(i_apex_version             => av_migration_pkg.c_apex_version_latest
+                               ,i_rn_type                  => av_migration_pkg.c_migration_type_generally
+                               ,i_rn_chapter_no            => '0.6.1'
+                               ,i_rn_chapter_name          => 'Plugins'
+                               ,i_rn_chapter_text          => 'Replace Plugins with standard APEX Functionality.'
+                               ,i_rn_chapter_link          => null
+                               ,i_check_integrated         => 1
+                               ,i_check_needed             => 1
+                               ,i_attribute_value          => m.display_name
+                               ,i_migration_effort_in_days => c_effort_in_days_4_hours
+                               ,i_migration_priority       => c_migration_priority_2_should
+                               ,i_app_id                   => m.application_id
+                               ,i_page_id                  => null
+                               ,i_page_name                => null
+                               ,i_component_name           => m.display_name
+                               ,i_component_type           => m.plugin_type
+                               ,i_region_name              => null
+                               ,i_item_name                => null
+                               ,i_item_label               => null
+                               ,i_js_code_vc2              => null
+                               ,i_plsql_code_vc2           => null
+                               ,i_css_code_vc2             => null));
+      end loop;
+    end if;
+  
+    return;
+  end ptf_effort_plugins;
+
+
+  function ptf_effort_never_conditions
+  (
+    i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
+    pipelined is
+  begin
+    if instr(i_migration_priorities
+            ,c_migration_priority_4_best_practices) > 0
+    then
+      for m in (select v.application_id
+                      ,v.page_name
+                      ,v.page_id
+                      ,v.component_type
+                      ,v.component_name
+                      ,v.visibility_type
+                from av_visibility_v v
+                where v.visibility_category = 'CONDITION'
+                and upper(v.visibility_type) = 'NEVER'
+                and v.application_id = i_app_id)
+      loop
+        pipe row(av_migration_t(i_apex_version             => av_migration_pkg.c_apex_version_latest
+                               ,i_rn_type                  => av_migration_pkg.c_migration_type_generally
+                               ,i_rn_chapter_no            => '0.6.1'
+                               ,i_rn_chapter_name          => 'Plugins'
+                               ,i_rn_chapter_text          => 'Replace Plugins with standard APEX Functionality.'
+                               ,i_rn_chapter_link          => null
+                               ,i_check_integrated         => 1
+                               ,i_check_needed             => 1
+                               ,i_attribute_value          => m.visibility_type
+                               ,i_migration_effort_in_days => c_effort_in_days_3_minutes
+                               ,i_migration_priority       => c_migration_priority_4_best_practices
+                               ,i_app_id                   => m.application_id
+                               ,i_page_id                  => m.page_id
+                               ,i_page_name                => m.page_name
+                               ,i_component_name           => m.component_name
+                               ,i_component_type           => m.component_type
+                               ,i_region_name              => null
+                               ,i_item_name                => null
+                               ,i_item_label               => null
+                               ,i_js_code_vc2              => null
+                               ,i_plsql_code_vc2           => null
+                               ,i_css_code_vc2             => null));
+      end loop;
+    end if;
+  
+    return;
+  end ptf_effort_never_conditions;
+
+
+  function ptf_effort_unused_auth_schemes
+  (
+    i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
+    pipelined is
+  begin
+    if instr(i_migration_priorities
+            ,c_migration_priority_4_best_practices) > 0
+    then
+      for m in (select a.application_id
+                      ,a.authorization_scheme_name
+                      ,a.scheme_type
+                from av_p0600_not_used_auth_schemes_v a
+                where a.application_id = i_app_id)
+      loop
+        pipe row(av_migration_t(i_apex_version             => av_migration_pkg.c_apex_version_latest
+                               ,i_rn_type                  => av_migration_pkg.c_migration_type_generally
+                               ,i_rn_chapter_no            => '0.7.2'
+                               ,i_rn_chapter_name          => 'Unused Authorization Schemes'
+                               ,i_rn_chapter_text          => 'Remove unused Authorization Schemes.'
+                               ,i_rn_chapter_link          => null
+                               ,i_check_integrated         => 1
+                               ,i_check_needed             => 1
+                               ,i_attribute_value          => m.authorization_scheme_name
+                               ,i_migration_effort_in_days => c_effort_in_days_3_minutes
+                               ,i_migration_priority       => c_migration_priority_4_best_practices
+                               ,i_app_id                   => m.application_id
+                               ,i_page_id                  => null
+                               ,i_page_name                => null
+                               ,i_component_name           => m.authorization_scheme_name
+                               ,i_component_type           => 'Authorization Schemes'
+                               ,i_region_name              => null
+                               ,i_item_name                => null
+                               ,i_item_label               => null
+                               ,i_js_code_vc2              => null
+                               ,i_plsql_code_vc2           => null
+                               ,i_css_code_vc2             => null));
+      end loop;
+    end if;
+  
+    return;
+  end ptf_effort_unused_auth_schemes;
+
+
+  function ptf_upgrade_application
   (
     i_workspace_id         in number
    ,i_app_id               in number
@@ -494,7 +776,7 @@ create or replace package body av_migration_pkg is
   begin
     --todo - f4000 - page 89 - region Upgrade Summary has to be reworked
     return;
-  end ptf_upgrade_allplication;
+  end ptf_upgrade_application;
 
 
   function ptf_effort_calculation
@@ -624,11 +906,98 @@ create or replace package body av_migration_pkg is
                              ,i_css_code_vc2             => p.css_code_vc2));
     end loop;
   
+    -- Plugins
+    for p in (select *
+              from av_migration_pkg.ptf_effort_plugins(i_app_id               => i_app_id
+                                                      ,i_migration_priorities => i_migration_priorities))
+    loop
+      pipe row(av_migration_t(i_apex_version             => p.apex_version
+                             ,i_rn_type                  => p.rn_type
+                             ,i_rn_chapter_no            => p.rn_chapter_no
+                             ,i_rn_chapter_name          => p.rn_chapter_name
+                             ,i_rn_chapter_text          => p.rn_chapter_text
+                             ,i_rn_chapter_link          => p.rn_chapter_link
+                             ,i_check_integrated         => p.check_integrated
+                             ,i_check_needed             => p.check_needed
+                             ,i_attribute_value          => p.attribute_value
+                             ,i_migration_effort_in_days => p.migration_effort_in_days
+                             ,i_migration_priority       => p.migration_priority
+                             ,i_app_id                   => p.app_id
+                             ,i_page_id                  => p.page_id
+                             ,i_page_name                => p.page_name
+                             ,i_component_name           => p.component_name
+                             ,i_component_type           => p.component_type
+                             ,i_region_name              => p.region_name
+                             ,i_item_name                => p.item_name
+                             ,i_item_label               => p.item_label
+                             ,i_js_code_vc2              => p.js_code_vc2
+                             ,i_plsql_code_vc2           => p.plsql_code_vc2
+                             ,i_css_code_vc2             => p.css_code_vc2));
+    end loop;
+  
+    -- Never Conditions
+    for p in (select *
+              from av_migration_pkg.ptf_effort_never_conditions(i_app_id               => i_app_id
+                                                               ,i_migration_priorities => i_migration_priorities))
+    loop
+      pipe row(av_migration_t(i_apex_version             => p.apex_version
+                             ,i_rn_type                  => p.rn_type
+                             ,i_rn_chapter_no            => p.rn_chapter_no
+                             ,i_rn_chapter_name          => p.rn_chapter_name
+                             ,i_rn_chapter_text          => p.rn_chapter_text
+                             ,i_rn_chapter_link          => p.rn_chapter_link
+                             ,i_check_integrated         => p.check_integrated
+                             ,i_check_needed             => p.check_needed
+                             ,i_attribute_value          => p.attribute_value
+                             ,i_migration_effort_in_days => p.migration_effort_in_days
+                             ,i_migration_priority       => p.migration_priority
+                             ,i_app_id                   => p.app_id
+                             ,i_page_id                  => p.page_id
+                             ,i_page_name                => p.page_name
+                             ,i_component_name           => p.component_name
+                             ,i_component_type           => p.component_type
+                             ,i_region_name              => p.region_name
+                             ,i_item_name                => p.item_name
+                             ,i_item_label               => p.item_label
+                             ,i_js_code_vc2              => p.js_code_vc2
+                             ,i_plsql_code_vc2           => p.plsql_code_vc2
+                             ,i_css_code_vc2             => p.css_code_vc2));
+    end loop;
+  
+    -- Never Conditions
+    for p in (select *
+              from av_migration_pkg.ptf_effort_unused_auth_schemes(i_app_id               => i_app_id
+                                                                  ,i_migration_priorities => i_migration_priorities))
+    loop
+      pipe row(av_migration_t(i_apex_version             => p.apex_version
+                             ,i_rn_type                  => p.rn_type
+                             ,i_rn_chapter_no            => p.rn_chapter_no
+                             ,i_rn_chapter_name          => p.rn_chapter_name
+                             ,i_rn_chapter_text          => p.rn_chapter_text
+                             ,i_rn_chapter_link          => p.rn_chapter_link
+                             ,i_check_integrated         => p.check_integrated
+                             ,i_check_needed             => p.check_needed
+                             ,i_attribute_value          => p.attribute_value
+                             ,i_migration_effort_in_days => p.migration_effort_in_days
+                             ,i_migration_priority       => p.migration_priority
+                             ,i_app_id                   => p.app_id
+                             ,i_page_id                  => p.page_id
+                             ,i_page_name                => p.page_name
+                             ,i_component_name           => p.component_name
+                             ,i_component_type           => p.component_type
+                             ,i_region_name              => p.region_name
+                             ,i_item_name                => p.item_name
+                             ,i_item_label               => p.item_label
+                             ,i_js_code_vc2              => p.js_code_vc2
+                             ,i_plsql_code_vc2           => p.plsql_code_vc2
+                             ,i_css_code_vc2             => p.css_code_vc2));
+    end loop;
+  
     -- Upgrade Application Findings
     for p in (select *
-              from av_migration_pkg.ptf_upgrade_allplication(i_workspace_id         => l_workspace_id
-                                                            ,i_app_id               => i_app_id
-                                                            ,i_migration_priorities => i_migration_priorities))
+              from av_migration_pkg.ptf_upgrade_application(i_workspace_id         => l_workspace_id
+                                                           ,i_app_id               => i_app_id
+                                                           ,i_migration_priorities => i_migration_priorities))
     loop
       pipe row(av_migration_t(i_apex_version             => p.apex_version
                              ,i_rn_type                  => p.rn_type
