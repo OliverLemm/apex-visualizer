@@ -1,0 +1,579 @@
+---
+# ====== Page: Migration Effort ==============================
+id: 760
+identification: 
+  name: Migration Effort
+  alias: MIGRATION-EFFORT
+  title: Migration Effort
+
+appearance: 
+  page-mode: Normal
+  page-template: Theme Default
+  template-options: 
+  - '#DEFAULT#'
+
+navigation-menu: 
+  override-user-interface-level: false
+
+navigation: 
+  cursor-focus: Do not focus cursor
+  warn-on-unsaved-changes: false
+
+security: 
+  authentication: Page Requires Authentication
+  deep-linking: Application Default
+  page-access-protection: Arguments Must Have Checksum
+  form-auto-complete: Off
+  browser-cache: Application Default
+
+session-management: 
+  rejoin-sessions: Application Default
+
+advanced: 
+  enable-duplicate-page-submissions: Yes - Enable page to be re-posted
+  reload-on-submit: Only for Success
+
+server-cache: 
+  caching: Disabled
+
+regions: 
+- # ====== Region: Breadcrumb ==================================
+  id: 71032515836091654
+  identification: 
+    name: Breadcrumb
+    type: Breadcrumb
+
+  source: 
+    breadcrumb: ' Breadcrumb' # 472901389022347808
+
+  layout: 
+    sequence: 10
+    parent-region: No Parent
+    slot: REGION_POSITION_01
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Title Bar
+    template-options: 
+    - '#DEFAULT#'
+    - t-BreadcrumbRegion--useBreadcrumbTitle
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    appearance: 
+      breadcrumb-template: Breadcrumb
+      template-options: 
+      - '#DEFAULT#'
+
+- # ====== Region: Migration Effort ============================
+  id: 71036156686110903
+  identification: 
+    name: Migration Effort
+    type: Classic Report
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select 
+       apex_version
+      ,rn_type
+      ,rn_chapter_no
+      ,rn_chapter_name
+      ,migration_priority
+      ,count(1) amount_of_objects
+      ,round(sum(migration_effort_in_days)
+            ,3) migration_effort_in_days
+      from av_migration_pkg.ptf_effort_calculation(i_app_id               => :P0_APP_ID
+                                                  ,i_apex_versions        => :P760_APEX_VERSIONS
+                                                  ,i_migration_priorities => :P760_MIGRATION_PRIORITIES)
+        group by apex_version
+                ,rn_type
+                ,rn_chapter_no
+                ,rn_chapter_name
+                ,migration_priority
+        order by rn_type
+                ,apex_version
+                ,rn_chapter_no 
+    page-items-to-submit: 
+    - P0_APP_ID
+    - P760_APEX_VERSIONS
+    - P760_MIGRATION_PRIORITIES
+
+  order-by: 
+    type: None
+
+  layout: 
+    sequence: 10
+    parent-region: No Parent
+    slot: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Standard
+    template-options: 
+    - '#DEFAULT#'
+    - t-Region--scrollBody
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  server-cache: 
+    caching: Disabled
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    layout: 
+      number-of-rows-type: Static Value
+      number-of-rows: 15
+
+    appearance: 
+      template-type: Theme
+      template: Standard
+      template-options: 
+      - '#DEFAULT#'
+      - t-Report--altRowsDefault
+      - t-Report--rowHighlight
+
+    pagination: 
+      type: Row Ranges X to Y (with next and previous links)
+      display-position: Bottom - Right
+      partial-page-refresh: true
+
+    performance: 
+      lazy-loading: false
+
+    break-formatting: 
+      break-columns: No Break
+
+    advanced: 
+      strip-html: false
+      sort-nulls: Last
+
+    heading: 
+      type: Custom Headings
+
+    download: 
+      csv-export-enabled: false
+
+    printing: 
+      enabled: false
+
+  columns: 
+  - # ====== Column: APEX_VERSION ================================
+    id: 71036205802110904
+    identification: 
+      column-name: APEX_VERSION
+      type: Plain Text
+
+    heading: 
+      heading: APEX Version
+      alignment: start
+
+    layout: 
+      sequence: 10
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: false
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: RN_CHAPTER_NO ===============================
+    id: 71036330701110905
+    identification: 
+      column-name: RN_CHAPTER_NO
+      type: Plain Text
+
+    heading: 
+      heading: Chapter No
+      alignment: start
+
+    layout: 
+      sequence: 30
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: false
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: RN_CHAPTER_NAME =============================
+    id: 71036455609110906
+    identification: 
+      column-name: RN_CHAPTER_NAME
+      type: Plain Text
+
+    heading: 
+      heading: Chapter Name
+      alignment: start
+
+    layout: 
+      sequence: 40
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: false
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: MIGRATION_EFFORT_IN_DAYS ====================
+    id: 71036873470110910
+    identification: 
+      column-name: MIGRATION_EFFORT_IN_DAYS
+      type: Plain Text
+
+    heading: 
+      heading: Effort In Days
+      alignment: end
+
+    layout: 
+      sequence: 70
+      column-alignment: end
+
+    accessibility: 
+      value-identifies-row: false
+
+    appearance: 
+      format-mask: 999G999G999G999G990D00
+
+    sorting: 
+      sortable: false
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: true
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: MIGRATION_PRIORITY ==========================
+    id: 71036981630110911
+    identification: 
+      column-name: MIGRATION_PRIORITY
+      type: Plain Text (based on List of Values)
+
+    heading: 
+      heading: Migration Priority
+      alignment: end
+
+    layout: 
+      sequence: 50
+      column-alignment: end
+
+    accessibility: 
+      value-identifies-row: false
+
+    list-of-values: 
+      type: Shared Component
+      list-of-values: MIGRATION_PRIORITY # 71058072923988992
+
+    sorting: 
+      sortable: false
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: RN_TYPE =====================================
+    id: 71037072113110912
+    identification: 
+      column-name: RN_TYPE
+      type: Plain Text
+
+    heading: 
+      heading: Type
+      alignment: start
+
+    layout: 
+      sequence: 20
+      column-alignment: start
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: false
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: AMOUNT_OF_OBJECTS ===========================
+    id: 71037101912110913
+    identification: 
+      column-name: AMOUNT_OF_OBJECTS
+      type: Plain Text
+
+    heading: 
+      heading: '# Objects'
+      alignment: end
+
+    layout: 
+      sequence: 60
+      column-alignment: end
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: false
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+page-items: 
+- # ====== Page Item: P760_MIGRATION_PRIORITIES ================
+  id: 71037587460110917
+  identification: 
+    name: P760_MIGRATION_PRIORITIES
+    type: Checkbox Group
+
+  label: 
+    label: Migration Priorities
+    alignment: Left
+
+  settings: 
+    number-of-columns: 1
+
+  multiple-values: 
+    type: Delimited List
+    separator: ':'
+
+  layout: 
+    sequence: 60
+    region: Filter # 472904998656421813
+    slot: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+    label-column-span: Page Template Default
+
+  appearance: 
+    template: Optional
+    template-options: 
+    - '#DEFAULT#'
+
+  validation: 
+    value-required: false
+
+  list-of-values: 
+    type: Shared Component
+    list-of-values: MIGRATION_PRIORITY # 71058072923988992
+    display-extra-values: false
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+
+  session-state: 
+    storage: Per Session (Persistent)
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: true
+    escape-special-characters: true
+    restricted-characters: All characters can be saved.
+
+  help: 
+    help-text: |
+      1 - must<br>without these changes application will crash or doesn't work<br><br>
+      2 - should<br>with these changes application gets minimum changes to run in latest APEX release<br><br>
+      3 - recommed<br>mostly desupported and deprecated features that should be adjusted<br><br>
+      4 - best practices<br>only adjustments which will reduce effort for maintaining in future or would be faster
+
+- # ====== Page Item: P760_APEX_VERSIONS =======================
+  id: 71037610662110918
+  identification: 
+    name: P760_APEX_VERSIONS
+    type: Checkbox Group
+
+  label: 
+    label: APEX Versions
+    alignment: Left
+
+  settings: 
+    number-of-columns: 1
+
+  multiple-values: 
+    type: Delimited List
+    separator: ':'
+
+  layout: 
+    sequence: 50
+    region: Filter # 472904998656421813
+    slot: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+    label-column-span: Page Template Default
+
+  appearance: 
+    template: Optional
+    template-options: 
+    - '#DEFAULT#'
+
+  validation: 
+    value-required: false
+
+  list-of-values: 
+    type: Shared Component
+    list-of-values: APEX_VERSIONS # 71057235055972229
+    display-extra-values: false
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+
+  session-state: 
+    storage: Per Session (Persistent)
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: true
+    escape-special-characters: true
+    restricted-characters: All characters can be saved.
+
+dynamic-actions: 
+- # ====== Dynamic Action: click Refresh - Refresh Region Migrat
+  id: 71036623265110908
+  identification: 
+    name: click Refresh - Refresh Region Migration Effort
+
+  execution: 
+    sequence: 10
+    event-scope: Static
+    type: Immediate
+
+  when: 
+    event: Click
+    selection-type: Button
+    button: Refresh # 65476682361019079
+
+  actions: 
+  - # ====== Action: Refresh =====================================
+    id: 71036778000110909
+    identification: 
+      action: Refresh
+
+    settings: 
+      maintain-pagination: false
+
+    affected-elements: 
+      selection-type: Region
+      region: Migration Effort # 71036156686110903
+
+    execution: 
+      sequence: 10
+      event: click Refresh - Refresh Region Migration Effort # 71036623265110908
+      fire-when-event-result-is: True
+      fire-on-initialization: false
+

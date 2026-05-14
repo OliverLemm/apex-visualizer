@@ -21,7 +21,7 @@ css:
   - '#THEME_FILES#css/Core#MIN#.css?v=#APEX_VERSION#'
 
 component-defaults: 
-  current-theme-style: Vita
+  current-theme-style: AV - Dark
   page: Right Side Column
   navigation-bar-list: Navigation Bar
   navigation-menu-list-position: Side
@@ -74,7 +74,7 @@ styles:
     read-only: false
     input-parameter-file-urls: '#THEME_FILES#less/theme/Vita-Dark.less'
     output-css-file-url: '#THEME_DB_FILES#41068433484203671.css'
-    json-configuration: '{"classes":[],"vars":{"@Nav-Exp":"160px"},"customCSS":"","useCustomLess":"N"}'
+    json-configuration: '{"classes":[],"vars":{"@Nav-Exp":"160px","@g_Accent-BG":"#0091e1"},"customCSS":"","useCustomLess":"N"}'
 
 - # ====== Style: APEX Visualizer ==============================
   id: 58061746547589757

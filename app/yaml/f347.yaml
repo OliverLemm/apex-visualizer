@@ -21,7 +21,7 @@ report-printing:
   type: Use Instance Settings
 
 advanced: 
-  friendly-urls: false
+  friendly-urls: true
   allow-feedback: false
   logging: true
   debugging: true
@@ -112,7 +112,7 @@ attributes:
   auto-dismiss-success-messages: false
 
 subscription: 
-  version-number: 129127729
+  version-number: 130676150
 
 component-settings: 
 - # ====== Component Setting: NATIVE_SELECT_MANY ===============

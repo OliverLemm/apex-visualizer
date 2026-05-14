@@ -118,6 +118,34 @@
         url: 'f?p=&APP_ID.:709:&SESSION.::&DEBUG.:::'
         page: 709 # APEX 22.1
 
+  - # ====== Entry: Migration Effort =============================
+    id: 71033064795091664
+    identification: 
+      name: Migration Effort
+      page-number: 760
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:760:&APP_SESSION.::&DEBUG.:::'
+        page: 760 # Migration Effort
+
+  - # ====== Entry: Migration Details ============================
+    id: 71034526750095987
+    identification: 
+      name: Migration Details
+      page-number: 750
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:750:&APP_SESSION.::&DEBUG.:::'
+        page: 750 # Migration Details
+
   - # ====== Entry: Apps =========================================
     id: 469895599054694459
     identification: 

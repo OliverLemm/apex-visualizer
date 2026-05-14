@@ -19,9 +19,11 @@ prompt --install
 @@application/shared_components/logic/application_settings.sql
 @@application/shared_components/navigation/tabs/standard.sql
 @@application/shared_components/navigation/tabs/parent.sql
+@@application/shared_components/user_interface/lovs/apex_versions.sql
 @@application/shared_components/user_interface/lovs/applications.sql
 @@application/shared_components/user_interface/lovs/components_chart.sql
 @@application/shared_components/user_interface/lovs/login_remember_username.sql
+@@application/shared_components/user_interface/lovs/migration_priority.sql
 @@application/shared_components/user_interface/lovs/pages.sql
 @@application/pages/page_groups.sql
 @@application/shared_components/navigation/breadcrumbs/breadcrumb.sql
@@ -70,6 +72,8 @@ prompt --install
 @@application/pages/page_00720.sql
 @@application/pages/page_00730.sql
 @@application/pages/page_00740.sql
+@@application/pages/page_00750.sql
+@@application/pages/page_00760.sql
 @@application/deployment/definition.sql
 @@application/deployment/install/install_av_general_pkg.sql
 @@application/deployment/install/install_av_applications_v.sql

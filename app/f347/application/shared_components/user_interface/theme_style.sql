@@ -18,7 +18,7 @@ wwv_flow_imp_shared.create_theme_style(
 ,p_is_public=>true
 ,p_is_accessible=>false
 ,p_theme_roller_input_file_urls=>'#THEME_FILES#less/theme/Vita-Dark.less'
-,p_theme_roller_config=>'{"classes":[],"vars":{"@Nav-Exp":"160px"},"customCSS":"","useCustomLess":"N"}'
+,p_theme_roller_config=>'{"classes":[],"vars":{"@Nav-Exp":"160px","@g_Accent-BG":"#0091e1"},"customCSS":"","useCustomLess":"N"}'
 ,p_theme_roller_output_file_url=>'#THEME_DB_FILES#41068433484203671.css'
 ,p_theme_roller_read_only=>false
 );

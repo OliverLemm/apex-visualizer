@@ -57,6 +57,18 @@ wwv_flow_imp_shared.create_menu_option(
 ,p_page_id=>709
 );
 wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(71033064795091664)
+,p_short_name=>'Migration Effort'
+,p_link=>'f?p=&APP_ID.:760:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>760
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(71034526750095987)
+,p_short_name=>'Migration Details'
+,p_link=>'f?p=&APP_ID.:750:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>750
+);
+wwv_flow_imp_shared.create_menu_option(
  p_id=>wwv_flow_imp.id(469895599054694459)
 ,p_short_name=>'Apps'
 ,p_long_name=>'Applications'

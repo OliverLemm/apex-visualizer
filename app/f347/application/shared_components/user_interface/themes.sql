@@ -21,7 +21,7 @@ wwv_flow_imp_shared.create_theme(
 ,p_nav_bar_type=>'LIST'
 ,p_reference_id=>4072363937200175119
 ,p_is_locked=>false
-,p_current_theme_style_id=>2721322117358710262
+,p_current_theme_style_id=>wwv_flow_imp.id(41068433484203671)
 ,p_default_page_template=>2526646919027767344
 ,p_default_dialog_template=>2100407606326202693
 ,p_error_template=>2101157952850466385
@@ -54,7 +54,7 @@ wwv_flow_imp_shared.create_theme(
 ,p_default_required_label=>2526760615038828570
 ,p_default_navbar_list_template=>2847543055748234966
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_theme_file_prefix(42),'#APEX_FILES#themes/theme_42/24.2/')
-,p_files_version=>64
+,p_files_version=>66
 ,p_icon_library=>'FONTAPEX'
 ,p_javascript_file_urls=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '#APEX_FILES#libraries/apex/#MIN_DIRECTORY#widget.stickyWidget#MIN#.js?v=#APEX_VERSION#',

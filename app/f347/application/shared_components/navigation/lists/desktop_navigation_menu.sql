@@ -15,7 +15,7 @@ wwv_flow_imp_shared.create_list(
  p_id=>wwv_flow_imp.id(472848853615347627)
 ,p_name=>'Desktop Navigation Menu'
 ,p_list_status=>'PUBLIC'
-,p_version_scn=>54926981
+,p_version_scn=>130632094
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(472913516436311096)
@@ -133,8 +133,26 @@ wwv_flow_imp_shared.create_list_item(
 ,p_list_item_current_for_pages=>'600'
 );
 wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(71033691701095985)
+,p_list_item_display_sequence=>400
+,p_list_item_link_text=>'Migration Details'
+,p_list_item_link_target=>'f?p=&APP_ID.:750:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-ai-sparkle-zoom-in'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'750'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(71032124480091646)
+,p_list_item_display_sequence=>410
+,p_list_item_link_text=>'Migration Effort'
+,p_list_item_link_target=>'f?p=&APP_ID.:760:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-calendar-wrench'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'760'
+);
+wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(36813609309735876)
-,p_list_item_display_sequence=>340
+,p_list_item_display_sequence=>1340
 ,p_list_item_link_text=>'Migration'
 ,p_list_item_link_target=>'f?p=&APP_ID.:700:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'fa-wrench'

@@ -18,6 +18,51 @@
       display: Remember username
       return: Y
 
+- # ====== List of Values: APEX_VERSIONS =======================
+  id: 71057235055972229
+  identification: 
+    name: APEX_VERSIONS
+
+  subscription: 
+    version-number: 130665055
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: select vc2 d, vc2 r from av_migration_pkg.tf_apex_versions()
+
+  column-mapping: 
+    return: R
+    display: D
+    default-sort: D
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: MIGRATION_PRIORITY ==================
+  id: 71058072923988992
+  identification: 
+    name: MIGRATION_PRIORITY
+
+  subscription: 
+    version-number: 130665454
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select '1 - must' d, 1 r from dual
+      union all
+      select '2 - should' d, 2 r from dual
+      union all
+      select '3 - recommed' d, 3 r from dual
+      union all
+      select '4 - best practices' d, 4 r from dual
+
+  column-mapping: 
+    return: R
+    display: D
+    default-sort: D
+    sort-direction: Ascending (Nulls Last)
+
 - # ====== List of Values: COMPONENTS (CHART) ==================
   id: 311721064277927858
   identification: 

@@ -5,7 +5,7 @@
     name: Desktop Navigation Menu
 
   subscription: 
-    version-number: 54926981
+    version-number: 130632094
 
   source: 
     type: Static Values
@@ -45,7 +45,7 @@
       image/icon-css-classes: fa-wrench
 
     layout: 
-      sequence: 340
+      sequence: 1340
 
     is-current: 
       type: Pages
@@ -475,6 +475,60 @@
       target: 
         url: 'f?p=&APP_ID.:709:&APP_SESSION.::&DEBUG.:::'
         page: 709 # APEX 22.1
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Migration Effort =============================
+    id: 71032124480091646
+    label: 
+      label: Migration Effort
+
+    icon: 
+      image/icon-css-classes: fa-calendar-wrench
+
+    layout: 
+      sequence: 410
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 760
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:760:&SESSION.::&DEBUG.::::'
+        page: 760 # Migration Effort
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Migration Details ============================
+    id: 71033691701095985
+    label: 
+      label: Migration Details
+
+    icon: 
+      image/icon-css-classes: fa-ai-sparkle-zoom-in
+
+    layout: 
+      sequence: 400
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 750
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:750:&SESSION.::&DEBUG.::::'
+        page: 750 # Migration Details
 
     click-counting: 
       count-clicks: false

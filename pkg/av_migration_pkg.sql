@@ -5,10 +5,10 @@ create or replace package av_migration_pkg is
   c_migration_type_deprecated  constant varchar2(20 char) := 'deprecated';
   c_migration_type_desupported constant varchar2(20 char) := 'desupported';
 
-  c_migration_priority_must           constant number := 1;
-  c_migration_priority_should         constant number := 2;
-  c_migration_priority_recommed       constant number := 3;
-  c_migration_priority_best_practices constant number := 4;
+  c_migration_priority_1_must           constant number := 1;
+  c_migration_priority_2_should         constant number := 2;
+  c_migration_priority_3_recommed       constant number := 3;
+  c_migration_priority_4_best_practices constant number := 4;
 
   c_complexity_simple       constant varchar2(20 char) := 'simple';
   c_complexity_normal       constant varchar2(20 char) := 'normal';
@@ -20,8 +20,21 @@ create or replace package av_migration_pkg is
   c_component_type_button         constant varchar2(20 char) := 'Button';
   c_component_type_dynamic_action constant varchar2(20 char) := 'Dynamic Action';
 
-  c_latest_version              constant varchar2(20 char) := '24.2';
-  c_comp_mode_latest            constant varchar2(20 char) := c_latest_version;
+
+  c_apex_version_20_1   constant varchar2(20 char) := '20.1';
+  c_apex_version_20_2   constant varchar2(20 char) := '20.2';
+  c_apex_version_21_1   constant varchar2(20 char) := '21.1';
+  c_apex_version_21_2   constant varchar2(20 char) := '21.2';
+  c_apex_version_22_1   constant varchar2(20 char) := '22.1';
+  c_apex_version_22_2   constant varchar2(20 char) := '22.2';
+  c_apex_version_23_1   constant varchar2(20 char) := '23.1';
+  c_apex_version_23_2   constant varchar2(20 char) := '23.2';
+  c_apex_version_24_1   constant varchar2(20 char) := '24.1';
+  c_apex_version_24_2   constant varchar2(20 char) := '24.2';
+  c_apex_version_26_1   constant varchar2(20 char) := '26.1';
+  c_apex_version_latest constant varchar2(20 char) := c_apex_version_26_1;
+
+  c_comp_mode_latest            constant varchar2(20 char) := c_apex_version_latest;
   c_comp_mode_one_before_latest constant varchar2(20 char) := '21.2';
 
   c_effort_in_days_1_hour     constant number := 0.125;
@@ -47,16 +60,27 @@ create or replace package av_migration_pkg is
           ,rn_chapter_no 
   */
 
-  function ptf_effort_general_app_settings(i_app_id in number) return av_migrations_t
+  function tf_apex_versions return av_varchar2s_t;
+
+  function ptf_effort_general_app_settings
+  (
+    i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
     pipelined;
 
-  function ptf_effort_page_complexity(i_app_id in number) return av_migrations_t
+  function ptf_effort_page_complexity
+  (
+    i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
     pipelined;
 
   function ptf_effort_calculation
   (
-    i_app_id       in number
-   ,i_apex_version in varchar2 default null
+    i_app_id               in number
+   ,i_apex_versions        in varchar2 default null
+   ,i_migration_priorities in varchar2 default null
   ) return av_migrations_t
     pipelined;
 
@@ -95,6 +119,36 @@ create or replace package body av_migration_pkg is
   end p_merge_migrations;
 
 
+  function tf_apex_versions return av_varchar2s_t is
+    l_apex_versions av_varchar2s_t := new av_varchar2s_t();
+  begin
+    l_apex_versions.extend;
+    l_apex_versions(l_apex_versions.last) := new av_varchar2_t(c_apex_version_20_1);
+    l_apex_versions.extend;
+    l_apex_versions(l_apex_versions.last) := new av_varchar2_t(c_apex_version_20_2);
+    l_apex_versions.extend;
+    l_apex_versions(l_apex_versions.last) := new av_varchar2_t(c_apex_version_21_1);
+    l_apex_versions.extend;
+    l_apex_versions(l_apex_versions.last) := new av_varchar2_t(c_apex_version_21_2);
+    l_apex_versions.extend;
+    l_apex_versions(l_apex_versions.last) := new av_varchar2_t(c_apex_version_22_1);
+    l_apex_versions.extend;
+    l_apex_versions(l_apex_versions.last) := new av_varchar2_t(c_apex_version_22_2);
+    l_apex_versions.extend;
+    l_apex_versions(l_apex_versions.last) := new av_varchar2_t(c_apex_version_23_1);
+    l_apex_versions.extend;
+    l_apex_versions(l_apex_versions.last) := new av_varchar2_t(c_apex_version_23_2);
+    l_apex_versions.extend;
+    l_apex_versions(l_apex_versions.last) := new av_varchar2_t(c_apex_version_24_1);
+    l_apex_versions.extend;
+    l_apex_versions(l_apex_versions.last) := new av_varchar2_t(c_apex_version_24_2);
+    l_apex_versions.extend;
+    l_apex_versions(l_apex_versions.last) := new av_varchar2_t(c_apex_version_26_1);
+  
+    return l_apex_versions;
+  end tf_apex_versions;
+
+
   function f_app_has_universal_theme(i_app_id in number) return boolean is
     l_count number;
   
@@ -110,7 +164,11 @@ create or replace package body av_migration_pkg is
   end f_app_has_universal_theme;
 
 
-  function ptf_effort_general_app_settings(i_app_id in number) return av_migrations_t
+  function ptf_effort_general_app_settings
+  (
+    i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
     pipelined is
     l_compatibility_mode          apex_applications.compatibility_mode%type;
     l_po_session_state_protection apex_applications.session_state_protection%type;
@@ -122,104 +180,133 @@ create or replace package body av_migration_pkg is
   
     l_migration av_migration_t;
   begin
-    av_general_pkg.p_qa_app_settings(pi_application_id            => i_app_id
-                                    ,po_compatibility_mode        => l_compatibility_mode
-                                    ,po_session_state_protection  => l_po_session_state_protection
-                                    ,po_runtime_api_usage         => l_po_runtime_api_usage
-                                    ,po_include_legacy_javascript => l_include_legacy_javascript
-                                    ,po_include_jquery_migrate    => l_include_jquery_migrate
-                                    ,po_theme_name                => l_theme_name
-                                    ,po_theme_version             => l_theme_version);
-  
-  
-  
-    l_migration := av_migration_t(i_apex_version             => c_latest_version
-                                 ,i_rn_type                  => av_migration_pkg.c_migration_type_generally
-                                 ,i_rn_chapter_no            => '3.18'
-                                 ,i_rn_chapter_name          => 'Compatibility Mode'
-                                 ,i_rn_chapter_text          => l_compatibility_mode
-                                 ,i_rn_chapter_link          => 'https://docs.oracle.com/en/database/oracle/apex/24.2/htmrn/changed-behavior.html#GUID-712BE54F-08CD-43A3-A645-87B9360ED516'
-                                 ,i_check_integrated         => 1
-                                 ,i_check_needed             => 1
-                                 ,i_attribute_value          => l_compatibility_mode
-                                 ,i_migration_effort_in_days => case l_compatibility_mode
-                                                                  when c_comp_mode_latest then -- latest version
-                                                                   0 -- no effort
-                                                                  when c_comp_mode_one_before_latest then
-                                                                   0.125 -- minimal effort
-                                                                  else
-                                                                   0.5 -- more effort but hard to calculate
-                                                                end
-                                 ,i_migration_priority       => 2
-                                 ,i_app_id                   => i_app_id);
-    pipe row(l_migration);
+    if instr(i_migration_priorities
+            ,'2') > 0
+    then
+      av_general_pkg.p_qa_app_settings(pi_application_id            => i_app_id
+                                      ,po_compatibility_mode        => l_compatibility_mode
+                                      ,po_session_state_protection  => l_po_session_state_protection
+                                      ,po_runtime_api_usage         => l_po_runtime_api_usage
+                                      ,po_include_legacy_javascript => l_include_legacy_javascript
+                                      ,po_include_jquery_migrate    => l_include_jquery_migrate
+                                      ,po_theme_name                => l_theme_name
+                                      ,po_theme_version             => l_theme_version);
+    
+    
+    
+      l_migration := av_migration_t(i_apex_version             => c_apex_version_latest
+                                   ,i_rn_type                  => av_migration_pkg.c_migration_type_generally
+                                   ,i_rn_chapter_no            => '3.18'
+                                   ,i_rn_chapter_name          => 'Compatibility Mode'
+                                   ,i_rn_chapter_text          => l_compatibility_mode
+                                   ,i_rn_chapter_link          => 'https://docs.oracle.com/en/database/oracle/apex/24.2/htmrn/changed-behavior.html#GUID-712BE54F-08CD-43A3-A645-87B9360ED516'
+                                   ,i_check_integrated         => 1
+                                   ,i_check_needed             => 1
+                                   ,i_attribute_value          => l_compatibility_mode
+                                   ,i_migration_effort_in_days => case l_compatibility_mode
+                                                                    when c_comp_mode_latest then -- latest version
+                                                                     0 -- no effort
+                                                                    when c_comp_mode_one_before_latest then
+                                                                     0.125 -- minimal effort
+                                                                    else
+                                                                     0.5 -- more effort but hard to calculate
+                                                                  end
+                                   ,i_migration_priority       => 2
+                                   ,i_app_id                   => i_app_id);
+      pipe row(l_migration);
+    end if;
   
     return;
   end ptf_effort_general_app_settings;
 
 
-  function ptf_effort_page_complexity(i_app_id in number) return av_migrations_t
+  function ptf_effort_page_complexity
+  (
+    i_app_id               in number
+   ,i_migration_priorities in varchar2
+  ) return av_migrations_t
     pipelined is
     l_migration av_migration_t;
   
-    l_counter             number := 0;
     l_effort_simple       number := 0.125;
     l_effort_normal       number := 0.25;
     l_effort_complex      number := 1;
     l_effort_very_complex number := 2;
+    l_sub_chapter         number;
+    l_effort              number;
   begin
-    if f_app_has_universal_theme(i_app_id => i_app_id)
+    if instr(i_migration_priorities
+            ,'2') > 0
     then
-      l_effort_simple       := l_effort_simple / 10;
-      l_effort_normal       := l_effort_normal / 10;
-      l_effort_complex      := l_effort_complex / 10;
-      l_effort_very_complex := l_effort_very_complex / 10;
+      if f_app_has_universal_theme(i_app_id => i_app_id)
+      then
+        l_effort_simple       := l_effort_simple / 10;
+        l_effort_normal       := l_effort_normal / 10;
+        l_effort_complex      := l_effort_complex / 10;
+        l_effort_very_complex := l_effort_very_complex / 10;
+      end if;
+    
+      for c in (select p.complexity
+                      ,p.count_objects
+                from av_page_complexity_v p
+                where p.application_id = i_app_id
+                order by p.complexity)
+      loop
+        if c.complexity = c_complexity_simple
+        then
+          l_sub_chapter := 1;
+          l_effort      := l_effort_simple;
+        
+        elsif c.complexity = c_complexity_normal
+        then
+          l_sub_chapter := 2;
+          l_effort      := l_effort_normal;
+        
+        elsif c.complexity = c_complexity_complex
+        then
+          l_sub_chapter := 3;
+          l_effort      := l_effort_complex;
+        
+        elsif c.complexity = c_complexity_very_complex
+        then
+          l_sub_chapter := 4;
+          l_effort      := l_effort_very_complex;
+        
+        end if;
+      
+      
+      
+        l_migration := av_migration_t(i_apex_version             => c_apex_version_latest
+                                     ,i_rn_type                  => av_migration_pkg.c_migration_type_generally
+                                     ,i_rn_chapter_no            => '0.2.' || l_sub_chapter
+                                     ,i_rn_chapter_name          => 'Migration Effort for ' || c.complexity || ' Page(s)'
+                                     ,i_rn_chapter_text          => null
+                                     ,i_rn_chapter_link          => null
+                                     ,i_check_integrated         => 0
+                                     ,i_check_needed             => 0
+                                     ,i_attribute_value          => c.count_objects
+                                     ,i_migration_effort_in_days => l_effort
+                                     ,i_migration_priority       => 2
+                                     ,i_app_id                   => i_app_id);
+        pipe row(l_migration);
+      end loop;
     end if;
-  
-    for c in (select complexity
-                    ,count(1) amount_of_pages
-              from av_page_complexity_v p
-              where p.application_id = i_app_id
-              group by complexity)
-    loop
-      l_counter   := l_counter + 1;
-      l_migration := av_migration_t(i_apex_version             => c_latest_version
-                                   ,i_rn_type                  => av_migration_pkg.c_migration_type_generally
-                                   ,i_rn_chapter_no            => '0.2.' || l_counter
-                                   ,i_rn_chapter_name          => 'Migration Effort for Page adjustments'
-                                   ,i_rn_chapter_text          => null
-                                   ,i_rn_chapter_link          => null
-                                   ,i_check_integrated         => 0
-                                   ,i_check_needed             => 0
-                                   ,i_attribute_value          => c.amount_of_pages || ' ' || c.complexity || ' pages.'
-                                   ,i_migration_effort_in_days => c.amount_of_pages * case c.complexity
-                                                                    when c_complexity_simple then
-                                                                     l_effort_simple
-                                                                    when c_complexity_normal then
-                                                                     l_effort_normal
-                                                                    when c_complexity_complex then
-                                                                     l_effort_complex
-                                                                    when c_complexity_very_complex then
-                                                                     l_effort_very_complex
-                                                                  end
-                                   ,i_migration_priority       => 2
-                                   ,i_app_id                   => i_app_id);
-      pipe row(l_migration);
-    end loop;
   
     return;
   end ptf_effort_page_complexity;
 
   function ptf_effort_calculation
   (
-    i_app_id       in number
-   ,i_apex_version in varchar2 default null
+    i_app_id               in number
+   ,i_apex_versions        in varchar2 default null
+   ,i_migration_priorities in varchar2 default null
   ) return av_migrations_t
     pipelined is
   begin
     -- General
     for p in (select *
-              from av_migration_pkg.ptf_effort_general_app_settings(i_app_id => i_app_id))
+              from av_migration_pkg.ptf_effort_general_app_settings(i_app_id               => i_app_id
+                                                                   ,i_migration_priorities => i_migration_priorities))
     loop
       pipe row(av_migration_t(i_apex_version             => p.apex_version
                              ,i_rn_type                  => p.rn_type
@@ -246,7 +333,8 @@ create or replace package body av_migration_pkg is
     end loop;
   
     for p in (select *
-              from av_migration_pkg.ptf_effort_page_complexity(i_app_id => i_app_id))
+              from av_migration_pkg.ptf_effort_page_complexity(i_app_id               => i_app_id
+                                                              ,i_migration_priorities => i_migration_priorities))
     loop
       pipe row(av_migration_t(i_apex_version             => p.apex_version
                              ,i_rn_type                  => p.rn_type
@@ -273,11 +361,13 @@ create or replace package body av_migration_pkg is
     end loop;
   
     -- APEX 22.1
-    if i_apex_version is null or
-       i_apex_version = av_migration_22_1_pkg.c_apex_version
+    if i_apex_versions is null or
+       instr(i_apex_versions
+            ,av_migration_22_1_pkg.c_apex_version) > 0
     then
       for p in (select *
-                from av_migration_22_1_pkg.ptf_des_8_1_1(i_app_id => i_app_id))
+                from av_migration_22_1_pkg.ptf_des_8_1_1(i_app_id               => i_app_id
+                                                        ,i_migration_priorities => i_migration_priorities))
       loop
         pipe row(av_migration_t(i_apex_version             => p.apex_version
                                ,i_rn_type                  => p.rn_type
@@ -304,7 +394,8 @@ create or replace package body av_migration_pkg is
       end loop;
     
       for p in (select *
-                from av_migration_22_1_pkg.ptf_des_8_1_2(i_app_id => i_app_id))
+                from av_migration_22_1_pkg.ptf_des_8_1_2(i_app_id               => i_app_id
+                                                        ,i_migration_priorities => i_migration_priorities))
       loop
         pipe row(av_migration_t(i_apex_version             => p.apex_version
                                ,i_rn_type                  => p.rn_type
@@ -331,7 +422,8 @@ create or replace package body av_migration_pkg is
       end loop;
     
       for p in (select *
-                from av_migration_22_1_pkg.ptf_des_8_1_4(i_app_id => i_app_id))
+                from av_migration_22_1_pkg.ptf_des_8_1_4(i_app_id               => i_app_id
+                                                        ,i_migration_priorities => i_migration_priorities))
       loop
         pipe row(av_migration_t(i_apex_version             => p.apex_version
                                ,i_rn_type                  => p.rn_type
@@ -358,7 +450,8 @@ create or replace package body av_migration_pkg is
       end loop;
     
       for p in (select *
-                from av_migration_22_1_pkg.ptf_des_8_1_6(i_app_id => i_app_id))
+                from av_migration_22_1_pkg.ptf_des_8_1_6(i_app_id               => i_app_id
+                                                        ,i_migration_priorities => i_migration_priorities))
       loop
         pipe row(av_migration_t(i_apex_version             => p.apex_version
                                ,i_rn_type                  => p.rn_type
@@ -385,7 +478,8 @@ create or replace package body av_migration_pkg is
       end loop;
     
       for p in (select *
-                from av_migration_22_1_pkg.ptf_des_8_1_7(i_app_id => i_app_id))
+                from av_migration_22_1_pkg.ptf_des_8_1_7(i_app_id               => i_app_id
+                                                        ,i_migration_priorities => i_migration_priorities))
       loop
         pipe row(av_migration_t(i_apex_version             => p.apex_version
                                ,i_rn_type                  => p.rn_type
@@ -412,7 +506,8 @@ create or replace package body av_migration_pkg is
       end loop;
     
       for p in (select *
-                from av_migration_22_1_pkg.ptf_des_8_1_13(i_app_id => i_app_id))
+                from av_migration_22_1_pkg.ptf_des_8_1_13(i_app_id               => i_app_id
+                                                         ,i_migration_priorities => i_migration_priorities))
       loop
         pipe row(av_migration_t(i_apex_version             => p.apex_version
                                ,i_rn_type                  => p.rn_type
