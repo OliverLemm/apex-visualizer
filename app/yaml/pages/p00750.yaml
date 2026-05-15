@@ -22,7 +22,7 @@ navigation:
 security: 
   authentication: Page Requires Authentication
   deep-linking: Application Default
-  page-access-protection: Arguments Must Have Checksum
+  page-access-protection: Unrestricted
   form-auto-complete: Off
   browser-cache: Application Default
 

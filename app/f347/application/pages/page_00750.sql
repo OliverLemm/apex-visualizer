@@ -19,7 +19,6 @@ wwv_flow_imp_page.create_page(
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
-,p_protection_level=>'C'
 ,p_page_component_map=>'03'
 );
 wwv_flow_imp_page.create_page_plug(

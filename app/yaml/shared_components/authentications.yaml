@@ -19,6 +19,23 @@
   real-application-security: 
     ras-mode: Disabled
 
+- # ====== Authentication: Builder Extension Sign-In ===========
+  id: 71866764314578670
+  identification: 
+    name: Builder Extension Sign-In
+
+  subscription: 
+    version-number: 131001767
+
+  settings: 
+    type: Internal Application Extension
+
+  login-processing: 
+    switch-in-session: false
+
+  real-application-security: 
+    ras-mode: Disabled
+
 - # ====== Authentication: No Authentication ===================
   id: 472901281969347805
   identification: 

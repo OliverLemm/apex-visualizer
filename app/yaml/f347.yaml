@@ -31,7 +31,7 @@ advanced:
 
 authentication: 
   public-user: APEX_PUBLIC_USER
-  authentication-scheme: APEX # 59278300412934962
+  authentication-scheme: Builder Extension Sign-In # 71866764314578670
 
 authorization: 
   source-for-role-or-group-schemes: Authentication Scheme
@@ -112,7 +112,7 @@ attributes:
   auto-dismiss-success-messages: false
 
 subscription: 
-  version-number: 130982047
+  version-number: 131030906
 
 component-settings: 
 - # ====== Component Setting: NATIVE_SELECT_MANY ===============

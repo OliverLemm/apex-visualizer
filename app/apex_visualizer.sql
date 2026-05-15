@@ -51,7 +51,7 @@ prompt APPLICATION 347 - APEX Visualizer
 --         Breadcrumbs:            1
 --           Entries:             11
 --       Security:
---         Authentication:         2
+--         Authentication:         3
 --       User Interface:
 --         Themes:                 1
 --         Templates:
@@ -93,7 +93,7 @@ wwv_imp_workspace.create_flow(
 ,p_flow_language_derived_from=>'FLOW_PRIMARY_LANGUAGE'
 ,p_direction_right_to_left=>'N'
 ,p_flow_image_prefix => nvl(wwv_flow_application_install.get_image_prefix,'')
-,p_authentication_id=>wwv_flow_imp.id(59278300412934962)
+,p_authentication_id=>wwv_flow_imp.id(71866764314578670)
 ,p_populate_roles=>'A'
 ,p_application_tab_set=>1
 ,p_logo_type=>'T'
@@ -116,7 +116,7 @@ wwv_imp_workspace.create_flow(
 ,p_tokenize_row_search=>'N'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>14
-,p_version_scn=>130982047
+,p_version_scn=>131030906
 ,p_print_server_type=>'INSTANCE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'N'
@@ -4667,6 +4667,18 @@ wwv_flow_imp_shared.create_authentication(
 ,p_use_secure_cookie_yn=>'N'
 ,p_ras_mode=>0
 ,p_version_scn=>1
+);
+end;
+/
+prompt --application/shared_components/security/authentications/builder_extension_sign_in
+begin
+wwv_flow_imp_shared.create_authentication(
+ p_id=>wwv_flow_imp.id(71866764314578670)
+,p_name=>'Builder Extension Sign-In'
+,p_scheme_type=>'NATIVE_EXTENSION'
+,p_use_secure_cookie_yn=>'N'
+,p_ras_mode=>0
+,p_version_scn=>131001767
 );
 end;
 /
@@ -14678,16 +14690,8 @@ wwv_flow_imp_page.create_page_button(
 ,p_button_is_hot=>'Y'
 ,p_button_image_alt=>'Refresh'
 ,p_button_position=>'HELP'
-,p_button_alignment=>'RIGHT'
 ,p_button_execute_validations=>'N'
 ,p_warn_on_unsaved_changes=>null
-,p_button_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select le.entry_text',
-'from apex_application_list_entries le',
-'where le.application_id = :APP_ID',
-'and le.list_name = ''Desktop Navigation Menu''',
-'and le.parent_entry_text = ''Migration'''))
-,p_button_condition_type=>'EXISTS'
 ,p_icon_css_classes=>'fa-refresh'
 );
 wwv_flow_imp_page.create_page_item(
@@ -29753,7 +29757,6 @@ wwv_flow_imp_page.create_page(
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
-,p_protection_level=>'C'
 ,p_page_component_map=>'03'
 );
 wwv_flow_imp_page.create_page_plug(

@@ -41,6 +41,7 @@ prompt --install
 @@application/shared_components/globalization/dyntranslations.sql
 @@application/shared_components/user_interface/shortcuts/delete_confirm_msg.sql
 @@application/shared_components/security/authentications/apex.sql
+@@application/shared_components/security/authentications/builder_extension_sign_in.sql
 @@application/shared_components/security/authentications/no_authentication.sql
 @@application/shared_components/plugins/region_type/net_gobrechts_d3_force.sql
 @@application/user_interfaces/combined_files.sql

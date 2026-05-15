@@ -61,16 +61,8 @@ wwv_flow_imp_page.create_page_button(
 ,p_button_is_hot=>'Y'
 ,p_button_image_alt=>'Refresh'
 ,p_button_position=>'HELP'
-,p_button_alignment=>'RIGHT'
 ,p_button_execute_validations=>'N'
 ,p_warn_on_unsaved_changes=>null
-,p_button_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select le.entry_text',
-'from apex_application_list_entries le',
-'where le.application_id = :APP_ID',
-'and le.list_name = ''Desktop Navigation Menu''',
-'and le.parent_entry_text = ''Migration'''))
-,p_button_condition_type=>'EXISTS'
 ,p_icon_css_classes=>'fa-refresh'
 );
 wwv_flow_imp_page.create_page_item(
