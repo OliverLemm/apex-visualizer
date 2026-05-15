@@ -39,6 +39,7 @@ May 2026
 - Migration checks for APEX 24.1 added.
 
 ## Release 23.2.1
+1st of january 2024<br>
 - Page Applications (10) - Region Applications is by default expanded<br>
 - Page Applications (10) - Report Applications changed from Interactive Grid to Interactive Report<br>
 - Page Applications (10) - Report Applications headlines adjusted<br>
@@ -46,71 +47,90 @@ May 2026
 - Wording from Apex to APEX changed in several Pages.
 
 ## Release 23.2
+3rd of december 2023<br>
 - APEX Visualizer migrated to APEX 23.2<br>
 - Check for correct Universal Theme version fixed.
 
 ## Release 23.1.2
+3rd of december 2023<br>
 - Migration checks for APEX 23.2 added.<br>
 - Dark Theme added.<br>
 - Page Applications reworked.
 
 ## Release 23.1.1
+15th of october 2023<br>
 - Check for correct Universal Theme version fixed.<br>
 - Check for unused plugins fixed.<br>
 - Migrated to APEX 23.1.5.
 
 ## Release 23.1
+9th of august 2023<br>
 - APEX Visualizer itself migrated to APEX 23.1.
 
 ## Release 22.2.1
+9th of august 2023<br>
 - Migration checks for APEX 23.1 have been added.
 
 ## Release 22.2
+12th of november 2022<br>
 - Migrated to APEX 22.2.<br>
 - Solved a bug on the QA page when multiple themes are related to one application.
 
 ## Release 22.1.2
+12th of august 2022<br>
 - Migrated to APEX 22.1.7.<br>
 - Added checks for desupported and deprecated features for APEX 22.2.
 
 ## Release 22.1.1
+12th of august 2022<br>
 - Solving some Bugs for Pages CSS and JavaScript regarding charts and grouping issues.
 
 ## Release 22.1
+5th of august 2022<br>
 - APEX Visualizer has been migrated to APEX 22.1. ZIP, yaml and json exports have also been added to the repository.
 
 ## Release 21.2.5
+5th of august 2022<br>
 - The APEX 22.1 Migration Page with major Deprecated and Desupported Checks has been added. This version is the last version of APEX Visualizer for APEX 21.2. Next versions will need APEX 22.1 or higher.
 
 ## Release 21.2.4
+12th of december 2021<br>
 - The APEX 20.1 Migration Page with major Deprecated and Desupported Checks has been added.
 
 ## Release 21.2.3
+12th of december 2021<br>
 - On the new APEX 21.2 Migration Page Region Positions Above and Below added for the Check "5.1.2 Deprecated Region Positions". 
 
 ## Release 21.2.2
+10th of december 2021<br>
 - On the new APEX 21.2 Migration Page more sources to find Legacy Substitution Strings added and minor tweaks regarding clob strings.
 
 ## Release 21.2.1
+9th of december 2021<br>
 - On the new APEX 21.2 Migration Page more sources to find Legacy Substitution Strings and a Refresh Button has been added.
 - Deinstallation Script added.
 
 ## Release 21.2
+24th of november 2021<br>
 - The Application is migrated to APEX 21.2.
 - The new Page Migration with Subpage APEX 21.2 has been added for migration support.
 
 ## Release 2.0
+28th of september 2021<br>
 - The Application is migrated to APEX 21.1.
 - Plugins, Links and QA are added as new Features.
 - Page Designer Links are added to JavaScript, CSS and PL/SQL.
 
 ## Release 1.3
+29th of january 2021<br>
 - All views are using now union all if possible.
 
 ## Release 1.2
+29th of january 2021<br>
 - Page views are renamed. Every view must start with av_
 
 ## Release 1.1
+25th of january 2021<br>
 - The Application is migrated to APEX 20.2.  
 - D3 Bubble Charts are removed because of incompatibility. The integrated Bubble Charts are used now.  
 - The main views are reworked to use union all instead of union. All views now contain columns which support clob or varchar2 for the code.
