@@ -95,6 +95,10 @@ prompt --install
 @@application/deployment/install/install_av_page_complexity_v.sql
 @@application/deployment/install/install_av_p0600_tabs_v.sql
 @@application/deployment/install/install_av_page_links_nav_static_v.sql
+@@application/deployment/install/install_av_migration_pkg.sql
+@@application/deployment/install/install_av_migration_19_2_pkg.sql
+@@application/deployment/install/install_av_migration_20_2_pkg.sql
+@@application/deployment/install/install_av_migration_22_1_pkg.sql
 @@application/deployment/checks.sql
 @@application/deployment/buildoptions.sql
 @@application/end_environment.sql

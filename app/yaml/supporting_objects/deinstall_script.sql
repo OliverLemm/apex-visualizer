@@ -17,3 +17,7 @@ drop view av_p0708_legacy_subst_strings_v;
 drop view av_visibility_overview_v;
 drop view av_visibility_v;
 drop package av_general_pkg;
+drop package av_migration_pkg;
+drop package av_migration_19_2_pkg;
+drop package av_migration_20_2_pkg;
+drop package av_migration_22_1_pkg;
