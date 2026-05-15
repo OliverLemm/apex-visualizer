@@ -43,7 +43,7 @@
     name: MIGRATION_PRIORITY
 
   subscription: 
-    version-number: 130665454
+    version-number: 130962365
 
   source: 
     location: Local Database
@@ -56,11 +56,39 @@
       select '3 - recommed' d, 3 r from dual
       union all
       select '4 - best practices' d, 4 r from dual
+      union all
+      select '5 - information' d, 5 r from dual
 
   column-mapping: 
     return: R
     display: D
     default-sort: D
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: MIGRATION_TYPES =====================
+  id: 71849559973810135
+  identification: 
+    name: MIGRATION_TYPES
+
+  subscription: 
+    version-number: 130951161
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select 'generally' d, 'generally' r, 1 sort_by from dual
+      union all
+      select 'new feature' d, 'new feature' r, 2 sort_by from dual
+      union all
+      select 'deprecated' d, 'deprecated' r, 3 sort_by from dual
+      union all
+      select 'desupported' d, 'desupported' r, 4 sort_by from dual
+
+  column-mapping: 
+    return: R
+    display: D
+    default-sort: SORT_BY
     sort-direction: Ascending (Nulls Last)
 
 - # ====== List of Values: COMPONENTS (CHART) ==================

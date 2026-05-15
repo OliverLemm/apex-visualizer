@@ -77,7 +77,7 @@ create or replace package body av_migration_22_1_pkg is
                 and application_id = i_app_id)
       loop
         l_migration := av_migration_t(i_apex_version             => c_apex_version
-                                     ,i_rn_type                  => av_migration_pkg.c_migration_type_generally
+                                     ,i_rn_type                  => av_migration_pkg.c_migration_type_desupported
                                      ,i_rn_chapter_no            => '8.1.1'
                                      ,i_rn_chapter_name          => 'Desupported Page Positions'
                                      ,i_rn_chapter_text          => 'The following page positions are desupported and display as Legacy in Page Designer: Body 1, Body 2, Body 3, After Header, Before Footer'

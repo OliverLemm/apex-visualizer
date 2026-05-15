@@ -19,6 +19,14 @@ navigation:
   cursor-focus: Do not focus cursor
   warn-on-unsaved-changes: false
 
+css: 
+  inline: |
+    td[headers=MIGRATION_PRIORITY],
+    td[headers=RN_CHAPTER_NAME]
+    {
+      white-space: nowrap;
+    }
+
 security: 
   authentication: Page Requires Authentication
   deep-linking: Application Default
@@ -95,6 +103,7 @@ regions:
       ,rn_type
       ,rn_chapter_no
       ,rn_chapter_name
+      ,rn_chapter_text
       ,migration_priority
       ,count(1) amount_of_objects
       ,round(sum(migration_effort_in_days)
@@ -106,9 +115,10 @@ regions:
                 ,rn_type
                 ,rn_chapter_no
                 ,rn_chapter_name
+                ,rn_chapter_text
                 ,migration_priority
         order by migration_priority
-                ,replace(rn_chapter_no,',','')
+                ,replace(rn_chapter_no,'.','')
                 ,rn_type
                 ,apex_version
                 
@@ -165,12 +175,11 @@ regions:
       - t-Report--rowHighlight
 
     pagination: 
-      type: Row Ranges X to Y (with next and previous links)
-      display-position: Bottom - Right
+      type: No Pagination (Show All Rows)
       partial-page-refresh: true
 
     performance: 
-      lazy-loading: false
+      lazy-loading: true
 
     break-formatting: 
       break-columns: First Column
@@ -402,6 +411,38 @@ regions:
     layout: 
       sequence: 70
       column-alignment: end
+
+    accessibility: 
+      value-identifies-row: false
+
+    sorting: 
+      sortable: false
+
+    export-/-printing: 
+      include-in-export-/-print: true
+
+    advanced: 
+      compute-sum: false
+
+    ui-defaults-reference: 
+      table-owner: Parsing Schema
+
+    security: 
+      escape-special-characters: true
+
+  - # ====== Column: RN_CHAPTER_TEXT =============================
+    id: 71037713658110919
+    identification: 
+      column-name: RN_CHAPTER_TEXT
+      type: Plain Text
+
+    heading: 
+      heading: Description
+      alignment: start
+
+    layout: 
+      sequence: 60
+      column-alignment: start
 
     accessibility: 
       value-identifies-row: false

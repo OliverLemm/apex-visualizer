@@ -18,11 +18,11 @@ create or replace type av_migration_t force as object
   migration_priority       number, -- 1 (critical / must), 2 (important / should), 3 (recommed), 4 (optional / best practices)
   app_id                   number,
   page_id                  number,
-  page_name                varchar2(100 char),
-  component_name           varchar2(100 char),
-  component_type           varchar2(100 char), -- region,item,dynamic action,page process
-  region_name              varchar2(100 char),
-  item_name                varchar2(100 char),
+  page_name                varchar2(200 char),
+  component_name           varchar2(200 char),
+  component_type           varchar2(200 char), -- Page, Region, Item, Dynamic Action, Page Process
+  region_name              varchar2(200 char),
+  item_name                varchar2(200 char),
   item_label               varchar2(200 char),
   js_code_vc2              varchar2(4000),
   plsql_code_vc2           varchar2(4000),
@@ -40,7 +40,7 @@ create or replace type av_migration_t force as object
    ,i_check_integrated         in number
    ,i_check_needed             in number
    ,i_attribute_value          in varchar2
-   ,i_migration_effort_in_days in number default 0
+   ,i_migration_effort_in_days in number
    ,i_migration_priority       in number
    ,i_app_id                   number
   ) return self as result,
@@ -54,7 +54,7 @@ create or replace type av_migration_t force as object
    ,i_rn_chapter_text          in varchar2
    ,i_rn_chapter_link          in varchar2
    ,i_attribute_value          in varchar2
-   ,i_migration_effort_in_days in number default 0
+   ,i_migration_effort_in_days in number
    ,i_migration_priority       in number
    ,i_app_id                   in number
    ,i_page_id                  in number
@@ -105,7 +105,7 @@ create or replace type body av_migration_t is
    ,i_check_integrated         in number
    ,i_check_needed             in number
    ,i_attribute_value          in varchar2
-   ,i_migration_effort_in_days in number default 0
+   ,i_migration_effort_in_days in number
    ,i_migration_priority       in number
    ,i_app_id                   in number
   ) return self as result is
@@ -135,7 +135,7 @@ create or replace type body av_migration_t is
    ,i_rn_chapter_text          in varchar2
    ,i_rn_chapter_link          in varchar2
    ,i_attribute_value          in varchar2
-   ,i_migration_effort_in_days in number default 0
+   ,i_migration_effort_in_days in number
    ,i_migration_priority       in number
    ,i_app_id                   in number
    ,i_page_id                  in number

@@ -4,6 +4,14 @@ https://raw.githubusercontent.com/OliverLemm/apex-visualizer/master/manifest.jso
 inside your internal APEX workspace. <br>
 Go Manage Instance => Instance Setting => Application Gallery and add a new line.
 
+## Release 24.2.2
+May 2026
+- added new Page Migration Details
+- added new Page Migration Effort
+- added Builder Extension Support
+- Friendly URLs are default
+- Dark Theme is Default
+
 ## Release 24.2.1
 12th of january 2026<br>
 - Count of plugin references added #8<br>

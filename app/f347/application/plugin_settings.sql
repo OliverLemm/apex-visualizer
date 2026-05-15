@@ -112,9 +112,11 @@ wwv_flow_imp_shared.create_plugin_setting(
 ,p_plugin=>'NATIVE_YES_NO'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'display_style', 'SWITCH',
-  'off_value', 'N',
-  'on_value', 'Y')).to_clob
-,p_version_scn=>1
+  'off_label', 'No',
+  'off_value', '0',
+  'on_label', 'Yes',
+  'on_value', '1')).to_clob
+,p_version_scn=>130967726
 );
 wwv_flow_imp_shared.create_plugin_setting(
  p_id=>wwv_flow_imp.id(472848707984347627)

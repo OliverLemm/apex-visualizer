@@ -16,6 +16,7 @@ select
 ,rn_type
 ,rn_chapter_no
 ,rn_chapter_name
+,rn_chapter_text
 ,migration_priority
 ,count(1) amount_of_objects
 ,round(sum(migration_effort_in_days)
@@ -27,9 +28,10 @@ from av_migration_pkg.ptf_effort_calculation(i_app_id               => :P0_APP_I
           ,rn_type
           ,rn_chapter_no
           ,rn_chapter_name
+          ,rn_chapter_text
           ,migration_priority
   order by migration_priority
-          ,replace(rn_chapter_no,',','')
+          ,replace(rn_chapter_no,'.','')
           ,rn_type
           ,apex_version;
 

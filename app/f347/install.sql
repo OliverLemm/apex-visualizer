@@ -24,6 +24,7 @@ prompt --install
 @@application/shared_components/user_interface/lovs/components_chart.sql
 @@application/shared_components/user_interface/lovs/login_remember_username.sql
 @@application/shared_components/user_interface/lovs/migration_priority.sql
+@@application/shared_components/user_interface/lovs/migration_types.sql
 @@application/shared_components/user_interface/lovs/pages.sql
 @@application/pages/page_groups.sql
 @@application/shared_components/navigation/breadcrumbs/breadcrumb.sql
