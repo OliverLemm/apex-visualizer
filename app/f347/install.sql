@@ -77,6 +77,9 @@ prompt --install
 @@application/pages/page_00750.sql
 @@application/pages/page_00760.sql
 @@application/deployment/definition.sql
+@@application/deployment/install/install_av_migration_t.sql
+@@application/deployment/install/install_av_migrations_t.sql
+@@application/deployment/install/install_av_varchar2_t.sql
 @@application/deployment/install/install_av_general_pkg.sql
 @@application/deployment/install/install_av_applications_v.sql
 @@application/deployment/install/install_av_components_v.sql
@@ -100,6 +103,7 @@ prompt --install
 @@application/deployment/install/install_av_migration_19_2_pkg.sql
 @@application/deployment/install/install_av_migration_20_2_pkg.sql
 @@application/deployment/install/install_av_migration_22_1_pkg.sql
+@@application/deployment/install/install_av_varchar2s_t.sql
 @@application/deployment/checks.sql
 @@application/deployment/buildoptions.sql
 @@application/end_environment.sql

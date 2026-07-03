@@ -95,6 +95,38 @@
   execution: 
     sequence: 230
 
+- # ====== Install Script: av_migration_t ======================
+  id: 79834337897826639
+  identification: 
+    name: av_migration_t
+
+  execution: 
+    sequence: 1
+
+- # ====== Install Script: av_migrations_t =====================
+  id: 79835089642831925
+  identification: 
+    name: av_migrations_t
+
+  execution: 
+    sequence: 2
+
+- # ====== Install Script: av_varchar2_t =======================
+  id: 79835755351834600
+  identification: 
+    name: av_varchar2_t
+
+  execution: 
+    sequence: 3
+
+- # ====== Install Script: av_varchar2s_t ======================
+  id: 79836285417835971
+  identification: 
+    name: av_varchar2s_t
+
+  execution: 
+    sequence: 240
+
 - # ====== Install Script: av_applications_v ===================
   id: 164062689573034752
   identification: 
