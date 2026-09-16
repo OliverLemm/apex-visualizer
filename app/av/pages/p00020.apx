@@ -1,0 +1,1006 @@
+page 20 (
+    name: Pages
+    title: Pages
+    appearance {
+        pageTemplate: @/right-side-column
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+        warnOnUnsavedChanges: false
+    }
+    security {
+        formAutoComplete: false
+    }
+
+    region chart (
+        name: Chart
+        type: chart
+        layout {
+            sequence: 20
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            htmlDomId: vertical
+            regionDisplaySelector: true
+        }
+        config {
+            buildOption: @deactivated
+        }
+        chart {
+            type: polar
+        }
+        dataCursor {
+            dimOnHover: false
+        }
+        legend {
+            title: legend
+        }
+
+        series branches (
+            name: branches
+            execution {
+                sequence: 70
+            }
+            source {
+                type: sqlQuery
+                sqlQuery:
+                    ```sql
+                    select aap.page_name
+                          ,aap.branches
+                    from apex_application_pages aap
+                    where (aap.application_id = :P0_APP_ID or :P0_APP_ID is null)
+                    and (aap.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
+                    ```
+                pageItemsToSubmit: [
+                    P0_APP_ID
+                    P0_PAGE_ID
+                ]
+            }
+            columnMapping {
+                label: PAGE_NAME
+            }
+        )
+
+        series buttons (
+            name: buttons
+            execution {
+                sequence: 30
+            }
+            source {
+                type: sqlQuery
+                sqlQuery:
+                    ```sql
+                    select aap.page_name
+                          ,aap.buttons
+                    from apex_application_pages aap
+                    where (aap.application_id = :P0_APP_ID or :P0_APP_ID is null)
+                    and (aap.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
+                    ```
+                pageItemsToSubmit: [
+                    P0_APP_ID
+                    P0_PAGE_ID
+                ]
+            }
+            columnMapping {
+                label: PAGE_NAME
+                value: BUTTONS
+            }
+        )
+
+        series computations (
+            name: computations
+            execution {
+                sequence: 40
+            }
+            source {
+                type: sqlQuery
+                sqlQuery:
+                    ```sql
+                    select aap.page_name
+                          ,aap.Computations
+                    from apex_application_pages aap
+                    where (aap.application_id = :P0_APP_ID or :P0_APP_ID is null)
+                    and (aap.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
+                    ```
+                pageItemsToSubmit: [
+                    P0_APP_ID
+                    P0_PAGE_ID
+                ]
+            }
+            columnMapping {
+                label: PAGE_NAME
+                value: COMPUTATIONS
+            }
+        )
+
+        series dynamic-actions (
+            name: dynamic actions
+            execution {
+                sequence: 90
+            }
+            source {
+                type: sqlQuery
+                sqlQuery:
+                    ```sql
+                    select aap.page_name
+                          ,count(aap.page_id) dynamic_actions
+                    from apex_application_page_da aap
+                    where (aap.application_id = :P0_APP_ID or :P0_APP_ID is null)
+                    and (aap.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
+                    group by application_id, page_id, page_name
+                    ```
+                pageItemsToSubmit: [
+                    P0_APP_ID
+                    P0_PAGE_ID
+                ]
+            }
+            columnMapping {
+                label: PAGE_NAME
+                value: DYNAMIC_ACTIONS
+            }
+        )
+
+        series items (
+            name: items
+            execution {
+                sequence: 20
+            }
+            source {
+                type: sqlQuery
+                sqlQuery:
+                    ```sql
+                    select aap.page_name
+                          ,aap.items
+                    from apex_application_pages aap
+                    where (aap.application_id = :P0_APP_ID or :P0_APP_ID is null)
+                    and (aap.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
+                    ```
+                pageItemsToSubmit: [
+                    P0_APP_ID
+                    P0_PAGE_ID
+                ]
+            }
+            columnMapping {
+                label: PAGE_NAME
+                value: ITEMS
+            }
+            advanced {
+                javaScriptStaticId: items
+            }
+        )
+
+        series processes (
+            name: processes
+            execution {
+                sequence: 60
+            }
+            source {
+                type: sqlQuery
+                sqlQuery:
+                    ```sql
+                    select aap.page_name
+                          ,aap.processes
+                    from apex_application_pages aap
+                    where (aap.application_id = :P0_APP_ID or :P0_APP_ID is null)
+                    and (aap.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
+                    ```
+                pageItemsToSubmit: [
+                    P0_APP_ID
+                    P0_PAGE_ID
+                ]
+            }
+            columnMapping {
+                label: PAGE_NAME
+                value: PROCESSES
+            }
+        )
+
+        series regions (
+            name: regions
+            execution {
+                sequence: 10
+            }
+            source {
+                type: sqlQuery
+                sqlQuery:
+                    ```sql
+                    select 
+                    aap.page_name,
+                    aap.regions
+                    from apex_application_pages aap
+                    where (aap.application_id = :P0_APP_ID or :P0_APP_ID is null)
+                    and (aap.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
+                    ```
+                pageItemsToSubmit: [
+                    P0_APP_ID
+                    P0_PAGE_ID
+                ]
+            }
+            columnMapping {
+                label: PAGE_NAME
+                value: REGIONS
+            }
+            advanced {
+                javaScriptStaticId: regions
+            }
+        )
+
+        series validations (
+            name: validations
+            execution {
+                sequence: 50
+            }
+            source {
+                type: sqlQuery
+                sqlQuery:
+                    ```sql
+                    select aap.page_name
+                          ,aap.validations
+                    from apex_application_pages aap
+                    where (aap.application_id = :P0_APP_ID or :P0_APP_ID is null)
+                    and (aap.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
+                    ```
+                pageItemsToSubmit: [
+                    P0_APP_ID
+                    P0_PAGE_ID
+                ]
+            }
+            columnMapping {
+                label: PAGE_NAME
+                value: VALIDATIONS
+            }
+        )
+
+        axis x (
+            name: x
+            minorTicks {
+                show: false
+            }
+        )
+
+        axis y (
+            name: y
+            minorTicks {
+                show: false
+            }
+        )
+
+    )
+
+    region components-overall (
+        name: Components Overall
+        type: chart
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select application_name, t.component, sum(t.amount) amount
+                from Av_COMPONENTS_V t 
+                where t.application_id = :P0_APP_ID or :P0_APP_ID is null
+                group by application_name, t.component
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 40
+            slot: body
+            startNewRow: false
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            htmlDomId: overall
+            regionDisplaySelector: true
+        }
+        chartAppearance {
+            stack: true
+        }
+        dataCursor {
+            dimOnHover: false
+        }
+        legend {
+            position: bottom
+        }
+
+        series components-overall (
+            name: Components Overall
+            execution {
+                sequence: 10
+            }
+            source {
+                location: regionSource
+            }
+            columnMapping {
+                seriesName: APPLICATION_NAME
+                label: COMPONENT
+                value: AMOUNT
+            }
+            label {
+                show: true
+            }
+        )
+
+        axis x (
+            name: x
+            minorTicks {
+                show: false
+            }
+        )
+
+        axis y (
+            name: y
+            minorTicks {
+                show: false
+            }
+        )
+
+    )
+
+    region components-per-page (
+        name: Components per Page
+        type: chart
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select t.page
+                      ,t.component
+                      ,t.amount
+                from av_components_v t
+                where (application_id = :P0_APP_ID or :P0_APP_ID is null)
+                and (page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
+                and (component = :P0_COMPONENT or :P0_COMPONENT is null)
+                and t.amount > 0
+                ```
+            pageItemsToSubmit: [
+                P0_APP_ID
+                P0_PAGE_ID
+                P0_COMPONENT
+            ]
+        }
+        layout {
+            sequence: 50
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            htmlDomId: horizontal
+            regionDisplaySelector: true
+        }
+        chart {
+            type: combination
+        }
+        dataCursor {
+            dimOnHover: false
+        }
+        legend {
+            position: bottom
+        }
+
+        series average-components-over-all-pages (
+            name: Average Components over all Pages
+            type: line
+            execution {
+                sequence: 20
+            }
+            source {
+                type: sqlQuery
+                sqlQuery:
+                    ```sql
+                    select t.component
+                          ,avg(t.amount) amount
+                    from av_components_v t
+                    where (t.application_id = :P0_APP_ID or :P0_APP_ID is null)
+                    and (:P0_COMPONENT is null or component = :P0_COMPONENT)
+                    group by component
+                    
+                    
+                    ```
+                pageItemsToSubmit: [
+                    P0_APP_ID
+                    P0_COMPONENT
+                ]
+            }
+            columnMapping {
+                label: COMPONENT
+                value: AMOUNT
+            }
+            appearance {
+                color: #FF00FF
+            }
+            line {
+                type: centeredStepped
+            }
+            marker {
+                show: false
+            }
+            config {
+                buildOption: @deactivated
+            }
+        )
+
+        series pages (
+            name: Pages
+            execution {
+                sequence: 10
+            }
+            source {
+                location: regionSource
+            }
+            columnMapping {
+                seriesName: PAGE
+                label: COMPONENT
+                value: AMOUNT
+            }
+            link {
+                type: redirectThisApp
+                target: {
+                    page: 30
+                    items: {
+                        P0_APP_ID: &APP_ID.
+                        P0_PAGE_ID: &APP_PAGE_ID.
+                    }
+                    action: resetPagination
+                }
+            }
+            label {
+                show: true
+            }
+        )
+
+        axis x (
+            name: x
+            minorTicks {
+                show: false
+            }
+        )
+
+        axis y (
+            name: y
+            minorTicks {
+                show: false
+            }
+        )
+
+    )
+
+    region number-of-components-per-page (
+        name: Number of Components per Page
+        type: chart
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select page_name, sum(amount) amount
+                from av_components_v
+                where :P0_APP_ID = application_id or :P0_APP_ID is null
+                group by page_name
+                order by 2 desc
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 30
+            slot: body
+            columnSpan: 4
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        chart {
+            type: pie
+        }
+        dataCursor {
+            dimOnHover: false
+        }
+        settings {
+            pieSelectionEffect: highlightAndExplode
+        }
+
+        series pages (
+            name: Pages
+            execution {
+                sequence: 10
+            }
+            source {
+                location: regionSource
+            }
+            columnMapping {
+                label: PAGE_NAME
+                value: AMOUNT
+            }
+            link {
+                type: redirectThisApp
+                target: {
+                    page: 30
+                    items: {
+                        P0_PAGE_ID: &P0_PAGE_ID.
+                    }
+                    action: resetPagination
+                }
+            }
+            label {
+                show: true
+                displayAs: percentage
+            }
+        )
+
+    )
+
+    region pages (
+        name: Pages
+        type: interactiveReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select aap.application_id
+                      ,aap.application_name
+                      ,aap.page_id
+                      ,aap.page_name
+                      ,aap.page_mode
+                      ,aap.page_alias
+                      ,aap.page_function
+                      ,aap.page_group
+                      ,aap.page_template
+                      ,aap.created_by
+                      ,aap.created_on
+                      ,aap.last_updated_by
+                      ,aap.last_updated_on
+                      ,aap.reload_on_submit
+                      ,aap.warn_on_unsaved_changes
+                from apex_application_pages aap
+                where (aap.application_id = :P0_APP_ID or :P0_APP_ID is null)
+                and (:P0_PAGE_ID is null or aap.page_id = :P0_PAGE_ID)
+                ```
+            pageItemsToSubmit: [
+                P0_APP_ID
+                P0_PAGE_ID
+            ]
+        }
+        layout {
+            sequence: 10
+            slot: body
+        }
+        appearance {
+            template: @/interactive-report
+            templateOptions: #DEFAULT#
+        }
+        advanced {
+            htmlDomId: details
+            regionDisplaySelector: true
+        }
+        pagination {
+            type: rowRangesXToY
+        }
+        searchBar {
+            rowsPerPageSelector: true
+        }
+        actionsMenu {
+            savePublicReport: true
+        }
+        componentAdvanced {
+            maxRowsPerPageInSelector: 10
+        }
+        advanced {
+            savedReportMappingIdentifier: 37286981320264611
+        }
+
+        column APPLICATION_ID (
+            type: plainText
+            heading {
+                heading: Application Id
+                alignment: end
+            }
+            layout {
+                sequence: 10
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: A
+            }
+        )
+
+        column APPLICATION_NAME (
+            type: plainText
+            heading {
+                heading: Application Name
+            }
+            layout {
+                sequence: 20
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: B
+            }
+        )
+
+        column CREATED_BY (
+            type: plainText
+            heading {
+                heading: Created By
+            }
+            layout {
+                sequence: 100
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: J
+            }
+        )
+
+        column CREATED_ON (
+            type: plainText
+            heading {
+                heading: Created On
+            }
+            layout {
+                sequence: 110
+            }
+            source {
+                dataType: DATE
+            }
+            advanced {
+                endUserAlias: K
+            }
+        )
+
+        column LAST_UPDATED_BY (
+            type: plainText
+            heading {
+                heading: Last Updated By
+            }
+            layout {
+                sequence: 120
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: L
+            }
+        )
+
+        column LAST_UPDATED_ON (
+            type: plainText
+            heading {
+                heading: Last Updated On
+            }
+            layout {
+                sequence: 130
+            }
+            source {
+                dataType: DATE
+            }
+            advanced {
+                endUserAlias: M
+            }
+        )
+
+        column PAGE_ALIAS (
+            type: plainText
+            heading {
+                heading: Alias
+            }
+            layout {
+                sequence: 60
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: F
+            }
+        )
+
+        column PAGE_FUNCTION (
+            type: plainText
+            heading {
+                heading: Function
+            }
+            layout {
+                sequence: 70
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: G
+            }
+        )
+
+        column PAGE_GROUP (
+            type: plainText
+            heading {
+                heading: Page Group
+            }
+            layout {
+                sequence: 80
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: H
+            }
+        )
+
+        column PAGE_ID (
+            type: plainText
+            heading {
+                heading: Page
+                alignment: end
+            }
+            layout {
+                sequence: 30
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: C
+            }
+        )
+
+        column PAGE_MODE (
+            type: plainText
+            heading {
+                heading: Mode
+            }
+            layout {
+                sequence: 50
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: E
+            }
+        )
+
+        column PAGE_NAME (
+            type: plainText
+            heading {
+                heading: Name
+            }
+            layout {
+                sequence: 40
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: D
+            }
+        )
+
+        column PAGE_TEMPLATE (
+            type: plainText
+            heading {
+                heading: Template
+            }
+            layout {
+                sequence: 90
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: I
+            }
+        )
+
+        column RELOAD_ON_SUBMIT (
+            type: plainText
+            heading {
+                heading: Reload On Submit
+            }
+            layout {
+                sequence: 140
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: N
+            }
+        )
+
+        column WARN_ON_UNSAVED_CHANGES (
+            type: plainText
+            heading {
+                heading: Warn On Unsaved Changes
+            }
+            layout {
+                sequence: 150
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: O
+            }
+        )
+
+        page {
+            borderWidth: 0.5
+            borderColor: #666666
+        }
+        pageHeader {
+            pageHeaderText: Pages
+        }
+
+        savedReport 206792 (
+            visibility: primaryDefault
+            view {
+                rowsPerPage: 50
+            }
+
+            displayColumn APPLICATION_ID (
+                sequence: 1
+            )
+
+            displayColumn APPLICATION_NAME (
+                sequence: 2
+            )
+
+            displayColumn CREATED_BY (
+                sequence: 10
+            )
+
+            displayColumn CREATED_ON (
+                sequence: 11
+            )
+
+            displayColumn LAST_UPDATED_BY (
+                sequence: 12
+            )
+
+            displayColumn LAST_UPDATED_ON (
+                sequence: 13
+            )
+
+            displayColumn PAGE_ALIAS (
+                sequence: 6
+            )
+
+            displayColumn PAGE_FUNCTION (
+                sequence: 7
+            )
+
+            displayColumn PAGE_GROUP (
+                sequence: 8
+            )
+
+            displayColumn PAGE_ID (
+                sequence: 3
+            )
+
+            displayColumn PAGE_MODE (
+                sequence: 5
+            )
+
+            displayColumn PAGE_NAME (
+                sequence: 4
+            )
+
+            displayColumn PAGE_TEMPLATE (
+                sequence: 9
+            )
+
+            displayColumn RELOAD_ON_SUBMIT (
+                sequence: 14
+            )
+
+            displayColumn WARN_ON_UNSAVED_CHANGES (
+                sequence: 15
+            )
+
+        )
+
+    )
+
+    dynamicAction change-p0-items (
+        name: change P0_ITEMS
+        execution {
+            sequence: 10
+        }
+        when {
+            selectionType: items
+            items: [
+                P0_APP_ID
+                P0_PAGE_ID
+                P0_COMPONENT
+            ]
+        }
+
+        action native-refresh (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @pages
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-2 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @components-overall
+            }
+            execution {
+                sequence: 30
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-3 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @components-per-page
+            }
+            execution {
+                sequence: 40
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-4 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @number-of-components-per-page
+            }
+            execution {
+                sequence: 20
+                fireOnInit: false
+            }
+        )
+
+    )
+
+)
+

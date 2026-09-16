@@ -1,0 +1,797 @@
+page 10 (
+    name: Applications
+    title: Applications
+    appearance {
+        pageTemplate: @/right-side-column
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+        warnOnUnsavedChanges: false
+    }
+    security {
+        formAutoComplete: false
+    }
+
+    region applicatons (
+        name: Applicatons
+        type: interactiveReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select aa.application_id app_id
+                      ,aa.application_name app_name
+                      ,aa.alias
+                      ,aa.owner
+                      ,aa.version
+                      ,(select count(1) from apex_application_pages p1 where p1.application_id = aa.application_id) pages_overall
+                      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'simple') simple_pages
+                      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'normal') normal_pages
+                      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'complex') complex_pages
+                      ,(select count(1) from av_page_complexity_v c1 where c1.application_id = aa.application_id and complexity = 'very complex') very_complex_pages
+                from apex_applications aa
+                where aa.application_id = :P0_APP_ID
+                or :P0_APP_ID is null
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 20
+            slot: body
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                js-useLocalStorage
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            htmlDomId: details
+            regionDisplaySelector: true
+        }
+        pagination {
+            type: rowRangesXToY
+        }
+        performance {
+            maxRowsToProcess: 1000000
+        }
+        searchBar {
+            rowsPerPageSelector: true
+        }
+        actionsMenu {
+            savePublicReport: true
+        }
+        advanced {
+            savedReportMappingIdentifier: 37290759188264649
+        }
+
+        column ALIAS (
+            type: plainText
+            heading {
+                heading: Alias
+            }
+            layout {
+                sequence: 30
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: C
+            }
+        )
+
+        column APP_ID (
+            type: plainText
+            heading {
+                heading: App Id
+                alignment: end
+            }
+            layout {
+                sequence: 10
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: A
+            }
+        )
+
+        column APP_NAME (
+            type: plainText
+            heading {
+                heading: App Name
+            }
+            layout {
+                sequence: 20
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: B
+            }
+        )
+
+        column COMPLEX_PAGES (
+            type: plainText
+            heading {
+                heading: Complex Pages<br>(50-100 objects)
+            }
+            layout {
+                sequence: 90
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: I
+            }
+        )
+
+        column NORMAL_PAGES (
+            type: plainText
+            heading {
+                heading: Normal Pages<br>(15-50 objects)
+            }
+            layout {
+                sequence: 80
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: H
+            }
+        )
+
+        column OWNER (
+            type: plainText
+            heading {
+                heading: Owner
+            }
+            layout {
+                sequence: 40
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: D
+            }
+        )
+
+        column PAGES_OVERALL (
+            type: plainText
+            heading {
+                heading: Pages Overall
+            }
+            layout {
+                sequence: 60
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: F
+            }
+        )
+
+        column SIMPLE_PAGES (
+            type: plainText
+            heading {
+                heading: Simple Pages<br>(less than 15 objects)
+            }
+            layout {
+                sequence: 70
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: G
+            }
+        )
+
+        column VERSION (
+            type: plainText
+            heading {
+                heading: Version
+            }
+            layout {
+                sequence: 50
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: E
+            }
+        )
+
+        column VERY_COMPLEX_PAGES (
+            type: plainText
+            heading {
+                heading: Very Complex Pages<br>(100 and more objects)
+            }
+            layout {
+                sequence: 100
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: J
+            }
+        )
+
+        page {
+            borderWidth: 0.5
+            borderColor: #666666
+        }
+        pageHeader {
+            pageHeaderText: Applicatons
+        }
+
+        savedReport 102037 (
+            visibility: primaryDefault
+            view {
+                rowsPerPage: 5
+            }
+
+            displayColumn ALIAS (
+                sequence: 3
+            )
+
+            displayColumn APP_ID (
+                sequence: 1
+            )
+
+            displayColumn APP_NAME (
+                sequence: 2
+            )
+
+            displayColumn COMPLEX_PAGES (
+                sequence: 9
+            )
+
+            displayColumn NORMAL_PAGES (
+                sequence: 8
+            )
+
+            displayColumn OWNER (
+                sequence: 4
+            )
+
+            displayColumn PAGES_OVERALL (
+                sequence: 6
+            )
+
+            displayColumn SIMPLE_PAGES (
+                sequence: 7
+            )
+
+            displayColumn VERSION (
+                sequence: 5
+            )
+
+            displayColumn VERY_COMPLEX_PAGES (
+                sequence: 10
+            )
+
+            sort (
+                column: APP_NAME
+                sort {
+                    sequence: 1
+                }
+            )
+
+        )
+
+    )
+
+    region code-complexity-characters-by-app-and-type (
+        name: Code Complexity (characters by app and type)
+        type: chart
+        source {
+            pageItemsToSubmit: [
+                P0_APP_ID
+                P10_COMPLEXITY_CATEGORY
+            ]
+        }
+        layout {
+            sequence: 40
+            slot: body
+            startNewRow: false
+            column: 7
+            columnSpan: 6
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        dataCursor {
+            dimOnHover: false
+        }
+        animation {
+            onDisplay: zoom
+        }
+        legend {
+            position: bottom
+        }
+
+        series css (
+            name: CSS
+            execution {
+                sequence: 10
+            }
+            source {
+                type: sqlQuery
+                sqlQuery:
+                    ```sql
+                    select APPLICATION_ID,
+                           APPLICATION_NAME,
+                           sum(CSS_CODE_LENGTH) code_length
+                      from AV_CSS_V
+                     where (application_id = :P0_APP_ID or :P0_APP_ID is null)
+                    and ('css' = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
+                    group by application_id, application_name
+                    ```
+                pageItemsToSubmit: [
+                    P0_APP_ID
+                    P10_COMPLEXITY_CATEGORY
+                ]
+            }
+            columnMapping {
+                label: APPLICATION_NAME
+                value: CODE_LENGTH
+            }
+            label {
+                show: true
+            }
+        )
+
+        series javascript (
+            name: JavaScript
+            execution {
+                sequence: 20
+            }
+            source {
+                type: sqlQuery
+                sqlQuery:
+                    ```sql
+                    select APPLICATION_ID,
+                           APPLICATION_NAME,
+                           sum(JS_CODE_LENGTH) code_length
+                      from AV_JAVASCRIPT_V
+                     where (application_id = :P0_APP_ID or :P0_APP_ID is null)
+                    and ('javascript' = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
+                    group by application_id, application_name
+                    ```
+                pageItemsToSubmit: [
+                    P0_APP_ID
+                    P10_COMPLEXITY_CATEGORY
+                ]
+            }
+            columnMapping {
+                label: APPLICATION_NAME
+                value: CODE_LENGTH
+            }
+            label {
+                show: true
+            }
+        )
+
+        series pl-sql (
+            name: PL/SQL
+            execution {
+                sequence: 40
+            }
+            source {
+                type: sqlQuery
+                sqlQuery:
+                    ```sql
+                    select APPLICATION_ID,
+                           APPLICATION_NAME,
+                           sum(CODE_LENGTH) code_length
+                      from AV_PLSQL_V
+                     where (application_id = :P0_APP_ID or :P0_APP_ID is null)
+                    and ('css' = lower(:P10_COMPLEXITY_CATEGORY) or :P10_COMPLEXITY_CATEGORY is null)
+                    group by application_id, application_name
+                    ```
+                pageItemsToSubmit: [
+                    P0_APP_ID
+                    P10_COMPLEXITY_CATEGORY
+                ]
+            }
+            columnMapping {
+                label: APPLICATION_NAME
+                value: CODE_LENGTH
+            }
+            label {
+                show: true
+            }
+        )
+
+        axis x (
+            name: x
+            minorTicks {
+                show: false
+            }
+        )
+
+        axis y (
+            name: y
+            value {
+                format: decimal
+                decimalPlaces: 0
+                formatScaling: thousand
+            }
+            minorTicks {
+                show: false
+            }
+        )
+
+    )
+
+    region page-functions (
+        name: Page Functions
+        type: chart
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select application_name app
+                      ,page_function
+                      ,count(page_id) amount
+                from av_applications_v
+                where application_id = :P0_APP_ID or :P0_APP_ID is null
+                group by application_name , page_function
+                order by count(page_id) desc
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 50
+            slot: body
+            startNewRow: false
+            column: 7
+            columnSpan: 6
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        chart {
+            type: pie
+        }
+        dataCursor {
+            dimOnHover: false
+        }
+        value {
+            format: decimal
+            decimalPlaces: 0
+        }
+
+        series applications (
+            name: Applications
+            execution {
+                sequence: 10
+            }
+            source {
+                location: regionSource
+            }
+            columnMapping {
+                seriesName: APP
+                label: PAGE_FUNCTION
+                value: AMOUNT
+            }
+            label {
+                show: true
+                position: outsideSlice
+                displayAs: value
+            }
+        )
+
+    )
+
+    region shared-components (
+        name: Shared Components
+        type: chart
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select * from (
+                    select aa.application_name, aa.application_id, 'Tabs' series_name ,aa.tabs series_value from apex_applications aa
+                    union
+                    select aa.application_name, aa.application_id, 'Application Items' series_name ,aa.application_items series_value from apex_applications aa
+                    union
+                    select aa.application_name, aa.application_id, 'Application Processes' series_name ,aa.application_processes series_value from apex_applications aa
+                    union
+                    select aa.application_name, aa.application_id, 'Application Computations' series_name ,aa.application_computations series_value from apex_applications aa
+                    union
+                    select aa.application_name, aa.application_id, 'Shortcuts' series_name ,aa.shortcuts series_value from apex_applications aa
+                    union
+                    select aa.application_name, aa.application_id, 'Web Services' series_name ,aa.web_services series_value from apex_applications aa
+                    union
+                    select aa.application_name, aa.application_id, 'Trees' series_name ,aa.trees series_value from apex_applications aa
+                    union
+                    select aa.application_name, aa.application_id, 'Build Options' series_name ,aa.build_options series_value from apex_applications aa
+                    union
+                    select aa.application_name, aa.application_id, 'Breadcrumbs' series_name ,aa.Breadcrumbs series_value from apex_applications aa
+                    union
+                    select aa.application_name, aa.application_id, 'Navbar Entries' series_name ,aa.nav_bar_entries series_value from apex_applications aa
+                    union
+                    select aa.application_name, aa.application_id, 'Lists' series_name ,aa.lists series_value from apex_applications aa
+                    union
+                    select aa.application_name, aa.application_id, 'List of Values' series_name ,aa.lists_of_values series_value from apex_applications aa)
+                where (application_id = :P0_APP_ID or :P0_APP_ID is null)
+                and (lower(series_name) = :P0_COMPONENT or :P0_COMPONENT is null)
+                ```
+            pageItemsToSubmit: [
+                P0_APP_ID
+                P0_COMPONENT
+            ]
+        }
+        layout {
+            sequence: 30
+            slot: body
+            column: 1
+            columnSpan: 6
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        chartAppearance {
+            orientation: horizontal
+        }
+        chartLayout {
+            height: 600
+        }
+        dataCursor {
+            dimOnHover: false
+        }
+        animation {
+            onDisplay: zoom
+        }
+
+        series applications (
+            name: Applications
+            execution {
+                sequence: 10
+            }
+            source {
+                location: regionSource
+            }
+            columnMapping {
+                seriesName: APPLICATION_NAME
+                label: SERIES_NAME
+                value: SERIES_VALUE
+            }
+            label {
+                show: true
+            }
+        )
+
+        axis x (
+            name: x
+            value {
+                scale: log
+            }
+            minorTicks {
+                show: false
+            }
+        )
+
+        axis y (
+            name: y
+            value {
+                format: decimal
+                decimalPlaces: 0
+            }
+            minorTicks {
+                show: false
+            }
+        )
+
+    )
+
+    pageItem P10_COMPLEXITY_CATEGORY (
+        type: selectList
+        label {
+            label: Complexity category
+            alignment: left
+        }
+        lov {
+            type: staticValues
+            staticValues: STATIC:CSS;CSS,JavaScript;JavaScript,Pages;Pages,PL/SQL;PL/SQL
+            displayExtraValues: false
+            nullDisplayValue: all
+        }
+        layout {
+            sequence: 50
+            region: @/filter
+            slot: regionBody
+            alignment: left
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+            height: 1
+        }
+        security {
+            encryptSessionState: false
+        }
+    )
+
+    dynamicAction change-p0-app-id-refresh-charts (
+        name: change P0_APP_ID - refresh charts
+        execution {
+            sequence: 20
+        }
+        when {
+            selectionType: items
+            items: P0_APP_ID
+        }
+
+        action refresh-complexity (
+            name: Refresh Complexity
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @code-complexity-characters-by-app-and-type
+            }
+            execution {
+                sequence: 30
+                fireOnInit: false
+            }
+        )
+
+        action refresh-details (
+            name: Refresh Details
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @applicatons
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+        action refresh-page-functions (
+            name: Refresh Page Functions
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @page-functions
+            }
+            execution {
+                sequence: 40
+                fireOnInit: false
+            }
+        )
+
+        action refresh-shared-components (
+            name: Refresh Shared Components
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @shared-components
+            }
+            execution {
+                sequence: 20
+                fireOnInit: false
+            }
+        )
+
+    )
+
+    dynamicAction change-p0-component-refresh-shared-chart (
+        name: change P0_COMPONENT - refresh shared chart
+        execution {
+            sequence: 60
+        }
+        when {
+            selectionType: items
+            items: P0_COMPONENT
+        }
+
+        action native-refresh (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @shared-components
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+    )
+
+    dynamicAction change-p10-complexity-category (
+        name: change P10_COMPLEXITY_CATEGORY
+        execution {
+            sequence: 70
+        }
+        when {
+            selectionType: items
+            items: P10_COMPLEXITY_CATEGORY
+        }
+
+        action native-refresh (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @code-complexity-characters-by-app-and-type
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+    )
+
+    dynamicAction hide-component (
+        name: hide component
+        execution {
+            sequence: 80
+        }
+        when {
+            event: ready
+        }
+
+        action native-hide (
+            action: hide
+            affectedElements {
+                selectionType: items
+                items: P0_COMPONENT
+            }
+            execution {
+                sequence: 10
+            }
+        )
+
+    )
+
+)
+

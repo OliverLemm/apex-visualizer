@@ -4,32 +4,37 @@ begin
 --     INSTALL: INSTALL-av_p0600_tabs_v
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2024.11.30'
-,p_release=>'24.2.16'
+ p_version_yyyy_mm_dd=>'2026.03.30'
+,p_release=>'26.1.4'
 ,p_default_workspace_id=>100001
 ,p_default_application_id=>347
 ,p_default_id_offset=>20408574139881448
 ,p_default_owner=>'APEX_VISUALIZER'
 );
+wwv_flow_imp.g_varchar2_table := wwv_flow_imp.empty_varchar2_table;
+wwv_flow_imp.g_varchar2_table(1) := '  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0600_TABS_V" ("APPLICATION_ID", "TAB_NAME", "TAB_LAB';
+wwv_flow_imp.g_varchar2_table(2) := 'EL", "PAGES_COUNT", "TAB_PAGE", "TAB_ALSO_CURRENT_FOR_PAGES") AS '||wwv_flow.LF||
+'  select t.application_id'||wwv_flow.LF||
+'      ';
+wwv_flow_imp.g_varchar2_table(3) := ',t.tab_name'||wwv_flow.LF||
+'      ,t.tab_label'||wwv_flow.LF||
+'      ,nvl2(tab_also_current_for_pages'||wwv_flow.LF||
+'           ,(regexp_count(t';
+wwv_flow_imp.g_varchar2_table(4) := 'ab_also_current_for_pages'||wwv_flow.LF||
+'                         ,'','') + 2)'||wwv_flow.LF||
+'           ,1) pages_count'||wwv_flow.LF||
+'      ,t';
+wwv_flow_imp.g_varchar2_table(5) := '.tab_page'||wwv_flow.LF||
+'      ,t.tab_also_current_for_pages'||wwv_flow.LF||
+'from apex_application_tabs t'||wwv_flow.LF||
+'; ';
 wwv_flow_imp_shared.create_install_script(
  p_id=>wwv_flow_imp.id(50059082577434550)
 ,p_install_id=>wwv_flow_imp.id(314927592265159640)
 ,p_name=>'av_p0600_tabs_v'
 ,p_sequence=>180
 ,p_script_type=>'INSTALL'
-,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0600_TABS_V" ("APPLICATION_ID", "TAB_NAME", "TAB_LABEL", "PAGES_COUNT", "TAB_PAGE", "TAB_ALSO_CURRENT_FOR_PAGES") AS ',
-'  select t.application_id',
-'      ,t.tab_name',
-'      ,t.tab_label',
-'      ,nvl2(tab_also_current_for_pages',
-'           ,(regexp_count(tab_also_current_for_pages',
-'                         ,'','') + 2)',
-'           ,1) pages_count',
-'      ,t.tab_page',
-'      ,t.tab_also_current_for_pages',
-'from apex_application_tabs t',
-'; '))
+,p_script_clob=>wwv_flow_imp.varchar2_to_clob(wwv_flow_imp.g_varchar2_table)
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(50059107246434551)

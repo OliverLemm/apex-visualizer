@@ -1,0 +1,117 @@
+lov apex-versions (
+    name: APEX_VERSIONS
+    source {
+        type: sqlQuery
+        sqlQuery: select vc2 d, vc2 r from av_migration_pkg.tf_apex_versions()
+    }
+    columnMapping {
+        return: R
+        display: D
+        defaultSort: D
+    }
+)
+
+lov applications (
+    name: APPLICATIONS
+    source {
+        type: legacySqlQuery
+        sqlQuery:
+            ```sql
+            select aa.application_id || ' - ' || aa.application_name app
+                  ,aa.application_id
+            from apex_applications aa
+            order by aa.application_id
+            ```
+    }
+)
+
+lov components-chart (
+    name: COMPONENTS (CHART)
+    source {
+        type: legacySqlQuery
+        sqlQuery:
+            ```sql
+            select lower(s.items_value_column_name) d, lower(s.items_value_column_name) r
+            from apex_application_page_chart_s s
+            where s.page_id = :APP_PAGE_ID
+            and s.items_value_column_name <> 'AMOUNT'
+            order by 1
+            ```
+    }
+)
+
+lov login-remember-username (
+    name: LOGIN_REMEMBER_USERNAME
+    source {
+        location: staticValues
+    }
+
+    entry y (
+        sequence: 10
+        display: Remember username
+        return: Y
+    )
+
+)
+
+lov migration-priority (
+    name: MIGRATION_PRIORITY
+    source {
+        type: sqlQuery
+        sqlQuery:
+            ```sql
+            select '1 - must' d, 1 r from dual
+            union all
+            select '2 - should' d, 2 r from dual
+            union all
+            select '3 - recommed' d, 3 r from dual
+            union all
+            select '4 - best practices' d, 4 r from dual
+            union all
+            select '5 - information' d, 5 r from dual
+            ```
+    }
+    columnMapping {
+        return: R
+        display: D
+        defaultSort: D
+    }
+)
+
+lov migration-types (
+    name: MIGRATION_TYPES
+    source {
+        type: sqlQuery
+        sqlQuery:
+            ```sql
+            select 'generally' d, 'generally' r, 1 sort_by from dual
+            union all
+            select 'new feature' d, 'new feature' r, 2 sort_by from dual
+            union all
+            select 'deprecated' d, 'deprecated' r, 3 sort_by from dual
+            union all
+            select 'desupported' d, 'desupported' r, 4 sort_by from dual
+            ```
+    }
+    columnMapping {
+        return: R
+        display: D
+        defaultSort: SORT_BY
+    }
+)
+
+lov pages (
+    name: PAGES
+    source {
+        type: legacySqlQuery
+        sqlQuery:
+            ```sql
+            select  page_name || ' (' || page_id || ')' page,
+                   page_id 
+              from apex_application_pages
+            where application_id = :P0_APP_ID
+             order by 1
+            ```
+    }
+)
+

@@ -1,0 +1,432 @@
+page 0 (
+    name: Global Page - Desktop
+    appearance {
+        templateOptions: #DEFAULT#
+    }
+
+    region filter (
+        name: Filter
+        type: staticContent
+        layout {
+            sequence: 10
+            slot: rightColumn
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+                t-Form--labelsAbove
+            ]
+        }
+        advanced {
+            htmlDomId: av-region-right-column
+            regionDisplaySelector: true
+        }
+    )
+
+    pageItem P0_APP_ID (
+        type: selectList
+        label {
+            label: Application
+            alignment: left
+        }
+        lov {
+            type: sharedComponent
+            lov: @applications
+            displayExtraValues: false
+            nullDisplayValue: all
+        }
+        layout {
+            sequence: 40
+            region: @filter
+            slot: regionBody
+            alignment: left
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+            height: 1
+        }
+        default {
+            type: expression
+            plsqlExpression: :APP_ID
+        }
+        security {
+            encryptSessionState: false
+        }
+    )
+
+    pageItem P0_BEST_PRACTICE (
+        type: radioGroup
+        label {
+            label: Filter
+            alignment: left
+        }
+        lov {
+            type: staticValues
+            staticValues: STATIC:best practice;1,donts;0
+            displayExtraValues: false
+            nullDisplayValue: no filter
+            nullReturnValue: -1
+        }
+        layout {
+            sequence: 20
+            region: @filter
+            slot: regionBody
+            alignment: left
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+        }
+        default {
+            type: static
+            staticValue: -1
+        }
+        serverSideCondition {
+            type: currentPageInList
+            pages: [
+                100
+                200
+                300
+            ]
+        }
+        security {
+            encryptSessionState: false
+        }
+        help {
+            helpText:
+                ```html
+                If no filter is selected all components will be calculated.
+                When selecting bad components only data will be used which is not using best practices.
+                When best practices is selected the components with correct data will be show.
+                ```
+        }
+    )
+
+    pageItem P0_COMPONENT (
+        type: selectList
+        label {
+            label: Component
+            alignment: left
+        }
+        lov {
+            type: sharedComponent
+            lov: @components-chart
+            displayExtraValues: false
+            nullDisplayValue: all
+        }
+        layout {
+            sequence: 60
+            region: @filter
+            slot: regionBody
+            alignment: left
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+            height: 1
+        }
+        serverSideCondition {
+            type: currentPageInList
+            pages: [
+                10
+                20
+            ]
+        }
+        security {
+            encryptSessionState: false
+        }
+    )
+
+    pageItem P0_LINK (
+        type: displayOnly
+        label {
+            label: Link
+            alignment: left
+        }
+        layout {
+            sequence: 70
+            region: @filter
+            slot: regionBody
+            alignment: left
+        }
+        appearance {
+            template: @/hidden
+            templateOptions: #DEFAULT#
+        }
+        security {
+            encryptSessionState: false
+        }
+        config {
+            buildOption: @deactivated
+        }
+    )
+
+    pageItem P0_PAGE_DESIGNER_LINK (
+        type: displayOnly
+        label {
+            alignment: left
+        }
+        settings {
+            format: htmlUnsafe
+        }
+        layout {
+            sequence: 80
+            region: @filter
+            slot: regionBody
+            alignment: left
+        }
+        appearance {
+            template: @/hidden
+            templateOptions: #DEFAULT#
+        }
+        serverSideCondition {
+            type: currentPageInList
+            pages: [
+                20
+                30
+                50
+                100
+                200
+                300
+                400
+            ]
+        }
+        security {
+            encryptSessionState: false
+        }
+        config {
+            buildOption: @deactivated
+        }
+    )
+
+    pageItem P0_PAGE_ID (
+        type: selectList
+        label {
+            label: Page
+            alignment: left
+        }
+        lov {
+            type: sharedComponent
+            lov: @pages
+            displayExtraValues: false
+            nullDisplayValue: all
+        }
+        cascadingLov {
+            parentItems: P0_APP_ID
+            itemsToSubmit: P0_APP_ID
+            parentRequired: false
+        }
+        layout {
+            sequence: 50
+            region: @filter
+            slot: regionBody
+            alignment: left
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+            height: 1
+        }
+        serverSideCondition {
+            type: currentPageInList
+            pages: [
+                20
+                30
+                50
+                100
+                200
+                300
+                500
+            ]
+        }
+        security {
+            encryptSessionState: false
+        }
+    )
+
+    button refresh (
+        buttonName: Refresh
+        label: Refresh
+        layout {
+            sequence: 200
+            region: @filter
+            slot: help
+        }
+        appearance {
+            buttonTemplate: @/text-with-icon
+            hot: true
+            templateOptions: [
+                #DEFAULT#
+                t-Button--iconRight
+                t-Button--stretch
+            ]
+            icon: fa-refresh
+        }
+        behavior {
+            action: definedByDynamicAction
+            executeValidations: false
+        }
+        advanced {
+            htmlDomId: P0_BUTTON_REFRESH
+        }
+    )
+
+    button show-details (
+        buttonName: SHOW_DETAILS
+        label: Show Details
+        layout {
+            sequence: 10
+            region: @filter
+            slot: regionBody
+        }
+        appearance {
+            buttonTemplate: @/text-with-icon
+            templateOptions: [
+                #DEFAULT#
+                t-Button--iconRight
+            ]
+            icon: fa-table
+        }
+        behavior {
+            action: definedByDynamicAction
+            executeValidations: false
+        }
+        serverSideCondition {
+            type: currentPage=page
+            page: 10
+        }
+    )
+
+    dynamicAction change-app-id-page-id-set-p0-page-designer-link (
+        name: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK
+        execution {
+            sequence: 20
+        }
+        when {
+            selectionType: items
+            items: [
+                P0_APP_ID
+                P0_PAGE_ID
+            ]
+        }
+        clientSideCondition {
+            type: itemIsNotNull
+            item: P0_PAGE_ID
+        }
+        config {
+            buildOption: @deactivated
+        }
+
+        action native-hide (
+            action: hide
+            affectedElements {
+                selectionType: items
+                items: P0_PAGE_DESIGNER_LINK
+            }
+            execution {
+                sequence: 10
+                fireWhenEventResultIs: false
+            }
+        )
+
+        action native-javascript-code (
+            action: executeJsCode
+            settings {
+                jsCode: $('#P0_LINK_CONTAINER').html(apex.item("P0_PAGE_DESIGNER_LINK").getValue());
+            }
+            affectedElements {
+                selectionType: items
+                items: P0_LINK
+            }
+            execution {
+                sequence: 40
+                fireOnInit: false
+            }
+        )
+
+        action native-set-value (
+            action: setValue
+            settings {
+                type: plsqlExpression
+                plsqlExpression:
+                    ```plsql
+                    av_general_pkg.f_get_page_designer_link(
+                        pi_app_id => :P0_APP_ID,
+                        pi_app_page_id => :P0_PAGE_ID,
+                        pi_open_in_new_page => 1
+                    )
+                    ```
+                itemsToSubmit: [
+                    P0_APP_ID
+                    P0_PAGE_ID
+                ]
+            }
+            affectedElements {
+                selectionType: items
+                items: P0_PAGE_DESIGNER_LINK
+            }
+            execution {
+                sequence: 10
+            }
+        )
+
+        action native-show (
+            action: show
+            affectedElements {
+                selectionType: items
+                items: P0_PAGE_DESIGNER_LINK
+            }
+            execution {
+                sequence: 30
+            }
+        )
+
+    )
+
+    dynamicAction show-details (
+        name: Show Details
+        execution {
+            sequence: 10
+        }
+        when {
+            event: click
+            selectionType: button
+            button: @show-details
+        }
+        clientSideCondition {
+            type: jsExpression
+            javaScriptExpression: $('#details').is(':hidden')
+        }
+
+        action native-hide (
+            action: hide
+            affectedElements {
+                selectionType: jquerySelector
+                jquerySelector: #details
+            }
+            execution {
+                sequence: 10
+                fireWhenEventResultIs: false
+                fireOnInit: false
+            }
+        )
+
+        action native-show (
+            action: show
+            affectedElements {
+                selectionType: jquerySelector
+                jquerySelector: #details
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+    )
+
+)
+

@@ -4,8 +4,8 @@ begin
 --     PAGE: 00720
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2024.11.30'
-,p_release=>'24.2.16'
+ p_version_yyyy_mm_dd=>'2026.03.30'
+,p_release=>'26.1.4'
 ,p_default_workspace_id=>100001
 ,p_default_application_id=>347
 ,p_default_id_offset=>20408574139881448
@@ -18,30 +18,23 @@ wwv_flow_imp_page.create_page(
 ,p_step_title=>'APEX 23.2'
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
+,p_step_template=>2526646919027767344
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_page_component_map=>'03'
 );
 wwv_flow_imp_page.create_page_plug(
- p_id=>wwv_flow_imp.id(93319249707815855)
-,p_plug_name=>'5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/deprecated-features.html" target="_blank">Link to Release Notes</a>'
-,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>4072358936313175081
-,p_plug_display_sequence=>20
-,p_include_in_reg_disp_sel_yn=>'Y'
-,p_location=>null
-,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
-  'expand_shortcuts', 'N',
-  'output_as', 'HTML')).to_clob
-);
-wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(74500158803715128)
 ,p_plug_name=>'5.1 Quick SQL Deprecated Functionality'
+,p_static_id=>'5-1-quick-sql-deprecated-functionality'
 ,p_parent_plug_id=>wwv_flow_imp.id(93319249707815855)
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
+,p_escape_on_http_output=>'N'
 ,p_plug_template=>2664334895415463485
 ,p_plug_display_sequence=>10
 ,p_plug_display_point=>'SUB_REGIONS'
+,p_plug_item_display_point=>'ABOVE'
+,p_plug_query_headings_type=>'COLON_DELMITED_LIST'
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<b>Deprecated Settings</b><br/>',
 'The following Quick SQL settings are deprecated:<br/>',
@@ -60,13 +53,16 @@ wwv_flow_imp_page.create_page_plug(
   'output_as', 'HTML')).to_clob
 );
 wwv_flow_imp_page.create_page_plug(
- p_id=>wwv_flow_imp.id(93320346476815866)
-,p_plug_name=>'7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>'
+ p_id=>wwv_flow_imp.id(93319249707815855)
+,p_plug_name=>'5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/deprecated-features.html" target="_blank">Link to Release Notes</a>'
+,p_static_id=>'5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-23-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_plug_template=>4072358936313175081
-,p_plug_display_sequence=>10
+,p_plug_display_sequence=>20
 ,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_item_display_point=>'ABOVE'
 ,p_location=>null
+,p_plug_query_headings_type=>'COLON_DELMITED_LIST'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'expand_shortcuts', 'N',
   'output_as', 'HTML')).to_clob
@@ -74,13 +70,17 @@ wwv_flow_imp_page.create_page_plug(
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(152997620345461833)
 ,p_plug_name=>'7.1 Desupported Utilities '
+,p_static_id=>'7-1-desupported-utilities'
 ,p_region_name=>'av-region-desupported-71'
 ,p_parent_plug_id=>wwv_flow_imp.id(93320346476815866)
 ,p_region_css_classes=>'av-no-check-needed av-developer-functionality'
 ,p_region_template_options=>'#DEFAULT#:is-collapsed:t-Region--scrollBody'
+,p_escape_on_http_output=>'N'
 ,p_plug_template=>2664334895415463485
 ,p_plug_display_sequence=>10
 ,p_plug_display_point=>'SUB_REGIONS'
+,p_plug_item_display_point=>'ABOVE'
+,p_plug_query_headings_type=>'COLON_DELMITED_LIST'
 ,p_plug_header=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'The APEXExport utility is desupported and is no longer included with Oracle APEX. Oracle recommends using SQLcl to perform export operations.<br>',
 '<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> nothing to change / no check needed</b>'))
@@ -91,6 +91,7 @@ wwv_flow_imp_page.create_page_plug(
 wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(153001002827494677)
 ,p_name=>'7.2 Querying Template Component Metadata'
+,p_static_id=>'7-2-querying-template-component-metadata'
 ,p_region_name=>'av-232-desup-72'
 ,p_parent_plug_id=>wwv_flow_imp.id(93320346476815866)
 ,p_template=>2664334895415463485
@@ -137,6 +138,7 @@ wwv_flow_imp_page.create_report_region(
 'Instead, use the new ATTRIBUTES column that stores a JSON object of all attribute values. Use the attribute''s Static ID as the object key. Note that a table alias is always needed when using the JSON dot notation.'))
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
+,p_fixed_header=>'PAGE'
 ,p_lazy_loading=>true
 ,p_query_row_template=>2538654340625403440
 ,p_query_num_rows=>99999
@@ -183,9 +185,25 @@ wwv_flow_imp_page.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(93320346476815866)
+,p_plug_name=>'7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>'
+,p_static_id=>'7-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-apex-23-2-htmrn-desupported-features-html-target-blank-link-to-release-notes-a'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>4072358936313175081
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_item_display_point=>'ABOVE'
+,p_location=>null
+,p_plug_query_headings_type=>'COLON_DELMITED_LIST'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'expand_shortcuts', 'N',
+  'output_as', 'HTML')).to_clob
+);
 wwv_flow_imp_page.create_page_da_event(
  p_id=>wwv_flow_imp.id(41048249109945079)
 ,p_name=>'change P0_APP_ID - refresh regions'
+,p_static_id=>'change-p0-app-id-refresh-regions'
 ,p_event_sequence=>10
 ,p_triggering_element_type=>'ITEM'
 ,p_triggering_element=>'P0_APP_ID'
@@ -199,12 +217,15 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_event_result=>'TRUE'
 ,p_action_sequence=>10
 ,p_execute_on_page_init=>'N'
+,p_static_id=>'native-javascript-code'
 ,p_action=>'NATIVE_JAVASCRIPT_CODE'
-,p_attribute_01=>'av_refresh_hide_show_regions()'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'js_code', 'av_refresh_hide_show_regions()')).to_clob
 );
 wwv_flow_imp_page.create_page_da_event(
  p_id=>wwv_flow_imp.id(41050035498945082)
 ,p_name=>'click refresh - refresh regions'
+,p_static_id=>'click-refresh-refresh-regions'
 ,p_event_sequence=>20
 ,p_triggering_element_type=>'BUTTON'
 ,p_triggering_button_id=>wwv_flow_imp.id(65476682361019079)
@@ -218,12 +239,15 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_event_result=>'TRUE'
 ,p_action_sequence=>10
 ,p_execute_on_page_init=>'N'
+,p_static_id=>'native-javascript-code'
 ,p_action=>'NATIVE_JAVASCRIPT_CODE'
-,p_attribute_01=>'av_refresh_hide_show_regions()'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'js_code', 'av_refresh_hide_show_regions()')).to_clob
 );
 wwv_flow_imp_page.create_page_da_event(
  p_id=>wwv_flow_imp.id(41049096168945082)
 ,p_name=>'page load - add icons by class'
+,p_static_id=>'page-load-add-icons-by-class'
 ,p_event_sequence=>30
 ,p_bind_type=>'bind'
 ,p_execution_type=>'IMMEDIATE'
@@ -234,13 +258,14 @@ wwv_flow_imp_page.create_page_da_action(
 ,p_event_id=>wwv_flow_imp.id(41049096168945082)
 ,p_event_result=>'TRUE'
 ,p_action_sequence=>10
-,p_execute_on_page_init=>'N'
+,p_static_id=>'native-javascript-code'
 ,p_action=>'NATIVE_JAVASCRIPT_CODE'
 ,p_affected_elements_type=>'JQUERY_SELECTOR'
 ,p_affected_elements=>'.av-no-check-needed,.av-developer-functionality'
-,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'console.log(''running DA'')',
-'console.log(this.affectedElements);'))
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'js_code', wwv_flow_string.join(wwv_flow_t_varchar2(
+    'console.log(''running DA'')',
+    'console.log(this.affectedElements);')))).to_clob
 );
 wwv_flow_imp.component_end;
 end;

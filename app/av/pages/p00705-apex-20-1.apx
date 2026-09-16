@@ -1,0 +1,1183 @@
+page 705 (
+    name: APEX 20.1
+    alias: APEX-20-1
+    title: APEX 20.1
+    appearance {
+        pageTemplate: @/right-side-column
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+        warnOnUnsavedChanges: false
+    }
+    security {
+        pageAccessProtection: argumentsMustHaveChecksum
+        formAutoComplete: false
+    }
+
+    region 6-1-1-deprecated-javascript-functions (
+        name: 6.1.1 Deprecated JavaScript Functions
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select j.page_id
+                      ,j.page_name
+                      ,j.component_name
+                      ,j.component_type
+                      ,j.js_code_vc2
+                from av_javascript_v j
+                where instr(lower(j.js_code_vc2)
+                           ,'apex.theme42.util.mq') > 0
+                and application_id = :P0_APP_ID
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 10
+            parentRegion: @6-1-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-application-express-20-1-htmrn-index-html-htmrn-guid-657ff369-756e-4f31-96f9-b2d92c3de084-target-bank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText: <b>apex.theme42.util.mq => use apex.theme.mq</b> <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/aexjs/apex.theme.html#.mq" target="_blank">APEX 20.1 JS API apex.theme.mq</a>
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no apex.theme42.util.mq used</b>
+        }
+
+        column COMPONENT_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Component Name
+                alignment: center
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column COMPONENT_TYPE (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Component Type
+                alignment: center
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column JS_CODE_VC2 (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Js Code Vc2
+                alignment: center
+            }
+            layout {
+                sequence: 50
+            }
+            columnFormatting {
+                highlightWords: openmodal,closemodal
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: center
+            }
+            layout {
+                sequence: 10
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+                alignment: center
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+    )
+
+    region 6-1-10-apexrefresh-event-is-deprecated (
+        name: 6.1.10 apexrefresh Event is Deprecated
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select j.page_id
+                      ,j.page_name
+                      ,j.component_name
+                      ,j.component_type
+                      ,j.js_code_vc2
+                from av_javascript_v j
+                where regexp_like(j.js_code_vc2
+                                 ,'apex.event.trigger.*apexrefresh'
+                                 ,'i')
+                and j.application_id = :P0_APP_ID
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 60
+            parentRegion: @6-1-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-application-express-20-1-htmrn-index-html-htmrn-guid-657ff369-756e-4f31-96f9-b2d92c3de084-target-bank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText: <b>apex.event.trigger( "#myRegionStaticID", "apexrefresh" ); => apex.region("myRegionStaticID").refresh();</b> <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/aexjs/region.html#refresh" target="_blank">APEX 20.1 JS API apex.region</a>
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no apex.theme42.util.mq used</b>
+        }
+
+        column COMPONENT_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Component Name
+                alignment: center
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column COMPONENT_TYPE (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Component Type
+                alignment: center
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column JS_CODE_VC2 (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Js Code Vc2
+                alignment: center
+            }
+            layout {
+                sequence: 50
+            }
+            columnFormatting {
+                highlightWords: apex.event.trigger
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: center
+            }
+            layout {
+                sequence: 10
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+                alignment: center
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+    )
+
+    region 6-1-14-apex-widget-initpageitem-function-deprecated (
+        name: "6.1.14 apex.widget.initPageItem Function Deprecated "
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select j.page_id
+                      ,j.page_name
+                      ,j.component_name
+                      ,j.component_type
+                      ,j.js_code_vc2
+                from av_javascript_v j
+                where instr(lower(j.js_code_vc2)
+                           ,'apex.widget.initPageItem') > 0
+                and application_id = :P0_APP_ID
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 140
+            parentRegion: @6-1-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-application-express-20-1-htmrn-index-html-htmrn-guid-657ff369-756e-4f31-96f9-b2d92c3de084-target-bank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText: <b>apex.widget.initPageItem => apex.item.create</b> <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/aexjs/apex.item.html#.create" target="_blank">APEX 20.1 JS API apex.item.create</a>
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no apex.widget.initPageItem used</b>
+        }
+
+        column COMPONENT_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Component Name
+                alignment: center
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column COMPONENT_TYPE (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Component Type
+                alignment: center
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column JS_CODE_VC2 (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Js Code Vc2
+                alignment: center
+            }
+            layout {
+                sequence: 50
+            }
+            columnFormatting {
+                highlightWords: apex.widget.initPageItem
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: center
+            }
+            layout {
+                sequence: 10
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+                alignment: center
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+    )
+
+    region 6-1-5-tabular-forms-deprecated (
+        name: "6.1.5 Tabular Forms Deprecated "
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select 
+                 r.page_id
+                ,r.page_name
+                ,r.region_name 
+                from apex_application_page_regions r
+                where r.source_type = 'Tabular Form'
+                and r.application_id = :P0_APP_ID
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 30
+            parentRegion: @6-1-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-application-express-20-1-htmrn-index-html-htmrn-guid-657ff369-756e-4f31-96f9-b2d92c3de084-target-bank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Tabular Forms used</b>
+        }
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: center
+            }
+            layout {
+                sequence: 10
+            }
+            sorting {
+                defaultSequence: 1
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+                alignment: center
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+        column REGION_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Region Name
+                alignment: center
+            }
+            layout {
+                sequence: 30
+            }
+            sorting {
+                defaultSequence: 2
+            }
+        )
+
+    )
+
+    region 6-1-7-theme-style-vista-deprecated-in-universal-theme (
+        name: 6.1.7 Theme Style "Vista" Deprecated in Universal Theme
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select ty.name 
+                from apex_application_theme_styles ty
+                where ty.name = 'Vista'
+                and ty.is_current = 'Yes'
+                and ty.application_id = :P0_APP_ID
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 40
+            parentRegion: @6-1-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-application-express-20-1-htmrn-index-html-htmrn-guid-657ff369-756e-4f31-96f9-b2d92c3de084-target-bank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Vista Theme Style is used</b>
+        }
+
+        column NAME (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Name
+                alignment: center
+            }
+            layout {
+                sequence: 10
+            }
+        )
+
+    )
+
+    region 6-1-8-post-calculation-for-page-items-deprecated (
+        name: "6.1.8 Post Calculation for Page Items Deprecated "
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select p.page_id
+                      ,p.page_name
+                      ,p.region
+                      ,p.item_name
+                from apex_application_page_items p
+                where p.source_post_computation is not null
+                and p.application_id = :P0_APP_ID
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 50
+            parentRegion: @6-1-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-application-express-20-1-htmrn-index-html-htmrn-guid-657ff369-756e-4f31-96f9-b2d92c3de084-target-bank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Post Calculation for Page Items used</b>
+        }
+
+        column ITEM_NAME (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Item Name
+                alignment: center
+            }
+            layout {
+                sequence: 40
+            }
+            sorting {
+                defaultSequence: 3
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: center
+            }
+            layout {
+                sequence: 10
+            }
+            sorting {
+                defaultSequence: 1
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+                alignment: center
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+        column REGION (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Region
+                alignment: center
+            }
+            layout {
+                sequence: 30
+            }
+            sorting {
+                defaultSequence: 2
+            }
+        )
+
+    )
+
+    region 6-1-9-show-hide-all-page-items-on-same-line-attributes-deprecated (
+        name: 6.1.9 Show / Hide All Page Items On Same Line attributes deprecated
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select a.page_id
+                      ,a.page_name
+                      ,a.dynamic_action_name
+                      ,a.action_name
+                from apex_application_page_da_acts a
+                where a.action_name in ('Hide'
+                                       ,'Show')
+                and a.attribute_01 = 'Y'
+                and a.application_id = :P0_APP_ID
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 70
+            parentRegion: @6-1-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-application-express-20-1-htmrn-index-html-htmrn-guid-657ff369-756e-4f31-96f9-b2d92c3de084-target-bank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Show / Hide All Page Items On Same Line attributes used</b>
+        }
+
+        column ACTION_NAME (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Action Name
+                alignment: center
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column DYNAMIC_ACTION_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Dynamic Action Name
+                alignment: center
+            }
+            layout {
+                sequence: 30
+            }
+            sorting {
+                defaultSequence: 2
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: center
+            }
+            layout {
+                sequence: 10
+            }
+            sorting {
+                defaultSequence: 1
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+                alignment: center
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+    )
+
+    region 6-1-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-application-express-20-1-htmrn-index-html-htmrn-guid-657ff369-756e-4f31-96f9-b2d92c3de084-target-bank-link-to-release-notes-a (
+        name: 6.1 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#HTMRN-GUID-657FF369-756E-4F31-96F9-B2D92C3DE084" target="_bank">Link to Release Notes</a>
+        type: staticContent
+        layout {
+            sequence: 30
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+    )
+
+    region 7-1-2-desupported-javascript-functions (
+        name: 7.1.2 Desupported JavaScript Functions
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select j.page_id
+                      ,j.page_name
+                      ,j.component_name
+                      ,j.component_type
+                      ,j.js_code_vc2
+                from av_javascript_v j
+                where (instr(lower(j.js_code_vc2)
+                           ,'openmodal') > 0
+                or instr(lower(j.js_code_vc2)
+                       ,'closemodal') > 0)
+                and application_id = :P0_APP_ID
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 10
+            parentRegion: @7-1-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-application-express-20-1-htmrn-index-html-guid-cc4b5d70-22fd-45ca-8f6f-c34a91f1b5bd-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                <ul>
+                <li><b>openModal('myRegionId');</b> => <b>apex.theme.openRegion('myRegionId');</b> <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/aexjs/apex.theme.html#.openRegion" target="_blank">APEX 20.1 JS API apex.theme.openRegion</a></li>
+                <li><b>closeModal('myRegionId');</b> => <b>apex.theme.closeRegion('myRegionId');</b> <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/aexjs/apex.theme.html#.closeRegion" target="_blank">APEX 20.1 JS API apex.theme.closeRegion</a></li>
+                </ul>
+                ```
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no openModal or closeModal used</b>
+        }
+
+        column COMPONENT_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Component Name
+                alignment: center
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column COMPONENT_TYPE (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Component Type
+                alignment: center
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column JS_CODE_VC2 (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Js Code Vc2
+                alignment: center
+            }
+            layout {
+                sequence: 50
+            }
+            columnFormatting {
+                highlightWords: openmodal,closemodal
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: center
+            }
+            layout {
+                sequence: 10
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+                alignment: center
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+    )
+
+    region 7-1-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-application-express-20-1-htmrn-index-html-guid-cc4b5d70-22fd-45ca-8f6f-c34a91f1b5bd-target-blank-link-to-release-notes-a (
+        name: 7.1 Desupported Features -  <a href="https://docs.oracle.com/en/database/oracle/application-express/20.1/htmrn/index.html#GUID-CC4B5D70-22FD-45CA-8F6F-C34A91F1B5BD" target="_blank">Link to Release Notes</a>
+        type: staticContent
+        layout {
+            sequence: 20
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+    )
+
+    region apex (
+        name: APEX 20.1
+        type: breadcrumb
+        source {
+            breadcrumb: @breadcrumb
+        }
+        layout {
+            sequence: 40
+            slot: breadcrumbBar
+        }
+        appearance {
+            template: @/hero
+            templateOptions: #DEFAULT#
+            icon: fa-wrench
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        componentAppearance {
+            breadcrumbTemplate: @/breadcrumb
+            templateOptions: #DEFAULT#
+        }
+    )
+
+    dynamicAction change-p0-app-id-refresh-regions (
+        name: change P0_APP_ID - refresh regions
+        execution {
+            sequence: 10
+        }
+        when {
+            selectionType: items
+            items: P0_APP_ID
+        }
+
+        action native-refresh (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @7-1-2-desupported-javascript-functions
+            }
+            execution {
+                sequence: 2
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-2 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @6-1-1-deprecated-javascript-functions
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-3 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @6-1-10-apexrefresh-event-is-deprecated
+            }
+            execution {
+                sequence: 100
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-4 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @6-1-5-tabular-forms-deprecated
+            }
+            execution {
+                sequence: 50
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-5 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @6-1-7-theme-style-vista-deprecated-in-universal-theme
+            }
+            execution {
+                sequence: 70
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-6 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @6-1-8-post-calculation-for-page-items-deprecated
+            }
+            execution {
+                sequence: 80
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-7 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @6-1-9-show-hide-all-page-items-on-same-line-attributes-deprecated
+            }
+            execution {
+                sequence: 90
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-8 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @6-1-14-apex-widget-initpageitem-function-deprecated
+            }
+            execution {
+                sequence: 140
+                fireOnInit: false
+            }
+        )
+
+    )
+
+    dynamicAction click-refresh-refresh-regions (
+        name: click refresh - refresh regions
+        execution {
+            sequence: 20
+        }
+        when {
+            event: click
+            selectionType: button
+            button: @/refresh
+        }
+
+        action native-refresh (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @6-1-1-deprecated-javascript-functions
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-2 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @6-1-10-apexrefresh-event-is-deprecated
+            }
+            execution {
+                sequence: 110
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-3 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @6-1-5-tabular-forms-deprecated
+            }
+            execution {
+                sequence: 50
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-4 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @6-1-7-theme-style-vista-deprecated-in-universal-theme
+            }
+            execution {
+                sequence: 70
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-5 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @6-1-8-post-calculation-for-page-items-deprecated
+            }
+            execution {
+                sequence: 80
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-6 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @7-1-2-desupported-javascript-functions
+            }
+            execution {
+                sequence: 2
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-7 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @6-1-9-show-hide-all-page-items-on-same-line-attributes-deprecated
+            }
+            execution {
+                sequence: 90
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-8 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @6-1-14-apex-widget-initpageitem-function-deprecated
+            }
+            execution {
+                sequence: 140
+                fireOnInit: false
+            }
+        )
+
+    )
+
+)
+

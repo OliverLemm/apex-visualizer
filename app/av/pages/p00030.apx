@@ -1,0 +1,608 @@
+page 30 (
+    name: Page
+    title: Page
+    appearance {
+        pageTemplate: @/right-side-column
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+        warnOnUnsavedChanges: false
+    }
+    javaScript {
+        functionAndGlobalVariableDeclaration: var htmldb_delete_message='"DELETE_CONFIRM_MSG"';
+    }
+    security {
+        formAutoComplete: false
+    }
+
+    region page (
+        name: Page
+        type: interactiveGrid
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select aap.application_id
+                      ,aap.application_name
+                      ,aap.page_id
+                      ,aap.page_name
+                      ,aap.page_mode
+                      ,aap.page_alias
+                      ,aap.page_function
+                      ,aap.page_group
+                      ,aap.page_template
+                      ,aap.created_by
+                      ,aap.created_on
+                      ,aap.last_updated_by
+                      ,aap.last_updated_on
+                      ,aap.reload_on_submit
+                      ,aap.warn_on_unsaved_changes
+                from apex_application_pages aap
+                where (aap.application_id = :P0_APP_ID or :P0_APP_ID is null)
+                and (aap.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
+                ```
+            pageItemsToSubmit: [
+                P0_APP_ID
+                P0_PAGE_ID
+            ]
+        }
+        layout {
+            sequence: 10
+            slot: body
+        }
+        appearance {
+            template: @/interactive-report
+            templateOptions: #DEFAULT#
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        componentAppearance {
+            showNullValuesAs: -
+        }
+        pagination {
+            showTotalCount: false
+        }
+        toolbar {
+            show: false
+        }
+        enableUsersTo {
+            download: false
+        }
+        heading {
+            fixedTo: none
+        }
+        advanced {
+            savedReportMappingIdentifier: 161725872973543908
+        }
+
+        savedReport 1256357 (
+            visibility: primary
+            view {
+                default: grid
+            }
+            singleRowView {
+                displayedColumns: true
+            }
+
+            displayColumn (
+                column: @APPLICATION_ID
+                layout {
+                    sequence: 1
+                }
+            )
+
+            displayColumn (
+                column: @APPLICATION_NAME
+                layout {
+                    sequence: 2
+                }
+            )
+
+            displayColumn (
+                column: @PAGE_ID
+                layout {
+                    sequence: 3
+                }
+            )
+
+            displayColumn (
+                column: @PAGE_NAME
+                layout {
+                    sequence: 4
+                }
+            )
+
+            displayColumn (
+                column: @PAGE_MODE
+                layout {
+                    sequence: 5
+                }
+            )
+
+            displayColumn (
+                column: @PAGE_ALIAS
+                layout {
+                    sequence: 6
+                }
+            )
+
+            displayColumn (
+                column: @PAGE_FUNCTION
+                layout {
+                    sequence: 7
+                }
+            )
+
+            displayColumn (
+                column: @PAGE_GROUP
+                layout {
+                    sequence: 8
+                }
+            )
+
+            displayColumn (
+                column: @PAGE_TEMPLATE
+                layout {
+                    sequence: 9
+                }
+            )
+
+            displayColumn (
+                column: @CREATED_BY
+                layout {
+                    sequence: 10
+                }
+            )
+
+            displayColumn (
+                column: @CREATED_ON
+                layout {
+                    sequence: 11
+                }
+            )
+
+            displayColumn (
+                column: @LAST_UPDATED_BY
+                layout {
+                    sequence: 12
+                }
+            )
+
+            displayColumn (
+                column: @LAST_UPDATED_ON
+                layout {
+                    sequence: 13
+                }
+            )
+
+            displayColumn (
+                column: @RELOAD_ON_SUBMIT
+                layout {
+                    sequence: 14
+                }
+            )
+
+            displayColumn (
+                column: @WARN_ON_UNSAVED_CHANGES
+                layout {
+                    sequence: 15
+                }
+            )
+
+        )
+
+        column APPLICATION_ID (
+            type: numberField
+            heading {
+                heading: Application id
+                alignment: end
+            }
+            layout {
+                sequence: 10
+                columnAlignment: end
+            }
+            validation {
+                valueRequired: true
+            }
+            source {
+                databaseColumn: APPLICATION_ID
+                dataType: number
+            }
+            columnFilter {
+                lovType: none
+            }
+        )
+
+        column APPLICATION_NAME (
+            type: textarea
+            heading {
+                heading: Application name
+            }
+            layout {
+                sequence: 20
+            }
+            validation {
+                valueRequired: true
+                maxLength: 255
+            }
+            source {
+                databaseColumn: APPLICATION_NAME
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+                lovType: none
+            }
+            enableUsersTo {
+                sort: false
+            }
+        )
+
+        column CREATED_BY (
+            type: textarea
+            heading {
+                heading: Created by
+            }
+            layout {
+                sequence: 100
+            }
+            validation {
+                maxLength: 255
+            }
+            source {
+                databaseColumn: CREATED_BY
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+                lovType: none
+            }
+            enableUsersTo {
+                sort: false
+            }
+        )
+
+        column CREATED_ON (
+            type: datePicker
+            heading {
+                heading: Created on
+                alignment: center
+            }
+            layout {
+                sequence: 110
+                columnAlignment: center
+            }
+            source {
+                databaseColumn: CREATED_ON
+                dataType: date
+            }
+        )
+
+        column LAST_UPDATED_BY (
+            type: textarea
+            heading {
+                heading: Last updated by
+            }
+            layout {
+                sequence: 120
+            }
+            validation {
+                maxLength: 255
+            }
+            source {
+                databaseColumn: LAST_UPDATED_BY
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+                lovType: none
+            }
+            enableUsersTo {
+                sort: false
+            }
+        )
+
+        column LAST_UPDATED_ON (
+            type: datePicker
+            heading {
+                heading: Last updated on
+                alignment: center
+            }
+            layout {
+                sequence: 130
+                columnAlignment: center
+            }
+            source {
+                databaseColumn: LAST_UPDATED_ON
+                dataType: date
+            }
+        )
+
+        column PAGE_ALIAS (
+            type: textarea
+            heading {
+                heading: Page alias
+            }
+            layout {
+                sequence: 60
+            }
+            validation {
+                maxLength: 255
+            }
+            source {
+                databaseColumn: PAGE_ALIAS
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+                lovType: none
+            }
+            enableUsersTo {
+                sort: false
+            }
+        )
+
+        column PAGE_FUNCTION (
+            type: textField
+            heading {
+                heading: Page function
+            }
+            layout {
+                sequence: 70
+            }
+            validation {
+                maxLength: 15
+            }
+            source {
+                databaseColumn: PAGE_FUNCTION
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+            }
+        )
+
+        column PAGE_GROUP (
+            type: textarea
+            heading {
+                heading: Page group
+            }
+            layout {
+                sequence: 80
+            }
+            validation {
+                maxLength: 255
+            }
+            source {
+                databaseColumn: PAGE_GROUP
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+                lovType: none
+            }
+            enableUsersTo {
+                sort: false
+            }
+        )
+
+        column PAGE_ID (
+            type: numberField
+            heading {
+                heading: Page id
+                alignment: end
+            }
+            layout {
+                sequence: 30
+                columnAlignment: end
+            }
+            validation {
+                valueRequired: true
+            }
+            source {
+                databaseColumn: PAGE_ID
+                dataType: number
+            }
+            columnFilter {
+                lovType: none
+            }
+        )
+
+        column PAGE_MODE (
+            type: textField
+            heading {
+                heading: Page mode
+            }
+            layout {
+                sequence: 50
+            }
+            validation {
+                maxLength: 16
+            }
+            source {
+                databaseColumn: PAGE_MODE
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+            }
+        )
+
+        column PAGE_NAME (
+            type: textarea
+            heading {
+                heading: Page name
+            }
+            layout {
+                sequence: 40
+            }
+            validation {
+                valueRequired: true
+                maxLength: 255
+            }
+            source {
+                databaseColumn: PAGE_NAME
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+                lovType: none
+            }
+            enableUsersTo {
+                sort: false
+            }
+        )
+
+        column PAGE_TEMPLATE (
+            type: textarea
+            heading {
+                heading: Page template
+            }
+            layout {
+                sequence: 90
+            }
+            validation {
+                maxLength: 255
+            }
+            source {
+                databaseColumn: PAGE_TEMPLATE
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+                lovType: none
+            }
+            enableUsersTo {
+                sort: false
+            }
+        )
+
+        column RELOAD_ON_SUBMIT (
+            type: textField
+            heading {
+                heading: Reload on submit
+            }
+            layout {
+                sequence: 140
+            }
+            validation {
+                maxLength: 16
+            }
+            source {
+                databaseColumn: RELOAD_ON_SUBMIT
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+            }
+        )
+
+        column WARN_ON_UNSAVED_CHANGES (
+            type: textField
+            heading {
+                heading: Warn on unsaved changes
+            }
+            layout {
+                sequence: 150
+            }
+            validation {
+                maxLength: 3
+            }
+            source {
+                databaseColumn: WARN_ON_UNSAVED_CHANGES
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+            }
+        )
+
+    )
+
+    dynamicAction change-p0-items (
+        name: change P0_ITEMS
+        execution {
+            sequence: 10
+        }
+        when {
+            selectionType: items
+            items: [
+                P0_APP_ID
+                P0_PAGE_ID
+            ]
+        }
+
+        action native-refresh (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @page
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+    )
+
+)
+

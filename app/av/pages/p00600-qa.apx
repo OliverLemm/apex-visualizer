@@ -1,0 +1,1184 @@
+page 600 (
+    name: QA
+    alias: QA
+    title: QA
+    appearance {
+        pageTemplate: @/right-side-column
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+        warnOnUnsavedChanges: false
+    }
+    security {
+        formAutoComplete: false
+    }
+
+    region general-application-settings (
+        name: general application settings
+        type: staticContent
+        layout {
+            sequence: 10
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+    )
+
+    region legacy-tabs (
+        name: legacy tabs
+        type: classicReport
+        source {
+            location: localDatabase
+            tableName: AV_P0600_TABS_V
+            whereClause: application_id = :P0_APP_ID
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 60
+            slot: body
+            startNewRow: false
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: nextAndPreviousLinks
+            displayPosition: topAndBottomRight
+        }
+
+        column APPLICATION_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            type: hidden
+            layout {
+                sequence: 80
+            }
+            config {
+                buildOption: @hide
+            }
+        )
+
+        column PAGES_COUNT (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Pages Count
+                alignment: end
+            }
+            layout {
+                sequence: 40
+                columnAlignment: end
+            }
+        )
+
+        column TAB_ALSO_CURRENT_FOR_PAGES (
+            reportColumnQueryId: 6
+            derivedColumn: N
+            heading {
+                heading: Tab Also Current For Pages
+            }
+            layout {
+                sequence: 60
+            }
+        )
+
+        column TAB_LABEL (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Tab Label
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column TAB_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Tab Name
+            }
+            layout {
+                sequence: 20
+            }
+            sorting {
+                defaultSequence: 1
+            }
+        )
+
+        column TAB_PAGE (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Tab Page
+                alignment: end
+            }
+            layout {
+                sequence: 50
+                columnAlignment: end
+            }
+        )
+
+    )
+
+    region never-condition-used (
+        name: never condition used
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select v.page_name
+                      ,v.page_id
+                      ,v.component_type
+                      ,v.component_name
+                from av_visibility_v v
+                where v.visibility_category = 'CONDITION'
+                and upper(v.visibility_type) = 'NEVER'
+                and v.application_id = :P0_APP_ID
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 50
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: nextAndPreviousLinks
+            displayPosition: topAndBottomRight
+        }
+
+        column COMPONENT_NAME (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Component Name
+            }
+            layout {
+                sequence: 30
+            }
+            sorting {
+                defaultSequence: 2
+            }
+        )
+
+        column COMPONENT_TYPE (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Component Type
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: end
+            }
+            layout {
+                sequence: 10
+                columnAlignment: end
+            }
+            sorting {
+                defaultSequence: 1
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Name
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+    )
+
+    region unused-authorization-schemes (
+        name: unused authorization schemes
+        type: classicReport
+        source {
+            location: localDatabase
+            tableName: AV_P0600_NOT_USED_AUTH_SCHEMES_V
+            whereClause: application_id = :P0_APP_ID
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 40
+            slot: body
+            startNewRow: false
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: nextAndPreviousLinks
+            displayPosition: topAndBottomRight
+        }
+
+        column APPLICATION_ID (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            type: hidden
+            layout {
+                sequence: 30
+            }
+            config {
+                buildOption: @hide
+            }
+        )
+
+        column AUTHORIZATION_SCHEME_NAME (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Authorization Scheme Name
+            }
+            layout {
+                sequence: 10
+            }
+            sorting {
+                defaultSequence: 1
+            }
+        )
+
+        column SCHEME_TYPE (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Scheme Type
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+    )
+
+    region unused-plugins (
+        name: unused plugins
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select NAME,
+                       DISPLAY_NAME
+                  from AV_PLUGINS_V
+                 where application_id = :P0_APP_ID and
+                page_name is null
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 30
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: nextAndPreviousLinks
+            displayPosition: topAndBottomRight
+        }
+
+        column DISPLAY_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Display Name
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+        column NAME (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Name
+            }
+            layout {
+                sequence: 10
+            }
+            sorting {
+                defaultSequence: 1
+            }
+        )
+
+    )
+
+    pageItem P600_COMPATIBILITY_MODE (
+        type: textField
+        label {
+            label: Compatibility Mode
+            alignment: left
+        }
+        layout {
+            sequence: 20
+            region: @general-application-settings
+            slot: regionBody
+            alignment: left
+            columnSpan: 4
+            labelColumnSpan: 2
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+            width: 30
+        }
+        validation {
+            valueRequired: true
+            maxLength: 4
+        }
+        security {
+            encryptSessionState: false
+        }
+        help {
+            helpText:
+                ```html
+                Compatibility Mode <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/htmrn/changed-behavior.html#GUID-712BE54F-08CD-43A3-A645-87B9360ED516" target="_blank">Releasenotes 24.2</a><br><br>
+                24.2 - APEX supports an extended substitution syntax for text messages.<br>
+                21.2 / 22.1 / 22.2 / 23.1 / 23.2 / 24.1 - all processes ... regardless of errors<br>
+                19.2 / 20.1 / 20.2 / 21.1 - Classic Reports render empty column values ...<br>
+                19.1 - Rich Text editor ... Max Length item<br>
+                5.1 / 18.1 / 18.2 - Ajax-based Dynamic Actions work asynchronous<br>
+                5.0 - WORKSPACE_IMAGES and API logout calls desupported<br>
+                4.2 - Grid Layout, Textarea Max Length, JavaScript<br>
+                4.1 - DML Error Handling<br>
+                Pre 4.1<br>
+                
+                ```
+        }
+    )
+
+    pageItem P600_INCLUDE_JQUERY_MIGRATE (
+        type: textField
+        label {
+            label: Include jQuery Migrate
+            alignment: left
+        }
+        layout {
+            sequence: 80
+            region: @general-application-settings
+            slot: regionBody
+            alignment: left
+            startNewRow: false
+            columnSpan: 4
+            labelColumnSpan: 2
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+            width: 10
+        }
+        security {
+            encryptSessionState: false
+        }
+        help {
+            helpText: Using jQuery Migrate means, to support old deprecated JavaScript Code.
+        }
+    )
+
+    pageItem P600_INCLUDE_LEGACY_JAVASCRIPT (
+        type: textField
+        label {
+            label: Include Legacy Javascript
+            alignment: left
+        }
+        layout {
+            sequence: 70
+            region: @general-application-settings
+            slot: regionBody
+            alignment: left
+            columnSpan: 4
+            labelColumnSpan: 2
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+            width: 30
+        }
+        security {
+            encryptSessionState: false
+        }
+        help {
+            helpText:
+                ```html
+                Supporting legacy JavaScript means always to load more JavaScript as necessary.<br> 
+                This attribute can be found inside your application in the shared components => user interface page in the section "JavaScript". If one of the Checkboxes "Include Deprecated or Desupported Javascript Functions" is switched on it will return Yes.<br>
+                For best performance and up-to-date JS calls switch "Pre 18.1" and "18.x" off.
+                ```
+        }
+    )
+
+    pageItem P600_RUNTIME_API_USAGE (
+        type: textField
+        label {
+            label: Runtime API Usage
+            alignment: left
+        }
+        layout {
+            sequence: 40
+            region: @general-application-settings
+            slot: regionBody
+            alignment: left
+            startNewRow: false
+            columnSpan: 4
+            labelColumnSpan: 2
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+            width: 20
+        }
+        security {
+            encryptSessionState: false
+        }
+        help {
+            helpText:
+                ```html
+                Runtime API Usage should be restricted as much as possible. If you have a standard Application with no custom API calls it should be completely disabled.<br>
+                The setting can be found in the shared components => Security in the section Database session. All Checkboxes should be uncheckd.<br>
+                If you are using API-Calls try to only check the "Modify This Application" Checkbox. 
+                ```
+        }
+    )
+
+    pageItem P600_SESSION_STATE_PROTECTION (
+        type: textField
+        label {
+            label: Session State Protection
+            alignment: left
+        }
+        layout {
+            sequence: 30
+            region: @general-application-settings
+            slot: regionBody
+            alignment: left
+            startNewRow: false
+            columnSpan: 4
+            labelColumnSpan: 2
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+            width: 10
+        }
+        security {
+            encryptSessionState: false
+        }
+        help {
+            helpText: To ensure the safety in your application, activate the Session State protection in your application. Keep in mind if you secure your items they cannot be changed inside JavaScript (Dynamic Actions).
+        }
+    )
+
+    pageItem P600_THEME_NAME (
+        type: textField
+        label {
+            label: Theme Name
+            alignment: left
+        }
+        layout {
+            sequence: 50
+            region: @general-application-settings
+            slot: regionBody
+            alignment: left
+            columnSpan: 4
+            labelColumnSpan: 2
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+            width: 30
+        }
+        security {
+            encryptSessionState: false
+        }
+        help {
+            helpText: If you don't select Universal Theme for your application, not the full functionality is supported.
+        }
+    )
+
+    pageItem P600_THEME_VERSION (
+        type: textField
+        label {
+            label: Theme Version
+            alignment: left
+        }
+        layout {
+            sequence: 60
+            region: @general-application-settings
+            slot: regionBody
+            alignment: left
+            startNewRow: false
+            columnSpan: 4
+            labelColumnSpan: 2
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+            width: 10
+        }
+        security {
+            encryptSessionState: false
+        }
+        help {
+            helpText:
+                ```html
+                If using Universal Theme, this information shows the version compared to the APEX version<br>
+                UT 24.2 = APEX 24.2<br>
+                UT 24.1 = APEX 24.1<br>
+                UT 23.2 = APEX 23.2<br>
+                UT 23.1 = APEX 23.1<br>
+                UT 22.2 = APEX 22.2<br>
+                UT 22.1 = APEX 22.1<br>
+                UT 21.2 = APEX 21.2<br>
+                UT 21.1 = APEX 21.1<br>
+                UT  1.6 = APEX 20.2<br>
+                UT  1.5 = APEX 20.1<br>
+                UT  1.4 = APEX 19.2<br>
+                UT  1.3 = APEX 19.1<br>
+                UT  1.2 = APEX 18.1 / 18.2 (not supported any more)<br>
+                UT  1.1 = APEX 5.1 (not supported any more)<br>
+                UT  1.0 = APEX 5.0 (not supported any more)
+                ```
+        }
+    )
+
+    dynamicAction change-p0-app-id-refresh-regions (
+        name: change P0_APP_ID - refresh regions
+        execution {
+            sequence: 10
+        }
+        when {
+            selectionType: items
+            items: P0_APP_ID
+        }
+
+        action native-execute-plsql-code (
+            action: executeServerSideCode
+            settings {
+                plsqlCode:
+                    ```plsql
+                    av_general_pkg.p_qa_app_settings(
+                      pi_application_id            => :P0_APP_ID
+                     ,po_compatibility_mode        => :P600_COMPATIBILITY_MODE
+                     ,po_session_state_protection  => :P600_SESSION_STATE_PROTECTION
+                     ,po_runtime_api_usage         => :P600_RUNTIME_API_USAGE
+                     ,po_include_legacy_javascript => :P600_INCLUDE_LEGACY_JAVASCRIPT
+                     ,po_include_jquery_migrate    => :P600_INCLUDE_JQUERY_MIGRATE
+                     ,po_theme_name                => :P600_THEME_NAME
+                     ,po_theme_version             => :P600_THEME_VERSION
+                    );
+                    ```
+                itemsToSubmit: [
+                    P0_APP_ID
+                    P600_COMPATIBILITY_MODE
+                    P600_SESSION_STATE_PROTECTION
+                    P600_RUNTIME_API_USAGE
+                    P0_APP_ID
+                    P600_INCLUDE_LEGACY_JAVASCRIPT
+                    P600_INCLUDE_JQUERY_MIGRATE
+                    P600_THEME_NAME
+                    P600_THEME_VERSION
+                ]
+                itemsToReturn: [
+                    P600_COMPATIBILITY_MODE
+                    P600_SESSION_STATE_PROTECTION
+                    P600_RUNTIME_API_USAGE
+                    P600_INCLUDE_LEGACY_JAVASCRIPT
+                    P600_INCLUDE_JQUERY_MIGRATE
+                    P600_THEME_NAME
+                    P600_THEME_VERSION
+                ]
+                showProcessing: true
+            }
+            execution {
+                sequence: 70
+            }
+        )
+
+        action native-refresh (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @unused-plugins
+            }
+            execution {
+                sequence: 30
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-2 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @unused-authorization-schemes
+            }
+            execution {
+                sequence: 40
+                fireOnInit: false
+            }
+        )
+
+        action refresh-region-legacy-tabs (
+            name: refresh - region - legacy tabs
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @legacy-tabs
+            }
+            execution {
+                sequence: 60
+                fireOnInit: false
+            }
+        )
+
+        action refresh-region-never-condition-used (
+            name: refresh - region - never condition used
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @never-condition-used
+            }
+            execution {
+                sequence: 50
+                fireOnInit: false
+            }
+        )
+
+    )
+
+    dynamicAction change-p600-compatibility-mode-setcolor (
+        name: change P600_COMPATIBILITY_MODE - setColor
+        execution {
+            sequence: 30
+        }
+        when {
+            selectionType: items
+            items: P600_COMPATIBILITY_MODE
+        }
+
+        action native-javascript-code (
+            action: executeJsCode
+            settings {
+                jsCode:
+                    ```javascript-browser
+                    var $trigger = $(this.triggeringElement);
+                    var val = apex.item("P600_COMPATIBILITY_MODE").getValue();
+                    
+                    // success - up-to-date => 21.2 / 22.1 / 22.2
+                    if (val == '24.2') {
+                        $trigger.removeClass("u-danger");
+                        $trigger.addClass("u-success");
+                        $trigger.removeClass("u-warning");
+                    
+                    // warning - not up-to-date => only one version before 21.2-24.1
+                    } else if (val == '21.2') {
+                        $trigger.removeClass("u-danger");
+                        $trigger.removeClass("u-success");
+                        $trigger.addClass("u-warning");
+                    
+                    // danger - older than 19.2
+                    } else {
+                        $trigger.addClass("u-danger");
+                        $trigger.removeClass("u-success");
+                        $trigger.removeClass("u-warning");
+                    }
+                    ```
+            }
+            affectedElements {
+                selectionType: items
+                items: P600_COMPATIBILITY_MODE
+            }
+            execution {
+                sequence: 50
+            }
+        )
+
+    )
+
+    dynamicAction change-p600-include-jquery-migrate-setcolorl (
+        name: change P600_INCLUDE_JQUERY_MIGRATE - setColorl
+        execution {
+            sequence: 70
+        }
+        when {
+            selectionType: items
+            items: P600_INCLUDE_JQUERY_MIGRATE
+        }
+
+        action native-javascript-code (
+            action: executeJsCode
+            settings {
+                jsCode:
+                    ```javascript-browser
+                    var $trigger = $(this.triggeringElement);
+                    var val = $trigger.val();
+                    
+                    if (val == 'No') {    
+                        $trigger.addClass("u-success");
+                        $trigger.removeClass("u-danger");
+                    } else {    
+                        $trigger.removeClass("u-success");
+                        $trigger.addClass("u-danger");
+                    }
+                    ```
+            }
+            affectedElements {
+                selectionType: items
+                items: P600_INCLUDE_JQUERY_MIGRATE
+            }
+            execution {
+                sequence: 10
+            }
+        )
+
+    )
+
+    dynamicAction change-p600-include-legacy-javascript-setcolorl (
+        name: change P600_INCLUDE_LEGACY_JAVASCRIPT - setColorl
+        execution {
+            sequence: 60
+        }
+        when {
+            selectionType: items
+            items: P600_INCLUDE_LEGACY_JAVASCRIPT
+        }
+
+        action native-javascript-code (
+            action: executeJsCode
+            settings {
+                jsCode:
+                    ```javascript-browser
+                    var $trigger = $(this.triggeringElement);
+                    var val = $trigger.val();
+                    
+                    if (val == 'No') {    
+                        $trigger.addClass("u-success");
+                        $trigger.removeClass("u-warning");
+                    } else {    
+                        $trigger.removeClass("u-success");
+                        $trigger.addClass("u-warning");
+                    }
+                    ```
+            }
+            affectedElements {
+                selectionType: items
+                items: P600_INCLUDE_LEGACY_JAVASCRIPT
+            }
+            execution {
+                sequence: 10
+            }
+        )
+
+    )
+
+    dynamicAction change-p600-runtime-api-usage-setcolor (
+        name: change P600_RUNTIME_API_USAGE - setColor
+        execution {
+            sequence: 50
+        }
+        when {
+            selectionType: items
+            items: P600_RUNTIME_API_USAGE
+        }
+
+        action native-javascript-code (
+            action: executeJsCode
+            settings {
+                jsCode:
+                    ```javascript-browser
+                    var $trigger = $(this.triggeringElement);
+                    var val = $trigger.val();
+                    
+                    if (val == 'None') {    
+                        $trigger.addClass("u-success");
+                        $trigger.removeClass("u-warning");
+                        $trigger.removeClass("u-danger");
+                    } else if (val == 'This:Other:Workspace') {
+                        $trigger.removeClass("u-success");
+                        $trigger.removeClass("u-warning");
+                        $trigger.addClass("u-danger");
+                    } else {
+                        $trigger.removeClass("u-success");
+                        $trigger.addClass("u-warning");
+                        $trigger.removeClass("u-danger");
+                    }
+                    ```
+            }
+            affectedElements {
+                selectionType: items
+                items: P600_RUNTIME_API_USAGE
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+    )
+
+    dynamicAction change-p600-session-state-protection-setcolor (
+        name: change P600_SESSION_STATE_PROTECTION - setColor
+        execution {
+            sequence: 40
+        }
+        when {
+            selectionType: items
+            items: P600_SESSION_STATE_PROTECTION
+        }
+
+        action native-javascript-code (
+            action: executeJsCode
+            settings {
+                jsCode:
+                    ```javascript-browser
+                    var $trigger = $(this.triggeringElement);
+                    var val = $trigger.val();
+                    
+                    if (val == 'Enabled') {    
+                        $trigger.addClass("u-success");
+                        $trigger.removeClass("u-warning");
+                    } else {    
+                        $trigger.removeClass("u-success");
+                        $trigger.addClass("u-warning");
+                    }
+                    ```
+            }
+            affectedElements {
+                selectionType: items
+                items: P600_SESSION_STATE_PROTECTION
+            }
+            execution {
+                sequence: 10
+            }
+        )
+
+    )
+
+    dynamicAction change-p600-theme-name-setcolor-show-hide-p600-ut-refreshed (
+        name: change P600_THEME_NAME - setColor show/hide P600_UT_REFRESHED
+        execution {
+            sequence: 80
+        }
+        when {
+            selectionType: items
+            items: P600_THEME_NAME
+        }
+
+        action native-hide (
+            action: hide
+            affectedElements {
+                selectionType: items
+                items: P600_THEME_VERSION
+            }
+            execution {
+                sequence: 10
+            }
+            clientSideCondition {
+                type: item!=value
+                item: P600_THEME_NAME
+                value: Universal Theme
+            }
+        )
+
+        action native-javascript-code (
+            action: executeJsCode
+            settings {
+                jsCode:
+                    ```javascript-browser
+                    var $trigger = $(this.triggeringElement);
+                    var val = $trigger.val();
+                    
+                    if (val == 'Universal Theme') {    
+                        $trigger.addClass("u-success");
+                        $trigger.removeClass("u-danger");
+                    } else {    
+                        $trigger.removeClass("u-success");
+                        $trigger.addClass("u-danger");
+                    }
+                    ```
+            }
+            affectedElements {
+                selectionType: items
+                items: P600_THEME_NAME
+            }
+            execution {
+                sequence: 10
+            }
+        )
+
+        action native-show (
+            action: show
+            affectedElements {
+                selectionType: items
+                items: P600_THEME_VERSION
+            }
+            execution {
+                sequence: 20
+            }
+            clientSideCondition {
+                type: item=value
+                item: P600_THEME_NAME
+                value: Universal Theme
+            }
+        )
+
+    )
+
+    dynamicAction change-p600-theme-version-setcolor (
+        name: change P600_THEME_VERSION - setColor
+        execution {
+            sequence: 90
+        }
+        when {
+            selectionType: items
+            items: P600_THEME_VERSION
+        }
+
+        action native-javascript-code (
+            action: executeJsCode
+            settings {
+                jsCode:
+                    ```javascript-browser
+                    var $trigger = $(this.triggeringElement);
+                    var val = $trigger.val();
+                    
+                    // success - up-to-date
+                    if (val == '24.2') {    
+                        $trigger.addClass("u-success");
+                        $trigger.removeClass("u-warning");
+                        $trigger.removeClass("u-danger");
+                    
+                    // danger - old versions which are not supported any more
+                    } else if ((val == '1.0') || (val == '1.1') || (val == '1.2')) {    
+                        $trigger.addClass("u-danger");
+                        $trigger.removeClass("u-success");
+                        $trigger.removeClass("u-warning");   
+                    
+                    // warning - versions not old and not the newest
+                    } else {    
+                        $trigger.addClass("u-warning");
+                        $trigger.removeClass("u-success");    
+                        $trigger.removeClass("u-danger");
+                    }
+                    ```
+            }
+            affectedElements {
+                selectionType: items
+                items: P600_THEME_VERSION
+            }
+            execution {
+                sequence: 10
+            }
+        )
+
+    )
+
+    dynamicAction click-button-refresh-refresh-regions (
+        name: click - button - Refresh - refresh regions
+        execution {
+            sequence: 20
+        }
+        when {
+            event: click
+            selectionType: button
+            button: @/refresh
+        }
+
+        action native-execute-plsql-code (
+            action: executeServerSideCode
+            settings {
+                plsqlCode:
+                    ```plsql
+                    av_general_pkg.p_qa_app_settings(
+                      pi_application_id            => :P0_APP_ID
+                     ,po_compatibility_mode        => :P600_COMPATIBILITY_MODE
+                     ,po_session_state_protection  => :P600_SESSION_STATE_PROTECTION
+                     ,po_runtime_api_usage         => :P600_RUNTIME_API_USAGE
+                     ,po_include_legacy_javascript => :P600_INCLUDE_LEGACY_JAVASCRIPT
+                     ,po_include_jquery_migrate    => :P600_INCLUDE_JQUERY_MIGRATE
+                     ,po_theme_name                => :P600_THEME_NAME
+                     ,po_theme_version             => :P600_THEME_VERSION
+                    );
+                    ```
+                itemsToSubmit: [
+                    P0_APP_ID
+                    P600_COMPATIBILITY_MODE
+                    P600_SESSION_STATE_PROTECTION
+                    P600_RUNTIME_API_USAGE
+                    P0_APP_ID
+                    P600_INCLUDE_LEGACY_JAVASCRIPT
+                    P600_INCLUDE_JQUERY_MIGRATE
+                    P600_THEME_NAME
+                    P600_THEME_VERSION
+                ]
+                itemsToReturn: [
+                    P600_COMPATIBILITY_MODE
+                    P600_SESSION_STATE_PROTECTION
+                    P600_RUNTIME_API_USAGE
+                    P600_INCLUDE_LEGACY_JAVASCRIPT
+                    P600_INCLUDE_JQUERY_MIGRATE
+                    P600_THEME_NAME
+                    P600_THEME_VERSION
+                ]
+                showProcessing: true
+            }
+            execution {
+                sequence: 50
+                fireOnInit: false
+            }
+        )
+
+        action refresh-region-legacy-tabs (
+            name: refresh - region - legacy tabs
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @legacy-tabs
+            }
+            execution {
+                sequence: 40
+                fireOnInit: false
+            }
+        )
+
+        action refresh-region-never-condition-used (
+            name: refresh - region - never condition used
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @never-condition-used
+            }
+            execution {
+                sequence: 30
+                fireOnInit: false
+            }
+        )
+
+        action refresh-region-unused-authorization-schemes (
+            name: refresh - region - unused authorization schemes
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @unused-authorization-schemes
+            }
+            execution {
+                sequence: 20
+                fireOnInit: false
+            }
+        )
+
+        action refresh-region-unused-plugins (
+            name: refresh - region - unused plugins
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @unused-plugins
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+    )
+
+)
+

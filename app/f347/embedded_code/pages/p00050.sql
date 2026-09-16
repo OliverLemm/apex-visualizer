@@ -23,7 +23,7 @@ and (l.page_id = :P0_PAGE_ID or :P0_PAGE_ID is null)
 group by trunc(audit_date), audit_action, application_name, application_id;
 
 -- ----------------------------------------
--- Page: 50 - Last Updated > Page Item: P50_DATE > List of Values > SQL Query
+-- Page: 50 - Last Updated > Item: P50_DATE > List of Values > SQL Query
 
 select to_char(trunc(audit_date), 'dd.mm.yyyy') d, to_char(trunc(audit_date), 'dd.mm.yyyy') r
 from apex_developer_activity_log l

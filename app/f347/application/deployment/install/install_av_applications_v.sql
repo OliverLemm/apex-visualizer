@@ -4,41 +4,48 @@ begin
 --     INSTALL: INSTALL-av_applications_v
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2024.11.30'
-,p_release=>'24.2.16'
+ p_version_yyyy_mm_dd=>'2026.03.30'
+,p_release=>'26.1.4'
 ,p_default_workspace_id=>100001
 ,p_default_application_id=>347
 ,p_default_id_offset=>20408574139881448
 ,p_default_owner=>'APEX_VISUALIZER'
 );
+wwv_flow_imp.g_varchar2_table := wwv_flow_imp.empty_varchar2_table;
+wwv_flow_imp.g_varchar2_table(1) := ''||wwv_flow.LF||
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_APPLICATIONS_V" ("APPLICATION_NAME", "APPLICATION_ID';
+wwv_flow_imp.g_varchar2_table(2) := '", "PAGE_FUNCTION", "PAGE_ID") AS '||wwv_flow.LF||
+'  select p.application_name'||wwv_flow.LF||
+'      ,p.application_id'||wwv_flow.LF||
+'      ,case p';
+wwv_flow_imp.g_varchar2_table(3) := '.page_function'||wwv_flow.LF||
+'         when ''Unknown'' then'||wwv_flow.LF||
+'          max(r.source_type)'||wwv_flow.LF||
+'         else'||wwv_flow.LF||
+'          pag';
+wwv_flow_imp.g_varchar2_table(4) := 'e_function'||wwv_flow.LF||
+'       end page_function'||wwv_flow.LF||
+'      ,p.page_id'||wwv_flow.LF||
+'from apex_application_pages p'||wwv_flow.LF||
+'join apex_applica';
+wwv_flow_imp.g_varchar2_table(5) := 'tion_page_regions r on r.application_id = p.application_id'||wwv_flow.LF||
+'                                 and p.pa';
+wwv_flow_imp.g_varchar2_table(6) := 'ge_id = r.page_id'||wwv_flow.LF||
+'group by p.application_name'||wwv_flow.LF||
+'        ,p.application_id'||wwv_flow.LF||
+'        ,p.page_id'||wwv_flow.LF||
+'        ,';
+wwv_flow_imp.g_varchar2_table(7) := 'page_function'||wwv_flow.LF||
+'order by p.application_id'||wwv_flow.LF||
+'        ,p.page_id'||wwv_flow.LF||
+';';
 wwv_flow_imp_shared.create_install_script(
  p_id=>wwv_flow_imp.id(164062689573034752)
 ,p_install_id=>wwv_flow_imp.id(314927592265159640)
 ,p_name=>'av_applications_v'
 ,p_sequence=>10
 ,p_script_type=>'INSTALL'
-,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'',
-'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_APPLICATIONS_V" ("APPLICATION_NAME", "APPLICATION_ID", "PAGE_FUNCTION", "PAGE_ID") AS ',
-'  select p.application_name',
-'      ,p.application_id',
-'      ,case p.page_function',
-'         when ''Unknown'' then',
-'          max(r.source_type)',
-'         else',
-'          page_function',
-'       end page_function',
-'      ,p.page_id',
-'from apex_application_pages p',
-'join apex_application_page_regions r on r.application_id = p.application_id',
-'                                 and p.page_id = r.page_id',
-'group by p.application_name',
-'        ,p.application_id',
-'        ,p.page_id',
-'        ,page_function',
-'order by p.application_id',
-'        ,p.page_id',
-';'))
+,p_script_clob=>wwv_flow_imp.varchar2_to_clob(wwv_flow_imp.g_varchar2_table)
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(164062816260034755)

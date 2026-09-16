@@ -4,49 +4,67 @@ begin
 --     INSTALL: INSTALL-av_page_complexity_v
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2024.11.30'
-,p_release=>'24.2.16'
+ p_version_yyyy_mm_dd=>'2026.03.30'
+,p_release=>'26.1.4'
 ,p_default_workspace_id=>100001
 ,p_default_application_id=>347
 ,p_default_id_offset=>20408574139881448
 ,p_default_owner=>'APEX_VISUALIZER'
 );
+wwv_flow_imp.g_varchar2_table := wwv_flow_imp.empty_varchar2_table;
+wwv_flow_imp.g_varchar2_table(1) := ''||wwv_flow.LF||
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PAGE_COMPLEXITY_V" ("APPLICATION_ID", "PAGE_ID", "PA';
+wwv_flow_imp.g_varchar2_table(2) := 'GE_NAME", "COUNT_OBJECTS", "COMPLEXITY") AS '||wwv_flow.LF||
+'  select p.application_id,'||wwv_flow.LF||
+'       p.page_id,'||wwv_flow.LF||
+'       p.p';
+wwv_flow_imp.g_varchar2_table(3) := 'age_name,'||wwv_flow.LF||
+'       sum(nvl(c.counts,0)) count_objects,'||wwv_flow.LF||
+'       case'||wwv_flow.LF||
+'         when sum(nvl(c.counts,0)) ';
+wwv_flow_imp.g_varchar2_table(4) := '< 15 then ''simple'''||wwv_flow.LF||
+'         when sum(nvl(c.counts,0)) < 50 then ''normal'''||wwv_flow.LF||
+'         when sum(nvl(c.cou';
+wwv_flow_imp.g_varchar2_table(5) := 'nts,0)) < 100 then ''complex'''||wwv_flow.LF||
+'         else ''very complex'''||wwv_flow.LF||
+'       end complexity'||wwv_flow.LF||
+'from apex_applicatio';
+wwv_flow_imp.g_varchar2_table(6) := 'n_pages p'||wwv_flow.LF||
+'left join (select i1.application_id, i1.page_id, count(1) counts from apex_application_pag';
+wwv_flow_imp.g_varchar2_table(7) := 'e_items i1 group by i1.application_id, i1.page_id'||wwv_flow.LF||
+'           union all'||wwv_flow.LF||
+'           select r1.applicat';
+wwv_flow_imp.g_varchar2_table(8) := 'ion_id, r1.page_id, count(1) counts from apex_application_page_regions r1 group by r1.application_id';
+wwv_flow_imp.g_varchar2_table(9) := ', r1.page_id'||wwv_flow.LF||
+'           union all'||wwv_flow.LF||
+'           select b1.application_id, b1.page_id, count(1) counts f';
+wwv_flow_imp.g_varchar2_table(10) := 'rom apex_application_page_buttons b1 group by b1.application_id, b1.page_id'||wwv_flow.LF||
+'           union all'||wwv_flow.LF||
+'   ';
+wwv_flow_imp.g_varchar2_table(11) := '        select p1.application_id, p1.page_id, count(1) counts from apex_application_page_proc p1 gro';
+wwv_flow_imp.g_varchar2_table(12) := 'up by p1.application_id, p1.page_id'||wwv_flow.LF||
+'           union all'||wwv_flow.LF||
+'           select d1.application_id, d1.pag';
+wwv_flow_imp.g_varchar2_table(13) := 'e_id, count(1) counts from apex_application_page_da_acts d1 group by d1.application_id, d1.page_id'||wwv_flow.LF||
+' ';
+wwv_flow_imp.g_varchar2_table(14) := '          union all'||wwv_flow.LF||
+'           select c1.application_id, c1.page_id, count(1) counts from apex_appli';
+wwv_flow_imp.g_varchar2_table(15) := 'cation_page_comp c1 group by c1.application_id, c1.page_id'||wwv_flow.LF||
+'           union all'||wwv_flow.LF||
+'           select br';
+wwv_flow_imp.g_varchar2_table(16) := '1.application_id, br1.page_id, count(1) counts from apex_application_page_branches br1 group by br1.';
+wwv_flow_imp.g_varchar2_table(17) := 'application_id, br1.page_id'||wwv_flow.LF||
+'           ) c on c.application_id = p.application_id and c.page_id = p.';
+wwv_flow_imp.g_varchar2_table(18) := 'page_id'||wwv_flow.LF||
+'group by p.application_id, p.page_id, p.page_name'||wwv_flow.LF||
+';';
 wwv_flow_imp_shared.create_install_script(
  p_id=>wwv_flow_imp.id(41113294940744258)
 ,p_install_id=>wwv_flow_imp.id(314927592265159640)
 ,p_name=>'av_page_complexity_v'
 ,p_sequence=>170
 ,p_script_type=>'INSTALL'
-,p_script_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'',
-'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PAGE_COMPLEXITY_V" ("APPLICATION_ID", "PAGE_ID", "PAGE_NAME", "COUNT_OBJECTS", "COMPLEXITY") AS ',
-'  select p.application_id,',
-'       p.page_id,',
-'       p.page_name,',
-'       sum(nvl(c.counts,0)) count_objects,',
-'       case',
-'         when sum(nvl(c.counts,0)) < 15 then ''simple''',
-'         when sum(nvl(c.counts,0)) < 50 then ''normal''',
-'         when sum(nvl(c.counts,0)) < 100 then ''complex''',
-'         else ''very complex''',
-'       end complexity',
-'from apex_application_pages p',
-'left join (select i1.application_id, i1.page_id, count(1) counts from apex_application_page_items i1 group by i1.application_id, i1.page_id',
-'           union all',
-'           select r1.application_id, r1.page_id, count(1) counts from apex_application_page_regions r1 group by r1.application_id, r1.page_id',
-'           union all',
-'           select b1.application_id, b1.page_id, count(1) counts from apex_application_page_buttons b1 group by b1.application_id, b1.page_id',
-'           union all',
-'           select p1.application_id, p1.page_id, count(1) counts from apex_application_page_proc p1 group by p1.application_id, p1.page_id',
-'           union all',
-'           select d1.application_id, d1.page_id, count(1) counts from apex_application_page_da_acts d1 group by d1.application_id, d1.page_id',
-'           union all',
-'           select c1.application_id, c1.page_id, count(1) counts from apex_application_page_comp c1 group by c1.application_id, c1.page_id',
-'           union all',
-'           select br1.application_id, br1.page_id, count(1) counts from apex_application_page_branches br1 group by br1.application_id, br1.page_id',
-'           ) c on c.application_id = p.application_id and c.page_id = p.page_id',
-'group by p.application_id, p.page_id, p.page_name',
-';'))
+,p_script_clob=>wwv_flow_imp.varchar2_to_clob(wwv_flow_imp.g_varchar2_table)
 );
 wwv_flow_imp_shared.create_install_object(
  p_id=>wwv_flow_imp.id(41113460691744263)

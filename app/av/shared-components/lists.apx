@@ -1,0 +1,590 @@
+list desktop-navigation-bar (
+    name: Desktop Navigation Bar
+
+    entry log-out (
+        label: Log Out
+        layout {
+            sequence: 10
+        }
+        isCurrent {
+            type: never
+        }
+        link {
+            target: {
+                type: url
+                url: &LOGOUT_URL.
+            }
+        }
+    )
+
+)
+
+list desktop-navigation-menu (
+    name: Desktop Navigation Menu
+
+    entry apex (
+        label: APEX 24.1
+        layout {
+            sequence: 470
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 730
+        }
+        link {
+            target: {
+                page: 730
+            }
+        }
+    )
+
+    entry apex-10 (
+        label: APEX 22.2
+        layout {
+            sequence: 440
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 710
+        }
+        link {
+            target: {
+                page: 710
+            }
+        }
+    )
+
+    entry apex-11 (
+        label: APEX 24.2
+        layout {
+            sequence: 480
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 740
+        }
+        link {
+            target: {
+                page: 740
+            }
+        }
+    )
+
+    entry apex-12 (
+        label: APEX 23.2
+        layout {
+            sequence: 460
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 720
+        }
+        link {
+            target: {
+                page: 720
+            }
+        }
+    )
+
+    entry apex-13 (
+        label: APEX 23.1
+        layout {
+            sequence: 450
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 715
+        }
+        link {
+            target: {
+                page: 715
+            }
+        }
+    )
+
+    entry apex-14 (
+        label: APEX 22.1
+        layout {
+            sequence: 430
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 709
+        }
+        link {
+            target: {
+                page: 709
+            }
+        }
+    )
+
+    entry apex-15 (
+        label: APEX 26.1
+        layout {
+            sequence: 1350
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 745
+        }
+        link {
+            target: {
+                page: 745
+            }
+        }
+    )
+
+    entry apex-16 (
+        label: APEX
+        icon {
+            imageIconCssClasses: fa-apex
+        }
+        layout {
+            sequence: 5
+        }
+        link {
+            target: {
+                page: 10
+            }
+        }
+        config {
+            buildOption: @deactivated
+        }
+    )
+
+    entry apex-2 (
+        label: APEX 18.1
+        layout {
+            sequence: 350
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 701
+        }
+        link {
+            target: {
+                page: 701
+            }
+        }
+        config {
+            buildOption: @deactivated
+        }
+    )
+
+    entry apex-3 (
+        label: APEX 18.2
+        layout {
+            sequence: 360
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 702
+        }
+        link {
+            target: {
+                page: 702
+            }
+        }
+        config {
+            buildOption: @deactivated
+        }
+    )
+
+    entry apex-4 (
+        label: APEX 19.1
+        layout {
+            sequence: 370
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 703
+        }
+        link {
+            target: {
+                page: 703
+            }
+        }
+        config {
+            buildOption: @deactivated
+        }
+    )
+
+    entry apex-5 (
+        label: APEX 19.2
+        layout {
+            sequence: 380
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 704
+        }
+        link {
+            target: {
+                page: 704
+            }
+        }
+        config {
+            buildOption: @deactivated
+        }
+    )
+
+    entry apex-6 (
+        label: APEX 20.1
+        layout {
+            sequence: 390
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 705
+        }
+        link {
+            target: {
+                page: 705
+            }
+        }
+    )
+
+    entry apex-7 (
+        label: APEX 20.2
+        layout {
+            sequence: 400
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 706
+        }
+        link {
+            target: {
+                page: 706
+            }
+        }
+    )
+
+    entry apex-8 (
+        label: APEX 21.1
+        layout {
+            sequence: 410
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 707
+        }
+        link {
+            target: {
+                page: 707
+            }
+        }
+    )
+
+    entry apex-9 (
+        label: APEX 21.2
+        layout {
+            sequence: 420
+            parentEntry: @migration
+        }
+        isCurrent {
+            type: pages
+            pages: 708
+        }
+        link {
+            target: {
+                page: 708
+            }
+        }
+    )
+
+    entry applications (
+        label: Applications
+        icon {
+            imageIconCssClasses: fa-layout-nav-left-header-header
+        }
+        layout {
+            sequence: 10
+        }
+        link {
+            target: {
+                page: 10
+            }
+        }
+    )
+
+    entry css (
+        label: CSS
+        icon {
+            imageIconCssClasses: fa-file-code-o
+        }
+        layout {
+            sequence: 200
+        }
+        isCurrent {
+            type: pages
+            pages: 200
+        }
+        link {
+            target: {
+                page: 200
+            }
+        }
+    )
+
+    entry javascript (
+        label: JavaScript
+        icon {
+            imageIconCssClasses: fa-repeat
+        }
+        layout {
+            sequence: 100
+        }
+        isCurrent {
+            type: pages
+            pages: 100
+        }
+        link {
+            target: {
+                page: 100
+            }
+        }
+    )
+
+    entry last-updated (
+        label: Last Updated
+        icon {
+            imageIconCssClasses: fa-calendar-clock
+        }
+        layout {
+            sequence: 50
+        }
+        isCurrent {
+            type: pages
+            pages: 50
+        }
+        link {
+            target: {
+                page: 50
+            }
+        }
+    )
+
+    entry links (
+        label: Links
+        icon {
+            imageIconCssClasses: fa-link
+        }
+        layout {
+            sequence: 320
+        }
+        isCurrent {
+            type: pages
+            pages: 500
+        }
+        link {
+            target: {
+                page: 500
+            }
+        }
+    )
+
+    entry migration (
+        label: Migration
+        icon {
+            imageIconCssClasses: fa-wrench
+        }
+        layout {
+            sequence: 1340
+        }
+        isCurrent {
+            type: pages
+            pages: [
+                700
+                710
+            ]
+        }
+        link {
+            target: {
+                page: 700
+            }
+        }
+    )
+
+    entry migration-details (
+        label: Migration Details
+        icon {
+            imageIconCssClasses: fa-ai-sparkle-zoom-in
+        }
+        layout {
+            sequence: 400
+        }
+        isCurrent {
+            type: pages
+            pages: 750
+        }
+        link {
+            target: {
+                page: 750
+            }
+        }
+    )
+
+    entry migration-effort (
+        label: Migration Effort
+        icon {
+            imageIconCssClasses: fa-calendar-wrench
+        }
+        layout {
+            sequence: 410
+        }
+        isCurrent {
+            type: pages
+            pages: 760
+        }
+        link {
+            target: {
+                page: 760
+            }
+        }
+    )
+
+    entry page (
+        label: Page
+        icon {
+            imageIconCssClasses: fa-file-o
+        }
+        layout {
+            sequence: 30
+        }
+        link {
+            target: {
+                page: 30
+            }
+        }
+        config {
+            buildOption: @deactivated
+        }
+    )
+
+    entry pages (
+        label: Pages
+        icon {
+            imageIconCssClasses: fa-files-o
+        }
+        layout {
+            sequence: 20
+        }
+        link {
+            target: {
+                page: 20
+            }
+        }
+    )
+
+    entry pl-sql (
+        label: PL/SQL
+        icon {
+            imageIconCssClasses: fa-file-sql
+        }
+        layout {
+            sequence: 300
+        }
+        isCurrent {
+            type: pages
+            pages: 300
+        }
+        link {
+            target: {
+                page: 300
+            }
+        }
+    )
+
+    entry plugins (
+        label: Plugins
+        icon {
+            imageIconCssClasses: fa-plug
+        }
+        layout {
+            sequence: 310
+        }
+        isCurrent {
+            type: pages
+            pages: 400
+        }
+        link {
+            target: {
+                page: 400
+            }
+        }
+    )
+
+    entry qa (
+        label: QA
+        icon {
+            imageIconCssClasses: fa-clipboard-check-alt
+        }
+        layout {
+            sequence: 330
+        }
+        isCurrent {
+            type: pages
+            pages: 600
+        }
+        link {
+            target: {
+                page: 600
+            }
+        }
+    )
+
+    entry templates (
+        label: Templates
+        icon {
+            imageIconCssClasses: fa-layout-header-nav-left-cards
+        }
+        layout {
+            sequence: 60
+        }
+        isCurrent {
+            type: pages
+            pages: 60
+        }
+        link {
+            target: {
+                page: 60
+            }
+        }
+    )
+
+    entry visibility (
+        label: Visibility
+        icon {
+            imageIconCssClasses: fa-eye
+        }
+        layout {
+            sequence: 40
+        }
+        isCurrent {
+            type: pages
+            pages: 40
+        }
+        link {
+            target: {
+                page: 40
+            }
+        }
+    )
+
+)
+

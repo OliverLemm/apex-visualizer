@@ -1,0 +1,80 @@
+app AV (
+    name: APEX Visualizer
+    version: 24.2.2
+    logo {
+        type: text
+        text: APEX Visualizer
+    }
+    navigation {
+        homeUrl: {
+            page: 10
+        }
+        loginUrl: {
+            page: LOGIN
+        }
+    }
+    navigationMenu {
+        listTemplate: @/side-navigation-menu
+        templateOptions: [
+            #DEFAULT#
+            js-defaultCollapsed
+            js-navCollapsed--hidden
+            t-TreeNav--classic
+        ]
+        list: @desktop-navigation-menu
+    }
+    navigationBar {
+        list: @desktop-navigation-bar
+        listTemplate: @/navigation-bar
+        templateOptions: #DEFAULT#
+    }
+    userInterface {
+        currentTheme: @universal-theme
+        globalPage: 0
+    }
+    javaScript {
+        fileUrls: #APP_FILES#av#MIN#.js
+    }
+    css {
+        fileUrls: #APP_FILES#av#MIN#.css
+    }
+    authentication {
+        scheme: @builder-extension-sign-in
+        publicUser: APEX_PUBLIC_USER
+    }
+    authorization {
+        sourceForRoleOrGroupSchemes: authenticationScheme
+    }
+    security {
+        referrerPolicy: strictOriginWhenCrossOrigin
+    }
+    sessionStateProtection {
+        allowUrlsCreatedAfter: 2022-05-13T17:27:08
+        checksumSalt: A6E3BB2D2DE19934A5B6DE8C58FA65422D49912864CE2CE84F77196DBC8E0268
+        acceptPre202UrlChecksums: false
+    }
+    sessionManagement {
+        sessionStateCommits: immediate
+    }
+    globalization {
+        documentDirection: leftToRight
+    }
+    progressiveWebApp {
+        enable: false
+    }
+    rowSearch {
+        tokenize: false
+    }
+    reportPrinting {
+        type: useInstanceSettings
+    }
+    runtime {
+        compatibilityMode: 24.2
+        accessibleReadOnlyItems: false
+    }
+    advanced {
+        passEcid: false
+        modernizeApp: true
+    }
+)
+

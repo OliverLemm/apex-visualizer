@@ -1,0 +1,15 @@
+authentication apex (
+    name: APEX
+    type: oracleApexAccounts
+)
+
+authentication builder-extension-sign-in (
+    name: Builder Extension Sign-In
+    type: internalAppExtension
+)
+
+authentication no-authentication (
+    name: No Authentication
+    type: noAuth
+)
+

@@ -1,0 +1,17 @@
+page 702 (
+    name: APEX 18.2
+    alias: APEX-18-2
+    title: APEX 18.2
+    appearance {
+        pageTemplate: @/right-side-column
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+    }
+    security {
+        pageAccessProtection: argumentsMustHaveChecksum
+        formAutoComplete: false
+    }
+)
+

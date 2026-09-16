@@ -1,0 +1,447 @@
+page 500 (
+    name: Links
+    alias: LINKS
+    title: Links
+    appearance {
+        pageTemplate: @/right-side-column
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+        warnOnUnsavedChanges: false
+    }
+    security {
+        formAutoComplete: false
+    }
+
+    region d3-chart (
+        name: D3 Chart
+        type: plugin/d3ForceLayout
+        source {
+            sqlQuery:
+                ```sql
+                WITH
+                nodes AS ( --> START YOUR NODES QUERY HERE
+                  SELECT XMLELEMENT( "nodes", xmlattributes(
+                         l.page_id    AS id
+                       , l.page_name  AS label
+                       , 1            AS sizevalue
+                       , l.page_id    AS colorvalue
+                       , l.page_name || ' - ' || page_id  AS colorlabel    -- optional, used for the graph legend
+                     --, 'http://...' AS link          -- optional
+                     --, 'some text'  AS infostring    -- optional, rendered as tooltip
+                     --, 'false'      AS labelcircular -- optional, overwrites the global labelsCircular
+                     --, 'http://...' AS image         -- optional, background image for a node instead of a fill color
+                     --, 'true'       AS "fixed"       -- optional | fixed, x and y are native D3 attributes
+                     --, 100          AS "x"           -- optional | they must be lowercase
+                     --, 100          AS "y"           -- optional | you can predefine a layout with these attributes
+                         ) ) AS xml_nodes
+                    FROM av_page_links_v l 
+                    where l.application_id = :P0_APP_ID --< STOP YOUR NODES QUERY HERE
+                ),
+                links AS ( --> START YOUR LINKS QUERY HERE
+                  SELECT XMLELEMENT( "links", xmlattributes(
+                         l.page_id      AS fromid
+                        ,l.link_page_id AS toid
+                     --, 'dashed'       AS style       -- optional, can be solid (default), dotted or dashed
+                     --, 'red'          AS color       -- optional, must be a HTML color code like green or #00ff00
+                     --, 'some text'    AS infostring  -- optional, rendered as tooltip
+                         ) ) AS xml_links
+                    FROM av_page_links_v l 
+                    where l.page_id <> coalesce(l.link_page_id,-1)
+                    and l.application_id = :P0_APP_ID --< STOP YOUR LINKS QUERY HERE
+                )
+                SELECT XMLSERIALIZE( DOCUMENT( XMLELEMENT( "data",
+                        ( SELECT XMLAGG( xml_nodes ) FROM nodes ),
+                        ( SELECT XMLAGG( xml_links ) FROM links ) ) ) INDENT ) AS single_clob_result
+                  FROM DUAL
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 10
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        settings {
+            configurationObject:
+                ```
+                {
+                  "width": 1000,
+                  "height": 666.6666666666666,
+                  "transform": {
+                    "translate": [
+                      109.12512502182429,
+                      80.2006741692939
+                    ],
+                    "scale": 0.7902975555470355
+                  }
+                }
+                ```
+        }
+    )
+
+    region links-from-page (
+        name: Links from Page
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select PAGE_ID,
+                       PAGE_NAME,
+                       LINK_TYPE,
+                       LINK_NAME,
+                       LINK_LABEL,
+                       LINK_PAGE_ID
+                  from AV_PAGE_LINKS_V
+                 where application_id = :P0_APP_ID 
+                 and (:P0_PAGE_ID is null or :P0_PAGE_ID = page_id)
+                 and page_id <> coalesce(link_page_id,-1)
+                ```
+            pageItemsToSubmit: [
+                P0_APP_ID
+                P0_PAGE_ID
+            ]
+        }
+        layout {
+            sequence: 30
+            slot: body
+            startNewRow: false
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        performance {
+            lazyLoading: true
+        }
+
+        column LINK_LABEL (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Link Label
+            }
+            layout {
+                sequence: 60
+            }
+        )
+
+        column LINK_NAME (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Link Name
+            }
+            layout {
+                sequence: 50
+            }
+        )
+
+        column LINK_PAGE_ID (
+            reportColumnQueryId: 6
+            derivedColumn: N
+            heading {
+                heading: Link Page Id
+                alignment: end
+            }
+            layout {
+                sequence: 70
+                columnAlignment: end
+            }
+        )
+
+        column LINK_TYPE (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Link Type
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: end
+            }
+            layout {
+                sequence: 10
+                columnAlignment: end
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+    )
+
+    region links-to-page (
+        name: Links to Page
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select PAGE_ID,
+                       PAGE_NAME,
+                       PAGE_GROUP,
+                       LINK_TYPE,
+                       LINK_NAME,
+                       LINK_LABEL,
+                       LINK_PAGE_ID
+                  from AV_PAGE_LINKS_V
+                 where application_id = :P0_APP_ID and
+                (:P0_PAGE_ID is null or :P0_PAGE_ID = link_page_id)
+                ```
+            pageItemsToSubmit: [
+                P0_APP_ID
+                P0_PAGE_ID
+            ]
+        }
+        layout {
+            sequence: 20
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        config {
+            buildOption: @deactivated
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        performance {
+            lazyLoading: true
+        }
+
+        column LINK_LABEL (
+            reportColumnQueryId: 6
+            derivedColumn: N
+            heading {
+                heading: Link Label
+            }
+            layout {
+                sequence: 60
+            }
+        )
+
+        column LINK_NAME (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Link Name
+            }
+            layout {
+                sequence: 50
+            }
+        )
+
+        column LINK_PAGE_ID (
+            reportColumnQueryId: 7
+            derivedColumn: N
+            heading {
+                heading: Link Page Id
+                alignment: end
+            }
+            layout {
+                sequence: 70
+                columnAlignment: end
+            }
+        )
+
+        column LINK_TYPE (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Link Type
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column PAGE_GROUP (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Page Group
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: end
+            }
+            layout {
+                sequence: 10
+                columnAlignment: end
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+    )
+
+    region tree (
+        name: Tree
+        type: tree
+        source {
+            location: localDatabase
+            tableName: AV_PAGE_LINKS_V
+            whereClause:
+                ```sql
+                application_id = :P0_APP_ID and
+                (:P0_PAGE_ID is null or :P0_PAGE_ID = link_page_id)
+                ```
+            pageItemsToSubmit: [
+                P0_APP_ID
+                P0_PAGE_ID
+            ]
+        }
+        layout {
+            sequence: 40
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        config {
+            buildOption: @deactivated
+        }
+        settings {
+            nodeLabelColumn: PAGE_NAME
+            nodeIdColumn: PAGE_ID
+            parentKeyColumn: LINK_PAGE_ID
+            orderSiblingsBy: PAGE_NAME
+            defaultIconCssClass: icon-tree-folder
+            iconTypeCssClass: a-Icon
+        }
+    )
+
+    dynamicAction change-p0-app-id-p0-page-id-refresh-regions (
+        name: change P0_APP_ID,P0_PAGE_ID - refresh Regions
+        execution {
+            sequence: 10
+        }
+        when {
+            selectionType: items
+            items: [
+                P0_APP_ID
+                P0_PAGE_ID
+            ]
+        }
+
+        action native-refresh (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @links-to-page
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-2 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @links-from-page
+            }
+            execution {
+                sequence: 20
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-3 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @d3-chart
+            }
+            execution {
+                sequence: 30
+                fireOnInit: false
+            }
+        )
+
+    )
+
+)
+

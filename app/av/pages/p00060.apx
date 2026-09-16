@@ -1,0 +1,709 @@
+page 60 (
+    name: Templates
+    title: Templates
+    appearance {
+        pageTemplate: @/right-side-column
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+        warnOnUnsavedChanges: false
+    }
+    security {
+        formAutoComplete: false
+    }
+
+    region details (
+        name: Details
+        type: interactiveGrid
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select th.application_id
+                      ,th.application_name
+                      ,th.theme_name
+                      ,th.default_nav_list_position nav_pos
+                      ,th.default_page_template page_temp
+                      ,th.default_region_template region_temp
+                      ,th.default_report_region_template rep_region_temp
+                      ,th.default_button_template button_temp
+                      ,th.icon_library      
+                from apex_application_themes th
+                where th.application_id = :P0_APP_ID or :P0_APP_ID is null
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 10
+            slot: body
+        }
+        appearance {
+            template: @/interactive-report
+            templateOptions: #DEFAULT#
+        }
+        advanced {
+            htmlDomId: details
+            regionDisplaySelector: true
+        }
+        componentAppearance {
+            showNullValuesAs: -
+        }
+        toolbar {
+            controls: [
+                searchCol
+                searchField
+                actionsMenu
+                searchCol
+                searchField
+                actionsMenu
+                resetButton
+                saveButton
+            ]
+        }
+        download {
+            formats: [
+                csv
+                html
+                pdf
+                excel
+            ]
+        }
+        advanced {
+            savedReportMappingIdentifier: 162641779883396011
+        }
+
+        savedReport 1256361 (
+            visibility: primary
+            view {
+                default: grid
+            }
+            singleRowView {
+                displayedColumns: true
+            }
+
+            displayColumn (
+                column: @APPLICATION_ID
+                layout {
+                    sequence: 1
+                }
+            )
+
+            displayColumn (
+                column: @APPLICATION_NAME
+                layout {
+                    sequence: 2
+                }
+            )
+
+            displayColumn (
+                column: @THEME_NAME
+                layout {
+                    sequence: 3
+                }
+            )
+
+            displayColumn (
+                column: @NAV_POS
+                layout {
+                    sequence: 4
+                }
+            )
+
+            displayColumn (
+                column: @PAGE_TEMP
+                layout {
+                    sequence: 5
+                }
+            )
+
+            displayColumn (
+                column: @REGION_TEMP
+                layout {
+                    sequence: 6
+                }
+            )
+
+            displayColumn (
+                column: @REP_REGION_TEMP
+                layout {
+                    sequence: 7
+                }
+            )
+
+            displayColumn (
+                column: @BUTTON_TEMP
+                layout {
+                    sequence: 8
+                }
+            )
+
+            displayColumn (
+                column: @ICON_LIBRARY
+                layout {
+                    sequence: 9
+                }
+            )
+
+        )
+
+        column APPLICATION_ID (
+            type: numberField
+            heading {
+                heading: App ID
+                alignment: end
+            }
+            layout {
+                sequence: 10
+                columnAlignment: end
+            }
+            validation {
+                valueRequired: true
+            }
+            source {
+                databaseColumn: APPLICATION_ID
+                dataType: number
+            }
+            columnFilter {
+                lovType: none
+            }
+        )
+
+        column APPLICATION_NAME (
+            type: textarea
+            heading {
+                heading: Application name
+            }
+            layout {
+                sequence: 20
+            }
+            validation {
+                valueRequired: true
+                maxLength: 255
+            }
+            source {
+                databaseColumn: APPLICATION_NAME
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+                lovType: none
+            }
+            enableUsersTo {
+                sort: false
+            }
+        )
+
+        column BUTTON_TEMP (
+            type: textarea
+            heading {
+                heading: Button temp
+            }
+            layout {
+                sequence: 80
+            }
+            validation {
+                maxLength: 255
+            }
+            source {
+                databaseColumn: BUTTON_TEMP
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+                lovType: none
+            }
+            enableUsersTo {
+                sort: false
+            }
+        )
+
+        column ICON_LIBRARY (
+            type: textarea
+            heading {
+                heading: Icon library
+            }
+            layout {
+                sequence: 90
+            }
+            validation {
+                maxLength: 255
+            }
+            source {
+                databaseColumn: ICON_LIBRARY
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+                lovType: none
+            }
+            enableUsersTo {
+                sort: false
+            }
+        )
+
+        column NAV_POS (
+            type: textField
+            heading {
+                heading: Nav pos
+            }
+            layout {
+                sequence: 40
+            }
+            validation {
+                maxLength: 20
+            }
+            source {
+                databaseColumn: NAV_POS
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+            }
+        )
+
+        column PAGE_TEMP (
+            type: textarea
+            heading {
+                heading: Page temp
+            }
+            layout {
+                sequence: 50
+            }
+            validation {
+                maxLength: 255
+            }
+            source {
+                databaseColumn: PAGE_TEMP
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+                lovType: none
+            }
+            enableUsersTo {
+                sort: false
+            }
+        )
+
+        column REGION_TEMP (
+            type: textarea
+            heading {
+                heading: Region temp
+            }
+            layout {
+                sequence: 60
+            }
+            validation {
+                maxLength: 255
+            }
+            source {
+                databaseColumn: REGION_TEMP
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+                lovType: none
+            }
+            enableUsersTo {
+                sort: false
+            }
+        )
+
+        column REP_REGION_TEMP (
+            type: textarea
+            heading {
+                heading: Rep region temp
+            }
+            layout {
+                sequence: 70
+            }
+            validation {
+                maxLength: 255
+            }
+            source {
+                databaseColumn: REP_REGION_TEMP
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+                lovType: none
+            }
+            enableUsersTo {
+                sort: false
+            }
+        )
+
+        column THEME_NAME (
+            type: textarea
+            heading {
+                heading: Theme name
+            }
+            layout {
+                sequence: 30
+            }
+            validation {
+                valueRequired: true
+                maxLength: 255
+            }
+            source {
+                databaseColumn: THEME_NAME
+                dataType: varchar2
+            }
+            columnFilter {
+                performanceImpactingOperators: [
+                    contains
+                    startsWith
+                    caseInsensitive
+                    regexp
+                ]
+                lovType: none
+            }
+            enableUsersTo {
+                sort: false
+            }
+        )
+
+        page {
+            borderWidth: 0.5
+            borderColor: #666666
+        }
+    )
+
+    region templates-reference-customized (
+        name: Templates Reference (customized)
+        type: chart
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select t.template_type || ' - ' || t.template_name template
+                      ,case t.is_subscribed when 'No' then 'New defined Template' else 'Original Template' end new_or_original
+                      ,t.reference_count
+                      ,'Default=' || t.is_default || '<br>Last Updated =' || t.last_updated_by || ' - ' || t.last_updated_on tooltip
+                from apex_application_templates t
+                join apex_application_themes th on th.theme_number = t.theme_number
+                                            and th.application_id = t.application_id
+                where t.is_subscribed = 'No'
+                and th.application_id = :P0_APP_ID
+                and t.reference_count > 0
+                and (:P60_TEMPLATE_TYPE is null or :P60_TEMPLATE_TYPE = template_type)
+                order by template_type, reference_count desc
+                ```
+            pageItemsToSubmit: [
+                P0_APP_ID
+                P60_TEMPLATE_TYPE
+            ]
+        }
+        layout {
+            sequence: 30
+            slot: body
+            startNewRow: false
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        chartAppearance {
+            orientation: horizontal
+        }
+        chartLayout {
+            height: 600
+        }
+        dataCursor {
+            dimOnHover: false
+        }
+        legend {
+            show: false
+        }
+        messages {
+            whenNoDataFound: Please select an Application
+        }
+
+        series customized (
+            name: Customized
+            execution {
+                sequence: 10
+            }
+            source {
+                location: regionSource
+            }
+            columnMapping {
+                label: TEMPLATE
+                value: REFERENCE_COUNT
+                customTooltip: TOOLTIP
+            }
+            label {
+                show: true
+            }
+        )
+
+        axis x (
+            name: x
+            minorTicks {
+                show: false
+            }
+        )
+
+        axis y (
+            name: y
+            minorTicks {
+                show: false
+            }
+        )
+
+    )
+
+    region templates-reference-overall (
+        name: Templates Reference (overall)
+        type: chart
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select t.template_type || ' - ' || t.template_name template
+                      ,case t.is_subscribed when 'No' then 'New defined Template' else 'Original Template' end new_or_original
+                      ,t.reference_count
+                      ,'Default=' || t.is_default || '<br>Subscribed =' || t.is_subscribed tooltip
+                from apex_application_templates t
+                join apex_application_themes th on th.theme_number = t.theme_number
+                                            and th.application_id = t.application_id
+                where th.is_current = 'Yes'
+                and t.reference_count > 0
+                and th.application_id = :P0_APP_ID
+                and (:P60_TEMPLATE_TYPE is null or :P60_TEMPLATE_TYPE = template_type)
+                order by template_type, reference_count desc
+                ```
+            pageItemsToSubmit: [
+                P0_APP_ID
+                P60_TEMPLATE_TYPE
+            ]
+        }
+        layout {
+            sequence: 20
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        chartAppearance {
+            orientation: horizontal
+        }
+        chartLayout {
+            height: 600
+        }
+        dataCursor {
+            dimOnHover: false
+        }
+        legend {
+            show: false
+        }
+        messages {
+            whenNoDataFound: Please select an Application
+        }
+
+        series template-reference (
+            name: Template Reference
+            execution {
+                sequence: 10
+            }
+            source {
+                location: regionSource
+            }
+            columnMapping {
+                label: TEMPLATE
+                value: REFERENCE_COUNT
+                customTooltip: TOOLTIP
+            }
+            label {
+                show: true
+            }
+        )
+
+        axis x (
+            name: x
+            value {
+                scale: log
+            }
+            minorTicks {
+                show: false
+            }
+        )
+
+        axis y (
+            name: y
+            minorTicks {
+                show: false
+            }
+        )
+
+    )
+
+    pageItem P60_TEMPLATE_TYPE (
+        type: selectList
+        label {
+            label: Template type
+            alignment: left
+        }
+        lov {
+            type: sqlQuery
+            sqlQuery: select distinct template_type d, template_type r from apex_application_templates where reference_count > 0 and application_id = :P0_APP_ID
+            displayExtraValues: false
+            nullDisplayValue: all
+        }
+        cascadingLov {
+            parentItems: P0_APP_ID
+        }
+        layout {
+            sequence: 40
+            region: @/filter
+            slot: regionBody
+            alignment: left
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+            height: 1
+        }
+        security {
+            encryptSessionState: false
+        }
+    )
+
+    dynamicAction change-p0-app-id (
+        name: Change P0_APP_ID
+        execution {
+            sequence: 10
+        }
+        when {
+            selectionType: items
+            items: P0_APP_ID
+        }
+
+        action native-refresh (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @details
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-2 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @templates-reference-overall
+            }
+            execution {
+                sequence: 20
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-3 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @templates-reference-customized
+            }
+            execution {
+                sequence: 30
+                fireOnInit: false
+            }
+        )
+
+    )
+
+    dynamicAction change-p60-template-type (
+        name: Change P60_TEMPLATE_TYPE
+        execution {
+            sequence: 20
+        }
+        when {
+            selectionType: items
+            items: P60_TEMPLATE_TYPE
+        }
+
+        action native-refresh (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @templates-reference-overall
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-2 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @templates-reference-customized
+            }
+            execution {
+                sequence: 20
+                fireOnInit: false
+            }
+        )
+
+    )
+
+)
+

@@ -1,0 +1,48 @@
+event net_gobrechts_d3_force_click (
+    name: Node Click
+)
+
+event net_gobrechts_d3_force_contextmenu (
+    name: Node Contextmenu
+)
+
+event net_gobrechts_d3_force_dblclick (
+    name: Node Double Click
+)
+
+event net_gobrechts_d3_force_forceend (
+    name: Force End
+)
+
+event net_gobrechts_d3_force_forcestart (
+    name: Force Start
+)
+
+event net_gobrechts_d3_force_lassoend (
+    name: Lasso End
+)
+
+event net_gobrechts_d3_force_lassostart (
+    name: Lasso Start
+)
+
+event net_gobrechts_d3_force_linkclick (
+    name: Link Click
+)
+
+event net_gobrechts_d3_force_mouseenter (
+    name: Node Mouse Enter
+)
+
+event net_gobrechts_d3_force_mouseleave (
+    name: Node Mouse Leave
+)
+
+event net_gobrechts_d3_force_renderend (
+    name: Render End
+)
+
+event net_gobrechts_d3_force_resize (
+    name: Resize
+)
+

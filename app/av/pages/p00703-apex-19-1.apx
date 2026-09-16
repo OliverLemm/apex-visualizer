@@ -1,0 +1,17 @@
+page 703 (
+    name: APEX 19.1
+    alias: APEX-19-1
+    title: APEX 19.1
+    appearance {
+        pageTemplate: @/right-side-column
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+    }
+    security {
+        pageAccessProtection: argumentsMustHaveChecksum
+        formAutoComplete: false
+    }
+)
+

@@ -1,0 +1,440 @@
+page 750 (
+    name: Migration Details
+    alias: MIGRATION-DETAILS
+    title: Migration Details
+    appearance {
+        pageTemplate: @/right-side-column
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+        warnOnUnsavedChanges: false
+    }
+    security {
+        formAutoComplete: false
+    }
+
+    region breadcrumb (
+        name: Breadcrumb
+        type: breadcrumb
+        source {
+            breadcrumb: @breadcrumb
+        }
+        layout {
+            sequence: 10
+            slot: breadcrumbBar
+        }
+        appearance {
+            template: @/title-bar
+            templateOptions: [
+                #DEFAULT#
+                t-BreadcrumbRegion--useBreadcrumbTitle
+            ]
+        }
+        componentAppearance {
+            breadcrumbTemplate: @/breadcrumb
+            templateOptions: #DEFAULT#
+        }
+    )
+
+    region migration-details (
+        name: Migration Details
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select apex_version
+                      ,rn_type
+                      ,rn_chapter_no
+                      ,rn_chapter_name
+                      ,rn_chapter_text
+                      ,rn_chapter_link
+                      ,page_id
+                      ,page_name
+                      ,component_type
+                      ,component_name
+                      ,coalesce(plsql_code_vc2
+                               ,coalesce(js_code_vc2
+                                        ,css_code_vc2)) code
+                      ,migration_priority
+                      ,round(migration_effort_in_days,2) migration_effort_in_days
+                from av_migration_pkg.ptf_effort_calculation(i_app_id               => :P0_APP_ID
+                                                            ,i_apex_versions        => :P750_APEX_VERSIONS
+                                                            ,i_migration_priorities => :P750_MIGRATION_PRIORITIES
+                                                            ,i_migration_types      => :P750_MIGRATION_TYPES
+                                                            ,i_show_only_findings   => :P750_SHOW_ONLY_FINDINGS)
+                order by apex_version
+                        ,replace(rn_chapter_no
+                                ,'.'
+                                ,'')
+                        ,page_id
+                        ,component_name
+                
+                ```
+            pageItemsToSubmit: [
+                P0_APP_ID
+                P750_APEX_VERSIONS
+                P750_MIGRATION_PRIORITIES
+                P750_MIGRATION_TYPES
+                P750_SHOW_ONLY_FINDINGS
+            ]
+        }
+        layout {
+            sequence: 10
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        performance {
+            lazyLoading: true
+        }
+        breakFormatting {
+            breakColumns: col1
+        }
+
+        column APEX_VERSION (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: APEX Version
+            }
+            layout {
+                sequence: 10
+            }
+            sorting {
+                sortable: false
+            }
+        )
+
+        column CODE (
+            reportColumnQueryId: 11
+            derivedColumn: N
+            heading {
+                heading: Code
+            }
+            layout {
+                sequence: 110
+            }
+            sorting {
+                sortable: false
+            }
+        )
+
+        column COMPONENT_NAME (
+            reportColumnQueryId: 10
+            derivedColumn: N
+            heading {
+                heading: Component Name
+            }
+            layout {
+                sequence: 100
+            }
+            sorting {
+                sortable: false
+            }
+        )
+
+        column COMPONENT_TYPE (
+            reportColumnQueryId: 9
+            derivedColumn: N
+            heading {
+                heading: Component Type
+            }
+            layout {
+                sequence: 90
+            }
+            sorting {
+                sortable: false
+            }
+        )
+
+        column MIGRATION_EFFORT_IN_DAYS (
+            reportColumnQueryId: 13
+            derivedColumn: N
+            heading {
+                heading: Migration Effort In Days
+                alignment: end
+            }
+            layout {
+                sequence: 130
+                columnAlignment: end
+            }
+            appearance {
+                formatMask: 999G999G999G999G990D00
+            }
+            sorting {
+                sortable: false
+            }
+        )
+
+        column MIGRATION_PRIORITY (
+            reportColumnQueryId: 12
+            derivedColumn: N
+            heading {
+                heading: Migration Priority
+                alignment: end
+            }
+            layout {
+                sequence: 120
+                columnAlignment: end
+            }
+            sorting {
+                sortable: false
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 7
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: end
+            }
+            layout {
+                sequence: 70
+                columnAlignment: end
+            }
+            sorting {
+                sortable: false
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 8
+            derivedColumn: N
+            heading {
+                heading: Page Name
+            }
+            layout {
+                sequence: 80
+            }
+            sorting {
+                sortable: false
+            }
+        )
+
+        column RN_CHAPTER_LINK (
+            reportColumnQueryId: 6
+            derivedColumn: N
+            type: hidden
+            layout {
+                sequence: 50
+            }
+        )
+
+        column RN_CHAPTER_NAME (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Chapter Name
+            }
+            layout {
+                sequence: 40
+            }
+            sorting {
+                sortable: false
+            }
+        )
+
+        column RN_CHAPTER_NO (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Chapter No
+            }
+            layout {
+                sequence: 30
+            }
+            columnFormatting {
+                htmlExpression: <a href="#RN_CHAPTER_LINK#" target="_blank">#RN_CHAPTER_NO#</a>
+            }
+            sorting {
+                sortable: false
+            }
+        )
+
+        column RN_CHAPTER_TEXT (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Chapter Text
+            }
+            layout {
+                sequence: 60
+            }
+            sorting {
+                sortable: false
+            }
+            security {
+                escapeSpecialChars: false
+            }
+        )
+
+        column RN_TYPE (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Type
+            }
+            layout {
+                sequence: 20
+            }
+            sorting {
+                sortable: false
+            }
+        )
+
+    )
+
+    pageItem P750_APEX_VERSIONS (
+        type: checkboxGroup
+        label {
+            label: APEX Versions
+            alignment: left
+        }
+        lov {
+            type: sharedComponent
+            lov: @apex-versions
+            displayExtraValues: false
+        }
+        layout {
+            sequence: 90
+            region: @/filter
+            slot: regionBody
+            alignment: left
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+        }
+    )
+
+    pageItem P750_MIGRATION_PRIORITIES (
+        type: checkboxGroup
+        label {
+            label: Migration Priorities
+            alignment: left
+        }
+        lov {
+            type: sharedComponent
+            lov: @migration-priority
+            displayExtraValues: false
+        }
+        layout {
+            sequence: 120
+            region: @/filter
+            slot: regionBody
+            alignment: left
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+        }
+        default {
+            type: static
+            staticValue: 1:2:3
+        }
+        help {
+            helpText:
+                ```html
+                1 - must<br>without these changes application will crash or doesn't work<br><br>
+                2 - should<br>with these changes application gets minimum changes to run in latest APEX release<br><br>
+                3 - recommed<br>mostly desupported and deprecated features that should be adjusted<br><br>
+                4 - best practices<br>only adjustments which will reduce effort for maintaining in future or would be faster
+                ```
+        }
+    )
+
+    pageItem P750_MIGRATION_TYPES (
+        type: checkboxGroup
+        label {
+            label: Migration Types
+            alignment: left
+        }
+        lov {
+            type: sharedComponent
+            lov: @migration-types
+        }
+        layout {
+            sequence: 110
+            region: @/filter
+            slot: regionBody
+            alignment: left
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+        }
+        default {
+            type: expression
+            plsqlExpression: av_migration_pkg.c_migration_type_new_feature || ':' || av_migration_pkg.c_migration_type_deprecated || ':' || av_migration_pkg.c_migration_type_desupported
+        }
+    )
+
+    pageItem P750_SHOW_ONLY_FINDINGS (
+        type: switch
+        label {
+            label: Show Only Findings
+            alignment: left
+        }
+        layout {
+            sequence: 100
+            region: @/filter
+            slot: regionBody
+            alignment: left
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+        }
+        default {
+            type: static
+            staticValue: 1
+        }
+    )
+
+    dynamicAction click-button-refresh-refresh-region-migration-details (
+        name: click Button Refresh - refresh Region Migration Details
+        execution {
+            sequence: 10
+        }
+        when {
+            event: click
+            selectionType: button
+            button: @/refresh
+        }
+
+        action native-refresh (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @migration-details
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+    )
+
+)
+

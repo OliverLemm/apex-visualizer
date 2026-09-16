@@ -29,7 +29,7 @@ where p.application_id = :P0_APP_ID
 and p.plugin_type <> 'Template Component';
 
 -- ----------------------------------------
--- Page: 400 - Plugins > Page Item: P400_PLUGIN_ID > List of Values > SQL Query
+-- Page: 400 - Plugins > Item: P400_PLUGIN_ID > List of Values > SQL Query
 
 select display_name, plugin_id 
 from av_plugins_v

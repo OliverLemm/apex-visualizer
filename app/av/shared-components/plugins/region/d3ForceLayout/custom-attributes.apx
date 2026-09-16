@@ -1,0 +1,434 @@
+customAttribute attribute_02 (
+    apexlangName: configurationObject
+    attribute: 2
+    name: Configuration Object
+    type: textarea
+    appearance {
+        sequence: 10
+    }
+    help {
+        helpText:
+            ```
+            <p>Copy in here your customizing object from the interactive configuration.</p>
+            <p>You can start the interactive configuration by clicking the link "Customize me" in the rendered page region. The link is shown when the developer toolbar is visible or when the page is in debug mode.</p>
+            ```
+    }
+)
+
+customAttribute attribute_03 (
+    apexlangName: customStyles
+    attribute: 3
+    name: Custom Styles
+    type: textarea
+    appearance {
+        sequence: 20
+    }
+    help {
+        helpText:
+            ```
+            <p>You can define custom styles. If you want to have custom styles only for one specific chart on a page with multiple charts, then you have to prefix the CSS with your region static ID. Here an example:</p>
+            
+            <pre>
+            #your_region_static_id .net_gobrechts_d3_force.border {
+              border: 1px solid red;
+              border-radius: 5px;
+            }
+            </pre>
+            ```
+    }
+)
+
+customAttribute attribute_04 (
+    apexlangName: onNodeClickFunction
+    attribute: 4
+    name: On Node Click Function
+    type: textarea
+    appearance {
+        sequence: 60
+    }
+    help {
+        helpText:
+            ```
+            <p>You can provide here a function for the node click event.</p>
+            
+            <p>In the first two parameters you get the event and the d3 node data, inside your function you have access to the DOM node with the this keyword.</p>
+            
+            <pre>
+            function(event, data){
+              console.log("Node click - event:", event);
+              console.log("Node click - data:", data);
+              console.log("Node click - this:", this);
+            }
+            </pre>
+            
+            <p>You can also create an APEX dynamic action on the component event "Node Click [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+            
+            <pre>
+            console.log("Node click - event:", this.browserEvent);
+            console.log("Node click - data:", this.data);
+            </pre>
+                
+            <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+            ```
+    }
+)
+
+customAttribute attribute_05 (
+    apexlangName: onNodeDoubleClickFunction
+    attribute: 5
+    name: On Node Double Click Function
+    type: textarea
+    appearance {
+        sequence: 70
+    }
+    help {
+        helpText:
+            ```
+            <p>You can provide here a function for the node double click event.</p>
+            
+            <p>In the first two parameters you get the event and the d3 node data, inside your function you have access to the DOM node with the this keyword.</p>
+            
+            <pre>
+            function(event, data){
+              console.log("Node double click - event:", event);
+              console.log("Node double click - data:", data);
+              console.log("Node double click - this:", this);
+            }
+            </pre>
+            
+            <p>You can also create an APEX dynamic action on the component event "Node Double Click [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+            
+            <pre>
+            console.log("Node double click - event:", this.browserEvent);
+            console.log("Node double click - data:", this.data);
+            </pre>
+                
+            <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+            ```
+    }
+)
+
+customAttribute attribute_06 (
+    apexlangName: onNodeContextmenuFunction
+    attribute: 6
+    name: On Node Contextmenu Function
+    type: textarea
+    appearance {
+        sequence: 80
+    }
+    help {
+        helpText:
+            ```
+            <p>You can provide here a function for the node contextmenu event.</p>
+            
+            <p>In the first two parameters you get the event and the d3 node data, inside your function you have access to the DOM node with the this keyword.</p>
+            
+            <pre>
+            function(event, data){
+              console.log("Node contextmenu - event:", event);
+              console.log("Node contextmenu - data:", data);
+              console.log("Node contextmenu - this:", this);
+            }
+            </pre>
+            
+            <p>You can also create an APEX dynamic action on the component event "Node Contextmenu [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+            
+            <pre>
+            console.log("Node contextmenu - event:", this.browserEvent);
+            console.log("Node contextmenu - data:", this.data);
+            </pre>
+                
+            <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+            ```
+    }
+)
+
+customAttribute attribute_07 (
+    apexlangName: onNodeMouseEnterFunction
+    attribute: 7
+    name: On Node Mouse Enter Function
+    type: textarea
+    appearance {
+        sequence: 40
+    }
+    help {
+        helpText:
+            ```
+            <p>You can provide here a function for the node mouse enter event.</p>
+            
+            <p>In the first two parameters you get the event and the d3 node data, inside your function you have access to the DOM node with the this keyword.</p>
+            
+            <pre>
+            function(event, data){
+              console.log("Node mouse enter - event:", event);
+              console.log("Node mouse enter - data:", data);
+              console.log("Node mouse enter - this:", this);
+            }
+            </pre>
+            
+            <p>You can also create an APEX dynamic action on the component event "Node Mouse Enter [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+            
+            <pre>
+            console.log("Node mouse enter - event:", this.browserEvent);
+            console.log("Node mouse enter - data:", this.data);
+            </pre>
+                
+            <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+            ```
+    }
+)
+
+customAttribute attribute_08 (
+    apexlangName: onNodeMouseLeaveFunction
+    attribute: 8
+    name: On Node Mouse Leave Function
+    type: textarea
+    appearance {
+        sequence: 50
+    }
+    help {
+        helpText:
+            ```
+            <p>You can provide here a function for the node mouse leave event.</p>
+            
+            <p>In the first two parameters you get the event and the d3 node data, inside your function you have access to the DOM node with the this keyword.</p>
+            
+            <pre>
+            function(event, data){
+              console.log("Node mouse leave - event:", event);
+              console.log("Node mouse leave - data:", data);
+              console.log("Node mouse leave - this:", this);
+            }
+            </pre>
+            
+            <p>You can also create an APEX dynamic action on the component event "Node Mouse Leave [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+            
+            <pre>
+            console.log("Node mouse leave - event:", this.browserEvent);
+            console.log("Node mouse leave - data:", this.data);
+            </pre>
+                
+            <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+            ```
+    }
+)
+
+customAttribute attribute_09 (
+    apexlangName: predefinedNodePositions
+    attribute: 9
+    name: Predefined Node Positions
+    type: textarea
+    appearance {
+        sequence: 30
+    }
+    help {
+        helpText:
+            ```
+            <p>Copy in here your node positions from the customize wizard.</p>
+                
+            <p>You can start the customize wizard by clicking the link "Customize me" in the rendered page region. The link is shown when the developer toolbar is visible or when the page is in debug mode.</p>
+            ```
+    }
+)
+
+customAttribute attribute_10 (
+    apexlangName: onLassoStartFunction
+    attribute: 10
+    name: On Lasso Start Function
+    type: textarea
+    appearance {
+        sequence: 100
+    }
+    help {
+        helpText:
+            ```
+            <p>You can provide here a function for the lasso start event.</p>
+            
+            <p>In the first two parameters you get the event and the d3 lasso data, inside your function you have access to the DOM node with the this keyword. In case of the lasso this is refering the svg container element, because the lasso itself is not interesting.</p>
+            
+            <pre>
+            function(event, data){
+              console.log("Lasso start - event:", event);
+              console.log("Lasso start - data:", data);
+              console.log("Lasso start - this:", this);
+            }
+            </pre>
+            
+            <p>You can also create an APEX dynamic action on the component event "Lasso Start [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+            
+            <pre>
+            console.log("Lasso start - event:", this.browserEvent);
+            console.log("Lasso start - data:", this.data);
+            </pre>
+                
+            <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+            ```
+    }
+)
+
+customAttribute attribute_11 (
+    apexlangName: onLassoEndFunction
+    attribute: 11
+    name: On Lasso End Function
+    type: textarea
+    appearance {
+        sequence: 110
+    }
+    help {
+        helpText:
+            ```
+            <p>You can provide here a function for the lasso end event.</p>
+            
+            <p>In the first two parameters you get the event and the d3 lasso data, inside your function you have access to the DOM node with the this keyword. In case of the lasso this is refering the svg container element, because the lasso itself is not interesting.</p>
+            
+            <pre>
+            function(event, data){
+              console.log("Lasso end - event:", event);
+              console.log("Lasso end - data:", data);
+              console.log("Lasso end - this:", this);
+            }
+            </pre>
+            
+            <p>You can also create an APEX dynamic action on the component event "Lasso End [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+            
+            <pre>
+            console.log("Lasso end - event:", this.browserEvent);
+            console.log("Lasso end - data:", this.data);
+            </pre>
+                
+            <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+            ```
+    }
+)
+
+customAttribute attribute_12 (
+    apexlangName: onLinkClickFunction
+    attribute: 12
+    name: On Link Click Function
+    type: textarea
+    appearance {
+        sequence: 90
+    }
+    help {
+        helpText:
+            ```
+            <p>You can provide here a function for the link click event.</p>
+            
+            <p>In the first two parameters you get the event and the d3 node data, inside your function you have access to the DOM node with the this keyword.</p>
+            
+            <pre>
+            function(event, data){
+              console.log("Link click - event:", event);
+              console.log("Link click - data:", data);
+              console.log("Link click - this:", this);
+            }
+            </pre>
+            
+            <p>You can also create an APEX dynamic action on the component event "Link Click [D3 - Force Layout]" on your graph region. If you do so, you can access the event and data by executing JavaScript code in this way:</p>
+            
+            <pre>
+            console.log("Link click - event:", this.browserEvent);
+            console.log("Link click - data:", this.data);
+            </pre>
+                
+            <p>Please refer also to the APEX dynamic action documentation and keep in mind, that the data is the same in both ways but the event differs, because APEX provide a jQuery event and the Plugin the D3 original event.</p>
+            ```
+    }
+)
+
+customAttribute attribute_13 (
+    apexlangName: onForceStartFunction
+    attribute: 13
+    name: On Force Start Function
+    type: textarea
+    appearance {
+        sequence: 120
+    }
+    help {
+        helpText:
+            ```
+            <p>You can provide here a function for the force start event. No data is provided because this is a very generic event:</p>
+            
+            <pre>
+            function(event){
+              // your logic here.
+            }
+            </pre>
+            
+            <p>You can also create an APEX dynamic action on the component event "Force Start [D3 - Force Layout]" on your graph region.</p>
+            ```
+    }
+)
+
+customAttribute attribute_14 (
+    apexlangName: onForceEndFunction
+    attribute: 14
+    name: On Force End Function
+    type: textarea
+    appearance {
+        sequence: 130
+    }
+    help {
+        helpText:
+            ```
+            <p>You can provide here a function for the force end event. No data is provided because this is a very generic event:</p>
+            
+            <pre>
+            function(event){
+              // your logic here.
+            }
+            </pre>
+            
+            <p>You can also create an APEX dynamic action on the component event "Force End [D3 - Force Layout]" on your graph region.</p>
+            ```
+    }
+)
+
+customAttribute attribute_15 (
+    apexlangName: onRenderEndFunction
+    attribute: 15
+    name: On Render End Function
+    type: textarea
+    appearance {
+        sequence: 140
+    }
+    help {
+        helpText:
+            ```
+            <p>You can provide here a function for the render end event. No data is provided because this is a very generic event:</p>
+            
+            <pre>
+            function(event){
+              // your logic here.
+            }
+            </pre>
+            
+            <p>You can also create an APEX dynamic action on the component event "Render End [D3 - Force Layout]" on your graph region.</p>
+            ```
+    }
+)
+
+customAttribute attribute_16 (
+    apexlangName: onResizeFunction
+    attribute: 16
+    name: On Resize Function
+    type: textarea
+    appearance {
+        sequence: 150
+    }
+    help {
+        helpText:
+            ```
+            <p>You can provide here a function for the resize event. No data is provided because this is a very generic event:</p>
+            
+            <pre>
+            function(event){
+              // your logic here.
+            }
+            </pre>
+            
+            <p>You can also create an APEX dynamic action on the component event "Resize [D3 - Force Layout]" on your graph region.</p>
+            ```
+    }
+)
+

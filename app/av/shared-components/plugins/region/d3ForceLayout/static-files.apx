@@ -1,0 +1,51 @@
+file ResizeObserver-1.5.0.js (
+    mimeType: application/javascript
+)
+
+file ResizeObserver-1.5.0.min.js (
+    mimeType: application/javascript
+)
+
+file ResizeObserver-LICENSE.txt (
+    mimeType: text/plain
+)
+
+file d3-3.5.6.js (
+    mimeType: text/javascript
+)
+
+file d3-3.5.6.min.js (
+    mimeType: text/javascript
+)
+
+file d3-LICENSE.txt (
+    mimeType: text/plain
+)
+
+file d3-force-3.1.2.css (
+    mimeType: text/css
+    charSet: utf-8
+)
+
+file d3-force-3.1.2.js (
+    mimeType: application/javascript
+    charSet: utf-8
+)
+
+file d3-force-3.1.2.min.js (
+    mimeType: application/javascript
+    charSet: utf-8
+)
+
+file d3-force-LICENSE.txt (
+    mimeType: text/plain
+)
+
+file d3-plugin-labeler-LICENSE.txt (
+    mimeType: text/plain
+)
+
+file d3-plugin-lasso-LICENSE.txt (
+    mimeType: text/plain
+)
+

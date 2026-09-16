@@ -14,7 +14,7 @@
 $('#details').is(':hidden')
 
 // ----------------------------------------
-// Page: 0 - Global Page - Desktop > Dynamic Action: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK > Action: Execute JavaScript Code > Settings > Code
+// Page: 0 - Global Page - Desktop > Dynamic Action: change APP_ID,PAGE_ID - set P0_PAGE_DESIGNER_LINK > Action: NATIVE_JAVASCRIPT_CODE > Settings > Code
 
 $('#P0_LINK_CONTAINER').html(apex.item("P0_PAGE_DESIGNER_LINK").getValue());
 

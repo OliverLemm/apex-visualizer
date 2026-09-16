@@ -9,34 +9,6 @@
 -- --------------------------------------------------------------------------------
 
 -- ----------------------------------------
--- Page: 500 - Links > Region: Links to Page > Source > SQL Query
-
-select PAGE_ID,
-       PAGE_NAME,
-       PAGE_GROUP,
-       LINK_TYPE,
-       LINK_NAME,
-       LINK_LABEL,
-       LINK_PAGE_ID
-  from AV_PAGE_LINKS_V
- where application_id = :P0_APP_ID and
-(:P0_PAGE_ID is null or :P0_PAGE_ID = link_page_id);
-
--- ----------------------------------------
--- Page: 500 - Links > Region: Links from Page > Source > SQL Query
-
-select PAGE_ID,
-       PAGE_NAME,
-       LINK_TYPE,
-       LINK_NAME,
-       LINK_LABEL,
-       LINK_PAGE_ID
-  from AV_PAGE_LINKS_V
- where application_id = :P0_APP_ID 
- and (:P0_PAGE_ID is null or :P0_PAGE_ID = page_id)
- and page_id <> coalesce(link_page_id,-1);
-
--- ----------------------------------------
 -- Page: 500 - Links > Region: D3 Chart > Source > SQL Query
 
 WITH
@@ -74,4 +46,32 @@ SELECT XMLSERIALIZE( DOCUMENT( XMLELEMENT( "data",
         ( SELECT XMLAGG( xml_nodes ) FROM nodes ),
         ( SELECT XMLAGG( xml_links ) FROM links ) ) ) INDENT ) AS single_clob_result
   FROM DUAL;
+
+-- ----------------------------------------
+-- Page: 500 - Links > Region: Links from Page > Source > SQL Query
+
+select PAGE_ID,
+       PAGE_NAME,
+       LINK_TYPE,
+       LINK_NAME,
+       LINK_LABEL,
+       LINK_PAGE_ID
+  from AV_PAGE_LINKS_V
+ where application_id = :P0_APP_ID 
+ and (:P0_PAGE_ID is null or :P0_PAGE_ID = page_id)
+ and page_id <> coalesce(link_page_id,-1);
+
+-- ----------------------------------------
+-- Page: 500 - Links > Region: Links to Page > Source > SQL Query
+
+select PAGE_ID,
+       PAGE_NAME,
+       PAGE_GROUP,
+       LINK_TYPE,
+       LINK_NAME,
+       LINK_LABEL,
+       LINK_PAGE_ID
+  from AV_PAGE_LINKS_V
+ where application_id = :P0_APP_ID and
+(:P0_PAGE_ID is null or :P0_PAGE_ID = link_page_id);
 

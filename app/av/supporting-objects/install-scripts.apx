@@ -1,0 +1,432 @@
+installScript av_applications_v (
+    execution {
+        sequence: 10
+    }
+    script {
+        contentFile: av-applications-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_APPLICATIONS_V
+    )
+
+)
+
+installScript av_components_v (
+    execution {
+        sequence: 20
+    }
+    script {
+        contentFile: av-components-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_COMPONENTS_V
+    )
+
+)
+
+installScript av_css_v (
+    execution {
+        sequence: 30
+    }
+    script {
+        contentFile: av-css-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_CSS_V
+    )
+
+)
+
+installScript av_general_pkg (
+    execution {
+        sequence: 5
+    }
+    script {
+        contentFile: av-general-pkg.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: package
+        name: AV_GENERAL_PKG
+    )
+
+)
+
+installScript av_javascript_v (
+    execution {
+        sequence: 40
+    }
+    script {
+        contentFile: av-javascript-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_JAVASCRIPT_V
+    )
+
+)
+
+installScript av_migration_19_2_pkg (
+    execution {
+        sequence: 210
+    }
+    script {
+        contentFile: av-migration-19-2-pkg.sql
+    }
+
+    databaseObject (
+        owner: APEX_VISUALIZER
+        type: package
+        name: AV_MIGRATION_19_2_PKG
+    )
+
+)
+
+installScript av_migration_20_2_pkg (
+    execution {
+        sequence: 220
+    }
+    script {
+        contentFile: av-migration-20-2-pkg.sql
+    }
+
+    databaseObject (
+        owner: APEX_VISUALIZER
+        type: package
+        name: AV_MIGRATION_20_2_PKG
+    )
+
+)
+
+installScript av_migration_22_1_pkg (
+    execution {
+        sequence: 230
+    }
+    script {
+        contentFile: av-migration-22-1-pkg.sql
+    }
+
+    databaseObject (
+        owner: APEX_VISUALIZER
+        type: package
+        name: AV_MIGRATION_22_1_PKG
+    )
+
+)
+
+installScript av_migration_pkg (
+    execution {
+        sequence: 200
+    }
+    script {
+        contentFile: av-migration-pkg.sql
+    }
+
+    databaseObject (
+        owner: APEX_VISUALIZER
+        type: package
+        name: AV_MIGRATION_PKG
+    )
+
+)
+
+installScript av_migration_t (
+    execution {
+        sequence: 1
+    }
+    script {
+        contentFile: av-migration-t.sql
+    }
+
+    databaseObject (
+        owner: APEX_VISUALIZER
+        type: type
+        name: AV_MIGRATION_T
+    )
+
+)
+
+installScript av_migrations_t (
+    execution {
+        sequence: 2
+    }
+    script {
+        contentFile: av-migrations-t.sql
+    }
+
+    databaseObject (
+        owner: APEX_VISUALIZER
+        type: type
+        name: AV_MIGRATIONS_T
+    )
+
+)
+
+installScript av_p0100_js_code_by_page_v (
+    execution {
+        sequence: 90
+    }
+    script {
+        contentFile: av-p0100-js-code-by-page-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_P0100_JS_CODE_BY_PAGE_V
+    )
+
+)
+
+installScript av_p0200_css_code_by_page_v (
+    execution {
+        sequence: 100
+    }
+    script {
+        contentFile: av-p0200-css-code-by-page-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_P0200_CSS_CODE_BY_PAGE_V
+    )
+
+)
+
+installScript av_p0300_plsql_code_by_page_v (
+    execution {
+        sequence: 110
+    }
+    script {
+        contentFile: av-p0300-plsql-code-by-page-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_P0300_PLSQL_CODE_BY_PAGE_V
+    )
+
+)
+
+installScript av_p0600_not_used_auth_schemes_v (
+    execution {
+        sequence: 150
+    }
+    script {
+        contentFile: av-p0600-not-used-auth-schemes-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_P0600_NOT_USED_AUTH_SCHEMES_V
+    )
+
+)
+
+installScript av_p0600_tabs_v (
+    execution {
+        sequence: 180
+    }
+    script {
+        contentFile: av-p0600-tabs-v.sql
+    }
+
+    databaseObject (
+        owner: APEX_VISUALIZER
+        type: view
+        name: AV_P0600_TABS_V
+    )
+
+)
+
+installScript av_p0708_legacy_subst_strings_v (
+    execution {
+        sequence: 160
+    }
+    script {
+        contentFile: av-p0708-legacy-subst-strings-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_P0708_LEGACY_SUBST_STRINGS_V
+    )
+
+)
+
+installScript av_page_complexity_v (
+    execution {
+        sequence: 170
+    }
+    script {
+        contentFile: av-page-complexity-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_PAGE_COMPLEXITY_V
+    )
+
+)
+
+installScript av_page_links_nav_static_v (
+    execution {
+        sequence: 190
+    }
+    script {
+        contentFile: av-page-links-nav-static-v.sql
+    }
+
+    databaseObject (
+        owner: APEX_VISUALIZER
+        type: view
+        name: AV_PAGE_LINKS_NAV_STATIC_V
+    )
+
+)
+
+installScript av_page_links_v (
+    execution {
+        sequence: 130
+    }
+    script {
+        contentFile: av-page-links-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_PAGE_LINKS_V
+    )
+
+)
+
+installScript av_pages_v (
+    execution {
+        sequence: 50
+    }
+    script {
+        contentFile: av-pages-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_PAGES_V
+    )
+
+)
+
+installScript av_plsql_v (
+    execution {
+        sequence: 60
+    }
+    script {
+        contentFile: av-plsql-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_PLSQL_V
+    )
+
+)
+
+installScript av_plugins_v (
+    execution {
+        sequence: 140
+    }
+    script {
+        contentFile: av-plugins-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_PLUGINS_V
+    )
+
+)
+
+installScript av_varchar2_t (
+    execution {
+        sequence: 3
+    }
+    script {
+        contentFile: av-varchar2-t.sql
+    }
+
+    databaseObject (
+        owner: APEX_VISUALIZER
+        type: type
+        name: AV_VARCHAR2_T
+    )
+
+)
+
+installScript av_varchar2s_t (
+    execution {
+        sequence: 240
+    }
+    script {
+        contentFile: av-varchar2s-t.sql
+    }
+
+    databaseObject (
+        owner: APEX_VISUALIZER
+        type: type
+        name: AV_VARCHAR2S_T
+    )
+
+)
+
+installScript av_visibility_overview_v (
+    execution {
+        sequence: 80
+    }
+    script {
+        contentFile: av-visibility-overview-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_VISIBILITY_OVERVIEW_V
+    )
+
+)
+
+installScript av_visibility_v (
+    execution {
+        sequence: 70
+    }
+    script {
+        contentFile: av-visibility-v.sql
+    }
+
+    databaseObject (
+        owner: #OWNER#
+        type: view
+        name: AV_VISIBILITY_V
+    )
+
+)
+

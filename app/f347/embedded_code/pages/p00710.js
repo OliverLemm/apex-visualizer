@@ -9,12 +9,12 @@
 // --------------------------------------------------------------------------------
 
 // ----------------------------------------
-// Page: 710 - APEX 22.2 > Dynamic Action: change P0_APP_ID - refresh regions > Action: Execute JavaScript Code > Settings > Code
+// Page: 710 - APEX 22.2 > Dynamic Action: change P0_APP_ID - refresh regions > Action: NATIVE_JAVASCRIPT_CODE > Settings > Code
 
 av_refresh_hide_show_regions()
 
 // ----------------------------------------
-// Page: 710 - APEX 22.2 > Dynamic Action: click refresh - refresh regions > Action: Execute JavaScript Code > Settings > Code
+// Page: 710 - APEX 22.2 > Dynamic Action: click refresh - refresh regions > Action: NATIVE_JAVASCRIPT_CODE > Settings > Code
 
 av_refresh_hide_show_regions()
 

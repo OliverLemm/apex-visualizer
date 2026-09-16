@@ -1,0 +1,11 @@
+buildOption deactivated (
+    name: deactivated
+)
+
+buildOption hide (
+    name: hide
+    status {
+        defaultOnExport: exclude
+    }
+)
+

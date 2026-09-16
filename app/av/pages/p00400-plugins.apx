@@ -1,0 +1,780 @@
+page 400 (
+    name: Plugins
+    alias: PLUGINS
+    title: Plugins
+    appearance {
+        pageTemplate: @/right-side-column
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+        warnOnUnsavedChanges: false
+    }
+    security {
+        formAutoComplete: false
+    }
+
+    region plugin-overview (
+        name: Plugin Overview
+        type: chart
+        source {
+            location: localDatabase
+            tableName: AV_PLUGINS_V
+            whereClause: application_id = :P0_APP_ID
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 20
+            slot: body
+            columnSpan: 4
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        chart {
+            type: donut
+        }
+        chartLayout {
+            height: 400
+        }
+        value {
+            format: decimal
+            decimalPlaces: 0
+            formatScaling: none
+        }
+
+        series plugins (
+            name: Plugins
+            execution {
+                sequence: 10
+            }
+            source {
+                location: regionSource
+            }
+            columnMapping {
+                seriesName: NAME
+                label: DISPLAY_NAME
+                valueAggregation: count
+            }
+            label {
+                show: true
+                displayAs: labelValue
+            }
+        )
+
+    )
+
+    region plugin-usage (
+        name: Plugin Usage
+        type: interactiveReport
+        source {
+            location: localDatabase
+            tableName: AV_PLUGINS_V
+            whereClause:
+                ```sql
+                application_id = :P0_APP_ID
+                and (:P400_PLUGIN_ID is null or :P400_PLUGIN_ID = plugin_id)
+                ```
+            orderByClause: PAGE_ID
+            pageItemsToSubmit: [
+                P0_APP_ID
+                P400_PLUGIN_ID
+            ]
+        }
+        layout {
+            sequence: 30
+            slot: body
+            startNewRow: false
+            columnSpan: 8
+        }
+        appearance {
+            template: @/interactive-report
+            templateOptions: [
+                #DEFAULT#
+                t-IRR-region--hideHeader js-addHiddenHeadingRoleDesc
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        pagination {
+            type: rowRangesXToY
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+            maxRowsToProcess: 100
+        }
+        searchBar {
+            rowsPerPageSelector: true
+        }
+        advanced {
+            savedReportMappingIdentifier: 24448340247508446
+        }
+
+        column ABOUT_URL (
+            type: plainText
+            heading {
+                heading: About Url
+            }
+            layout {
+                sequence: 120
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: L
+            }
+        )
+
+        column API_VERSION (
+            type: plainText
+            heading {
+                heading: Api Version
+                alignment: end
+            }
+            layout {
+                sequence: 80
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: H
+            }
+        )
+
+        column APPLICATION_ID (
+            type: plainText
+            heading {
+                heading: Application Id
+                alignment: end
+            }
+            layout {
+                sequence: 10
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: A
+            }
+        )
+
+        column APPLICATION_NAME (
+            type: plainText
+            heading {
+                heading: Application Name
+            }
+            layout {
+                sequence: 20
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: B
+            }
+        )
+
+        column DISPLAY_NAME (
+            type: plainText
+            heading {
+                heading: Display Name
+            }
+            layout {
+                sequence: 60
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: F
+            }
+        )
+
+        column HELP_TEXT (
+            type: plainText
+            heading {
+                heading: Help Text
+            }
+            layout {
+                sequence: 100
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: J
+            }
+        )
+
+        column NAME (
+            type: plainText
+            heading {
+                heading: Name
+            }
+            layout {
+                sequence: 50
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: E
+            }
+        )
+
+        column OBJECT_LABEL (
+            type: plainText
+            heading {
+                heading: Object Label
+            }
+            layout {
+                sequence: 160
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: P
+            }
+        )
+
+        column OBJECT_NAME (
+            type: plainText
+            heading {
+                heading: Object Name
+            }
+            layout {
+                sequence: 150
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: O
+            }
+        )
+
+        column PAGE_DESIGNER_URL (
+            type: plainText
+            heading {
+                heading: Page Designer Url
+            }
+            layout {
+                sequence: 170
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: Q
+            }
+        )
+
+        column PAGE_ID (
+            type: plainText
+            heading {
+                heading: Page Id
+                alignment: end
+            }
+            layout {
+                sequence: 130
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: M
+            }
+        )
+
+        column PAGE_NAME (
+            type: plainText
+            heading {
+                heading: Page Name
+            }
+            layout {
+                sequence: 140
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: N
+            }
+        )
+
+        column PLSQL_CODE (
+            type: plainText
+            heading {
+                heading: Plsql Code
+            }
+            layout {
+                sequence: 70
+            }
+            source {
+                dataType: CLOB
+            }
+            columnFilter {
+                type: none
+            }
+            advanced {
+                endUserAlias: G
+            }
+            enableUsersTo {
+                sort: false
+                controlBreak: false
+                aggregate: false
+                compute: false
+                chart: false
+                groupBy: false
+                pivot: false
+            }
+        )
+
+        column PLUGIN_ID (
+            type: plainText
+            heading {
+                heading: Plugin Id
+                alignment: end
+            }
+            layout {
+                sequence: 30
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: C
+            }
+        )
+
+        column PLUGIN_TYPE (
+            type: plainText
+            heading {
+                heading: Plugin Type
+            }
+            layout {
+                sequence: 40
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: D
+            }
+        )
+
+        column RENDER_FUNCTION (
+            type: plainText
+            heading {
+                heading: Render Function
+            }
+            layout {
+                sequence: 90
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: I
+            }
+        )
+
+        column VERSION_IDENTIFIER (
+            type: plainText
+            heading {
+                heading: Version Identifier
+            }
+            layout {
+                sequence: 110
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: K
+            }
+        )
+
+        page {
+            borderWidth: 0.5
+            borderColor: #666666
+        }
+
+        savedReport 501168 (
+            visibility: primaryDefault
+            view {
+                rowsPerPage: 25
+            }
+
+            displayColumn DISPLAY_NAME (
+                sequence: 5
+            )
+
+            displayColumn OBJECT_LABEL (
+                sequence: 4
+            )
+
+            displayColumn OBJECT_NAME (
+                sequence: 3
+            )
+
+            displayColumn PAGE_ID (
+                sequence: 1
+            )
+
+            displayColumn PAGE_NAME (
+                sequence: 2
+            )
+
+            displayColumn PLUGIN_TYPE (
+                sequence: 6
+            )
+
+            sort (
+                column: PAGE_ID
+                sort {
+                    sequence: 1
+                }
+            )
+
+            sort (
+                column: OBJECT_NAME
+                sort {
+                    sequence: 2
+                }
+            )
+
+        )
+
+    )
+
+    region plugins (
+        name: Plugins
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select name
+                      ,display_name
+                      ,plugin_type
+                      ,(select count(1)
+                        from av_plugins_v p1
+                        where p1.page_id is not null
+                        and p1.name = p.name
+                        and p1.application_id = p.application_id) plugin_references
+                      ,render_function
+                      ,api_version
+                      ,help_text
+                      ,version_identifier
+                      ,about_url
+                from apex_appl_plugins p
+                where p.application_id = :P0_APP_ID
+                and p.plugin_type <> 'Template Component'
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 10
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: nextAndPreviousLinks
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: No data to display
+        }
+
+        column ABOUT_URL (
+            reportColumnQueryId: 9
+            derivedColumn: N
+            heading {
+                heading: About Url
+            }
+            layout {
+                sequence: 110
+            }
+        )
+
+        column API_VERSION (
+            reportColumnQueryId: 6
+            derivedColumn: N
+            heading {
+                heading: Api Version
+                alignment: end
+            }
+            layout {
+                sequence: 70
+                columnAlignment: end
+            }
+        )
+
+        column DISPLAY_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Display Name
+            }
+            layout {
+                sequence: 10
+            }
+            sorting {
+                defaultSequence: 1
+            }
+        )
+
+        column HELP_TEXT (
+            reportColumnQueryId: 7
+            derivedColumn: N
+            heading {
+                heading: Help Text
+            }
+            layout {
+                sequence: 90
+            }
+        )
+
+        column NAME (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Name
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+        column PLUGIN_REFERENCES (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Plugin References
+                alignment: end
+            }
+            layout {
+                sequence: 50
+                columnAlignment: end
+            }
+            columnFormatting {
+                highlightWords: 0
+            }
+        )
+
+        column PLUGIN_TYPE (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Plugin Type
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column RENDER_FUNCTION (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Render Function
+            }
+            layout {
+                sequence: 60
+            }
+        )
+
+        column VERSION_IDENTIFIER (
+            reportColumnQueryId: 8
+            derivedColumn: N
+            heading {
+                heading: Version Identifier
+            }
+            layout {
+                sequence: 100
+            }
+        )
+
+    )
+
+    pageItem P400_PLUGIN_ID (
+        type: selectList
+        label {
+            label: Plugin
+            alignment: left
+        }
+        lov {
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select display_name, plugin_id 
+                from av_plugins_v
+                where application_id = :P0_APP_ID
+                group by display_name, plugin_id
+                order by display_name
+                ```
+            nullDisplayValue: all
+        }
+        cascadingLov {
+            parentItems: P0_APP_ID
+            itemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 40
+            region: @/filter
+            slot: regionBody
+            alignment: left
+        }
+        appearance {
+            template: @/optional
+            templateOptions: #DEFAULT#
+            height: 1
+        }
+        security {
+            encryptSessionState: false
+        }
+    )
+
+    dynamicAction change-p0-app-id-refresh-regions (
+        name: change P0_APP_ID - refresh Regions
+        execution {
+            sequence: 10
+        }
+        when {
+            selectionType: items
+            items: [
+                P0_APP_ID
+                P400_PLUGIN_ID
+            ]
+        }
+
+        action native-refresh (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @plugins
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-2 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @plugin-overview
+            }
+            execution {
+                sequence: 20
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-3 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @plugin-usage
+            }
+            execution {
+                sequence: 30
+                fireOnInit: false
+            }
+        )
+
+    )
+
+    dynamicAction click-button-refresh-refresh-regions (
+        name: click - button - Refresh - refresh Regions
+        execution {
+            sequence: 20
+        }
+        when {
+            event: click
+            selectionType: button
+            button: @/refresh
+        }
+
+        action native-refresh (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @plugins
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-2 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @plugin-overview
+            }
+            execution {
+                sequence: 20
+                fireOnInit: false
+            }
+        )
+
+        action native-refresh-3 (
+            action: refresh
+            affectedElements {
+                selectionType: region
+                region: @plugin-usage
+            }
+            execution {
+                sequence: 30
+                fireOnInit: false
+            }
+        )
+
+    )
+
+)
+

@@ -1,0 +1,768 @@
+page 740 (
+    name: APEX 24.2
+    alias: APEX-24-2
+    title: APEX 24.2
+    appearance {
+        pageTemplate: @/right-side-column
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+        warnOnUnsavedChanges: false
+    }
+    security {
+        pageAccessProtection: argumentsMustHaveChecksum
+        formAutoComplete: false
+    }
+
+    region 5-1-deprecated-apis (
+        name: 5.1 Deprecated APIs
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select p.page_id
+                      ,p.page_name
+                      ,p.component_name
+                      ,p.component_type
+                      ,p.process_point
+                      ,p.plsql_code_clob
+                from av_plsql_v p
+                where application_id = :P0_APP_ID
+                and (instr(lower(p.plsql_code_clob)
+                        ,'apex_lang.message') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'apex_plugin_util.execute_plsql_code') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'apex_util.custom_calendar') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'apex_util.increment_calendar') > 0
+                    )
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 10
+            parentRegion: @5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            htmlDomId: av-deprecated-51
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                <h4>APEX_LANG</h4>
+                <b>APEX_LANG.MESSAGE</b> is deprecated. Instead, use APEX_LANG.GET_MESSAGE to support named substitution parameters.<br>
+                <h4>APEX_PLUGIN_UTIL</h4>
+                <b>APEX_PLUGIN_UTIL.EXECUTE_PLSQL_CODE</b> is now deprecated. Instead, use APEX_EXEC.EXECUTE_PLSQL Signature 1 or Signature 2.<br>
+                <h4>APEX_UTIL</h4>
+                <b>APEX_UTIL.CUSTOM_CALENDAR</b> and <b>APEX_UTIL.INCREMENT_CALENDAR</b> are deprecated.
+                ```
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated API calls found.</b>
+        }
+
+        column COMPONENT_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Component Name
+                alignment: center
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column COMPONENT_TYPE (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Component Type
+                alignment: center
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: center
+            }
+            layout {
+                sequence: 10
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+                alignment: center
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+        column PLSQL_CODE_CLOB (
+            reportColumnQueryId: 6
+            derivedColumn: N
+            heading {
+                heading: Plsql Code Clob
+                alignment: center
+            }
+            layout {
+                sequence: 60
+            }
+        )
+
+        column PROCESS_POINT (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Process Point
+                alignment: center
+            }
+            layout {
+                sequence: 50
+            }
+        )
+
+    )
+
+    region 5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a (
+        name: 5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/htmrn/deprecated-features.html" target="_blank">Link to Release Notes</a>
+        type: staticContent
+        layout {
+            sequence: 40
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            htmlDomId: av-deprecated-5
+            regionDisplaySelector: true
+        }
+    )
+
+    region 7-1-desupported-apis (
+        name: 7.1 Desupported APIs
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select j.page_id
+                      ,j.page_name
+                      ,j.component_name
+                      ,j.component_type
+                      ,j.js_code_vc2
+                from av_javascript_v j
+                where (instr(lower(j.js_code_clob)
+                           ,'apex_javascript.add_3rd_party_library_file') > 0
+                       or
+                       instr(lower(j.js_code_clob)
+                           ,'apex_css.add_3rd_party_library_file') > 0
+                      )
+                and j.application_id = :P0_APP_ID
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 10
+            parentRegion: @7-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-desupported-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            htmlDomId: av-desupported-71
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                As of APEX 24.2, the following APIs are desupported:<br>
+                <b>apex_javascript.add_3rd_party_library_file, apex_css.add_3rd_party_library_file</b>
+                ```
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No calls like apex_javascript.add_3rd_party_library_file or apex_css.add_3rd_party_library_file found.</b>
+        }
+
+        column COMPONENT_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Component Name
+                alignment: center
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column COMPONENT_TYPE (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Component Type
+                alignment: center
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column JS_CODE_VC2 (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Js Code Vc2
+                alignment: center
+            }
+            layout {
+                sequence: 50
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: center
+            }
+            layout {
+                sequence: 10
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+                alignment: center
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+    )
+
+    region 7-2-public-dictionary-view-changes (
+        name: 7.2 Public Dictionary View Changes
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select p.page_id
+                      ,p.page_name
+                      ,p.component_name
+                      ,p.component_type
+                      ,p.process_point
+                      ,p.plsql_code_clob
+                from av_plsql_v p
+                where application_id = :P0_APP_ID
+                and (instr(lower(p.plsql_code_clob)
+                        ,'apex_application_page_items') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'apex_appl_page_ig_columns') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'apex_appl_plugin_settings') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'apex_appl_page_filters') > 0)
+                and (instr(lower(p.plsql_code_clob)
+                        ,'attribute_01') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_02') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_03') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_04') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_05') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_06') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_07') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_08') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_09') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_10') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_11') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_12') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_13') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_14') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_15') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_16') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_17') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_18') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_19') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_20') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_21') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_22') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_23') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_24') > 0 or
+                     instr(lower(p.plsql_code_clob)
+                        ,'attribute_25') > 0
+                    )
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 20
+            parentRegion: @7-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-desupported-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            htmlDomId: av-desupported-72
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                As of APEX 24.2, columns attribute_01 through attribute_25 now return null in the following views:<br>
+                <b>apex_application_page_items, apex_appl_page_ig_columns, apex_appl_plugin_settings, apex_appl_page_filters</b><br>
+                You can query this attributes by reading the attribute's JSON column. See 
+                <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/htmrn/new-features.html#GUID-D165A54A-FA88-4BDD-B948-B9BB235FA1D6" target="_bank">Unlimited Attributes for Item Plug-ins</a>.
+                ```
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No API calls <b>apex_application_page_items, apex_appl_page_ig_columns, apex_appl_plugin_settings, apex_appl_page_filters</b> with attribute_01 to 25 found.</b>
+        }
+
+        column COMPONENT_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Component Name
+                alignment: center
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column COMPONENT_TYPE (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Component Type
+                alignment: center
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: center
+            }
+            layout {
+                sequence: 10
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+                alignment: center
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+        column PLSQL_CODE_CLOB (
+            reportColumnQueryId: 6
+            derivedColumn: N
+            heading {
+                heading: Plsql Code Clob
+                alignment: center
+            }
+            layout {
+                sequence: 60
+            }
+        )
+
+        column PROCESS_POINT (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Process Point
+                alignment: center
+            }
+            layout {
+                sequence: 50
+            }
+        )
+
+    )
+
+    region 7-3-tinymce-based-rich-text-editor-desupported (
+        name: 7.3 TinyMCE-based Rich Text Editor Desupported
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select i.page_id
+                      ,i.page_name
+                      ,i.region
+                      ,i.label
+                      ,i.init_javascript_code
+                from apex_application_page_items i
+                where i.display_as = 'Rich Text Editor'
+                and i.init_javascript_code is not null
+                and application_id = :P0_APP_ID
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 30
+            parentRegion: @7-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-desupported-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            htmlDomId: av-desupported-73
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                In APEX 24.1, the Rich Text Editor page item based on the TinyMCE library was deprecated.<br>
+                As of APEX 24.2, TinyMCE is desupported and the Rich Text Editor page item no longer supports the TinyMCE library. The underlying library is now Oracle Rich Text Library (ORTL). Any Rich Text Editor page items still using TinyMCE are auto-migrated to ORTL. Any custom Initialization JavaScript Function code is commented out.<br>
+                Rich Text Editor occurances with Init JavaScript Code are listed.
+                ```
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No Rich Text Editors with Init JavaScript code have been found.</b>
+        }
+
+        column INIT_JAVASCRIPT_CODE (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Init Javascript Code
+            }
+            layout {
+                sequence: 50
+            }
+        )
+
+        column LABEL (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Label
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: center
+            }
+            layout {
+                sequence: 10
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+                alignment: center
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+        column REGION (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Region
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+    )
+
+    region 7-4-csso-desupported (
+        name: 7.4 CSSO Desupported
+        type: staticContent
+        layout {
+            sequence: 60
+            parentRegion: @7-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-desupported-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            htmlDomId: av-desupported-74
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                The CSSO 3rd party JavaScript library is removed from APEX, and replaced with a basic minification logic. This may impact existing CSS static files.<br>
+                <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated</b>
+                ```
+        }
+    )
+
+    region 7-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-desupported-features-html-target-blank-link-to-release-notes-a (
+        name: 7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>
+        type: staticContent
+        layout {
+            sequence: 10
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+    )
+
+    dynamicAction change-p0-app-id-refresh-regions (
+        name: change P0_APP_ID - refresh regions
+        execution {
+            sequence: 10
+        }
+        when {
+            selectionType: items
+            items: P0_APP_ID
+        }
+
+        action native-javascript-code (
+            action: executeJsCode
+            settings {
+                jsCode: av_refresh_hide_show_regions()
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+    )
+
+    dynamicAction click-refresh-refresh-regions (
+        name: click refresh - refresh regions
+        execution {
+            sequence: 20
+        }
+        when {
+            event: click
+            selectionType: button
+            button: @/refresh
+        }
+
+        action native-javascript-code (
+            action: executeJsCode
+            settings {
+                jsCode: av_refresh_hide_show_regions()
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+    )
+
+    dynamicAction page-load-add-icons-by-class (
+        name: page load - add icons by class
+        execution {
+            sequence: 30
+        }
+        when {
+            event: ready
+        }
+
+        action native-javascript-code (
+            action: executeJsCode
+            settings {
+                jsCode:
+                    ```javascript-browser
+                    console.log('running DA')
+                    console.log(this.affectedElements);
+                    ```
+            }
+            affectedElements {
+                selectionType: jquerySelector
+                jquerySelector: .av-no-check-needed,.av-developer-functionality
+            }
+            execution {
+                sequence: 10
+            }
+        )
+
+    )
+
+)
+

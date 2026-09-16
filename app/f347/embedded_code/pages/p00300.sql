@@ -9,39 +9,6 @@
 -- --------------------------------------------------------------------------------
 
 -- ----------------------------------------
--- Page: 300 - PLSQL > Region: Place of PLSQL > Source > SQL Query
-
-select application_name
-      ,application_id
-      ,component_type || ' - ' || code_type component
-      ,sum(code_length) amount
-from av_plsql_v
-where (:P0_APP_ID is null or application_id = :P0_APP_ID)
-and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID)
-and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = best_practice)
-group by application_name,application_id,component_type || ' - ' || code_type
-order by sum(code_length) desc;
-
--- ----------------------------------------
--- Page: 300 - PLSQL > Page Item: P300_COMPONENT_TYPE > List of Values > SQL Query
-
-select distinct component_type d, component_type r
-from av_plsql_v
-where (:P0_APP_ID is null or application_id = :P0_APP_ID)
-and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID);
-
--- ----------------------------------------
--- Page: 300 - PLSQL > Region: PLSQL in Page > Source > SQL Query
-
-select component_type || ' - ' || v.component_name series_name, v.component_type, v.plsql_code, v.code_length, v.code_type, v.tooltip, v.page_designer_url
-from av_plsql_v v
-where v.application_id = :P0_APP_ID 
-and (v.page_id = :P0_PAGE_ID)
-and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = v.best_practice)
-and (v.component_type = :P300_COMPONENT_TYPE or :P300_COMPONENT_TYPE is null)
-order by code_length desc;
-
--- ----------------------------------------
 -- Page: 300 - PLSQL > Region: Characters of PLSQL Code per Page > Source > SQL Query
 
 select page_id,
@@ -56,4 +23,37 @@ from av_p0300_plsql_code_by_page_v t
 where (t.application_id = :P0_APP_ID or :P0_APP_ID is null)
 and t.page_id is not null
 and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = t.best_practice);
+
+-- ----------------------------------------
+-- Page: 300 - PLSQL > Item: P300_COMPONENT_TYPE > List of Values > SQL Query
+
+select distinct component_type d, component_type r
+from av_plsql_v
+where (:P0_APP_ID is null or application_id = :P0_APP_ID)
+and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID);
+
+-- ----------------------------------------
+-- Page: 300 - PLSQL > Region: Place of PLSQL > Source > SQL Query
+
+select application_name
+      ,application_id
+      ,component_type || ' - ' || code_type component
+      ,sum(code_length) amount
+from av_plsql_v
+where (:P0_APP_ID is null or application_id = :P0_APP_ID)
+and (:P0_PAGE_ID is null or page_id = :P0_PAGE_ID)
+and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = best_practice)
+group by application_name,application_id,component_type || ' - ' || code_type
+order by sum(code_length) desc;
+
+-- ----------------------------------------
+-- Page: 300 - PLSQL > Region: PLSQL in Page > Source > SQL Query
+
+select component_type || ' - ' || v.component_name series_name, v.component_type, v.plsql_code, v.code_length, v.code_type, v.tooltip, v.page_designer_url
+from av_plsql_v v
+where v.application_id = :P0_APP_ID 
+and (v.page_id = :P0_PAGE_ID)
+and (:P0_BEST_PRACTICE = -1 or :P0_BEST_PRACTICE = v.best_practice)
+and (v.component_type = :P300_COMPONENT_TYPE or :P300_COMPONENT_TYPE is null)
+order by code_length desc;
 
