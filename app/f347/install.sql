@@ -74,6 +74,7 @@ prompt --install
 @@application/pages/page_00720.sql
 @@application/pages/page_00730.sql
 @@application/pages/page_00740.sql
+@@application/pages/page_00745.sql
 @@application/pages/page_00750.sql
 @@application/pages/page_00760.sql
 @@application/deployment/definition.sql

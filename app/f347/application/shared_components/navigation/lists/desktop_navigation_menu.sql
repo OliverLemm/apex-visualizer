@@ -15,7 +15,7 @@ wwv_flow_imp_shared.create_list(
  p_id=>wwv_flow_imp.id(472848853615347627)
 ,p_name=>'Desktop Navigation Menu'
 ,p_list_status=>'PUBLIC'
-,p_version_scn=>130632094
+,p_version_scn=>139403933
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(472913516436311096)
@@ -288,6 +288,15 @@ wwv_flow_imp_shared.create_list_item(
 ,p_parent_list_item_id=>wwv_flow_imp.id(36813609309735876)
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'740'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(79837115022931360)
+,p_list_item_display_sequence=>1350
+,p_list_item_link_text=>'APEX 26.1'
+,p_list_item_link_target=>'f?p=&APP_ID.:745:&APP_SESSION.::&DEBUG.:::'
+,p_parent_list_item_id=>wwv_flow_imp.id(36813609309735876)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'745'
 );
 wwv_flow_imp.component_end;
 end;

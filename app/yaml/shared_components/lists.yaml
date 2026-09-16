@@ -5,7 +5,7 @@
     name: Desktop Navigation Menu
 
   subscription: 
-    version-number: 130632094
+    version-number: 139403933
 
   source: 
     type: Static Values
@@ -529,6 +529,31 @@
       target: 
         url: 'f?p=&APP_ID.:750:&SESSION.::&DEBUG.::::'
         page: 750 # Migration Details
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: APEX 26.1 ====================================
+    id: 79837115022931360
+    label: 
+      label: APEX 26.1
+
+    layout: 
+      sequence: 1350
+      parent-entry: Migration # 36813609309735876
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 745
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:745:&APP_SESSION.::&DEBUG.:::'
+        page: 745 # APEX 26.1
 
     click-counting: 
       count-clicks: false
