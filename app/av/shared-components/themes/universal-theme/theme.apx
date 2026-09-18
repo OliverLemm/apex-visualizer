@@ -1,9 +1,9 @@
 theme universal-theme (
     name: Universal Theme
     themeNumber: 42
-    baseTheme: ut-24.2
+    baseTheme: ut-26.1
     style {
-        currentThemeStyle: @av-dark
+        currentThemeStyle: @/iris
     }
     javaScript {
         fileUrls: [
@@ -15,7 +15,7 @@ theme universal-theme (
         fileUrls: #THEME_FILES#css/Core#MIN#.css?v=#APEX_VERSION#
     }
     componentDefaults {
-        page: @/right-side-column
+        page: 2526646919027767344
         navigationBarList: @/navigation-bar
         navigationMenuListPosition: side
         navigationMenuListTop: @/top-navigation-menu
@@ -25,9 +25,9 @@ theme universal-theme (
         printerFriendlyPage: @/standard
         breadcrumb: @/breadcrumb
         button: @/text
-        defaultLabel: @/optional
-        optionalLabel: @/optional
-        requiredLabel: @/required
+        defaultLabel: 2318601014859922299
+        optionalLabel: 2318601014859922299
+        requiredLabel: 2526760615038828570
         list: @/links-list
         region: @/standard
         classicReport: @/standard
@@ -50,7 +50,7 @@ theme universal-theme (
         library: fontApex
     }
     advanced {
-        filePrefix: #APEX_FILES#themes/theme_42/24.2/
+        filePrefix: #APEX_FILES#themes/theme_42/26.1/
         identifier: UNIVERSAL_THEME
     }
 

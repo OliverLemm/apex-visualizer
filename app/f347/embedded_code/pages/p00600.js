@@ -14,19 +14,19 @@
 var $trigger = $(this.triggeringElement);
 var val = apex.item("P600_COMPATIBILITY_MODE").getValue();
 
-// success - up-to-date => 21.2 / 22.1 / 22.2
-if (val == '24.2') {
+// success - up-to-date (only latest version)
+if (val == '26.1') {
     $trigger.removeClass("u-danger");
     $trigger.addClass("u-success");
     $trigger.removeClass("u-warning");
 
-// warning - not up-to-date => only one version before 21.2-24.1
-} else if (val == '21.2') {
+// warning - not up-to-date but not critical
+} else if (val == '24.2') {
     $trigger.removeClass("u-danger");
     $trigger.removeClass("u-success");
     $trigger.addClass("u-warning");
 
-// danger - older than 19.2
+// danger - older ones
 } else {
     $trigger.addClass("u-danger");
     $trigger.removeClass("u-success");
@@ -40,13 +40,13 @@ var $trigger = $(this.triggeringElement);
 var val = $trigger.val();
 
 // success - up-to-date
-if (val == '24.2') {    
+if (val == '26.1') {    
     $trigger.addClass("u-success");
     $trigger.removeClass("u-warning");
     $trigger.removeClass("u-danger");
 
 // danger - old versions which are not supported any more
-} else if ((val == '1.0') || (val == '1.1') || (val == '1.2')) {    
+} else if (val == '24.2') {    
     $trigger.addClass("u-danger");
     $trigger.removeClass("u-success");
     $trigger.removeClass("u-warning");   

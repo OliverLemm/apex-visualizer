@@ -18,7 +18,7 @@ wwv_flow_imp_page.create_page(
 ,p_step_title=>'Migration Details'
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
-,p_step_template=>2526646919027767344
+,p_step_template=>2528123255985761961
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'03'
 );
@@ -29,20 +29,20 @@ wwv_flow_imp_page.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--useBreadcrumbTitle'
 ,p_component_template_options=>'#DEFAULT#'
 ,p_escape_on_http_output=>'N'
-,p_plug_template=>2531463326621247859
+,p_plug_template=>2532939663579242476
 ,p_plug_display_sequence=>10
 ,p_plug_display_point=>'REGION_POSITION_01'
 ,p_plug_item_display_point=>'ABOVE'
 ,p_menu_id=>wwv_flow_imp.id(472901389022347808)
 ,p_plug_source_type=>'NATIVE_BREADCRUMB'
-,p_menu_template_id=>4072363345357175094
+,p_menu_template_id=>4073839682315169711
 ,p_plug_query_headings_type=>'COLON_DELMITED_LIST'
 );
 wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(71037927717110921)
 ,p_name=>'Migration Details'
 ,p_static_id=>'migration-details'
-,p_template=>4072358936313175081
+,p_template=>4073835273271169698
 ,p_display_sequence=>10
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -79,7 +79,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID,P750_APEX_VERSIONS,P750_MIGRATION_PRIORITIES,P750_MIGRATION_TYPES,P750_SHOW_ONLY_FINDINGS'
 ,p_lazy_loading=>true
-,p_query_row_template=>2538654340625403440
+,p_query_row_template=>2540130677583398057
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_break_cols=>'1'
@@ -232,7 +232,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_source_type=>'ALWAYS_NULL'
 ,p_display_as=>'NATIVE_CHECKBOX'
 ,p_named_lov=>'APEX_VERSIONS'
-,p_field_template=>2318601014859922299
+,p_field_template=>2320077351817916916
 ,p_item_template_options=>'#DEFAULT#'
 ,p_lov_display_extra=>'NO'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
@@ -250,7 +250,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_source_type=>'ALWAYS_NULL'
 ,p_display_as=>'NATIVE_CHECKBOX'
 ,p_named_lov=>'MIGRATION_PRIORITY'
-,p_field_template=>2318601014859922299
+,p_field_template=>2320077351817916916
 ,p_item_template_options=>'#DEFAULT#'
 ,p_lov_display_extra=>'NO'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -275,7 +275,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_source_type=>'ALWAYS_NULL'
 ,p_display_as=>'NATIVE_CHECKBOX'
 ,p_named_lov=>'MIGRATION_TYPES'
-,p_field_template=>2318601014859922299
+,p_field_template=>2320077351817916916
 ,p_item_template_options=>'#DEFAULT#'
 ,p_lov_display_extra=>'YES'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
@@ -292,7 +292,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_prompt=>'Show Only Findings'
 ,p_source_type=>'ALWAYS_NULL'
 ,p_display_as=>'NATIVE_YES_NO'
-,p_field_template=>2318601014859922299
+,p_field_template=>2320077351817916916
 ,p_item_template_options=>'#DEFAULT#'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'use_defaults', 'Y')).to_clob

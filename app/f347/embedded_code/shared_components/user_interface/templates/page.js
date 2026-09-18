@@ -9,6 +9,11 @@
 // --------------------------------------------------------------------------------
 
 // ----------------------------------------
+// Theme: Universal Theme > Page Template: Blank > JavaScript > Execute when Page Loads
+
+apex.theme42.initializePage.noSideCol();
+
+// ----------------------------------------
 // Theme: Universal Theme > Page Template: Drawer > JavaScript > Execute when Page Loads
 
 apex.theme42.initializePage.modalDialog();

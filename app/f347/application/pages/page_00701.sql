@@ -17,7 +17,7 @@ wwv_flow_imp_page.create_page(
 ,p_alias=>'APEX-18-1'
 ,p_step_title=>'APEX 18.1'
 ,p_autocomplete_on_off=>'OFF'
-,p_step_template=>2526646919027767344
+,p_step_template=>2528123255985761961
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_page_component_map=>'11'

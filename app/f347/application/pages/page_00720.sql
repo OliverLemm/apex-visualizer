@@ -18,7 +18,7 @@ wwv_flow_imp_page.create_page(
 ,p_step_title=>'APEX 23.2'
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
-,p_step_template=>2526646919027767344
+,p_step_template=>2528123255985761961
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_page_component_map=>'03'
@@ -30,7 +30,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_parent_plug_id=>wwv_flow_imp.id(93319249707815855)
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_escape_on_http_output=>'N'
-,p_plug_template=>2664334895415463485
+,p_plug_template=>2665811232373458102
 ,p_plug_display_sequence=>10
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_plug_item_display_point=>'ABOVE'
@@ -57,7 +57,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/deprecated-features.html" target="_blank">Link to Release Notes</a>'
 ,p_static_id=>'5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-23-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>4072358936313175081
+,p_plug_template=>4073835273271169698
 ,p_plug_display_sequence=>20
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_item_display_point=>'ABOVE'
@@ -76,7 +76,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_region_css_classes=>'av-no-check-needed av-developer-functionality'
 ,p_region_template_options=>'#DEFAULT#:is-collapsed:t-Region--scrollBody'
 ,p_escape_on_http_output=>'N'
-,p_plug_template=>2664334895415463485
+,p_plug_template=>2665811232373458102
 ,p_plug_display_sequence=>10
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_plug_item_display_point=>'ABOVE'
@@ -94,7 +94,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_static_id=>'7-2-querying-template-component-metadata'
 ,p_region_name=>'av-232-desup-72'
 ,p_parent_plug_id=>wwv_flow_imp.id(93320346476815866)
-,p_template=>2664334895415463485
+,p_template=>2665811232373458102
 ,p_display_sequence=>20
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -140,7 +140,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_fixed_header=>'PAGE'
 ,p_lazy_loading=>true
-,p_query_row_template=>2538654340625403440
+,p_query_row_template=>2540130677583398057
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Template Component with old Metadata used</b>'
@@ -190,7 +190,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>'
 ,p_static_id=>'7-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-apex-23-2-htmrn-desupported-features-html-target-blank-link-to-release-notes-a'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>4072358936313175081
+,p_plug_template=>4073835273271169698
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_item_display_point=>'ABOVE'

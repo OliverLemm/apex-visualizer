@@ -18,7 +18,7 @@ wwv_flow_imp_page.create_page(
 ,p_step_title=>'Links'
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
-,p_step_template=>2526646919027767344
+,p_step_template=>2528123255985761961
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'03'
 );
@@ -27,7 +27,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'D3 Chart'
 ,p_static_id=>'d3-chart'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>4072358936313175081
+,p_plug_template=>4073835273271169698
 ,p_plug_display_sequence=>10
 ,p_plug_item_display_point=>'ABOVE'
 ,p_location=>null
@@ -87,7 +87,7 @@ wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(59245254577518454)
 ,p_name=>'Links from Page'
 ,p_static_id=>'links-from-page'
-,p_template=>4072358936313175081
+,p_template=>4073835273271169698
 ,p_display_sequence=>30
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
@@ -109,7 +109,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID,P0_PAGE_ID'
 ,p_lazy_loading=>true
-,p_query_row_template=>2538654340625403440
+,p_query_row_template=>2540130677583398057
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_csv_output=>'N'
@@ -189,7 +189,7 @@ wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(58068369767606090)
 ,p_name=>'Links to Page'
 ,p_static_id=>'links-to-page'
-,p_template=>4072358936313175081
+,p_template=>4073835273271169698
 ,p_display_sequence=>20
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
@@ -210,7 +210,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID,P0_PAGE_ID'
 ,p_lazy_loading=>true
-,p_query_row_template=>2538654340625403440
+,p_query_row_template=>2540130677583398057
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_csv_output=>'N'
@@ -303,7 +303,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'Tree'
 ,p_static_id=>'tree'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>4072358936313175081
+,p_plug_template=>4073835273271169698
 ,p_plug_display_sequence=>40
 ,p_plug_item_display_point=>'ABOVE'
 ,p_query_type=>'TABLE'

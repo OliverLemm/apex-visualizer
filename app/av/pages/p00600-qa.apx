@@ -431,7 +431,7 @@ page 600 (
             helpText:
                 ```html
                 Compatibility Mode <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/htmrn/changed-behavior.html#GUID-712BE54F-08CD-43A3-A645-87B9360ED516" target="_blank">Releasenotes 24.2</a><br><br>
-                24.2 - APEX supports an extended substitution syntax for text messages.<br>
+                24.2 / 26.1 - APEX supports an extended substitution syntax for text messages.<br>
                 21.2 / 22.1 / 22.2 / 23.1 / 23.2 / 24.1 - all processes ... regardless of errors<br>
                 19.2 / 20.1 / 20.2 / 21.1 - Classic Reports render empty column values ...<br>
                 19.1 - Rich Text editor ... Max Length item<br>
@@ -762,19 +762,19 @@ page 600 (
                     var $trigger = $(this.triggeringElement);
                     var val = apex.item("P600_COMPATIBILITY_MODE").getValue();
                     
-                    // success - up-to-date => 21.2 / 22.1 / 22.2
-                    if (val == '24.2') {
+                    // success - up-to-date (only latest version)
+                    if (val == '26.1') {
                         $trigger.removeClass("u-danger");
                         $trigger.addClass("u-success");
                         $trigger.removeClass("u-warning");
                     
-                    // warning - not up-to-date => only one version before 21.2-24.1
-                    } else if (val == '21.2') {
+                    // warning - not up-to-date but not critical
+                    } else if (val == '24.2') {
                         $trigger.removeClass("u-danger");
                         $trigger.removeClass("u-success");
                         $trigger.addClass("u-warning");
                     
-                    // danger - older than 19.2
+                    // danger - older ones
                     } else {
                         $trigger.addClass("u-danger");
                         $trigger.removeClass("u-success");
@@ -1041,13 +1041,13 @@ page 600 (
                     var val = $trigger.val();
                     
                     // success - up-to-date
-                    if (val == '24.2') {    
+                    if (val == '26.1') {    
                         $trigger.addClass("u-success");
                         $trigger.removeClass("u-warning");
                         $trigger.removeClass("u-danger");
                     
                     // danger - old versions which are not supported any more
-                    } else if ((val == '1.0') || (val == '1.1') || (val == '1.2')) {    
+                    } else if (val == '24.2') {    
                         $trigger.addClass("u-danger");
                         $trigger.removeClass("u-success");
                         $trigger.removeClass("u-warning");   

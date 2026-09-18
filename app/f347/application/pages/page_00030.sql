@@ -18,7 +18,7 @@ wwv_flow_imp_page.create_page(
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
 ,p_javascript_code=>'var htmldb_delete_message=''"DELETE_CONFIRM_MSG"'';'
-,p_step_template=>2526646919027767344
+,p_step_template=>2528123255985761961
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'21'
 );
@@ -28,7 +28,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_static_id=>'page'
 ,p_region_template_options=>'#DEFAULT#'
 ,p_escape_on_http_output=>'N'
-,p_plug_template=>2100526641005906379
+,p_plug_template=>2102002977963900996
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_item_display_point=>'ABOVE'

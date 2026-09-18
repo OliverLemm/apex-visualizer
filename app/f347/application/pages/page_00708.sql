@@ -18,7 +18,7 @@ wwv_flow_imp_page.create_page(
 ,p_step_title=>'APEX 21.2'
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
-,p_step_template=>2526646919027767344
+,p_step_template=>2528123255985761961
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_page_component_map=>'03'
@@ -28,7 +28,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_name=>'5.1.1 Deprecated Page Positions '
 ,p_static_id=>'5-1-1-deprecated-page-positions'
 ,p_parent_plug_id=>wwv_flow_imp.id(66571031247285482)
-,p_template=>2664334895415463485
+,p_template=>2665811232373458102
 ,p_display_sequence=>20
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -44,7 +44,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_fixed_header=>'PAGE'
 ,p_lazy_loading=>true
-,p_query_row_template=>2538654340625403440
+,p_query_row_template=>2540130677583398057
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Deprecated Page Positions used</b>'
@@ -102,7 +102,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_name=>'5.1.2 Deprecated Region Positions'
 ,p_static_id=>'5-1-2-deprecated-region-positions'
 ,p_parent_plug_id=>wwv_flow_imp.id(66571031247285482)
-,p_template=>2664334895415463485
+,p_template=>2665811232373458102
 ,p_display_sequence=>30
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -129,7 +129,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_fixed_header=>'PAGE'
 ,p_lazy_loading=>true
-,p_query_row_template=>2538654340625403440
+,p_query_row_template=>2540130677583398057
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Deprecated Region Positions used</b>'
@@ -210,7 +210,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_parent_plug_id=>wwv_flow_imp.id(66571031247285482)
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_escape_on_http_output=>'N'
-,p_plug_template=>2664334895415463485
+,p_plug_template=>2665811232373458102
 ,p_plug_display_sequence=>40
 ,p_plug_item_display_point=>'ABOVE'
 ,p_plug_query_headings_type=>'COLON_DELMITED_LIST'
@@ -227,7 +227,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_name=>'5.1.4 Legacy Substitution Strings Deprecated '
 ,p_static_id=>'5-1-4-legacy-substitution-strings-deprecated'
 ,p_parent_plug_id=>wwv_flow_imp.id(66571031247285482)
-,p_template=>2664334895415463485
+,p_template=>2665811232373458102
 ,p_display_sequence=>50
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -255,7 +255,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_fixed_header=>'PAGE'
 ,p_lazy_loading=>true
-,p_query_row_template=>2538654340625403440
+,p_query_row_template=>2540130677583398057
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> no Legacy Substitution Strings Deprecated used</b>'
@@ -354,7 +354,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_static_id=>'5-1-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-application-express-21-2-htmrn-index-html-htmrn-guid-657ff369-756e-4f31-96f9-b2d92c3de084-target-blank-link-to-release-notes-a'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_escape_on_http_output=>'N'
-,p_plug_template=>4072358936313175081
+,p_plug_template=>4073835273271169698
 ,p_plug_display_sequence=>20
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_item_display_point=>'ABOVE'
@@ -370,7 +370,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_parent_plug_id=>wwv_flow_imp.id(66570737640285479)
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_escape_on_http_output=>'N'
-,p_plug_template=>4072358936313175081
+,p_plug_template=>4073835273271169698
 ,p_plug_display_sequence=>40
 ,p_plug_item_display_point=>'ABOVE'
 ,p_plug_query_headings_type=>'COLON_DELMITED_LIST'
@@ -387,7 +387,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_static_id=>'7-1-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-application-express-21-2-htmrn-index-html-htmrn-guid-cc4b5d70-22fd-45ca-8f6f-c34a91f1b5bd-target-blank-link-to-release-notes-a'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_escape_on_http_output=>'N'
-,p_plug_template=>4072358936313175081
+,p_plug_template=>4073835273271169698
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_item_display_point=>'ABOVE'
@@ -404,14 +404,14 @@ wwv_flow_imp_page.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#'
 ,p_component_template_options=>'#DEFAULT#'
 ,p_escape_on_http_output=>'N'
-,p_plug_template=>2674017834225413037
+,p_plug_template=>2675494171183407654
 ,p_plug_display_sequence=>30
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_display_point=>'REGION_POSITION_01'
 ,p_plug_item_display_point=>'ABOVE'
 ,p_menu_id=>wwv_flow_imp.id(472901389022347808)
 ,p_plug_source_type=>'NATIVE_BREADCRUMB'
-,p_menu_template_id=>4072363345357175094
+,p_menu_template_id=>4073839682315169711
 ,p_plug_query_headings_type=>'COLON_DELMITED_LIST'
 );
 wwv_flow_imp_page.create_page_da_event(

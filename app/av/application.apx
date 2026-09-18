@@ -69,7 +69,6 @@ app AV (
         type: useInstanceSettings
     }
     runtime {
-        compatibilityMode: 24.2
         accessibleReadOnlyItems: false
     }
     advanced {

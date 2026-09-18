@@ -1,8 +1,8 @@
 {
-  "app" : {
-    "id" : 347,
-    "runtime" : {
-      "debugging" : true
+  "app": {
+    "id": 347,
+    "runtime": {
+      "debugging": true
     }
   }
 }
