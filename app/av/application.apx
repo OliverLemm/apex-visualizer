@@ -1,6 +1,6 @@
 app AV (
     name: APEX Visualizer
-    version: 24.2.2
+    version: 26.1.0
     logo {
         type: text
         text: APEX Visualizer

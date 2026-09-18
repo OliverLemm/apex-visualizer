@@ -4,8 +4,14 @@ https://raw.githubusercontent.com/OliverLemm/apex-visualizer/master/manifest.jso
 inside your internal APEX workspace. <br>
 Go Manage Instance => Instance Setting => Application Gallery and add a new line.
 
+## Release 26.1.0
+18th of september 2026<br>
+- APEX Visualizer migrated to APEX 26.1
+- Page Migration Details still under construction
+- Page Migration Effort still under construction
+
 ## Release 24.2.2
-May 2026
+17th of september 2026<br>
 - added new Page Migration Details
 - added new Page Migration Effort
 - added Builder Extension Support
