@@ -19,7 +19,7 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_imp.import_begin (
  p_version_yyyy_mm_dd=>'2026.03.30'
-,p_release=>'26.1.4'
+,p_release=>'26.1.5'
 ,p_default_workspace_id=>100001
 ,p_default_application_id=>347
 ,p_default_id_offset=>20408574139881448
@@ -64,7 +64,7 @@ prompt APPLICATION 347 - APEX Visualizer
 --       E-Mail:
 --     Supporting Objects:  Included
 --       Install scripts:         27
---   Version:         26.1.4
+--   Version:         26.1.5
 --   Instance ID:     709418135251450
 --
 
