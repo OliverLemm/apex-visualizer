@@ -238,4 +238,4 @@ create or replace package body av_migration_20_2_pkg is
   end ptf_des_7_1_8;
 
 end av_migration_20_2_pkg;
-/ 
+/

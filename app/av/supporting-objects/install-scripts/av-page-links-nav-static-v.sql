@@ -1,3 +1,4 @@
+
   CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_PAGE_LINKS_NAV_STATIC_V" ("APPLICATION_ID", "APPLICATION_NAME", "LIST_ID", "LIST_NAME", "LIST_ENTRY_PARENT_ID", "ENTRY_PARENT_TEXT", "LIST_ENTRY_ID", "ENTRY_TEXT", "PAGE_ID", "ENTRY_TARGET") AS 
   select l.application_id
       ,l.application_name
@@ -29,4 +30,4 @@ left join (select le.list_entry_id
 left join apex_application_list_entries le_parent on le_parent.list_entry_id = le.list_entry_parent_id
 
 where l.list_type_code = 'STATIC'
-; 
+;

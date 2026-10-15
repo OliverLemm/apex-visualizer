@@ -12,22 +12,23 @@ wwv_flow_imp.component_begin (
 ,p_default_owner=>'APEX_VISUALIZER'
 );
 wwv_flow_imp.g_varchar2_table := wwv_flow_imp.empty_varchar2_table;
-wwv_flow_imp.g_varchar2_table(1) := '  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0600_TABS_V" ("APPLICATION_ID", "TAB_NAME", "TAB_LAB';
-wwv_flow_imp.g_varchar2_table(2) := 'EL", "PAGES_COUNT", "TAB_PAGE", "TAB_ALSO_CURRENT_FOR_PAGES") AS '||wwv_flow.LF||
+wwv_flow_imp.g_varchar2_table(1) := ''||wwv_flow.LF||
+'  CREATE OR REPLACE FORCE EDITIONABLE VIEW "AV_P0600_TABS_V" ("APPLICATION_ID", "TAB_NAME", "TAB_LA';
+wwv_flow_imp.g_varchar2_table(2) := 'BEL", "PAGES_COUNT", "TAB_PAGE", "TAB_ALSO_CURRENT_FOR_PAGES") AS '||wwv_flow.LF||
 '  select t.application_id'||wwv_flow.LF||
-'      ';
-wwv_flow_imp.g_varchar2_table(3) := ',t.tab_name'||wwv_flow.LF||
+'      ,';
+wwv_flow_imp.g_varchar2_table(3) := 't.tab_name'||wwv_flow.LF||
 '      ,t.tab_label'||wwv_flow.LF||
 '      ,nvl2(tab_also_current_for_pages'||wwv_flow.LF||
-'           ,(regexp_count(t';
-wwv_flow_imp.g_varchar2_table(4) := 'ab_also_current_for_pages'||wwv_flow.LF||
+'           ,(regexp_count(tab_a';
+wwv_flow_imp.g_varchar2_table(4) := 'lso_current_for_pages'||wwv_flow.LF||
 '                         ,'','') + 2)'||wwv_flow.LF||
 '           ,1) pages_count'||wwv_flow.LF||
-'      ,t';
-wwv_flow_imp.g_varchar2_table(5) := '.tab_page'||wwv_flow.LF||
+'      ,t.tab_pa';
+wwv_flow_imp.g_varchar2_table(5) := 'ge'||wwv_flow.LF||
 '      ,t.tab_also_current_for_pages'||wwv_flow.LF||
 'from apex_application_tabs t'||wwv_flow.LF||
-'; ';
+';';
 wwv_flow_imp_shared.create_install_script(
  p_id=>wwv_flow_imp.id(50059082577434550)
 ,p_install_id=>wwv_flow_imp.id(314927592265159640)

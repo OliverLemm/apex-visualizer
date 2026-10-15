@@ -201,29 +201,29 @@ wwv_flow_imp.g_varchar2_table(55) := 'e_javascript_code'' js_code_type'||wwv_flo
 '             ,1 best_practice'||wwv_flow.LF||
 '             ,pda.attribute_01 js_code';
 wwv_flow_imp.g_varchar2_table(56) := '_vc2'||wwv_flow.LF||
-'             ,to_clob(pda.attribute_01) js_code_clob'||wwv_flow.LF||
-'      from apex_application_page_da_acts p';
-wwv_flow_imp.g_varchar2_table(57) := 'da'||wwv_flow.LF||
+'             ,to_clob(pda.attributes) js_code_clob'||wwv_flow.LF||
+'      from apex_application_page_da_acts pda';
+wwv_flow_imp.g_varchar2_table(57) := ''||wwv_flow.LF||
 '      where pda.action_code = ''NATIVE_JAVASCRIPT_CODE'''||wwv_flow.LF||
 '      -- Buttons'||wwv_flow.LF||
 '      union all'||wwv_flow.LF||
-'      sel';
-wwv_flow_imp.g_varchar2_table(58) := 'ect b.application_id'||wwv_flow.LF||
+'      selec';
+wwv_flow_imp.g_varchar2_table(58) := 't b.application_id'||wwv_flow.LF||
 '             ,b.page_id'||wwv_flow.LF||
-'             ,b.button_name || '' ('' || b.button_sequenc';
-wwv_flow_imp.g_varchar2_table(59) := 'e || '')'' component_name'||wwv_flow.LF||
+'             ,b.button_name || '' ('' || b.button_sequence ';
+wwv_flow_imp.g_varchar2_table(59) := '|| '')'' component_name'||wwv_flow.LF||
 '             ,''button'' component_type'||wwv_flow.LF||
-'             ,''redirect_url'' js_code_t';
-wwv_flow_imp.g_varchar2_table(60) := 'ype'||wwv_flow.LF||
+'             ,''redirect_url'' js_code_typ';
+wwv_flow_imp.g_varchar2_table(60) := 'e'||wwv_flow.LF||
 '             ,1 best_practice'||wwv_flow.LF||
 '             ,b.redirect_url js_code_vc'||wwv_flow.LF||
-'             ,to_clob(b.re';
-wwv_flow_imp.g_varchar2_table(61) := 'direct_url) js_code_clob'||wwv_flow.LF||
+'             ,to_clob(b.redi';
+wwv_flow_imp.g_varchar2_table(61) := 'rect_url) js_code_clob'||wwv_flow.LF||
 '      from apex_application_page_buttons b'||wwv_flow.LF||
-'      where lower(b.redirect_url';
-wwv_flow_imp.g_varchar2_table(62) := ') like ''%javascript:%'') j on j.application_id = app.application_id'||wwv_flow.LF||
-'                                 ';
-wwv_flow_imp.g_varchar2_table(63) := '                     and j.page_id = app.page_id'||wwv_flow.LF||
+'      where lower(b.redirect_url) ';
+wwv_flow_imp.g_varchar2_table(62) := 'like ''%javascript:%'') j on j.application_id = app.application_id'||wwv_flow.LF||
+'                                   ';
+wwv_flow_imp.g_varchar2_table(63) := '                   and j.page_id = app.page_id'||wwv_flow.LF||
 ';';
 wwv_flow_imp_shared.create_install_script(
  p_id=>wwv_flow_imp.id(164064889080051458)

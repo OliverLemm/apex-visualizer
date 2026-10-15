@@ -4,4 +4,3 @@ create or replace type av_varchar2_t force as object
 )
 ;
 /
- 

@@ -219,4 +219,4 @@ create or replace type body av_migration_t is
   end to_string;
 
 end;
-/ 
+/

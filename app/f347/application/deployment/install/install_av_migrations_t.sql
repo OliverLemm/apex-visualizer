@@ -15,7 +15,7 @@ wwv_flow_imp.g_varchar2_table := wwv_flow_imp.empty_varchar2_table;
 wwv_flow_imp.g_varchar2_table(1) := 'create or replace type av_migrations_t force as table of av_migration_t;'||wwv_flow.LF||
 ''||wwv_flow.LF||
 '/'||wwv_flow.LF||
-' ';
+'';
 wwv_flow_imp_shared.create_install_script(
  p_id=>wwv_flow_imp.id(79835089642831925)
 ,p_install_id=>wwv_flow_imp.id(314927592265159640)

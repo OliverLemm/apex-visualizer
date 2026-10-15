@@ -14,6 +14,7 @@ drop view av_p0300_plsql_code_by_page_v;
 drop view av_p0600_not_used_auth_schemes_v;
 drop view av_p0600_tabs_v;
 drop view av_p0708_legacy_subst_strings_v;
+drop view av_templates_v;
 drop view av_visibility_overview_v;
 drop view av_visibility_v;
 drop package av_general_pkg;

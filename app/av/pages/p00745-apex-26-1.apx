@@ -15,8 +15,104 @@ page 745 (
         formAutoComplete: false
     }
 
+    region 5-1 (
+        name: 5.1 Cohere AI Models Deprecated
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select a.workspace, a.provider_type, model_name
+                from apex_workspace_ai_services a
+                where lower(a.model_name) in ('command-r-08-2024'
+                                             ,'command-r-plus-08-2024'
+                                             ,'command-latest'
+                                             ,'command-plus-latest')
+                ```
+        }
+        layout {
+            sequence: 30
+            parentRegion: @5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                AI models <b>cohere.command-r-08-2024</b>, <b>cohere.command-r-plus-08-2024</b>, <b>cohere.command-latest</b> and <b>cohere.command-plus-latest</b> are now deprecated for AI Services based on the OCI Generative AI Service. Oracle recommends switching to cohere.command-a-03-2025, which also allows you to leverage tools, attachments, and more.</br>
+                <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> This setting is on Workspace Level</b>
+                ```
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated Cohere AI Models found.</b>
+        }
+
+        column MODEL_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Model Name
+            }
+            layout {
+                sequence: 30
+            }
+            columnFormatting {
+                highlightWords: command-r-08-2024,command-r-plus-08-2024,command-latest,command-plus-latest
+            }
+        )
+
+        column PROVIDER_TYPE (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Provider Type
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+        column WORKSPACE (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Workspace
+            }
+            layout {
+                sequence: 10
+            }
+        )
+
+    )
+
     region 5-1-deprecated-apis (
-        name: 5.1 Deprecated APIs
+        name: 5.4 Deprecated PL/SQL APIs
         type: classicReport
         source {
             location: localDatabase
@@ -31,20 +127,24 @@ page 745 (
                       ,p.plsql_code_clob
                 from av_plsql_v p
                 where application_id = :P0_APP_ID
-                and (instr(lower(p.plsql_code_clob)
-                        ,'apex_lang.message') > 0 or
-                     instr(lower(p.plsql_code_clob)
-                        ,'apex_plugin_util.execute_plsql_code') > 0 or
-                     instr(lower(p.plsql_code_clob)
-                        ,'apex_util.custom_calendar') > 0 or
-                     instr(lower(p.plsql_code_clob)
-                        ,'apex_util.increment_calendar') > 0
+                and (instr(upper(p.plsql_code_clob)
+                        ,'APEX_UTIL.CACHE_GET_DATE_OF_PAGE_CACHE') > 0 or
+                     instr(upper(p.plsql_code_clob)
+                        ,'APEX_UTIL.CACHE_GET_DATE_OF_REGION_CACHE') > 0 or
+                     instr(upper(p.plsql_code_clob)
+                        ,'APEX_UTIL.PUBLIC_CHECK_AUTHORIZATION') > 0 or
+                     instr(upper(p.plsql_code_clob)
+                        ,'APEX_UTIL.PURGE_REGIONS_BY_NAME') > 0 or
+                     instr(upper(p.plsql_code_clob)
+                        ,'APEX_UTIL.PURGE_REGIONS_BY_PAGE') > 0 or
+                     instr(upper(p.plsql_code_clob)
+                        ,'APEX_UTIL.PURGE_REGIONS_BY_APP') > 0
                     )
                 ```
             pageItemsToSubmit: P0_APP_ID
         }
         layout {
-            sequence: 10
+            sequence: 60
             parentRegion: @5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a
             slot: subRegions
         }
@@ -62,12 +162,18 @@ page 745 (
         headerAndFooter {
             headerText:
                 ```html
-                <h4>APEX_LANG</h4>
-                <b>APEX_LANG.MESSAGE</b> is deprecated. Instead, use APEX_LANG.GET_MESSAGE to support named substitution parameters.<br>
-                <h4>APEX_PLUGIN_UTIL</h4>
-                <b>APEX_PLUGIN_UTIL.EXECUTE_PLSQL_CODE</b> is now deprecated. Instead, use APEX_EXEC.EXECUTE_PLSQL Signature 1 or Signature 2.<br>
+                <h4>APEX_AI</h4>
+                The following procedures are deprecated: <b>generate</b> Function Signature 3, <b>chat</b> Function Signature 3<br>
+                Instead, use the two new signatures that contain a p_agent_static_id parameter instead of the deprecated p_config_static_id parameter.<br>
+                <h4>APEX_PLUGIN</h4>
+                The following fields in APEX_PLUGIN.T_REGION are deprecated: <b>static_id, filter_region_static_id</b><br>
+                Use dom_id and filter_region_dom_id for new development. The name member of the APEX_PLUGIN.t_plugin record is deprecated. Use the new static_id member instead. <br>
                 <h4>APEX_UTIL</h4>
-                <b>APEX_UTIL.CUSTOM_CALENDAR</b> and <b>APEX_UTIL.INCREMENT_CALENDAR</b> are deprecated.
+                In APEX_UTIL, the following APIs are deprecated: <br>
+                <b>CACHE_GET_DATE_OF_PAGE_CACHE Instead</b>, use APEX_PAGE.GET_CACHE_DATE<br>
+                <b>CACHE_GET_DATE_OF_REGION_CACHE</b> Instead, use APEX_REGION.GET_CACHE_DATE<br>
+                <b>PUBLIC_CHECK_AUTHORIZATION</b> Instead, use APEX_AUTHORIZATION.HAS_ACCESS<br>
+                <b>PURGE_REGIONS_BY_NAME, PURGE_REGIONS_BY_PAGE, PURGE_REGIONS_BY_APP</b>
                 ```
         }
         reportLayout {
@@ -150,6 +256,802 @@ page 745 (
             layout {
                 sequence: 60
             }
+            columnFormatting {
+                highlightWords: apex_util.cache_get_date_of_page_cache,apex_util.cache_get_date_of_region_cache,apex_util.public_check_authorization,apex_util.purge_regions_by_name,apex_util.purge_regions_by_page,apex_util.purge_regions_by_app
+            }
+        )
+
+        column PROCESS_POINT (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Process Point
+                alignment: center
+            }
+            layout {
+                sequence: 50
+            }
+        )
+
+    )
+
+    region 5-2-legacy-calendar-templates-deprecated (
+        name: "5.2 Legacy Calendar Templates Deprecated "
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select r.page_id
+                      ,r.page_name
+                      ,r.region_name
+                      ,r.source_type
+                      ,r.source_type_code
+                from apex_application_page_regions r
+                where source_type_code = 'CALENDAR'
+                and r.application_id = :P0_APP_ID
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 40
+            parentRegion: @5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText: "Legacy Calendar Templates are now deprecated. The Legacy Calendar template is no longer present in Universal Theme 26.1, and APEXlang exports raise an error if Legacy Calendar regions are present. When upgrading your application, APEX automatically removes unreferenced Legacy Calendar Templates. "
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated Legacy Calendar Templates found.</b>
+        }
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: end
+            }
+            layout {
+                sequence: 10
+                columnAlignment: end
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+        column REGION_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Region Name
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column SOURCE_TYPE (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Source Type
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column SOURCE_TYPE_CODE (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Source Type Code
+            }
+            layout {
+                sequence: 50
+            }
+            columnFormatting {
+                highlightWords: CALENDAR
+            }
+        )
+
+    )
+
+    region 5-3-deprecated-property (
+        name: 5.3 Deprecated Property
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select s.page_id
+                      ,s.page_name
+                      ,s.region_name
+                      ,s.series_name
+                      ,s.js_static_id
+                from apex_application_page_chart_s s
+                where s.js_static_id is not null
+                and s.application_id = :P0_APP_ID;
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 50
+            parentRegion: @5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText: The JavaScript Static ID property, introduced for JET Chart Series components to maintain backward compatibility, is deprecated and displays in Page Designer only if it already has a value. Going forward, use the unique Static ID property in new applications.
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated JavaScript Static IDs found.</b>
+        }
+
+        column JS_STATIC_ID (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: JS Static Id
+            }
+            layout {
+                sequence: 50
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: end
+            }
+            layout {
+                sequence: 10
+                columnAlignment: end
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+        column REGION_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Region Name
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column SERIES_NAME (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Series Name
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+    )
+
+    region 5-5-deprecated-javascript-apis (
+        name: 5.5 Deprecated JavaScript APIs
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select j.page_id
+                      ,j.page_name
+                      ,j.component_name
+                      ,j.component_type
+                      ,j.js_code_type
+                      ,j.js_code_clob
+                from av_javascript_v j
+                where application_id = :P0_APP_ID
+                and (instr(lower(j.js_code_clob)
+                        ,'apex.util.cancelinvokeafterpaint') > 0 or
+                     instr(lower(j.js_code_clob)
+                        ,'apex.util.invokeafterpaint') > 0 or
+                     instr(lower(j.js_code_clob)
+                        ,'widget.grid.getselectedrange') > 0
+                    )
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 70
+            parentRegion: @5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                <b>apex.util</b> functions <b>cancelInvokeAfterPaint</b> and <b>invokeAfterPaint</b> are now deprecated. Use the native browser functions requestAnimationFrame and cancelAnimationFrame instead.<br>
+                <b>widget.grid</b> method <b>getSelectedRange</b> is deprecated. Use <b>getSelectedRanges</b> instead. 
+                ```
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated API calls found.</b>
+        }
+
+        column COMPONENT_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Component Name
+                alignment: center
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column COMPONENT_TYPE (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Component Type
+                alignment: center
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column JS_CODE_CLOB (
+            reportColumnQueryId: 6
+            derivedColumn: N
+            heading {
+                heading: Js Code Clob
+            }
+            layout {
+                sequence: 60
+            }
+            columnFormatting {
+                highlightWords: apex.util.cancelinvokeafterpaint,apex.util.invokeafterpaint,widget.grid.getselectedrange
+            }
+        )
+
+        column JS_CODE_TYPE (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Js Code Type
+            }
+            layout {
+                sequence: 50
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: center
+            }
+            layout {
+                sequence: 10
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+                alignment: center
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+    )
+
+    region 5-6-export-repository-deprecated (
+        name: 5.6 Export Repository Deprecated
+        type: staticContent
+        layout {
+            sequence: 80
+            parentRegion: @5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                The Export Repository is deprecated, and will be removed in a future release.<br>
+                <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> nothing to change / no check needed</b>
+                ```
+        }
+    )
+
+    region 5-7-restful-services-feature-in-sql-workshop (
+        name: "5.7 RESTful Services Feature in SQL Workshop "
+        type: staticContent
+        layout {
+            sequence: 90
+            parentRegion: @5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                The ability to define REST APIs via the RESTful Services feature in SQL Workshop is deprecated with APEX 26.1, and will be removed in a future release of APEX. The declarative specification of REST APIs remains supported via SQL Developer Web.<br>
+                <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> nothing to change / no check needed</b>
+                ```
+        }
+    )
+
+    region 5-8-deprecated-substitution-strings (
+        name: "5.8 Deprecated Substitution Strings "
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select t.component_type, 
+                t.component_name, 
+                t.template_clob1, 
+                t.template_clob2, 
+                t.template_clob3, 
+                t.template_vc1, 
+                t.template_vc2, 
+                t.template_vc3
+                from av_templates_v t
+                where t.application_id = :P0_APP_ID 
+                and (instr(upper(t.template_clob1)
+                           ,'#REGION_STATIC_ID#') > 0
+                or instr(upper(t.template_clob2)
+                       ,'#REGION_STATIC_ID#') > 0
+                or instr(upper(t.template_clob3)
+                       ,'#REGION_STATIC_ID#') > 0
+                or instr(upper(t.template_vc1)
+                       ,'#REGION_STATIC_ID#') > 0
+                or instr(upper(t.template_vc2)
+                       ,'#REGION_STATIC_ID#') > 0
+                or instr(upper(t.template_vc3)
+                       ,'#REGION_STATIC_ID#') > 0
+                or instr(upper(t.template_clob1)
+                       ,'#BUTTON_ID#') > 0
+                or instr(upper(t.template_clob2)
+                       ,'#BUTTON_ID#') > 0
+                or instr(upper(t.template_clob3)
+                       ,'#BUTTON_ID#') > 0
+                or instr(upper(t.template_vc1)
+                       ,'#BUTTON_ID#') > 0
+                or instr(upper(t.template_vc2)
+                       ,'#BUTTON_ID#') > 0
+                or instr(upper(t.template_vc3)
+                       ,'#BUTTON_ID#') > 0
+                or instr(upper(t.template_clob1)
+                       ,'#APP_REGION_STATIC_ID#') > 0
+                or instr(upper(t.template_clob2)
+                       ,'#APP_REGION_STATIC_ID#') > 0
+                or instr(upper(t.template_clob3)
+                       ,'#APP_REGION_STATIC_ID#') > 0
+                or instr(upper(t.template_vc1)
+                       ,'#APP_REGION_STATIC_ID#') > 0
+                or instr(upper(t.template_vc2)
+                       ,'#APP_REGION_STATIC_ID#') > 0
+                or instr(upper(t.template_vc3)
+                       ,'#APP_REGION_STATIC_ID#') > 0)
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 100
+            parentRegion: @5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                As of this release, the following substitution strings are deprecated: <b>&#35;REGION_STATIC_ID#</b>, <b>#BUTTON_ID#</b>, <b>APP_REGION_STATIC_ID</b><br>
+                While these substitutions still function, Oracle recommends developers update their environments to use the replacements below:<br>
+                For &#35;REGION_STATIC_ID# and #BUTTON_ID#, use &#35;DOM_ID#<br>
+                For APP_REGION_STATIC_ID, use APP_REGION_DOM_ID
+                ```
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated Substitution Strings found.</b>
+        }
+
+        column COMPONENT_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Component Name
+                alignment: center
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column COMPONENT_TYPE (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Component Type
+                alignment: center
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column TEMPLATE_CLOB1 (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Template Clob1
+            }
+            layout {
+                sequence: 50
+            }
+            columnFormatting {
+                highlightWords: #REGION_STATIC_ID#,#BUTTON_ID#,#APP_REGION_STATIC_ID#
+            }
+        )
+
+        column TEMPLATE_CLOB2 (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Template Clob2
+            }
+            layout {
+                sequence: 60
+            }
+            columnFormatting {
+                highlightWords: #REGION_STATIC_ID#,#BUTTON_ID#,#APP_REGION_STATIC_ID#
+            }
+        )
+
+        column TEMPLATE_CLOB3 (
+            reportColumnQueryId: 5
+            derivedColumn: N
+            heading {
+                heading: Template Clob3
+            }
+            layout {
+                sequence: 70
+            }
+            columnFormatting {
+                highlightWords: #REGION_STATIC_ID#,#BUTTON_ID#,#APP_REGION_STATIC_ID#
+            }
+        )
+
+        column TEMPLATE_VC1 (
+            reportColumnQueryId: 6
+            derivedColumn: N
+            heading {
+                heading: Template Vc1
+            }
+            layout {
+                sequence: 80
+            }
+            columnFormatting {
+                highlightWords: #REGION_STATIC_ID#,#BUTTON_ID#,#APP_REGION_STATIC_ID#
+            }
+        )
+
+        column TEMPLATE_VC2 (
+            reportColumnQueryId: 7
+            derivedColumn: N
+            heading {
+                heading: Template Vc2
+            }
+            layout {
+                sequence: 90
+            }
+            columnFormatting {
+                highlightWords: #REGION_STATIC_ID#,#BUTTON_ID#,#APP_REGION_STATIC_ID#
+            }
+        )
+
+        column TEMPLATE_VC3 (
+            reportColumnQueryId: 8
+            derivedColumn: N
+            heading {
+                heading: Template Vc3
+            }
+            layout {
+                sequence: 100
+            }
+            columnFormatting {
+                highlightWords: #REGION_STATIC_ID#,#BUTTON_ID#,#APP_REGION_STATIC_ID#
+            }
+        )
+
+    )
+
+    region 5-9-deprecated-public-views-and-public-view-columns (
+        name: "5.9 Deprecated Public Views and Public View Columns "
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select p.page_id
+                      ,p.page_name
+                      ,p.component_name
+                      ,p.component_type
+                      ,p.process_point
+                      ,p.plsql_code_clob
+                from av_plsql_v p
+                where application_id = :P0_APP_ID
+                and (instr(lower(p.plsql_code_clob)
+                        ,'apex_appl_ai_configs') > 0
+                    or instr(lower(p.plsql_code_clob)
+                        ,'apex_appl_ai_config_rag_srcs') > 0
+                    or instr(lower(p.plsql_code_clob)
+                        ,'ai_config_id') > 0
+                    or instr(lower(p.plsql_code_clob)
+                        ,'ai_config_name') > 0
+                    )
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 120
+            parentRegion: @5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                <h4>Public Views</h4>
+                The <b>apex_appl_ai_configs</b> and <b>apex_appl_ai_config_rag_srcs</b> views are deprecated, and will be removed in a future release. Instead, use apex_appl_ai_agents and apex_appl_ai_agent_tools.
+                <h4>AI Configuration Columns</h4>
+                With the rename of AI Configurations to AI Agents, the <b>ai_config_id</b> and <b>ai_config_name</b> columns are deprecated, and will be removed in a future release. Instead, use ai_agent_id and ai_agent_name.<br>
+                This change affects the following views: apex_application_page_items, apex_application_page_regions, apex_application_page_da_acts
+                <h4>STATIC_ID Column</h4>
+                The <b>STATIC_ID</b> column in the following public views is deprecated:
+                apex_application_page_regions, apex_application_page_rpt_cols, apex_application_page_buttons, apex_application_page_ir_col, apex_appl_page_ig_columns<br>
+                While APEX retains the STATIC_ID column for backward compatibility, Oracle recommends using the new HTML_DOM_ID column.
+                ```
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> Column COMPONENT_SIGNATURE not used.</b>
+        }
+
+        column COMPONENT_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Component Name
+                alignment: center
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column COMPONENT_TYPE (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Component Type
+                alignment: center
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column PAGE_ID (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Page Id
+                alignment: center
+            }
+            layout {
+                sequence: 10
+            }
+        )
+
+        column PAGE_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Page Name
+                alignment: center
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+        column PLSQL_CODE_CLOB (
+            reportColumnQueryId: 6
+            derivedColumn: N
+            heading {
+                heading: Plsql Code Clob
+                alignment: center
+            }
+            layout {
+                sequence: 60
+            }
+            columnFormatting {
+                highlightWords: apex_appl_ai_configs,apex_appl_ai_config_rag_srcs,ai_config_id,ai_config_name
+            }
         )
 
         column PROCESS_POINT (
@@ -167,7 +1069,7 @@ page 745 (
     )
 
     region 5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a (
-        name: 5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/htmrn/deprecated-features.html" target="_blank">Link to Release Notes</a>
+        name: 5 Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/26.1/htmrn/deprecated-features.html" target="_blank">Link to Release Notes</a>
         type: staticContent
         layout {
             sequence: 40
@@ -202,7 +1104,7 @@ page 745 (
                       ,p.plsql_code_clob
                 from av_plsql_v p
                 where application_id = :P0_APP_ID
-                and (instr(lower(p.plsql_code_clob)
+                and (instr(upper(p.plsql_code_clob)
                         ,'COMPONENT_SIGNATURE') > 0)
                 ```
             pageItemsToSubmit: P0_APP_ID
@@ -326,7 +1228,7 @@ page 745 (
         name: 7.2 iOS Status Bar Style Desupported
         type: staticContent
         layout {
-            sequence: 20
+            sequence: 30
             parentRegion: @7-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-apex-26-1-htmrn-desupported-features-html-target-blank-link-to-release-notes-a
             slot: subRegions
         }

@@ -99,6 +99,7 @@ prompt --install
 @@application/deployment/install/install_av_pages_v.sql
 @@application/deployment/install/install_av_plsql_v.sql
 @@application/deployment/install/install_av_plugins_v.sql
+@@application/deployment/install/install_av_templates_v.sql
 @@application/deployment/install/install_av_varchar2_t.sql
 @@application/deployment/install/install_av_varchar2s_t.sql
 @@application/deployment/install/install_av_visibility_overview_v.sql

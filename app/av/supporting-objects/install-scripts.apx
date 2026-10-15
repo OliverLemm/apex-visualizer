@@ -366,6 +366,22 @@ installScript av_plugins_v (
 
 )
 
+installScript av_templates_v (
+    execution {
+        sequence: 250
+    }
+    script {
+        contentFile: av-templates-v.sql
+    }
+
+    databaseObject (
+        owner: APEX_VISUALIZER
+        type: view
+        name: AV_TEMPLATES_V
+    )
+
+)
+
 installScript av_varchar2_t (
     execution {
         sequence: 3

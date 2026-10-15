@@ -132,7 +132,7 @@ join ( -- Page HTML Header
              ,'native_javascript_code' js_code_type
              ,1 best_practice
              ,pda.attribute_01 js_code_vc2
-             ,to_clob(pda.attribute_01) js_code_clob
+             ,to_clob(pda.attributes) js_code_clob
       from apex_application_page_da_acts pda
       where pda.action_code = 'NATIVE_JAVASCRIPT_CODE'
       -- Buttons
