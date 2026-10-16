@@ -9,6 +9,7 @@ Go Manage Instance => Instance Setting => Application Gallery and add a new line
 - APEX Visualizer migrated to APEX 26.1.5
 - APEX 26.1 Migration checks fixed
 - APEX 26.2 Migration checks added
+- Fixed a bug inside the av_javascript_v #21
 - Page Migration Details still under construction
 - Page Migration Effort still under construction
 
