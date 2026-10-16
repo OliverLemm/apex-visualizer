@@ -57,6 +57,8 @@ prompt --install
 @@application/pages/page_00500.sql
 @@application/pages/page_00510.sql
 @@application/pages/page_00600.sql
+@@application/pages/page_00650.sql
+@@application/pages/page_00660.sql
 @@application/pages/page_00700.sql
 @@application/pages/page_00701.sql
 @@application/pages/page_00702.sql
@@ -73,8 +75,6 @@ prompt --install
 @@application/pages/page_00730.sql
 @@application/pages/page_00740.sql
 @@application/pages/page_00745.sql
-@@application/pages/page_00750.sql
-@@application/pages/page_00760.sql
 @@application/deployment/definition.sql
 @@application/deployment/install/install_av_applications_v.sql
 @@application/deployment/install/install_av_components_v.sql

@@ -428,13 +428,9 @@ list desktop-navigation-menu (
         layout {
             sequence: 400
         }
-        isCurrent {
-            type: pages
-            pages: 750
-        }
         link {
             target: {
-                page: 750
+                page: 650
             }
         }
     )
@@ -447,13 +443,9 @@ list desktop-navigation-menu (
         layout {
             sequence: 410
         }
-        isCurrent {
-            type: pages
-            pages: 760
-        }
         link {
             target: {
-                page: 760
+                page: 660
             }
         }
     )

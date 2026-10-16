@@ -15,7 +15,7 @@ wwv_flow_imp_shared.create_list(
  p_id=>wwv_flow_imp.id(472848853615347627)
 ,p_name=>'Desktop Navigation Menu'
 ,p_static_id=>'desktop-navigation-menu'
-,p_version_scn=>'139403933'
+,p_version_scn=>'SH256:3De4um_xJWeSDZFqAaoLbNqsZcnsEZagDZ-tLP7m2EU'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(27003232840044532)
@@ -241,24 +241,22 @@ wwv_flow_imp_shared.create_list_item(
 ,p_list_item_current_for_pages=>'700,710'
 );
 wwv_flow_imp_shared.create_list_item(
- p_id=>wwv_flow_imp.id(71033691701095985)
+ p_id=>wwv_flow_imp.id(11475216173989228)
 ,p_list_item_display_sequence=>400
 ,p_list_item_link_text=>'Migration Details'
 ,p_static_id=>'migration-details'
-,p_list_item_link_target=>'f?p=&APP_ID.:750:&SESSION.::&DEBUG.::::'
+,p_list_item_link_target=>'f?p=&APP_ID.:650:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'fa-ai-sparkle-zoom-in'
-,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
-,p_list_item_current_for_pages=>'750'
+,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(71032124480091646)
 ,p_list_item_display_sequence=>410
 ,p_list_item_link_text=>'Migration Effort'
 ,p_static_id=>'migration-effort'
-,p_list_item_link_target=>'f?p=&APP_ID.:760:&SESSION.::&DEBUG.::::'
+,p_list_item_link_target=>'f?p=&APP_ID.:660:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'fa-calendar-wrench'
-,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
-,p_list_item_current_for_pages=>'760'
+,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(311736690728253398)

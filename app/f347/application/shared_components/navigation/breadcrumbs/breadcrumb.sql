@@ -18,9 +18,10 @@ wwv_flow_imp_shared.create_menu(
 );
 wwv_flow_imp_shared.create_menu_option(
  p_id=>wwv_flow_imp.id(38242509158976862)
+,p_parent_id=>wwv_flow_imp.id(65483493577116779)
 ,p_short_name=>'APEX 22.2'
 ,p_static_id=>'apex'
-,p_link=>'f?p=&APP_ID.:710:&APP_SESSION.::&DEBUG.:::'
+,p_link=>'f?p=&APP_ID.:710:&SESSION.::&DEBUG.:::'
 ,p_page_id=>710
 );
 wwv_flow_imp_shared.create_menu_option(
@@ -83,15 +84,15 @@ wwv_flow_imp_shared.create_menu_option(
  p_id=>wwv_flow_imp.id(71034526750095987)
 ,p_short_name=>'Migration Details'
 ,p_static_id=>'migration-details'
-,p_link=>'f?p=&APP_ID.:750:&APP_SESSION.::&DEBUG.:::'
-,p_page_id=>750
+,p_link=>'f?p=&APP_ID.:650:&SESSION.::&DEBUG.:::'
+,p_page_id=>650
 );
 wwv_flow_imp_shared.create_menu_option(
  p_id=>wwv_flow_imp.id(71033064795091664)
 ,p_short_name=>'Migration Effort'
 ,p_static_id=>'migration-effort'
-,p_link=>'f?p=&APP_ID.:760:&APP_SESSION.::&DEBUG.:::'
-,p_page_id=>760
+,p_link=>'f?p=&APP_ID.:660:&SESSION.::&DEBUG.:::'
+,p_page_id=>660
 );
 wwv_flow_imp_shared.create_menu_option(
  p_id=>wwv_flow_imp.id(469896119189728830)

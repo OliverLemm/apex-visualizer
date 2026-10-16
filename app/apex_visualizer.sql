@@ -39,7 +39,7 @@ prompt APPLICATION 347 - APEX Visualizer
 --     Pages:                     32
 --       Items:                   29
 --       Processes:                4
---       Regions:                171
+--       Regions:                169
 --       Buttons:                  3
 --       Dynamic Actions:         60
 --     Shared Components:
@@ -115,7 +115,7 @@ wwv_imp_workspace.create_flow(
 ,p_modernization_available=>'Y'
 ,p_file_prefix=>nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>14
-,p_version_scn=>'154933175'
+,p_version_scn=>'155174592'
 ,p_print_server_type=>'INSTANCE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'N'
@@ -10256,7 +10256,7 @@ wwv_flow_imp_shared.create_list(
  p_id=>wwv_flow_imp.id(472848853615347627)
 ,p_name=>'Desktop Navigation Menu'
 ,p_static_id=>'desktop-navigation-menu'
-,p_version_scn=>'139403933'
+,p_version_scn=>'SH256:3De4um_xJWeSDZFqAaoLbNqsZcnsEZagDZ-tLP7m2EU'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(27003232840044532)
@@ -10482,24 +10482,22 @@ wwv_flow_imp_shared.create_list_item(
 ,p_list_item_current_for_pages=>'700,710'
 );
 wwv_flow_imp_shared.create_list_item(
- p_id=>wwv_flow_imp.id(71033691701095985)
+ p_id=>wwv_flow_imp.id(11475216173989228)
 ,p_list_item_display_sequence=>400
 ,p_list_item_link_text=>'Migration Details'
 ,p_static_id=>'migration-details'
-,p_list_item_link_target=>'f?p=&APP_ID.:750:&SESSION.::&DEBUG.::::'
+,p_list_item_link_target=>'f?p=&APP_ID.:650:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'fa-ai-sparkle-zoom-in'
-,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
-,p_list_item_current_for_pages=>'750'
+,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(71032124480091646)
 ,p_list_item_display_sequence=>410
 ,p_list_item_link_text=>'Migration Effort'
 ,p_static_id=>'migration-effort'
-,p_list_item_link_target=>'f?p=&APP_ID.:760:&SESSION.::&DEBUG.::::'
+,p_list_item_link_target=>'f?p=&APP_ID.:660:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'fa-calendar-wrench'
-,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
-,p_list_item_current_for_pages=>'760'
+,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(311736690728253398)
@@ -11049,9 +11047,10 @@ wwv_flow_imp_shared.create_menu(
 );
 wwv_flow_imp_shared.create_menu_option(
  p_id=>wwv_flow_imp.id(38242509158976862)
+,p_parent_id=>wwv_flow_imp.id(65483493577116779)
 ,p_short_name=>'APEX 22.2'
 ,p_static_id=>'apex'
-,p_link=>'f?p=&APP_ID.:710:&APP_SESSION.::&DEBUG.:::'
+,p_link=>'f?p=&APP_ID.:710:&SESSION.::&DEBUG.:::'
 ,p_page_id=>710
 );
 wwv_flow_imp_shared.create_menu_option(
@@ -11114,15 +11113,15 @@ wwv_flow_imp_shared.create_menu_option(
  p_id=>wwv_flow_imp.id(71034526750095987)
 ,p_short_name=>'Migration Details'
 ,p_static_id=>'migration-details'
-,p_link=>'f?p=&APP_ID.:750:&APP_SESSION.::&DEBUG.:::'
-,p_page_id=>750
+,p_link=>'f?p=&APP_ID.:650:&SESSION.::&DEBUG.:::'
+,p_page_id=>650
 );
 wwv_flow_imp_shared.create_menu_option(
  p_id=>wwv_flow_imp.id(71033064795091664)
 ,p_short_name=>'Migration Effort'
 ,p_static_id=>'migration-effort'
-,p_link=>'f?p=&APP_ID.:760:&APP_SESSION.::&DEBUG.:::'
-,p_page_id=>760
+,p_link=>'f?p=&APP_ID.:660:&SESSION.::&DEBUG.:::'
+,p_page_id=>660
 );
 wwv_flow_imp_shared.create_menu_option(
  p_id=>wwv_flow_imp.id(469896119189728830)
@@ -22838,6 +22837,524 @@ wwv_flow_imp_page.create_page_da_action(
 );
 end;
 /
+prompt --application/pages/page_00650
+begin
+wwv_flow_imp_page.create_page(
+ p_id=>650
+,p_name=>'Migration Details'
+,p_alias=>'MIGRATION-DETAILS1'
+,p_step_title=>'Migration Details'
+,p_warn_on_unsaved_changes=>'N'
+,p_autocomplete_on_off=>'OFF'
+,p_step_template=>2528123255985761961
+,p_page_template_options=>'#DEFAULT#'
+,p_page_component_map=>'03'
+);
+wwv_flow_imp_page.create_report_region(
+ p_id=>wwv_flow_imp.id(82359372606882935)
+,p_name=>'Migration Details'
+,p_static_id=>'migration-details'
+,p_template=>4073835273271169698
+,p_display_sequence=>10
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select apex_version',
+'      ,rn_type',
+'      ,rn_chapter_no',
+'      ,rn_chapter_name',
+'      ,rn_chapter_text',
+'      ,rn_chapter_link',
+'      ,page_id',
+'      ,page_name',
+'      ,component_type',
+'      ,component_name',
+'      ,coalesce(plsql_code_vc2',
+'               ,coalesce(js_code_vc2',
+'                        ,css_code_vc2)) code',
+'      ,migration_priority',
+'      ,round(migration_effort_in_days,2) migration_effort_in_days',
+'from av_migration_pkg.ptf_effort_calculation(i_app_id               => :P0_APP_ID',
+'                                            ,i_apex_versions        => :P650_APEX_VERSIONS',
+'                                            ,i_migration_priorities => :P650_MIGRATION_PRIORITIES',
+'                                            ,i_migration_types      => :P650_MIGRATION_TYPES',
+'                                            ,i_show_only_findings   => :P650_SHOW_ONLY_FINDINGS)',
+'order by apex_version',
+'        ,replace(rn_chapter_no',
+'                ,''.''',
+'                ,'''')',
+'        ,page_id',
+'        ,component_name',
+''))
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID,P650_APEX_VERSIONS,P650_MIGRATION_PRIORITIES,P650_MIGRATION_TYPES,P650_SHOW_ONLY_FINDINGS'
+,p_lazy_loading=>true
+,p_query_row_template=>2540130677583398057
+,p_query_num_rows=>99999
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_break_cols=>'1'
+,p_break_type_flag=>'DEFAULT_BREAK_FORMATTING'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11324248991772032)
+,p_query_column_id=>1
+,p_column_alias=>'APEX_VERSION'
+,p_column_display_sequence=>10
+,p_column_heading=>'APEX Version'
+,p_heading_alignment=>'LEFT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11322654582772031)
+,p_query_column_id=>11
+,p_column_alias=>'CODE'
+,p_column_display_sequence=>110
+,p_column_heading=>'Code'
+,p_heading_alignment=>'LEFT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11327498809772034)
+,p_query_column_id=>10
+,p_column_alias=>'COMPONENT_NAME'
+,p_column_display_sequence=>100
+,p_column_heading=>'Component Name'
+,p_heading_alignment=>'LEFT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11327027484772034)
+,p_query_column_id=>9
+,p_column_alias=>'COMPONENT_TYPE'
+,p_column_display_sequence=>90
+,p_column_heading=>'Component Type'
+,p_heading_alignment=>'LEFT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11323416463772032)
+,p_query_column_id=>13
+,p_column_alias=>'MIGRATION_EFFORT_IN_DAYS'
+,p_column_display_sequence=>130
+,p_column_heading=>'Migration Effort In Days'
+,p_column_format=>'999G999G999G999G990D00'
+,p_column_alignment=>'RIGHT'
+,p_heading_alignment=>'RIGHT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11323008296772031)
+,p_query_column_id=>12
+,p_column_alias=>'MIGRATION_PRIORITY'
+,p_column_display_sequence=>120
+,p_column_heading=>'Migration Priority'
+,p_column_alignment=>'RIGHT'
+,p_heading_alignment=>'RIGHT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11326200009772034)
+,p_query_column_id=>7
+,p_column_alias=>'PAGE_ID'
+,p_column_display_sequence=>70
+,p_column_heading=>'Page Id'
+,p_column_alignment=>'RIGHT'
+,p_heading_alignment=>'RIGHT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11326657457772034)
+,p_query_column_id=>8
+,p_column_alias=>'PAGE_NAME'
+,p_column_display_sequence=>80
+,p_column_heading=>'Page Name'
+,p_heading_alignment=>'LEFT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11323886296772032)
+,p_query_column_id=>6
+,p_column_alias=>'RN_CHAPTER_LINK'
+,p_column_display_sequence=>50
+,p_hidden_column=>'Y'
+,p_derived_column=>'N'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11325496463772032)
+,p_query_column_id=>4
+,p_column_alias=>'RN_CHAPTER_NAME'
+,p_column_display_sequence=>40
+,p_column_heading=>'Chapter Name'
+,p_heading_alignment=>'LEFT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11325008233772032)
+,p_query_column_id=>3
+,p_column_alias=>'RN_CHAPTER_NO'
+,p_column_display_sequence=>30
+,p_column_heading=>'Chapter No'
+,p_column_html_expression=>'<a href="#RN_CHAPTER_LINK#" target="_blank">#RN_CHAPTER_NO#</a>'
+,p_heading_alignment=>'LEFT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11325871467772032)
+,p_query_column_id=>5
+,p_column_alias=>'RN_CHAPTER_TEXT'
+,p_column_display_sequence=>60
+,p_column_heading=>'Chapter Text'
+,p_heading_alignment=>'LEFT'
+,p_display_as=>'WITHOUT_MODIFICATION'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11324686460772032)
+,p_query_column_id=>2
+,p_column_alias=>'RN_TYPE'
+,p_column_display_sequence=>20
+,p_column_heading=>'Type'
+,p_heading_alignment=>'LEFT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(82367760500882980)
+,p_name=>'P650_APEX_VERSIONS'
+,p_item_sequence=>90
+,p_item_plug_id=>wwv_flow_imp.id(472904998656421813)
+,p_prompt=>'APEX Versions'
+,p_source_type=>'ALWAYS_NULL'
+,p_display_as=>'NATIVE_CHECKBOX'
+,p_named_lov=>'APEX_VERSIONS'
+,p_field_template=>2320077351817916916
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'NO'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'number_of_columns', '1')).to_clob
+,p_multi_value_type=>'SEPARATED'
+,p_multi_value_separator=>':'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(82367839038882981)
+,p_name=>'P650_MIGRATION_PRIORITIES'
+,p_item_sequence=>120
+,p_item_plug_id=>wwv_flow_imp.id(472904998656421813)
+,p_item_default=>'1:2:3'
+,p_prompt=>'Migration Priorities'
+,p_source_type=>'ALWAYS_NULL'
+,p_display_as=>'NATIVE_CHECKBOX'
+,p_named_lov=>'MIGRATION_PRIORITY'
+,p_field_template=>2320077351817916916
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'NO'
+,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'1 - must<br>without these changes application will crash or doesn''t work<br><br>',
+'2 - should<br>with these changes application gets minimum changes to run in latest APEX release<br><br>',
+'3 - recommed<br>mostly desupported and deprecated features that should be adjusted<br><br>',
+'4 - best practices<br>only adjustments which will reduce effort for maintaining in future or would be faster'))
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'number_of_columns', '1')).to_clob
+,p_multi_value_type=>'SEPARATED'
+,p_multi_value_separator=>':'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(82368152899882984)
+,p_name=>'P650_MIGRATION_TYPES'
+,p_item_sequence=>110
+,p_item_plug_id=>wwv_flow_imp.id(472904998656421813)
+,p_item_default=>'av_migration_pkg.c_migration_type_new_feature || '':'' || av_migration_pkg.c_migration_type_deprecated || '':'' || av_migration_pkg.c_migration_type_desupported'
+,p_item_default_type=>'EXPRESSION'
+,p_item_default_language=>'PLSQL'
+,p_prompt=>'Migration Types'
+,p_source_type=>'ALWAYS_NULL'
+,p_display_as=>'NATIVE_CHECKBOX'
+,p_named_lov=>'MIGRATION_TYPES'
+,p_field_template=>2320077351817916916
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'number_of_columns', '1')).to_clob
+,p_multi_value_type=>'SEPARATED'
+,p_multi_value_separator=>':'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(82368330689882986)
+,p_name=>'P650_SHOW_ONLY_FINDINGS'
+,p_item_sequence=>100
+,p_item_plug_id=>wwv_flow_imp.id(472904998656421813)
+,p_item_default=>'1'
+,p_prompt=>'Show Only Findings'
+,p_source_type=>'ALWAYS_NULL'
+,p_display_as=>'NATIVE_YES_NO'
+,p_field_template=>2320077351817916916
+,p_item_template_options=>'#DEFAULT#'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'use_defaults', 'Y')).to_clob
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(11330290508772051)
+,p_name=>'click Button Refresh - refresh Region Migration Details'
+,p_static_id=>'click-button-refresh-refresh-region-migration-details'
+,p_event_sequence=>10
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_imp.id(65476682361019079)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'click'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(11330620716772053)
+,p_event_id=>wwv_flow_imp.id(11330290508772051)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_static_id=>'native-refresh'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(82359372606882935)
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'maintain_pagination', 'N')).to_clob
+);
+end;
+/
+prompt --application/pages/page_00660
+begin
+wwv_flow_imp_page.create_page(
+ p_id=>660
+,p_name=>'Migration Effort'
+,p_alias=>'MIGRATION-EFFORT1'
+,p_step_title=>'Migration Effort'
+,p_warn_on_unsaved_changes=>'N'
+,p_autocomplete_on_off=>'OFF'
+,p_inline_css=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'td[headers=MIGRATION_PRIORITY],',
+'td[headers=RN_CHAPTER_NAME]',
+'{',
+'  white-space: nowrap;',
+'}'))
+,p_step_template=>2528123255985761961
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_page_component_map=>'03'
+);
+wwv_flow_imp_page.create_report_region(
+ p_id=>wwv_flow_imp.id(82367493012885067)
+,p_name=>'Migration Effort'
+,p_static_id=>'migration-effort'
+,p_template=>4073835273271169698
+,p_display_sequence=>10
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'SQL'
+,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select ',
+' apex_version',
+',rn_type',
+',rn_chapter_no',
+',rn_chapter_name',
+',rn_chapter_text',
+',migration_priority',
+',count(1) amount_of_objects',
+',round(sum(migration_effort_in_days)',
+'      ,3) migration_effort_in_days',
+'from av_migration_pkg.ptf_effort_calculation(i_app_id               => :P0_APP_ID',
+'                                            ,i_apex_versions        => :P660_APEX_VERSIONS',
+'                                            ,i_migration_priorities => :P660_MIGRATION_PRIORITIES)',
+'  group by apex_version',
+'          ,rn_type',
+'          ,rn_chapter_no',
+'          ,rn_chapter_name',
+'          ,rn_chapter_text',
+'          ,migration_priority',
+'  order by migration_priority',
+'          ,replace(rn_chapter_no,''.'','''')',
+'          ,rn_type',
+'          ,apex_version',
+'          '))
+,p_ajax_enabled=>'Y'
+,p_ajax_items_to_submit=>'P0_APP_ID,P660_APEX_VERSIONS,P660_MIGRATION_PRIORITIES'
+,p_lazy_loading=>true
+,p_query_row_template=>2540130677583398057
+,p_query_num_rows=>15
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_break_cols=>'1'
+,p_break_type_flag=>'DEFAULT_BREAK_FORMATTING'
+,p_csv_output=>'N'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11333782717774167)
+,p_query_column_id=>7
+,p_column_alias=>'AMOUNT_OF_OBJECTS'
+,p_column_display_sequence=>70
+,p_column_heading=>'# Objects'
+,p_column_alignment=>'RIGHT'
+,p_heading_alignment=>'RIGHT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11334578104774167)
+,p_query_column_id=>1
+,p_column_alias=>'APEX_VERSION'
+,p_column_display_sequence=>30
+,p_column_heading=>'APEX Version'
+,p_heading_alignment=>'LEFT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11332550104774165)
+,p_query_column_id=>8
+,p_column_alias=>'MIGRATION_EFFORT_IN_DAYS'
+,p_column_display_sequence=>80
+,p_column_heading=>'Effort In Days'
+,p_column_format=>'999G999G999G999G990D00'
+,p_column_alignment=>'RIGHT'
+,p_heading_alignment=>'RIGHT'
+,p_sum_column=>'Y'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11333393203774167)
+,p_query_column_id=>6
+,p_column_alias=>'MIGRATION_PRIORITY'
+,p_column_display_sequence=>10
+,p_column_heading=>'Priority'
+,p_column_alignment=>'RIGHT'
+,p_heading_alignment=>'RIGHT'
+,p_display_as=>'TEXT_FROM_LOV_ESC'
+,p_named_lov=>wwv_flow_imp.id(71058072923988992)
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11335318012774168)
+,p_query_column_id=>4
+,p_column_alias=>'RN_CHAPTER_NAME'
+,p_column_display_sequence=>50
+,p_column_heading=>'Chapter Name'
+,p_heading_alignment=>'LEFT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11334939612774167)
+,p_query_column_id=>3
+,p_column_alias=>'RN_CHAPTER_NO'
+,p_column_display_sequence=>40
+,p_column_heading=>'Chapter No'
+,p_heading_alignment=>'LEFT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11334172097774167)
+,p_query_column_id=>5
+,p_column_alias=>'RN_CHAPTER_TEXT'
+,p_column_display_sequence=>60
+,p_column_heading=>'Description'
+,p_heading_alignment=>'LEFT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(11332907680774167)
+,p_query_column_id=>2
+,p_column_alias=>'RN_TYPE'
+,p_column_display_sequence=>20
+,p_column_heading=>'Type'
+,p_heading_alignment=>'LEFT'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(82373948754885086)
+,p_name=>'P660_APEX_VERSIONS'
+,p_item_sequence=>50
+,p_item_plug_id=>wwv_flow_imp.id(472904998656421813)
+,p_prompt=>'APEX Versions'
+,p_source_type=>'ALWAYS_NULL'
+,p_display_as=>'NATIVE_CHECKBOX'
+,p_named_lov=>'APEX_VERSIONS'
+,p_field_template=>2320077351817916916
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'NO'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'number_of_columns', '1')).to_clob
+,p_multi_value_type=>'SEPARATED'
+,p_multi_value_separator=>':'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(82373925552885085)
+,p_name=>'P660_MIGRATION_PRIORITIES'
+,p_item_sequence=>60
+,p_item_plug_id=>wwv_flow_imp.id(472904998656421813)
+,p_prompt=>'Migration Priorities'
+,p_source_type=>'ALWAYS_NULL'
+,p_display_as=>'NATIVE_CHECKBOX'
+,p_named_lov=>'MIGRATION_PRIORITY'
+,p_field_template=>2320077351817916916
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'NO'
+,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'1 - must<br>without these changes application will crash or doesn''t work<br><br>',
+'2 - should<br>with these changes application gets minimum changes to run in latest APEX release<br><br>',
+'3 - recommed<br>mostly desupported and deprecated features that should be adjusted<br><br>',
+'4 - best practices<br>only adjustments which will reduce effort for maintaining in future or would be faster'))
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'number_of_columns', '1')).to_clob
+,p_multi_value_type=>'SEPARATED'
+,p_multi_value_separator=>':'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(11337563761774168)
+,p_name=>'click Refresh - Refresh Region Migration Effort'
+,p_static_id=>'click-refresh-refresh-region-migration-effort'
+,p_event_sequence=>10
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_imp.id(65476682361019079)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'click'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(11337965840774170)
+,p_event_id=>wwv_flow_imp.id(11337563761774168)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_static_id=>'native-refresh'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(82367493012885067)
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'maintain_pagination', 'N')).to_clob
+);
+end;
+/
 prompt --application/pages/page_00700
 begin
 wwv_flow_imp_page.create_page(
@@ -31759,556 +32276,6 @@ wwv_flow_imp_page.create_page_da_action(
   'js_code', wwv_flow_string.join(wwv_flow_t_varchar2(
     'console.log(''running DA'')',
     'console.log(this.affectedElements);')))).to_clob
-);
-end;
-/
-prompt --application/pages/page_00750
-begin
-wwv_flow_imp_page.create_page(
- p_id=>750
-,p_name=>'Migration Details'
-,p_alias=>'MIGRATION-DETAILS'
-,p_step_title=>'Migration Details'
-,p_warn_on_unsaved_changes=>'N'
-,p_autocomplete_on_off=>'OFF'
-,p_step_template=>2528123255985761961
-,p_page_template_options=>'#DEFAULT#'
-,p_page_component_map=>'03'
-);
-wwv_flow_imp_page.create_page_plug(
- p_id=>wwv_flow_imp.id(71034002800095987)
-,p_plug_name=>'Breadcrumb'
-,p_static_id=>'breadcrumb'
-,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--useBreadcrumbTitle'
-,p_component_template_options=>'#DEFAULT#'
-,p_escape_on_http_output=>'N'
-,p_plug_template=>2532939663579242476
-,p_plug_display_sequence=>10
-,p_plug_display_point=>'REGION_POSITION_01'
-,p_plug_item_display_point=>'ABOVE'
-,p_menu_id=>wwv_flow_imp.id(472901389022347808)
-,p_plug_source_type=>'NATIVE_BREADCRUMB'
-,p_menu_template_id=>4073839682315169711
-,p_plug_query_headings_type=>'COLON_DELMITED_LIST'
-);
-wwv_flow_imp_page.create_report_region(
- p_id=>wwv_flow_imp.id(71037927717110921)
-,p_name=>'Migration Details'
-,p_static_id=>'migration-details'
-,p_template=>4073835273271169698
-,p_display_sequence=>10
-,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
-,p_source_type=>'NATIVE_SQL_REPORT'
-,p_query_type=>'SQL'
-,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select apex_version',
-'      ,rn_type',
-'      ,rn_chapter_no',
-'      ,rn_chapter_name',
-'      ,rn_chapter_text',
-'      ,rn_chapter_link',
-'      ,page_id',
-'      ,page_name',
-'      ,component_type',
-'      ,component_name',
-'      ,coalesce(plsql_code_vc2',
-'               ,coalesce(js_code_vc2',
-'                        ,css_code_vc2)) code',
-'      ,migration_priority',
-'      ,round(migration_effort_in_days,2) migration_effort_in_days',
-'from av_migration_pkg.ptf_effort_calculation(i_app_id               => :P0_APP_ID',
-'                                            ,i_apex_versions        => :P750_APEX_VERSIONS',
-'                                            ,i_migration_priorities => :P750_MIGRATION_PRIORITIES',
-'                                            ,i_migration_types      => :P750_MIGRATION_TYPES',
-'                                            ,i_show_only_findings   => :P750_SHOW_ONLY_FINDINGS)',
-'order by apex_version',
-'        ,replace(rn_chapter_no',
-'                ,''.''',
-'                ,'''')',
-'        ,page_id',
-'        ,component_name',
-''))
-,p_ajax_enabled=>'Y'
-,p_ajax_items_to_submit=>'P0_APP_ID,P750_APEX_VERSIONS,P750_MIGRATION_PRIORITIES,P750_MIGRATION_TYPES,P750_SHOW_ONLY_FINDINGS'
-,p_lazy_loading=>true
-,p_query_row_template=>2540130677583398057
-,p_query_num_rows=>99999
-,p_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_query_break_cols=>'1'
-,p_break_type_flag=>'DEFAULT_BREAK_FORMATTING'
-,p_csv_output=>'N'
-,p_prn_output=>'N'
-,p_sort_null=>'L'
-,p_plug_query_strip_html=>'N'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71038048762110922)
-,p_query_column_id=>1
-,p_column_alias=>'APEX_VERSION'
-,p_column_display_sequence=>10
-,p_column_heading=>'APEX Version'
-,p_heading_alignment=>'LEFT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71038979148110931)
-,p_query_column_id=>11
-,p_column_alias=>'CODE'
-,p_column_display_sequence=>110
-,p_column_heading=>'Code'
-,p_heading_alignment=>'LEFT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71038847089110930)
-,p_query_column_id=>10
-,p_column_alias=>'COMPONENT_NAME'
-,p_column_display_sequence=>100
-,p_column_heading=>'Component Name'
-,p_heading_alignment=>'LEFT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71038754587110929)
-,p_query_column_id=>9
-,p_column_alias=>'COMPONENT_TYPE'
-,p_column_display_sequence=>90
-,p_column_heading=>'Component Type'
-,p_heading_alignment=>'LEFT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71039103965110933)
-,p_query_column_id=>13
-,p_column_alias=>'MIGRATION_EFFORT_IN_DAYS'
-,p_column_display_sequence=>130
-,p_column_heading=>'Migration Effort In Days'
-,p_column_format=>'999G999G999G999G990D00'
-,p_column_alignment=>'RIGHT'
-,p_heading_alignment=>'RIGHT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71039011754110932)
-,p_query_column_id=>12
-,p_column_alias=>'MIGRATION_PRIORITY'
-,p_column_display_sequence=>120
-,p_column_heading=>'Migration Priority'
-,p_column_alignment=>'RIGHT'
-,p_heading_alignment=>'RIGHT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71038552675110927)
-,p_query_column_id=>7
-,p_column_alias=>'PAGE_ID'
-,p_column_display_sequence=>70
-,p_column_heading=>'Page Id'
-,p_column_alignment=>'RIGHT'
-,p_heading_alignment=>'RIGHT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71038679340110928)
-,p_query_column_id=>8
-,p_column_alias=>'PAGE_NAME'
-,p_column_display_sequence=>80
-,p_column_heading=>'Page Name'
-,p_heading_alignment=>'LEFT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71039789134110939)
-,p_query_column_id=>6
-,p_column_alias=>'RN_CHAPTER_LINK'
-,p_column_display_sequence=>50
-,p_hidden_column=>'Y'
-,p_derived_column=>'N'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71038312588110925)
-,p_query_column_id=>4
-,p_column_alias=>'RN_CHAPTER_NAME'
-,p_column_display_sequence=>40
-,p_column_heading=>'Chapter Name'
-,p_heading_alignment=>'LEFT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71038265585110924)
-,p_query_column_id=>3
-,p_column_alias=>'RN_CHAPTER_NO'
-,p_column_display_sequence=>30
-,p_column_heading=>'Chapter No'
-,p_column_html_expression=>'<a href="#RN_CHAPTER_LINK#" target="_blank">#RN_CHAPTER_NO#</a>'
-,p_heading_alignment=>'LEFT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71038444867110926)
-,p_query_column_id=>5
-,p_column_alias=>'RN_CHAPTER_TEXT'
-,p_column_display_sequence=>60
-,p_column_heading=>'Chapter Text'
-,p_heading_alignment=>'LEFT'
-,p_display_as=>'WITHOUT_MODIFICATION'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71038190194110923)
-,p_query_column_id=>2
-,p_column_alias=>'RN_TYPE'
-,p_column_display_sequence=>20
-,p_column_heading=>'Type'
-,p_heading_alignment=>'LEFT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_page_item(
- p_id=>wwv_flow_imp.id(71039294368110934)
-,p_name=>'P750_APEX_VERSIONS'
-,p_item_sequence=>90
-,p_item_plug_id=>wwv_flow_imp.id(472904998656421813)
-,p_prompt=>'APEX Versions'
-,p_source_type=>'ALWAYS_NULL'
-,p_display_as=>'NATIVE_CHECKBOX'
-,p_named_lov=>'APEX_VERSIONS'
-,p_field_template=>2320077351817916916
-,p_item_template_options=>'#DEFAULT#'
-,p_lov_display_extra=>'NO'
-,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
-  'number_of_columns', '1')).to_clob
-,p_multi_value_type=>'SEPARATED'
-,p_multi_value_separator=>':'
-);
-wwv_flow_imp_page.create_page_item(
- p_id=>wwv_flow_imp.id(71039372906110935)
-,p_name=>'P750_MIGRATION_PRIORITIES'
-,p_item_sequence=>120
-,p_item_plug_id=>wwv_flow_imp.id(472904998656421813)
-,p_item_default=>'1:2:3'
-,p_prompt=>'Migration Priorities'
-,p_source_type=>'ALWAYS_NULL'
-,p_display_as=>'NATIVE_CHECKBOX'
-,p_named_lov=>'MIGRATION_PRIORITY'
-,p_field_template=>2320077351817916916
-,p_item_template_options=>'#DEFAULT#'
-,p_lov_display_extra=>'NO'
-,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'1 - must<br>without these changes application will crash or doesn''t work<br><br>',
-'2 - should<br>with these changes application gets minimum changes to run in latest APEX release<br><br>',
-'3 - recommed<br>mostly desupported and deprecated features that should be adjusted<br><br>',
-'4 - best practices<br>only adjustments which will reduce effort for maintaining in future or would be faster'))
-,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
-  'number_of_columns', '1')).to_clob
-,p_multi_value_type=>'SEPARATED'
-,p_multi_value_separator=>':'
-);
-wwv_flow_imp_page.create_page_item(
- p_id=>wwv_flow_imp.id(71039686767110938)
-,p_name=>'P750_MIGRATION_TYPES'
-,p_item_sequence=>110
-,p_item_plug_id=>wwv_flow_imp.id(472904998656421813)
-,p_item_default=>'av_migration_pkg.c_migration_type_new_feature || '':'' || av_migration_pkg.c_migration_type_deprecated || '':'' || av_migration_pkg.c_migration_type_desupported'
-,p_item_default_type=>'EXPRESSION'
-,p_item_default_language=>'PLSQL'
-,p_prompt=>'Migration Types'
-,p_source_type=>'ALWAYS_NULL'
-,p_display_as=>'NATIVE_CHECKBOX'
-,p_named_lov=>'MIGRATION_TYPES'
-,p_field_template=>2320077351817916916
-,p_item_template_options=>'#DEFAULT#'
-,p_lov_display_extra=>'YES'
-,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
-  'number_of_columns', '1')).to_clob
-,p_multi_value_type=>'SEPARATED'
-,p_multi_value_separator=>':'
-);
-wwv_flow_imp_page.create_page_item(
- p_id=>wwv_flow_imp.id(71039864557110940)
-,p_name=>'P750_SHOW_ONLY_FINDINGS'
-,p_item_sequence=>100
-,p_item_plug_id=>wwv_flow_imp.id(472904998656421813)
-,p_item_default=>'1'
-,p_prompt=>'Show Only Findings'
-,p_source_type=>'ALWAYS_NULL'
-,p_display_as=>'NATIVE_YES_NO'
-,p_field_template=>2320077351817916916
-,p_item_template_options=>'#DEFAULT#'
-,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
-  'use_defaults', 'Y')).to_clob
-);
-wwv_flow_imp_page.create_page_da_event(
- p_id=>wwv_flow_imp.id(71039493414110936)
-,p_name=>'click Button Refresh - refresh Region Migration Details'
-,p_static_id=>'click-button-refresh-refresh-region-migration-details'
-,p_event_sequence=>10
-,p_triggering_element_type=>'BUTTON'
-,p_triggering_button_id=>wwv_flow_imp.id(65476682361019079)
-,p_bind_type=>'bind'
-,p_execution_type=>'IMMEDIATE'
-,p_bind_event_type=>'click'
-);
-wwv_flow_imp_page.create_page_da_action(
- p_id=>wwv_flow_imp.id(71039542703110937)
-,p_event_id=>wwv_flow_imp.id(71039493414110936)
-,p_event_result=>'TRUE'
-,p_action_sequence=>10
-,p_execute_on_page_init=>'N'
-,p_static_id=>'native-refresh'
-,p_action=>'NATIVE_REFRESH'
-,p_affected_elements_type=>'REGION'
-,p_affected_region_id=>wwv_flow_imp.id(71037927717110921)
-,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
-  'maintain_pagination', 'N')).to_clob
-);
-end;
-/
-prompt --application/pages/page_00760
-begin
-wwv_flow_imp_page.create_page(
- p_id=>760
-,p_name=>'Migration Effort'
-,p_alias=>'MIGRATION-EFFORT'
-,p_step_title=>'Migration Effort'
-,p_warn_on_unsaved_changes=>'N'
-,p_autocomplete_on_off=>'OFF'
-,p_inline_css=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'td[headers=MIGRATION_PRIORITY],',
-'td[headers=RN_CHAPTER_NAME]',
-'{',
-'  white-space: nowrap;',
-'}'))
-,p_step_template=>2528123255985761961
-,p_page_template_options=>'#DEFAULT#'
-,p_protection_level=>'C'
-,p_page_component_map=>'03'
-);
-wwv_flow_imp_page.create_page_plug(
- p_id=>wwv_flow_imp.id(71032515836091654)
-,p_plug_name=>'Breadcrumb'
-,p_static_id=>'breadcrumb'
-,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--useBreadcrumbTitle'
-,p_component_template_options=>'#DEFAULT#'
-,p_escape_on_http_output=>'N'
-,p_plug_template=>2532939663579242476
-,p_plug_display_sequence=>10
-,p_plug_display_point=>'REGION_POSITION_01'
-,p_plug_item_display_point=>'ABOVE'
-,p_menu_id=>wwv_flow_imp.id(472901389022347808)
-,p_plug_source_type=>'NATIVE_BREADCRUMB'
-,p_menu_template_id=>4073839682315169711
-,p_plug_query_headings_type=>'COLON_DELMITED_LIST'
-);
-wwv_flow_imp_page.create_report_region(
- p_id=>wwv_flow_imp.id(71036156686110903)
-,p_name=>'Migration Effort'
-,p_static_id=>'migration-effort'
-,p_template=>4073835273271169698
-,p_display_sequence=>10
-,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
-,p_source_type=>'NATIVE_SQL_REPORT'
-,p_query_type=>'SQL'
-,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
-' apex_version',
-',rn_type',
-',rn_chapter_no',
-',rn_chapter_name',
-',rn_chapter_text',
-',migration_priority',
-',count(1) amount_of_objects',
-',round(sum(migration_effort_in_days)',
-'      ,3) migration_effort_in_days',
-'from av_migration_pkg.ptf_effort_calculation(i_app_id               => :P0_APP_ID',
-'                                            ,i_apex_versions        => :P760_APEX_VERSIONS',
-'                                            ,i_migration_priorities => :P760_MIGRATION_PRIORITIES)',
-'  group by apex_version',
-'          ,rn_type',
-'          ,rn_chapter_no',
-'          ,rn_chapter_name',
-'          ,rn_chapter_text',
-'          ,migration_priority',
-'  order by migration_priority',
-'          ,replace(rn_chapter_no,''.'','''')',
-'          ,rn_type',
-'          ,apex_version',
-'          '))
-,p_ajax_enabled=>'Y'
-,p_ajax_items_to_submit=>'P0_APP_ID,P760_APEX_VERSIONS,P760_MIGRATION_PRIORITIES'
-,p_lazy_loading=>true
-,p_query_row_template=>2540130677583398057
-,p_query_num_rows=>15
-,p_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_query_break_cols=>'1'
-,p_break_type_flag=>'DEFAULT_BREAK_FORMATTING'
-,p_csv_output=>'N'
-,p_prn_output=>'N'
-,p_sort_null=>'L'
-,p_plug_query_strip_html=>'N'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71037101912110913)
-,p_query_column_id=>7
-,p_column_alias=>'AMOUNT_OF_OBJECTS'
-,p_column_display_sequence=>70
-,p_column_heading=>'# Objects'
-,p_column_alignment=>'RIGHT'
-,p_heading_alignment=>'RIGHT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71036205802110904)
-,p_query_column_id=>1
-,p_column_alias=>'APEX_VERSION'
-,p_column_display_sequence=>30
-,p_column_heading=>'APEX Version'
-,p_heading_alignment=>'LEFT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71036873470110910)
-,p_query_column_id=>8
-,p_column_alias=>'MIGRATION_EFFORT_IN_DAYS'
-,p_column_display_sequence=>80
-,p_column_heading=>'Effort In Days'
-,p_column_format=>'999G999G999G999G990D00'
-,p_column_alignment=>'RIGHT'
-,p_heading_alignment=>'RIGHT'
-,p_sum_column=>'Y'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71036981630110911)
-,p_query_column_id=>6
-,p_column_alias=>'MIGRATION_PRIORITY'
-,p_column_display_sequence=>10
-,p_column_heading=>'Priority'
-,p_column_alignment=>'RIGHT'
-,p_heading_alignment=>'RIGHT'
-,p_display_as=>'TEXT_FROM_LOV_ESC'
-,p_named_lov=>wwv_flow_imp.id(71058072923988992)
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71036455609110906)
-,p_query_column_id=>4
-,p_column_alias=>'RN_CHAPTER_NAME'
-,p_column_display_sequence=>50
-,p_column_heading=>'Chapter Name'
-,p_heading_alignment=>'LEFT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71036330701110905)
-,p_query_column_id=>3
-,p_column_alias=>'RN_CHAPTER_NO'
-,p_column_display_sequence=>40
-,p_column_heading=>'Chapter No'
-,p_heading_alignment=>'LEFT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71037713658110919)
-,p_query_column_id=>5
-,p_column_alias=>'RN_CHAPTER_TEXT'
-,p_column_display_sequence=>60
-,p_column_heading=>'Description'
-,p_heading_alignment=>'LEFT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_report_columns(
- p_id=>wwv_flow_imp.id(71037072113110912)
-,p_query_column_id=>2
-,p_column_alias=>'RN_TYPE'
-,p_column_display_sequence=>20
-,p_column_heading=>'Type'
-,p_heading_alignment=>'LEFT'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
-);
-wwv_flow_imp_page.create_page_item(
- p_id=>wwv_flow_imp.id(71037610662110918)
-,p_name=>'P760_APEX_VERSIONS'
-,p_item_sequence=>50
-,p_item_plug_id=>wwv_flow_imp.id(472904998656421813)
-,p_prompt=>'APEX Versions'
-,p_source_type=>'ALWAYS_NULL'
-,p_display_as=>'NATIVE_CHECKBOX'
-,p_named_lov=>'APEX_VERSIONS'
-,p_field_template=>2320077351817916916
-,p_item_template_options=>'#DEFAULT#'
-,p_lov_display_extra=>'NO'
-,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
-  'number_of_columns', '1')).to_clob
-,p_multi_value_type=>'SEPARATED'
-,p_multi_value_separator=>':'
-);
-wwv_flow_imp_page.create_page_item(
- p_id=>wwv_flow_imp.id(71037587460110917)
-,p_name=>'P760_MIGRATION_PRIORITIES'
-,p_item_sequence=>60
-,p_item_plug_id=>wwv_flow_imp.id(472904998656421813)
-,p_prompt=>'Migration Priorities'
-,p_source_type=>'ALWAYS_NULL'
-,p_display_as=>'NATIVE_CHECKBOX'
-,p_named_lov=>'MIGRATION_PRIORITY'
-,p_field_template=>2320077351817916916
-,p_item_template_options=>'#DEFAULT#'
-,p_lov_display_extra=>'NO'
-,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'1 - must<br>without these changes application will crash or doesn''t work<br><br>',
-'2 - should<br>with these changes application gets minimum changes to run in latest APEX release<br><br>',
-'3 - recommed<br>mostly desupported and deprecated features that should be adjusted<br><br>',
-'4 - best practices<br>only adjustments which will reduce effort for maintaining in future or would be faster'))
-,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
-  'number_of_columns', '1')).to_clob
-,p_multi_value_type=>'SEPARATED'
-,p_multi_value_separator=>':'
-);
-wwv_flow_imp_page.create_page_da_event(
- p_id=>wwv_flow_imp.id(71036623265110908)
-,p_name=>'click Refresh - Refresh Region Migration Effort'
-,p_static_id=>'click-refresh-refresh-region-migration-effort'
-,p_event_sequence=>10
-,p_triggering_element_type=>'BUTTON'
-,p_triggering_button_id=>wwv_flow_imp.id(65476682361019079)
-,p_bind_type=>'bind'
-,p_execution_type=>'IMMEDIATE'
-,p_bind_event_type=>'click'
-);
-wwv_flow_imp_page.create_page_da_action(
- p_id=>wwv_flow_imp.id(71036778000110909)
-,p_event_id=>wwv_flow_imp.id(71036623265110908)
-,p_event_result=>'TRUE'
-,p_action_sequence=>10
-,p_execute_on_page_init=>'N'
-,p_static_id=>'native-refresh'
-,p_action=>'NATIVE_REFRESH'
-,p_affected_elements_type=>'REGION'
-,p_affected_region_id=>wwv_flow_imp.id(71036156686110903)
-,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
-  'maintain_pagination', 'N')).to_clob
 );
 end;
 /

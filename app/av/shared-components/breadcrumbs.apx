@@ -7,6 +7,9 @@ breadcrumb breadcrumb (
         execution {
             sequence: 10
         }
+        appearance {
+            parentEntry: @migation
+        }
         link {
             target: {
                 page: 710
@@ -125,26 +128,26 @@ breadcrumb breadcrumb (
 
     entry migration-details (
         name: Migration Details
-        pageNumber: 750
+        pageNumber: 650
         execution {
             sequence: 10
         }
         link {
             target: {
-                page: 750
+                page: 650
             }
         }
     )
 
     entry migration-effort (
         name: Migration Effort
-        pageNumber: 760
+        pageNumber: 660
         execution {
             sequence: 10
         }
         link {
             target: {
-                page: 760
+                page: 660
             }
         }
     )
