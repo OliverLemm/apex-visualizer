@@ -6,11 +6,10 @@ page 50 (
         templateOptions: #DEFAULT#
     }
     navigation {
-        cursorFocus: doNotFocusCursor
         warnOnUnsavedChanges: false
     }
     security {
-        formAutoComplete: false
+        pageAccessProtection: unrestricted
     }
 
     region application-changes (
@@ -50,6 +49,9 @@ page 50 (
         }
         advanced {
             regionDisplaySelector: true
+        }
+        performance {
+            lazyLoading: true
         }
         dataCursor {
             dimOnHover: false
@@ -142,6 +144,9 @@ page 50 (
         }
         advanced {
             regionDisplaySelector: true
+        }
+        performance {
+            lazyLoading: true
         }
         dataCursor {
             dimOnHover: false

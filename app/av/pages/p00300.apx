@@ -6,11 +6,10 @@ page 300 (
         templateOptions: #DEFAULT#
     }
     navigation {
-        cursorFocus: doNotFocusCursor
         warnOnUnsavedChanges: false
     }
     security {
-        formAutoComplete: false
+        pageAccessProtection: unrestricted
     }
 
     region characters-of-plsql-code-per-page (
@@ -59,6 +58,9 @@ page 300 (
         }
         chartLayout {
             height: 400
+        }
+        performance {
+            lazyLoading: true
         }
 
         series series (
@@ -155,11 +157,13 @@ page 300 (
         chartLayout {
             height: 400
         }
+        performance {
+            lazyLoading: true
+        }
         dataCursor {
             dimOnHover: false
         }
         animation {
-            onDisplay: none
             onDataChange: none
         }
         legend {
@@ -226,6 +230,9 @@ page 300 (
         }
         chartLayout {
             height: 350
+        }
+        performance {
+            lazyLoading: true
         }
         dataCursor {
             dimOnHover: false

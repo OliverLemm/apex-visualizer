@@ -4,8 +4,8 @@ begin
 --     PAGE: 00600
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2026.03.30'
-,p_release=>'26.1.5'
+ p_version_yyyy_mm_dd=>'2026.04.07'
+,p_release=>'26.2.0'
 ,p_default_workspace_id=>100001
 ,p_default_application_id=>347
 ,p_default_id_offset=>20408574139881448
@@ -18,7 +18,7 @@ wwv_flow_imp_page.create_page(
 ,p_step_title=>'QA'
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
-,p_step_template=>2528123255985761961
+,p_step_template=>2530074561476252390
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'03'
 );
@@ -28,7 +28,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_static_id=>'general-application-settings'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_escape_on_http_output=>'N'
-,p_plug_template=>4073835273271169698
+,p_plug_template=>4075786578761660127
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_item_display_point=>'ABOVE'
@@ -41,7 +41,7 @@ wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(24445762168508420)
 ,p_name=>'legacy tabs'
 ,p_static_id=>'legacy-tabs'
-,p_template=>4073835273271169698
+,p_template=>4075786578761660127
 ,p_display_sequence=>60
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -54,7 +54,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>false
-,p_query_row_template=>2540130677583398057
+,p_query_row_template=>2542081983073888486
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
@@ -135,7 +135,7 @@ wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(59248874548518491)
 ,p_name=>'never condition used'
 ,p_static_id=>'never-condition-used'
-,p_template=>4073835273271169698
+,p_template=>4075786578761660127
 ,p_display_sequence=>50
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
@@ -154,7 +154,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>false
-,p_query_row_template=>2540130677583398057
+,p_query_row_template=>2542081983073888486
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
@@ -215,7 +215,7 @@ wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(59248532126518487)
 ,p_name=>'unused authorization schemes'
 ,p_static_id=>'unused-authorization-schemes'
-,p_template=>4073835273271169698
+,p_template=>4075786578761660127
 ,p_display_sequence=>40
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
@@ -229,7 +229,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>false
-,p_query_row_template=>2540130677583398057
+,p_query_row_template=>2542081983073888486
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
@@ -275,7 +275,7 @@ wwv_flow_imp_page.create_report_region(
  p_id=>wwv_flow_imp.id(59246298485518465)
 ,p_name=>'unused plugins'
 ,p_static_id=>'unused-plugins'
-,p_template=>4073835273271169698
+,p_template=>4075786578761660127
 ,p_display_sequence=>30
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
@@ -291,7 +291,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>false
-,p_query_row_template=>2540130677583398057
+,p_query_row_template=>2542081983073888486
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
@@ -337,7 +337,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_cMaxlength=>4
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
-,p_field_template=>2320077351817916916
+,p_field_template=>2322028657308407345
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'Compatibility Mode <a href="https://docs.oracle.com/en/database/oracle/apex/26.2/htmrn/changed-behavior.html#GUID-712BE54F-08CD-43A3-A645-87B9360ED516" target="_blank">Releasenotes 26.2</a><br><br>',
@@ -370,7 +370,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_begin_on_new_line=>'N'
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
-,p_field_template=>2320077351817916916
+,p_field_template=>2322028657308407345
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>'Using jQuery Migrate means, to support old deprecated JavaScript Code.'
 ,p_encrypt_session_state_yn=>'N'
@@ -391,7 +391,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_cSize=>30
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
-,p_field_template=>2320077351817916916
+,p_field_template=>2322028657308407345
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'Supporting legacy JavaScript means always to load more JavaScript as necessary.<br> ',
@@ -416,7 +416,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_begin_on_new_line=>'N'
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
-,p_field_template=>2320077351817916916
+,p_field_template=>2322028657308407345
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'Runtime API Usage should be restricted as much as possible. If you have a standard Application with no custom API calls it should be completely disabled.<br>',
@@ -441,7 +441,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_begin_on_new_line=>'N'
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
-,p_field_template=>2320077351817916916
+,p_field_template=>2322028657308407345
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>'To ensure the safety in your application, activate the Session State protection in your application. Keep in mind if you secure your items they cannot be changed inside JavaScript (Dynamic Actions).'
 ,p_encrypt_session_state_yn=>'N'
@@ -462,7 +462,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_cSize=>30
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
-,p_field_template=>2320077351817916916
+,p_field_template=>2322028657308407345
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>'If you don''t select Universal Theme for your application, not the full functionality is supported.'
 ,p_encrypt_session_state_yn=>'N'
@@ -484,7 +484,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_begin_on_new_line=>'N'
 ,p_colspan=>4
 ,p_grid_label_column_span=>2
-,p_field_template=>2320077351817916916
+,p_field_template=>2322028657308407345
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'If using Universal Theme, this information shows the version compared to the APEX version<br>',

@@ -6,11 +6,10 @@ page 10 (
         templateOptions: #DEFAULT#
     }
     navigation {
-        cursorFocus: doNotFocusCursor
         warnOnUnsavedChanges: false
     }
     security {
-        formAutoComplete: false
+        pageAccessProtection: unrestricted
     }
 
     region applicatons (
@@ -79,7 +78,7 @@ page 10 (
                 sequence: 30
             }
             source {
-                dataType: STRING
+                dataType: varchar2
             }
             advanced {
                 endUserAlias: C
@@ -97,7 +96,7 @@ page 10 (
                 columnAlignment: end
             }
             source {
-                dataType: NUMBER
+                dataType: number
             }
             advanced {
                 endUserAlias: A
@@ -113,7 +112,7 @@ page 10 (
                 sequence: 20
             }
             source {
-                dataType: STRING
+                dataType: varchar2
             }
             advanced {
                 endUserAlias: B
@@ -130,7 +129,7 @@ page 10 (
                 columnAlignment: end
             }
             source {
-                dataType: NUMBER
+                dataType: number
             }
             advanced {
                 endUserAlias: I
@@ -147,7 +146,7 @@ page 10 (
                 columnAlignment: end
             }
             source {
-                dataType: NUMBER
+                dataType: number
             }
             advanced {
                 endUserAlias: H
@@ -163,7 +162,7 @@ page 10 (
                 sequence: 40
             }
             source {
-                dataType: STRING
+                dataType: varchar2
             }
             advanced {
                 endUserAlias: D
@@ -180,7 +179,7 @@ page 10 (
                 columnAlignment: end
             }
             source {
-                dataType: NUMBER
+                dataType: number
             }
             advanced {
                 endUserAlias: F
@@ -197,7 +196,7 @@ page 10 (
                 columnAlignment: end
             }
             source {
-                dataType: NUMBER
+                dataType: number
             }
             advanced {
                 endUserAlias: G
@@ -213,7 +212,7 @@ page 10 (
                 sequence: 50
             }
             source {
-                dataType: STRING
+                dataType: varchar2
             }
             advanced {
                 endUserAlias: E
@@ -230,7 +229,7 @@ page 10 (
                 columnAlignment: end
             }
             source {
-                dataType: NUMBER
+                dataType: number
             }
             advanced {
                 endUserAlias: J
@@ -328,11 +327,11 @@ page 10 (
         advanced {
             regionDisplaySelector: true
         }
+        performance {
+            lazyLoading: true
+        }
         dataCursor {
             dimOnHover: false
-        }
-        animation {
-            onDisplay: zoom
         }
         legend {
             position: bottom
@@ -490,6 +489,9 @@ page 10 (
         chart {
             type: pie
         }
+        performance {
+            lazyLoading: true
+        }
         dataCursor {
             dimOnHover: false
         }
@@ -583,11 +585,11 @@ page 10 (
         chartLayout {
             height: 600
         }
+        performance {
+            lazyLoading: true
+        }
         dataCursor {
             dimOnHover: false
-        }
-        animation {
-            onDisplay: zoom
         }
 
         series applications (

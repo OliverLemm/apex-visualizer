@@ -3,6 +3,10 @@
     "id": 347,
     "runtime": {
       "debugging": true
+    },
+    "sessionStateProtection": {
+      "allowUrlsCreatedAfter": "2022-05-13T17:27:08",
+      "checksumSalt": "A6E3BB2D2DE19934A5B6DE8C58FA65422D49912864CE2CE84F77196DBC8E0268"
     }
   }
 }

@@ -1,0 +1,21 @@
+list desktop-navigation-bar (
+    name: Desktop Navigation Bar
+
+    entry log-out (
+        label: Log Out
+        layout {
+            sequence: 10
+        }
+        isCurrent {
+            type: never
+        }
+        link {
+            target: {
+                type: url
+                url: &LOGOUT_URL.
+            }
+        }
+    )
+
+)
+

@@ -7,11 +7,10 @@ page 650 (
         templateOptions: #DEFAULT#
     }
     navigation {
-        cursorFocus: doNotFocusCursor
         warnOnUnsavedChanges: false
     }
     security {
-        formAutoComplete: false
+        pageAccessProtection: unrestricted
     }
 
     region migration-details (
@@ -79,6 +78,9 @@ page 650 (
                 t-Report--altRowsDefault
                 t-Report--rowHighlight
             ]
+        }
+        pagination {
+            type: showAll
         }
         performance {
             lazyLoading: true

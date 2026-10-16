@@ -7,11 +7,10 @@ page 500 (
         templateOptions: #DEFAULT#
     }
     navigation {
-        cursorFocus: doNotFocusCursor
         warnOnUnsavedChanges: false
     }
     security {
-        formAutoComplete: false
+        pageAccessProtection: unrestricted
     }
 
     region d3-chart (
@@ -136,6 +135,9 @@ page 500 (
                 t-Report--altRowsDefault
                 t-Report--rowHighlight
             ]
+        }
+        pagination {
+            type: showAll
         }
         performance {
             lazyLoading: true
@@ -264,6 +266,9 @@ page 500 (
                 t-Report--altRowsDefault
                 t-Report--rowHighlight
             ]
+        }
+        pagination {
+            type: showAll
         }
         performance {
             lazyLoading: true

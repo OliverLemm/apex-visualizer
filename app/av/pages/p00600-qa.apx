@@ -7,11 +7,10 @@ page 600 (
         templateOptions: #DEFAULT#
     }
     navigation {
-        cursorFocus: doNotFocusCursor
         warnOnUnsavedChanges: false
     }
     security {
-        formAutoComplete: false
+        pageAccessProtection: unrestricted
     }
 
     region general-application-settings (
@@ -66,7 +65,6 @@ page 600 (
             ]
         }
         pagination {
-            type: nextAndPreviousLinks
             displayPosition: topAndBottomRight
         }
 
@@ -191,7 +189,6 @@ page 600 (
             ]
         }
         pagination {
-            type: nextAndPreviousLinks
             displayPosition: topAndBottomRight
         }
 
@@ -285,7 +282,6 @@ page 600 (
             ]
         }
         pagination {
-            type: nextAndPreviousLinks
             displayPosition: topAndBottomRight
         }
 
@@ -370,7 +366,6 @@ page 600 (
             ]
         }
         pagination {
-            type: nextAndPreviousLinks
             displayPosition: topAndBottomRight
         }
 

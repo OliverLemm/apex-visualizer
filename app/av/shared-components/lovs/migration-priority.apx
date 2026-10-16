@@ -1,0 +1,24 @@
+lov migration-priority (
+    name: MIGRATION_PRIORITY
+    source {
+        type: sqlQuery
+        sqlQuery:
+            ```sql
+            select '1 - must' d, 1 r from dual
+            union all
+            select '2 - should' d, 2 r from dual
+            union all
+            select '3 - recommed' d, 3 r from dual
+            union all
+            select '4 - best practices' d, 4 r from dual
+            union all
+            select '5 - information' d, 5 r from dual
+            ```
+    }
+    columnMapping {
+        return: R
+        display: D
+        defaultSort: D
+    }
+)
+

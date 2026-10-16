@@ -6,11 +6,10 @@ page 40 (
         templateOptions: #DEFAULT#
     }
     navigation {
-        cursorFocus: doNotFocusCursor
         warnOnUnsavedChanges: false
     }
     security {
-        formAutoComplete: false
+        pageAccessProtection: unrestricted
     }
 
     region condition-details (
@@ -53,6 +52,9 @@ page 40 (
         }
         advanced {
             regionDisplaySelector: true
+        }
+        performance {
+            lazyLoading: true
         }
         dataCursor {
             dimOnHover: false
@@ -125,6 +127,9 @@ page 40 (
         chart {
             type: pie
         }
+        performance {
+            lazyLoading: true
+        }
         dataCursor {
             dimOnHover: false
         }
@@ -185,6 +190,9 @@ page 40 (
         }
         chart {
             type: funnel
+        }
+        performance {
+            lazyLoading: true
         }
         dataCursor {
             dimOnHover: false

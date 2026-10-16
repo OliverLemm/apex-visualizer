@@ -1,0 +1,14 @@
+lov applications (
+    name: APPLICATIONS
+    source {
+        type: legacySqlQuery
+        sqlQuery:
+            ```sql
+            select aa.application_id || ' - ' || aa.application_name app
+                  ,aa.application_id
+            from apex_applications aa
+            order by aa.application_id
+            ```
+    }
+)
+

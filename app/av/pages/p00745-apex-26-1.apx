@@ -7,12 +7,7 @@ page 745 (
         templateOptions: #DEFAULT#
     }
     navigation {
-        cursorFocus: doNotFocusCursor
         warnOnUnsavedChanges: false
-    }
-    security {
-        pageAccessProtection: argumentsMustHaveChecksum
-        formAutoComplete: false
     }
 
     region 5-1 (
@@ -665,7 +660,7 @@ page 745 (
             template: @/collapsible
             templateOptions: [
                 #DEFAULT#
-                is-expanded
+                is-collapsed
                 t-Region--scrollBody
             ]
         }
@@ -690,7 +685,7 @@ page 745 (
             template: @/collapsible
             templateOptions: [
                 #DEFAULT#
-                is-expanded
+                is-collapsed
                 t-Region--scrollBody
             ]
         }
@@ -1236,7 +1231,7 @@ page 745 (
             template: @/collapsible
             templateOptions: [
                 #DEFAULT#
-                is-expanded
+                is-collapsed
                 t-Region--scrollBody
             ]
         }

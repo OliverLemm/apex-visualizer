@@ -4,8 +4,8 @@ begin
 --     PAGE: 00745
 --   Manifest End
 wwv_flow_imp.component_begin (
- p_version_yyyy_mm_dd=>'2026.03.30'
-,p_release=>'26.1.5'
+ p_version_yyyy_mm_dd=>'2026.04.07'
+,p_release=>'26.2.0'
 ,p_default_workspace_id=>100001
 ,p_default_application_id=>347
 ,p_default_id_offset=>20408574139881448
@@ -18,7 +18,7 @@ wwv_flow_imp_page.create_page(
 ,p_step_title=>'APEX 26.1'
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
-,p_step_template=>2528123255985761961
+,p_step_template=>2530074561476252390
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_page_component_map=>'03'
@@ -28,7 +28,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_name=>'5.1 Cohere AI Models Deprecated'
 ,p_static_id=>'5-1'
 ,p_parent_plug_id=>wwv_flow_imp.id(240964173975165904)
-,p_template=>2665811232373458102
+,p_template=>2667762537863948531
 ,p_display_sequence=>30
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -48,7 +48,7 @@ wwv_flow_imp_page.create_report_region(
 '<b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> This setting is on Workspace Level</b>'))
 ,p_ajax_enabled=>'Y'
 ,p_lazy_loading=>true
-,p_query_row_template=>2540130677583398057
+,p_query_row_template=>2542081983073888486
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated Cohere AI Models found.</b>'
@@ -99,7 +99,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_static_id=>'5-1-deprecated-apis'
 ,p_region_name=>'av-deprecated-51'
 ,p_parent_plug_id=>wwv_flow_imp.id(240964173975165904)
-,p_template=>2665811232373458102
+,p_template=>2667762537863948531
 ,p_display_sequence=>60
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -145,7 +145,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_fixed_header=>'PAGE'
 ,p_lazy_loading=>true
-,p_query_row_template=>2540130677583398057
+,p_query_row_template=>2542081983073888486
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated API calls found.</b>'
@@ -222,7 +222,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_name=>'5.2 Legacy Calendar Templates Deprecated '
 ,p_static_id=>'5-2-legacy-calendar-templates-deprecated'
 ,p_parent_plug_id=>wwv_flow_imp.id(240964173975165904)
-,p_template=>2665811232373458102
+,p_template=>2667762537863948531
 ,p_display_sequence=>40
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -243,7 +243,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>true
-,p_query_row_template=>2540130677583398057
+,p_query_row_template=>2542081983073888486
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated Legacy Calendar Templates found.</b>'
@@ -316,7 +316,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_name=>'5.3 Deprecated Property'
 ,p_static_id=>'5-3-deprecated-property'
 ,p_parent_plug_id=>wwv_flow_imp.id(240964173975165904)
-,p_template=>2665811232373458102
+,p_template=>2667762537863948531
 ,p_display_sequence=>50
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -337,7 +337,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>true
-,p_query_row_template=>2540130677583398057
+,p_query_row_template=>2542081983073888486
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated JavaScript Static IDs found.</b>'
@@ -409,7 +409,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_name=>'5.5 Deprecated JavaScript APIs'
 ,p_static_id=>'5-5-deprecated-javascript-apis'
 ,p_parent_plug_id=>wwv_flow_imp.id(240964173975165904)
-,p_template=>2665811232373458102
+,p_template=>2667762537863948531
 ,p_display_sequence=>70
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -438,7 +438,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>true
-,p_query_row_template=>2540130677583398057
+,p_query_row_template=>2542081983073888486
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated API calls found.</b>'
@@ -517,8 +517,8 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'5.6 Export Repository Deprecated'
 ,p_static_id=>'5-6-export-repository-deprecated'
 ,p_parent_plug_id=>wwv_flow_imp.id(240964173975165904)
-,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
-,p_plug_template=>2665811232373458102
+,p_region_template_options=>'#DEFAULT#:is-collapsed:t-Region--scrollBody'
+,p_plug_template=>2667762537863948531
 ,p_plug_display_sequence=>80
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_plug_item_display_point=>'ABOVE'
@@ -535,8 +535,8 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'5.7 RESTful Services Feature in SQL Workshop '
 ,p_static_id=>'5-7-restful-services-feature-in-sql-workshop'
 ,p_parent_plug_id=>wwv_flow_imp.id(240964173975165904)
-,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
-,p_plug_template=>2665811232373458102
+,p_region_template_options=>'#DEFAULT#:is-collapsed:t-Region--scrollBody'
+,p_plug_template=>2667762537863948531
 ,p_plug_display_sequence=>90
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_plug_item_display_point=>'ABOVE'
@@ -553,7 +553,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_name=>'5.8 Deprecated Substitution Strings '
 ,p_static_id=>'5-8-deprecated-substitution-strings'
 ,p_parent_plug_id=>wwv_flow_imp.id(240964173975165904)
-,p_template=>2665811232373458102
+,p_template=>2667762537863948531
 ,p_display_sequence=>100
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -615,7 +615,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>true
-,p_query_row_template=>2540130677583398057
+,p_query_row_template=>2542081983073888486
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated Substitution Strings found.</b>'
@@ -723,7 +723,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_name=>'5.9 Deprecated Public Views and Public View Columns '
 ,p_static_id=>'5-9-deprecated-public-views-and-public-view-columns'
 ,p_parent_plug_id=>wwv_flow_imp.id(240964173975165904)
-,p_template=>2665811232373458102
+,p_template=>2667762537863948531
 ,p_display_sequence=>120
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -761,7 +761,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>true
-,p_query_row_template=>2540130677583398057
+,p_query_row_template=>2542081983073888486
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> Column COMPONENT_SIGNATURE not used.</b>'
@@ -839,7 +839,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_static_id=>'5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a'
 ,p_region_name=>'av-deprecated-5'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>4073835273271169698
+,p_plug_template=>4075786578761660127
 ,p_plug_display_sequence=>40
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_item_display_point=>'ABOVE'
@@ -856,7 +856,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_static_id=>'7-1-desupported-public-view-columns'
 ,p_region_name=>'av-261-des71'
 ,p_parent_plug_id=>wwv_flow_imp.id(240965270744165915)
-,p_template=>2665811232373458102
+,p_template=>2667762537863948531
 ,p_display_sequence=>10
 ,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
@@ -878,7 +878,7 @@ wwv_flow_imp_page.create_report_region(
 ,p_ajax_enabled=>'Y'
 ,p_ajax_items_to_submit=>'P0_APP_ID'
 ,p_lazy_loading=>true
-,p_query_row_template=>2540130677583398057
+,p_query_row_template=>2542081983073888486
 ,p_query_num_rows=>99999
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_no_data_found=>'<b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> Column COMPONENT_SIGNATURE not used.</b>'
@@ -955,8 +955,8 @@ wwv_flow_imp_page.create_page_plug(
 ,p_static_id=>'7-2-ios-status-bar-style-desupported'
 ,p_region_name=>'av-desupported-72'
 ,p_parent_plug_id=>wwv_flow_imp.id(240965270744165915)
-,p_region_template_options=>'#DEFAULT#:is-expanded:t-Region--scrollBody'
-,p_plug_template=>2665811232373458102
+,p_region_template_options=>'#DEFAULT#:is-collapsed:t-Region--scrollBody'
+,p_plug_template=>2667762537863948531
 ,p_plug_display_sequence=>30
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_plug_item_display_point=>'ABOVE'
@@ -975,7 +975,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_name=>'7 Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/26.1/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>'
 ,p_static_id=>'7-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-apex-26-1-htmrn-desupported-features-html-target-blank-link-to-release-notes-a'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
-,p_plug_template=>4073835273271169698
+,p_plug_template=>4075786578761660127
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_item_display_point=>'ABOVE'

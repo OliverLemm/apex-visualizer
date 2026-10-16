@@ -1,0 +1,13 @@
+lov apex-versions (
+    name: APEX_VERSIONS
+    source {
+        type: sqlQuery
+        sqlQuery: select vc2 d, vc2 r from av_migration_pkg.tf_apex_versions()
+    }
+    columnMapping {
+        return: R
+        display: D
+        defaultSort: D
+    }
+)
+

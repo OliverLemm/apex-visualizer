@@ -9,7 +9,7 @@ page 0 (
         type: staticContent
         layout {
             sequence: 10
-            slot: REGION_POSITION_03
+            slot: rightColumn
         }
         appearance {
             template: @/standard

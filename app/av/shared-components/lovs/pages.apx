@@ -1,0 +1,15 @@
+lov pages (
+    name: PAGES
+    source {
+        type: legacySqlQuery
+        sqlQuery:
+            ```sql
+            select  page_name || ' (' || page_id || ')' page,
+                   page_id 
+              from apex_application_pages
+            where application_id = :P0_APP_ID
+             order by 1
+            ```
+    }
+)
+

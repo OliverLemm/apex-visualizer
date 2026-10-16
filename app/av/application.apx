@@ -1,6 +1,6 @@
 app AV (
     name: APEX Visualizer
-    version: 26.1.1
+    version: 26.2.0
     logo {
         type: text
         text: APEX Visualizer
@@ -49,8 +49,6 @@ app AV (
         referrerPolicy: strictOriginWhenCrossOrigin
     }
     sessionStateProtection {
-        allowUrlsCreatedAfter: 2022-05-13T17:27:08
-        checksumSalt: A6E3BB2D2DE19934A5B6DE8C58FA65422D49912864CE2CE84F77196DBC8E0268
         acceptPre202UrlChecksums: false
     }
     sessionManagement {

@@ -1,6 +1,5 @@
 appProcess apex-nitro (
     name: APEX Nitro
-    type: executeCode
     source {
         plsqlCode: apex_application.g_flow_images := 'http://localhost:4000/';
     }

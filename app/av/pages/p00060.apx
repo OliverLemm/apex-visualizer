@@ -6,11 +6,10 @@ page 60 (
         templateOptions: #DEFAULT#
     }
     navigation {
-        cursorFocus: doNotFocusCursor
         warnOnUnsavedChanges: false
     }
     security {
-        formAutoComplete: false
+        pageAccessProtection: unrestricted
     }
 
     region details (
@@ -453,6 +452,9 @@ page 60 (
         chartLayout {
             height: 600
         }
+        performance {
+            lazyLoading: true
+        }
         dataCursor {
             dimOnHover: false
         }
@@ -542,6 +544,9 @@ page 60 (
         }
         chartLayout {
             height: 600
+        }
+        performance {
+            lazyLoading: true
         }
         dataCursor {
             dimOnHover: false

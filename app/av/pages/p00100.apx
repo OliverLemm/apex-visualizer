@@ -6,11 +6,10 @@ page 100 (
         templateOptions: #DEFAULT#
     }
     navigation {
-        cursorFocus: doNotFocusCursor
         warnOnUnsavedChanges: false
     }
     security {
-        formAutoComplete: false
+        pageAccessProtection: unrestricted
     }
 
     region characters-of-javascript-code-per-page (
@@ -45,6 +44,9 @@ page 100 (
         }
         config {
             buildOption: @deactivated
+        }
+        performance {
+            lazyLoading: true
         }
         dataCursor {
             dimOnHover: false
@@ -130,6 +132,9 @@ page 100 (
         }
         chartLayout {
             height: 400
+        }
+        performance {
+            lazyLoading: true
         }
         legend {
             show: false
@@ -233,6 +238,9 @@ page 100 (
         chartLayout {
             height: 400
         }
+        performance {
+            lazyLoading: true
+        }
         dataCursor {
             dimOnHover: false
         }
@@ -322,11 +330,13 @@ page 100 (
         chartLayout {
             height: 400
         }
+        performance {
+            lazyLoading: true
+        }
         dataCursor {
             dimOnHover: false
         }
         animation {
-            onDisplay: none
             onDataChange: none
         }
 

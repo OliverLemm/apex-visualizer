@@ -1,0 +1,22 @@
+lov migration-types (
+    name: MIGRATION_TYPES
+    source {
+        type: sqlQuery
+        sqlQuery:
+            ```sql
+            select 'generally' d, 'generally' r, 1 sort_by from dual
+            union all
+            select 'new feature' d, 'new feature' r, 2 sort_by from dual
+            union all
+            select 'deprecated' d, 'deprecated' r, 3 sort_by from dual
+            union all
+            select 'desupported' d, 'desupported' r, 4 sort_by from dual
+            ```
+    }
+    columnMapping {
+        return: R
+        display: D
+        defaultSort: SORT_BY
+    }
+)
+
