@@ -1,4 +1,4 @@
-page 750 (
+page 650 (
     name: Migration Details
     alias: MIGRATION-DETAILS
     title: Migration Details
@@ -13,29 +13,6 @@ page 750 (
     security {
         formAutoComplete: false
     }
-
-    region breadcrumb (
-        name: Breadcrumb
-        type: breadcrumb
-        source {
-            breadcrumb: @breadcrumb
-        }
-        layout {
-            sequence: 10
-            slot: breadcrumbBar
-        }
-        appearance {
-            template: @/title-bar
-            templateOptions: [
-                #DEFAULT#
-                t-BreadcrumbRegion--useBreadcrumbTitle
-            ]
-        }
-        componentAppearance {
-            breadcrumbTemplate: @/breadcrumb
-            templateOptions: #DEFAULT#
-        }
-    )
 
     region migration-details (
         name: Migration Details
@@ -61,10 +38,10 @@ page 750 (
                       ,migration_priority
                       ,round(migration_effort_in_days,2) migration_effort_in_days
                 from av_migration_pkg.ptf_effort_calculation(i_app_id               => :P0_APP_ID
-                                                            ,i_apex_versions        => :P750_APEX_VERSIONS
-                                                            ,i_migration_priorities => :P750_MIGRATION_PRIORITIES
-                                                            ,i_migration_types      => :P750_MIGRATION_TYPES
-                                                            ,i_show_only_findings   => :P750_SHOW_ONLY_FINDINGS)
+                                                            ,i_apex_versions        => :P650_APEX_VERSIONS
+                                                            ,i_migration_priorities => :P650_MIGRATION_PRIORITIES
+                                                            ,i_migration_types      => :P650_MIGRATION_TYPES
+                                                            ,i_show_only_findings   => :P650_SHOW_ONLY_FINDINGS)
                 order by apex_version
                         ,replace(rn_chapter_no
                                 ,'.'
@@ -75,10 +52,10 @@ page 750 (
                 ```
             pageItemsToSubmit: [
                 P0_APP_ID
-                P750_APEX_VERSIONS
-                P750_MIGRATION_PRIORITIES
-                P750_MIGRATION_TYPES
-                P750_SHOW_ONLY_FINDINGS
+                P650_APEX_VERSIONS
+                P650_MIGRATION_PRIORITIES
+                P650_MIGRATION_TYPES
+                P650_SHOW_ONLY_FINDINGS
             ]
         }
         layout {
@@ -304,7 +281,7 @@ page 750 (
 
     )
 
-    pageItem P750_APEX_VERSIONS (
+    pageItem P650_APEX_VERSIONS (
         type: checkboxGroup
         label {
             label: APEX Versions
@@ -327,7 +304,7 @@ page 750 (
         }
     )
 
-    pageItem P750_MIGRATION_PRIORITIES (
+    pageItem P650_MIGRATION_PRIORITIES (
         type: checkboxGroup
         label {
             label: Migration Priorities
@@ -363,7 +340,7 @@ page 750 (
         }
     )
 
-    pageItem P750_MIGRATION_TYPES (
+    pageItem P650_MIGRATION_TYPES (
         type: checkboxGroup
         label {
             label: Migration Types
@@ -389,7 +366,7 @@ page 750 (
         }
     )
 
-    pageItem P750_SHOW_ONLY_FINDINGS (
+    pageItem P650_SHOW_ONLY_FINDINGS (
         type: switch
         label {
             label: Show Only Findings

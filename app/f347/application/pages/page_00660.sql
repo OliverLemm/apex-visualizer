@@ -14,7 +14,7 @@ wwv_flow_imp.component_begin (
 wwv_flow_imp_page.create_page(
  p_id=>660
 ,p_name=>'Migration Effort'
-,p_alias=>'MIGRATION-EFFORT1'
+,p_alias=>'MIGRATION-EFFORT'
 ,p_step_title=>'Migration Effort'
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'

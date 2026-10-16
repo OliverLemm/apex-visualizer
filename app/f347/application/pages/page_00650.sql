@@ -14,7 +14,7 @@ wwv_flow_imp.component_begin (
 wwv_flow_imp_page.create_page(
  p_id=>650
 ,p_name=>'Migration Details'
-,p_alias=>'MIGRATION-DETAILS1'
+,p_alias=>'MIGRATION-DETAILS'
 ,p_step_title=>'Migration Details'
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'

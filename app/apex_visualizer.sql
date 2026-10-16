@@ -115,7 +115,7 @@ wwv_imp_workspace.create_flow(
 ,p_modernization_available=>'Y'
 ,p_file_prefix=>nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>14
-,p_version_scn=>'155174592'
+,p_version_scn=>'155176587'
 ,p_print_server_type=>'INSTANCE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'N'
@@ -22842,7 +22842,7 @@ begin
 wwv_flow_imp_page.create_page(
  p_id=>650
 ,p_name=>'Migration Details'
-,p_alias=>'MIGRATION-DETAILS1'
+,p_alias=>'MIGRATION-DETAILS'
 ,p_step_title=>'Migration Details'
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'
@@ -23140,7 +23140,7 @@ begin
 wwv_flow_imp_page.create_page(
  p_id=>660
 ,p_name=>'Migration Effort'
-,p_alias=>'MIGRATION-EFFORT1'
+,p_alias=>'MIGRATION-EFFORT'
 ,p_step_title=>'Migration Effort'
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'OFF'

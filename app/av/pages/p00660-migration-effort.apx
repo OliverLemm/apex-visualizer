@@ -1,4 +1,4 @@
-page 760 (
+page 660 (
     name: Migration Effort
     alias: MIGRATION-EFFORT
     title: Migration Effort
@@ -25,29 +25,6 @@ page 760 (
         formAutoComplete: false
     }
 
-    region breadcrumb (
-        name: Breadcrumb
-        type: breadcrumb
-        source {
-            breadcrumb: @breadcrumb
-        }
-        layout {
-            sequence: 10
-            slot: breadcrumbBar
-        }
-        appearance {
-            template: @/title-bar
-            templateOptions: [
-                #DEFAULT#
-                t-BreadcrumbRegion--useBreadcrumbTitle
-            ]
-        }
-        componentAppearance {
-            breadcrumbTemplate: @/breadcrumb
-            templateOptions: #DEFAULT#
-        }
-    )
-
     region migration-effort (
         name: Migration Effort
         type: classicReport
@@ -67,8 +44,8 @@ page 760 (
                 ,round(sum(migration_effort_in_days)
                       ,3) migration_effort_in_days
                 from av_migration_pkg.ptf_effort_calculation(i_app_id               => :P0_APP_ID
-                                                            ,i_apex_versions        => :P760_APEX_VERSIONS
-                                                            ,i_migration_priorities => :P760_MIGRATION_PRIORITIES)
+                                                            ,i_apex_versions        => :P660_APEX_VERSIONS
+                                                            ,i_migration_priorities => :P660_MIGRATION_PRIORITIES)
                   group by apex_version
                           ,rn_type
                           ,rn_chapter_no
@@ -83,8 +60,8 @@ page 760 (
                 ```
             pageItemsToSubmit: [
                 P0_APP_ID
-                P760_APEX_VERSIONS
-                P760_MIGRATION_PRIORITIES
+                P660_APEX_VERSIONS
+                P660_MIGRATION_PRIORITIES
             ]
         }
         layout {
@@ -244,7 +221,7 @@ page 760 (
 
     )
 
-    pageItem P760_APEX_VERSIONS (
+    pageItem P660_APEX_VERSIONS (
         type: checkboxGroup
         label {
             label: APEX Versions
@@ -267,7 +244,7 @@ page 760 (
         }
     )
 
-    pageItem P760_MIGRATION_PRIORITIES (
+    pageItem P660_MIGRATION_PRIORITIES (
         type: checkboxGroup
         label {
             label: Migration Priorities
