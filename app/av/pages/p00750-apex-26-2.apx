@@ -1,0 +1,505 @@
+page 750 (
+    name: APEX 26.2
+    alias: APEX-26-2
+    title: APEX 26.2
+    appearance {
+        pageTemplate: @/right-side-column
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+        warnOnUnsavedChanges: false
+    }
+    security {
+        pageAccessProtection: argumentsMustHaveChecksum
+        formAutoComplete: false
+    }
+
+    region 1-deprecated-data-generator (
+        name: 1. Deprecated Data Generator
+        type: staticContent
+        layout {
+            sequence: 10
+            parentRegion: @5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-collapsed
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                The Data Generator utility in SQL Workshop is deprecated, and will be removed in a future release.<br>
+                <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> nothing to change / no check needed</b>
+                ```
+        }
+    )
+
+    region 3-apex-advisor (
+        name: 3. APEX Advisor
+        type: staticContent
+        layout {
+            sequence: 30
+            parentRegion: @5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-collapsed
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                APEX Advisor is deprecated, and will be removed in a future release. With SQLcl 26.3.0, the built-in CODESCAN utility is significantly enhanced to introduce native code quality and security rules specifically for APEXlang applications.<br>
+                <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> nothing to change / no check needed</b>
+                ```
+        }
+    )
+
+    region 3-query-builder-desupported (
+        name: 3. Query Builder Desupported
+        type: staticContent
+        layout {
+            sequence: 30
+            parentRegion: @7-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-apex-26-1-htmrn-desupported-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-collapsed
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                SQL Workshop Query Builder is desupported, including the Query Builder pages in SQL Workshop and the Query Builder action in SQL code editors.<br>
+                When upgrading to APEX 26.2 or importing a workspace export from an earlier release, saved visual Query Builder queries are converted to SQL Commands saved queries. The generated SQL text is preserved and can be opened and run from SQL Workshop, SQL Commands, Saved SQL.<br>
+                Visual Query Builder layout metadata is not preserved.<br>
+                <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> nothing to change / no check needed</b>
+                ```
+        }
+    )
+
+    region 4-deprecated-pl-sql-apis-apex-ai (
+        name: 4. Deprecated PL/SQL APIs - APEX_AI
+        type: staticContent
+        layout {
+            sequence: 40
+            parentRegion: @5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                The following record members are deprecated in APEX 26.2:<br>
+                <i>type t_chat_message is record (<br>
+                    ...<br>
+                    tool_calls t_chat_message_tool_calls, -- Deprecated: 26.2<br>
+                    ... );</i><br>
+                Use individual T_CHAT_MESSAGE entries with CHAT_ROLE set to C_ROLE_TOOL_CALL and the tool call stored in TOOL_CALL.<br>
+                <i>type t_chat_response is record (<br>
+                    ...<br>
+                    message  t_chat_message, -- Deprecated: 26.2<br>
+                    ... );</i><br>
+                Use T_CHAT_RESPONSE.MESSAGES to access all normalized messages returned by the AI provider.<br>
+                <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> no check integrated, you need to check it yourself</b>
+                ```
+        }
+    )
+
+    region 5-1 (
+        name: 2. OCI Generative AI Model Retirement Migration
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select a.workspace, a.provider_type, model_name
+                from apex_workspace_ai_services a
+                where lower(a.model_name) in ('command-r-08-2024'
+                                             ,'command-r-plus-08-2024'
+                                             ,'command-latest'
+                                             ,'command-plus-latest')
+                ```
+        }
+        layout {
+            sequence: 20
+            parentRegion: @7-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-apex-26-1-htmrn-desupported-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                The following retired models are no longer supported: <b>cohere.command-r-08-2024, cohere.command-r-plus-08-2024, cohere.command-latest, cohere.command-plus-latest</b><br>
+                On upgrade or legacy application import, APEX migrates these models to cohere.command-a-03-2025.<br>
+                For more information, see <a href="https://docs.oracle.com/en-us/iaas/Content/generative-ai/deprecating-on-demand.htm" target="_blank">Model Retirement Dates (On-Demand Mode)</a> in Oracle Cloud Infrastructure Documentation.<br>
+                <b><span aria-hidden="true" class="fa fa-exclamation-circle u-warning-text"></span> This setting is on Workspace Level</b>
+                ```
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No desupported Cohere AI Models found.</b>
+        }
+
+        column MODEL_NAME (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Model Name
+            }
+            layout {
+                sequence: 30
+            }
+            columnFormatting {
+                highlightWords: command-r-08-2024,command-r-plus-08-2024,command-latest,command-plus-latest
+            }
+        )
+
+        column PROVIDER_TYPE (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Provider Type
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+        column WORKSPACE (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Workspace
+            }
+            layout {
+                sequence: 10
+            }
+        )
+
+    )
+
+    region 5-2-legacy-calendar-templates-deprecated (
+        name: 2. Deprecated Authentication Scheme
+        type: classicReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select a.workspace
+                      ,a.authentication_scheme_name
+                      ,a.scheme_type_code
+                      ,a.is_current_authentication
+                from apex_application_auth a
+                where a.scheme_type_code in ('OSSO'
+                                            ,'NATIVE_OSSO')
+                and a.application_id = :P0_APP_ID
+                ```
+            pageItemsToSubmit: P0_APP_ID
+        }
+        layout {
+            sequence: 20
+            parentRegion: @5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-expanded
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                The Oracle Application Server Single Sign-On authentication scheme is deprecated, and will be removed in a future release.<br>
+                Anyone using this scheme should switch to Social Sign-In or SAML authentication.
+                ```
+        }
+        reportLayout {
+            numberOfRows: 99999
+        }
+        componentAppearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Report--altRowsDefault
+                t-Report--rowHighlight
+            ]
+        }
+        pagination {
+            type: rowRangesXToYNoPagination
+            displayPosition: topAndBottomRight
+        }
+        performance {
+            lazyLoading: true
+        }
+        messages {
+            whenNoDataFound: <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> No deprecated Oracle Application Server Single Sign-On found.</b>
+        }
+
+        column AUTHENTICATION_SCHEME_NAME (
+            reportColumnQueryId: 2
+            derivedColumn: N
+            heading {
+                heading: Authentication Scheme Name
+            }
+            layout {
+                sequence: 20
+            }
+        )
+
+        column IS_CURRENT_AUTHENTICATION (
+            reportColumnQueryId: 4
+            derivedColumn: N
+            heading {
+                heading: Is Current Authentication
+            }
+            layout {
+                sequence: 40
+            }
+        )
+
+        column SCHEME_TYPE_CODE (
+            reportColumnQueryId: 3
+            derivedColumn: N
+            heading {
+                heading: Scheme Type Code
+            }
+            layout {
+                sequence: 30
+            }
+        )
+
+        column WORKSPACE (
+            reportColumnQueryId: 1
+            derivedColumn: N
+            heading {
+                heading: Workspace
+            }
+            layout {
+                sequence: 10
+            }
+        )
+
+    )
+
+    region 5-6-export-repository-deprecated (
+        name: 1. Export Repository
+        type: staticContent
+        layout {
+            sequence: 10
+            parentRegion: @7-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-apex-26-1-htmrn-desupported-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-collapsed
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                The Export Repository is no longer supported.<br>
+                <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> nothing to change / no check needed</b>
+                ```
+        }
+    )
+
+    region 5-7-restful-services-feature-in-sql-workshop (
+        name: 4. RESTful Services Feature in SQL Workshop
+        type: staticContent
+        layout {
+            sequence: 40
+            parentRegion: @7-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-apex-26-1-htmrn-desupported-features-html-target-blank-link-to-release-notes-a
+            slot: subRegions
+        }
+        appearance {
+            template: @/collapsible
+            templateOptions: [
+                #DEFAULT#
+                is-collapsed
+                t-Region--scrollBody
+            ]
+        }
+        headerAndFooter {
+            headerText:
+                ```html
+                The ability to define REST APIs via the RESTful Services feature in SQL Workshop, deprecated in APEX 26.1, is now desupported.<br>
+                The declarative specification of REST APIs remains supported via SQL Developer Web. Existing ORDS REST modules and metadata remain available, but Legacy REST Workshop import/export and sample-service workflows are removed.<br>
+                APEX retains legacy APEX_REST_RESOURCE_* views for compatibility, but no longer exposes REST Workshop data. If you rely on these views, migrate to supported ORDS metadata/tools.<br>
+                Fresh APEX 26.2 installations no longer create or configure APEX_LISTENER. If upgrading from a previous release, existing APEX_LISTENER users are not dropped, but any objects or dependencies should be assessed.<br>
+                The Swagger UI URL instance setting is removed, and is not carried forward during upgrade.<br>
+                <b><span aria-hidden="true" class="fa fa-check-circle u-success-text"></span> nothing to change / no check needed</b>
+                ```
+        }
+    )
+
+    region 5-deprecated-features-a-href-https-docs-oracle-com-en-database-oracle-apex-24-2-htmrn-deprecated-features-html-target-blank-link-to-release-notes-a (
+        name: Deprecated Features - <a href="https://docs.oracle.com/en/database/oracle/apex/26.2/htmrn/deprecated-features.html" target="_blank">Link to Release Notes</a>
+        type: staticContent
+        layout {
+            sequence: 30
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            htmlDomId: av-deprecated-5
+            regionDisplaySelector: true
+        }
+    )
+
+    region 7-desupported-features-a-href-https-docs-oracle-com-en-database-oracle-apex-26-1-htmrn-desupported-features-html-target-blank-link-to-release-notes-a (
+        name: Desupported Features - <a href="https://docs.oracle.com/en/database/oracle/apex/26.2/htmrn/desupported-features.html" target="_blank">Link to Release Notes</a>
+        type: staticContent
+        layout {
+            sequence: 10
+            slot: body
+        }
+        appearance {
+            template: @/standard
+            templateOptions: [
+                #DEFAULT#
+                t-Region--scrollBody
+            ]
+        }
+        advanced {
+            regionDisplaySelector: true
+        }
+    )
+
+    dynamicAction change-p0-app-id-refresh-regions (
+        name: change P0_APP_ID - refresh regions
+        execution {
+            sequence: 10
+        }
+        when {
+            selectionType: items
+            items: P0_APP_ID
+        }
+
+        action native-javascript-code (
+            action: executeJsCode
+            settings {
+                jsCode: av_refresh_hide_show_regions()
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+    )
+
+    dynamicAction click-refresh-refresh-regions (
+        name: click refresh - refresh regions
+        execution {
+            sequence: 20
+        }
+        when {
+            event: click
+            selectionType: button
+            button: @/refresh
+        }
+
+        action native-javascript-code (
+            action: executeJsCode
+            settings {
+                jsCode: av_refresh_hide_show_regions()
+            }
+            execution {
+                sequence: 10
+                fireOnInit: false
+            }
+        )
+
+    )
+
+    dynamicAction page-load-add-icons-by-class (
+        name: page load - add icons by class
+        execution {
+            sequence: 30
+        }
+        when {
+            event: ready
+        }
+
+        action native-javascript-code (
+            action: executeJsCode
+            settings {
+                jsCode:
+                    ```javascript-browser
+                    console.log('running DA')
+                    console.log(this.affectedElements);
+                    ```
+            }
+            affectedElements {
+                selectionType: jquerySelector
+                jquerySelector: .av-no-check-needed,.av-developer-functionality
+            }
+            execution {
+                sequence: 10
+            }
+        )
+
+    )
+
+)
+

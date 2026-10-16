@@ -40,22 +40,22 @@ var $trigger = $(this.triggeringElement);
 var val = $trigger.val();
 
 // success - up-to-date
-if (val == '26.1') {    
+if (val == '26.2') {    
     $trigger.addClass("u-success");
     $trigger.removeClass("u-warning");
     $trigger.removeClass("u-danger");
 
 // danger - old versions which are not supported any more
-} else if (val == '24.2') {    
-    $trigger.addClass("u-danger");
-    $trigger.removeClass("u-success");
-    $trigger.removeClass("u-warning");   
-
-// warning - versions not old and not the newest
-} else {    
+} else if (val == '26.1') {    
     $trigger.addClass("u-warning");
     $trigger.removeClass("u-success");    
     $trigger.removeClass("u-danger");
+
+// warning - versions not old and not the newest
+} else {    
+    $trigger.addClass("u-danger");
+    $trigger.removeClass("u-success");
+    $trigger.removeClass("u-warning");   
 }
 
 // ----------------------------------------

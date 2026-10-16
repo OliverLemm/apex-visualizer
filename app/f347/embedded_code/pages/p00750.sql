@@ -9,32 +9,24 @@
 -- --------------------------------------------------------------------------------
 
 -- ----------------------------------------
--- Page: 750 - Migration Details > Region: Migration Details > Source > SQL Query
+-- Page: 750 - APEX 26.2 > Region: 2. OCI Generative AI Model Retirement Migration > Source > SQL Query
 
-select apex_version
-      ,rn_type
-      ,rn_chapter_no
-      ,rn_chapter_name
-      ,rn_chapter_text
-      ,rn_chapter_link
-      ,page_id
-      ,page_name
-      ,component_type
-      ,component_name
-      ,coalesce(plsql_code_vc2
-               ,coalesce(js_code_vc2
-                        ,css_code_vc2)) code
-      ,migration_priority
-      ,round(migration_effort_in_days,2) migration_effort_in_days
-from av_migration_pkg.ptf_effort_calculation(i_app_id               => :P0_APP_ID
-                                            ,i_apex_versions        => :P750_APEX_VERSIONS
-                                            ,i_migration_priorities => :P750_MIGRATION_PRIORITIES
-                                            ,i_migration_types      => :P750_MIGRATION_TYPES
-                                            ,i_show_only_findings   => :P750_SHOW_ONLY_FINDINGS)
-order by apex_version
-        ,replace(rn_chapter_no
-                ,'.'
-                ,'')
-        ,page_id
-        ,component_name;
+select a.workspace, a.provider_type, model_name
+from apex_workspace_ai_services a
+where lower(a.model_name) in ('command-r-08-2024'
+                             ,'command-r-plus-08-2024'
+                             ,'command-latest'
+                             ,'command-plus-latest');
+
+-- ----------------------------------------
+-- Page: 750 - APEX 26.2 > Region: 2. Deprecated Authentication Scheme > Source > SQL Query
+
+select a.workspace
+      ,a.authentication_scheme_name
+      ,a.scheme_type_code
+      ,a.is_current_authentication
+from apex_application_auth a
+where a.scheme_type_code in ('OSSO'
+                            ,'NATIVE_OSSO')
+and a.application_id = :P0_APP_ID;
 

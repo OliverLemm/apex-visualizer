@@ -127,7 +127,7 @@ list desktop-navigation-menu (
     entry apex-15 (
         label: APEX 26.1
         layout {
-            sequence: 1350
+            sequence: 490
             parentEntry: @migration
         }
         isCurrent {
@@ -176,6 +176,19 @@ list desktop-navigation-menu (
         }
         config {
             buildOption: @deactivated
+        }
+    )
+
+    entry apex-26-2 (
+        label: APEX 26.2
+        layout {
+            sequence: 500
+            parentEntry: @migration
+        }
+        link {
+            target: {
+                page: 750
+            }
         }
     )
 

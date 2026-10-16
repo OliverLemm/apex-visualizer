@@ -340,8 +340,8 @@ wwv_flow_imp_page.create_page_item(
 ,p_field_template=>2320077351817916916
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'Compatibility Mode <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/htmrn/changed-behavior.html#GUID-712BE54F-08CD-43A3-A645-87B9360ED516" target="_blank">Releasenotes 24.2</a><br><br>',
-'24.2 / 26.1 - APEX supports an extended substitution syntax for text messages.<br>',
+'Compatibility Mode <a href="https://docs.oracle.com/en/database/oracle/apex/26.2/htmrn/changed-behavior.html#GUID-712BE54F-08CD-43A3-A645-87B9360ED516" target="_blank">Releasenotes 26.2</a><br><br>',
+'24.2 / 26.1 / 26.2 - APEX supports an extended substitution syntax for text messages.<br>',
 '21.2 / 22.1 / 22.2 / 23.1 / 23.2 / 24.1 - all processes ... regardless of errors<br>',
 '19.2 / 20.1 / 20.2 / 21.1 - Classic Reports render empty column values ...<br>',
 '19.1 - Rich Text editor ... Max Length item<br>',
@@ -488,6 +488,8 @@ wwv_flow_imp_page.create_page_item(
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'If using Universal Theme, this information shows the version compared to the APEX version<br>',
+'UT 26.2 = APEX 26.2<br>',
+'UT 26.1 = APEX 26.1<br>',
 'UT 24.2 = APEX 24.2<br>',
 'UT 24.1 = APEX 24.1<br>',
 'UT 23.2 = APEX 23.2<br>',
@@ -500,9 +502,9 @@ wwv_flow_imp_page.create_page_item(
 'UT  1.5 = APEX 20.1<br>',
 'UT  1.4 = APEX 19.2<br>',
 'UT  1.3 = APEX 19.1<br>',
-'UT  1.2 = APEX 18.1 / 18.2 (not supported any more)<br>',
-'UT  1.1 = APEX 5.1 (not supported any more)<br>',
-'UT  1.0 = APEX 5.0 (not supported any more)'))
+'UT  1.2 = APEX 18.1 / 18.2<br>',
+'UT  1.1 = APEX 5.1<br>',
+'UT  1.0 = APEX 5.0'))
 ,p_encrypt_session_state_yn=>'N'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'disabled', 'N',
@@ -878,22 +880,22 @@ wwv_flow_imp_page.create_page_da_action(
     'var val = $trigger.val();',
     '',
     '// success - up-to-date',
-    'if (val == ''26.1'') {    ',
+    'if (val == ''26.2'') {    ',
     '    $trigger.addClass("u-success");',
     '    $trigger.removeClass("u-warning");',
     '    $trigger.removeClass("u-danger");',
     '',
     '// danger - old versions which are not supported any more',
-    '} else if (val == ''24.2'') {    ',
-    '    $trigger.addClass("u-danger");',
-    '    $trigger.removeClass("u-success");',
-    '    $trigger.removeClass("u-warning");   ',
-    '',
-    '// warning - versions not old and not the newest',
-    '} else {    ',
+    '} else if (val == ''26.1'') {    ',
     '    $trigger.addClass("u-warning");',
     '    $trigger.removeClass("u-success");    ',
     '    $trigger.removeClass("u-danger");',
+    '',
+    '// warning - versions not old and not the newest',
+    '} else {    ',
+    '    $trigger.addClass("u-danger");',
+    '    $trigger.removeClass("u-success");',
+    '    $trigger.removeClass("u-warning");   ',
     '}')))).to_clob
 );
 wwv_flow_imp_page.create_page_da_event(

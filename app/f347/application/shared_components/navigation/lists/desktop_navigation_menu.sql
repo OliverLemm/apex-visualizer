@@ -15,7 +15,7 @@ wwv_flow_imp_shared.create_list(
  p_id=>wwv_flow_imp.id(472848853615347627)
 ,p_name=>'Desktop Navigation Menu'
 ,p_static_id=>'desktop-navigation-menu'
-,p_version_scn=>'SH256:3De4um_xJWeSDZFqAaoLbNqsZcnsEZagDZ-tLP7m2EU'
+,p_version_scn=>'SH256:TfuKU1efzrQyyT5kq6uujEOmAS3Cx0sVmQZTkLuMIF8'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(27003232840044532)
@@ -79,10 +79,10 @@ wwv_flow_imp_shared.create_list_item(
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(79837115022931360)
-,p_list_item_display_sequence=>1350
+,p_list_item_display_sequence=>490
 ,p_list_item_link_text=>'APEX 26.1'
 ,p_static_id=>'apex-15'
-,p_list_item_link_target=>'f?p=&APP_ID.:745:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_link_target=>'f?p=&APP_ID.:745:&SESSION.::&DEBUG.::::'
 ,p_parent_list_item_id=>wwv_flow_imp.id(36813609309735876)
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'745'
@@ -107,6 +107,15 @@ wwv_flow_imp_shared.create_list_item(
 ,p_required_patch=>wwv_flow_imp.id(311726863352029995)
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 ,p_list_item_current_for_pages=>'701'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(11531586261575242)
+,p_list_item_display_sequence=>500
+,p_list_item_link_text=>'APEX 26.2'
+,p_static_id=>'apex-26-2'
+,p_list_item_link_target=>'f?p=&APP_ID.:750:&SESSION.::&DEBUG.::::'
+,p_parent_list_item_id=>wwv_flow_imp.id(36813609309735876)
+,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(36815852314763493)
